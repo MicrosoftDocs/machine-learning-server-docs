@@ -125,10 +125,10 @@ Common validation issues include:
 - The node is behind a firewall or temporarily unreachable.
 - The node’s configuration details are incomplete such as an empty name field when the name is required.
 
-##Node Properties
+## Node Properties
 
 <br/>
-**Basic Settings**
+<strong>Basic Settings</strong>
 
 |Properties|Description|
 |----------|---|
@@ -141,7 +141,7 @@ Common validation issues include:
 
 
 <br/>
-**Runtime Constraints**
+<strong>Runtime Constraints</strong>
 
 These constraints govern limits for processor and memory usage at runtime.
 
@@ -151,7 +151,7 @@ These constraints govern limits for processor and memory usage at runtime.
 |`R boundary`|This property specifies an R boundary that was created in this console. This R boundary is used to impose CPU usage limits for a given node.  The R boundary applies to each slot individually.|
 
 <br/>
-**RServe Runtime and Security Configuration**
+<strong>RServe Runtime and Security Configuration</strong>
 
 After a default installation of DeployR, it is highly unlikely that these settings require any editing under most operating conditions. However, if DeployR is in conflict with another application on the server machine or if you have made edits to the file `Rserv.conf`, you must mirror your changes here as well.
 
@@ -164,7 +164,7 @@ After a default installation of DeployR, it is highly unlikely that these setti
 
 
 <br/>
-**External Directory Configuration**
+<strong>External Directory Configuration</strong>
 
 If the external data directories are properly configured across all grid nodes and an R script updates the data in the external directory, then those updates are automatically mirrored across all nodes without any manual or external intervention by the admin.
 

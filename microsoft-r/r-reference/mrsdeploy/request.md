@@ -27,13 +27,13 @@ ms.custom: ""
  
  
  
- #request: HTTP requests made easy and more fluent around `curl`. 
- ##Description
+ # request: HTTP requests made easy and more fluent around `curl`. 
+ ## Description
  
 HTTP requests made easy and more fluent around `curl`.
  
  
- ##Usage
+ ## Usage
 
 ```   
   request(host = NULL)

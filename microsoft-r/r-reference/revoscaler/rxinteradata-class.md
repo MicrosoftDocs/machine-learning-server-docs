@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "Class RxInTeradata" 
 description: " Creates a compute context for running Microsoft R Server analyses inside a Teradata database cluster. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,154 +21,153 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- 
- 
- #RxInTeradata-class: Class RxInTeradata 
- ##Description
- 
+
+
+
+
+
+
+ # RxInTeradata-class: Class RxInTeradata 
+ ## Description
+
 DEPRECATED: Creates a compute context for running Microsoft R Server analyses inside a Teradata database cluster.
- 
- 
+
+
  ## Objects from the Class 
 
- 
+
 Objects can be created by calls of the form .
 
- 
+
  ## Slots 
 
- 
 
 
-###`remoteShareDir`:
+
+### `remoteShareDir`:
 Object of class `"character"` ~~ 
 
 
-###`connectionString`:
+### `connectionString`:
 Object of class `"character"` ~~ 
 
 
-###`shareDir`:
+### `shareDir`:
 Object of class `"character"` ~~ 
 
 
-###`revoPath`:
+### `revoPath`:
 Object of class `"characterORNULL"` ~~ 
 
 
-###`wait`:
+### `wait`:
 Object of class `"logical"` ~~ 
 
 
-###`consoleOutput`:
+### `consoleOutput`:
 Object of class `"logical"` ~~ 
 
 
-###`autoCleanup`:
+### `autoCleanup`:
 Object of class `"logical"` ~~ 
 
 
-###`configFile`:
+### `configFile`:
 Object of class `"characterORNULL"` ~~ 
 
 
-###`workingDir`:
+### `workingDir`:
 Object of class `"characterORNULL"` ~~ 
 
 
-###`dataPath`:
+### `dataPath`:
 Object of class `"characterORNULL"` ~~ 
 
 
-###`minElems`:
+### `minElems`:
 Object of class `"numeric"` ~~ 
 
 
-###`maxElems`:
+### `maxElems`:
 Object of class `"numeric"` ~~ 
 
 
-###`exclusive`:
+### `exclusive`:
 Object of class `"logical"` ~~ 
 
 
-###`nodes`:
+### `nodes`:
 Object of class `"characterORNULL"` ~~ 
 
 
-###`dataDistType`:
+### `dataDistType`:
 Object of class `"character"` ~~ 
 
 
-###`packagesToLoad`:
+### `packagesToLoad`:
 Object of class `"characterORNULL"` ~~ 
 
 
-###`email`:
+### `email`:
 Object of class `"characterORNULL"` ~~ 
 
 
-###`resultsTimeout`:
+### `resultsTimeout`:
 Object of class `"numeric"` ~~ 
 
 
-###`description`:
+### `description`:
 Object of class `"character"` ~~ 
 
 
-###`version`:
+### `version`:
 Object of class `"character"` ~~ 
 
 
 
- 
+
  ## Extends 
 
- 
+
 Class RxDistributedHpa, directly.
 Class RxComputeContext, by class "RxDistributedHpa", distance 2.
- 
+
  ## Methods 
 
- 
 
 
-###`doPreJobValidation`
+
+### `doPreJobValidation`
 `signature(object = "RxInTeradata")`: ... 
 
 
-###`initialize`
+### `initialize`
 `signature(.Object = "RxInTeradata")`: ... 
 
 
-###`show`
+### `show`
 `signature(object = "RxInTeradata")`: ... 
 
 
 
- 
- 
 
- 
- 
- 
- ##See Also
- 
+
+
+
+
+
+ ## See Also
+
 [RxInTeradata](RxInTeradata.md),
 [RxTeradata](RxTeradata.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   showClass("RxInTeradata")
- 
 ```
- 
- 
+
+

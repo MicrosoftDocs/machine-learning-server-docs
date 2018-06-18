@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "RxLocalSeq-class class (revoAnalytics) | Microsoft Docs" 
 description: "   Class for the RevoScaleR Local Compute Context.   " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,46 +21,46 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #RxLocalSeq-class: Class RxLocalSeq 
- ##Description
- 
+
+
+
+
+ # RxLocalSeq-class: Class RxLocalSeq 
+ ## Description
+
 Class for the RevoScaleR Local Compute Context.  
- 
- 
+
+
  ## Generators 
 
- 
+
 The targeted generator [RxLocalSeq](RxLocalSeq.md) as well as the general generator
 [RxComputeContext](RxComputeContext.md).
- 
+
  ## Extends 
 
- 
+
 Class RxComputeContext, directly.
- 
+
  ## Methods 
 
- 
 
 
-###`show`
+
+### `show`
 `signature(object = "RxLocalSeq")`: ...
 
 
 
- 
- ##Author(s)
+
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 [RxSpark](RxSpark.md),
 RxHadoopMR,
 [RxInSqlServer](RxInSqlServer.md),
@@ -68,21 +68,19 @@ RxHadoopMR,
 [RxForeachDoPar](RxForeachDoPar.md),
 [RxComputeContext](RxComputeContext.md),
 [rxSetComputeContext](rxSetComputeContext.md).
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 myComputeContext <- RxComputeContext("RxLocalSeq")
 is(myComputeContext, "RxComputeContext")
 # [1] TRUE
 is(myComputeContext, "RxLocalSeq")
 # [1] TRUE
  ## End(Not run) 
-  
- 
 ```
- 
- 
+
+

@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "as.randomForest function (revoAnalytics) | Microsoft Docs" 
 description: " Converts objects containing decision tree results to an randomForest object. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,20 +21,20 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- 
- #as.randomForest: Conversion of an rxDForest, rxDTree, or rpart object to an randomForest Object 
- ##Description
- 
+
+
+
+
+
+ # as.randomForest: Conversion of an rxDForest, rxDTree, or rpart object to an randomForest Object 
+ ## Description
+
 Converts objects containing decision tree results to an randomForest object.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
  ## S3 method for class `rxDForest':
@@ -43,66 +43,66 @@ as.randomForest  (x, ...)
 as.randomForest  (x, ...)
  ## S3 method for class `rpart':
 as.randomForest  (x, use.weight = TRUE, ties.method = c("random", "first", "last"), ...)
- 
-```
- 
- ##Arguments
 
-   
-    
+```
+
+ ## Arguments
+
+
+
  ### `x`
   object of class rxDForest, rxDTree, or rpart. 
-  
-    
+
+
  ### `use.weight`
   a logical value (default being `TRUE`) specifying if the majority splitting direction  at a node should be decided based on the sum of case weights or the number of observations when the split variable at the node is a factor or ordered factor  but a certain level is not present (or not defined for the factor). 
-  
-    
+
+
  ### `ties.method`
   a character string specifying how ties are handled when deciding the majority direction,  with the default being `"random"`. Refer to max.col for details. 
-  
-    
+
+
  ### ` ...`
  additional arguments to be passed directly to `as.randomForest.rpart`. 
-  
- 
- 
- 
- ##Details
- 
+
+
+
+
+ ## Details
+
 These functions convert an existing object of class rxDForest, rxDTree, 
 or rpart to an object of class `randomForest`, respectively.
 The underlying structure of the output object will be a subset of 
 that produced by an equivalent call to `randomForest`. 
 In many cases, this method can be used to coerce an object for use with the **pmml** package.
 **RevoScaleR** model objects that contain `transforms` or a `transformFunc` are not supported.
- 
- 
- 
- ##Value
- 
+
+
+
+ ## Value
+
 an object of class randomForest.
- 
- 
- ##Author(s)
+
+
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 [rxDForest](rxDForest.md),
 [rxDTree](rxDTree.md),
 rpart,
 randomForest,
 [as.rpart](as.rpart.md).
-   
- 
- ##Examples
+
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 # If the pmml and the randomForest packages are installed 
 library(pmml)
 library(randomForest)
@@ -122,10 +122,8 @@ fit.rforest
 predict(fit.rforest, newdata = mydata)
 pmml(fit.rforest)
  ## End(Not run) 
-  
- 
 ```
- 
- 
- 
- 
+
+
+
+

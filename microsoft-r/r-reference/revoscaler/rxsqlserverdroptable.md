@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxSqlServerDropTable function (revoAnalytics) | Microsoft Docs" 
 description: " Execute a SQL statement that drops a table or checks for existence. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,85 +21,83 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- #rxSqlServerDropTable:  rxSqlServerDropTable  
- ##Description
- 
+
+
+
+ # rxSqlServerDropTable:  rxSqlServerDropTable  
+ ## Description
+
 Execute a SQL statement that drops a table or checks for existence.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   rxSqlServerTableExists(table, connectionString = NULL)
   rxSqlServerDropTable(table, connectionString = NULL)
- 
-```
- 
- 
- ##Arguments
 
-   
-    
+```
+
+
+ ## Arguments
+
+
+
  ### `table`
   character string specifying a table name or an [RxSqlServerData](RxSqlServerData.md)data source that has the `table` specified.  
-  
-  
-    
+
+
+
  ### `connectionString`
  `NULL` or character string specifying the connection string.  If `NULL`, the connection string from the currently  active compute context will be used if available.  
-  
-  
-    
+
+
+
  ### ` ...`
   Additional arguments to be passed through.  
-  
-  
- 
- 
- ##Details
- 
+
+
+
+
+ ## Details
+
 An SQL query is passed to the ODBC driver.
- 
- 
- ##Value
- 
+
+
+ ## Value
+
 `rxSqlServerTableExists` returns `TRUE` is the table exists, `FALSE` otherwise.
 `rxSqlServerDropTable` returns `TRUE` is the table is successfully dropped, 
 `FALSE` otherwise (for example, if the table did not exist).
- 
- 
- ##Author(s)
- 
+
+
+ ## Author(s)
+
 Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
- 
- 
- 
- 
- ##See Also
- 
+
+
+
+
+ ## See Also
+
 [RxInSqlServer](RxInSqlServer.md),
 [RxSqlServerData](RxSqlServerData.md).
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 # With an RxInSqlServer active compute context
 tempTable <- "rxTempTest"
 if (rxSqlServerTableExists(tempTable)) rxSqlServerDropTable(tempTable)
  ## End(Not run) 
-  
- 
 ```
- 
- 
- 
- 
+
+
+
+

@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: " Generator for a PemaBaseClass reference class object " 
 description: " Generator for a PemaBaseClass reference class object to be used with pemaCompute. " 
@@ -12,7 +12,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 #ROBOTS: "" 
 #audience: "" 
@@ -22,77 +22,75 @@ ms.assetid: ""
 #ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 #ms.custom: "" 
- 
+
 --- 
- 
- 
- #PemaBaseClass:  Generator for a PemaBaseClass reference class object 
+
+
+ # PemaBaseClass:  Generator for a PemaBaseClass reference class object 
 
  Applies to version 8.0.3 of package RevoPemaR.
- 
- ##Description
- 
+
+ ## Description
+
 Generator for a PemaBaseClass reference class object to be used with pemaCompute.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   PemaBaseClass(...)
- 
-```
- 
- 
- ##Arguments
 
-   
-    
+```
+
+
+ ## Arguments
+
+
+
  ###  ...
   Arguments used in the constructor. Not used by the `PemaBaseClass` base class.  
-  
- 
- 
- ##Details
- 
+
+
+
+ ## Details
+
 This is a base reference class for the construction of reference classes
 to be used for parallel external memory algorithms for use in
 [pemaCompute](pemacompute.md). See [PemaMean](pemamean.md) for a simple
 example.
- 
- 
- ##Value
- 
-A `PemaBaseClass` reference class object.
- 
- 
 
- 
- 
- 
- 
- 
- ##See Also
- 
+
+ ## Value
+
+A `PemaBaseClass` reference class object.
+
+
+
+
+
+
+
+
+ ## See Also
+
 setRefClass,
 [setPemaClass](setpemaclass.md),
 [pemaCompute](pemacompute.md),
 [PemaMean](pemamean.md)
-   
- 
- ##Examples
+
+
+ ## Examples
 
  ```
-   
-  
+
+
   # Show help for methods
   PemaBaseClass$help(initialize)
   PemaBaseClass$help(processData)
   PemaBaseClass$help(updateResults)
   PemaBaseClass$help(processResults)
-  
- 
 ```
- 
- 
- 
- 
+
+
+
+

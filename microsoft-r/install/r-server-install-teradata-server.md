@@ -87,31 +87,31 @@ We recommend using the Teradata Parallel Update Tool (PUT) to install the Micros
 
 PUT is a browser-based utility, and we recommend that you upgrade to the latest version. Newer versions contain the *PUT Customer Mode*, which is the easiest way to install Microsoft R Server.
 
- 1.  If you have an iso file, you must first mount the file. The following commands create a mount point and mount the file to that mount point (replacing **MSDN** with the name of the current ISO downloaded):
+1. If you have an iso file, you must first mount the file. The following commands create a mount point and mount the file to that mount point (replacing **MSDN** with the name of the current ISO downloaded):
 
-		mkdir /mnt/mrsimage
-		mount –o loop MSDN.iso /mnt/mrsimage
+      mkdir /mnt/mrsimage
+      mount –o loop MSDN.iso /mnt/mrsimage
 
-	If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
+   If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
 
-		tar -zxf en_r_server_910_for_teradata_x64_10324043.tar.gz
+      tar -zxf en_r_server_910_for_teradata_x64_10324043.tar.gz
 
-		This creates the directory MRS91Teradata
-		This is where the you can find the libstdc++6-5.3.1.x86_64.rpm (dependency discussed above). If you cannot install this rpm MRS 9.1 will not work.
+      This creates the directory MRS91Teradata
+      This is where the you can find the libstdc++6-5.3.1.x86_64.rpm (dependency discussed above). If you cannot install this rpm MRS 9.1 will not work.
 
-  2. Agree to license agreements:
-		/MRS90Teradata/ MRO_EULA.txt
-		/MRS90Teradata/ MRO_EULA.txt
-
-
-  3. Copy the following files to the Customer Mode directory (which you may need to create) _/var/opt/teradata/customermodepkgs_:
-
-		microsoft-r-open-3.3.3.tar.gz
-		MRS90Teradata/RPM/microsoft-r-server-packages-9.1.rpm
-		MRS90Teradata/RPM/microsoft-r-server-teradata-9.1.rpm
+   2. Agree to license agreements:
+      /MRS90Teradata/ MRO_EULA.txt
+      /MRS90Teradata/ MRO_EULA.txt
 
 
-  4. Point your Java-enabled browser to `https://<HOSTIP>:8443/put` where `<HOSTIP>` is the IP address of your Teradata data warehouse node and log in to Customer Mode using a *Linux* account such as root (*not* a database account).
+   3. Copy the following files to the Customer Mode directory (which you may need to create) _/var/opt/teradata/customermodepkgs_:
+
+      microsoft-r-open-3.3.3.tar.gz
+      MRS90Teradata/RPM/microsoft-r-server-packages-9.1.rpm
+      MRS90Teradata/RPM/microsoft-r-server-teradata-9.1.rpm
+
+
+   4. Point your Java-enabled browser to `https://<HOSTIP>:8443/put` where `<HOSTIP>` is the IP address of your Teradata data warehouse node and log in to Customer Mode using a *Linux* account such as root (*not* a database account).
 
 To install the Microsoft R Server rpms on all the nodes, do the following:
 
@@ -243,9 +243,9 @@ In most cases, the natural place to install additional R packages is to the clie
 
 To manually distribute and install the package:
 
-  1.  Download the package and any required dependencies from <https://mran.microsoft.com/>.
-  2.  Copy the downloaded packages to each node of your data warehouse.
-  3.  For each package, run the command “R CMD INSTALL *package.*tar.gz” on each node. (If your data warehouse is equipped with the psh command, you can use that to run the command on all the nodes in parallel.)
+1. Download the package and any required dependencies from <https://mran.microsoft.com/>.
+2. Copy the downloaded packages to each node of your data warehouse.
+3. For each package, run the command “R CMD INSTALL <em>package.</em>tar.gz” on each node. (If your data warehouse is equipped with the psh command, you can use that to run the command on all the nodes in parallel.)
 
 ## Removing Microsoft R Server
 

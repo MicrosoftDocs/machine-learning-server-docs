@@ -41,7 +41,7 @@ _Figure: Database page_
 1. In that tab, click **Backup DeployR Database**. A zip file is created and downloaded to your local machine.
 
 <br>
-**To restore the database data**
+<strong>To restore the database data</strong>
 
 1.  From the main menu, click **Database**.
 

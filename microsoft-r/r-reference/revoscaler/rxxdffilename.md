@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxXdfFileName-methods methods (revoAnalytics) | Microsoft Docs" 
 description: " Get the .xdf file path from a character string or RxXdfData object. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,62 +21,60 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- 
- 
- 
- #rxXdfFileName-methods: Retrieve .xdf file name 
- ##Description
- 
+
+
+
+
+
+
+
+ # rxXdfFileName-methods: Retrieve .xdf file name 
+ ## Description
+
 Get the .xdf file path from a character string or RxXdfData object.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   rxXdfFileName( x )
- 
-```
- 
- ##Arguments
 
-   
-    
+```
+
+ ## Arguments
+
+
+
  ### `x`
  character string containing the file name or an RxXdfData object. 
-  
- 
- 
- ##Value
- 
+
+
+
+ ## Value
+
 a character string containing the path and name of the .xdf file
- 
- ##Author(s)
+
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 [RxXdfData](RxXdfData.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   # Create an RxXdfData object
   ds <- RxXdfData(file.path(rxGetOption("sampleDataDir"), "claims.xdf"))
   # Retrieve the file name with path
   fileName <- rxXdfFileName(ds)
   fileName
-  
- 
 ```
- 
- 
- 
- 
+
+
+
+

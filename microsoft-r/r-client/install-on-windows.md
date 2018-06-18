@@ -96,27 +96,27 @@ On the machine onto which you are installing, follow this guidance before you be
    
    1. Copy the downloaded files to a network share or portable drive.
 
-1. On the machine with _**restricted**_ internet access:
+2. On the machine with _**restricted**_ internet access:
 
    1. Log in with administrator privileges.
 
-   1. Copy the .cab file and R Client installer from the network share/portable drive on the first machine to the machine that has restricted internet access. Put the CAB files in the setup user's temp folder under `%temp%`. 
+   2. Copy the .cab file and R Client installer from the network share/portable drive on the first machine to the machine that has restricted internet access. Put the CAB files in the setup user's temp folder under `%temp%`. 
 
-   1. Copy and install the .NET Framework.  Restart your computer if you installed the .NET Framework.
+   3. Copy and install the .NET Framework.  Restart your computer if you installed the .NET Framework.
 
-   1. Run `RClientSetup.exe`, which finds the cab file in the temp folder for you.
+   4. Run `RClientSetup.exe`, which finds the cab file in the temp folder for you.
    
-   1. Accept the default installation path for Microsoft R Client or choose another location.
+   5. Accept the default installation path for Microsoft R Client or choose another location.
 
-   1. Review the components that are installed as part of Microsoft R Client. 
+   6. Review the components that are installed as part of Microsoft R Client. 
     
-     While most are required, you can choose to add additional components such as [**pre-trained models**](../install/microsoftml-install-pretrained-models.md). 
+      While most are required, you can choose to add additional components such as [**pre-trained models**](../install/microsoftml-install-pretrained-models.md). 
 
-   1. Accept the Microsoft R Client license terms.
+   7. Accept the Microsoft R Client license terms.
 
-   1. Accept the Microsoft R Open license term. Microsoft R Client is built on Microsoft R Open, Microsoft's enhanced distribution of R. Setup installs the correct version of R Open for you automatically.
+   8. Accept the Microsoft R Open license term. Microsoft R Client is built on Microsoft R Open, Microsoft's enhanced distribution of R. Setup installs the correct version of R Open for you automatically.
 
-1. Without internet access, we recommend disabling the _auto-update check_ feature so that R Client can launch more quickly. Do so in the `Rprofile.site` file by adding a comment character (#) at the start of the line: mrupdate::mrCheckForUpdates()
+3. Without internet access, we recommend disabling the _auto-update check_ feature so that R Client can launch more quickly. Do so in the `Rprofile.site` file by adding a comment character (#) at the start of the line: mrupdate::mrCheckForUpdates()
 
 >[!IMPORTANT]
 >Review the recommendations in [Package Management](../operationalize/configure-manage-r-packages.md#offline) for instructions on how to set up a local package repository using MRAN or miniCRAN.

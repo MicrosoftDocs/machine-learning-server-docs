@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "OutputData function (sqlrutils) | Microsoft Docs" 
 description: " OutputData: generates an OutputData Object that captures the information about the data frame that needs to be returned after the execution of the R function embedded into the stored procedure. This object must be created if the R function is returning a named list, where one of the items in the list is a data frame. The return list can contain at most one data frame. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,49 +21,49 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #OutputData: Output Data for SQL Stored Procedure: Class Generator 
- ##Description
- 
+
+
+
+
+ # OutputData: Output Data for SQL Stored Procedure: Class Generator 
+ ## Description
+
 `OutputData`: generates an OutputData Object that captures the
 information about the data frame that needs to be returned after
 the execution of the R function embedded into the stored procedure.
 This object must be created if the R function is returning a named
 list, where one of the items in the list is a data frame. The return
 list can contain at most one data frame.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   OutputData(name)
- 
-```
- 
- ##Arguments
 
-   
-  
+```
+
+ ## Arguments
+
+
+
  ### `name`
  A character string, the name of the data frame variable. 
-  
- 
- 
- ##Value
- 
+
+
+
+ ## Value
+
 OutputData Object
- 
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
   # See ?StoredProcedure for creating the "cleandata" table.
 
   # train 2 takes a data frame with clean data and outputs a model
@@ -98,8 +98,5 @@ OutputData Object
   # Get back the linear model.
   mm <- rxUnserializeModel(result$params$op1)
  ## End(Not run) 
-  
-  
- 
 ```
- 
+

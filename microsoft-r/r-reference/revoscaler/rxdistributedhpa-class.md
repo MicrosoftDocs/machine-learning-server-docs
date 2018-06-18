@@ -27,8 +27,8 @@ ms.custom: ""
  
  
  
- #RxDistributedHpa-class: Class RxDistributedHpa 
- ##Description
+ # RxDistributedHpa-class: Class RxDistributedHpa 
+ ## Description
  
 Compute context class for clusters supporting RevoScaleR High Performance Analytics and High Perfomance Computing.
  
@@ -38,11 +38,11 @@ Compute context class for clusters supporting RevoScaleR High Performance Analyt
  
 Class RxComputeContext, directly.
  
- ##Author(s)
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
- ##See Also
+ ## See Also
  
 [RxComputeContext-class](RxComputeContext-class.md),
 RxHadoopMR,

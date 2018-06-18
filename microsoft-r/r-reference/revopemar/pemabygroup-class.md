@@ -27,11 +27,11 @@ ms.assetid: ""
  
  
  
- #PemaByGroup-class: Class PemaByGroup
+ # PemaByGroup-class: Class PemaByGroup
 
  Applies to version 8.0.3 of package RevoPemaR.
  
- ##Description
+ ## Description
  
 Example PEMA reference class to compute arbitrary by-group statistics
  
@@ -52,7 +52,7 @@ Class PemaBaseClass, directly.
  
  
  
- ##See Also
+ ## See Also
  
 [PemaByGroup](pemabygroup.md)
 [PemaBaseClass](pemabaseclass.md)

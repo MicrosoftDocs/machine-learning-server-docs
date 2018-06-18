@@ -46,7 +46,7 @@ In Machine Learning Server 9.3, you can use `admin` extension of the Azure Comma
 
 1. On the machine hosting the node, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
 
-1. If you are not yet authenticated in the CLI, do so now. This is an administrator task only, so you must have the Owner role to declare or manage URIs. The account name is `admin` unless LDAP or AAD is configured.
+2. If you are not yet authenticated in the CLI, do so now. This is an administrator task only, so you must have the Owner role to declare or manage URIs. The account name is `admin` unless LDAP or AAD is configured.
    ```azurecli
    az login --mls
 
@@ -54,7 +54,7 @@ In Machine Learning Server 9.3, you can use `admin` extension of the Azure Comma
    az login --mls --help
    ```
 
-1. Use the CLI to declare the IP address of each compute node you configured. You can specify a single URI, several URIs, or even an IP range:
+3. Use the CLI to declare the IP address of each compute node you configured. You can specify a single URI, several URIs, or even an IP range:
    ```azurecli
    # Declare one or more compute node URIs
    az ml admin compute-node-uri add --uri <uris>
@@ -63,7 +63,7 @@ In Machine Learning Server 9.3, you can use `admin` extension of the Azure Comma
    az ml admin compute-node-uri list
    ```
 
-   For multiple compute nodes, separate each URI with a comma. The following example shows a single URI and a range of IPs (1.0.1.1, 1.0.1.2, 1.0.2.1, 1.0.2.2, 1.0.3.1, 1.0.3.2): <br/>http://1.1.1.1:12805, http://1.0.1-3.1-2:12805
+   For multiple compute nodes, separate each URI with a comma. The following example shows a single URI and a range of IPs (1.0.1.1, 1.0.1.2, 1.0.2.1, 1.0.2.2, 1.0.3.1, 1.0.3.2): <br/><http://1.1.1.1:12805>, http://1.0.1-3.1-2:12805
  
 ## Machine Learning Server 9.2
 

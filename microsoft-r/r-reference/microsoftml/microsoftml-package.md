@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "MicrosoftML package for R (Microsoft Machine Learning Server and SQL Server Machine Learning Server) " 
 description: "Function help reference for the MicrosoftML R package of Microsoft R." 
@@ -12,7 +12,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 #ROBOTS: "" 
 #audience: "" 
@@ -22,9 +22,9 @@ ms.assetid: ""
 #ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 #ms.custom: "" 
- 
+
 --- 
- 
+
 # MicrosoftML package
 
 The **MicrosoftML** library provides state-of-the-art fast, scalable machine learning algorithms and transforms for R. The package is used with the [**RevoScaleR** package](../revoscaler/revoscaler.md).
@@ -117,7 +117,7 @@ This section lists the functions by category to give you an idea of how each one
 |[fastLinear](fastlinear.md) | Creates a list containing the function name and arguments to train a Fast Linear model with [rxEnsemble](rxensemble.md).|
 |[logisticRegression](logisticregression.md) | Creates a list containing the function name and arguments to train a  Logistic Regression model with [rxEnsemble](rxensemble.md).|
 |[oneClassSvm](oneclasssvm.md) | Creates a list containing the function name and arguments to train a OneClassSvm model with [rxEnsemble](rxensemble.md).|
- 
+
 ## 7-Neural networking functions
 
 | Function name | Description |
@@ -126,6 +126,7 @@ This section lists the functions by category to give you an idea of how each one
 
 
 ## 8-Package state functions
+
 | Function name | Description |
 |---------------|-------------|
 |[rxHashEnv](rxHashEnv.md) | An environment object used to store package-wide state. |
@@ -146,23 +147,23 @@ Next, refer to these introductory articles and samples to get started:
 
  [R Package Reference](../introducing-r-server-r-package-reference.md) 
 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

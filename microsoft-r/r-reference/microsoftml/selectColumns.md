@@ -27,20 +27,20 @@ ms.custom: ""
  
  
  
- #selectColumns: Selects a set of columns, dropping all others 
- ##Description
+ # selectColumns: Selects a set of columns, dropping all others 
+ ## Description
  
 Selects a set of columns to retrain, dropping all others.
  
  
- ##Usage
+ ## Usage
 
 ```   
   selectColumns(vars, ...)
  
 ```
  
- ##Arguments
+ ## Arguments
 
    
   
@@ -54,11 +54,11 @@ Selects a set of columns to retrain, dropping all others.
   
  
  
- ##Value
+ ## Value
  
 A `maml` object defining the transform.
  
- ##Author(s)
+ ## Author(s)
  
 Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 

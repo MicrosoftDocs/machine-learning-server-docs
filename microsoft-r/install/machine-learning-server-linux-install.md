@@ -32,12 +32,12 @@ This article explains how to install Machine Learning Server on a standalone Lin
 
 This article covers the following items:
 > [!div class="checklist"]
-- Prerequisites
-- Package manager overview
-- In-place upgrades of existing installations
-- Installation steps
-- An inventory of what's installed
-
+> - Prerequisites
+> - Package manager overview
+> - In-place upgrades of existing installations
+> - Installation steps
+> - An inventory of what's installed
+> 
 > [!Note]
 > These instructions use package managers to connect to Microsoft sites, download the distributions, and install the server. If you know and prefer working with gzip files on a local machine, you can download **en_machine_learning_server_9.2.1_for_linux_x64_100352967.gz** from [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/).
 
@@ -242,7 +242,7 @@ As another verification step, run the **Revo64** program. By default, **Revo64**
 
    `> rxSummary(~., iris)`
 
-  Output from the iris dataset should look similar to the following:
+   Output from the iris dataset should look similar to the following:
 
 ~~~~
         Rows Read: 150, Total Rows Processed: 150, Total Chunk Time: 0.001 seconds
@@ -290,7 +290,7 @@ To quit the program, type `q()` at the command line with no arguments.
     print(summary)
     ~~~~
 
-  Output from the sample dataset should look similar to the following:
+   Output from the sample dataset should look similar to the following:
 
     ~~~~ 
     Summary Statistics Results for: ArrDelay+DayOfWeek
@@ -330,7 +330,7 @@ Alternatively, if you have multiple servers, you can designate each one as eithe
 
 3. Set a password used to protect your configuration settings. Later, after configuration is finished, anyone who wants to use the CLI to modify a configuration must provide this password to gain access to settings and operations.  
 
-  The password must meet these requirements: 8-16 characters long, with at least one upper-case letter, one lower-case letter, one number, and one special character.
+   The password must meet these requirements: 8-16 characters long, with at least one upper-case letter, one lower-case letter, one number, and one special character.
 
 After you provide the password, the tool does the rest. Your server is fully operationalized once the process is complete. For more information about the benefits of operationalization:
 

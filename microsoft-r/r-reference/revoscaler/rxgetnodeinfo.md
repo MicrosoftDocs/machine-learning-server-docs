@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxGetNodeInfo function (revoAnalytics) | Microsoft Docs" 
 description: " Provides information about the capabilities of the nodes on a cluster. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,57 +21,57 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- #rxGetNodeInfo:  Provides information about all nodes on a cluster.  
- ##Description
- 
+
+
+ # rxGetNodeInfo:  Provides information about all nodes on a cluster.  
+ ## Description
+
 Provides information about the capabilities of the nodes on a cluster.
- 
- 
- 
- ##Usage
+
+
+
+ ## Usage
 
 ```   
   rxGetNodeInfo( computeContext = NULL, ..., namesOnly = FALSE, makeRNodeNames = FALSE, getWorkersOnly = TRUE )
- 
-```
- 
- 
- ##Arguments
 
-   
-  
+```
+
+
+ ## Arguments
+
+
+
  ### `computeContext`
  A distributed compute context (preferred), a jobInfo object, or (deprecated) a character scalar containing the name of the Microsoft HPC cluster head node being queried.  If you are interested in information about a particular node, be sure that node is included in the group specified in the compute context, or that the compute context has `groups=NULL` (HPC compute contexts).    Setting `nodes=NULL` and `groups=NULL` or `queue="all"` in the compute context is the best way to ensure getting information on all nodes. 
-  
-  
-  
+
+
+
  ### ` ...`
  additional arguments for modifying the compute context before requesting the node information.  These arguments must be in the compute context constructor. 
-  
-  
-  
+
+
+
  ### `namesOnly`
  logical. If `TRUE`, only a vector containing the names of the nodes will be returned. 
-  
-  
-  
+
+
+
  ### `makeRNodeNames`
  logical. If `TRUE`, names of the nodes will be normalized for use  as R variables.  See [rxMakeRNodeNames](rxMakeRNodeNames.md) for details on name mangling. 
-  
-  
-  
+
+
+
  ### `getWorkersOnly`
  logical.  If `TRUE`, returns only those nodes within the cluster that are configured to actually execute jobs (where applicable; currently LSF only.). 
-  
- 
- 
- 
- ##Details
- 
+
+
+
+
+ ## Details
+
 This function will return information on all the nodes on a given cluster if the `nodes` 
 slot of the compute context is `NULL` and `groups` and `queue` are not 
 specified in the compute context. If either `groups` or `queue` is specified,
@@ -101,11 +101,11 @@ some cluster related software, it is necessary to force them to be upper case.
 In general, however, machine names are always treated as being case insensitive.  
 No other changes are made to node names during the mangling process.
 )
- 
- 
- 
- ##Value
- 
+
+
+
+ ## Value
+
 If `namesOnly` is `TRUE`, a character vector containing the names of the nodes. 
 If `makeRNodeNames` is `TRUE`, these names will be normalized for use as R variables.
 
@@ -116,56 +116,56 @@ more details.
 Each named element in the list will contain some or all of the following:
 
 
-###`nodeName`
+### `nodeName`
 character scalar.  The true name of the node (as opposd to the list item name).
 
 
-###`cpuSpeed`
+### `cpuSpeed`
 float.  The processor speed in MHz for Microsoft HPC, or the CPU factor for LSF.
 
 
-###`memSize`
+### `memSize`
 integer.  The amount of RAM in MB.
 
 
-###`numCores`
+### `numCores`
 integer.  The number of cores.
 
 
-###`numSockets`
+### `numSockets`
 integer.  The number of CPU sockets.
 
 
-###`nodeState`
+### `nodeState`
 character scalar.  May be either "online", "offline", "draining" (shutting down, but still with jobs in queue), or "unknown".
 
 
-###`isReachable`
+### `isReachable`
 logical.  Determines if there is an operational network path between the head node and the given compute node.
 
 
-###`groupsOrQueues`
+### `groupsOrQueues`
 list of character scalars.  The node groups (on MS HPC) or queues (under LSF) to which the node belongs.
 
 
- 
- ##Author(s)
- 
+
+ ## Author(s)
+
 Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 [rxGetAvailableNodes](rxGetAvailableNodes.md),
 [rxMakeRNodeNames](rxMakeRNodeNames.md).
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 # Returns list of lists with information about each specified node
 rxGetNodeInfo(myCluster, nodes = "comp1,comp2,comp3")
 rxGetNodeInfo(myCluster, nodes = c("g1","g2","g3"))
@@ -178,8 +178,6 @@ rxGetNodeInfo(myCluster, namesOnly = TRUE)
 rxGetNodeInfo(myCluster, namesOnly = TRUE, makeRNodeNames = TRUE)
 
  ## End(Not run) 
-  
- 
 ```
- 
- 
+
+

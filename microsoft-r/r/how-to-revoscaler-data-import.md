@@ -46,7 +46,7 @@ Depending on arguments, **rxImport** either loads data as a data frame, or outpu
 
 		> mySourceFile <- file.path("C:/Users/Temp/my-data-file.txt")
 
-  To try this out using [built-in samples](sample-built-in-data.md), run the first command to verify the files are available, and the second command to set the location and source file.
+   To try this out using [built-in samples](sample-built-in-data.md), run the first command to verify the files are available, and the second command to set the location and source file.
 
 		# Verify the sample files exist and then set mySourceFile to the sample directory
 		> list.files(rxGetOption("sampleDataDir"))
@@ -72,21 +72,21 @@ Depending on arguments, **rxImport** either loads data as a data frame, or outpu
 		Var 5: cost, Type: numeric, Storage: float32, Low/High: (11.0000, 850.0000)
 		Var 6: number, Type: numeric, Storage: float32, Low/High: (0.0000, 434.0000)
 
-  For just variables in the data file, use the *names* function:
+   For just variables in the data file, use the *names* function:
 
 		> names(claimsDF)
 	      [1] "RowNum"  "age"     "car.age" "type"    "cost"    "number"
 
-5. To save the data into a .xdf file rather than importing data into a data frame in memory, add the *outFile* parameter. Specify a path to a writable directory:  
+4. To save the data into a .xdf file rather than importing data into a data frame in memory, add the *outFile* parameter. Specify a path to a writable directory:  
 
 		> claimsDF <- rxImport(inData=mySourceFile, outFile = "c:/users/temp/claims.xdf")
 
-  A .xdf file is created, and instead of returning a data frame, the **rxImport** function returns a data source object. This is a small R object that contains information about a data source, in this case the name and path of the .xdf file it represents. This data source object can be used as the input data in most RevoScaleR functions. For example:
+   A .xdf file is created, and instead of returning a data frame, the **rxImport** function returns a data source object. This is a small R object that contains information about a data source, in this case the name and path of the .xdf file it represents. This data source object can be used as the input data in most RevoScaleR functions. For example:
 
 		> rxGetInfo(claimsDF, getVarInfo = TRUE)
 		> names(claimsDF)
 
-6. Optionally, you can simplify the path designation by using the working directory. Use R's working directory commands to get and set the folder. Run the first command to determine the default working directory, and the second command to switch to a writable folder.
+5. Optionally, you can simplify the path designation by using the working directory. Use R's working directory commands to get and set the folder. Run the first command to determine the default working directory, and the second command to switch to a writable folder.
 
 		> getwd()
 		> setwd("c:/users/temp")

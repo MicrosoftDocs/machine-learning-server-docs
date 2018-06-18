@@ -69,10 +69,10 @@ However, when using an earlier release or to confirm settings, follow these step
  
 4. Click **Auto Detect** in the top right to auto-fill the remaining fields:
 
-  + **Interpreter path** should be `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\python.exe`.
-  + **Windowed interpreter** should be `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\pythonw.exe`.
-  + **Language version** should be `3.5` for Python 3.5.
-  + **Path** should be read-only. 
+   + **Interpreter path** should be `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\python.exe`.
+   + **Windowed interpreter** should be `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\pythonw.exe`.
+   + **Language version** should be `3.5` for Python 3.5.
+   + **Path** should be read-only. 
 
 5. Click **Apply** in the top right to save the environment.
 
@@ -88,33 +88,33 @@ For new projects, you can also add an environment to your project in **Solution 
 
 Jupyter Notebooks is distributed with Anaconda, which is the Python distribution used by Machine Learning Server. A local executable is installed with Machine Learning Server. 
 
-+ On Windows, go to **\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts\** and double-click **jupyter-notebook.exe** to start a Jupyter Notebook session in the default browser window.
++ On Windows, go to **\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts\\** and double-click **jupyter-notebook.exe** to start a Jupyter Notebook session in the default browser window.
 
 + On Linux, go to **/opt/microsoft/mlserver/9.3.0/runtime/python/bin/** and type `./jupyter notebook`. You should get a series of messages that includes the server endpoint and a URL that you can copy into a browser, assuming one is available on your computer.
 
 For additional instructions on configuring a multi-user server, see [How to add Machine Learning Server modules to single and multi-user Jupyter Notebook instances](how-to-revoscalepy-jupyter-nb-config.md).
 
 > [!Note]
-> Jupyter Notebooks are a presentation concept, integrating script and text on the same page. Script is interactive on the page, often Python or R, but could be any one of the 40 languages supported by Jupyter. The text is user-provided content that describes the script. Notebooks are executed on a server, accessed over http, and rendered as HTML in a browser to the person requesting the notebook. For more information, see [Jupyter documentation](https://jupyter.readthedocs.io/atest/content-quickstart.html).
+> Jupyter Notebooks are a presentation concept, integrating script and text on the same page. Script is interactive on the page, often Python or R, but could be any one of the 40 languages supported by Jupyter. The text is user-provided content that describes the script. Notebooks are executed on a server, accessed over http, and rendered as HTML in a browser to the person requesting the notebook. For more information, see [Jupyter documentation](https://jupyter.readthedocs.io/en/latest/content-quickstart.html).
 
 ### How to load Python samples on Windows
 
 1. Download just the .ipynb files from the Github repo [https://github.com/Microsoft/ML-Server-Python-Samples](https://github.com/Microsoft/ML-Server-Python-Samples):
 
-  + Go to the source page: [ML-Server-Python-Samples/microsoftml/quickstarts/binary-classification/Binary+Classification+Quickstart.ipynb](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/quickstarts/binary-classification/Binary%2BClassification%2BQuickstart.ipynb)
-  + In the Github page for this notebook, click **Raw** to show the Python script.
-  + Use the browser save-as command to save a local copy of the file. Apply an **.ipynb** file extension.
+   + Go to the source page: [ML-Server-Python-Samples/microsoftml/quickstarts/binary-classification/Binary+Classification+Quickstart.ipynb](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/quickstarts/binary-classification/Binary%2BClassification%2BQuickstart.ipynb)
+   + In the Github page for this notebook, click **Raw** to show the Python script.
+   + Use the browser save-as command to save a local copy of the file. Apply an **.ipynb** file extension.
 
-  > [!Note]
-  > Some browsers append a .txt file extension automatically. Remove the extraneous .txt extension if you see it in the file name.
+   > [!Note]
+   > Some browsers append a .txt file extension automatically. Remove the extraneous .txt extension if you see it in the file name.
 
 2. Upload the .ipynb to your local server:
 
-  + Navigate to the Jupyter-notebook executable on your computer: `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts`
-  + Right-click **Run as administrator** on `jupyter-notebook.exe`
-  + The Notebook Dashboard opens in your default browser at `http://localhost:8888/tree`. 
-  + Click **Upload** on the top right corner.
-  + Navigate to the folder where you saved the .ipynb file. Most likely, it's in the Downloads folder: `\Downloads\ML-Server-Python-Samples-master\microsoftml\quickstarts\binary-classification\Binary+Classification+Quickstart.ipynb`
+   + Navigate to the Jupyter-notebook executable on your computer: `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts`
+   + Right-click **Run as administrator** on `jupyter-notebook.exe`
+   + The Notebook Dashboard opens in your default browser at `http://localhost:8888/tree`. 
+   + Click **Upload** on the top right corner.
+   + Navigate to the folder where you saved the .ipynb file. Most likely, it's in the Downloads folder: `\Downloads\ML-Server-Python-Samples-master\microsoftml\quickstarts\binary-classification\Binary+Classification+Quickstart.ipynb`
    + Select the file and click **Open** to add the notebook to your server.
 
 3. Click the notebook to load it, then click **Run** to step through the content and script. For this particular notebook, no additional configuration is required. For the web service notebook, read the readme for configuration requirements.

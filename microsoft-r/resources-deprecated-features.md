@@ -78,14 +78,14 @@ In **RevoMods** functions are discontinued (all were intended for use solely by 
  
 ## Microsoft R Server 9.0.1
 
-###Changed in this release
+### Changed in this release
 
 + R Server is built on Microsoft R Open 3.3.2 (R 3.3.2).
 + R packages added to MRO include `curl`, `Jsonlite`, and `R6`.
 + R packages added to R Server include `mrupdate` (for automated update checks) and `CompatibilityAPI` (to check for feature compatibility between versions).
 + DeployR (now referred to as operationalization) no longer supports MongoDB. Use PostGreSQL, SQL Server, or Azure SQL Database instead.
 
-###Deprecated or Discontinued
+### Deprecated or Discontinued
 
 + RevoScaleR deprecated functions:
     + `RxHpcServer` (no replacement)
@@ -95,17 +95,17 @@ In **RevoMods** functions are discontinued (all were intended for use solely by 
     + (none)
      	
 
-###Bug Fixes
+### Bug Fixes
 
 + Not available.
 
-###Known Issues
+### Known Issues
 
 See here: https://docs.microsoft.com/en-us/machine-learning-server/resources-known-issues
 
 ## Microsoft R Server 8.0.5
 
-###Deprecated or Discontinued
+### Deprecated or Discontinued
 
 + The **R Productivity Environment** (RPE) IDE for Revolution R Enterprise:
   + The RPE is now defunct. We recommend use of R Tools for Visual Studio (RTVS), which provides a more modern and flexible IDE.
@@ -123,7 +123,7 @@ See here: https://docs.microsoft.com/en-us/machine-learning-server/resources-kno
     	+ `rxGetInfoXdf` (us `rxGetInfo`)
     	+ the `covariance` argument (only) to the `rxLinMod` function
 
-###Changed in this release
+### Changed in this release
 
 +  A new internal variable, `.rxPredict` is available inside transformation functions to indicate that the data is being processed from a prediction rather than a model estimation.
 

@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "selectFeatures function (MicrosoftML) " 
 description: " The feature selection transform selects features from the specified variables using the specified mode. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,64 +21,64 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #selectFeatures: Machine Learning Feature Selection Transform 
- ##Description
- 
+
+
+
+
+ # selectFeatures: Machine Learning Feature Selection Transform 
+ ## Description
+
 The feature selection transform selects features from the specified
 variables using the specified mode.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   selectFeatures(vars, mode, ...)
- 
-```
- 
- ##Arguments
 
-   
-  
+```
+
+ ## Arguments
+
+
+
  ### `vars`
  A formula or a vector/list of strings specifying the name of variables upon which the feature selection is performed, if the mode is  minCount(). For example, `~ var1 + var2 + var3`. If mode is mutualInformation(), a formula or a named list of strings describing the dependent variable and the independent variables. For example, `label ~ ``var1 + var2 + var3`. 
-  
-  
-  
+
+
+
  ### `mode`
  Specifies the mode of feature selection. This can be either  [minCount](minCount.md) or [mutualInformation](mutualInformation.md). 
-  
-  
-  
+
+
+
  ### ` ...`
  Additional arguments to be passed directly to the Microsoft Compute Engine. 
-  
- 
- 
- ##Details
- 
+
+
+
+ ## Details
+
 The feature selection transform selects features from the specified
 variables using one of the two modes: count or mutual information. For more
 information, see [minCount](minCount.md) and [mutualInformation](mutualInformation.md).
- 
- 
- ##Value
- 
+
+
+ ## Value
+
 A `maml` object defining the transform.
- 
- ##See Also
- 
+
+ ## See Also
+
 [minCount](minCount.md) [mutualInformation](mutualInformation.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   trainReviews <- data.frame(review = c( 
           "This is great",
           "I hate it",
@@ -110,7 +110,7 @@ A `maml` object defining the transform.
           FALSE, TRUE, FALSE, TRUE, FALSE, TRUE, FALSE, TRUE, 
           FALSE, TRUE, FALSE, TRUE), stringsAsFactors = FALSE
       )
-  
+
       testReviews <- data.frame(review = c(
           "This is great",
           "I hate it",
@@ -122,31 +122,30 @@ A `maml` object defining the transform.
           "I do like it",
           "I really hate it",
           "I love it"), stringsAsFactors = FALSE)
-  
+
   # Use a categorical hash transform which generated 128 features.
   outModel1 <- rxLogisticRegression(like~reviewCatHash, data = trainReviews, l1Weight = 0, 
       mlTransforms = list(categoricalHash(vars = c(reviewCatHash = "review"), hashBits = 7)))
   summary(outModel1)
-  
+
   # Apply a categorical hash transform and a count feature selection transform
   # which selects only those hash slots that has value.
   outModel2 <- rxLogisticRegression(like~reviewCatHash, data = trainReviews, l1Weight = 0, 
       mlTransforms = list(
-  	categoricalHash(vars = c(reviewCatHash = "review"), hashBits = 7), 
-  	selectFeatures("reviewCatHash", mode = minCount())))
+    categoricalHash(vars = c(reviewCatHash = "review"), hashBits = 7), 
+    selectFeatures("reviewCatHash", mode = minCount())))
   summary(outModel2)
-  
+
   # Apply a categorical hash transform and a mutual information feature selection transform
   # which selects only 10 features with largest mutual information with the label.
   outModel3 <- rxLogisticRegression(like~reviewCatHash, data = trainReviews, l1Weight = 0, 
       mlTransforms = list(
-  	categoricalHash(vars = c(reviewCatHash = "review"), hashBits = 7), 
-  	selectFeatures(like ~ reviewCatHash, mode = mutualInformation(numFeaturesToKeep = 10))))
+    categoricalHash(vars = c(reviewCatHash = "review"), hashBits = 7), 
+    selectFeatures(like ~ reviewCatHash, mode = mutualInformation(numFeaturesToKeep = 10))))
   summary(outModel3)
- 
 ```
- 
- 
- 
- 
- 
+
+
+
+
+

@@ -78,8 +78,8 @@ To view the embedded help for each class, use the `help()` command, specifying t
 2. Open interactive help: `help()`
 3. Type the fully-qualified class name within the brackets. 
 
-  + For azureml-azureml-model-management-sdk, include the class in the path. For example, for [MLServer](azureml-model-management-sdk/mlserver.md) help, type `help(azureml.deploy.server.MLServer)`. 
-  + For revoscalepy, type `help(revoscalepy)` to get package contents, and then include one of the packages on the next iteration. For example, `help(revoscalepy.computecontext)` returns all the functions related to compute context.
+   + For azureml-azureml-model-management-sdk, include the class in the path. For example, for [MLServer](azureml-model-management-sdk/mlserver.md) help, type `help(azureml.deploy.server.MLServer)`. 
+   + For revoscalepy, type `help(revoscalepy)` to get package contents, and then include one of the packages on the next iteration. For example, `help(revoscalepy.computecontext)` returns all the functions related to compute context.
 
 ## Note to R Users: Python naming conventions
 

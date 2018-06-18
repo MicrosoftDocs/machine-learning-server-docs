@@ -91,7 +91,7 @@ The distribution includes one installer for Microsoft R Server. For a gzipped TA
 
 3. Unpack the file:
 
-  `[tmp] $ tar zxvf en_microsoft_r_server_910_for_linux_x64_10323878.tar.gz`
+   `[tmp] $ tar zxvf en_microsoft_r_server_910_for_linux_x64_10323878.tar.gz`
 
 The distribution is unpacked into an `MRS91Linux` folder at the download location. The distribution includes the following files:
 
@@ -118,12 +118,12 @@ R Server for Linux is deployed by running the install script with no parameters.
 
 2. Clean cached data so that the installer can get updated packages. 
 
-  + On RHEL use [yum](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/sec-Working_with_Yum_Cache.html): `[root@localhost tmp] $ yum expire-cache`  
-  + On Ubuntu use [apt-get](https://help.ubuntu.com/community/AptGet/Howto): `[root@localhost tmp] $ apt-get autoclean` 
+   + On RHEL use [yum](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/sec-Working_with_Yum_Cache.html): `[root@localhost tmp] $ yum expire-cache`  
+   + On Ubuntu use [apt-get](https://help.ubuntu.com/community/AptGet/Howto): `[root@localhost tmp] $ apt-get autoclean` 
 
 3. Change to the `MRS91Linux` directory containing the installation script:
 
-  `[root@localhost tmp] $ cd /tmp/MRS91Linux`
+   `[root@localhost tmp] $ cd /tmp/MRS91Linux`
 
 4. Run the script. To include the [pre-trained machine learning models for MicrosoftML](microsoftml-install-pretrained-models.md), append the `-m` switch. 
 
@@ -133,14 +133,14 @@ R Server for Linux is deployed by running the install script with no parameters.
 
 6. Repeat for the R Server license agreement: click Enter, click **q** when finished reading, click **y** to accept the terms.
 
-  Installation begins immediately. Installer output shows the packages and location of the log file.
+   Installation begins immediately. Installer output shows the packages and location of the log file.
 
 ### Verify installation
 
 1. List installed MRS packages:
 
-  + On RHEL: `rpm -qa | grep microsoft` 
-  + On Ubuntu: `apt list --installed | grep microsoft`  
+   + On RHEL: `rpm -qa | grep microsoft` 
+   + On Ubuntu: `apt list --installed | grep microsoft`  
 
 2. Once you have a package name, you can obtain verbose version information. For example:
 
@@ -167,7 +167,7 @@ As another verification step, run the Revo64 program. By default, Revo64 is link
 
    `> rxSummary(~., iris)`
 
-  Output from the iris dataset should look similar to the following:
+   Output from the iris dataset should look similar to the following:
 
 ~~~~
         Rows Read: 150, Total Rows Processed: 150, Total Chunk Time: 0.001 seconds

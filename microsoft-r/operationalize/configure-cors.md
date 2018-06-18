@@ -32,15 +32,15 @@ Cross-Origin Resource Sharing (CORS) enables your client application to freely c
 
 1. On each web node, open the configuration file, \<web-node-install-path>/appsettings.json. (Find the [install path](../operationalize/configure-find-admin-configuration-file.md) for your version.)
 
-1. Enable CORS in the `"CORS": {` section of the  appsettings.json file:
-   1.  Set CORS `"Enabled": true`
+2. Enable CORS in the `"CORS": {` section of the  appsettings.json file:
+   1. Set CORS `"Enabled": true`
 
-   1. Enter a comma-separated list of allowed `"Origins"` for your policy.  In this example, the policy allows cross-origin requests from "http://www.contoso.com", "http://www.microsoft.com", and no other origins.
-   ```
-   "CORS": {
+   2. Enter a comma-separated list of allowed `"Origins"` for your policy.  In this example, the policy allows cross-origin requests from "<http://www.contoso.com>", "<http://www.microsoft.com>", and no other origins.
+      ```
+      "CORS": {
       "Enabled": true,
       "Origins": ["http://www.contoso.com", "http://www.microsoft.com"]
-   }
-   ```
+      }
+      ```
 
 3. Launch the administrator's utility and [restart the web node](configure-admin-cli-stop-start.md).

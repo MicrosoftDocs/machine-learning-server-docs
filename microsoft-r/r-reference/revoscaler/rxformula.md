@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxFormula function (revoAnalytics) | Microsoft Docs" 
 description: " Highlights of the similarities and differences in formulas between **RevoScaleR** and standard R functions. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,19 +21,19 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- #rxFormula: Formula Syntax for RevoScaleR Analysis Functions 
- ##Description
- 
+
+
+ # rxFormula: Formula Syntax for RevoScaleR Analysis Functions 
+ ## Description
+
 Highlights of the similarities and differences in formulas between
 **RevoScaleR** and standard R functions.
- 
- 
- ##Details
- 
+
+
+ ## Details
+
 The formula syntax used by the **RevoScaleR** analysis functions is similar,
 but not identical, to regular R formula syntax. The most important differences
 are:
@@ -85,35 +85,34 @@ categorical variables:
 
 
 
-  
- 
- ##Author(s)
+
+
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 [rxTransform](rxTransform.md),
 [rxCrossTabs](rxCrossTabs.md),
 [rxCube](rxCube.md),
 [rxLinMod](rxLinMod.md),
 [rxLogit](rxLogit.md),
 [rxSummary](rxSummary.md).
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
-  
+
+
   # These two lines are set up for the examples
   sampleDataDir <- rxGetOption("sampleDataDir")
   censusWorkers <- file.path(sampleDataDir, "CensusWorkers.xdf")
-  
+
   rxSummary(~ F(age) + sex, data = censusWorkers)
   rxSummary(~ F(age, low = 30, high = 45, exclude = FALSE), data = censusWorkers)
-  
+
   rxCube(incwage ~ F(age) : sex, data = censusWorkers)
- 
 ```
- 
- 
+
+

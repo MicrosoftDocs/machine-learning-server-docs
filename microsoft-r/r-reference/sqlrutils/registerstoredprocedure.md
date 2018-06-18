@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "registerStoredProcedure function (sqlrutils) | Microsoft Docs" 
 description: " registerStoredProcedure: Uses the the StoredProcedure object to register the stored procedure with the specified database " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,50 +21,50 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #registerStoredProcedure: Register a SQL Stored Procedure with a Database 
- ##Description
- 
+
+
+
+
+ # registerStoredProcedure: Register a SQL Stored Procedure with a Database 
+ ## Description
+
 `registerStoredProcedure`: Uses the the StoredProcedure object to register
 the stored procedure with the specified database
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   registerStoredProcedure(sqlSP, connectionString = NULL)
- 
-```
- 
- ##Arguments
 
-   
-  
+```
+
+ ## Arguments
+
+
+
  ### `sqlSP`
  a valid StoredProcedure object 
-  
-  
-  
+
+
+
  ### `connectionString`
  A character string (must be provided if the StoredProcedure object was created without a connection string) 
-  
- 
- 
- ##Value
- 
+
+
+
+ ## Value
+
 TRUE on success, FALSE on failure
- 
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
  # See ?StoredProcedure for creating the "cleandata" table.
 
  # train 1 takes a data frame with clean data and outputs a model
@@ -101,7 +101,5 @@ TRUE on success, FALSE on failure
  # Getting back the model by unserializing it.
  mm <- rxUnserializeModel(model$params$op1)
  ## End(Not run) 
-  
- 
 ```
- 
+

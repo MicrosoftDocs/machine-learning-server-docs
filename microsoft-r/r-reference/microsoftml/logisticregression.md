@@ -27,14 +27,14 @@ ms.custom: ""
  
  
  
- #logisticRegression: logisticRegression 
- ##Description
+ # logisticRegression: logisticRegression 
+ ## Description
  
 Creates a list containing the function name and arguments to train a
  logistic regression model with [rxEnsemble](rxEnsemble.md).
  
  
- ##Usage
+ ## Usage
 
 ```   
   logisticRegression(l2Weight = 1, l1Weight = 1, optTol = 1e-07,
@@ -44,7 +44,7 @@ Creates a list containing the function name and arguments to train a
  
 ```
  
- ##Arguments
+ ## Arguments
 
    
   

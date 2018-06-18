@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxGetPartitions function (revoAnalytics) | Microsoft Docs" 
 description: " Get partitions enumeration of a partitioned Xdf data source. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,79 +21,78 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #rxGetPartitions:  Get Partitions of a Partitioned Xdf Data Source  
- 
- ##Description
- 
+
+
+
+
+ # rxGetPartitions:  Get Partitions of a Partitioned Xdf Data Source  
+
+ ## Description
+
 Get partitions enumeration of a partitioned Xdf data source.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   rxGetPartitions(data)
- 
-```
- 
- 
- ##Arguments
 
-   
-    
+```
+
+
+ ## Arguments
+
+
+
  ### `data`
  an existing partitioned data source object which was created by [RxXdfData](RxXdfData.md) with `createPartitionSet = TRUE` and constructed by [rxPartition](rxPartition.md). 
-  
- 
- 
- ##Details
- 
 
- 
- 
- 
- ##Value
- 
+
+
+ ## Details
+
+
+
+
+
+ ## Value
+
 Data frame with `(n+1)` columns, the first `n` columns are partitioning columns specified by `varsToPartition` in [rxPartition](rxPartition.md) and the `(n+1)th` column is a data source column where each row contains an Xdf data source object of one partition.
- 
- 
- ##Author(s)
+
+
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
- 
- 
- 
- ##See Also
- 
+
+
+
+ ## See Also
+
 RXdfData,
 [rxPartition](rxPartition.md),
 [rxExecBy](rxExecBy.md)
-   
- 
- ##Examples
+
+
+ ## Examples
 
  ```
-   
+
     # create an input Xdf data source
     inFile <- "claims.xdf"
     inFile <- file.path(dataPath = rxGetOption(opt = "sampleDataDir"), inFile)
     inXdfDS <- RxXdfData(file = inFile)
-  
+
     # create an output partitioned Xdf data source
     outFile <- file.path(tempdir(), "partitionedClaims.xdf")
     outPartXdfDataSource <- RxXdfData(file = outFile, createPartitionSet = TRUE)
-  
+
     # construct and save the partitioned Xdf to disk
     partDF <- rxPartition(inData = inXdfDS, outData = outPartXdfDataSource, varsToPartition = c("car.age"))
-    
+
     # enumerate partitions
     partDF <- rxGetPartitions(outPartXdfDataSource)
     rxGetInfo(partDF, getVarInfo = TRUE)
     partDF$DataSource
- 
 ```
- 
+

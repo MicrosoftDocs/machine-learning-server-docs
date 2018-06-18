@@ -37,11 +37,10 @@ The following guides are available to help you install and configure DeployR.
 >This release is for DeployR Enterprise only.
 <br />
 
-| |Supported Platforms |Installation Guide|Post-Installation Steps|
-|------------------------|:----------------:|:----------------:|:----------------:|
-|**_DeployR on Windows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_**                 |[View](deployr-install-on-windows.md#post-installation-steps)|
-|**_DeployR on Linux_**                   |[View](deployr-install-on-linux.md#post-installation-steps)|
-
+|                                                                                             |                      Supported Platforms                      | Installation Guide | Post-Installation Steps |
+|---------------------------------------------------------------------------------------------|:-------------------------------------------------------------:|:------------------:|:-----------------------:|
+| **<em>DeployR on Windows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em>** | [View](deployr-install-on-windows.md#post-installation-steps) |                    |                         |
+|                                   ***DeployR on Linux***                                    |  [View](deployr-install-on-linux.md#post-installation-steps)  |                    |                         |
 
 <br />
 <br />

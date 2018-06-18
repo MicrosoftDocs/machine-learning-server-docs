@@ -25,20 +25,20 @@ ms.custom: ""
 --- 
  
  
- #rxPrivacyControl: Changes the opt in state for anonymous data usage collection. 
- ##Description
+ # rxPrivacyControl: Changes the opt in state for anonymous data usage collection. 
+ ## Description
  
 Sets the state to be opted-in or out for anonymous usage collection.
  
  
- ##Usage
+ ## Usage
 
 ```   
   rxPrivacyControl(optIn)
  
 ```
  
- ##Arguments
+ ## Arguments
 
    
     
@@ -47,7 +47,7 @@ Sets the state to be opted-in or out for anonymous usage collection.
   
  
  
- ##Author(s)
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  

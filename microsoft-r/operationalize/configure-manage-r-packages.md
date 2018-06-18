@@ -61,39 +61,39 @@ This production-safe approach provides an excellent way to:
 
    1. Launch your preferred R IDE or an R tool such as Rgui.exe.
 
-   1. At the R prompt, install the `miniCRAN` package on a computer that has Internet access.
+   2. At the R prompt, install the `miniCRAN` package on a computer that has Internet access.
       ```R
       if(!require("miniCRAN")) install.packages("miniCRAN")
       if(!require("igraph")) install.packages("igraph")
       library(miniCRAN)
       ```   
    
-   1. To point to a different snapshot, set the `CRAN_mirror` value. By default, the CRAN mirror specified by your version of Microsoft R Open is used. For example, for Machine Learning Server 9.2.1 that date is 2017-09-01.
+   3. To point to a different snapshot, set the `CRAN_mirror` value. By default, the CRAN mirror specified by your version of Microsoft R Open is used. For example, for Machine Learning Server 9.2.1 that date is 2017-09-01.
 
       ```R
       # Define the package source: a CRAN mirror, or an MRAN snapshot
       CRAN_mirror <- c(CRAN = "https://mran.microsoft.com/snapshot/2016-11-01")
       ```
 
-   1. Create a miniCRAN repository in which the packages are downloaded and installed.  This repository creates the folder structure that you need to copy the packages to each compute node later.
+   4. Create a miniCRAN repository in which the packages are downloaded and installed.  This repository creates the folder structure that you need to copy the packages to each compute node later.
       ```R
       # Define the local download location
       local_repo <- "~/my-miniCRAN-repo"
       ```
 
-   1. Download and install the packages you need to this computer. 
+   5. Download and install the packages you need to this computer. 
       ```R     
       # List the packages you need 
       # Do not specify dependencies
       pkgs_needed <- c("Package-A", "Package-B", "Package-...")
       ```
       
-    >[!Note]
-    > If you aren't sure which packages to list, consider using a list of the top “n” (e.g. 500) packages by download/popularity as a starting point. Then, extend with additional packages as needed over time. For Mac and Windows binaries, it is possible to look at the particular bin/contrib repo you’re interested in, for example: https://cran.microsoft.com/snapshot/2018-01-16/bin/windows/contrib/3.4/PACKAGES
-    >
-    > It is also possible to [create your own mirror](https://cran.r-project.org/mirror-howto.html) to get ALL packages instead of using miniCRAN; however, this would be very large and grow stale quickly requiring regular updates. 
+      >[!Note]
+      > If you aren't sure which packages to list, consider using a list of the top “n” (e.g. 500) packages by download/popularity as a starting point. Then, extend with additional packages as needed over time. For Mac and Windows binaries, it is possible to look at the particular bin/contrib repo you’re interested in, for example: https://cran.microsoft.com/snapshot/2018-01-16/bin/windows/contrib/3.4/PACKAGES
+      >
+      > It is also possible to [create your own mirror](https://cran.r-project.org/mirror-howto.html) to get ALL packages instead of using miniCRAN; however, this would be very large and grow stale quickly requiring regular updates. 
 
-1. On each compute node:
+2. On each compute node:
    1. Copy the miniCRAN repository from the machine with Internet connectivity to the R_SERVICES library on the SQL Server instance.
 
    1. Launch your preferred R IDE or an R tool such as Rgui.exe.

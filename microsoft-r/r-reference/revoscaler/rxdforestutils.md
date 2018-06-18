@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxDForestUtils function (revoAnalytics) | Microsoft Docs" 
 description: "     Utility Functions for rxDForest. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,24 +21,24 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- 
- 
- 
- 
- #rxDForestUtils: Utility Functions for rxDForest 
- 
- ##Description
- 
+
+
+
+
+
+
+
+
+ # rxDForestUtils: Utility Functions for rxDForest 
+
+ ## Description
+
 Utility Functions for rxDForest.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   rxVarImpPlot(x, sort = TRUE, n.var = 30, main = deparse(substitute(x)),   ...  )
@@ -46,62 +46,62 @@ Utility Functions for rxDForest.
   rxTreeDepth(x)
   rxTreeSize(x, terminal = TRUE)
   rxVarUsed(x, by.tree = FALSE, count = TRUE)
-  rxGetTree(x, k = 1)	   
- 
-```
- 
- ##Arguments
+  rxGetTree(x, k = 1)      
 
-   
-    
+```
+
+ ## Arguments
+
+
+
  ### `x`
   an object of class [rxDForest](rxDForest.md) or [rxDTree](rxDTree.md). 
-  
-  
-    
+
+
+
  ### `sort`
   logical value. If `TRUE`, the variables will be sorted in decreasing importance. 
-  
-    
+
+
  ### `n.var`
   an integer specifying the number of variables to show when `sort=FALSE`. 
-  
-    
+
+
  ### `main`
   a character string specifying the main title for the plot. 
-  
-    
+
+
  ### ` ...`
   other arguments to be passed on to dotchart. 
-  
-  
-    
+
+
+
  ### `use.weight`
   logical value. If `TRUE`, the leaf size is measured by the total weight of its observations  instead of the total number of its observations. 
-  
-  
-    
+
+
+
  ### `terminal`
   logical value. If `TRUE`, only the terminal nodes will be counted. 
-  
-  
-    
+
+
+
  ### `by.tree`
   logical value. If `TRUE`, the list of variables used will be broken down by trees. 
-  
-    
+
+
  ### `count`
   logical value. If `TRUE`, the frequencies that variables appear in trees will be returned. 
-  
-  
-    
+
+
+
  ### `k`
   an integer specifying the index of the tree to be extracted. 
-  
- 
- 
- ##Value
- 
+
+
+
+ ## Value
+
 
 
 * `rxVarImpPlot` -  plots a dotchart of the variable importance as measured by the decision forest.
@@ -123,43 +123,42 @@ Utility Functions for rxDForest.
 
 
 
- 
- ##Author(s)
- 
+
+ ## Author(s)
+
 Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
- 
- 
- ##References
- 
+
+
+ ## References
+
 [`randomForest`](https://cran.r-project.org/web/packages/randomForest/index.html)
 .
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 [rxDForest](rxDForest.md), [rxDTree](rxDTree.md), [rxBTrees](rxBTrees.md).
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   set.seed(1234)
-  
+
   # classification
   iris.sub <- c(sample(1:50, 25), sample(51:100, 25), sample(101:150, 25))
   iris.dforest <- rxDForest(Species ~ Sepal.Length + Sepal.Width + Petal.Length + Petal.Width, 
       data = iris[iris.sub, ], importance = TRUE)
-      
+
   rxVarImpPlot(iris.dforest)
   rxTreeSize(iris.dforest)
   rxVarUsed(iris.dforest)
   rxGetTree(iris.dforest)
- 
 ```
- 
- 
- 
- 
- 
- 
+
+
+
+
+
+

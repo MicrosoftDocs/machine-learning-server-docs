@@ -29,7 +29,7 @@ ms.prod: "mlserver"
 
 >Looking to deploy with Machine Learning Server? [Start here](../what-is-operationalization.md).
 
-##Before You Begin
+## Before You Begin
 
 Read and follow these points before you begin the installation process.
 
@@ -125,7 +125,7 @@ After installing the [prerequisites](#depend) above, install DeployR as follows:
 1. Review and follow these critical [post-installation steps](#postinstall). You will not be able to log into the server until you set a password.
 
 <a name="postinstall"></a>
-##Post Installation Steps
+## Post Installation Steps
 
 The following steps outline what you need to do after running the DeployR installer. 
 
@@ -237,7 +237,7 @@ To fix this issue, you must define the appropriate external server IP address an
 7.  To apply the changes, restart the DeployR server using option `2` from the main menu.
 
 <a name="gridnodes"></a>
-###Installing DeployR Grid Nodes
+### Installing DeployR Grid Nodes
 
 When you install the DeployR server, one local grid node is installed automatically for you. DeployR Enterprise offers the ability to expand your Grid framework for load distribution by installing and configuring additional grid nodes.
 
@@ -267,7 +267,7 @@ _After installing_ the [main DeployR Enterprise server](#installserver), install
 
 <br>
 <br>
-**To configure & validate nodes:**
+<strong>To configure &amp; validate nodes:</strong>
 
 After installing DeployR Enterprise server and any grid node machines, you must configure these grid nodes as follows:
 

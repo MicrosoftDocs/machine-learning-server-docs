@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "getRemoteWorkspace function (mrsdeploy) | Microsoft Docs" 
 description: " Copy all objects from the remote R session and load them into the local R session. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,48 +21,46 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #getRemoteWorkspace: Copy the workspace if the remote R session. 
- ##Description
- 
+
+
+
+
+ # getRemoteWorkspace: Copy the workspace if the remote R session. 
+ ## Description
+
 Copy all objects from the remote R session and load them into the local R session.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   getRemoteWorkspace()
- 
+
 ```
- 
- ##Details
- 
+
+ ## Details
+
 Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
 
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 [putLocalWorkspace](putLocalWorkspace.md)
 
 [putLocalObject](putLocalObject.md)
 
 [getRemoteObject](getRemoteObject.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 getRemoteWorkspace()
  ## End(Not run) 
-  
- 
 ```
- 
+

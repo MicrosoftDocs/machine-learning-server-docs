@@ -28,20 +28,20 @@ ms.custom: ""
  
  
  
- #rxHashEnv: An environment object used to store package-wide state. 
- ##Description
+ # rxHashEnv: An environment object used to store package-wide state. 
+ ## Description
  
 An environment object used to store package-wide state.
  
  
- ##Usage
+ ## Usage
 
 ```   
   rxHashEnv
  
 ```
  
- ##Format
+ ## Format
  An object of class `environment` of length 2. 
  
  

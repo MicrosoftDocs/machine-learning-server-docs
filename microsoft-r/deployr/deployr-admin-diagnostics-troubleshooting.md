@@ -53,6 +53,8 @@ Behind the scenes, the script evaluates the system and creates the `logs` subdir
 
 The results are also printed to the screen.
 
+<a name="running-the-diagnostic-check"></a>
+
 ### Running the Diagnostic Check
 
 The easiest way to run diagnostics is to launch it from the **Diagnostics** tab on the DeployR landing page.  After installing, you can log into the DeployR landing page at `https://<DEPLOYR_SERVER_IP>:<PORT>/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine. If you do not have a username or password, please contact your administrator.
@@ -61,26 +63,26 @@ However, if you cannot reach the landing page, the `admin` can log into the serv
 
 #### For DeployR for Microsoft R Server 8.0.5
 + **On Windows**: 
-    1. Launch the DeployR administrator utility script with administrator privileges:
-       ```NA
-       cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
-       adminUtilities.bat
-       ```       
-    
-    1. From the main menu, run the DeployR diagnostic tests.  If there are any issues, you must solve them before continuing. Consult the Troubleshooting section of this document for additional help or post questions to our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
+  1. Launch the DeployR administrator utility script with administrator privileges:
+     ```NA
+     cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
+     adminUtilities.bat
+     ```       
 
-   >All output from the diagnostic test are stored in `C:\Program Files\Microsoft\DeployR-<VERSION>\deployr\tmp\logs\diagnostics.zip`.
+  2. From the main menu, run the DeployR diagnostic tests.  If there are any issues, you must solve them before continuing. Consult the Troubleshooting section of this document for additional help or post questions to our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
+
+     >All output from the diagnostic test are stored in `C:\Program Files\Microsoft\DeployR-<VERSION>\deployr\tmp\logs\diagnostics.zip`.
 
 + **On Linux**:
-    1. Launch the DeployR administrator utility script as `root` or a user with `sudo` permissions:
-       ```NA
-       cd $DEPLOYR_HOME/deployr/tools/ 
-       ./adminUtilities.sh
-       ```       
-    
-    1. From the main menu, run the DeployR diagnostic tests.  If there are any issues, you must solve them before continuing. Consult the Troubleshooting section of this document for additional help or post questions to our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
+  1. Launch the DeployR administrator utility script as `root` or a user with `sudo` permissions:
+     ```NA
+     cd $DEPLOYR_HOME/deployr/tools/ 
+     ./adminUtilities.sh
+     ```       
 
-   >All output from the diagnostic test are stored into `$DEPLOYR_HOME/deployr/tmp/logs/diagnostics.zip`.
+  2. From the main menu, run the DeployR diagnostic tests.  If there are any issues, you must solve them before continuing. Consult the Troubleshooting section of this document for additional help or post questions to our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr" target="_blank">forum</a>.
+
+     >All output from the diagnostic test are stored into `$DEPLOYR_HOME/deployr/tmp/logs/diagnostics.zip`.
 
 #### For DeployR 8.0.0
 + **On Windows**: Run the following commands. All output from the diagnostic test are stored in `C:\Program Files\Microsoft\DeployR-<VERSION>\deployr\logs\diagnostics.zip`.
@@ -109,7 +111,7 @@ The following log files can be found in the resulting `diagnostics.zip` file as 
 
 | Component| Log&nbsp;&&nbsp;Configuration&nbsp;Files                | Description|
 |----------|---------------------------------------------------|------------------------------------------------------------------------|
-| Diagnostic Results |- `diagnostics.log`                 | The DeployR diagnostic log provides details, including the state of all components, plus pertinent configuration and environment information. |
+| Diagnostic Results |- `diagnostics.log`                 | The DeployR diagnostic log provides details, including the state of all components, plus pertinent configuration and environment information. |
 | DeployR            | - `deployr.groovy`<br />- `Stacktrace.log`<br />- `catalina.out`                     | `deployr.groovy` is the DeployR external configuration file. Tomcat's `catalina.out` serves as the main [DeployR log](deployr-common-administration-tasks.md#inspecting-server-logs). [Learn more](deployr-common-administration-tasks.md#inspecting-server-logs) about this file. |
 | Tomcat             |-  `catalina.out`<br />- `localhost_access_log.[DATE].txt`<br />- `server.xml`                       | The log and configuration files for Tomcat.|
 | MongoDB  <br><small>(DeployR 8.0.0 only)</small>          | - `mongo.cfg`<br />- `mongod.log`                       | The log and configuration files for the database used by DeployR. The IP address is added to the filename for your convenience. |
@@ -121,7 +123,7 @@ The following log files can be found under `$DEPLOYR_HOME/deployr/tmp/logs` dire
 
 | Component          | Log&nbsp;&&nbsp;Configuration&nbsp;Files                | Description |
 |---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
-| Diagnostic Results | - `diagnostics.log`                 | The DeployR diagnostic log provides details, including the state of all components, plus pertinent configuration and environment information. |
+| Diagnostic Results | - `diagnostics.log`                 | The DeployR diagnostic log provides details, including the state of all components, plus pertinent configuration and environment information. |
 | DeployR            | - `deployr.groovy`<br />- `catalina.out`                     | `deployr.groovy` is the DeployR external configuration file. Tomcat's `catalina.out` serves as the main [DeployR log](deployr-common-administration-tasks.md#inspecting-server-logs). [Learn more](deployr-common-administration-tasks.md#inspecting-server-logs) about this file. |
 | Tomcat             | - `catalina.out`<br />- `catalina.sh`<br />- `localhost_access_log.[DATE].txt`<br />- `server.xml`| The log and configuration files for Tomcat.|
 | MongoDB<br><small>(DeployR 8.0.0 only)</small> |-  `mongod.conf`<br />- `mongod-<IP_ADDRESS>.log`| The log and configuration files for the database used by DeployR. The IP address of the host of the MongoDB database is added to the filename for your convenience.                                                                                                                              |
@@ -160,7 +162,7 @@ This section contains pointers to help you troubleshoot some problems that can o
 ### Windows Installation Errors
 
 <br>
-####DeployR RServe Package Download Failed
+#### DeployR RServe Package Download Failed
 
 During the installation of DeployR on Windows, if you get the error `DeployR RServe package download failed`, this may be due to several potential issues, including:
 + Unavailable or poor network connectivity
@@ -186,7 +188,7 @@ If this should occur, do the following:
    1. Click **Try Again** in installer or re-run the installer.
 
 <br>
-####DeployR RServe Package Installation Failed
+#### DeployR RServe Package Installation Failed
 
 During the installation of DeployR on Windows, if you get the error `DeployR RServe package installation failed`, this may be due to several potential issues, including:
 
@@ -196,7 +198,7 @@ During the installation of DeployR on Windows, if you get the error `DeployR RSe
 Manually install DeployR RServe package as [described here](#manual-package-install).
 
 <br>
-####Could Not Stop the Service Apache-Tomcat-for-DeployR-&lt;version&gt;
+#### Could Not Stop the Service Apache-Tomcat-for-DeployR-&lt;version&gt;
 
 During the installation of DeployR on Windows, you may get the error `Could not stop the service Apache-Tomcat-for-DeployR-<version>` if Windows could not stop the service completely.
 
@@ -213,7 +215,7 @@ If this should occur, do the following:
 1. If the error persists, reboot the Windows machine on which you are installing and launch the installer again.
 
 <br>
-####Could Not Stop the Service RServe&lt;version&gt;
+#### Could Not Stop the Service RServe&lt;version&gt;
 
 During the installation of DeployR on Windows, the error `Could not stop the service RServe<version>` can appear if Windows could not stop the service completely.
 
@@ -224,21 +226,20 @@ If this should occur, do the following:
    sc delete RServe<version>
    ```
    where &lt;version&gt; is the package version number such as, RServe8.0.5.
-   
+
 1. If the installer is still open, click ‘Try Again’ in installer. If the installer was canceled, try to install again.
 
 1. If the error persists, reboot the Windows machine on which you are installing and launch the installer again.
 
 <br>
-####Other Errors During Installation
+#### Other Errors During Installation
 
 If you should encounter any other errors while running the DeployR Windows installer, we recommend that you:
 + Contact Microsoft support (DeployR Enterprise users only)
 
 + Provide the installation logs `DeployR-*.log` found in the `%temp%` directory.
- 
- 
-<br>
+
+
 ### Landing Page Cannot Be Reached
 
 If you cannot access the DeployR landing page or if the landing page looks disabled and you can't log in, we recommend that you first verify that the server is, in fact, running using [this diagnostic test](#running-the-diagnostic-check). If the diagnostic logs reveal nothing and the DeployR landing page still isn't loading properly, then it is likely that the IP address in the Server Web Context is incorrectly defined. For more on the Server Web Context, refer to the [Administration Console Help](deployr-admin-managing-server-policies.md#basic-settings).
@@ -251,42 +252,41 @@ This problem can arise for various reasons, including:
 
 It can be solved by updating the IP address in the DeployR Server Web Context.
 
-<br />
 <a id="set-context"></a>
+
 #### DeployR for Microsoft R Server 8.0.5: Update DeployR Web Context
 
 To fix this issue, update the IP address in the DeployR Server Web Context as follows:
 
 1. Launch the DeployR administrator utility script with administrator privileges:
-    + On Windows, run:
-    ```NA
-    cd $DEPLOYR_HOME\deployr\tools\ 
-    adminUtilities.bat 
-    ```        
-    + On Linux, run:
-    ```NA
-    cd $DEPLOYR_HOME/deployr/tools/
-    ./adminUtilities.sh
-    ```         
+   + On Windows, run:
+     ```NA
+     cd $DEPLOYR_HOME\deployr\tools\ 
+     adminUtilities.bat 
+     ```        
+   + On Linux, run:
+     ```NA
+     cd $DEPLOYR_HOME/deployr/tools/
+     ./adminUtilities.sh
+     ```         
 
-1. From the main menu, choose option **Run Diagnostics**.   Make sure that the database is running. The database must be running before you can proceed to the next step.
+2. From the main menu, choose option **Run Diagnostics**.   Make sure that the database is running. The database must be running before you can proceed to the next step.
 
-1. Return to the main menu, choose option **Web Context and Security**. 
+3. Return to the main menu, choose option **Web Context and Security**. 
 
-1. From the sub-menu, choose option **Specify New IP or Fully Qualified Domain Name (FQDN)**.
+4. From the sub-menu, choose option **Specify New IP or Fully Qualified Domain Name (FQDN)**.
 
-1. When prompted to specify a new IP or FQDN, enter the new IP or FQDN.
+5. When prompted to specify a new IP or FQDN, enter the new IP or FQDN.
 
-1. When prompted to confirm the new value, enter `Y`. This change will also disable Automatic IP detection to prevent the new value you just assigned from being overwritten. 
+6. When prompted to confirm the new value, enter `Y`. This change will also disable Automatic IP detection to prevent the new value you just assigned from being overwritten. 
 
-1. Return to the main menu and choose option **Start/Stop Server**.  You must restart DeployR so that the changes can take effect. 
+7. Return to the main menu and choose option **Start/Stop Server**.  You must restart DeployR so that the changes can take effect. 
 
-1. When prompted whether you want to stop (S) or restart (R) the DeployR server, enter `R`. It may take some time for the Tomcat process to terminate and restart.
+8. When prompted whether you want to stop (S) or restart (R) the DeployR server, enter `R`. It may take some time for the Tomcat process to terminate and restart.
 
-1. Exit the utility.  
+9. Exit the utility.  
 
-<br />   
-<a id="set-context-800"></a>
+<br /><br/><a id="set-context-800"></a>
 #### DeployR 8.0.0: Update DeployR Web Context
 
 Run the `setWebContext` script to update the IP address in the DeployR Server Web Context.
@@ -301,7 +301,7 @@ Usage tips for the `setWebContext` script arguments:
 |`aws`|To detect the external IP used for your AWS EC2 instance. From there you can choose to use that IP as the DeployR Server Web Context.|
 |`https true` or<br /> `html false`|To enable or disable HTTPS in the server policies, including the Server Web Context. This change requires other changes to complete SSL/HTTPS process as described in [these instructions](../operationalize/configure-https.md).|
 
- 
+
 **On Windows:**
 
 1. Make sure that the MongoDB database is running. The database must be running before you can proceed to the next step before you update the Web Context.
@@ -436,13 +436,13 @@ If the **DeployR Default Node** appears **Inactive** in the DeployR landing page
 4.  If you see the message "R\_HOME must be set in the environment or Registry", then you must define that environment variable as follows:
 
     1.  Go to **Start &gt; Control Panel**.
-    
+
     2.  Search for `sys` and select **Edit the system environment variables** from the results.
-    
+
     3.  Click the **Environment Variables...** button to open the **Environment Variables** dialog box.
-    
+
     4.  Click **New...** and enter `R_HOME` as the **Variable name** and the path to R (such as `C:\Program Files\Microsoft SQL Server\130\R_SERVER`) as the **Variable value**.
-    
+
     5.  Click **OK** to create the variable.
 
 5.  Reboot your machine.
@@ -463,30 +463,30 @@ If you run into conflicts with other applications, consider changing the port nu
 
 <a name="changeport"></a>
 
-####Changing Ports for DeployR Enterprise for Microsoft R Server 8.0.5
+#### Changing Ports for DeployR Enterprise for Microsoft R Server 8.0.5
 
 1. Launch the DeployR administrator utility script with administrator privileges:
-       
+
    + On Windows:
      ```NA
      cd C:\Program Files\Microsoft\DeployR-8.0.5\deployr\tools\ 
      adminUtilities.bat
      ```       
-    
+
    + On Linux:
      ```NA
      cd $DEPLOYR_HOME/deployr/tools/ 
      sudo ./adminUtilities.sh
      ```       
-    
+
 1. From the main menu, choose the option to **Change DeployR Ports**. 
-    
+
 1. Choose the option cooresponding to the port you want to change and change the port number.
 
 1. Return to the main menu and choose the option to restart the server. 
 
 
-####Changing Ports for DeployR 8.0.0
+#### Changing Ports for DeployR 8.0.0
 
 **For Windows:**
 
@@ -519,7 +519,7 @@ If you run into conflicts with other applications, consider changing the port nu
    /home/deployr-user/deployr/<DEPLOYR_VERSION>/tomcat/tomcat7.sh stop
    /home/deployr-user/deployr/<DEPLOYR_VERSION>/tomcat/tomcat7.sh start
    ```
-   
+
 1. Verify that the port changes are working as expected. At the prompt, type:
    ```NA
    netstat -p --listening --numeric-ports --numeric-hosts | grep -i java

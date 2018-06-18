@@ -72,21 +72,21 @@ Install the Cloudera Manager parcels as follows:
 
 2. Download and unpack the R Server distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN or Dev Essentials). The distribution file includes the required Cloudera Parcel files.
 
-  If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
+   If you have an img file, you must first mount the file. The following commands create a mount point and mount the file to that mount point:
 
 		mkdir /mnt/mrsimage
 		mount –o loop MRS90HADOOP.img /mnt/mrsimage
 
-  If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
+   If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):
 
 		tar zxvf MRS90HADOOP.tar.gz
 
 3. Copy the parcel files to your local parcel-repo, typically /opt/cloudera/parcel-repo:
 
-  From the mounted img file:
+   From the mounted img file:
 		cp /mnt/mrsimage/MRS_Parcel/MRS-9.0.1-* /opt/cloudera/parcel-repo
 
-  From the unpacked tar file:
+   From the unpacked tar file:
 		cp /tmp/MRS90HADOOP/MRS_Parcel/MRS-9.0.1-* /opt/cloudera/parcel-repo
  
 4. You should have the following files in your parcel repo:
@@ -96,7 +96,7 @@ Install the Cloudera Manager parcels as follows:
 		MRS-9.0.1-el6.parcel
 		MRS-9.0.1-el6.parcel.sha
 
-  Be sure all the files are owned by root and have 644 permissions (read, write, permission for root, and read permission for groups and others). Parcels should not have a file extension. If any parcels have a .sha file extension, please rename the file to remove the extension.
+   Be sure all the files are owned by root and have 644 permissions (read, write, permission for root, and read permission for groups and others). Parcels should not have a file extension. If any parcels have a .sha file extension, please rename the file to remove the extension.
 
 5. In your browser, open Cloudera Manager.
 

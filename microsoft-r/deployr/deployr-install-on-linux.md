@@ -28,7 +28,7 @@ ms.prod: "mlserver"
 
 >Looking to deploy with Machine Learning Server? [Start here](../what-is-operationalization.md).
 
-##Before You Begin
+## Before You Begin
 
 Read and follow these points before you begin the installation process.
 
@@ -62,13 +62,15 @@ _Table: System Requirements_
 
 Before you can install DeployR, you must manually install and configure the following dependencies:
 
-| Dependency                                                                                      | DeployR Server                                                                      | DeployR Grid Node                                                                   |
-|-------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
-| Java™ Runtime Environment 8                                                                     | Yes                                                                                 | No                                                                                  |
-| [Microsoft R Server 2016](../install/r-server-install-linux-server.md) and its dependencies | Yes                                                                                 | Yes                                                                                 |
-| DeployR Rserve 8.0.5                                                                            | Yes                                                                                 | Yes                                                                                 |
-| make, gcc, gcc-c++, gfortran, cairo-devel, libicu, libicu-devel                                          | Yes                                                                                 | Yes                                                                                 |
-| nfs-utils and nfs-utils-lib <br />Note: On Ubuntu, install nfs-common to get nfs-utils.  | Yes, for <br />[external directories](deployr-admin-manage-big-data.md)  | Yes, for <br />[external directories](deployr-admin-manage-big-data.md)  |
+
+|                                         Dependency                                          |                             DeployR Server                              |                            DeployR Grid Node                            |
+|---------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|-------------------------------------------------------------------------|
+|                                 Java™ Runtime Environment 8                                 |                                   Yes                                   |                                   No                                    |
+| [Microsoft R Server 2016](../install/r-server-install-linux-server.md) and its dependencies |                                   Yes                                   |                                   Yes                                   |
+|                                    DeployR Rserve 8.0.5                                     |                                   Yes                                   |                                   Yes                                   |
+|               make, gcc, gcc-c++, gfortran, cairo-devel, libicu, libicu-devel               |                                   Yes                                   |                                   Yes                                   |
+|   nfs-utils and nfs-utils-lib <br />Note: On Ubuntu, install nfs-common to get nfs-utils.   | Yes, for <br />[external directories](deployr-admin-manage-big-data.md) | Yes, for <br />[external directories](deployr-admin-manage-big-data.md) |
+
 .
 
 **To install the required dependencies:**
@@ -91,12 +93,12 @@ Before you can install DeployR, you must manually install and configure the foll
       ```NA
       sudo yum clean all
       ```
-      
+
     + For Ubuntu:
       ```NA
       sudo apt-get update
       ```
-      
+
     + For openSUSE / SLES:
       ```NA
       sudo zypper clean --all
@@ -106,35 +108,35 @@ Before you can install DeployR, you must manually install and configure the foll
 
     >Install packages as `root` or a user with `sudo` permissions.
 
-	+ For Redhat / CentOS, check if the required packages are already installed and install any missing packages as follows:
+    + For Redhat / CentOS, check if the required packages are already installed and install any missing packages as follows:
       ```NA
       #VERIFY ALL PACKAGE DEPENDENCIES ARE INSTALLED
       yum list make gcc gcc-c++ gfortran cairo-devel libicu-devel libstdc++
-      
+
       #INSTALL ALL MISSING PACKAGES
-  
+
       #ONE LINE PER MISSING PACKAGE
       yum install <missing_package_name>
       ```
-    	
-	+ For Ubuntu, check if the required packages are already installed and install any missing packages as follows:
+
+    + For Ubuntu, check if the required packages are already installed and install any missing packages as follows:
       ```NA
       #VERIFY ALL PACKAGE DEPENDENCIES ARE INSTALLED
       dpkg -l make gcc gcc-c++ gfortran cairo-devel libicu-devel libstdc++ licui18n
-      
+
       #INSTALL ALL MISSING PACKAGES
-  
+
       #ONE LINE PER MISSING PACKAGE
       sudo apt-get install <missing-package-name>
       ```
 
-	+ For SLES, check if the required packages are already installed and install any missing packages as follows:
+    + For SLES, check if the required packages are already installed and install any missing packages as follows:
       ```NA
       #VERIFY ALL PACKAGE DEPENDENCIES ARE INSTALLED
       sudo zypper search -i <package-name>
-      
+
       #INSTALL ALL MISSING PACKAGES
-  
+
       #ONE LINE PER MISSING PACKAGE
       sudo zypper install <missing-package-name>
       ```
@@ -147,7 +149,7 @@ Before you can install DeployR, you must manually install and configure the foll
         R CMD INSTALL deployrRserve_8.0.5.tar.gz
 
 
-      
+
 <a name="installserver"></a>
 ## Install DeployR Server
 
@@ -183,7 +185,7 @@ The following steps are for installing DeployR Enterprise after installing [thes
 1.  Review and follow these critical [post-installation steps](#postinstall). You will not be able to log in to the server until you set a password.  
 
 <a name="postinstall"></a>
-##Post Installation Steps
+## Post Installation Steps
 
 The following steps outline what you need to do after running the DeployR installer. 
 
@@ -194,13 +196,13 @@ The following steps outline what you need to do after running the DeployR instal
        cd /home/deployr-user/deployr/8.0.5/deployr/tools/ 
        ./adminUtilities.sh
        ```
-       
+
     1. From the main menu, choose the option to set a password for the local DeployR `admin` account.
-    
+
     1. Enter a password for this account. Passwords must be **8-16 characters** long and contain at least one or more uppercase character(s), one or more lowercase character(s), one or more number(s), **and** one or more special character(s).
-    
+
     1. Confirm the password.
-    
+
 1. **Log in to the DeployR landing page** as `admin` to test your newly defined password at `http://<DEPLOYR_SERVER_IP>:8050/deployr/landing`.
 
    >At this point, you will only be able to login locally using `localhost`. You are able to log in remotely only once you've [configure public access](#configuring-public-access) in a later step in this section.
@@ -241,7 +243,7 @@ If you are using the IPTABLES firewall or equivalent service for your server, us
 | Machine                   | Ports                                 | Open Ports                                                                          |
 |---------------------------|---------------------------------------|-------------------------------------------------------------------------------------|
 | DeployR server machine    | Tomcat ports: <br />- `8050` (Tomcat default port)<br />- `8051` (Tomcat HTTPS port)           | To the outside                                                                      |
-| DeployR server machine    | - `8056` (DeployR event console port) | To the public IP of DeployR server AND to the public IP of *each* grid node machine |
+| DeployR server machine    | - `8056` (DeployR event console port) | To the public IP of DeployR server AND to the public IP of *each* grid node machine |
 | Remote grid node machines | DeployR Rserve ports:<br />- `8054` (RServe connection port)<br />- `8055` (RServe cancel port)          | To the public IP of the DeployR server                                              |
 
 
@@ -254,9 +256,9 @@ If any of the following cases exist, update your firewall manually:
 -   If defining NFS ports for **external directory support**, see the Configuration section of the [Managing External Directories for Big Data](deployr-admin-manage-big-data.md#setting-up-nfs-setup) guide.
 
 > If provisioning DeployR on a **cloud service**, configure endpoints for these ports on your [Azure or AWS EC2 instance](deployr-admin-install-in-cloud.md), or enable port-forwarding for VirtualBox.
->[You can change any DeployR ports](deployr-admin-diagnostics-troubleshooting.md#changeport).                                                                                     
-<a name="configuring-public-access"></a>
-### Configure Public Access
+> [You can change any DeployR ports](deployr-admin-diagnostics-troubleshooting.md#changeport).                                                                                     
+> <a name="configuring-public-access"></a>
+> ### Configure Public Access
 
 When the wrong IP is defined, you will not be able to access to the DeployR landing page or other DeployR components after installation or reboot. In some cases, the wrong IP address may be automatically assigned during installation or when the machine is rebooted, and that address may not be the only IP address for this machine or may not be publicly accessible. If this case, you must update the server Web context address.
 
@@ -323,7 +325,7 @@ _After installing the [main server for DeployR Enterprise](#installserver)_, ins
 
 <br>
 <br>
-**To configure & validate nodes:**
+<strong>To configure &amp; validate nodes:</strong>
 
 After installing DeployR Enterprise server and any grid node machines, you must configure these grid nodes as follows:
 
@@ -340,7 +342,7 @@ After installing DeployR Enterprise server and any grid node machines, you must 
     1.  Click **New Grid Node**.
 
     2.  Configure the **Name**, **Host**, **Operating Type** and **External Directory** &nbsp; [using these instructions](deployr-admin-managing-the-grid.md#creating-new-nodes). 
-    
+
     3.  When you try to add that new grid node configuration, DeployR attempts to validate your settings. [Learn more...](deployr-admin-managing-the-grid.md#node-validation-and-errors)
 
     4.  Run a diagnostic test of each grid node individually as follows:
@@ -360,63 +362,63 @@ During the installation of DeployR, a local H2 database is automatically install
 
 If you want to use a local or remote PostgreSQL database for DeployR instead of the default local H2 database, you need to:
 
-1.  Install and configure PostgreSQL as described for that product.
+1. Install and configure PostgreSQL as described for that product.
 
-2.  Create a database with the name `deployr`. Use the owner of this database as the username in the `dataSource` block in a later step.
+2. Create a database with the name `deployr`. Use the owner of this database as the username in the `dataSource` block in a later step.
 
-3.  Assign the proper permissions to the database user to read and write into the database.
+3. Assign the proper permissions to the database user to read and write into the database.
 
-4.  [Download the JDBC42 PostgreSQL Driver for JDK 1.8](https://jdbc.postgresql.org/download.html) for the version of the database you installed and copy them under **both** of the following folders:
+4. [Download the JDBC42 PostgreSQL Driver for JDK 1.8](https://jdbc.postgresql.org/download.html) for the version of the database you installed and copy them under **both** of the following folders:
 
-    -   `$DEPLOYR_HOME/tomcat/tomcat7/lib`
+   -   `$DEPLOYR_HOME/tomcat/tomcat7/lib`
 
-    -   `$DEPLOYR_HOME/deployr/tools/lib`
+   -   `$DEPLOYR_HOME/deployr/tools/lib`
 
-5.  [Stop the DeployR server](deployr-common-administration-tasks.md#startstop).
+5. [Stop the DeployR server](deployr-common-administration-tasks.md#startstop).
 
-6.  Update the database properties to point to the new database as follows:
+6. Update the database properties to point to the new database as follows:
 
-    1.  Open the `$DEPLOYR_HOME\deployr\deployr.groovy` file, which is the DeployR server external configuration file.
+   1.  Open the `$DEPLOYR_HOME\deployr\deployr.groovy` file, which is the DeployR server external configuration file.
 
-    2.  Locate the `dataSource` property block.
+   2.  Locate the `dataSource` property block.
 
-    3.  Replace the contents of that block with these properties and specify the appropriate port number, username, and password:
+   3.  Replace the contents of that block with these properties and specify the appropriate port number, username, and password:
 
-            dataSource {
-              dbCreate = "update"
-              driverClassName = "org.postgresql.Driver"
-              url = "jdbc:postgresql://localhost:<PUT_PORT_HERE>/deployr"
-              pooled = true
-              username = "<PUT_DB_USERNAME_HERE>"
-              password = "<PUT_DB_PASSWORD_HERE>"
-              }
+           dataSource {
+             dbCreate = "update"
+             driverClassName = "org.postgresql.Driver"
+             url = "jdbc:postgresql://localhost:<PUT_PORT_HERE>/deployr"
+             pooled = true
+             username = "<PUT_DB_USERNAME_HERE>"
+             password = "<PUT_DB_PASSWORD_HERE>"
+             }
 
-	>Put the owner of the `deployr` database as the username. For more information, see <http://www.postgresql.org/docs/9.1/static/sql-alterdatabase.html>.
-        >
-        >If you are using a remote database, use the IP address or FQDN of the remote machine rather than `localhost`.
+   > Put the owner of the `deployr` database as the username. For more information, see <http://www.postgresql.org/docs/9.1/static/sql-alterdatabase.html>.
+   > 
+   > If you are using a remote database, use the IP address or FQDN of the remote machine rather than `localhost`.
 
-7.  If you are connecting to a remote PostgreSQL database, be sure to [open the database port to the public IP of the DeployR server](#firewall).
+7. If you are connecting to a remote PostgreSQL database, be sure to [open the database port to the public IP of the DeployR server](#firewall).
 
-8.  Test the connection to the database and restart the server as follows:
+8. Test the connection to the database and restart the server as follows:
 
-    1.  Launch the DeployR administrator utility script as `root` or a user with `sudo` permissions:
+   1.  Launch the DeployR administrator utility script as `root` or a user with `sudo` permissions:
 
-            cd $DEPLOYR_HOME/deployr/tools/ 
-            sudo ./adminUtilities.sh
+           cd $DEPLOYR_HOME/deployr/tools/ 
+           sudo ./adminUtilities.sh
 
-    2.  From the main menu, choose the option **Test Database Connection**.
+   2.  From the main menu, choose the option **Test Database Connection**.
 
-        -   If there are any issues, you must solve them before continuing.
+       -   If there are any issues, you must solve them before continuing.
 
-        -   Once the connection test passes, return the main menu.
+       -   Once the connection test passes, return the main menu.
 
-    3.  From the main menu, choose the option **Start/Stop Server** to restart DeployR-related services.
+   3.  From the main menu, choose the option **Start/Stop Server** to restart DeployR-related services.
 
-    4.  Once the DeployR server has been successfully restarted, return the main menu.
+   4.  Once the DeployR server has been successfully restarted, return the main menu.
 
-    5.  From the main menu, choose option to run the [DeployR diagnostic tests](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). If there are any issues, you must solve them before continuing. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](https://go.microsoft.com/fwlink/?LinkID=708535).
+   5.  From the main menu, choose option to run the [DeployR diagnostic tests](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing). If there are any issues, you must solve them before continuing. Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for additional help or post questions to our [DeployR Forum](https://go.microsoft.com/fwlink/?LinkID=708535).
 
-    6.  Exit the utility.
+   6.  Exit the utility.
 
 ### Configure SELinux
 
@@ -474,7 +476,7 @@ The following instructions walk you through a migration of DeployR 8.0.0 or earl
         cd $DEPLOYR_HOME/deployr/tools/mongoMigration    
         ./exportMongoDB.sh -m "<DEPLOYR_HOME_OLD_VERSION>/mongo/mongo/bin/mongoexport" -p <MongoDB_Database_Password> -o db_backup.zip
     Where `<MongoDB_Database_Password>` is the password defined in the `grails/mongo/password` parameter in the `deployr.groovy` file. 
-    
+
 7.  Download `db_backup.zip`.
 
 8.  Restore that data into the DeployR for Microsoft R Server 2016 Administration Console.

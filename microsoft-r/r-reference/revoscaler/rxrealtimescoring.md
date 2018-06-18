@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxRealTimeScoring function (revoAnalytics) | Microsoft Docs" 
 description: " Real-time scoring brings the rxPredict functionality available in **RevoScaleR/revoscalepy** and **MicrosoftML** packages to  Microsoft ML Server and SQL Server platforms with near real-time performance.  This functionality is available on SQL Server 2017+. On SQL Server 2016, you can take advantage of this functionality by upgrading your in-database R Services to the latest Microsoft ML Server using the information in the following [link](https://docs.microsoft.com/en-us/sql/advanced-analytics/r-services/use-sqlbindr-exe-to-upgrade-an-instance-of-r-services) .  **NOTE:** This document contains information regarding **Real-time scoring in SQL Server ML Services**. For information regarding **Real-time scoring in ML Server**, please refer to the [publishService](https://msdn.microsoft.com/en-us/microsoft-r/operationalize/data-scientist-manage-services#publishservice)  documentation. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,14 +21,14 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- #rxRealTimeScoring: Real-time scoring in SQL Server ML Services 
- ##Description
- 
+
+
+
+ # rxRealTimeScoring: Real-time scoring in SQL Server ML Services 
+ ## Description
+
 Real-time scoring brings the `rxPredict` functionality available in **RevoScaleR/revoscalepy** and **MicrosoftML** packages to  Microsoft ML Server and SQL Server platforms with near real-time performance.
 
 This functionality is available on SQL Server 2017+. On SQL Server 2016, you can take advantage of this functionality by upgrading your in-database R Services to the latest Microsoft ML Server using the information in the following [`link`](https://docs.microsoft.com/en-us/sql/advanced-analytics/r-services/use-sqlbindr-exe-to-upgrade-an-instance-of-r-services)
@@ -36,58 +36,58 @@ This functionality is available on SQL Server 2017+. On SQL Server 2016, you can
 
 **NOTE:** This document contains information regarding **Real-time scoring in SQL Server ML Services**. For information regarding **Real-time scoring in ML Server**, please refer to the [`publishService`](https://msdn.microsoft.com/en-us/microsoft-r/operationalize/data-scientist-manage-services#publishservice)
  documentation.
- 
- 
- ##Details
- 
+
+
+ ## Details
+
 With Microsoft R Server 9.1 version, we are introducing this feature which allows models trained using **RevoScaleR(revoscalepy)** and **MicrosoftML** packages to be used for high performance scoring in SQL Server. These models can be published and scored without using R interpreter, which reduces the overhead of multiple process interactions. Hence it allows for faster prediction performance.
 
 The following is the list of models that are currently supported in real-time scoring:
 
 
 * 
- **RevoScaleR**
+  **RevoScaleR**
 
 
-   * 
- rxLogit
+  * 
+    rxLogit
 
-   * 
- rxLinMod
+  * 
+    rxLinMod
 
-   * 
- rxBTrees
+  * 
+    rxBTrees
 
-   * 
- rxDTree
+  * 
+    rxDTree
 
-   * 
- rxDForest
+  * 
+    rxDForest
 
 
 
 
 * 
-**MicrosoftML**
+  **MicrosoftML**
 
 
-   * 
- rxFastTrees
+  * 
+    rxFastTrees
 
-   * 
- rxFastForest
+  * 
+    rxFastForest
 
-   * 
- rxLogisticRegression
+  * 
+    rxLogisticRegression
 
-   * 
- rxOneClassSvm
+  * 
+    rxOneClassSvm
 
-   * 
- rxNeuralNet
+  * 
+    rxNeuralNet
 
-   * 
- rxFastLinear
+  * 
+    rxFastLinear
 
 
 
@@ -230,11 +230,11 @@ where
 Real-time scoring does not use an R/python interpreter for scoring hence any functionality requiring R interpreter is not supported.  Here are a few unsupported scenarios:
 
 
-   * 
- Models of `rxGlm` and `rxNaiveBayes` algorithms are not currently supported
+* 
+  Models of `rxGlm` and `rxNaiveBayes` algorithms are not currently supported
 
-   * 
- **RevoScaleR** Models with R transform function or transform based formula (e.g `"A ~ log(B)"`) are not supported in real-time scoring. Such transforms to input data may need to be handled before calling real-time scoring.
+* 
+  **RevoScaleR** Models with R transform function or transform based formula (e.g `"A ~ log(B)"`) are not supported in real-time scoring. Such transforms to input data may need to be handled before calling real-time scoring.
 
 
 
@@ -261,25 +261,25 @@ Arguments other than `modelObject`/`data` available in `rxPredict` are not suppo
 `System.Data.SqlTypes.SqlNullValueException:`**Data in Null**
 
 
- 
- 
- ##Author(s)
+
+
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 [rxSerializeModel](rxSerializeModel.md),
 [rxWriteObject](rxWriteObject.md),
 publishService,
 [rxPredict](rxPredict.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 form <- Sepal.Length ~ Sepal.Width + Species
 model <- rxLinMod(form, data = iris)
 library(RevoScaleR)
@@ -328,11 +328,9 @@ cat(query) #  TSQL to be executed in SQL Server
 rtsResult <- RevoScaleR:::rxExecuteSQL(connectionString = connectionString, query = query)
 
  ## End(Not run) 
-  
- 
 ```
- 
- 
- 
- 
- 
+
+
+
+
+

@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxTeradataSql function (revoAnalytics) | Microsoft Docs" 
 description: " Execute an arbitrary SQL statement that does not return data in a Teradata data base. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,63 +21,63 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #rxTeradataSql:  rxTeradataSql  
- ##Description
- 
+
+
+
+
+ # rxTeradataSql:  rxTeradataSql  
+ ## Description
+
 Execute an arbitrary SQL statement that does not return data in a Teradata data base.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   rxTeradataSql(sqlStatement, connectionString = NULL, ...)
   rxTeradataTableExists(table, connectionString = NULL, ...)
   rxTeradataDropTable(table, connectionString = NULL, ...)
- 
-```
- 
- 
- ##Arguments
 
-   
-    
+```
+
+
+ ## Arguments
+
+
+
  ### `sqlStatement`
   character string specifying valid SQL statement that does not return data  
-  
-    
+
+
  ### `table`
   One of the following:  
 *   a character string specifying a table name, in the form `"tablename"` or`"database.tablename"`. (In Teradata, each user is a database; the user database can be specified as `"username.tablename"`.) 
 *   an [RxTeradata](RxTeradata.md) data source that has the `table` specified 
 *   an [RxOdbcData](RxOdbcData.md) data source that has the `table` specified. 
-  
-  
-  
-    
+
+
+
+
  ### `connectionString`
  `NULL` or character string specifying the connection string.  If `NULL`, the connection string from the currently  active compute context will be used if available.  
-  
-  
-    
+
+
+
  ### ` ...`
   Additional arguments to be passed through.   
-  
-  
- 
- 
- ##Details
- 
+
+
+
+
+ ## Details
+
 An SQL query is passed to the Teradata ODBC driver.
- 
- 
- ##Value
- 
+
+
+ ## Value
+
 `rxTeradataSql` is executed for the side effects and returns `NULL`
 invisibly.
 `rxTeradataTableExists` returns `TRUE` is the table exists, `FALSE` otherwise. The database searched for the table is determined as follows:
@@ -98,26 +98,26 @@ invisibly.
 
 `rxTeradataDropTable` returns `TRUE` is the table is successfully dropped, 
 `FALSE` otherwise (for example, if the table did not exist).
- 
- 
- ##Author(s)
- 
+
+
+ ## Author(s)
+
 Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
- 
- 
- 
- 
- ##See Also
- 
+
+
+
+
+ ## See Also
+
 [RxTeradata](RxTeradata.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 # Copy a table
 sqlStatement <- "CREATE TABLE YourDataBase.rxClaimsCopy AS YourDataBase.claims WITH DATA"
 rxTeradataSql(sqlStatement = sqlStatement)
@@ -126,30 +126,28 @@ rxTeradataSql(sqlStatement = sqlStatement)
 # get data back as a data frame:
 rxTeradataQuery <- function(query, connectionString=NULL, maxRowsByCols=NULL)
 {
-	if (is.null(connectionString))
-	{
-		currentComputeContext <- rxGetComputeContext()
-		if (.hasSlot(currentComputeContext, "connectionString"))
-		{
-			connectionString <- currentComputeContext@connectionString
-		}
-		else
-		{
-			stop("A 'connectionString' must be specified.")
-		}
-	}	
-	internalDS <- RxOdbcData(sqlQuery=query, connectionString=connectionString)
-	rxImport(internalDS, maxRowsByCols=maxRowsByCols)	
+    if (is.null(connectionString))
+    {
+        currentComputeContext <- rxGetComputeContext()
+        if (.hasSlot(currentComputeContext, "connectionString"))
+        {
+            connectionString <- currentComputeContext@connectionString
+        }
+        else
+        {
+            stop("A 'connectionString' must be specified.")
+        }
+    }   
+    internalDS <- RxOdbcData(sqlQuery=query, connectionString=connectionString)
+    rxImport(internalDS, maxRowsByCols=maxRowsByCols)   
 }
 ## Use the above to show the tables in database 'dbtest':
 tableQuery <- paste("SELECT TableName FROM dbc.tables ",
                     "WHERE tablekind = 'T' and databasename='dbtest'", sep="")
 rxTeradataQuery(query=tableQuery)
  ## End(Not run) 
-  
- 
 ```
- 
- 
- 
- 
+
+
+
+

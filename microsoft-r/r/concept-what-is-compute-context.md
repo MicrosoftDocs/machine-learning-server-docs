@@ -61,17 +61,18 @@ Context name | Alias | Usage |
 
 Given a compute context, the following table shows which data sources are available (x indicates available):
 
-| Data Source | [`RxLocalSeq`](../r-reference/revoscaler/rxlocalseq.md) |  [`RxSpark`](../r-reference/revoscaler/rxspark.md) | [`RxInSqlServer`](../r-reference/revoscaler/rxinsqlserver.md) |
-|-------------|------------|--------------|---------------|
-| [`RxTextData`](../r-reference/revoscaler/rxtextdata.md) | X |  X |  |
-| [`RxXdfData`](../r-reference/revoscaler/rxxdfdata.md) | X | X  |   |
-| [`RxHiveData`](../r-reference/revoscaler/rxsparkdata.md) |  X | X  |   |
-| [`RxParquetData`](../r-reference/revoscaler/rxsparkdata.md) |  X | X  |   |
-| [`RxOrcData`](../r-reference/revoscaler/rxsparkdata.md) |  X | X  |   |
-| [`RxOdbcData`](../r-reference/revoscaler/rxodbcdata.md) | X |   |  |
-| [`RxSqlServerData`](../r-reference/revoscaler/rxsqlserverdata.md) | X  |   | X  | 
-| [`RxSasData`](../r-reference/revoscaler/rxsasdata.md) | X |   |   |   |
-| [`RxSpssData`](../r-reference/revoscaler/rxspssdata.md) | X |   |   |   |
+
+|                            Data Source                            | [`RxLocalSeq`](../r-reference/revoscaler/rxlocalseq.md) | [`RxSpark`](../r-reference/revoscaler/rxspark.md) | [`RxInSqlServer`](../r-reference/revoscaler/rxinsqlserver.md) |
+|-------------------------------------------------------------------|---------------------------------------------------------|---------------------------------------------------|---------------------------------------------------------------|
+|      [`RxTextData`](../r-reference/revoscaler/rxtextdata.md)      |                            X                            |                         X                         |                                                               |
+|       [`RxXdfData`](../r-reference/revoscaler/rxxdfdata.md)       |                            X                            |                         X                         |                                                               |
+|     [`RxHiveData`](../r-reference/revoscaler/rxsparkdata.md)      |                            X                            |                         X                         |                                                               |
+|    [`RxParquetData`](../r-reference/revoscaler/rxsparkdata.md)    |                            X                            |                         X                         |                                                               |
+|      [`RxOrcData`](../r-reference/revoscaler/rxsparkdata.md)      |                            X                            |                         X                         |                                                               |
+|      [`RxOdbcData`](../r-reference/revoscaler/rxodbcdata.md)      |                            X                            |                                                   |                                                               |
+| [`RxSqlServerData`](../r-reference/revoscaler/rxsqlserverdata.md) |                            X                            |                                                   |                               X                               |
+|       [`RxSasData`](../r-reference/revoscaler/rxsasdata.md)       |                            X                            |                                                   |                                                               |
+|      [`RxSpssData`](../r-reference/revoscaler/rxspssdata.md)      |                            X                            |                                                   |                                                               |
 
 > [!Note]
 > Within a data source type, you might find differences depending on the file system type and compute context. For example, the .xdf files created on the Hadoop Distributed File System (HDFS) are somewhat different from .xdf files created in a non-distributed file system such as Windows or Linux. For more information, see [How to use RevoScaleR on Spark](how-to-revoscaler-spark.md). 

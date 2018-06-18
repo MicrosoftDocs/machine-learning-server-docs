@@ -119,7 +119,7 @@ As a verification step, run the Revo64 program.
 3. Run an R function, such as **rxSummary** on a dataset. Many sample datasets, such as the iris dataset, are ready to use because they are installed with the software:
         > rxSummary(~., iris)
 
-  Output from the iris dataset should look similar to the following:
+   Output from the iris dataset should look similar to the following:
 
         Rows Read: 150, Total Rows Processed: 150, Total Chunk Time: 0.001 seconds
         Computation time: 0.005 seconds.

@@ -64,7 +64,7 @@ _Table: Starting DeployR 8.0.0_
 |Mac OS X|To start the services individually on the main server (not nodes):<br><code>/Users/deployr-user/deployr/8.0.0/tomcat/tomcat7.sh start<br>/Users/deployr-user/deployr/8.0.0/rserve/rserve.sh start<br>/Users/deployr-user/deployr/8.0.0/mongo/mongod.sh start</code><br><br>To start all services on the main server (not nodes) at once:<br><code>/Users/deployr-user/deployr/8.0.0/startAll.sh</code>|
 
 <br />
-_Table: Stopping DeployR 8.0.0_
+<em>Table: Stopping DeployR 8.0.0</em>
 
 |Operating System   |Commands|
 |----|-----|
