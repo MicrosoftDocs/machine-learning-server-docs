@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxCovCoef function (revoAnalytics) | Microsoft Docs" 
 description: " Obtain covariance and correlation matrices for the coefficient estimates within rxLinMod,  rxLogit, and rxGlm objects and explanatory variables within rxLinMod and rxLogit objects. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,63 +21,63 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- #rxCovCoef: Covariance and Correlation Matrices for Linear Model Coefficients and Explanatory Variables 
- ##Description
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ # rxCovCoef: Covariance and Correlation Matrices for Linear Model Coefficients and Explanatory Variables 
+ ## Description
+
 Obtain covariance and correlation matrices for the coefficient estimates within `rxLinMod`, 
 `rxLogit`, and `rxGlm` objects and
 explanatory variables within `rxLinMod` and `rxLogit` objects.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   rxCovCoef(x)
   rxCorCoef(x)
   rxCovData(x)
   rxCorData(x)
- 
-```
- 
- ##Arguments
 
-   
-    
+```
+
+ ## Arguments
+
+
+
  ### `x`
  object of class `rxLinMod`, `rxLogit`, or `rxGlm` that  satisfies conditions in the Details section. 
-  
- 
- 
- ##Details
- 
+
+
+
+ ## Details
+
 For `rxCovCoef` and `rxCorCoef`, the rxLinMod, rxLogit, or rxGlm object must
 have been fit with `covCoef = TRUE` and `cube = FALSE`. The degrees
 of freedom must be greater than 0.
- 
+
 For `rxCovData` and `rxCorData`, the rxLinMod or rxLogit object must
 have been fit with an intercept term as well as with `covData = TRUE` and
 `cube = FALSE`.
- 
- 
- ##Value
- 
+
+
+ ## Value
+
 If `p` is the number of columns in the model matrix, then
 
 For `rxCovCoef` a `p x p` numeric matrix containing the
@@ -93,21 +93,21 @@ model matrix.
 For `rxCorData` a `(p - 1) x (p - 1)`
 numeric matrix containing the correlations amongst the non-intercept terms in
 the model matrix.
- 
- ##Author(s)
+
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 [rxLinMod](rxLinMod.md),
 [rxLogit](rxLogit.md),
 [rxCovCor](rxCovCor.md).
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Example 1
   # Get the covariance matrix of the estimated model coefficients
   kyphXdfFileName <- file.path(rxGetOption("sampleDataDir"), "kyphosis.xdf")
@@ -115,15 +115,15 @@ the model matrix.
     rxLogit(Kyphosis ~ Age + Number + Start, data = kyphXdfFileName,
             covCoef = TRUE, reportProgress = 0)
   rxCovCoef(kyphLogitWithCovCoef)
-  
+
   # Compare results with results from stats::glm function
   data(kyphosis, package = "rpart")
   kyphGlmSummary <-
     summary(glm(Kyphosis ~ Age + Number + Start, data = kyphosis,
                 family = binomial()))
   kyphGlmSummary[["cov.scaled"]]
-  
-  
+
+
   ## Example 2
   # Get the covariance matrix of the data
   kyphXdfFileName <- file.path(rxGetOption("sampleDataDir"), "kyphosis.xdf")
@@ -131,18 +131,17 @@ the model matrix.
     rxLogit(Kyphosis ~ Age + Number + Start, data = kyphXdfFileName,
             covData = TRUE, reportProgress = 0)
   rxCovData(kyphLogitWithCovData)
-  
+
   # Compare results with stats::cov function
   cov(kyphosis[2:4])
-  
-  
+
+
   ## Example 3
   # Find the correlation matrices for both the coefficient estimates and the
   # explanatory variables
   rxCorCoef(kyphLogitWithCovCoef)
   rxCorData(kyphLogitWithCovData)
- 
 ```
- 
- 
- 
+
+
+

@@ -27,8 +27,8 @@ ms.custom: ""
  
  
  
- #RxOdbcData-class: Class RxOdbcData 
- ##Description
+ # RxOdbcData-class: Class RxOdbcData 
+ ## Description
  
 ODBC data source connection class.
  
@@ -49,17 +49,17 @@ Class RxDataSource, directly.
  
 
 
-###`show`
+### `show`
 `signature(object = "RxOdbcData")`: ...
 
 
 
  
- ##Author(s)
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
- ##See Also
+ ## See Also
  
 [RxDataSource-class](RxDataSource-class.md),
 [RxOdbcData](RxOdbcData.md),

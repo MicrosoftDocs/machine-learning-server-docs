@@ -35,9 +35,9 @@ The DeployR API exposes a wide range of R analytics services to client applicati
 
 To further simplify the integration of DeployR services within client applications, several client libraries are provided for Java, JavaScript and .NET developers. These native client libraries provide a number of significant advantages over working directly with the raw API, including simplified service calls, encoding of call parameter data, and automatic handling of response markup on the API.
 
->**Try Out Our Examples!** Explore the client library examples for [Java, ](https://github.com/Microsoft/java-example-client-basics) [Javascript,](https://github.com/Microsoft/js-client-library/releases) and [.NET.](https://github.com/Microsoft/dotnet-client-library) Find them under the `examples` directory of each Github repository. Additionally, find more comprehensive examples for [Java](https://github.com/microsoft/?utf8=%E2%9C%93&query=java-example) and [JavaScript](https://github.com/microsoft/?utf8=✓&query=js-example).
-
->Check out the [*RBroker Framework*](deployr-tools-and-samples.md) for a simple yet powerful alternative to working with the client libraries. The framework handles much of the complexity in building real world client applications so you don't have to.
+> **Try Out Our Examples!** Explore the client library examples for [Java, ](https://github.com/Microsoft/java-example-client-basics) [Javascript,](https://github.com/Microsoft/js-client-library/releases) and [.NET.](https://github.com/Microsoft/dotnet-client-library) Find them under the `examples` directory of each Github repository. Additionally, find more comprehensive examples for [Java](https://github.com/microsoft/?utf8=%E2%9C%93&query=java-example) and [JavaScript](https://github.com/microsoft/?utf8=✓&query=js-example).
+> 
+> Check out the [*RBroker Framework*](deployr-tools-and-samples.md) for a simple yet powerful alternative to working with the client libraries. The framework handles much of the complexity in building real world client applications so you don't have to.
 
 ### API Overview
 

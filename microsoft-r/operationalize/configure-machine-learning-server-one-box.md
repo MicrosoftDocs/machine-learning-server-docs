@@ -92,23 +92,23 @@ Carefully review the following steps.
 
 1. Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
 
-1. R Server 9.x users only: If you used the default SQLite database, `deployrdb_9.0.0.db` or `deployrdb_9.1.0.db` in R Server and want to persist the data, then you must **back up the SQLite database before uninstalling Microsoft R Server**. Make a copy of the database file and put it outside of the Microsoft R Server directory structure. 
+2. R Server 9.x users only: If you used the default SQLite database, `deployrdb_9.0.0.db` or `deployrdb_9.1.0.db` in R Server and want to persist the data, then you must **back up the SQLite database before uninstalling Microsoft R Server**. Make a copy of the database file and put it outside of the Microsoft R Server directory structure. 
 
    (If you are using a SQL Server or PostgreSQL database, you can skip this step.)
 
    >[!Warning]
    >If you skip this SQLite database backup step, your database data will be lost.
 
-1. Uninstall the old version. The uninstall process stashes away a copy of your configuration files for a seamlessly upgrade to Machine Learning Server 9.3.
+3. Uninstall the old version. The uninstall process stashes away a copy of your configuration files for a seamlessly upgrade to Machine Learning Server 9.3.
     + For Machine Learning Server 9.2.1, read these instructions: [Windows](../install/machine-learning-server-windows-uninstall.md) | [Linux](../install/machine-learning-server-linux-uninstall.md).
     + For Microsoft R Server 9.x, read this [Uninstall Microsoft R Server to upgrade to a newer version](../install/r-server-install-uninstall-upgrade.md). 
 
-1. If you are using a SQL Server or PostgreSQL database, you can skip this step. If you backed up a SQLite database in Step 1, manually move the .db file under this directory so it can be found during the upgrade:
+4. If you are using a SQL Server or PostgreSQL database, you can skip this step. If you backed up a SQLite database in Step 1, manually move the .db file under this directory so it can be found during the upgrade:
    + Windows: C:\Users\Default\AppData\Local\DeployR\current\frontend
 
    + Linux: /etc/deployr/current/frontend
 
-1. Install Machine Learning Server and its dependencies as follows.  Learn about [supported platforms](../operationalize/configure-start-for-administrators.md#supported-platforms)  for this configuration.
+5. Install Machine Learning Server and its dependencies as follows.  Learn about [supported platforms](../operationalize/configure-start-for-administrators.md#supported-platforms)  for this configuration.
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
@@ -116,27 +116,27 @@ Carefully review the following steps.
 
      For _SQL Server Machine Learning Services_, you must also manually install .NET Core 2.0 and add a registry key called 'H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path' with a value of the parent path to the R\_SERVER or PYTHON\_SERVER folder (for example, C:\Program Files\Microsoft SQL Server\140\).
 
-1. In a command line window or terminal that was launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to:
+6. In a command line window or terminal that was launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to:
 
-  + Set up a web node and compute node on the same machine.
-  + Define a password for the default 'admin' account.  Replace <Password> with a password of your choice. The admin password must be 8-16 characters long and contain 1+ uppercase character, 1+ lowercase character, 1+ one number, and 1+ special characters:<br/> `~ ! @ # $ % ^ & ( ) - _ + = | < > \ / ; : , .`
-  + Authenticate with Machine Learning Server.
-  + [Test the configuration](../operationalize/configure-run-diagnostics.md).
+   + Set up a web node and compute node on the same machine.
+   + Define a password for the default 'admin' account.  Replace <Password> with a password of your choice. The admin password must be 8-16 characters long and contain 1+ uppercase character, 1+ lowercase character, 1+ one number, and 1+ special characters:<br/> `~ ! @ # $ % ^ & ( ) - _ + = | < > \ / ; : , .`
+   + Authenticate with Machine Learning Server.
+   + [Test the configuration](../operationalize/configure-run-diagnostics.md).
    
-  ```azurecli
+   ```azurecli
    # Set up both nodes on one machine
    az ml admin node setup --onebox --admin-password <Password> --confirm-password <Password>
 
    # Check that the nodes are now running
    az ml admin node list
-  ``` 
-  You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
+   ``` 
+   You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
 
-  If you need help with CLI commands, run the command but add `--help` to the end.
+   If you need help with CLI commands, run the command but add `--help` to the end.
 
-  You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
+   You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
 
-1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
+7. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
 
 >[!Important]
 >Machine Learning Server uses Kestrel as the web server for its operationalization web nodes. Therefore, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy setup.

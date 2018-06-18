@@ -79,11 +79,11 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 **On each web node:**
 
 1. Enable LDAP/LDAP-S in the external JSON configuration file, appsettings.json:
- 
+
    1. Open the configuration file, [\<web-node-install-path>](../operationalize/configure-find-admin-configuration-file.md)/appsettings.json. 
 
    1. Search for the section starting with `"LDAP": {`
-   
+
    1. <a name="encrypt"></a>Enable this section and update the properties so that they match the values in your Active Directory Service Interfaces Editor.  
 
       > For better security, we recommend you [encrypt the password](configure-admin-cli-encrypt-credentials.md) before adding the information to appsettings.json.
@@ -132,9 +132,9 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
            "EmailAttributeName": "mail"     
    }
    ```
-   
+
    <br>
-      
+
    >[!NOTE]
    >Need help figuring out your Active Directory/LDAP settings? Check out your LDAP settings using the `ldp.exe` tool and compare them to what you’ve declared in appsettings.json.  You can also consult with any Active Directory experts in your organization to identify the correct parameters.
 
@@ -150,7 +150,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    >Tokens are useful to the application developers who use them to identify and authenticate users who are sending API calls within their application. [Learn more...](how-to-manage-access-tokens.md)
    >
    >**Every web node must have the same values**.
-    
+
    1. On each machine hosting the Web node, install the trusted, signed **access token signing certificate** with a private key in the certificate store. Take note of the `Subject` name of the certificate as you need this information later.  Read [this blog post](https://blogs.msdn.microsoft.com/rserver/2017/05/19/using-certificates-in-r-server-operationalization-for-linux/) to learn how to use a self-signed certificate in Linux for access token signing. Self-signed certificates are NOT recommended for production usage.
 
    1. In the appsettings.json file, search for the section starting with `"JWTSigningCertificate": {`
@@ -171,7 +171,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 1. Save changes to appsettings.json. 
 
 1. [Restart the web node](configure-admin-cli-stop-start.md) using the administration utility so that the changes can take effect. 
- 
+
 1. Run the [diagnostic tests](configure-run-diagnostics.md) to ensure all tests are passing in the configuration.
 
    >[!IMPORTANT]
@@ -195,7 +195,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 1. Sign in to the [Azure portal](http://portal.azure.com).
 
 1. Select the upper-right hand corner and select the Active Directory account from the list. If the Azure Active Directory has not been set up yet, contact your system administrator. In our example, that directory is `MyMLServer`.
- 
+
 1. Select **Azure Active Directory** from the left-hand side. 
 
    ![Azure Active Directory icon](./media/configure-authentication/aad-icon.png)
@@ -224,15 +224,15 @@ Now, create a web app that is tied to the Azure Active Directory as follows:
    ![New app registrations](./media/configure-authentication/aad-create-web-app.png)
 
    The application is created and its details appear onscreen.
-     
+
 1. Copy the **Application ID** for the web application. You use this later when you configure your Native application and Machine Learning Server using this ID.
-   
+
    ![Newly created web app](./media/configure-authentication/aad-create-web-app-done.png)
 
 1. Select **Settings** ![Azure Active Directory icon](./media/configure-authentication/aad-settings.png). The **Settings** pane appears on the right.
 
 1. Select **Keys** from the **Settings** pane. The **Keys** pane appears.
-   
+
    ![Keys](./media/configure-authentication/aad-settings-keys.png)
 
 1. In the **Password** area, add a client key. Provide a description of your choosing and select a key duration.
@@ -258,7 +258,7 @@ Now, let's create a native application. This application links the web applicati
 1. In the Azure portal, select **Azure Active Directory** from the left-hand side. 
 
 1. Select **App registrations**.
-   
+
    ![App registrations](./media/configure-authentication/portal-aad-app-registration.png)
 
 1. Select **New application registration** at the top.    
@@ -281,25 +281,25 @@ Now, let's create a native application. This application links the web applicati
 1. Select **Create** to create the new native application.
 
    The application is created and its details appear onscreen.
-     
+
 1. Copy the **Application ID** for the web application. You use this ID later to enable AAD in Machine Learning Server.
-   
+
    ![Newly created web app](./media/configure-authentication/aad-create-native-app-done.png)
 
 1. Select **Settings** ![Azure Active Directory icon](./media/configure-authentication/aad-settings.png). The **Settings** pane appears on the right.
 
 1. Select **Required permissions**.
-   
+
    ![Required permissions](./media/configure-authentication/aad-settings-restricted.png)
 
 1. Select **Add** at the top. ![Required permissions](./media/configure-authentication/aad-settings-perms-add.png)
 
 1. Select **Select an API**.
-   
+
    ![Required permissions](./media/configure-authentication/aad-settings-perms-add-api-1.png)
 
 1. In the search field at the top, type the name of the web application you created. In our example, we use the name `Machine Learning Server Web app`. 
-   
+
    ![Required permissions](./media/configure-authentication/aad-settings-perms-add-api.png)
 
 1. Select the web application name.
@@ -307,7 +307,7 @@ Now, let's create a native application. This application links the web applicati
 1. Select the **Select** button. The **Select permissions > Enable Access** fields appear.
 
 1. Select the checkmark next to the name of the web application.
-   
+
    ![Required permissions](./media/configure-authentication/aad-settings-perms-add-api-3.png)
 
 1. Select the **Select** button. The pane closes.
@@ -318,7 +318,7 @@ Now, let's create a native application. This application links the web applicati
 
 1. Open the configuration file, [\<web-node-install-path>](../operationalize/configure-find-admin-configuration-file.md)/appsettings.json.
 
-1. Search for the section starting with:
+2. Search for the section starting with:
    ```
    "AzureActiveDirectory": {
       "Enabled": false,
@@ -327,18 +327,19 @@ Now, let's create a native application. This application links the web applicati
    >[!WARNING]
    > You cannot have both Azure Active Directory and Active Directory/LDAP enabled at the same time. If one is set to `"Enabled": true`, then the other must be set to `"Enabled": false`.
 
-1. Enable Azure Active Directory as the authentication method:  `"Enabled": true,`
+3. Enable Azure Active Directory as the authentication method:  `"Enabled": true,`
 
-1. Update the other properties in that section so that they match the values in the Azure portal.  Properties include:
+4. Update the other properties in that section so that they match the values in the Azure portal.  Properties include:
 
-   |Azure AD Properties|Definition|
-   |----------------|-------------------------------|
-   |Enabled|To use AAD for authentication, set to 'true'. Else, set to 'false'.|
-   |Authority|Use 'https://login.windows.net/\<URL to AAD login>' where \<URL to AAD login> is the URL to the AAD login. For example, if the AAD account domain is myMLServer.contoso.com, then the Authority would be 'https://login.windows.net/myMLServer.contoso.com'|
-   |Audience|Use the Application ID value for the WEB app you created in the Azure portal.|
-   |ClientId|Use the Application ID value for the NATIVE app you created in the Azure portal.|
-   |Key|This is the key for the WEB application you took note of before.  |
-   |KeyEncrypted|We highly recommend that you [encrypt login credentials](configure-admin-cli-encrypt-credentials.md) before adding the information to this file. Set KeyEncrypted to 'true' if using encrypted information. For plain text, set to 'false'.|
+
+   | Azure AD Properties |                                                                                                                          Definition                                                                                                                           |
+   |---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+   |       Enabled       |                                                                                              To use AAD for authentication, set to 'true'. Else, set to 'false'.                                                                                              |
+   |      Authority      | Use 'https://login.windows.net/\<URL to AAD login>' where \<URL to AAD login> is the URL to the AAD login. For example, if the AAD account domain is myMLServer.contoso.com, then the Authority would be '<https://login.windows.net/myMLServer.contoso.com>' |
+   |      Audience       |                                                                                         Use the Application ID value for the WEB app you created in the Azure portal.                                                                                         |
+   |      ClientId       |                                                                                       Use the Application ID value for the NATIVE app you created in the Azure portal.                                                                                        |
+   |         Key         |                                                                                               This is the key for the WEB application you took note of before.                                                                                                |
+   |    KeyEncrypted     |          We highly recommend that you [encrypt login credentials](configure-admin-cli-encrypt-credentials.md) before adding the information to this file. Set KeyEncrypted to 'true' if using encrypted information. For plain text, set to 'false'.          |
 
    For example:
    ```
@@ -352,16 +353,16 @@ Now, let's create a native application. This application links the web applicati
     }
    ```
 
-1. To set different levels of permissions for users interacting with web services, [assign them roles](configure-roles.md).
+5. To set different levels of permissions for users interacting with web services, [assign them roles](configure-roles.md).
 
-1. [Restart the web node](configure-admin-cli-stop-start.md) for the changes to take effect.
- 
-1. Authorize this machine for Azure Active Directory Test by running a [diagnostic test](configure-run-diagnostics.md) of the configuration.
+6. [Restart the web node](configure-admin-cli-stop-start.md) for the changes to take effect.
+
+7. Authorize this machine for Azure Active Directory Test by running a [diagnostic test](configure-run-diagnostics.md) of the configuration.
 
    >[!IMPORTANT]
    >You must run the diagnostic tests once on each web node to authorize this device for Azure Active Directory. You will not be able to log in using AAD until this has been done.
 
-1. Repeat these steps on each machine hosting a web node.
+8. Repeat these steps on each machine hosting a web node.
 
 **Step 5: Share the required AAD connection details with your users**
 

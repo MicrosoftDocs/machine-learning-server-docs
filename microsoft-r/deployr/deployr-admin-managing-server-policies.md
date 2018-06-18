@@ -49,7 +49,8 @@ There are a number of settings that can be defined for each server. They are gro
 -  [Event Stream Access Policies](#event-stream-access-policies)
 -  [Server Runtime Policies](#server-runtime-policies)
 
-<br/>
+<a name="basic-settings"></a>
+
 ### Basic Settings
 
 |Properties|Description|
@@ -103,7 +104,8 @@ These policies govern certain project behaviors and limits.
 |`History depth limit`|The maximum depth of the execution command history retained for each project. When the limit is reached, each new execution will flush the oldest one from the history. When an execution is flushed from the history, all associated plots and R console output are permanently deleted.|
 |`Autosave temporary projects`|By default, this is unchecked, which sets the value to `False`, where temporary projects are not auto-saved when a project is closed or when a user logs out or times out on their connection. When `True`, temporary projects become candidates for auto-saving. Whether projects are auto-saved on close, logout, or timeout depends on the value of the `autosave` flag set when a user logs in on the API. For more information on autosaving, see the [API Reference Guide](deployr-api-reference.md).
 
-<br/>
+<a name="concurrent-operation-policies"></a>
+
 ### Concurrent Operation Policies
 
 These policies govern the runtime grid usage limits on the number of concurrent operations that can be run simultaneously in the system by a given user.

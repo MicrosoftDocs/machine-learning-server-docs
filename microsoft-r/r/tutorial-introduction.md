@@ -52,9 +52,9 @@ New to the R language or Machine Learning Server products and libraries? These t
 ## Find sample data
 
 + [Sample data available in the RevoScaleR package](sample-built-in-data.md)
-* [Sample Dataset Directory](http://packages.revolutionanalytics.com/datasets/)
-* [More Data Sources on MRAN site](https://mran.microsoft.com/documents/data/)
-* [Blog Post: Finding data on the internet](http://www.inside-r.org/howto/finding-data-internet)
++ [Sample Dataset Directory](http://packages.revolutionanalytics.com/datasets/)
++ [More Data Sources on MRAN site](https://mran.microsoft.com/documents/data/)
++ [Blog Post: Finding data on the internet](http://www.inside-r.org/howto/finding-data-internet)
 
 ## See Also
 

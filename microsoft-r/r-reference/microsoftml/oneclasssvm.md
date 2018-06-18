@@ -27,14 +27,14 @@ ms.custom: ""
  
  
  
- #oneClassSvm: oneClassSvm 
- ##Description
+ # oneClassSvm: oneClassSvm 
+ ## Description
  
 Creates a list containing the function name and arguments to train a
  OneClassSvm model with [rxEnsemble](rxEnsemble.md).
  
  
- ##Usage
+ ## Usage
 
 ```   
   oneClassSvm(cacheSize = 100, kernel = rbfKernel(), epsilon = 0.001,
@@ -42,7 +42,7 @@ Creates a list containing the function name and arguments to train a
  
 ```
  
- ##Arguments
+ ## Arguments
 
    
   

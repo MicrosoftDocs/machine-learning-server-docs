@@ -142,7 +142,7 @@ Trellis graphics are discussed thoroughly in Cleveland’s *Visualizing Data*. C
 *Interactive and Dynamic Graphics for Data Analysis* by Dianne Cook and Deborah Swayne describes using R together with the GGobi visualization program for dynamic graphics.
 
 
-###Archived Product Documentation
+### Archived Product Documentation
 
 **R Productivity Environment (RPE)**
 The RPE is an older development tool that is now superseded by [R Tools for Visual Studio]((https://docs.microsoft.com/visualstudio/rtvs/installation). RPE documentation can be found at the following links:

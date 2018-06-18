@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxOAuthParameters function (revoAnalytics) | Microsoft Docs" 
 description: " Method to create parameter list to be used for getting an OAuth2 token. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,92 +21,92 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- #rxOAuthParameters: OAuth2 Token request 
- ##Description
- 
+
+
+ # rxOAuthParameters: OAuth2 Token request 
+ ## Description
+
 Method to create parameter list to be used for getting an OAuth2 token.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
       rxOAuthParameters(authUri = NULL, tenantId = NULL, clientId = NULL, resource = NULL, username = NULL, password = NULL, authToken= NULL, useWindowsAuth = FALSE)
-  	
- 
-```
- 
- ##Arguments
 
-   
-  
-    
+
+```
+
+ ## Arguments
+
+
+
+
  ### `authUri`
  Optional string containing OAuth Authentication URI - default NULL  
-   
-    
+
+
  ### `tenantId`
  Optional string containing OAuth Tenant ID - default NULL  
-  
-    
+
+
  ### `clientId`
  Optional string containing OAuth ClientID - default NULL  
-  
-    
+
+
  ### `resource`
  Optional string containing OAuth Resource  - default NULL  
-  
-    
+
+
  ### `username`
  Optional string containing OAuth Username - default NULL  
-  
-    
+
+
  ### `password`
  Optional string containing OAuth Password - default NULL  
-  
-    
+
+
  ### `authToken`
  Optional string containing a valid OAuth token to be used for WebHdfs requests - default NULL  
-  
-    
+
+
  ### `useWindowsAuth`
  Optional Flag indicating if Windows Authentication should be used for obtaining the OAuth token (applicable only on Windows) - default NULL  
-  
-  
- 
- 
- ##Details
- 
+
+
+
+
+ ## Details
+
 Reading from HDFS file system via WebHdfs can only be done by first obtaining a OAuth2 token. This function
 allows the specification of parameters that can be set to retreive a token.
- 
- 
- 
- ##Value
- 
+
+
+
+ ## Value
+
 An rxOAuthParameters list object. This object may be used in
 [RxHdfsFileSystem](RxHdfsFileSystem.md) to set the OAuth request method for WebHdfs usage.
- 
- ##Author(s)
- 
+
+ ## Author(s)
+
 Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 [RxHdfsFileSystem](RxHdfsFileSystem.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   # Setup to run analyses to use HDFS with access via WebHdfs and OAuth2
   ## Not run:
- 
+
 oAuth <- rxOAuthParameters(authUri = "https://login.windows.net/",
             tenantId = "mytest.onmicrosoft.com",
             clientId = "872cd9fa-d31f-45e0-9eab-6e460a02d1e2", 
@@ -117,9 +117,7 @@ oAuth <- rxOAuthParameters(authUri = "https://login.windows.net/",
 myHdfsFileSystem <- RxHdfsFileSystem(hostName = "myHost", port = 443, useWebHdfs = TRUE, oAuthParameters = oAuth)
 rxSetFileSystem(fileSystem = myHdfsFileSystem )
  ## End(Not run) 
-  
- 
 ```
- 
- 
- 
+
+
+

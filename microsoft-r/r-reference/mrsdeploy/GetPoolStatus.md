@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "getPoolStatus function (mrsdeploy) | Microsoft Docs" 
 description: " Get the status of the dedicated pool for a published web service running on Machine Learning Server. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,59 +21,56 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #getPoolStatus: Get the status of the dedicated pool for a published web service 
- ##Description
- 
+
+
+
+
+ # getPoolStatus: Get the status of the dedicated pool for a published web service 
+ ## Description
+
 Get the status of the dedicated pool for a published web service running on 
 Machine Learning Server.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   getPoolStatus(name, version)
- 
-```
- 
- ##Arguments
 
-   
-  
+```
+
+ ## Arguments
+
+
+
  ### `name`
  A string representing the web service name. To the dedicated pool status, you must provide the specific name and version of the  service that the pool is associated with. 
-  
-  
-  
+
+
+
  ### `version`
  A string representing the web service version. To check the dedicated pool status, you must provide the specific name and version of the  service that the pool is associated with. 
-  
- 
- 
- ##See Also
- 
+
+
+
+ ## See Also
+
 Other dedicated pool methods: [configureServicePool](ConfigureServicePool.md),
 [deleteServicePool](DeleteServicePool.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 
 getPoolStatus(
    name = "myService",
    version = "v1"
 )
  ## End(Not run) 
-  
-                                
- 
 ```
- 
+

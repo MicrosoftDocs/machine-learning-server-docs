@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "InputData function (sqlrutils) | Microsoft Docs" 
 description: " InputData: generates an InputData Object that captures the information about the input parameter that is a data frame. The data frame needs to be populated upon the execution a given query. This object is necessary  for creation of stored procedures in which the embedded R function takes in a data frame input parameter. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,58 +21,58 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #InputData: Input Data for SQL Stored Procedure: Class Generator 
- ##Description
- 
+
+
+
+
+ # InputData: Input Data for SQL Stored Procedure: Class Generator 
+ ## Description
+
 `InputData`: generates an InputData Object that captures the
 information about the input parameter that is a data frame.
 The data frame needs to be populated upon the execution a given query.
 This object is necessary  for creation of stored procedures in which
 the embedded R function takes in a data frame input parameter.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   InputData(name, defaultQuery = NULL, query = NULL)
- 
-```
- 
- ##Arguments
 
-   
-  
+```
+
+ ## Arguments
+
+
+
  ### `name`
  A character string, the name of the data input parameter into the R function supplied to StoredProcedure. 
-  
-  
-  
+
+
+
  ### `defaultQuery`
  A character string specifying the default query that will retrieve the data if a different query is not provided at the time of the execution of the stored procedure. Must be a simple SELECT query. 
-  
-  
-  
+
+
+
  ### `query`
  A character string specifing the query that will be used to retrive the data in the next run of the stored procedure. 
-  
- 
- 
- ##Value
- 
+
+
+
+ ## Value
+
 InputData Object
- 
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
   # See ?StoredProcedure for creating the "cleandata" table.
 
   # train 1 takes a data frame with clean data and outputs a model
@@ -112,8 +112,5 @@ InputData Object
   # get the linear model
   mm <- rxUnserializeModel(model$params$op1)
  ## End(Not run) 
-  
-  
- 
 ```
- 
+

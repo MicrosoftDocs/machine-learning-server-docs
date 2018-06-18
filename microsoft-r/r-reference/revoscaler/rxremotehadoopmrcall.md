@@ -25,20 +25,20 @@ ms.custom: ""
 --- 
  
  
- #rxRemoteHadoopMRCall:  Remote calling mechanism for distributed computing on Hadoop MapReduce clusters. 
- ##Description
+ # rxRemoteHadoopMRCall:  Remote calling mechanism for distributed computing on Hadoop MapReduce clusters. 
+ ## Description
  Function that is executed by a master process in a Hadoop MapReduce cluster.
 This function should **not** be called directly by the user. It serves as an
 internal mechanism for performing remote and distributed R calls on 
 a Hadoop MapReduce cluster. 
  
  
- ##Usage
+ ## Usage
 
 ```   rxRemoteHadoopMRCall() 
 ```
  
- ##Author(s)
+ ## Author(s)
  
 Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 

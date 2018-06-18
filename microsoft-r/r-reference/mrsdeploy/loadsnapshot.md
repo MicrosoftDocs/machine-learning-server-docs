@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "loadSnapshot function (mrsdeploy) | Microsoft Docs" 
 description: " Loads the specified snapshot from the R server into the remote session.The workspace is updated with the objects saved in the snapshot, and saved files are restored to the working directory. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,47 +21,47 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #loadSnapshot: Load a snapshot from the R server into the remote session. 
- ##Description
- 
+
+
+
+
+ # loadSnapshot: Load a snapshot from the R server into the remote session. 
+ ## Description
+
 Loads the specified snapshot from the R server into the remote session.The workspace
 is updated with the objects saved in the snapshot, and saved files are restored to the working directory.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   loadSnapshot(snapshot_id)
- 
-```
- 
- ##Arguments
 
-   
-  
+```
+
+ ## Arguments
+
+
+
  ### `snapshot_id`
  Identifier of the snapshot to load. 
-  
- 
- 
- ##Details
- 
+
+
+
+ ## Details
+
 Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
 
- 
- 
- ##Value
- 
+
+
+ ## Value
+
 `TRUE` if successful.
- 
- ##See Also
- 
+
+ ## See Also
+
 [createSnapshot](createSnapshot.md)
 
 [deleteSnapshot](deleteSnapshot.md)
@@ -69,16 +69,14 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
 [listSnapshots](listSnapshots.md)
 
 [downloadSnapshot](downloadSnapshot.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 loadSnapshot("8ce7eb47-3aeb-4c5a-b0a5-a2025f07d9cd")
  ## End(Not run) 
-  
- 
 ```
- 
+

@@ -27,8 +27,8 @@ ms.custom: ""
  
  
  
- #RxSqlServerData-class: Class RxSqlServerData 
- ##Description
+ # RxSqlServerData-class: Class RxSqlServerData 
+ ## Description
  
 Microsoft SQL Server data source connection class.
  
@@ -49,17 +49,17 @@ Class RxDataSource, directly.
  
 
 
-###`show`
+### `show`
 `signature(object = "RxSqlServerData")`: ...
 
 
 
  
- ##Author(s)
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
- ##See Also
+ ## See Also
  
 [RxDataSource-class](RxDataSource-class.md),
 [RxSqlServerData](RxSqlServerData.md),

@@ -70,17 +70,19 @@ For realtime services, you do **not** need to specify:
 
 A model object created with these supported functions:
 
-|R package|Supported functions|
-|-------------|--------------------|
-|[RevoScaleR](../r-reference/revoscaler/revoscaler.md)|rxBTrees, rxDTree, rxDForest, rxLogit, rxLinMod|
-|[MicrosoftML](../r-reference/microsoftml/microsoftml-package.md)|Machine learning and transform tasks:<br/>rxFastTrees, rxFastForest, rxLogisticRegression, rxOneClassSvm, rxNeuralNet, rxFastLinear, featurizeText, concat, categorical, categoricalHash, selectFeatures, featurizeImage, getSentiment, loadimage, resizeImage, extractPixels, selectColumns, and dropColumns<br><br>While mlTransform featurization is supported in realtime scoring, R transforms are not supported. Instead, use sp_execute_external_script.|
+
+|                            R package                             |                                                                                                                                                                                                                       Supported functions                                                                                                                                                                                                                       |
+|------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|      [RevoScaleR](../r-reference/revoscaler/revoscaler.md)       |                                                                                                                                                                                                         rxBTrees, rxDTree, rxDForest, rxLogit, rxLinMod                                                                                                                                                                                                         |
+| [MicrosoftML](../r-reference/microsoftml/microsoftml-package.md) | Machine learning and transform tasks:<br/>rxFastTrees, rxFastForest, rxLogisticRegression, rxOneClassSvm, rxNeuralNet, rxFastLinear, featurizeText, concat, categorical, categoricalHash, selectFeatures, featurizeImage, getSentiment, loadimage, resizeImage, extractPixels, selectColumns, and dropColumns<br><br>While mlTransform featurization is supported in realtime scoring, R transforms are not supported. Instead, use sp_execute_external_script. |
+
 <a name="inputdf"></a>
 There are additional restrictions on the input dataframe format for microsoftml models:
 
 1. The dataframe must have the same number of columns as the formula specified for the model.
 
 1. The dataframe must be in the exact same order as the formula specified for the model.
-  
+
 1. The columns must be of the same data type as the training data. Type casting is not possible.
 
 <a name="python"></a>

@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxCompareContexts function (revoAnalytics) | Microsoft Docs" 
 description: " Determines if two compute contexts are equivalent. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,68 +21,66 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- #rxCompareContexts:  Compare Two Compute Context Objects  
- ##Description
- 
+
+
+ # rxCompareContexts:  Compare Two Compute Context Objects  
+ ## Description
+
 Determines if two compute contexts are equivalent.
- 
- 
- 
- ##Usage
+
+
+
+ ## Usage
 
 ```   
   rxCompareContexts(context1, context2, exactMatch = FALSE)
- 
-```
- 
- 
- ##Arguments
 
-   
-  
+```
+
+
+ ## Arguments
+
+
+
  ### `context1`
  The first compute context to be compared. 
-  
-  
+
+
  ### `context2`
  The second compute context to be compared. 
-  
-  
+
+
  ### `exactMatch`
  Determines if compute contexts are matched simply by the location specified for the compute context, or by all fields in the full compute context. The location is specified by the `headNode` (if available) and `shareDir` parameters. See Details for more information. 
-  
- 
- 
- 
- ##Details
- 
+
+
+
+
+ ## Details
+
 If `exactMatch=FALSE`, only the shared directory `shareDir` and the cluster 
 head name `headNode` (if available) are compared.  Otherwise, all slots are compared. However, if the
 `nodes` slot in either compute context is `NULL`, that slot is also
 omitted from the comparison.  Note also that case is ignored for node name comparisons, and for LSF node lists, 
 near matching of node names and partial domain information will be used when comparing node names.
- 
- 
- ##Author(s)
- 
+
+
+ ## Author(s)
+
 Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
- 
- 
- ##Examples
+
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 rxCompareContexts( myContext1, myContext2 )
  ## End(Not run) 
-  
- 
 ```
- 
- 
+
+

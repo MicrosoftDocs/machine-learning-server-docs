@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "loadImage function (MicrosoftML) " 
 description: " Loads image data. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,55 +21,55 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #loadImage: Machine Learning Load Image Transform 
- ##Description
- 
+
+
+
+
+ # loadImage: Machine Learning Load Image Transform 
+ ## Description
+
 Loads image data.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   loadImage(vars)
- 
-```
- 
- ##Arguments
 
-   
-  
+```
+
+ ## Arguments
+
+
+
  ### `vars`
  A named list of character vectors of input variable names and the name of the output variable. Note that the input variables must be of the same type. For one-to-one mappings between input and output variables, a named character vector can be used. 
-  
- 
- 
- ##Details
- 
+
+
+
+ ## Details
+
 `loadImage` loads images from paths.
- 
- 
- ##Value
- 
+
+
+ ## Value
+
 A `maml` object defining the transform.
- 
- ##Author(s)
- 
+
+ ## Author(s)
+
 Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
- 
- 
- ##Examples
+
+
+ ## Examples
 
  ```
-   
+
   train <- data.frame(Path = c(system.file("help/figures/RevolutionAnalyticslogo.png", package = "MicrosoftML")), Label = c(TRUE), stringsAsFactors = FALSE)
-  
+
   # Loads the images from variable Path, resizes the images to 1x1 pixels and trains a neural net.
   model <- rxNeuralNet(
       Label ~ Features,
@@ -82,7 +82,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
       mlTransformVars = "Path",
       numHiddenNodes = 1,
       numIterations = 1)
-  
+
   # Featurizes the images from variable Path using the default model, and trains a linear model on the result.
   model <- rxFastLinear(
       Label ~ Features,
@@ -94,9 +94,8 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
           featurizeImage(var = "Features")
           ),
       mlTransformVars = "Path")
- 
 ```
- 
- 
- 
- 
+
+
+
+

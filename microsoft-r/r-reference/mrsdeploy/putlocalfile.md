@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "putLocalFile function (mrsdeploy) | Microsoft Docs" 
 description: " Uploads a file from the local machine and writes it to the working directory of the remote R session. This function is often used if a 'data' file needs to be accessed by a script running on the remote R session. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,64 +21,62 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #putLocalFile: Upload a file from the local machine to the remote R session. 
- ##Description
- 
+
+
+
+
+ # putLocalFile: Upload a file from the local machine to the remote R session. 
+ ## Description
+
 Uploads a file from the local machine and writes it to the working directory of
 the remote R session. This function is often used if a 'data' file needs to be accessed
 by a script running on the remote R session.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   putLocalFile(filename)
- 
-```
- 
- ##Arguments
 
-   
-  
+```
+
+ ## Arguments
+
+
+
  ### `filename`
  Name of the file to copy. 
-  
- 
- 
- ##Details
- 
+
+
+
+ ## Details
+
 Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
 
- 
- 
- ##Value
- 
+
+
+ ## Value
+
 `TRUE` if successful.
- 
- ##See Also
- 
+
+ ## See Also
+
 [getRemoteFile](getRemoteFile.md)
 
 [deleteRemoteFile](deleteRemoteFile.md)
 
 [listRemoteFiles](listRemoteFiles.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 putLocalFile("c:/data/test.csv")
 putLocalFile("c:/data/test.png", as="raw")
  ## End(Not run) 
-  
- 
 ```
- 
+

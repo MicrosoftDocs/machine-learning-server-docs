@@ -67,7 +67,7 @@ The distribution includes one installer for Microsoft R Server. For a gzipped TA
 
 3. Unpack the file:
 
-  `[tmp] $ tar zxvf en_r_server_901_for_linux_x64_9648602.gz`
+   `[tmp] $ tar zxvf en_r_server_901_for_linux_x64_9648602.gz`
 
 ## Run the MRS install script
 
@@ -75,7 +75,7 @@ R Server for Linux is deployed by running the install script with no parameters.
 
 1. Change to the `MRS90LINUX` directory containing the installation script:
 
-  `[tmp] $ cd ..\MRS90LINUX`
+   `[tmp] $ cd ..\MRS90LINUX`
 
 2. Run the script.
 
@@ -123,7 +123,7 @@ As a verification step, run the Revo64 program.
 
    `> rxSummary(~., iris)`
 
-  Output from the iris dataset should look similar to the following:
+   Output from the iris dataset should look similar to the following:
 
 ~~~~
         Rows Read: 150, Total Rows Processed: 150, Total Chunk Time: 0.001 seconds

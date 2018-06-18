@@ -92,24 +92,24 @@ DeployR Enterprise depends on the manual installation and configuration of these
 
 1.  On the DeployR server, [download](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) and install **Java™ Runtime Environment 8 or 7u13 (or later)**.
 
-	>Java is only required on the DeployR server, not on any [grid node machines](#grid-node-install).
+    >Java is only required on the DeployR server, not on any [grid node machines](#grid-node-install).
 
 2.  Install **[Revolution R Enterprise for Windows](~/install/r-server-install-windows.md)**, which includes ScaleR for multi-processor and big data support. **Follow the instructions provided with RRE to install it as well as any of its dependencies**. [Contact technical support](https://support.microsoft.com/) if you cannot find the proper version of Revolution R Enterprise for Windows.
 
 3.  Install **DeployR Rserve 7.4.2** in one of the following ways:
 
     -   Install using the R GUI. This assumes you have write permissions to the global R library. If not, use the next option.    
-		1.  Download DeployR Rserve 7.4.2 for Windows, [deployrRserve\_7.4.2.zip](https://github.com/Microsoft/deployr-rserve/releases/).
-		2.  Launch `Rgui.exe`, located by default under `C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\bin\x64`.
-		3.  From the menus, choose **Packages &gt; Install Package(s) from local zip files**.
-		4.  Select `deployrRserve_7.4.2.zip` from the folder into which it was downloaded.
-		5.  Click **Open** to install it.
+        1.  Download DeployR Rserve 7.4.2 for Windows, [deployrRserve\_7.4.2.zip](https://github.com/Microsoft/deployr-rserve/releases/).
+        2.  Launch `Rgui.exe`, located by default under `C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2\bin\x64`.
+        3.  From the menus, choose **Packages &gt; Install Package(s) from local zip files**.
+        4.  Select `deployrRserve_7.4.2.zip` from the folder into which it was downloaded.
+        5.  Click **Open** to install it.
     -   Alternatively, install using the command prompt:
-    	1.  Download DeployR Rserve 7.4.2 for Windows, [deployrRserve\_7.4.2.zip](https://github.com/Microsoft/deployr-rserve/releases/).
-		2.  Open a Command Prompt window **as Administrator**.
-		3.  Run the following command to install DeployR Rserve 7.4.2:
+        1.  Download DeployR Rserve 7.4.2 for Windows, [deployrRserve\_7.4.2.zip](https://github.com/Microsoft/deployr-rserve/releases/).
+        2.  Open a Command Prompt window **as Administrator**.
+        3.  Run the following command to install DeployR Rserve 7.4.2:
 
-				<PATH_TO_R>\bin\x64\R.exe CMD INSTALL -l <PATH_TO_R>\library <PATH_TO_RSERVE>\deployrRserve_7.4.2.zip
+                <PATH_TO_R>\bin\x64\R.exe CMD INSTALL -l <PATH_TO_R>\library <PATH_TO_RSERVE>\deployrRserve_7.4.2.zip
 
         `<PATH_TO_R>` is the path to the directory that contains the R executable, by default `C:\Program Files\Microsoft\MRO-for-RRE\8.0\R-3.2.2`.
         And, where `<PATH_TO_RSERVE>` is the path into which you downloaded Rserve.
@@ -121,25 +121,25 @@ DeployR Enterprise depends on the manual installation and configuration of these
 
 4.  Download and unzip the **MongoDB 2.6.7** contents into `%TEMP%\MONGODB_DEPLOYR` directory as described in the following steps. Applies to DeployR Enterprise only.
 
-	>MongoDB is licensed by MongoDB, Inc. under the Affero GPL 3.0 license; commercial licenses are also available. Additional information on MongoDB licensing is available [here](https://www.mongodb.org/licensing).
+    >MongoDB is licensed by MongoDB, Inc. under the Affero GPL 3.0 license; commercial licenses are also available. Additional information on MongoDB licensing is available [here](https://www.mongodb.org/licensing).
 
-	1.  Download [MongoDB 2.6.7](http://downloads.mongodb.org/win32/mongodb-win32-x86_64-2008plus-2.6.7.zip).
+    1.  Download [MongoDB 2.6.7](http://downloads.mongodb.org/win32/mongodb-win32-x86_64-2008plus-2.6.7.zip).
 
     2.  In Windows Explorer, type `%TEMP%` into the file path field and press **Enter**.
 
-		>This path varies from one Windows version to another.  
-		>For example, on Windows Server 2012, it might appear as: `C:\Users\<username>\AppData\Local\Temp\2`.
+        >This path varies from one Windows version to another.  
+        >For example, on Windows Server 2012, it might appear as: `C:\Users\<username>\AppData\Local\Temp\2`.
 
-		![File Path](./media/deployr-installing-configuring/mongodb-1.png)
+        ![File Path](./media/deployr-installing-configuring/mongodb-1.png)
 
     3.  Create a directory named `MONGODB_DEPLOYR` under the path you just revealed.
 
     4.  Go to the new `MONGODB_DEPLOYR` directory.
 
     5.  To capture the path to this directory to use when unzipping later, copy the file path to your clipboard.
-        To see the full path, click inside the file path field.
+        To see the full path, click inside the file path field.
 
-         ![File Path](./media/deployr-installing-configuring/mongodb-3.png)
+         ![File Path](./media/deployr-installing-configuring/mongodb-3.png)
 
     6.  Extract the contents of the MongoDB 2.6.7 zip file into the new `MONGODB_DEPLOYR` directory.
 
@@ -159,36 +159,36 @@ DeployR Open depends on the manual installation and configuration of these depen
 
 1.  On the DeployR server, [download](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) and install **Java™ Runtime Environment 8 or 7u13 (or later)**.
 
-	>Java is only required on the DeployR server, not on any [grid node machines](#grid-node-install).
+    >Java is only required on the DeployR server, not on any [grid node machines](#grid-node-install).
 
 2.  Install either [Revolution R Open](http://mran.microsoft.com) v8.0.x, 3.2.0 - 3.2.2 or R v3.1.x, 3.2.0 - 3.2.2. [Revolution R Open](http://mran.microsoft.com) is the enhanced distribution of R from Microsoft.
 
 3.  Install **DeployR Rserve 7.4.2** in one of the following ways:
 
     -   Install using the R GUI. This assumes you have write permissions to the global R library. If not, use the next option.
-    	1.  Download DeployR Rserve 7.4.2 for Windows, [deployrRserve\_7.4.2.zip](https://github.com/Microsoft/deployr-rserve/releases/).
-    	2.  Launch `Rgui.exe` for the version of R you installed.
-    	3.  From the menus, choose **Packages &gt; Install Package(s) from local zip files**.
-    	4.  Select `deployrRserve_7.4.2.zip` from the folder into which it was downloaded.
-    	5.  Click **Open** to install it.
+        1.  Download DeployR Rserve 7.4.2 for Windows, [deployrRserve\_7.4.2.zip](https://github.com/Microsoft/deployr-rserve/releases/).
+        2.  Launch `Rgui.exe` for the version of R you installed.
+        3.  From the menus, choose **Packages &gt; Install Package(s) from local zip files**.
+        4.  Select `deployrRserve_7.4.2.zip` from the folder into which it was downloaded.
+        5.  Click **Open** to install it.
 
     -   Alternatively, install using the command prompt:
-    	1.  Download DeployR Rserve 7.4.2 for Windows, [deployrRserve\_7.4.2.zip](https://github.com/Microsoft/deployr-rserve/releases/).
-    	2.  Open a Command Prompt window **as Administrator**.
-    	3.  Run the following command to install DeployR Rserve 7.4.2:
+        1.  Download DeployR Rserve 7.4.2 for Windows, [deployrRserve\_7.4.2.zip](https://github.com/Microsoft/deployr-rserve/releases/).
+        2.  Open a Command Prompt window **as Administrator**.
+        3.  Run the following command to install DeployR Rserve 7.4.2:
 
-				<PATH_TO_R>\bin\x64\R.exe CMD INSTALL -l <PATH_TO_R>\library <PATH_TO_RSERVE>\deployrRserve_7.4.2.zip
-	
-	        `<PATH_TO_R>` is the path to the directory containing the R executable you installed.  
-			And, where `<PATH_TO_RSERVE>` is the path into which you downloaded Rserve.
+                <PATH_TO_R>\bin\x64\R.exe CMD INSTALL -l <PATH_TO_R>\library <PATH_TO_RSERVE>\deployrRserve_7.4.2.zip
 
-		Example: A user with administrator privileges might run these commands for example.
+            `<PATH_TO_R>` is the path to the directory containing the R executable you installed.  
+            And, where `<PATH_TO_RSERVE>` is the path into which you downloaded Rserve.
+
+        Example: A user with administrator privileges might run these commands for example.
 
             cd "C:\Program Files\RRO\R-3.2.2\bin\x64"
             R CMD INSTALL -l "C:\Program Files\RRO\R-3.2.2\library" "%homepath%\Downloads\"
 
 **-- The prerequisites for DeployR Open are now installed. You can begin installing the main server for DeployR Open now. --**
- 
+
 ### Basic DeployR Install for Windows
 
 The basic installation of DeployR installs the DeployR main server. DeployR Enterprise customers can also [install additional grid nodes](#grid-node-install) for optimized workload distribution.
@@ -218,9 +218,9 @@ After installing [these prerequisites](#dependencies-for-windows), install Deplo
 
 8.  If you are provisioning your server on a cloud service such as [Azure or AWS EC2](deployr-admin-install-in-cloud.md), you must:
 
-    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#set-context-800) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure or AWS EC2](deployr-admin-install-in-cloud.md)).
+    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#set-context-800) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure or AWS EC2](deployr-admin-install-in-cloud.md)).
 
-    -   Open [DeployR ports](#updating-your-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure or AWS EC2](deployr-admin-install-in-cloud.md)).
+    -   Open [DeployR ports](#updating-your-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure or AWS EC2](deployr-admin-install-in-cloud.md)).
 
     -   Open the same DeployR ports [in Windows Firewall](deployr-admin-install-in-cloud.md#updating-the-firewall).
 
@@ -265,8 +265,8 @@ After installing the [main server for DeployR Enterprise](#basic-deployr-install
 
 8.  When the installer completes, log in to the DeployR landing page as 'admin' at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing` where `<DEPLOYR_SERVER_IP>` is the IP of the main DeployR server.
 
-	1.  Go to the Administrative Console and [configure each grid node](#configuring-the-deployr-grid).
-	2.  Return to the landing page and run a [diagnostic check](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check). Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for help.
+    1.  Go to the Administrative Console and [configure each grid node](#configuring-the-deployr-grid).
+    2.  Return to the landing page and run a [diagnostic check](deployr-admin-diagnostics-troubleshooting.md#running-the-diagnostic-check). Consult the [Troubleshooting section](deployr-admin-diagnostics-troubleshooting.md) for help.
 
 **-- The grid node installation is now complete --**
 
@@ -300,7 +300,7 @@ DeployR depends on the manual installation and configuration of these dependenci
 
 1.  On the main DeployR server, install **Java™ Runtime Environment 8 or 7u13 (or later)**, a dependency of DeployR, as follows. For more help installing Java or setting the path, refer to oracle.com.
 
-	>Java is only required on the main DeployR server.
+    >Java is only required on the main DeployR server.
 
     -   [Download the tar file from Oracle](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) and install it **OR** install using your local package manager.
 
@@ -329,13 +329,13 @@ DeployR depends on the manual installation and configuration of these dependenci
 
     2.  Untar the MongoDB download into home directory of the user who is installing DeployR Enterprise. For example: `/home/deployr-user/`. The DeployR Enterprise installer finds it later.
 
-	>MongoDB is licensed by MongoDB, Inc. under the Affero GPL 3.0 license; commercial licenses are also available. Additional information on MongoDB licensing is available [here](https://www.mongodb.org/licensing).
+    >MongoDB is licensed by MongoDB, Inc. under the Affero GPL 3.0 license; commercial licenses are also available. Additional information on MongoDB licensing is available [here](https://www.mongodb.org/licensing).
 
 5.  Make sure the system repositories are up-to-date prior to installing DeployR. The following commands *do not install anything*; however running them ensures that the repositories contain the latest software:
 
     Run the following command:
 
-	**Redhat / CentOS:**	
+    **Redhat / CentOS:**    
 
         sudo yum clean all
 
@@ -349,65 +349,65 @@ DeployR depends on the manual installation and configuration of these dependenci
 
 6.  Install the following packages (`make`, `gcc`, and `gfortran`) if missing:
 
-	>Install packages as `root` or a user with `sudo` permissions.
+    >Install packages as `root` or a user with `sudo` permissions.
 
-	**Redhat / CentOS:**
-	
+    **Redhat / CentOS:**
+
     1.  Check if the packages are already installed.
 
         yum list make gcc gfortran
 
     2.  Install any missing packages:
 
-	        #if make is missing, run 
-	        yum install make
-	
-	        #if gcc is missing, run
-	        yum install gcc
-	
-	        #if gfortran is missing, run
-	        yum install gfortran
+            #if make is missing, run 
+            yum install make
+
+            #if gcc is missing, run
+            yum install gcc
+
+            #if gfortran is missing, run
+            yum install gfortran
 
     **Ubuntu:**
 
     1.  Check if the packages are already installed.
 
-			dpkg -l make gcc gfortran
+            dpkg -l make gcc gfortran
 
     2.  Install any missing packages:
 
-			#if make is missing, run 
-			sudo apt-get install make
-			
-			#if gcc is missing, run
-			sudo apt-get install gcc
-			
-			#if gfortran is missing, run
-			sudo apt-get install gfortran
+            #if make is missing, run 
+            sudo apt-get install make
+
+            #if gcc is missing, run
+            sudo apt-get install gcc
+
+            #if gfortran is missing, run
+            sudo apt-get install gfortran
 
     **openSUSE / SLES:**
 
     1.  Check if the packages are already installed.
 
-			sudo zypper search -i make
-			sudo zypper search -i gcc 
-			sudo zypper search -i gfortran
+            sudo zypper search -i make
+            sudo zypper search -i gcc 
+            sudo zypper search -i gfortran
 
     2.  Install any missing packages:
 
-			#if make is missing, run 
-			sudo zypper install make
-			
-			#if gcc is missing, run
-			sudo zypper install gcc
-			
-			#if gfortran is missing, run
-			sudo zypper install gfortran
+            #if make is missing, run 
+            sudo zypper install make
+
+            #if gcc is missing, run
+            sudo zypper install gcc
+
+            #if gfortran is missing, run
+            sudo zypper install gfortran
 
 
 **-- The prerequisites are now installed. You can begin installing DeployR now. --**
 
- 
+
 ### Basic DeployR Install for Linux
 
 The basic installation of DeployR installs the DeployR main server and configure a local MongoDB database on the same machine.
@@ -422,7 +422,7 @@ After installing [these prerequisites](#lindependencies), install DeployR Enterp
 
 2.  Create the `deployrdownload` directory and go to that directory. At the prompt, type:
 
-	>Examples are written for user `deployr-user`. For another user, update the commands accordingly.
+    >Examples are written for user `deployr-user`. For another user, update the commands accordingly.
 
         mkdir /home/deployr-user/deployrdownload
         cd /home/deployr-user/deployrdownload
@@ -443,9 +443,9 @@ After installing [these prerequisites](#lindependencies), install DeployR Enterp
 
 8.  If you are provisioning your server on a cloud service such as [Azure or AWS EC2](deployr-admin-install-in-cloud.md), you must:
 
-    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#set-context-800) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure or AWS EC2](deployr-admin-install-in-cloud.md)).
+    -   Set the DeployR [server Web context](deployr-admin-diagnostics-troubleshooting.md#set-context-800) to the external **Public IP** or else you will not be able to access to the DeployR landing page or other DeployR components after installation and be sure the automatic detection of IP address:  (Setup: [Azure or AWS EC2](deployr-admin-install-in-cloud.md)).
 
-    -   Open [DeployR ports](#updating-your-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure or AWS EC2](deployr-admin-install-in-cloud.md)).
+    -   Open [DeployR ports](#updating-your-firewall) `8000`, `8001`, and `8006`:  (Setup: [Azure or AWS EC2](deployr-admin-install-in-cloud.md)).
 
 **-- The basic installation of DeployR is now complete --**
 
@@ -457,7 +457,7 @@ After installing [these prerequisites](#lindependencies), install DeployR Open a
 
 2.  Create the `deployrdownload` directory and go to that directory. At the prompt, type:
 
-	>Examples are written for user `deployr-user`. For another user, update the commands accordingly.
+    >Examples are written for user `deployr-user`. For another user, update the commands accordingly.
 
         mkdir /home/deployr-user/deployrdownload
         cd /home/deployr-user/deployrdownload
@@ -511,7 +511,7 @@ After installing the main [DeployR server](#basic-deployr-install-for-linux), in
 
 3.  Create the `deployrdownload` directory and go to that directory. At the prompt, type:
 
-	>Examples are written for user `deployr-user`. For another user, update the commands accordingly.
+    >Examples are written for user `deployr-user`. For another user, update the commands accordingly.
 
         mkdir /home/deployr-user/deployrdownload
         cd /home/deployr-user/deployrdownload
@@ -547,7 +547,7 @@ DeployR Enterprise on Linux supports the installation of a remote database for D
 
 2.  Create the `deployrdownload` directory and go to that directory. At the prompt, type:
 
-	>Examples are written for user `deployr-user`. For another user, update the commands accordingly.
+    >Examples are written for user `deployr-user`. For another user, update the commands accordingly.
 
         mkdir /home/deployr-user/deployrdownload
         cd /home/deployr-user/deployrdownload
@@ -580,7 +580,7 @@ Install DeployR as follows:
 
 3.  Create the `deployrdownload` directory and go to that directory. At the prompt, type:
 
-	>Examples are written for user `deployr-user`. For another user, update the commands accordingly.
+    >Examples are written for user `deployr-user`. For another user, update the commands accordingly.
 
         mkdir /home/deployr-user/deployrdownload
         cd /home/deployr-user/deployrdownload
@@ -668,15 +668,15 @@ Before you can install DeployR on the main server machine, you must manually ins
 
     3.  Run the following command to install RServe:
 
-		>Some browsers change the file extension to a **`.tar`** upon download. If this occurs, then update the following command accordingly.
+        >Some browsers change the file extension to a **`.tar`** upon download. If this occurs, then update the following command accordingly.
 
-		-   If you have RRO 3.2.x or R 3.2.x, then run this command:
-	
-	            R CMD INSTALL deployrRserve_7.4.2_for_R_3.2.x.tgz
-	
-		-   If you have RRO RRO 8.x or R 3.1.x, then run this command:
-	
-	            R CMD INSTALL deployrRserve_7.4.2_for_R_3.1.x.tgz
+        -   If you have RRO 3.2.x or R 3.2.x, then run this command:
+
+                R CMD INSTALL deployrRserve_7.4.2_for_R_3.2.x.tgz
+
+        -   If you have RRO RRO 8.x or R 3.1.x, then run this command:
+
+                R CMD INSTALL deployrRserve_7.4.2_for_R_3.1.x.tgz
 
 ### Installing DeployR for Mac OS X
 
@@ -721,11 +721,11 @@ Carefully follow these migration instructions before you install a more recent v
 
 These migration steps apply to RevoDeployR 7.0 and DeployR 7.1 - 7.4.1:
 
->If you want to upgrade or reinstall your version or R or Microsoft R Server, [follow these instructions](deployr-admin-configure-reinstall-r.md).
-
->**DeployR Enterprise Only:** To extend the DeployR server's grid beyond the **Default Grid Node**, install all of the grid nodes you want to use, and then configure them in **The Grid** tab in the **Administration Console**.
->
->Get DeployR Enterprise today to take advantage of great DeployR features like [enterprise security](deployr-security.md) and [a scalable grid framework](deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
+> If you want to upgrade or reinstall your version or R or Microsoft R Server, [follow these instructions](deployr-admin-configure-reinstall-r.md).
+> 
+> **DeployR Enterprise Only:** To extend the DeployR server's grid beyond the **Default Grid Node**, install all of the grid nodes you want to use, and then configure them in **The Grid** tab in the **Administration Console**.
+> 
+> Get DeployR Enterprise today to take advantage of great DeployR features like [enterprise security](deployr-security.md) and [a scalable grid framework](deployr-admin-managing-the-grid.md). Note that DeployR Enterprise is part of Microsoft R Server.
 
 ### Migrating to 8.0.0
 
@@ -751,15 +751,15 @@ The following instructions walk you through a migration of DeployR 7.4.1 or earl
 
     Type the following at a command prompt:
 
-	**Linux / Mac OS X:**
+    **Linux / Mac OS X:**
 
-		cd <8.0.0_Install_Dir>/deployr/tools
+        cd <8.0.0_Install_Dir>/deployr/tools
         ./databaseUtils.sh
 
-	**Windows:**
+    **Windows:**
 
-		cd <8.0.0_Install_Dir>\deployr\tools
-		./databaseUtils.bat
+        cd <8.0.0_Install_Dir>\deployr\tools
+        ./databaseUtils.bat
 
     Where `<8.0.0_Install_Dir>` is the full path to the DeployR 8.0.0 server installation directory.
 
@@ -809,12 +809,13 @@ If you are using the IPTABLES firewall or equivalent service for your server, us
 
 >If you are provisioning your server on a cloud service such as [Azure or AWS EC2](deployr-admin-install-in-cloud.md) or VirtualBox, then you must also configure endpoints for these ports (or use port-forwarding for VirtualBox).
 
-| Machine         | Ports      | Open Ports                                                                                      |
-|-----------------------------------------|-------------------|-------------------------------------------------|
-| DeployR server machine      Tomcat ports:<br />- `8000` (Tomcat default port)<br />- `8001` (Tomcat HTTPS port)| To the outside|
-| DeployR server machine     |- `8006` (DeployR event console port) | To the public IP of DeployR server AND to the public IP of *each* grid node machine<sup>1</sup>|
-| Remote grid node machines<sup>1</sup>  | RServe ports:<br />- `8004` (RServe connection port)<br />- `8005` (RServe cancel port)          | To the public IP of the DeployR server                                                          |
-| Remote MongoDB host machine<sup>2</sup> | - `8003` (MongoDB port)               | To the public IP of the DeployR server|
+|                                                     Machine                                                     |                                          Ports                                          |                                           Open Ports                                            |
+|-----------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| DeployR server machine      Tomcat ports:<br />- `8000` (Tomcat default port)<br />- `8001` (Tomcat HTTPS port) |                                     To the outside                                      |                                                                                                 |
+|                                             DeployR server machine                                              |                          - `8006` (DeployR event console port)                          | To the public IP of DeployR server AND to the public IP of *each* grid node machine<sup>1</sup> |
+|                                      Remote grid node machines<sup>1</sup>                                      | RServe ports:<br />- `8004` (RServe connection port)<br />- `8005` (RServe cancel port) |                             To the public IP of the DeployR server                              |
+|                                     Remote MongoDB host machine<sup>2</sup>                                     |                                 - `8003` (MongoDB port)                                 |                             To the public IP of the DeployR server                              |
+
 <sup>1</sup> Only DeployR Enterprise offers the ability to expand your Grid framework for load distribution by [installing and configuring additional grid nodes](#grid-node-install-for-linux).
 
 <sup>2</sup> Only DeployR Enterprise on Linux offers the ability to [install a remote MongoDB database](deployr-installing-configuring.md#deployr-install-with-remote-database).
@@ -828,7 +829,7 @@ During installation, the Windows firewall was updated to allow inbound communica
 | Machine                                | Ports                                 | Open Ports                                                                                      |
 |----------------------------------------|---------------------------------------|-------------------------------------------------------------------------------------------------|
 | DeployR server machine                 | Tomcat ports: <br />- `8000` (Tomcat default port)<br />- `8001` (Tomcat HTTPS port)           | To the outside                                                                                  |
-| DeployR server machine                 | - `8006` (DeployR event console port) | To the public IP of DeployR server AND to the public IP of *each* grid node machine<sup>1</sup> |
+| DeployR server machine                 | - `8006` (DeployR event console port) | To the public IP of DeployR server AND to the public IP of *each* grid node machine<sup>1</sup> |
 | Remote grid node machines<sup>1</sup> | RServe ports:<br />- `8004` (RServe connection port)<br />- `8005` (RServe cancel port)          | To the public IP of the DeployR server|
 
 <sup>1</sup> Only DeployR Enterprise offers the ability to expand your Grid framework for load distribution by [installing and configuring additional grid nodes](#grid-node-install).
@@ -848,13 +849,13 @@ DeployR is delivered with two user accounts: 'admin' and `testuser`. You must ch
     After installing, you can log in to the DeployR landing page at `http://<DEPLOYR_SERVER_IP>:8000/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine. If you do not have a username or password, please contact your administrator.
 
 2.  Log in as the default administrator using the following:  
-    username: 'admin'       password: `changeme`
+    username: 'admin'       password: `changeme`
 
     You are redirected to the reset password page.
 
 3.  Enter a new password and confirm this new password for 'admin'.
 
-	>To manage and create new user accounts, log in to the **Administration Console** as 'admin' and go to the **Users** tab and [use these instructions](deployr-admin-console-user-accounts.md#creating-new-user-accounts). We also recommend that you change the passwords to the other [default user accounts](deployr-admin-console-user-accounts.md#preconfigured-user-accounts).
+    >To manage and create new user accounts, log in to the **Administration Console** as 'admin' and go to the **Users** tab and [use these instructions](deployr-admin-console-user-accounts.md#creating-new-user-accounts). We also recommend that you change the passwords to the other [default user accounts](deployr-admin-console-user-accounts.md#preconfigured-user-accounts).
 
 ### Configuring Public Access
 

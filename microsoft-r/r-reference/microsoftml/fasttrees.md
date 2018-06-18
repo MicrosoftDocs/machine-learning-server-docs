@@ -27,14 +27,14 @@ ms.custom: ""
  
  
  
- #fastTrees: fastTrees 
- ##Description
+ # fastTrees: fastTrees 
+ ## Description
  
 Creates a list containing the function name and arguments to train a
  FastTree model with [rxEnsemble](rxEnsemble.md).
  
  
- ##Usage
+ ## Usage
 
 ```   
   fastTrees(numTrees = 100, numLeaves = 20, learningRate = 0.2,
@@ -45,7 +45,7 @@ Creates a list containing the function name and arguments to train a
  
 ```
  
- ##Arguments
+ ## Arguments
 
    
   

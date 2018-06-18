@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxGetJobOutput function (revoAnalytics) | Microsoft Docs" 
 description: " Gets the console output from the various nodes in a non-waiting distributed computing job. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,55 +21,55 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- #rxGetJobOutput:  Get Console Output from Distributed Computing Job  
- ##Description
- 
+
+
+ # rxGetJobOutput:  Get Console Output from Distributed Computing Job  
+ ## Description
+
 Gets the console output from the various nodes in a non-waiting distributed computing job.
- 
- 
- 
- ##Usage
+
+
+
+ ## Usage
 
 ```   
   rxGetJobOutput(jobInfo)
- 
-```
- 
- 
- ##Arguments
 
-   
-  
+```
+
+
+ ## Arguments
+
+
+
  ### `jobInfo`
  a job information object, such as that returned from a non-waiting,  distributed computation, for example, the `rxgLastPendingJob` object, if available. 
-  
- 
- 
- 
- ##Details
- 
+
+
+
+
+ ## Details
+
 During a job run, the state of the output is non-deterministic (that is, it may or 
 may not be on disk, and what is on disk at any given point in time may not reflect the 
 actual completion state of a job).
 
 If `autoCleanup` has been set to `TRUE`, the console output will not persist after the 
 job completes.
- 
+
 Unlike [rxGetJobResults](rxGetJobResults.md), this function does not remove any job information upon
 retrieval.
- 
- 
- ##Value
- 
+
+
+ ## Value
+
 This function is called for its side effect of printing console output; it does not have a
 useful return value.
- 
- ##See Also
- 
+
+ ## See Also
+
 [RxSpark](RxSpark.md),
 RxHadoopMR,
 [RxInSqlServer](RxInSqlServer.md),
@@ -77,13 +77,13 @@ RxHadoopMR,
 [rxCleanupJobs](rxCleanup.md), 
 [rxGetJobResults](rxGetJobResults.md),
 [rxExec](rxExec.md).
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 # set up a non-waiting HPC Server compute context: 
 myCluster <- RxSpark(nameNode = "my-name-service-server", port = 8020, wait = FALSE) 
 rxOptions(computeContext=myCluster) 
@@ -97,8 +97,6 @@ rxGetJobResults(myJob)
 # Another call to rxGetJobOutput(myJob) would return no output
 
  ## End(Not run) 
-  
- 
 ```
- 
- 
+
+

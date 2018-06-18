@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "executeStoredProcedure function (sqlrutils) | Microsoft Docs" 
 description: " executeStoredProcedure: Executes a stored procedure registered with the database " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,65 +21,65 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #executeStoredProcedure: Execute a SQL Stored Procedure 
- ##Description
- 
+
+
+
+
+ # executeStoredProcedure: Execute a SQL Stored Procedure 
+ ## Description
+
 `executeStoredProcedure`: Executes a stored procedure registered with the database
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   executeStoredProcedure(sqlSP, ..., connectionString = NULL)
- 
-```
- 
- ##Arguments
 
-   
-  
+```
+
+ ## Arguments
+
+
+
  ### `sqlSP`
  a valid StoredProcedure Object 
-  
-  
-  
+
+
+
  ### ` ...`
  Optional input and output parameters for the stored procedure. All of the parameters that do not have default queries or values assigned to them must be provided 
-  
-  
-  
+
+
+
  ### `connectionString`
  A character string (must be provided if the StoredProcedure object was created without a connection string). This function requires using an ODBC driver which supports ODBC 3.8 functionality. 
-  
-  
-  
+
+
+
  ### `verbose`
  Boolean. Whether to print out the command used to execute the stored procedure 
-  
- 
- 
- ##Value
- 
+
+
+
+ ## Value
+
 TRUE on success, FALSE on failure
- 
- ##Note
- 
+
+ ## Note
+
 This function relies that the ODBC driver used supports ODBC 3.8 features.
 Otherwise it will fail.
- 
- 
- ##Examples
+
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
   # See ?StoredProcedure for creating the "cleandata" table.
 
   ############# Example 1 #############
@@ -162,8 +162,5 @@ model <- executeStoredProcedure(scoreSP1, predVarNameInParam = "ArrDelayEstimate
 model$data
 model$params[[1]]
  ## End(Not run) 
-  
-  
- 
 ```
- 
+

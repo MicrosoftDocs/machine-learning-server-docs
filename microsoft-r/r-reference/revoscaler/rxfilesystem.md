@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "RxFileSystem function (revoAnalytics) | Microsoft Docs" 
 description: " This is the main generator for RxFileSystem S3 classes. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,78 +21,78 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- #RxFileSystem: RevoScaleR File System object generator 
- ##Description
- 
+
+
+
+ # RxFileSystem: RevoScaleR File System object generator 
+ ## Description
+
 This is the main generator for RxFileSystem S3 classes.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
-  	RxFileSystem( fileSystem, ...)
-  	
-  	 ## S3 method for class `RxFileSystem':
-print  ( x, ... )
- 
-```
- 
- ##Arguments
+    RxFileSystem( fileSystem, ...)
 
-   
-    
+     ## S3 method for class `RxFileSystem':
+print  ( x, ... )
+
+```
+
+ ## Arguments
+
+
+
  ### `fileSystem`
  character string specifying class name or file system type  existing `RxFileSystem` object.  Choices include: "RxNativeFileSystem" or "native", or "RxHdfsFileSystem" or "hdfs". Optional arguments `hostName` and `port` may be specified for HDFS file systems.  
-  
-    
+
+
  ### `x`
  an RxFileSystem object.  
-  
-    
+
+
  ### ` ...`
  other arguments are passed to the underlying function.  
-  
- 
- 
- ##Details
- 
+
+
+
+ ## Details
+
 This is a wrapper to specific generator functions for the
 RevoScaleR file system classes. For example, the RxHdfsFileSystem class uses function
 [RxHdfsFileSystem](RxHdfsFileSystem.md) as a generator. Therefore either `RxHdfsFileSystem()`
 or `RxFileSystem("hdfs")` will create an RxHdfsFileSystem object.
- 
- 
- ##Value
- 
+
+
+ ## Value
+
 A type of RxFileSystem file system object. This object may be used in
 [rxSetFileSystem](rxSetFileSystem.md), [rxOptions](rxOptions.md), [RxTextData](RxTextData.md), or
 [RxXdfData](RxXdfData.md) to set the file system.
- 
- ##Author(s)
+
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 [RxNativeFileSystem](RxNativeFileSystem.md),
 [RxHdfsFileSystem](RxHdfsFileSystem.md),
 [rxSetFileSystem](rxSetFileSystem.md),
 [rxOptions](rxOptions.md),
 [RxXdfData](RxXdfData.md),
 [RxTextData](RxTextData.md).
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   # Setup to run analyses to use HDFS file system
   ## Not run:
- 
+
 # Example 1
 myHdfsFileSystem1 <- RxFileSystem(fileSystem = "hdfs")
 rxSetFileSystem(fileSystem = myHdfsFileSystem1 )
@@ -101,9 +101,7 @@ rxSetFileSystem(fileSystem = myHdfsFileSystem1 )
 myHdfsFileSystem2 <- RxFileSystem(fileSystem = "hdfs", hostName = "myHost", port = 8020)
 rxSetFileSystem(fileSystem = myHdfsFileSystem2 )
  ## End(Not run) 
-  
- 
 ```
- 
- 
- 
+
+
+

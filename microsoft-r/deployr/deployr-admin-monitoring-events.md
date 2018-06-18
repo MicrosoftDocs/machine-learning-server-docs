@@ -28,7 +28,7 @@ ms.prod: "mlserver"
 When you are logged in as admin, you can monitor the runtime grid and security events on the management event stream from the **Home** page.  The management event stream allows you to see runtime grid activity events, grid warning events, and security access events. By default this stream is accessible to admin only; however, access can be changed in the **Server Policies** tab.
 
 <br/>
-_Figure: Home tab after login_
+<em>Figure: Home tab after login</em>
 
 ![](media/deployr-admin-monitoring-events/03000023_612x363.png)  
 

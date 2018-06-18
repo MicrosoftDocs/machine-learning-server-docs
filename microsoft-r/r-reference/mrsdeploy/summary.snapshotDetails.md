@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "summary.snapshotDetails function (mrsdeploy) | Microsoft Docs" 
 description: " Defines the R summary generic for snapshotDetails during a  listSnapshots(). " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,50 +21,48 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #summary.snapshotDetails: The summary generic for `snapshotDetails`. 
- ##Description
- 
+
+
+
+
+ # summary.snapshotDetails: The summary generic for `snapshotDetails`. 
+ ## Description
+
 Defines the R summary generic for `snapshotDetails` during a 
 `listSnapshots()`.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
  ## S3 method for class `snapshotDetails':
 summary  (o)
- 
-```
- 
- ##Arguments
 
-   
-  
+```
+
+ ## Arguments
+
+
+
  ### `o`
  The `snapshotDetails` list of S3 object. 
-  
- 
- 
- ##See Also
- 
+
+
+
+ ## See Also
+
 Other snapshot methods: [print.snapshotDetails](print.snapshotDetails.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 # --- print all ---
 summary(listSnapshots())
  ## End(Not run) 
-  
- 
 ```
- 
+

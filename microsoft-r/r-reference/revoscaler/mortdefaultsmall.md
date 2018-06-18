@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "mortDefaultSmall data (revoAnalytics) | Microsoft Docs" 
 description: " Simulated data on mortgage defaults. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,84 +21,83 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- #mortDefaultSmall: Smaller Mortgage Default Demonstration Data 
- ##Description
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ # mortDefaultSmall: Smaller Mortgage Default Demonstration Data 
+ ## Description
+
 Simulated data on mortgage defaults.
- 
- 
- ##Format
- 
+
+
+ ## Format
+
 An .xdf file with 50000 observations on the following 6 variables.
 
 
-###`creditScore`
+### `creditScore`
 FICO credit scores (stored as an integer).
 
 
-###`houseAge`
+### `houseAge`
 house age, by range (stored as integer).
 
 
-###`yearsEmploy`
+### `yearsEmploy`
 years employed at current employer (stored as integer).
 
 
-###`ccDebt`
+### `ccDebt`
 the amount of debt (stored as integer).
 
 
-###`year`
+### `year`
 year of the observation (stored as integer).
 
 
-###`default`
+### `default`
 1 if the homeowner was in default on the loan, 0 otherwise (stored as an integer).
 
 
 
- 
- 
- ##Details
- 
+
+
+ ## Details
+
 This data set simulates mortgage default data. The data set is created
 by looping over the input data files mortDefaultSmall200x.csv, each of
 which contains a year's worth of simulated data.
- 
- 
- ##Source
-  
+
+
+ ## Source
+
 Microsoft Corporation.
- 
- 
- ##Author(s)
+
+
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
- 
- 
- ##Examples
+
+
+ ## Examples
 
  ```
-   
+
   mortDefaultSmall <- rxDataStep(data = file.path(rxGetOption("sampleDataDir"),
                                 "mortDefaultSmall.xdf"))
   rxSummary(~ creditScore + houseAge, data = mortDefaultSmall)
- 
 ```
- 
- 
+
+

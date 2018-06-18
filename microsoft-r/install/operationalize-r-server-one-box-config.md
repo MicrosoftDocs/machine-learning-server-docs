@@ -71,18 +71,18 @@ To replace an older version of a one-box configuration, you can uninstall the ol
    >[!Warning]
    >If you skip this SQLite database backup step and uninstall Microsoft R Server 9.0 first, you cannot retrieve your database data.
 
-1. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](r-server-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
+2. Uninstall Microsoft R Server 9.0 using the instructions in the article [Uninstall Microsoft R Server to upgrade to a newer version](r-server-install-uninstall-upgrade.md). The uninstall process stashes away a copy of your 9.0 configuration files under this directory so you can seamlessly upgrade to R Server 9.1 in the next step:
    + On Windows: `C:\Users\Default\AppData\Local\DeployR\current`
 
    + On Linux: `/etc/deployr/current`
 
-1. If you backed up a SQLite database in Step 1, manually move `deployrdb_9.0.0.db` under this directory so it can be found during the upgrade:
+3. If you backed up a SQLite database in Step 1, manually move `deployrdb_9.0.0.db` under this directory so it can be found during the upgrade:
    + Windows: `C:\Users\Default\AppData\Local\DeployR\current\frontend`
    + Linux: `/etc/deployr/current/frontend`
 
    (If you are using a SQL Server or PostgreSQL database, you can skip this step.)
 
-1. Install Microsoft R Server:
+4. Install Microsoft R Server:
    + On Windows: follow these instructions [Installation steps](r-server-install-windows.md) | [Offline steps](r-server-install-windows-offline.md)
      >[!IMPORTANT]
      >For SQL Server Machine Learning Services, you must also:
@@ -90,20 +90,20 @@ To replace an older version of a one-box configuration, you can uninstall the ol
      >1. Manually install .NET Core 2.0
    + On Linux: follow these instructions [Installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/configure-admin-cli-launch.md) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder previously mentioned.
+5. [Launch the administration utility](../operationalize/configure-admin-cli-launch.md) with administrator privileges. The utility checks to see if any 9.0 configuration files are present under the `current` folder previously mentioned.
 
-1. From the menus, choose **Configure server** (or in previously releases, Configure R Server for Operationalization) and then choose **Configure for one box**. The configuration script begins.
+6. From the menus, choose **Configure server** (or in previously releases, Configure R Server for Operationalization) and then choose **Configure for one box**. The configuration script begins.
 
-1. When the script asks you if you'd like to upgrade, enter `y`. The nodes are automatically setup using the configuration you had for R Server 9.0. Note: You can safely ignore the Python warning during upgrade.
+7. When the script asks you if you'd like to upgrade, enter `y`. The nodes are automatically setup using the configuration you had for R Server 9.0. Note: You can safely ignore the Python warning during upgrade.
 
-1. From the main menu, choose the option to **Run Diagnostic Tests** to [test the configuration](../operationalize/configure-run-diagnostics.md).
+8. From the main menu, choose the option to **Run Diagnostic Tests** to [test the configuration](../operationalize/configure-run-diagnostics.md).
 
-1. Exit the utility. Your web and compute nodes are now upgraded and configured as they were in version 9.0.
+9. Exit the utility. Your web and compute nodes are now upgraded and configured as they were in version 9.0.
 
-1. Repeat these steps for each node.
+10. Repeat these steps for each node.
 
-   >[!WARNING]
-   >The entities created by users, specifically web services and [snapshots](../r/how-to-execute-code-remotely.md#snapshot), are tied to their usernames. For this reason, you must be careful to prevent changes to the user identifier over time. Otherwise, pre-existing web services and snapshots cannot be mapped to the users who created them. For this reason, we strongly recommend that you DO NOT change the unique LDAP identifier in appsettings.json once users start publishing service or creating snapshots. 
+    >[!WARNING]
+    >The entities created by users, specifically web services and [snapshots](../r/how-to-execute-code-remotely.md#snapshot), are tied to their usernames. For this reason, you must be careful to prevent changes to the user identifier over time. Otherwise, pre-existing web services and snapshots cannot be mapped to the users who created them. For this reason, we strongly recommend that you DO NOT change the unique LDAP identifier in appsettings.json once users start publishing service or creating snapshots. 
 
 
 

@@ -27,13 +27,13 @@ ms.custom: ""
  
  
  
- #RevoScaleR-defunct: Defunct functions in RevoScaleR 
- ##Description
+ # RevoScaleR-defunct: Defunct functions in RevoScaleR 
+ ## Description
  
 The functions or variables listed here are no longer part of RevoScaleR as they are no longer needed. 
  
  
- ##Usage
+ ## Usage
 
 ```   
                   
@@ -47,7 +47,7 @@ The functions or variables listed here are no longer part of RevoScaleR as they 
  
 ```
  
- ##Arguments
+ ## Arguments
 
    
     
@@ -101,7 +101,7 @@ The functions or variables listed here are no longer part of RevoScaleR as they 
   
  
  
- ##Details
+ ## Details
  
 [rxGetVarInfo](rxGetVarInfoXdf.md) should be used instead of `rxgetvarinfo`.
 [rxGetInfo](rxGetInfoXdf.md) should be used instead of `rxGetInfoXdf`.
@@ -111,7 +111,7 @@ The functions or variables listed here are no longer part of RevoScaleR as they 
  
  
  
- ##See Also
+ ## See Also
  
 [rxGetVarInfo](rxgetvarinfo.md),
 [rxGetInfo](rxGetInfoXdf.md),

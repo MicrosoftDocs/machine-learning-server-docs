@@ -54,15 +54,15 @@ While not required, it's a good idea to cross-check package versions so that you
 
 1. Download the installation shell script from [https://aka.ms/mls93-py](https://aka.ms/mls93-py) (or use [https://aka.ms/mls-py](https://aka.ms/mls-py) for the 9.2. release). The script installs Anaconda 4.2.0, which includes Python 3.5.2, along with all packages listed previously.
 
-1. Open PowerShell window with elevated administrator permissions (right-click **Run as administrator**).
+2. Open PowerShell window with elevated administrator permissions (right-click **Run as administrator**).
 
-1. Go to the folder in which you downloaded the installer and run the script. Add the `-InstallFolder` command-line argument to specify a folder location for the libraries. For example: 
+3. Go to the folder in which you downloaded the installer and run the script. Add the `-InstallFolder` command-line argument to specify a folder location for the libraries. For example: 
 
    ```
    cd {{download-directory}}
    .\Install-PyForMLS.ps1 -InstallFolder "C:\path-to-python-for-mls")
    ```
-Installation takes some time to complete. You can monitor progress in the PowerShell window. When setup is finished, you have a complete set of packages. For example, if you specified `C:\mspythonlibs` as the folder name, you would find the packages at `C:\mspythonlibs\Lib\site-packages`.
+   Installation takes some time to complete. You can monitor progress in the PowerShell window. When setup is finished, you have a complete set of packages. For example, if you specified `C:\mspythonlibs` as the folder name, you would find the packages at `C:\mspythonlibs\Lib\site-packages`.
 
 The installation script does not modify the PATH environment variable on your computer so the new python interpreter and modules you just installed are not automatically available to your tools. For help on linking the Python interpreter and libraries to tools, see [Link Python tools and IDEs](../python/quickstart-python-tools.md), replacing the MLS server paths with the path you defined on your workstation For example, for a Python project in Visual Studio, your custom environment would specify `C:\mypythonlibs`, `C:\mypythonlibs\python.exe` and `C:\mypythonlibs\pythonw.exe` for **Prefix path**, **Interpreter path**, and **Windowed interpreter**, respectively.
 

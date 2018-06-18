@@ -80,11 +80,11 @@ You can get the zipped installation file from one of the following download site
 
   For downloads from [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/):
 
-  1. Click **Join or access now** to sign up for download benefits. The Visual Studio page title should include "My Benefits". The URL should be changed to *https://my.visualstudio.com/*.
+1. Click **Join or access now** to sign up for download benefits. The Visual Studio page title should include "My Benefits". The URL should be changed to *https://my.visualstudio.com/*.
 
-  2. Click **Downloads** and search for *Machine Learning Server*.
+2. Click **Downloads** and search for *Machine Learning Server*.
 
-  3. Find the version and click **Download** to get the Machine Learning Server installer for Windows.
+3. Find the version and click **Download** to get the Machine Learning Server installer for Windows.
 
    ![Download page on Visual Studio benefits page](./media/machine-learning-server-windows-install/search-downloads.png)
 
@@ -157,7 +157,7 @@ Python runs when you execute a .py script or run commands in a Python console wi
     print(summary)
     ~~~~
 
-  Output from the sample dataset should look similar to the following:
+   Output from the sample dataset should look similar to the following:
 
     ~~~~ 
     Summary Statistics Results for: ArrDelay+DayOfWeek
@@ -196,13 +196,13 @@ If you have multiple servers, you can designate each one as either a web node or
 
 2. Enter the following command to configure the server: `az ml admin bootstrap`
 
-  ![CLI screenshot](./media/machine-learning-server-windows-install/cli-onebox.png)
+   ![CLI screenshot](./media/machine-learning-server-windows-install/cli-onebox.png)
 
-  This command invokes the Administrator Command Line Interface (CLI), installed by Machine Learning Server and added as a system environment variable to your path so that you can run it anywhere.
+   This command invokes the Administrator Command Line Interface (CLI), installed by Machine Learning Server and added as a system environment variable to your path so that you can run it anywhere.
 
 3. Set a password used to protect your configuration settings. Later, after configuration is finished, anyone who wants to use the CLI to modify a configuration must provide this password to gain access to settings and operations.  
 
-  The password must meet these requirements: 8-16 characters long, with at least one upper-case letter, one lower-case letter, one number, and one special character.
+   The password must meet these requirements: 8-16 characters long, with at least one upper-case letter, one lower-case letter, one number, and one special character.
 
 After you provide the password, the tool does the rest. Your server is fully operationalized once the process is complete. For more information about the benefits of operationalization:
 

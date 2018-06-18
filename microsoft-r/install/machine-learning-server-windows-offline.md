@@ -119,7 +119,7 @@ Python runs when you execute a .py script or run commands in a Python console wi
     print(summary)
     ~~~~
 
-  Output from the sample dataset should look similar to the following:
+   Output from the sample dataset should look similar to the following:
 
     ~~~~ 
     Summary Statistics Results for: ArrDelay+DayOfWeek

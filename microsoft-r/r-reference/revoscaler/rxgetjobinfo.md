@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxGetJobInfo function (revoAnalytics) | Microsoft Docs" 
 description: " Gets job information for a given distributed computing job. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,37 +21,37 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- #rxGetJobInfo:  Get Job Information from Distributed Computing Job  
- ##Description
- 
+
+
+ # rxGetJobInfo:  Get Job Information from Distributed Computing Job  
+ ## Description
+
 Gets job information for a given distributed computing job.
- 
- 
- 
- ##Usage
+
+
+
+ ## Usage
 
 ```   
   rxGetJobInfo(object)
- 
-```
- 
- 
- ##Arguments
 
-   
-  
+```
+
+
+ ## Arguments
+
+
+
  ### `object`
  an object containing `jobInfo` information, such as that returned from a non-waiting, distributed computation. 
-  
- 
- 
- 
- ##Details
- 
+
+
+
+
+ ## Details
+
 The object returned from a non-waiting, distributed computation contains job information together with other 
 information.  The job information is used internally by such functions as `rxGetJobStatus`,
 `rxGetJobOutput`, and `rxGetJobResults`. It is sometimes useful to extract it for its own sake, as
@@ -62,33 +62,33 @@ For most users, the principal use of this function is to determine whether a giv
 information. If the return value is not `NULL`, then the object contains job information. Note, however,
 that the structure of the job information is subject to change, so code that attempts to manipulate it directly
 is not guaranteed to be forward-compatible.
- 
- 
- ##Value
- 
+
+
+ ## Value
+
 the job information, if present, or `NULL`.
- 
- ##Author(s)
- 
+
+ ## Author(s)
+
 Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 [RxSpark](RxSpark.md),
 RxHadoopMR,
 [RxInSqlServer](RxInSqlServer.md),
 [rxGetJobStatus](rxGetJobResults.md), 
 [rxGetJobOutput](rxGetJobOutput.md), 
 [rxGetJobResults](rxGetJobResults.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 # set up a non-waiting HPC Server compute context: 
 myCluster <- RxSpark(nameNode = "my-name-service-server", port = 8020, wait = FALSE) 
 rxOptions(computeContext=myCluster) 
@@ -103,8 +103,6 @@ rxGetJobResults(myJob)
 # Another call to rxGetJobInfo(myJob) would return no output
 
  ## End(Not run) 
-  
- 
 ```
- 
- 
+
+

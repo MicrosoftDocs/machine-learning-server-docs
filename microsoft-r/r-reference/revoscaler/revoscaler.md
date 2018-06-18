@@ -216,18 +216,18 @@ This section lists the functions by category to give you an idea of how each one
 
 ## 7-Compute context functions
 
-| Function name | Description |
-|---------------|-------------|
-|[RxComputeContext](rxcomputecontext.md) |Creates a compute context. |
-|[rxSetComputeContext](rxsetcomputecontext.md) |Sets a compute context. |
-|[rxGetComputeContext](rxsetcomputecontext.md) |Gets the current compute context. |
-|[RxSpark](rxspark.md) |Creates an in-data, file-based Spark compute context. Computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark. |
-|[RxHadoopMR](rxhadoopmr.md) |Creates an in-data, file-based Hadoop compute context. |
-|[RxInTeradata](rxinteradata.md) |Creates an in-database compute context for Teradata. |
-|[RxInSqlServer](rxinsqlserver.md) |Creates an in-database compute context for SQL Server. |
-|[RxLocalSeq](rxlocalseq.md) |Creates a local compute context for rxExec using sequential computations. |
-|[RxLocalParallel](rxlocalparallel.md) |Creates a local compute context for rxExec using the ***parallel** package as backend. |
-|[RxForeachDoPar](rxforeachdopar.md) |Creates a compute context for rxExec using the current **foreach** parallel backend. |
+|                 Function name                 |                                                                        Description                                                                         |
+|-----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    [RxComputeContext](rxcomputecontext.md)    |                                                                 Creates a compute context.                                                                 |
+| [rxSetComputeContext](rxsetcomputecontext.md) |                                                                  Sets a compute context.                                                                   |
+| [rxGetComputeContext](rxsetcomputecontext.md) |                                                             Gets the current compute context.                                                              |
+|             [RxSpark](rxspark.md)             | Creates an in-data, file-based Spark compute context. Computations are parallelized and distributed across the nodes of a Hadoop cluster via Apache Spark. |
+|          [RxHadoopMR](rxhadoopmr.md)          |                                                   Creates an in-data, file-based Hadoop compute context.                                                   |
+|        [RxInTeradata](rxinteradata.md)        |                                                    Creates an in-database compute context for Teradata.                                                    |
+|       [RxInSqlServer](rxinsqlserver.md)       |                                                   Creates an in-database compute context for SQL Server.                                                   |
+|          [RxLocalSeq](rxlocalseq.md)          |                                         Creates a local compute context for rxExec using sequential computations.                                          |
+|     [RxLocalParallel](rxlocalparallel.md)     |                                 Creates a local compute context for rxExec using the *\*\*parallel*\* package as backend.                                  |
+|      [RxForeachDoPar](rxforeachdopar.md)      |                                    Creates a compute context for rxExec using the current **foreach** parallel backend.                                    |
 
 <a name="distributed-computing-functions"></a>
 

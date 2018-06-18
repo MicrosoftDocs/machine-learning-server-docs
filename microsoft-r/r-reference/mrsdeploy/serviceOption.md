@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "serviceOption function (mrsdeploy) | Microsoft Docs" 
 description: " Retrieve, set, and list the different service options. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,64 +21,64 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #serviceOption: Retrieve, set, and list the different service options. 
- ##Description
- 
+
+
+
+
+ # serviceOption: Retrieve, set, and list the different service options. 
+ ## Description
+
 Retrieve, set, and list the different service options.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   serviceOption()
- 
-```
- 
- ##Arguments
 
-   
-  
+```
+
+ ## Arguments
+
+
+
  ### `name`
  The option name. 
-  
-  
-  
+
+
+
  ### `value`
  The option value to be set. 
-  
- 
- 
- ##Details
- 
+
+
+
+ ## Details
+
 Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
 
- 
- 
- ##Value
- 
+
+
+ ## Value
+
 A list of the current service options.
- 
- ##See Also
- 
+
+ ## See Also
+
 Other service methods: [deleteService](deleteService.md),
 [getService](getService.md), [listServices](listServices.md),
 [print.serviceDetails](print.serviceDetails.md),
 [publishService](publishService.md),
 [summary.serviceDetails](summary.serviceDetails.md),
 [updateService](updateService.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 
 # --- set option name|value
 opts <- serviceOption()
@@ -91,7 +91,5 @@ base_dir <- opts$get('base_dir')
 # --- list options
 options <- serviceOption()$get()
  ## End(Not run) 
-  
- 
 ```
- 
+

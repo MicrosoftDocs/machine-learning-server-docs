@@ -27,20 +27,20 @@ ms.custom: ""
  
  
  
- #getValidatedServiceType: Test to see if supplied service type is supported. 
- ##Description
+ # getValidatedServiceType: Test to see if supplied service type is supported. 
+ ## Description
  
 Test to see if supplied service type is supported.
  
  
- ##Usage
+ ## Usage
 
 ```   
   getValidatedServiceType(type)
  
 ```
  
- ##Arguments
+ ## Arguments
 
    
   
@@ -49,7 +49,7 @@ Test to see if supplied service type is supported.
   
  
  
- ##Value
+ ## Value
  
 type The validated type
  

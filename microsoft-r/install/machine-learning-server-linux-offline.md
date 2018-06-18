@@ -141,7 +141,7 @@ The following example is for the first package. Each command references the vers
 + Download to Ubuntu 16.04: `wget https://packages.microsoft.com/ubuntu/16.04/prod/pool/main/m/microsoft-mlserver-packages-r-9.3.0/microsoft-mlserver-packages-r-9.3.0.deb`
 + Download to SUSE: `wget https://packages.microsoft.com/sles/11/prod/microsoft-mlserver-packages-r-9.3.0.rpm`
 
-Repeat for each package in the [package list](#Package list).
+Repeat for each package in the [package list](#Package%20list).
 
 ## Install packages
 
@@ -164,9 +164,9 @@ Run the activation script from either the R or Python directory:
 
 1. List installed packages:
 
-  + On CentOS and RHEL: `rpm -qa | grep microsoft` 
-  + On Ubuntu: `apt list --installed | grep microsoft`  
-  + On SLES11: `zypper se microsoft`
+   + On CentOS and RHEL: `rpm -qa | grep microsoft` 
+   + On Ubuntu: `apt list --installed | grep microsoft`  
+   + On SLES11: `zypper se microsoft`
 
 2. Once you have a package name, you can obtain verbose version information. For example:
 
@@ -174,7 +174,7 @@ Run the activation script from either the R or Python directory:
    + On Ubuntu: `$ dpkg --status microsoft-mlserver-packages-r-9.3.0`  
    + On SLES: `zypper info microsoft-mlserver-packages-r-9.3.0`
 
-  Output on Ubuntu is as follows:
+   Output on Ubuntu is as follows:
 
    ```
     Package: microsoft-mlserver-packages-r-9.3.0
@@ -202,7 +202,7 @@ As another verification step, run the Revo64 program. By default, Revo64 is link
 
    `> rxSummary(~., iris)`
 
-  Output from the iris dataset should look similar to the following:
+   Output from the iris dataset should look similar to the following:
 
 ~~~~
         Rows Read: 150, Total Rows Processed: 150, Total Chunk Time: 0.001 seconds
@@ -250,7 +250,7 @@ To quit the program, type `q()` at the command line with no arguments.
     print(summary)
     ~~~~
 
-  Output from the sample dataset should look similar to the following:
+   Output from the sample dataset should look similar to the following:
 
     ~~~~ 
     Summary Statistics Results for: ArrDelay+DayOfWeek

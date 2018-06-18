@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxGetEnableThreadPool function (revoAnalytics) | Microsoft Docs" 
 description: " Gets or sets the current state of the thread pool (in a ready state or created ad hoc). " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,37 +21,37 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- #rxGetEnableThreadPool:  Get or Set Thread Pool State  
- ##Description
- 
+
+
+
+ # rxGetEnableThreadPool:  Get or Set Thread Pool State  
+ ## Description
+
 Gets or sets the current state of the thread pool (in a ready state or created ad hoc).
- 
- 
- 
- ##Usage
+
+
+
+ ## Usage
 
 ```   
   rxGetEnableThreadPool()
   rxSetEnableThreadPool( enable )
- 
-```
- 
- ##Arguments
 
-   
-  
+```
+
+ ## Arguments
+
+
+
  ### `enable`
   Logical scalar. If `TRUE`, the thread pool is instantiated and maintained in a ready state. If `FALSE`, threads are created in an ad hoc fashion; that is, they are created as needed.  
-  
- 
- 
- ##Details
- 
+
+
+
+ ## Details
+
 The `rxSetEnableThreadPool` function is used on Linux to turn the thread pool on and off.  When the thread pool is on, 
 it means that there exists a pool of threads that persist between calls, and are ready for processing.  
 When the thread pool is off, it means that threads will be created on an ad hoc basis when calls requiring
@@ -71,10 +71,10 @@ The following are possible cases where fork may be called.  Obviously, this is n
 
 
 * 
-`nohup` to launch jobs.  This will cause a fork to be called.
+  `nohup` to launch jobs.  This will cause a fork to be called.
 
 * 
-Using `multicore` and/or `doMC` to launch R processes with RevoScaleR
+  Using `multicore` and/or `doMC` to launch R processes with RevoScaleR
 
 
 
@@ -89,37 +89,35 @@ The `rxGetEnableThreadPool` function can be used to determine whether the thread
 it will always be instantiated; on Linux, whether it is always instantiated or created on an ad hoc basis
 is controlled by `rxSetEnableThreadPool`.  At startup on Linux, the thread pool state wil be off; that is,
 threads will be created on an ad hoc basis.
- 
- 
- ##Value
- 
+
+
+ ## Value
+
 `rxSetEnableThreadPool` returns the state of the thread pool prior to making the call (as opposed to the updated state).  Thus, this function returns
 `TRUE` if the thread pool was instantiated and in a ready state prior to making the call, or `FALSE` if the thread pool 
 was set to be created in an ad hoc fashion. 
- 
- ##Author(s)
- 
+
+ ## Author(s)
+
 Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 [rxOptions](rxOptions.md)
-   
- 
- ##Examples
+
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 rxGetEnableThreadPool()
 rxSetEnableThreadPool(TRUE)
 rxGetEnableThreadPool()
   ## End(Not run) 
-  
- 
 ```
- 
- 
+
+
