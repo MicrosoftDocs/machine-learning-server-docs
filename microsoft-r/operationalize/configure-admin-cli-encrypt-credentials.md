@@ -48,6 +48,7 @@ The encryption function available in the administration utility relies on the RS
 
      1. Run the command to encrypt:
         ```azurecli
+        # With elevated privileges, run the following commands.
         # Get help on the commands
         az ml admin credentials --help
 

@@ -54,6 +54,7 @@ In this release, use the `admin` extension of the [Azure CLI](https://docs.micro
 
 1. Call the help function to verify that Administration CLI is working properly. At the commmand prompt, enter:
    ```azurecli
+   # With elevated privileges, run the following commands.
    az ml admin --help
    ```
 

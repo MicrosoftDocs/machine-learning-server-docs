@@ -37,6 +37,7 @@ If for some reason your `azure-ml-admin-cli` extension is not available or has b
 you will be met with the following error:
 
 ```azurecli
+# With elevated privileges, run the following commands.
 $ az ml admin --help
 
 az: error: argument _command_package: invalid choice: ml

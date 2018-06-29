@@ -43,6 +43,7 @@ Additional [troubleshooting topics](#trouble) are also covered.
 1. Launch the diagnostic tests:
    + On Machine Learning Server 9.3 (or any other machine that has access to Machine Learning Server), launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges and run this command.
      ```azurecli
+     # With elevated privileges, run the following commands.
      # Authenticate with the CLI if you haven't already
      az login --mls
 

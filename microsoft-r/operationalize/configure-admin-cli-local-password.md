@@ -48,6 +48,7 @@ To update the password:
 
 1. Run the command to update the 'admin' password.
    ```azurecli
+   # With elevated privileges, run the following commands.
    # Update the admin account password
    az ml admin password set --old-password <OLD-PW> --new-password <NEW-PW> --confirm-password <NEW-PW>
    ```

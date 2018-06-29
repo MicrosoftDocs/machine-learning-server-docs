@@ -48,6 +48,7 @@ In Machine Learning Server 9.3, you can use `admin` extension of the Azure Comma
 
 1. If you are not yet authenticated in the CLI, do so now. This is an administrator task only, so you must have the Owner role to declare or manage URIs. The account name is `admin` unless LDAP or AAD is configured.
    ```azurecli
+   # With elevated privileges, run the following commands.
    az login --mls
 
    # Use the following if you need help with logins.
