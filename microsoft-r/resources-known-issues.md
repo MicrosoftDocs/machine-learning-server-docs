@@ -101,6 +101,18 @@ If you customarily switch the compute context among multiple machines, you might
 ```
 To deserialize the model, switch to a newer server or consider upgrading the older remote server. As a best practice, it helps when all servers and client apps are at the same functional level.
 
+### 5. azureml-model-management-sdk only supports up to 3 aruguments as the input of the web service
+
+There is a defect in our azureml-model-management-sdk package: sending multiple variables as inputs is returning keyerror. Alternative: use DataFrames as the input type.
+
+```python
+#example:
+service.consume(Age = 25.0, Gender = 1.0, Height = 180.0, Weight = 200.0)
+--------------------------------------------------------------------------------------------
+TypeError: consume() got multiple values for argument 'Weight'
+--------------------------------------------------------------------------------------------
+```
+
 <a name="Prev"></a>
 
 ## Previous releases 
