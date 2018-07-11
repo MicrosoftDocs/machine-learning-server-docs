@@ -106,33 +106,40 @@ To deserialize the model, switch to a newer server or consider upgrading the old
 When consuming the web services using python, sending multiple variables (more than three) as inputs of consume() or the alias function is returning keyerror. Alternative: use DataFrames as the input type.
 
 ```python
-#example:
-service.consume(Age = 25.0, Gender = 1.0, Height = 180.0, Weight = 200.0)
+# example:
+def func(age, gender, height, weight):
+    pred = mod.predict(age, gender, height, weight)
+    return pred
+#error 1:
+service.consume(age = 25.0, gender = 1.0, height = 180.0, weight = 200.0)
 #--------------------------------------------------------------------------------------------
-#TypeError: consume() got multiple values for argument 'Weight'
+#TypeError: consume() got multiple values for argument 'weight'
+#--------------------------------------------------------------------------------------------
+#error 2:
+service.consume(25.0, 1.0, 180.0, 200.0)
+#--------------------------------------------------------------------------------------------
+#KeyError: 'weight'
 #--------------------------------------------------------------------------------------------
 
 #workaround:
-def func(datf):
+def func(inputDatf):
     features = ['Age', 'Gender', 'Height', 'Weight']
-    datf = datf[features]
-    pred = mod.predict(datf)
-    datf['predicted']=pred
-    datf.to_csv('answer.csv')
-    return pred
+    inputDatf = inputDatf[features]
+    pred = mod.predict(inputDatf)
+    inputDatf['predicted']=pred
+    outputDatf = inputDatf
+    return outputDatf
 	
 service = client.service(service_name)\
                 .version('1.0')\
                 .code_fn(func)\
-                .inputs(datf=pd.DataFrame)\
-                .outputs(datf=pd.DataFrame)\
+                .inputs(inputDatf=pd.DataFrame)\
+                .outputs(outputDatf=pd.DataFrame)\
                 .models(mod=mod)\
                 .description('Calories python model')\
-                .artifacts(['answer.csv'])\
                 .deploy()
-data = np.array([['Age', 'Gender', 'Height', 'Weight'],
-                [1,2,3,4]])              
-res=service.consume(pd.DataFrame(data=data[1:,:]))
+				
+res=service.consume(pd.DataFrame({ 'Age':[1], 'Gender':[2], 'Height':[3], 'Weight':[4] }))
 ```
 
 <a name="Prev"></a>
