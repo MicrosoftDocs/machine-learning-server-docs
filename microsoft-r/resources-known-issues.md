@@ -103,14 +103,36 @@ To deserialize the model, switch to a newer server or consider upgrading the old
 
 ### 5. azureml-model-management-sdk only supports up to 3 aruguments as the input of the web service
 
-There is a defect in our azureml-model-management-sdk package: sending multiple variables as inputs is returning keyerror. Alternative: use DataFrames as the input type.
+When consuming the web services using python, sending multiple variables (more than three) as inputs of consume() or the alias function is returning keyerror. Alternative: use DataFrames as the input type.
 
 ```python
 #example:
 service.consume(Age = 25.0, Gender = 1.0, Height = 180.0, Weight = 200.0)
---------------------------------------------------------------------------------------------
-TypeError: consume() got multiple values for argument 'Weight'
---------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------
+#TypeError: consume() got multiple values for argument 'Weight'
+#--------------------------------------------------------------------------------------------
+
+#workaround:
+def func(datf):
+    features = ['Age', 'Gender', 'Height', 'Weight']
+    datf = datf[features]
+    pred = mod.predict(datf)
+    datf['predicted']=pred
+    datf.to_csv('answer.csv')
+    return pred
+	
+service = client.service(service_name)\
+                .version('1.0')\
+                .code_fn(func)\
+                .inputs(datf=pd.DataFrame)\
+                .outputs(datf=pd.DataFrame)\
+                .models(mod=mod)\
+                .description('Calories python model')\
+                .artifacts(['answer.csv'])\
+                .deploy()
+data = np.array([['Age', 'Gender', 'Height', 'Weight'],
+                [1,2,3,4]])              
+res=service.consume(pd.DataFrame(data=data[1:,:]))
 ```
 
 <a name="Prev"></a>
