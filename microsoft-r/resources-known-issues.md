@@ -101,6 +101,47 @@ If you customarily switch the compute context among multiple machines, you might
 ```
 To deserialize the model, switch to a newer server or consider upgrading the older remote server. As a best practice, it helps when all servers and client apps are at the same functional level.
 
+### 5. azureml-model-management-sdk only supports up to 3 aruguments as the input of the web service
+
+When consuming the web services using python, sending multiple variables (more than three) as inputs of consume() or the alias function is returning KeyError or TypeError. Alternative: use DataFrames as the input type.
+
+```python
+# example:
+def func(Age, Gender, Height, Weight):
+    pred = mod.predict(Age, Gender, Height, Weight)
+    return pred
+#error 1:
+service.consume(Age = 25.0, Gender = 1.0, Height = 180.0, Weight = 200.0)
+#--------------------------------------------------------------------------------------------
+#TypeError: consume() got multiple values for argument 'Weight'
+#--------------------------------------------------------------------------------------------
+#error 2:
+service.consume(25.0, 1.0, 180.0, 200.0)
+#--------------------------------------------------------------------------------------------
+#KeyError: 'weight'
+#--------------------------------------------------------------------------------------------
+
+#workaround:
+def func(inputDatf):
+    features = ['Age', 'Gender', 'Height', 'Weight']
+    inputDatf = inputDatf[features]
+    pred = mod.predict(inputDatf)
+    inputDatf['predicted']=pred
+    outputDatf = inputDatf
+    return outputDatf
+	
+service = client.service(service_name)\
+                .version('1.0')\
+                .code_fn(func)\
+                .inputs(inputDatf=pd.DataFrame)\
+                .outputs(outputDatf=pd.DataFrame)\
+                .models(mod=mod)\
+                .description('Calories python model')\
+                .deploy()
+				
+res=service.consume(pd.DataFrame({ 'Age':[1], 'Gender':[2], 'Height':[3], 'Weight':[4] }))
+```
+
 <a name="Prev"></a>
 
 ## Previous releases 
