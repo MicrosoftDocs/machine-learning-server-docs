@@ -103,17 +103,17 @@ To deserialize the model, switch to a newer server or consider upgrading the old
 
 ### 5. azureml-model-management-sdk only supports up to 3 aruguments as the input of the web service
 
-When consuming the web services using python, sending multiple variables (more than three) as inputs of consume() or the alias function is returning keyerror. Alternative: use DataFrames as the input type.
+When consuming the web services using python, sending multiple variables (more than three) as inputs of consume() or the alias function is returning KeyError or TypeError. Alternative: use DataFrames as the input type.
 
 ```python
 # example:
-def func(age, gender, height, weight):
-    pred = mod.predict(age, gender, height, weight)
+def func(Age, Gender, Height, Weight):
+    pred = mod.predict(Age, Gender, Height, Weight)
     return pred
 #error 1:
-service.consume(age = 25.0, gender = 1.0, height = 180.0, weight = 200.0)
+service.consume(Age = 25.0, Gender = 1.0, Height = 180.0, Weight = 200.0)
 #--------------------------------------------------------------------------------------------
-#TypeError: consume() got multiple values for argument 'weight'
+#TypeError: consume() got multiple values for argument 'Weight'
 #--------------------------------------------------------------------------------------------
 #error 2:
 service.consume(25.0, 1.0, 180.0, 200.0)
