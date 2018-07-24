@@ -102,6 +102,47 @@ If you customarily switch the compute context among multiple machines, you might
 ```
 To deserialize the model, switch to a newer server or consider upgrading the older remote server. As a best practice, it helps when all servers and client apps are at the same functional level.
 
+### 5. azureml-model-management-sdk only supports up to 3 aruguments as the input of the web service
+
+When consuming the web services using python, sending multiple variables (more than three) as inputs of consume() or the alias function is returning KeyError or TypeError. Alternative: use DataFrames as the input type.
+
+```python
+# example:
+def func(Age, Gender, Height, Weight):
+    pred = mod.predict(Age, Gender, Height, Weight)
+    return pred
+#error 1:
+service.consume(Age = 25.0, Gender = 1.0, Height = 180.0, Weight = 200.0)
+#--------------------------------------------------------------------------------------------
+#TypeError: consume() got multiple values for argument 'Weight'
+#--------------------------------------------------------------------------------------------
+#error 2:
+service.consume(25.0, 1.0, 180.0, 200.0)
+#--------------------------------------------------------------------------------------------
+#KeyError: 'weight'
+#--------------------------------------------------------------------------------------------
+
+#workaround:
+def func(inputDatf):
+    features = ['Age', 'Gender', 'Height', 'Weight']
+    inputDatf = inputDatf[features]
+    pred = mod.predict(inputDatf)
+    inputDatf['predicted']=pred
+    outputDatf = inputDatf
+    return outputDatf
+	
+service = client.service(service_name)\
+                .version('1.0')\
+                .code_fn(func)\
+                .inputs(inputDatf=pd.DataFrame)\
+                .outputs(outputDatf=pd.DataFrame)\
+                .models(mod=mod)\
+                .description('Calories python model')\
+                .deploy()
+				
+res=service.consume(pd.DataFrame({ 'Age':[1], 'Gender':[2], 'Height':[3], 'Weight':[4] }))
+```
+
 <a name="Prev"></a>
 
 ## Previous releases 
@@ -154,7 +195,7 @@ The workaround to bypass the timeout is to modify the webnode appsetting.json fi
 
 The value of "BatchExecutionCheckoutTimeSpan" and "ConnectionTimeout" should be set to same value. If both web and compute nodes are on the same machine (a one-box configuration) or on the same virtual network, then the "ConnectionTimeout" can be shorter because there is minimal latency. 
 
-To reduce the risk of timeouts, we recommend same-machine or same-network deployments. On Azure, you can set these up easily using a template. For more information, see [Configure Machine Learning Server using Resource Manager templates] (https://blogs.msdn.microsoft.com/mlserver/2017/11/21/configuring-microsoft-machine-learning-server-to-operationalize-analytics-using-arm-templates/).
+To reduce the risk of timeouts, we recommend same-machine or same-network deployments. On Azure, you can set these up easily using a template. For more information, see [Configure Machine Learning Server using Resource Manager templates](https://blogs.msdn.microsoft.com/mlserver/2017/11/21/configuring-microsoft-machine-learning-server-to-operationalize-analytics-using-arm-templates/).
 
 
 <a name="910"></a>
@@ -254,22 +295,22 @@ The workaround is to recreate the symbolic link, update the site file, and resta
 
 1. Create this symlink: 
 
-  ~~~~
-  sudo ln -s /usr/java/jdk1.7.0_67-cloudera/jre/lib/amd64/server/libjvm.so /opt/cloudera/parcels/MRS/hadoop/libjvm.so
-  ~~~~
+   ~~~~
+   sudo ln -s /usr/java/jdk1.7.0_67-cloudera/jre/lib/amd64/server/libjvm.so /opt/cloudera/parcels/MRS/hadoop/libjvm.so
+   ~~~~
 
 2. Copy the site file to the parcel repo and rename it to RevoHadoopEnvVars.site:
 
-  ~~~~
-  sudo cp ~/.RevoHadoopEnvVars.site /opt/cloudera/parcels/MRS/hadoop
-  sudo mv /opt/cloudera/parcels/MRS/hadoop/.RevoHadoopEnvVars.site /opt/cloudera/parcels/MRS/hadoop/RevoHadoopEnvVars.site
-  ~~~~
+   ~~~~
+   sudo cp ~/.RevoHadoopEnvVars.site /opt/cloudera/parcels/MRS/hadoop
+   sudo mv /opt/cloudera/parcels/MRS/hadoop/.RevoHadoopEnvVars.site /opt/cloudera/parcels/MRS/hadoop/RevoHadoopEnvVars.site
+   ~~~~
 
 3. Restart RStudio after the changes:
 
-  ~~~~
-  sudo rstudio-server restart
-  ~~~~
+   ~~~~
+   sudo rstudio-server restart
+   ~~~~
 
 <a name="sparkdelays"></a>
 

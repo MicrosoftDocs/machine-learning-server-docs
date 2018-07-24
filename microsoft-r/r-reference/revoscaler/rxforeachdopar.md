@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "RxForeachDoPar function (revoAnalytics) | Microsoft Docs" 
 description: " Creates a compute context object using the registered foreach parallel back end. This compute context can be used only to distribute computations via the [rxExec](rxExec.md) function; it is ignored by Revolution HPA functions. This is the main generator for S4 class RxForeachDoPar. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,50 +21,50 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- #RxForeachDoPar: Generate RxForeachDoPar Compute Context 
- ##Description
- 
+
+
+ # RxForeachDoPar: Generate RxForeachDoPar Compute Context 
+ ## Description
+
 Creates a compute context object using the registered `foreach`
 parallel back end. This compute context can be used only to distribute computations
 via the [rxExec](rxExec.md) function; it is ignored by Revolution HPA functions.
 This is the main generator for S4 class RxForeachDoPar.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   RxForeachDoPar( object, dataPath = NULL, outDataPath = NULL )
- 
-```
- 
- 
- ##Arguments
 
-   
-  
-    
+```
+
+
+ ## Arguments
+
+
+
+
  ### `object`
  a compute context object. If `object` has slots for   `dataPath` and/or `outDataPath`, they will be copied to the  equivalent slots for the new `RxForeachDoPar` object. Explicit specifications  of the `dataPath` and/or outDataPath arguments will override this.   
-  
-   
-    
+
+
+
  ### `dataPath`
  `NULL` or character vector defining the search path(s) for the input data source(s).  If not `NULL`, it overrides any specification for `dataPath` in [rxOptions](rxOptions.md) 
-   
-  
-    
+
+
+
  ### `outDataPath`
  `NULL` or character vector defining the search path(s) for   new output data file(s).  If not `NULL`, this overrides any specification for `dataPath` in [rxOptions](rxOptions.md)  
-   
- 
- 
- 
- ##Details
- 
+
+
+
+
+ ## Details
+
 A job is associated with the compute context in effect at the time the job
 was submitted. If the compute context subsequently changes, the compute context of the
 job is not affected.
@@ -76,20 +76,20 @@ loaded and registered to accept `foreach` input.
 Note that `dataPath` and `outDataPath` are only used by
 data sources used in **RevoScaleR** analyses. They do not alter the
 working directory for other R functions that read from or write to files. 
- 
- 
- 
- ##Value
- 
+
+
+
+ ## Value
+
 object of class RxForeachDoPar.
- 
- 
- ##Author(s)
+
+
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 foreach,
 doParallel-package,
 registerDoParallel,
@@ -102,15 +102,15 @@ registerDoRSR,
 [RxLocalSeq](RxLocalSeq.md),
 [RxLocalParallel](RxLocalParallel.md),
 [RxForeachDoPar-class](RxForeachDoPar-class.md).
-   
- 
- ##Examples
+
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
-  
+
+
 # Create a compute context using your registered foreach backend
 doparContext <- RxForeachDoPar()
 
@@ -118,9 +118,7 @@ doparContext <- RxForeachDoPar()
 rxSetComputeContext(doparContext)
 
  ## End(Not run) 
-  
- 
 ```
- 
- 
- 
+
+
+

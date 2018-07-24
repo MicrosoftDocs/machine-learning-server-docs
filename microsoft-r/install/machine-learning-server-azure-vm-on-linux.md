@@ -39,7 +39,7 @@ The following procedure explains how to use the Azure portal to view the full ra
 
 3. Search for *Machine Learning Server*. The following list shows partial search results. VM images include current and previous versions of Machine Learning Server on several common Linux operating systems as well as Windows Server 2016.
 
-  ![VM images on Azure](./media/machine-learning-server-install-azure-vm/azure-vm-list.png)
+   ![VM images on Azure](./media/machine-learning-server-install-azure-vm/azure-vm-list.png)
 
 VM images include the custom [R packages](../r-reference/introducing-r-server-r-package-reference.md) and [Python libraries](../python-reference/introducing-python-package-reference.md) from Machine Learning Server that offer machine learning algorithms, R and Python helpers for deploying analytics, and portable, scalable, and distributable data analysis functions.
 

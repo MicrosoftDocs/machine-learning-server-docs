@@ -47,43 +47,43 @@ This procedure involves creating a custom R package that contains the function o
 
 1. Create a new R package, such as “abcMods” if your company abbreviation is ‘abc’, by installing the “devtools” package and running the following command, or use the `package.skeleton()` function in base R.  To learn more about creating R packages, see [Writing R Extensions](https://cran.r-project.org/doc/manuals/r-release/R-exts.html) on the CRAN website, or [online version of R Packages](http://r-pkgs.had.co.nz/) from Hadley Wickham.
 
-  ~~~~
-  > library(devtools)
-  > create('/dev/abcMods',rstudio=FALSE)
+   ~~~~
+   > library(devtools)
+   > create('/dev/abcMods',rstudio=FALSE)
    ~~~~
 
 2. This creates the essential package files in the requested directory, in this case ‘/dev/abcMods’. Edit each of the following to fill in the relevant info.
 
-  DESCRIPTION – text file containing the description of the R package:
+   DESCRIPTION – text file containing the description of the R package:
 
-  ~~~~
-  Package: abcMods
-  Date: 2016-09-01
-  Title: Company ABC Modified Functions
-  Depends: RevoScaleR
-  Description: R Server functions modified for use by Company ABC
-  License: file LICENSE
-  ~~~~
+   ~~~~
+   Package: abcMods
+   Date: 2016-09-01
+   Title: Company ABC Modified Functions
+   Depends: RevoScaleR
+   Description: R Server functions modified for use by Company ABC
+   License: file LICENSE
+   ~~~~
 
-  NAMESPACE – text file containing the list of overridden functions to be exported:
+   NAMESPACE – text file containing the list of overridden functions to be exported:
 
-  ~~~~
-  export("RxHadoopMR", "RxSpark", “RxSparkConnect”)
-  ~~~~
+   ~~~~
+   export("RxHadoopMR", "RxSpark", “RxSparkConnect”)
+   ~~~~
 
-  LICENSE – create a text file named ‘LICENSE’ in the package directory with a single line for the license associated with the R package:
+   LICENSE – create a text file named ‘LICENSE’ in the package directory with a single line for the license associated with the R package:
 
-  ~~~~
-  This package is for internal Company ABC use only -- not for redistribution.
-  ~~~~
+   ~~~~
+   This package is for internal Company ABC use only -- not for redistribution.
+   ~~~~
 
 3. In the package’s R directory add one or more `*.R` files with the code for the functions to be overridden. The following sample code provides for overriding `RxHadoopMR`, `RxSpark`, and `RxSparkConnect` that you might save to a file called "ccOverrides.r" in that directory. The `RxSparkConnect` function is only available in V9 and later releases. 
 
-  ~~~~
+   ~~~~
     # sample code to enforce use of YARN queues for RxHadoopMR, RxSpark,
     # and RxSparkConnect
 
-  RxHadoopMR <- function(...) {
+   RxHadoopMR <- function(...) {
       dotargs <- list(...)
       hswitch <- dotargs$hadoopSwitches
 
@@ -100,9 +100,9 @@ This procedure involves creating a custom R package that contains the function o
     # add in the required queue info
     dotargs$hadoopSwitches <- paste(y,'-Dmapreduce.job.queuename=mrsjobs')
     do.call( RevoScaleR::RxHadoopMR, dotargs )
-  }
+   }
 
-  RxSpark <- function(...) {
+   RxSpark <- function(...) {
       dotargs <- list(...)
       hswitch <- dotargs$extraSparkConfig
 
@@ -119,9 +119,9 @@ This procedure involves creating a custom R package that contains the function o
       # add in the required queue info
       dotargs$extraSparkConfig <- paste(y,'--conf spark.yarn.queue=mrsjobs')
       do.call( RevoScaleR::RxSpark, dotargs )
-  } }
+   } }
 
-  RxSparkConnect <- function(...) {
+   RxSparkConnect <- function(...) {
       dotargs <- list(...)
       hswitch <- dotargs$extraSparkConfig
 
@@ -138,37 +138,37 @@ This procedure involves creating a custom R package that contains the function o
       # add in the required queue info
       dotargs$extraSparkConfig <- paste(y,'--conf spark.yarn.queue=mrsjobs')
       do.call( RevoScaleR::RxSparkConnect, dotargs )
-  }
-~~~~
+   }
+   ~~~~
 
 4. After editing the previous components of the package, run the following Linux commands to build the package from the directory containing the **abcMods** directory:
 
-  ~~~~
-  R CMD build abcMods
-  R CMD INSTALL abcmods_0.1-0    (if needed run this using sudo)
-  ~~~~
+   ~~~~
+   R CMD build abcMods
+   R CMD INSTALL abcmods_0.1-0    (if needed run this using sudo)
+   ~~~~
 
-  If you need to build the package for users on Windows, then the equivalent commands would be as follows where ‘rpath’ is defined to point to the version of R Server to which you’d like to add the library.  
+   If you need to build the package for users on Windows, then the equivalent commands would be as follows where ‘rpath’ is defined to point to the version of R Server to which you’d like to add the library.  
 
-  ~~~~
-  set rpath="C:\Program Files\Microsoft\R Client\R_SERVER\bin\x64\R.exe"
-  %rpath% CMD build abcMods
-  %rpath% CMD INSTALL abcMods_0.1-0.tar.gz
-  ~~~~
+   ~~~~
+   set rpath="C:\Program Files\Microsoft\R Client\R_SERVER\bin\x64\R.exe"
+   %rpath% CMD build abcMods
+   %rpath% CMD INSTALL abcMods_0.1-0.tar.gz
+   ~~~~
 
 5. To test it, start R, load the library, and make a call to `RxHadoopMR()`:
 
-  ~~~~
-  > library(abcMods)
-  > RxHadoopMR(hadoopSwitches="-Dmapreduce.job.queuename=XYZ")
-  ~~~~
+   ~~~~
+   > library(abcMods)
+   > RxHadoopMR(hadoopSwitches="-Dmapreduce.job.queuename=XYZ")
+   ~~~~
 
-  You should see the result come back with the queue name set to your override value (for example, `Dmapreduce.job.queuename=mrsjobs)`.
+   You should see the result come back with the queue name set to your override value (for example, `Dmapreduce.job.queuename=mrsjobs)`.
 
 6. To automate the loading of the package so that users don’t need to specify "library(abcMods)", edit Rprofile.site and modify the line specifying the default packages to include **abcMods** as the last item:
 
-  ~~~~
-  options(defaultPackages=c(getOption("defaultPackages"), "rpart", "lattice", "RevoScaleR", "RevoMods", "RevoUtils", "RevoUtilsMath", "abcMods"))
-  ~~~~
+   ~~~~
+   options(defaultPackages=c(getOption("defaultPackages"), "rpart", "lattice", "RevoScaleR", "RevoMods", "RevoUtils", "RevoUtilsMath", "abcMods"))
+   ~~~~
 
 7. Once everything tests out to your satisfaction, install the package on all the edge nodes that your users are logging in to. To do this, copy "Rprofile.site" and R’s library/abcMods directory to each of these nodes, or install the package from the abcmods_0.1-0 tar file on each node and manually edit the "Rprofile.site" file on each node.    

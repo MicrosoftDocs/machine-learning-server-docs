@@ -25,13 +25,13 @@ ms.custom: ""
 --- 
  
  
- #rxTlcBridge: TLC Bridge 
- ##Description
+ # rxTlcBridge: TLC Bridge 
+ ## Description
  
 Bridge code for additional packages
  
  
- ##Usage
+ ## Usage
 
 ```   
   rxTlcBridge(formula = NULL, data = NULL, outData = NULL,
@@ -52,7 +52,7 @@ Bridge code for additional packages
  
 ```
  
- ##Arguments
+ ## Arguments
 
    
     
@@ -216,17 +216,17 @@ Bridge code for additional packages
  
  
  
- ##Details
+ ## Details
  
 This function does not provide direct user functionality.
  
  
- ##Value
+ ## Value
  
 an rxTlcBridge object, or an output data source or data frame
 
  
- ##Author(s)
+ ## Author(s)
  
 Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 

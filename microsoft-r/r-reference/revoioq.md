@@ -53,7 +53,7 @@ Load and run RevoIOQ from a command line interface or R IDE. The following comma
  
 ```
  
- ##Arguments
+ ## Arguments
 
    
  ### `printText`

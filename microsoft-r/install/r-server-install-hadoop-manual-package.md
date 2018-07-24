@@ -42,16 +42,16 @@ After you unpack the distribution, you should see packages for RPM and DEB in th
 
 ## Steps
 
-1.  Log in as root or as a user with super user privileges (`sudo -s`). The following instructions assume user privileges with the sudo override.
+1. Log in as root or as a user with super user privileges (`sudo -s`). The following instructions assume user privileges with the sudo override.
 
 2. Use a package manager to verify system repositories are up to date:
 
-  + On RHEL use [yum](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/sec-Working_with_Yum_Cache.html): `[root@localhost tmp] $ yum expire-cache`  
-  + On Ubuntu use [apt-get](https://help.ubuntu.com/community/AptGet/Howto): `[root@localhost tmp] $ apt-get autoclean` 	
+   + On RHEL use [yum](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/sec-Working_with_Yum_Cache.html): `[root@localhost tmp] $ yum expire-cache`  
+   + On Ubuntu use [apt-get](https://help.ubuntu.com/community/AptGet/Howto): `[root@localhost tmp] $ apt-get autoclean`     
 
 3. Install the .NET Core package from [https://www.microsoft.com/net/core](https://www.microsoft.com/net/core). This component is required for machine learning, remote execution, web service deployment, and configuration of web and compute nodes.
 
-5. Install Microsoft R Server packages. You should have the following packages, which should be installed in this order:
+4. Install Microsoft R Server packages. You should have the following packages, which should be installed in this order:
 
 	microsoft-r-open-mro-3.3.3.x86_64.rpm	
 	microsoft-r-server-packages-9.1.rpm		

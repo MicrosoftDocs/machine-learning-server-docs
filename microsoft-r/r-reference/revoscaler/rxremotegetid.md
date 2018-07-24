@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxRemoteGetId function (revoAnalytics) | Microsoft Docs" 
 description: " Provides a unique identifier for the process in the range [1:N] where N is the number of processes. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,57 +21,55 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- #rxRemoteGetId:  Provides a unique identifier for the process.  
- ##Description
- 
+
+
+ # rxRemoteGetId:  Provides a unique identifier for the process.  
+ ## Description
+
 Provides a unique identifier for the process in the range [1:N] where N is the number of processes.
- 
- 
- 
- ##Usage
+
+
+
+ ## Usage
 
 ```   
   rxRemoteGetId()
- 
+
 ```
- 
- ##Details
- 
+
+ ## Details
+
 This function is intended for use in calls to [rxExec](rxExec.md) to identify the process performing a given computation.  
 
 You can also use `rxRemoteGetId` to obtain separate random number seeds.
 See the examples.
- 
- 
- ##Value
- 
+
+
+ ## Value
+
 In a distributed compute context,
 this returns the parametric ID for each node or core that executes the function.
 If the compute context is local, this always returns `-1`.
- 
- 
- ##Examples
+
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 rxExec(rxRemoteGetId)
 
 # set a seed on each node before generating random numbers
 myNorm <- function(x)
 {
     set.seed(rxRemoteGetId())
-	rnorm(x)
+    rnorm(x)
 }
 rxExec(myNorm, ARGS=as.list(1:5))
  ## End(Not run) 
-  
- 
 ```
- 
- 
+
+

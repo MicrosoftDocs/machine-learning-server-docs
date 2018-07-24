@@ -27,13 +27,13 @@ ms.custom: ""
  
  
  
- #serviceTypes: Defines the enumerated list of the supported service types. 
- ##Description
+ # serviceTypes: Defines the enumerated list of the supported service types. 
+ ## Description
  
 Defines the enumerated list of the supported service types.
  
  
- ##Usage
+ ## Usage
 
 ```   
   serviceTypes()

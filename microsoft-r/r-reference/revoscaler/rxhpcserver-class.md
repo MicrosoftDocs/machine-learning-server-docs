@@ -27,8 +27,8 @@ ms.custom: ""
  
  
  
- #RxHpcServer-class: Class RxHpcServer 
- ##Description
+ # RxHpcServer-class: Class RxHpcServer 
+ ## Description
  
 DEPRECATED: HPC Server compute context class.
  
@@ -49,13 +49,13 @@ Class RxComputeContext, directly.
  
 
 
-###`show`
+### `show`
 `signature(object = "RxHpcServer")`: ...
 
 
 
  
- ##Author(s)
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  

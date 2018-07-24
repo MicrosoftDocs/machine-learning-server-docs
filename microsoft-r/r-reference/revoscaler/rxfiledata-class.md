@@ -27,8 +27,8 @@ ms.custom: ""
  
  
  
- #RxFileData-class: Class RxFileData 
- ##Description
+ # RxFileData-class: Class RxFileData 
+ ## Description
  
 File-based data source connection class.
  
@@ -38,11 +38,11 @@ File-based data source connection class.
  
 Class RxDataSource, directly.
  
- ##Author(s)
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
  
  
- ##See Also
+ ## See Also
  
 [RxDataSource-class](RxDataSource-class.md),
 [rxNewDataSource](rxNew.md)

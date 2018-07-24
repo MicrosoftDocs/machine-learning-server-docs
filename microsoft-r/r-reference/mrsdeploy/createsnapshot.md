@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "createSnapshot function (mrsdeploy) | Microsoft Docs" 
 description: " Creates a snapshot of the remote R session and saves it on the server. Both the workspace and the files in the working directory are saved. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,47 +21,47 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #createSnapshot: Create a snapshot of the remote R session. 
- ##Description
- 
+
+
+
+
+ # createSnapshot: Create a snapshot of the remote R session. 
+ ## Description
+
 Creates a snapshot of the remote R session and saves it on the server. Both the workspace
 and the files in the working directory are saved.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   createSnapshot(name)
- 
-```
- 
- ##Arguments
 
-   
-  
+```
+
+ ## Arguments
+
+
+
  ### `name`
  Name describing the snapshot to be saved. 
-  
- 
- 
- ##Details
- 
+
+
+
+ ## Details
+
 Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
 
- 
- 
- ##Value
- 
+
+
+ ## Value
+
 `snapshot_id` if successful.
- 
- ##See Also
- 
+
+ ## See Also
+
 [deleteSnapshot](deleteSnapshot.md)
 
 [listSnapshots](listSnapshots.md)
@@ -69,16 +69,14 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
 [loadSnapshot](loadSnapshot.md)
 
 [downloadSnapshot](downloadSnapshot.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 snapshot_id<-createSnapshot()
  ## End(Not run) 
-  
- 
 ```
- 
+

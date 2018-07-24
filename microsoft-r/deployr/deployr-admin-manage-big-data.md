@@ -43,7 +43,8 @@ As an administrator, you can enable this service by:
 
 It is the responsibility of the DeployR administrator to configure and manage these 'big data' external directories and the data files within them.
 
-<br />
+<a name="setting-up-nfs-setup"></a>
+
 ## Setting up NFS Setup
 
 >NFS configuration for external directories is required only if your DeployR environment has multiple grid nodes. 

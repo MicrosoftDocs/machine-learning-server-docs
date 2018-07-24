@@ -118,9 +118,9 @@ On each web node, edit the appsettings.json configuration file in order to decla
 
 1. Open the configuration file, [\<web-node-install-path>](../operationalize/configure-find-admin-configuration-file.md)/appsettings.json. 
 
-1. Search for the following section: `"Authorization": {`
+2. Search for the following section: `"Authorization": {`
 
-1. In that section, add only the roles you need. Then, map the security groups to each role you want to define such as:
+3. In that section, add only the roles you need. Then, map the security groups to each role you want to define such as:
    ```
    "Authorization": {
      "Owner": [ "Administrators" ],
@@ -132,16 +132,16 @@ On each web node, edit the appsettings.json configuration file in order to decla
 
    The 'CacheLifeTimeInMinutes' attribute was added in Machine Learning Server 9.2.1. It indicates the length of time that Machine Learning Server caches the information received from LDAP or AAD regarding user group membership. After the cache lifetime elapses, the roles and users are checked again. The changes you make to the groups in your LDAP or AAD configuration are not reflected in  Machine Learning Server until the cache lifetime expires and the configuration is checked again. 
    
-   >[!IMPORTANT]
-   Defining a Reader role might affect web service consumption latency as roles are being validated on each call to the web service.
-
-   >[!WARNING]
-   >For AD/LDAP authentications:
-   >1. Be careful not to use the 'CN=' portion of the distinguished names. For example, if the distinguished name appears as 'CN=Administrators', enter only 'Administrators' here.
-   
-   >2. Ensure that the username returned for the value of 'UniqueUserIdentifierAttributeName' matches the username returned by 'SearchFilter'. For example, if `"SearchFilter": "cn={0}"` and `"UniqueUserIdentifierAttributeName": "userPrincipalName"`, then the values for `cn` and `userPrincipalName` must match.
-
-   >3. For R Server 9.1 users: If you specify LDAP Root as the SearchBase in web node's appsettings.json, a search of the roles returns [LDAP referrals](https://technet.microsoft.com/en-us/library/cc978014.aspx) and throws a 'LDAPReferralException'. A workaround is to change the LDAP port in web node's appsettings.json from 389 to Global Catalog Port 3268. Or, for LDAPS, change Port to 3269 instead of 636. Global Catalogs do not return LDAP referrals in LDAP Search Results.  
+   > [!IMPORTANT]
+   > Defining a Reader role might affect web service consumption latency as roles are being validated on each call to the web service.
+   > 
+   > [!WARNING]
+   > For AD/LDAP authentications:
+   > 1. Be careful not to use the 'CN=' portion of the distinguished names. For example, if the distinguished name appears as 'CN=Administrators', enter only 'Administrators' here.
+   > 
+   > 2. Ensure that the username returned for the value of 'UniqueUserIdentifierAttributeName' matches the username returned by 'SearchFilter'. For example, if `"SearchFilter": "cn={0}"` and `"UniqueUserIdentifierAttributeName": "userPrincipalName"`, then the values for `cn` and `userPrincipalName` must match.
+   > 
+   > 3. For R Server 9.1 users: If you specify LDAP Root as the SearchBase in web node's appsettings.json, a search of the roles returns [LDAP referrals](https://technet.microsoft.com/en-us/library/cc978014.aspx) and throws a 'LDAPReferralException'. A workaround is to change the LDAP port in web node's appsettings.json from 389 to Global Catalog Port 3268. Or, for LDAPS, change Port to 3269 instead of 636. Global Catalogs do not return LDAP referrals in LDAP Search Results.  
 
 
 ### Step 2. Validate groups against AD/LDAP or AAD

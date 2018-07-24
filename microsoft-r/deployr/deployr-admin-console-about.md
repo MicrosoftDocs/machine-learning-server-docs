@@ -63,7 +63,7 @@ Only the `admin` user account, representing the administrator, has access to thi
 3. Click **Log In**.
 
 <br>
-**To log out of the Administration Console:**
+<strong>To log out of the Administration Console:</strong>
 
 + Click **Log Out** in the upper right corner of the console.
  

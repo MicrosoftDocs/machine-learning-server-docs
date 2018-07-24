@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxPackage function (revoAnalytics) | Microsoft Docs" 
 description: " This article explains how to enable and disable R package management on SQL Server Machine Learning Services (in-database), as well as installation, usage, and removal of individual packages. **RevoScaleR** provides the necessary rx functions for these tasks. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,19 +21,19 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- #rxPackage: R Package Management in SQL Server 
- ##Description
- 
+
+
+ # rxPackage: R Package Management in SQL Server 
+ ## Description
+
 This article explains how to enable and disable R package management on SQL Server Machine Learning Services (in-database), as well as installation, usage, and removal of individual packages.
 **RevoScaleR** provides the necessary rx functions for these tasks.
- 
- 
- ##Details
- 
+
+
+ ## Details
+
 SQL Server Machine Learning Services and the previous version, SQL Server R Services, support install and uninstall of R packages on SQL Server. A database administrator (in `db_owner` role) must grant permissions to allow access to package functions at both the database and instance level.
 
 R package management functions are part of the base distribution. These functions allows packages to be installed from a local or remote repository into a local library (folder). 
@@ -188,11 +188,11 @@ After disabling package management at the database level, disable package manage
 This command removes the package-related, per-instance artifacts from the SQL Server. 
 
 
- 
- 
- 
- ##See Also
- 
+
+
+
+ ## See Also
+
 [rxSqlLibPaths](rxSqlLibPaths.md),
 [rxInstalledPackages](rxInstalledPackages.md),
 [rxInstallPackages](rxInstallPackages.md),   
@@ -200,13 +200,13 @@ This command removes the package-related, per-instance artifacts from the SQL Se
 [rxFindPackage](rxFindPackage.md),
 library
 require
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 #
 # install and remove packages from client 
 #
@@ -223,16 +223,16 @@ rxRemovePackages(pkgs = pkgs, verbose = TRUE, scope = "private", computeContext 
 usePackageRxFunction <- function()
 {
   library(dplyr)
-  
+
   # returns list of functions contained in dplyr
   ls(pos="package:dplyr")
-  
+
   #
   # more code to use dplyr functionality
   #
   # ...
   #
-  
+
 }
 rxSetComputeContext(sqlcc)
 rxExec(usePackageRxFunction)
@@ -255,7 +255,7 @@ exec sp_execute_external_script
     # use the installed R package from rx function like rxExec(...)
     #
     library("dplyr");
-    
+
     #
     # more code to use dplyr functionality
     #
@@ -267,13 +267,11 @@ exec sp_execute_external_script
   @instance_name = @instance_name, 
   @database_name = @database_name;
  ## End(Not run) 
-  
- 
 ```
- 
- 
- 
- 
- 
- 
- 
+
+
+
+
+
+
+

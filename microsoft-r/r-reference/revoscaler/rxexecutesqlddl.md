@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxExecuteSQLDDL function (revoAnalytics) | Microsoft Docs" 
 description: " Execute a command to define, manipulate, or control SQL data (but not  return data). " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,64 +21,64 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- #rxExecuteSQLDDL:  Execute SQL Command for Data Manipulation, Definition, or Control  
- ##Description
- 
+
+
+
+ # rxExecuteSQLDDL:  Execute SQL Command for Data Manipulation, Definition, or Control  
+ ## Description
+
 Execute a command to define, manipulate, or control SQL data (but not 
 return data).
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   rxExecuteSQLDDL(src, ...)
- 
-```
- 
- 
- ##Arguments
 
-   
-    
+```
+
+
+ ## Arguments
+
+
+
  ### `src`
   An RxOdbcData data source.  
-  
-    
+
+
  ### ` ...`
   Additional arguments, typically `sSQLString=` supplied with a character string specifying the SQL command to be executed. The typical SQL commands are `CREATE TABLE` and `DROP TABLE`.  
-  
- 
- 
- 
- ##Value
- 
+
+
+
+
+ ## Value
+
 Returns `NULL`; executed for its side-effect (the manipulation of the
 SQL data source).
- 
- 
- ##Author(s)
- 
+
+
+ ## Author(s)
+
 Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
- 
- 
- 
- 
- ##See Also
- 
+
+
+
+
+ ## See Also
+
 [RxOdbcData](RxOdbcData.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 
 # Note: for improved security, read connection string from a file, such as
 # conString <- readLines("conString.txt")
@@ -97,11 +97,9 @@ outOdbcDS <- RxOdbcData(table = "MyClaims",
                         useFastRead=TRUE)                           
 rxDataStep(inData = inTextData, outFile = outOdbcDS)   
    ## End(Not run) 
-            
- 
 ```
- 
- 
- 
- 
- 
+
+
+
+
+

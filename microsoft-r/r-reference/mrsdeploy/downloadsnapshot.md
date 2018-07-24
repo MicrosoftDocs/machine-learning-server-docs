@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "downloadSnapshot function (mrsdeploy) | Microsoft Docs" 
 description: " Downloads the specified snapshot from the R server in zip format. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,52 +21,52 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #downloadSnapshot: Download a snapshot from the R server. 
- ##Description
- 
+
+
+
+
+ # downloadSnapshot: Download a snapshot from the R server. 
+ ## Description
+
 Downloads the specified snapshot from the R server in zip format.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   downloadSnapshot(snapshot_id, file = NULL)
- 
-```
- 
- ##Arguments
 
-   
-  
+```
+
+ ## Arguments
+
+
+
  ### `snapshot_id`
  Identifier of the snapshot to load. 
-  
-  
-  
+
+
+
  ### `file`
  Name of a file to write the contents of the snapshot.  If `NULL`, (the default), then the raw vector of bytes will be returned. 
-  
- 
- 
- ##Details
- 
+
+
+
+ ## Details
+
 Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
 
- 
- 
- ##Value
- 
+
+
+ ## Value
+
 raw vector of bytes if `file=NULL` if successful.  If `file` not equal `NULL`,
 then `TRUE` will be returned.
- 
- ##See Also
- 
+
+ ## See Also
+
 [createSnapshot](createSnapshot.md)
 
 [deleteSnapshot](deleteSnapshot.md)
@@ -74,17 +74,15 @@ then `TRUE` will be returned.
 [listSnapshots](listSnapshots.md)
 
 [loadSnapshot](loadSnapshot.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 downloadSnapshot("8ce7eb47-3aeb-4c5a-b0a5-a2025f07d9cd")
 downloadSnapshot("8ce7eb47-3aeb-4c5a-b0a5-a2025f07d9cd", file="snapshot.zip")
  ## End(Not run) 
-  
- 
 ```
- 
+

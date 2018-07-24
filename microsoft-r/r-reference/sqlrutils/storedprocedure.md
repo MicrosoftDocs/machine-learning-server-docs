@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "StoredProcedure function (sqlrutils) | Microsoft Docs" 
 description: " StoredProcedure: generates a SQLServer Stored Procedure Object   and optionally a .sql file containing a query to create a stored   procedure. StoredProcedure$registrationVec contains strings   representing the queries needed for creation of the stored procedure " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,78 +21,78 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #StoredProcedure: SQL Server Stored Procedure: Class Generator 
- ##Description
- 
+
+
+
+
+ # StoredProcedure: SQL Server Stored Procedure: Class Generator 
+ ## Description
+
 `StoredProcedure`: generates a SQLServer Stored Procedure Object
 and optionally a .sql file containing a query to create a stored
 procedure. StoredProcedure$registrationVec contains strings
 representing the queries needed for creation of the stored procedure
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   StoredProcedure (func, spName, ..., filePath = NULL ,dbName = NULL,
   connectionString = NULL, batchSeparator = "GO")
- 
-```
- 
- ##Arguments
 
-   
-  
+```
+
+ ## Arguments
+
+
+
  ### `func`
  A valid R function or a string name of a valid R function: 1) All of the variables that the function relies on should be defined either inside the function or come in as input parameters. Among the input parameters there can be at most 1 data frame 2) The function should return either a data frame, a named list, or NULL. There can be at most one data frame inside the list. 
-  
-  
-  
+
+
+
  ### `spName`
  A character string specifying name for the stored procedure. 
-  
-  
-  
+
+
+
  ### ` ...`
  Optional input and output parameters for the stored procedure; must be objects of classes InputData, InputParameter, or outputParameter. 
-  
-  
-  
+
+
+
  ### `filePath`
  A character string specifying a path to the directory in which to create the .sql. If NULL the .sql file is not generated. 
-  
-  
-  
+
+
+
  ### `dbName`
  A character string specifying name of the database to use. 
-  
-  
-  
+
+
+
  ### `connectionString`
  A character string specifying the connection string. 
-  
-  
-  
+
+
+
  ### `batchSeparator`
  Desired SQL batch separator (only relevant if filePath is defined) 
-  
- 
- 
- ##Value
- 
+
+
+
+ ## Value
+
 SQLServer Stored Procedure Object
- 
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
   ############# Example 1 #############
   # etl1 - reads from and write directly to the database
   etl1 <- function() {
@@ -165,7 +165,5 @@ SQLServer Stored Procedure Object
   model <- executeStoredProcedure(sp_df_op, connectionString = conStr)
   mm <- rxUnserializeModel(model$params$op1)
  ## End(Not run) 
-  
- 
 ```
- 
+

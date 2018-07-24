@@ -149,7 +149,7 @@ In this section, we present you with a description and some examples to help you
 
 In practical terms, the **throughput** for your system is determined by your server and grid capacity in conjunction with the nature and volume of the tasks being processed. DeployR throughput measures the number of tasks processed on the DeployR grid in a fixed time period. 
 
-###Understanding the Nature of Tasks
+### Understanding the Nature of Tasks
 
 To illustrate the nature of a task, let’s begin with a summary of the basic workflow for an asynchronous job.
 

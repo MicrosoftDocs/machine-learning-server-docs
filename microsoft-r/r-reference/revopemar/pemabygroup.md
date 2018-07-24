@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: " Generator for an PemaByGroup reference class object " 
 description: " Generator for an PemaByGroup reference class object to be used with pemaCompute. This will compute arbitrary statistics by a grouping variable in a data set. " 
@@ -12,7 +12,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 #ROBOTS: "" 
 #audience: "" 
@@ -22,39 +22,39 @@ ms.assetid: ""
 #ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 #ms.custom: "" 
- 
+
 --- 
- 
- 
- #PemaByGroup:  Generator for an PemaByGroup reference class object 
+
+
+ # PemaByGroup:  Generator for an PemaByGroup reference class object 
 
  Applies to version 8.0.3 of package RevoPemaR.
- 
- ##Description
- 
+
+ ## Description
+
 Generator for an PemaByGroup reference class object to be used with pemaCompute. This
 will compute arbitrary statistics by a grouping variable in a data set.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   PemaByGroup(...)
- 
-```
- 
- 
- ##Arguments
 
-   
-    
+```
+
+
+ ## Arguments
+
+
+
  ###  ...
   Arguments used in the constructor. See Details section. 
-  
- 
- 
- ##Details
- 
+
+
+
+ ## Details
+
 This is an example of a parallel external memory algorithms for use with
 [pemaCompute](pemacompute.md). 
  User-specified arguments for the `initalize` method are:
@@ -83,38 +83,36 @@ The first element of each function list should be the function. The second eleme
  take the form of `varName.fnName` where the `.` is replaced by `sep`.
 
 
- 
- 
- ##Value
- 
-An `PemaByGroup` reference class object.
- 
- 
 
- 
- 
- 
- 
- 
- ##See Also
- 
+
+ ## Value
+
+An `PemaByGroup` reference class object.
+
+
+
+
+
+
+
+
+ ## See Also
+
 setRefClass,
 [PemaBaseClass](pemabaseclass.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
-  
+
+
   # Show help for methods
   PemaByGroup$help(initialize)
   PemaByGroup$help(processData)
   PemaByGroup$help(updateResults)
   PemaByGroup$help(processResults)
-  
- 
 ```
- 
- 
- 
- 
+
+
+
+

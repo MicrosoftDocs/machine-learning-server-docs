@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxMakeRNodeNames function (revoAnalytics) | Microsoft Docs" 
 description: " Converts valid computer names into valid R variable names.  Should only be used when you want to guarantee that host  names are usable as variable names. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,38 +21,38 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- #rxMakeRNodeNames:  Converts valid computer names into valid R variable names.  
- ##Description
- 
+
+
+ # rxMakeRNodeNames:  Converts valid computer names into valid R variable names.  
+ ## Description
+
 Converts valid computer names into valid R variable names.  Should only be used when you want to guarantee that host 
 names are usable as variable names.
- 
- 
- 
- ##Usage
+
+
+
+ ## Usage
 
 ```   
   rxMakeRNodeNames( nodeNames )
- 
-```
- 
- 
- ##Arguments
 
-   
-  
+```
+
+
+ ## Arguments
+
+
+
  ### `nodeNames`
  character vector of node names to be converted. 
-  
- 
- 
- 
- ##Details
- 
+
+
+
+
+ ## Details
+
 rxMakeRNodeNames will preform the following transformations on each element of the character vector passed:
 
 
@@ -76,25 +76,23 @@ use these names, or this function, in any context where the name may be used to 
 name for that.  This function is intended to be used only to generate R variable names for processing or storing distributed computing results
 from the associated computer. Note also that once a host name has been converted into a guaranteed acceptable R variable name, 
 it is impossible to guarantee the reverse conversion.
- 
- 
- ##Author(s)
- 
+
+
+ ## Author(s)
+
 Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
- 
- 
- ##Examples
+
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 rxMakeRNodeNames(rxGetNodes(myCluster))
 rxMakeRNodeNames( c("cluster-head","worker1.foo.edu") )
  ## End(Not run) 
-  
- 
 ```
- 
- 
+
+

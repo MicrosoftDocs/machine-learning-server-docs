@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxNaiveBayes function (revoAnalytics) | Microsoft Docs" 
 description: "     Fit Naive Bayes Classifiers on an .xdf file or data frame     for small or large data using parallel external memory algorithm. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,48 +21,48 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- #rxNaiveBayes: Parallel External Memory Algorithm for Naive Bayes Classifiers 
- ##Description
- 
+
+
+
+ # rxNaiveBayes: Parallel External Memory Algorithm for Naive Bayes Classifiers 
+ ## Description
+
 Fit Naive Bayes Classifiers on an .xdf file or data frame
 for small or large data using parallel external memory algorithm.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   rxNaiveBayes(formula, data, smoothingFactor = 0,   ...  )
- 
-```
- 
- ##Arguments
 
-   
-    
+```
+
+ ## Arguments
+
+
+
  ### `formula`
   formula as described in [rxFormula](rxFormula.md).     
-  
-    
+
+
  ### `data`
   either a data source object, a character string  specifying a .xdf file, or a data frame object. 
-  
-    
+
+
  ### `smoothingFactor`
   a positive smoothing factor to account for cases not present in the training data.  It avoids modeling issues by preventing zero conditional probability estimates. 
-  
-    
+
+
  ### ` ...`
   additional arguments to be passed directly to [rxSummary](rxSummary.md) such as `byTerm`, `rowSelection`, `pweights`, `fweights`, `transforms`, `transformObjects`, `transformFunc`,  `transformVars`, `transformPackages`, `transformEnvir`,  `useSparseCube`, `removeZeroCounts`, `blocksPerRead`,  `reportProgress`, `verbose`, `xdfCompressionLevel`.   
-  
- 
- 
- ##Value
- 
+
+
+
+ ## Value
+
 an `"rxNaiveBayes"` object containing the following components:
 
 
@@ -72,7 +72,7 @@ an `"rxNaiveBayes"` object containing the following components:
 * `tables` -  a list of tables, one for each predictor variable.   
    * For a categorical variable, the table contains the conditional probabilities of the variable given the target class.  
    * For a numeric variable, the table contains the mean and standard deviation of the variable given the target class.  
- 
+
 
 
 * `levels` -  the levels of the dependent variable.
@@ -82,41 +82,40 @@ an `"rxNaiveBayes"` object containing the following components:
 
 
 
- 
- ##Author(s)
- 
+
+ ## Author(s)
+
 Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
- 
- 
- ##References
- 
+
+
+ ## References
+
 Naive Bayes classifier
 [`https://en.wikipedia.org/wiki/Naive_Bayes_classifier`](https://en.wikipedia.org/wiki/Naive_Bayes_classifier)
 .
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 [rxPredict.rxNaiveBayes](rxPredict.rxNaiveBayes.md).
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   # multi-class classification with an .xdf file
   claimsXdf <- file.path(rxGetOption("sampleDataDir"),"claims.xdf")
   claims.nb <- rxNaiveBayes(type ~ age + cost, data = claimsXdf)
   claims.nb
-  
+
   # prediction
   claims.nb.pred <- rxPredict(claims.nb, claimsXdf)
   claims.nb.pred
   table(claims.nb.pred[["type_Pred"]], rxDataStep(claimsXdf)[["type"]])
- 
 ```
- 
- 
- 
- 
- 
+
+
+
+
+

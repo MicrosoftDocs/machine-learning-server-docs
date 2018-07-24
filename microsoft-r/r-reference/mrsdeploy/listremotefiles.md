@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "listRemoteFiles function (mrsdeploy) | Microsoft Docs" 
 description: " Get a list of files in the working directory of the remote R session. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,52 +21,50 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #listRemoteFiles: Get a list of files from the remote R session. 
- ##Description
- 
+
+
+
+
+ # listRemoteFiles: Get a list of files from the remote R session. 
+ ## Description
+
 Get a list of files in the working directory of the remote R session.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   listRemoteFiles()
- 
+
 ```
- 
- ##Details
- 
+
+ ## Details
+
 Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
 
- 
- 
- ##Value
- 
+
+
+ ## Value
+
 A character vector containing the file names in the working directory of the remote session.
- 
- ##See Also
- 
+
+ ## See Also
+
 [getRemoteFile](getRemoteFile.md)
 
 [deleteRemoteFile](deleteRemoteFile.md)
 
 [putLocalFile](putLocalFile.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 files<-listRemoteFiles()
  ## End(Not run) 
-  
- 
 ```
- 
+

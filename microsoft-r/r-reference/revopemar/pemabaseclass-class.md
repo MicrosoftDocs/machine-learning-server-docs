@@ -27,11 +27,11 @@ ms.assetid: ""
  
  
  
- #PemaBaseClass-class: Class PemaBaseClass
+ # PemaBaseClass-class: Class PemaBaseClass
 
  Applies to version 8.0.3 of package RevoPemaR.
  
- ##Description
+ ## Description
  
 PEMA base reference class
  
@@ -46,7 +46,7 @@ The targeted generator [PemaBaseClass](pemabaseclass.md)
  
  
  
- ##See Also
+ ## See Also
  
 [PemaBaseClass](pemabaseclass.md)
    

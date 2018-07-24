@@ -31,28 +31,32 @@ ms.prod: "mlserver"
 The installation path depends on the operating system and the type of node (web or compute).
 
 + **Find path to your server directory:**<br/>
-  |OS|\<server-directory>|
-  |----|------------|
-  |Windows|C:\Program Files\Microsoft\ML Server\PYTHON\_SERVER\o16n<br>C:\Program Files\Microsoft\ML Server\R\_SERVER\o16n|
-  |Linux|/opt/microsoft/mlserver/9.3.0/o16n|
+
+  |   OS    |                                               \<server-directory>                                               |
+  |---------|-----------------------------------------------------------------------------------------------------------------|
+  | Windows | C:\Program Files\Microsoft\ML Server\PYTHON\_SERVER\o16n<br>C:\Program Files\Microsoft\ML Server\R\_SERVER\o16n |
+  |  Linux  |                                       /opt/microsoft/mlserver/9.3.0/o16n                                        |
+
   <br/>
 
 + **Find path to log files or appsettings.json on each node:**<br/>
-  |File(s)|Filepath by node|
-  |----|------------|
-  |Log files|Web node:\<server-directory>\Microsoft.MLServer.WebNode\logs\*.* <br/>Compute node: \<server-directory>\Microsoft.MLServer.ComputeNode\logs\*.*|
-  |appsettings.json|Web node: \<server-directory>\Microsoft.MLServer.WebNode\appsettings.json<br/>Compute node: \<server-directory>\Microsoft.MLServer.ComputeNode\appsettings.json|
-<br/>
-  
+
+  |     File(s)      |                                                                        Filepath by node                                                                         |
+  |------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+  |    Log files     |        Web node:\<server-directory>\Microsoft.MLServer.WebNode\logs\*.\* <br/>Compute node: \<server-directory>\Microsoft.MLServer.ComputeNode\logs\*.\*        |
+  | appsettings.json | Web node: \<server-directory>\Microsoft.MLServer.WebNode\appsettings.json<br/>Compute node: \<server-directory>\Microsoft.MLServer.ComputeNode\appsettings.json |
+
+  <br/>
+
 ## Machine Learning Server 9.2.1
 
 The installation path depends on the operating system and the type of node (web or compute).
 
-|OS|Path|
-|----|------------|
-|Windows|C:\Program Files\Microsoft\ML Server\PYTHON\_SERVER\o16n<br>C:\Program Files\Microsoft\ML Server\R\_SERVER\o16n|
-|Linux|/opt/microsoft/mlserver/9.2.1/o16n||
 
+|   OS    |                                                      Path                                                       |
+|---------|-----------------------------------------------------------------------------------------------------------------|
+| Windows | C:\Program Files\Microsoft\ML Server\PYTHON\_SERVER\o16n<br>C:\Program Files\Microsoft\ML Server\R\_SERVER\o16n |
+|  Linux  |                                       /opt/microsoft/mlserver/9.2.1/o16n                                        |
 
 + **Administration utility** is under: \<server-directory>\Microsoft.MLServer.Utils.AdminUtil\
 
@@ -71,10 +75,11 @@ The installation path depends on the operating system and the type of node (web 
 
 The installation path depends on the operating system and the type of node (web or compute).
 
-|OS|Path|
-|----|------------|
-|Windows|\<r-home>\deployr<br>(_Run 'normalizePath(R.home())' in the R console for R home._)|
-|Linux|/usr/lib64/microsoft-r/rserver/o16n/9.1.0/\<node-directory>||
+
+|   OS    |                                        Path                                         |
+|---------|-------------------------------------------------------------------------------------|
+| Windows | \<r-home>\deployr<br>(*Run 'normalizePath(R.home())' in the R console for R home.*) |
+|  Linux  |             /usr/lib64/microsoft-r/rserver/o16n/9.1.0/\<node-directory>             |
 
 Where the \<node-directory> name: 
 
@@ -87,10 +92,11 @@ Where the \<node-directory> name:
 
 The installation path depends on the operating system and the type of node (web or compute).
 
-|OS|Path|
-|----|------------|
-|Windows|\<r-home>\deployr<br>(_Run 'normalizePath(R.home())' in the R console for R home._)|
-|Linux|/usr/lib64/microsoft-r/rserver/o16n/9.0.1/\<node-directory>||
+
+|   OS    |                                        Path                                         |
+|---------|-------------------------------------------------------------------------------------|
+| Windows | \<r-home>\deployr<br>(*Run 'normalizePath(R.home())' in the R console for R home.*) |
+|  Linux  |             /usr/lib64/microsoft-r/rserver/o16n/9.0.1/\<node-directory>             |
 
 Where the \<node-directory> name: 
 

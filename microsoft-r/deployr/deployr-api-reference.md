@@ -34,7 +34,7 @@ With the advent of DeployR, the full statistics, analytics and visualization cap
 
 ><big>Looking for a specific API call? [Look in this online API reference.](https://microsoft.github.io/deployr-api-docs/8.0.5)</big>
 
-##R for Application Developers
+## R for Application Developers
 
 While data scientists can work with R directly in a console window or IDE, application developers need a different set of tools to use R inside applications. The DeployR API exposes **R analytics Web services**, making the full capabilities of R available to application developers on a simple yet powerful Web services API.
 
@@ -45,7 +45,7 @@ Each time a service is executed on the API, the service makes use of an R sessio
 To simplify integration of R analytics Web services using the DeployR API, we provide [several client libraries](deployr-tools-and-samples.md), which are currently available for Java, JavaScript and .NET developers. A major benefit of using these client libraries is that they simplify making calls, encoding data, and handling response markup on the API.
 
 <a name="users"></a>
-##Users on the API
+## Users on the API
 
 The User APIs exist principally to facilitate user authentication with the DeployR server. Additionally, the [/r/user/autosave](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-user-autosave) call can be used to enable or disable autosave semantics on persistent projects for the duration of the users HTTP session.
 
@@ -70,7 +70,7 @@ In such situations, we say that the user is an *anonymous* user. Typically an *a
 *Anonymous* users are only granted access to a single API call, [/r/repository/script/execute](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-script-execute). 
 
 <br /><a name="projects"></a>
-##Projects on the API
+## Projects on the API
 
 A *project* on the DeployR API represents an R session.  
 
@@ -86,7 +86,7 @@ The following sections discuss the different types of projects available:
 
 <br />
 <a name="anonymous-projects"></a>
-###Anonymous Projects
+### Anonymous Projects
 
 An *anonymous project* is a project created by an *anonymous user*. There are two types of anonymous project: **stateless projects** and **HTTP blackbox projects**. The types of projects can be created using the following API calls:
 
@@ -121,7 +121,7 @@ To interrupt an execution on the HTTP blackbox project on the current HTTP sessi
 
 <br />
 <a name="authenticated-projects"></a>
-###Authenticated Projects
+### Authenticated Projects
 
 An *authenticated project* is a project created by an authenticated user. There are three types of authenticated project:
 
@@ -179,7 +179,7 @@ User blackbox projects permit only the following subset of project-related API c
 |[/r/project/close](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-close) |Closes a project|
 
 <br />
-This set of API calls on user blackbox projects are collectively known as the *User Blackbox API Controls*.
+This set of API calls on user blackbox projects are collectively known as the <em>User Blackbox API Controls</em>.
 
 A user blackbox project also ensure that none of the R code from the R scripts that are executed on that project is ever returned in the response markup.
 
@@ -203,14 +203,14 @@ An *authenticated* user can create a persistent project by specifying a value fo
 All *named* projects are *persistent* projects.
 
 <br />
-###Live Projects on the Grid
+### Live Projects on the Grid
 
 A  **live project**  is any project, temporary or persistent, that is actively in use on the [DeployR grid](#architecture). By definition, all temporary projects are live projects. A user can have zero, one or more projects live on the grid at any one time. 
 
 To ensure a fair distribution of server runtime resources across all users, the DeployR administrator can limit the number of live projects permitted for a given user at any one time. When a user reaches his or her live project limit, all further API calls on new projects are rejected until one or more of that user's current live projects are closed using the [/r/project/close](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-close) call. Calls that are rejected due to live project limits indicate an appropriate [Grid Resource Error](#codes) on the response code.
 
 <br />
-###Working with Project Management APIs
+### Working with Project Management APIs
 
 **Creating Projects**
 
@@ -223,7 +223,7 @@ There are a number of ways to create projects on the API, including the followin
 |[/r/project/import](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-import)|Import a project archive|
 
 <br />
-**Saving Projects**
+<strong>Saving Projects</strong>
 
 There are a number of ways to save projects on the API, including the following:
 
@@ -235,7 +235,7 @@ There are a number of ways to save projects on the API, including the following:
 
 
 <br />
-**Closing Projects**
+<strong>Closing Projects</strong>
 
 To close a live project, use the  [/r/project/close](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-close) API call. Closing a live project (temporary or persistent) deactivates the project, which in turn removes it from the grid and releases all associated server runtime resources. Remember, that closing a temporary project will permanently delete that project.
 
@@ -250,7 +250,7 @@ A project archive is generated by exporting the entire state of a persistent pro
 A user can import a project archive back into any compatible DeployR server in order to produce a new, persistent project using the [/r/project/import](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-import) API call.
 
 <br />
-###Project Ownership & Collaboration
+### Project Ownership &amp; Collaboration
 
 As noted, each *authenticated* user can create zero, one or more projects. Each newly created project is by default privately owned, and visible only to its creator. Such user-based privacy is a central aspect of the DeployR security model. However, there are scenarios in which a more flexible access model for projects would benefit users by facilitating collaboration among them.
 
@@ -272,7 +272,7 @@ To facilitate these kinds of workflows a project owner can now grant authorship 
 
 <br />
 <a name="projexec"></a>
-###Project Execution APIs
+### Project Execution APIs
 
 Callers can use the project execution APIs to facilitate the execution of R code and the retrieval of the project's execution history associated results.
 
@@ -303,7 +303,7 @@ To retrieve results on a project, use the [/r/project/execute/result/download](h
 
 <br />
 <a name="project-workspace"></a>
-###Project Workspace APIs
+### Project Workspace APIs
 
 The project workspace APIs facilitate working with objects found in the project workspace.
 
@@ -327,7 +327,7 @@ Repository-managed files containing R binary objects can be loaded directly to t
 
 <br />
 <a name="projdir"></a>
-###Project Directory APIs
+### Project Directory APIs
 
 The project directory APIs facilitate working with files found in the project working directory.
 
@@ -340,7 +340,7 @@ The project directory APIs facilitate working with files found in the project wo
 |[/r/project/directory/download](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-directory-download)|Retrieve a compressed archive containing all files found in the working directory|
 
 <br />
-**Directory File Creation**
+<strong>Directory File Creation</strong>
 
 Typically files are created in the working directory when commands are executed. However, there are a number of APIs that allow the direct creation of files in the working directory:
 
@@ -353,7 +353,7 @@ Typically files are created in the working directory when commands are executed.
 
 
 <br />
-**Directory Files and the Repository**
+<strong>Directory Files and the Repository</strong>
 
 |API Call             |Description                                                     |
 |---------------------|----------------------------------------------------------------|
@@ -363,7 +363,7 @@ Typically files are created in the working directory when commands are executed.
 
 <br />
 <a name="projpkg"></a>
-###Project Package APIs
+### Project Package APIs
 
 The project package APIs facilitate R package dependency management for projects.
 
@@ -378,8 +378,8 @@ The project package APIs facilitate R package dependency management for projects
 
 
 
-<br />
-<a name="jobs"></a>
+<a name="jobs-on-the-api"></a>
+
 ## Jobs on the API
 
 Working with R interactively in an R console window or working with projects on the API are both examples of synchronous working environments where a user can make a request that is blocked until processing completes and an appropriate response is generated and returned. When working with R interactively, the response is displayed as output in the R console window. When working with projects on the API, the response is well-formed markup on the response stream.
@@ -390,18 +390,18 @@ The DeployR environment supports these types of long-running operations by intro
 
 The Job APIs facilitate working with DeployR managed jobs. Jobs support the execution of commands in the background on behalf of users.
 
-####Submitting Versus Scheduling Jobs
+#### Submitting Versus Scheduling Jobs
 
 Jobs can be submitted for immediate background execution using the [/r/job/submit](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-job-submit) call. Jobs can be scheduled for execution at some later date or on a recurring basis using the [/r/job/schedule](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-job-schedule) call.
 
-####Job Scheduling Priority
+#### Job Scheduling Priority
 When a user submits or schedules a job, they can identify a high, medium, or low (default) priority for their job. Each priority level has its own dedicated jobs queue managed by the jobs scheduler.
 
 Jobs in higher priority job queues are guaranteed to be executed on the grid ahead of jobs in lower priority job queues. Put another way, jobs in higher priority job queues are assigned free slots on the grid ahead of jobs on lower priority queues. Jobs on the same jobs queue are executed on the grid in the order in which they were submitted.
 
 High, medium, and low priority job queues allow users to expedite higher priority jobs by 'jumping the queue', and to expedite jobs to best fit specific scheduling needs.
 
-####Retrieving Job Results
+#### Retrieving Job Results
 Users can query the status of their jobs using the [/r/job/query](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-job-query) call that returns the current status for a given job. Users can cancel a scheduled job or an actively running job using the [/r/job/cancel](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-job-cancel) call.
 
 Regardless of whether a job runs to completion or whether a job is interrupted or aborted by the user the DeployR server creates a new project for the user by default. This project will be named after the job that created it and contains a complete workspace, working directory, package dependencies, command history, and associated results generated by that job. The user can then work with the full set of Project APIs to manipulate, analyze, visualize, and interpret all of the objects, files, and generated plots resulting from the job.
@@ -412,7 +412,7 @@ If the `storenoproject` parameter is not set to true, then a project is always c
 
 >All completed, interrupted, and aborted jobs result in new projects for users.
 
-####Understanding the Jobs Lifecycle
+#### Understanding the Jobs Lifecycle
 The following diagram provides an overview of the full set of Job APIs and indicates the lifecycle of jobs managed by those APIs:
 
 ![](media/deployr-api-reference/deployr-api-asynch-jobs.png)
@@ -431,13 +431,13 @@ Users can store files in and retrieve files from their root directory. In additi
 
 <br />
 <a name="repodir"></a>
-###Repository Directories
+### Repository Directories
 The Repository Directory APIs facilitate working with repository-managed directories. Repository-managed directories fall into two distinct categories:
 + User Directories
 + System Directories
 
 <br />
-####User Directories
+#### User Directories
 Each authenticated user maintains their own set of private user directories. The set of user directories can be further divided into the following user directory types:
 
 + Root directory
@@ -452,7 +452,7 @@ Users can also archive the contents of their root directory or the contents of a
 
 By default, archived directories do not appear in the response markup when a user makes a call to [/r/repository/directory/list](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-directory-list). However, when the `archived` parameter is enabled on that call, any archived directories belonging to the user appears in the response markup.
 
-####System Directories
+#### System Directories
 
 System directories are virtual directories that exist only in the context of the response markup on the [/r/repository/directory/list](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-directory-list) call. These directories are provided as a convenient way for a user working with the Repository Directory APIs to get access to repository-managed files that are shared or made public by other users.
 
@@ -468,7 +468,7 @@ There are just three system directories:
 
 
 <br />
-###Repository-Managed Files
+### Repository-Managed Files
 
 Each user has access to a private repository store. Each file placed in that store is maintained indefinitely by the server unless it is explicitly deleted by the user.
 
@@ -501,7 +501,7 @@ To facilitate this kind of collaborative workflow a user can now grant authorshi
 >Deleting a repository-managed file with multiple authors simply revokes authorship rights to the file for the caller. After the call all other authors on the file will still have full access to the file. If the last remaining author deletes a repository-managed file, then the file is permanently deleted.
 
 <a name="repofiles"></a>
-####Repository File APIs
+#### Repository File APIs
 
 The Repository File APIs facilitate working with repository-managed files. Because the repository supports versioned file storage, multiple versions of any file can exist at any one time and any version can be retrieved upon request.
 
@@ -528,7 +528,7 @@ Access to each repository-managed file is controlled by a set of properties on t
 |[/r/repository/directory/download](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-directory-download)|Retrieve one or more files from a repository-managed directory|
 
 <br />
-**Repository File Creation**
+<strong>Repository File Creation</strong>
 
 |API Call                          |Description                                                     |
 |----------------------------------|----------------------------------------------------------------|
@@ -537,7 +537,7 @@ Access to each repository-managed file is controlled by a set of properties on t
 |[/r/repository/file/write](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-file-write)    |Write a text file into the repository|
 
 <br />
-**Repository File Version Control**
+<strong>Repository File Version Control</strong>
 
 |API Call                              |Description                                                     |
 |--------------------------------------|----------------------------------------------------------------|
@@ -548,7 +548,7 @@ Access to each repository-managed file is controlled by a set of properties on t
 
 <br />
 <a name="reposcripts"></a>
-###Repository-Managed Scripts
+### Repository-Managed Scripts
 
 Repository-managed scripts are a special type of repository-managed file. Any file with a .r or a .R extension is identified by the server as a repository-managed script.
 
@@ -560,7 +560,7 @@ Scripts can be created, managed, and deployed using the standard Repository APIs
 
 >Repository-managed scripts are files in the repository so all API calls described in the section [Working with Repository Files](#repofiles) are available to create and manage repository-managed scripts.
 
-####Working with the Repository Script APIs
+#### Working with the Repository Script APIs
 
 The Repository Script APIs provide some script-specific functionality for repository-managed scripts.
 Scripts are blocks of R code with well-defined inputs and outputs. While scripts are technically also repository-managed files, scripts differ from other repository-managed files as they perform a specific function that can be exposed as an executable on the API.
@@ -580,7 +580,7 @@ There are four distinct event categories:
 + Management events
 
 <br />
-###Stream Lifecycle Events
+### Stream Lifecycle Events
 Stream lifecycle events occur when a client application successfully connects to or disconnects from an event stream on the server. There are two stream lifecycle events:
 
 + `streamConnectEvent`. The data passed on the streamConnectEvent allows the client application to determine the type of event stream connection established with the server: authenticated, anonymous, or management event stream. The nature of an event stream connection determines the nature of the events that can be delivered on that stream. More details can be found on event stream types below.
@@ -588,7 +588,7 @@ Stream lifecycle events occur when a client application successfully connects to
 + `streamDisconnectEvent`. The streamDisconnectEvent informs a client application that the event stream has been disconnected by the server. Following a streamDisconnectEvent no further events arrive at the client on that event stream.
 
 <br />
-###Execution Events
+### Execution Events
 Execution events occur when an R session is executing R code (on behalf of an anonymous project, authenticated project or on behalf of a job) or when an execute API call fails. There are three distinct types of Execution events:
 
 + `executionConsoleEvent`. An executionConsoleEvent pushes R console output generated by an R session to the event stream. Console events are automatically pushed to the event stream each time you execute R code.
@@ -602,13 +602,13 @@ Execution events occur when an R session is executing R code (on behalf of an an
 + `executionErrorEvent`. An executionErrorEvent pushes an error message when an execute API call fails for any reason. These events occur when the caller attempts to execute R code that is syntactically invalid or when parameters such as inputs or preloads passed on the call are invalid.
 
 <br />
-###Job Lifecycle Events
+### Job Lifecycle Events
 Job lifecycle events occur each time a Job transitions to a new state in its lifecycle, for example when moving from QUEUED to RUNNING state or when moving from RUNNING to COMPLETED or FAILED state. 
 
 There is just one type of lifecycle event, `jobLifecycleEvent`. Job lifecycle events make it simple for client applications to track the progress of background jobs without having to continuously poll the server for status updates.
 
 <br />
-###Management Events
+### Management Events
 Management events occur when important runtime conditions are detected by the server. These are the distinct types of Management events:
 
 + `gridActivityEvent`. A gridActivityEvent is pushed to the event stream when a slot on the grid is either activated or deactivated on behalf of an anonymous project, authenticated project or on behalf of a job. This type of event provides realtime visibility onto grid activity at runtime.
@@ -621,7 +621,7 @@ Management events occur when important runtime conditions are detected by the se
 
 + `securityLogoutEvent`. The securityLogoutEvent is pushed to the event stream when users log out of the server.
 
-###Authenticated, Anonymous, and Management Event Streams
+### Authenticated, Anonymous, and Management Event Streams
 The nature of an event stream connection determines the nature of the events that can be delivered on that stream. Both the current authenticated status of the caller on the [/r/event/stream](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-event-stream) API call and the parameters passed on that call determine the ultimate nature of the event stream connection. The following event stream connection types exist:
 
 + Authenticated event stream
@@ -699,7 +699,7 @@ Each DeployR API call responds with a meaningful HTTP status code. Applications 
 -  **200** OK
 
 <br />
-**HTTP Error Codes**
+<strong>HTTP Error Codes</strong>
 
 -  **400** Bad Request: invalid data on call
 
@@ -714,7 +714,7 @@ Each DeployR API call responds with a meaningful HTTP status code. Applications 
 -  **503** Service Temporarily Unavailable: HTTP session temporarily invalidated
 
 <br />
-**API Call Status & Error Codes**
+<strong>API Call Status &amp; Error Codes</strong>
 
 When an API call returns an HTTP 200 status code the application should still test the ***success*** property in the response markup on each call to determine whether the DeployR server was able to successfully execute the service on behalf of the caller.
 
@@ -869,7 +869,7 @@ When encoded objects are sent as parameters to the server, the client must name 
 >In the case of primitive encodings, the type property is optional and can therefore be omitted from the markup being sent to the server.
 
 <br />
-**DeployR Encoding Types**
+<strong>DeployR Encoding Types</strong>
 
 The complete list of supported DeployR-encoding types is shown here. As indicated, these encodings can encode a wide range of different classes of R object:
 
@@ -888,7 +888,7 @@ The complete list of supported DeployR-encoding types is shown here. As indicate
 - ***dataframe*** type encodes R objects with class: data.frame.
 
 <br />
-**Sample DeployR Encodings**
+<strong>Sample DeployR Encodings</strong>
 
 The following R code is provided for demonstration purposes. The code creates a wide range of R objects. After the following code, you will find sample JSON response markup that demonstrates how each of the objects generated here is encoded on the API.
 
@@ -1396,9 +1396,9 @@ To simplify life for those client developers using The DeployR API, we provide s
    The `X-XSRF-TOKEN` can be obtained from a successful authentication `/r/user/login` API call. The `X-XSRF-TOKEN` value can be retrieved from either the HTTP response header or the `X-XSRF-TOKEN` property in the response markup. The `X-XSRF-TOKEN` name|value must then be included in the HTTP request header for any future authenticated API calls, otherwise a HTTP 403 error is given.
 
    Example:
-```NA
-{
-  "deployr": {
+   ```NA
+   {
+   "deployr": {
     "response": {
       "call": "/r/user/login",
       "success": true,
@@ -1422,22 +1422,22 @@ To simplify life for those client developers using The DeployR API, we provide s
       "uid": "UID-5CB911405DC6EB0F8E283990F7969E63",
       "X-XSRF-TOKEN": "53708abe-c5c2-4091-9ced-6314d49de0a3"
     }
-  }
-}
-```
+   }
+   }
+   ```
 
-2.  Affecting all APIS, the `httpcookie` property has been removed from the response markup in place of the unique request identifier `uid` (which is not a cookie).
+2. Affecting all APIS, the `httpcookie` property has been removed from the response markup in place of the unique request identifier `uid` (which is not a cookie).
 
    ```NA
    {
-       "deployr": {
-           "response": {
-               "call": "/r/user/release",
-               "success": true,
-               "whoami": "george",
-               “uid”: “UID-07D91F6C510E10ED84E6AC52CD0B6D1B"
-           }
-       }
+      "deployr": {
+          "response": {
+              "call": "/r/user/release",
+              "success": true,
+              "whoami": "george",
+              “uid”: “UID-07D91F6C510E10ED84E6AC52CD0B6D1B"
+          }
+      }
    }
    ``` 
 
@@ -1450,7 +1450,7 @@ To simplify life for those client developers using The DeployR API, we provide s
 
 
 <br />
-###DeployR 8.0.0
+### DeployR 8.0.0
 
 + Rebranding and Volume Licensing
 

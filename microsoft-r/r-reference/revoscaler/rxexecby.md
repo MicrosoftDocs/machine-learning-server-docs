@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxExecBy function (revoAnalytics) | Microsoft Docs" 
 description: " Partition input data source by keys and apply user defined function on individual partitions. If input data source is already partitioned, apply user defined function on partitions directly. Currently supported in local, localpar, [RxInSqlServer](RxInSqlServer.md) and [RxSpark](RxSpark.md) compute contexts. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,105 +21,105 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- #rxExecBy: Partition Data by Key Values and Execute User Function on Each Partition 
- 
- ##Description
- 
+
+
+
+ # rxExecBy: Partition Data by Key Values and Execute User Function on Each Partition 
+
+ ## Description
+
 Partition input data source by keys and apply user defined function on individual partitions.
 If input data source is already partitioned, apply user defined function on partitions directly.
 Currently supported in `local`, `localpar`, [RxInSqlServer](RxInSqlServer.md) and
 [RxSpark](RxSpark.md) compute contexts.
- 
- 
- 
- ##Usage
+
+
+
+ ## Usage
 
 ```   
   rxExecBy(inData, keys, func, funcParams = NULL, filterFunc = NULL, computeContext = rxGetOption("computeContext"), ...)
-  
- 
-```
- 
- 
- ##Arguments
 
-   
-    
+
+```
+
+
+ ## Arguments
+
+
+
  ### `inData`
  a data source object suppported in currently active compute context, e.g., [RxSqlServerData](RxSqlServerData.md) for [RxInSqlServer](RxInSqlServer.md) and [RxHiveData](RxSparkData.md) for [RxSpark](RxSpark.md). In `local` and `localpar` compute contexts, a character string specifying a .xdf file or a data frame object can be also used. 
-  
-  
-    
+
+
+
  ### `keys`
  character vector of variable names to specify the values in those variables are used for partitioning. 
-  
-  
-    
+
+
+
  ### `func`
  the user function to be executed. The user function takes `keys` and `data` as two required input arguments where `keys` determines the partitioning values and `data` is a data source object of the corresponding partition. `data` can be a [RxXdfData](RxXdfData.md) object or a RxODBCData object, which can be transformed to a standard R data frame by using [rxDataStep](rxDataStep.md) method. The nodes or cores on which it is running are determined by the currently active compute context. 
-  
-  
-    
+
+
+
  ### `funcParams`
  list of additional arguments for the user function `func`. 
-  
-  
-    
+
+
+
  ### `filterFunc`
  the user function that takes a data frame of keys values as an input argument, applies filter to the keys values and returns a data frame containing rows whose keys values satisfy the filter conditions. The input data frame has similar format to the results returned by [rxPartition](rxPartition.md) which comprises of partitioning variables and an additional variable of partition data source. This `filterFunc` allows user to control what data partitions to be applied by the user function `func`. `filterFunc` currently is not supported in RxHadoopMR and [RxSpark](RxSpark.md) compute contexts. 
-  
-  
-    
+
+
+
  ### `computeContext`
  a RxComputeContext object. 
-  
-  
-    
+
+
+
  ### ` ...`
  additional arguments to be passed directly to the Compute Engine. 
-  
- 
- 
- 
- ##Value
- 
+
+
+
+
+ ## Value
+
 A list which is the same length as the number of partitions in the `inData` argument. Each
 element in the top level list contains a three element list described below.
 
-###`keys`
+### `keys`
 a list which contains key values for the partition.
 
 
-###`result`
+### `result`
 the object returned from the invocation of the user function with `keys` values. When an error occurs during the invocation of the user function the value will be `NULL`.
 
 
-###`status`
+### `status`
 a string which takes the value of either `"OK"` or `"Error"`. In [RxSpark](RxSpark.md) compute context, it may include additional warning and error messages.
 
- 
- 
- ##Note
- 
+
+
+ ## Note
+
 The user function can call any function defined in R packages which are
 loaded by default and pass parameters which are defined in base R, the default loaded packages, or
 user defined S3 classes. The user function won't work with global variables or functions in
 non-default loaded packages unless they are redefined or reloaded within the scope of the user function.
- 
- 
- 
- ##Author(s)
+
+
+
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
- 
- 
- 
- ##See Also
- 
+
+
+
+ ## See Also
+
 [rxExecByPartition](rxExecByPartition.md),
 [rxImport](rxImport.md),
 [rxDataStep](rxDataStep.md),
@@ -127,13 +127,13 @@ non-default loaded packages unless they are redefined or reloaded within the sco
 [RxXdfData](RxXdfData.md),
 [RxHiveData](RxSparkData.md),
 [RxSqlServerData](RxSqlServerData.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
       ## Not run:
- 
+
   ##############################################################################
   # run analytics with local compute context
   ##############################################################################
@@ -229,7 +229,5 @@ non-default loaded packages unless they are redefined or reloaded within the sco
     # stop Spark app
     rxSparkDisconnect(sparkCC)
    ## End(Not run) 
-  
- 
 ```
- 
+

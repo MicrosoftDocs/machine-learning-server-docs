@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxGetFuzzyKeys function (revoAnalytics) | Microsoft Docs" 
 description: " EXPERIMENTAL: Get fuzzy keys for a character vector " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,17 +21,17 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- #rxGetFuzzyKeys: Fuzzy keys for a character vector 
- ##Description
- 
+
+
+ # rxGetFuzzyKeys: Fuzzy keys for a character vector 
+ ## Description
+
 EXPERIMENTAL: Get fuzzy keys for a character vector
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   rxGetFuzzyKeys(stringsIn, data = NULL, outFile = NULL, varsToKeep = NULL,
@@ -44,92 +44,92 @@ EXPERIMENTAL: Get fuzzy keys for a character vector
           hasMatchVarName = NULL, matchDistVarName = NULL, numMatchVarName = NULL, noMatchNA = FALSE,
           overwrite = FALSE
           )
- 
-```
- 
- ##Arguments
 
-   
-    
+```
+
+ ## Arguments
+
+
+
  ### `stringsIn`
  Character vector of strings to process or name of character variable. 
-  
-    
+
+
  ### `data`
  `NULL` or data frame or RevoScaleR data source containing the variable to process. 
-  
-    
+
+
  ### `outFile`
  `NULL` or RevoScaleR data source in which to put output. 
-  
-    
+
+
  ### `varsToKeep`
  `NULL` or character vector of variables from the input 'data' to keep in the output data set. If `NULL`, all variables are kept. Ignored if data is `NULL`. 
-  
-    
+
+
  ### `matchMethod`
  Method for matching to dictionary: 'none' for no matching, 'lv' for Levenshtein; 'j' for Jaro, 'jw' for JaroWinkler,  'bag' for bag of words, 'exact' for exact matching. The default matchMethod is 'lv'. 
-  
-    
+
+
  ### `keyType`
  Transformation type in creating keys: 'all' to retain all characters, 'alphanum' for alphanumeric characters only,  'alpha' for letters only", 'mphone3' for Metaphone3 phonetic transformation, 'soundex' for Soundex phonetic transformation,  'mphone3Vowels' for Metaphone3 encoding more than initial vowels, 'mphone3Exact' for Metaphone3 with more exact consonants, 'soundexNum' for Soundex with numbers only, 'soundexAll' for Soundex not truncated at 4 characters, and 'soundexAm' for the American variant of Soundex. 
-  
-    
+
+
  ### `ignoreCase`
  A logical specifying whether or not to ignore case when comparing strings to the dictionary 
-  
-    
+
+
  ### `ignoreSpaces`
  A logical specifying whether or not to ignore spaces.  If `FALSE`, for phonetic conversions each word in the string is processed separately and then concatenated together. 
-  
-    
+
+
  ### `ignoreNumbers`
  A logical. If `FALSE`, numbers are converted to words before phonetic processing. If `TRUE`, numbers are ignored or removed. 
-  
-    
+
+
  ### `ignoreWords`
  An optional character vector containing words to ignore when matching. 
-  
-    
+
+
  ### `noMatchNA`
  A logical. If `TRUE`, if a match is not found an empty string is returned.  Only applies when dictionary is provided. 
-  
-    
+
+
  ### `minDistance`
  Minimum distance required for a match; applies only to distance metric algorithms (Levenshtein, Jaro, JaroWinkler).   One is a perfect match. Zero is no similarity. 
-  
-    
+
+
  ### `dictionary`
  Character vector containing the dictionary for string comparisons.  Used for distance metric algorithms. from strings before processing. 
-  
-    
+
+
  ### `keyVarName`
  `NULL` or a character string specifying the name to use for the newly created key variable. If `NULL`, the new variable name will be constructed using the `stringsIn` variable name and `.key`. Ignored if `data` is `NULL`. 
-  
-    
+
+
  ### `costs`
  A named numeric vector with names `insert`, `delete`, and  `subst` giving the respective costs for computing the Levenshtein distance. The default uses unit cost for all three. Ignored if Levenshtein distance not being used. 
-  
-    
+
+
  ### `hasMatchVarName`
  `NULL` or a character string specifying the name to use for a logical variable indicating whether word was matched to dictionary or not. If `NULL`, no variable will be created. 
-  
-    
+
+
  ### `matchDistVarName`
  `NULL` or a character string specifying the name to use for a numeric variable containing the distance of the match. If `NULL`, no variable will be created. 
-  
-    
+
+
  ### `numMatchVarName`
  `NULL` or a character string specifying the name to use for an integer variable containing the number of alternative matches were found that satisfied  `minDistance` criterion . If `NULL`, no variable will be created. 
-  
-    
+
+
  ### `overwrite`
  A logical. If `TRUE` and the specified `outFile` exists, it will be overwritten. 
-  
- 
- 
- ##Details
- 
+
+
+
+ ## Details
+
 Two basic algorithms are provided, Soundex and Metaphone 3, with variations on both of them.  
 The `rxGetFuzzyKeys` function can process a character vector of data, a character column 
 in a data frame, or a string variable in a RevoScaleR data source.
@@ -182,134 +182,134 @@ the `ignoreSpaces` argument to `TRUE` results in each word being processed separ
 with the result concatenated into a single (longer) code.
 
 For information on similarity distance measures, see [rxGetFuzzyDist](rxGetFuzzyDist.md).
- 
- 
- 
- ##Value
- 
+
+
+
+ ## Value
+
 A character vector containing the fuzzy keys or a data source containing the fuzzy keys in a new variable.
- 
- 
- ##Author(s)
+
+
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
- 
- 
- 
- ##See Also
- 
+
+
+
+ ## See Also
+
 [rxGetFuzzyDist](rxGetFuzzyDist.md),
 [rxDataStep](rxDataStep.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   cityDictionary <- c("Aberdeen", "Anacortes", "Arlington", "Auburn",
    "Bellevue", "Bellingham", "Bothell", "Bremerton", "Bothell", "Camas",
    "Des Moines", "Edmonds", "Everett", "Federal Way", "Kennewick",
    "Marysville", "Olympia", "Pasco", "Pullman", "Redmond", "Renton", "Sammamish",
    "Seattle", "Shoreline", "Spokane", "Tacoma", "Vancouver", "Yakima")
-  
+
   cityNames <- c("Redmond", "Redmonde", "Edmondse", "REDMND", "EDMOnts")
-  
+
   # The string distance matchMethods require a dictionary
   rxGetFuzzyKeys(stringsIn = cityNames, matchMethod = "lv", dictionary = cityDictionary)
   rxGetFuzzyKeys(stringsIn = cityNames, matchMethod = "jw", dictionary = cityDictionary)
-  
+
   rxGetFuzzyKeys(stringsIn = cityNames, matchMethod = "lv", dictionary = cityDictionary, ignoreCase = TRUE)
   rxGetFuzzyKeys(stringsIn = cityNames, matchMethod = "jw", dictionary = cityDictionary, ignoreCase = TRUE)
-  
+
   # Use mphone3 converstion before matching
   rxGetFuzzyKeys(stringsIn = cityNames, matchMethod = "lv", keyType = "mphone3",
       dictionary = cityDictionary)
-  
+
   # Compare soundex and American soundex    
   origStr <- c("Ashcroft", "FLASHCARD")
   soundexCode <- rxGetFuzzyKeys(stringsIn = origStr, keyType = "soundex")
   soundexAmCode <- rxGetFuzzyKeys(stringsIn = origStr, keyType = "soundexAm")
   # Show the original string, Soundex, and American Soundex codes
   data.frame(origStr, soundexCode, soundexAmCode)
-  
+
   # Compare Metaphone3 with Metaphone3 with internal vowels
   origStr <- c("Phorensics", "forensics", "Nicholas", "Nicolas", "Nikolas",
        "Knight", "Night", "Stephen", "Steven", "Matthew", "Matt", "Shuan", "Shawn",
        "McDonald", "MacDonald", "Schwarzenegger", "Shwardseneger", "Ellen", "Elena", "Allen")
-  
+
   mphone3Code <- rxGetFuzzyKeys(stringsIn = origStr, keyType = "mphone3")
   mphone3VowelsCode <- rxGetFuzzyKeys(stringsIn = origStr, keyType = "mphone3Vowels")
   data.frame(origStr, mphone3Code, mphone3VowelsCode)
-  
+
   # Compare Metaphone 3 with Metaphone3 with more exact consonants
   origStr <- c("Phorensics", "forensics", "Nicholas", "Nicolas", "Nikolas",
        "Knight", "Night", "Stephen", "Steven", "Matthew", "Matt", "Shuan", "Shawn",
        "McDonald", "MacDonald", "Schwarzenegger", "Shwardseneger", "Ellen", "Elena", "Allen")
-  
+
   mphone3Code <- rxGetFuzzyKeys(stringsIn = origStr, keyType = "mphone3")
   mphone3ExactCode <- rxGetFuzzyKeys(stringsIn = origStr, keyType = "mphone3Exact")
   data.frame(origStr, mphone3Code, mphone3ExactCode)
-  
+
   # Including numbers and spaces
   origStr <- c("10 Main Apt 410", "20 Main Apt 300", "20 Main Apt 302")
   mphone3Code <- rxGetFuzzyKeys(stringsIn = origStr, keyType = "mphone3")
   mphone3NumCode <- rxGetFuzzyKeys(stringsIn = origStr, keyType = "mphone3", ignoreNumbers = FALSE)
   mphone3NumSpCode <- rxGetFuzzyKeys(stringsIn = origStr, keyType = "mphone3", ignoreNumbers = FALSE, ignoreSpaces = FALSE)
   data.frame(origStr, mphone3Code, mphone3NumCode, mphone3NumSpCode)
-  
+
   # Non-phonetic key types
   origStr <- c("10 Main St", "Main St. ", "15 Second  Ave.", "Second 15 Ave.")
   alphaCode <- rxGetFuzzyKeys(stringsIn = origStr, keyType = "alpha")
   alphaNumCode <- rxGetFuzzyKeys(stringsIn = origStr, keyType = "alphaNum")
   data.frame(origStr, alphaCode, alphaNumCode)
-  
+
   # Use minDistance to correct data
   # Create a small city dictionary
   cityDictionary <- c("Seattle", "Olympia", "Spokane")
-  
+
   # Create a vector of city names to correct
   cityNames <- c("Seattle", "Seattlee", "Olympa", "SPOKANE", "OLYmpia")
-  
+
   # Large minimum distance should result in no change
   cityKey1 <- rxGetFuzzyKeys(stringsIn = cityNames, matchMethod = "lv", dictionary = cityDictionary, minDistance = .9)
   # Print results to console
   cityKey1
-  
+
   # Smaller minimum distance should fix matched cases, but not mixed case issues
   cityKey2 <- rxGetFuzzyKeys(stringsIn = cityNames, matchMethod = "lv", dictionary = cityDictionary, minDistance = .8)
   # Print results to console
   cityKey2
-  
+
   # Small minimum distance should fix everything, even mixed case issues
   cityKey3 <- rxGetFuzzyKeys(stringsIn = cityNames, matchMethod = "lv", dictionary = cityDictionary, minDistance = .1)
   # Print results to console
   cityKey3
-  
+
   ## Use with xdf file
   # Create temporary xdf file
   inData <- data.frame(institution = c("Seattle Pacific U", "SEATTLE UNIV", "Seattle Central",
-  	"U Washingtn", "UNIV WASH BOTHELL", "Puget Sound Univ",
-  	"ANTIOC U SEATTLE", "North Seattle Univ", "North Seatle U",
-  	"Seattle Inst Tech", "SeATLE College Nrth", "UNIV waSHINGTON",
-  	"University Seattle", "Seattle Antioch U",
-  	"Technology Institute Seattle", "Pgt Sound U",
-  	"Seattle Central Univ", "Univ North Seattle",
-  	"Bothell - Univ of Wash", "ANTIOCH SEATTLE"), stringsAsFactors = FALSE)
-  
+    "U Washingtn", "UNIV WASH BOTHELL", "Puget Sound Univ",
+    "ANTIOC U SEATTLE", "North Seattle Univ", "North Seatle U",
+    "Seattle Inst Tech", "SeATLE College Nrth", "UNIV waSHINGTON",
+    "University Seattle", "Seattle Antioch U",
+    "Technology Institute Seattle", "Pgt Sound U",
+    "Seattle Central Univ", "Univ North Seattle",
+    "Bothell - Univ of Wash", "ANTIOCH SEATTLE"), stringsAsFactors = FALSE)
+
   tempInFile <- tempfile(pattern = "fuzzyDistIn", fileext = ".xdf")
   rxDataStep(inData = inData, outFile = tempInFile, rowsPerRead = 10)
-  
+
   uDictionary <- c("Seattle Pacific University", "Seattle University",
-  	"University of Washington", "Seattle Central College",
-  	"University of Washington, Bothell", "Puget Sound University",
-  	"Antioch University, Seattle", "North Seattle College",
-  	"Seattle Institute of Technology")
-  
+    "University of Washington", "Seattle Central College",
+    "University of Washington, Bothell", "Puget Sound University",
+    "Antioch University, Seattle", "North Seattle College",
+    "Seattle Institute of Technology")
+
   tempOutFile <- tempfile(pattern = "fuzzyDistOut", fileext = ".xdf")
-      
+
   outDataSource <- rxGetFuzzyKeys(stringsIn = "institution",
       data = tempInFile, outFile = tempOutFile,
       dictionary = uDictionary,
       ignoreWords = c("University", "Univ", 
-  		"of", "U"),
+        "of", "U"),
       ignoreCase = TRUE,
       matchMethod = "bag",  
       ignoreSpaces = FALSE,  
@@ -318,17 +318,16 @@ A character vector containing the fuzzy keys or a data source containing the fuz
    rxGetVarInfo(outDataSource) 
    # Read the new data set back into memory
    newData <- rxDataStep(outDataSource)
-   
+
    # See the 'cleaned-up' institution names in the new institution.key variable
    # Note that one input, Seattle Inst Tech, was not cleaned
    newData 
-   
+
    # Clean-up
    file.remove(tempInFile)
    file.remove(tempOutFile) 
- 
 ```
- 
- 
- 
- 
+
+
+
+

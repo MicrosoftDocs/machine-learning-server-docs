@@ -27,14 +27,14 @@ ms.custom: ""
  
  
  
- #fastLinear: fastLinear 
- ##Description
+ # fastLinear: fastLinear 
+ ## Description
  
 Creates a list containing the function name and arguments to train a
  Fast Linear model with [rxEnsemble](rxEnsemble.md).
  
  
- ##Usage
+ ## Usage
 
 ```   
   fastLinear(lossFunction = NULL, l2Weight = NULL, l1Weight = NULL,
@@ -43,7 +43,7 @@ Creates a list containing the function name and arguments to train a
  
 ```
  
- ##Arguments
+ ## Arguments
 
    
   

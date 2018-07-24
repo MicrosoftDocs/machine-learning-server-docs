@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "diffLocalRemote function (mrsdeploy) | Microsoft Docs" 
 description: " Generate a 'diff' report between local and remote R sessions " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "microsoft-r" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,40 +21,38 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 ms.technology: "r-server" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #diffLocalRemote: Generate a 'diff' report between local and remote R sessions 
- ##Description
- 
+
+
+
+
+ # diffLocalRemote: Generate a 'diff' report between local and remote R sessions 
+ ## Description
+
 Generate a 'diff' report between local and remote R sessions
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   diffLocalRemote()
- 
+
 ```
- 
- ##Details
- 
+
+ ## Details
+
 Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
 
- 
- 
- ##Examples
+
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 diffLocalRemote()
  ## End(Not run) 
-  
- 
 ```
- 
+

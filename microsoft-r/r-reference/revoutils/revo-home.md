@@ -27,12 +27,12 @@ ms.assetid: ""
  
  
  
- #Revo.home: Return the MicrosoftR Home Directory 
- ##Description
+ # Revo.home: Return the MicrosoftR Home Directory 
+ ## Description
  Return the MicrosoftR installation directory.
  
  
- ##Usage
+ ## Usage
 
 ```   
   Revo.home(component = "home")
@@ -40,7 +40,7 @@ ms.assetid: ""
 ```
  
  
- ##Arguments
+ ## Arguments
 
    
     
@@ -49,12 +49,12 @@ ms.assetid: ""
   
  
  
- ##Details
+ ## Details
  
 `Revo.home` returns the path to the Microsoft R package installation directory, or its licenses subdirectory. 
  
  
- ##Value
+ ## Value
  
 a character string containing the path to the
 MicrosoftR installation directory. 

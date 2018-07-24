@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "rxHdfsConnect function (revoAnalytics) | Microsoft Docs" 
 description: " Establishes a connection from RevoScaleR to the Hadoop Distributed File System (HDFS).  " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,39 +21,39 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- #rxHdfsConnect:  Establish a Connection to the Hadoop Distributed File System  
- ##Description
- 
+
+
+ # rxHdfsConnect:  Establish a Connection to the Hadoop Distributed File System  
+ ## Description
+
 Establishes a connection from RevoScaleR to the Hadoop Distributed
 File System (HDFS). 
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   rxHdfsConnect(hostName, portNumber)
- 
-```
- 
- ##Arguments
 
-   
-    
+```
+
+ ## Arguments
+
+
+
  ### `hostName`
   character string specifying the host name of your Hadoop name node.  
-  
-    
+
+
  ### `portNumber`
   integer scalar specifying the port number of your Hadoop name node.  
-  
- 
- 
- ##Details
- 
+
+
+
+ ## Details
+
 If you accept the install time option to specify a default
 HDFS connection, you are prompted for a host name and port number
 for your Hadoop name node, which are stored as environment variables
@@ -69,35 +69,33 @@ using the default values of `hostName` and `port`.
 It is important that this function be called 
 before any functions that call into **rJava**, in particular
 before initializing **rhdfs**.
- 
- 
- ##Value
- 
+
+
+ ## Value
+
 invisibly, the return value of `rxOptions`.
- 
- ##Author(s)
- 
+
+ ## Author(s)
+
 Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
 
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 [rxOptions](rxOptions.md), `link{RxHdfsFileSystem}`
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 rxHdfsConnect(hostName = "sandbox-01", port = 8020)
 
 myHDFS <- RxHdfsFileSystem()
  ## End(Not run) 
-  
- 
 ```
- 
- 
- 
+
+
+

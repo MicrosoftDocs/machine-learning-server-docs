@@ -23,7 +23,7 @@ ms.prod: "mlserver"
 
 ---
 
-#Testing and Debugging Scripts
+# Testing and Debugging Scripts
 
 For tips and guidance on how to develop portable R code using the deployrUtils package, see the [Writing Portable R Code](../deployr/deployr-data-scientist-write-portable-r-code.md) guide on the DeployR website.
 
@@ -35,7 +35,7 @@ Use the **Test** page to do the following to repository-managed scripts:
 - Debug the functioning of scripts to which you have [access rights](../deployr/deployr-repository-manager-files.md#about-file-properties)
 
 
-##Test Page Panes
+## Test Page Panes
 
 The **Test** page is divided into four panes:
 
@@ -47,7 +47,7 @@ The **Test** page is divided into four panes:
 
 + **Artifacts** pane (4): allows you to see the [files and plots](deployr-repository-manager-testing-debugging-scripts.md#reviewing-execution-artifacts) produced when the code was last executed as well as inspect the API [request and response](deployr-repository-manager-testing-debugging-scripts.md#reviewing-execution-artifacts) markup.
 
- ![](media/deployr-repository-manager-testing-debugging-scripts/testpagepanes.png)
+  ![](media/deployr-repository-manager-testing-debugging-scripts/testpagepanes.png)
 
 ## Opening the Test Page
 
@@ -62,15 +62,15 @@ The **Test** page is divided into four panes:
 The **Source** pane presents the script’s R code. The extent to which you can interact with the source code depends entirely on [permissions and policies](../what-is-operationalization.md).
 Viewing R Code
 
-###Viewing R Code
+### Viewing R Code
 
 In this pane, you can view and scroll through the source code of the R script. Code elements are color-coded for your convenience.
 
 >If you do not own this file and cannot see the code in the **Source** pane, then a [server policy](../what-is-operationalization.md) was changed by your administrator. An onscreen alert will also appear.
 
-###Editing R Code
+### Editing R Code
 
-Only the owners of a file can edit the source code of the [*Latest*](../deployr/deployr-repository-manager-files.md#working-with-historical-versions) version of a script. This pane is not meant to be used to write scripts or make major changes to your scripts. It is not a substitute for your favorite IDE for R. However, to facilitate the debugging process, the owners of a file can use this pane to make small changes, save those changes to the repository, and test them out.
+Only the owners of a file can edit the source code of the [*Latest*](deployr-repository-manager-files.md#working-with-historical-versions) version of a script. This pane is not meant to be used to write scripts or make major changes to your scripts. It is not a substitute for your favorite IDE for R. However, to facilitate the debugging process, the owners of a file can use this pane to make small changes, save those changes to the repository, and test them out.
 
 **To edit the R code:**
 
@@ -176,7 +176,8 @@ To help you test and debug your scripts, you can manipulate this underlying R se
 - [Clearing](deployr-repository-manager-testing-debugging-scripts.md#clearing-the-r-session-working-directory-or-workspace) the working directory or workspace of that underlying R session
 - [Retrieving DeployR-encoded R objects](deployr-repository-manager-testing-debugging-scripts.md#retrieving-r-objects) from the workspace
 
-<br/>
+<a name="loading-data-into-the-r-session"></a>
+
 ### Loading Data into the R Session
 
 You can load data into the underlying R session from the **Test** page of any open script. Any type of data file can be loaded into the working directory of the underlying R session. For example, you could load a .CSV file that will be read by your script. However, only files containing binary R objects, typically with a .rData file extension, can be loaded directly into the workspace from this page.
@@ -339,6 +340,6 @@ The changes you make to the source code of your own scripts in the Repository Ma
 
 1.  In the submenu, choose one of the following:
 	-  **Overwrite Latest version** to replace in the current working copy of the script.
-	-  **Save as new version** to save the changes as the [*Latest* version](../deployr/deployr-repository-manager-files.md#working-with-historical-versions) with an optional comment, and to preserve what was previously the *Latest* version in the file's history.
+	-  **Save as new version** to save the changes as the [*Latest* version](deployr-repository-manager-files.md#working-with-historical-versions) with an optional comment, and to preserve what was previously the *Latest* version in the file's history.
 
 	>`Ctrl-S` on Windows/Linux or `Command-S` on MAC will save and overwrite the *Latest* version.

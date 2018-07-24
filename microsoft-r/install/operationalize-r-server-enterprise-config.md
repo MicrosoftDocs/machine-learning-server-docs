@@ -166,7 +166,7 @@ In an enterprise configuration, you can set up one or more compute nodes.
    >For SQL Server Machine Learning Services, you must manually install .NET Core 2.0 and add a registry key called `H_KEY_LOCAL_MACHINE\SOFTWARE\R Server\Path` with a value of the parent path to the `R_SERVER` folder, such as `C:\Program Files\Microsoft SQL Server\140`.
 
    <br>
-   **On Linux**
+   <strong>On Linux</strong>
 
    Follow these instructions: [R Server installation steps](r-server-install-linux-server.md) | [Offline steps](r-server-install-linux-offline.md)
       
@@ -178,22 +178,22 @@ In an enterprise configuration, you can set up one or more compute nodes.
 
    >**Note:** If there are issues with starting the compute node, see [here](../operationalize/configure-run-diagnostics.md).
 
-1. [Launch the administration utility](../operationalize/configure-admin-cli-launch.md) with administrator privileges. 
+2. [Launch the administration utility](../operationalize/configure-admin-cli-launch.md) with administrator privileges. 
 
     >[!NOTE]
     >You can bypass the interactive configuration steps of the node using the argument `-silentcomputenodeinstall` when launching the administration utility. If you choose this method, you can skip the next two steps. For R Server 9.1 on Windows, for example, the syntax might be: 
     `dotnet Microsoft.RServer.Utils.AdminUtil\Microsoft.RServer.Utils.AdminUtil.dll -silentcomputenodeinstall`. Learn about all command-line switches for this script, [here](../operationalize/configure-admin-cli-launch.md#switch).
     
-1. From the main menu, choose the option to **Configure R Server for Operationalization**.
+3. From the main menu, choose the option to **Configure R Server for Operationalization**.
 
-1. From the submenu, choose the option to **Configure a compute node**.
+4. From the submenu, choose the option to **Configure a compute node**.
 
-1. When the configuration  utility is finished, open port 12805: 
+5. When the configuration  utility is finished, open port 12805: 
    + On Windows: Add an exception to your firewall to open port 12805. And, for additional security, you can also restrict communication for a private network or domain using a profile.
 
    + On Linux: If using IPTABLES or equivalent firewall service on Linux, then open port 12805 using `iptables`  or the equivalent command.
 
-1. From the main utility menu, choose the option **Stop and start services** and restart the compute node to define it as a service.
+6. From the main utility menu, choose the option **Stop and start services** and restart the compute node to define it as a service.
 
 
 The compute node is now configured. Repeat these steps for each compute node you want to add.

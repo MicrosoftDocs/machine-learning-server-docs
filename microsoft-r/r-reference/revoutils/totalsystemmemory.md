@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: " Obtain Total System Memory " 
 description: " Uses operating system tools to return total system memory. " 
@@ -12,7 +12,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 #ROBOTS: "" 
 #audience: "" 
@@ -22,52 +22,51 @@ ms.assetid: ""
 #ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 #ms.custom: "" 
- 
+
 --- 
- 
- 
- #totalSystemMemory:  Obtain Total System Memory  
- ##Description
- 
+
+
+ # totalSystemMemory:  Obtain Total System Memory  
+ ## Description
+
 Uses operating system tools to return total system memory.
- 
- 
- ##Usage
+
+
+ ## Usage
 
 ```   
   totalSystemMemory()
- 
+
 ```
- 
- ##Details
- 
+
+ ## Details
+
 On Unix-alikes, checks the `/proc/meminfo` file for the total memory. If the system call
 returns an error, the function returns `NA`. On Windows
 systems, uses `wmic` to obtain the `TotalVisibleMemorySize`.
- 
- 
- ##Value
- 
+
+
+ ## Value
+
 A numeric value representing total system memory in kBytes, or `NA`.
- 
 
- 
- 
 
- 
- 
- 
- 
- ##Examples
+
+
+
+
+
+
+
+ ## Examples
 
  ```
-   
+
   totalSystemMemory()
- 
 ```
- 
- 
- 
- 
- 
- 
+
+
+
+
+
+

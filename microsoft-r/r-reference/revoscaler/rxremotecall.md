@@ -25,15 +25,15 @@ ms.custom: ""
 --- 
  
  
- #rxRemoteCall:  Remote calling mechanism for distributed computing. 
- ##Description
+ # rxRemoteCall:  Remote calling mechanism for distributed computing. 
+ ## Description
  Function that is executed on the master node in a distributed computing environment.
 This function should **not** be called directly by the user and, rather, serves as a
 necessary and convenient mechanism for performing remote R calls on the master node in
 a distributed computing environment. 
  
  
- ##Usage
+ ## Usage
 
 ```   rxRemoteCall(rxCommArgsList = NULL) 
 ```

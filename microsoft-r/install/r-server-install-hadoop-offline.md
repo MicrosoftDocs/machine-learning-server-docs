@@ -96,15 +96,15 @@ For an offline installation of .NET Core, manually create its directory path, un
 
 3. Make a directory for .NET Core:
 
-  `[root@localhost tmp] $ mkdir /opt/dotnet`
+   `[root@localhost tmp] $ mkdir /opt/dotnet`
 
 4. Unpack the .NET Core redistribution into the /opt/dotnet directory:
 
-  `[root@localhost tmp] $ tar zxvf dotnet-<linux-os-name>-x64.1.1.tar.gz -C /opt/dotnet`
+   `[root@localhost tmp] $ tar zxvf dotnet-<linux-os-name>-x64.1.1.tar.gz -C /opt/dotnet`
 
 5. Set the symbolic link for .NET Core to user directories:
 
-  `[root@localhost tmp] $ ln -s /opt/dotnet/dotnet /usr/bin/dotnet`
+   `[root@localhost tmp] $ ln -s /opt/dotnet/dotnet /usr/bin/dotnet`
 
 ## Unpack MRS distribution and copy MRO
 
@@ -115,11 +115,11 @@ Next, unpack the R Server distribution and copy the gzipped MRO distribution to 
 
 1. Unpack the MRS gzipped file. 
 
-  `[root@localhost tmp] $ tar zxvf en_microsoft_r_server_910_for_hadoop_x64_10323951.tar.gz`
+   `[root@localhost tmp] $ tar zxvf en_microsoft_r_server_910_for_hadoop_x64_10323951.tar.gz`
 
 2. A new folder called MRS91Hadoop is created under /tmp. This folder contains files and packages used during setup. Copy the gzipped MRO tar file to the new MRS91Hadoop folder containing the installation script (install.sh).
 
-  `[root@localhost tmp] $ cp microsoft-r-open-3.3.3.tar.gz /tmp/MRS91Hadoop`
+   `[root@localhost tmp] $ cp microsoft-r-open-3.3.3.tar.gz /tmp/MRS91Hadoop`
 
 ## Run the MRS install script
 
@@ -127,7 +127,7 @@ R Server for Hadoop is deployed by running the install script with no parameters
 
 1. Switch to the `MRS91Hadoop` directory containing the installation script:
 
-  `[root@localhost tmp] $ cd MRS91Hadoop`
+   `[root@localhost tmp] $ cd MRS91Hadoop`
 
 2. Run the script with the **-p** parameter, specifying the Hadoop component. Optionally, add the pre-trained machine learning models.
 
@@ -175,7 +175,7 @@ As a verification step, run the Revo64 program.
 
    `> rxSummary(~., iris)`
 
-  Output from the iris dataset should look similar to the following:
+   Output from the iris dataset should look similar to the following:
 
 ~~~~
   Rows Read: 150, Total Rows Processed: 150, Total Chunk Time: 0.001 seconds

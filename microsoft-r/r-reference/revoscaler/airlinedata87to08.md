@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "AirlineData87to08 data (revoAnalytics) | Microsoft Docs" 
 description: " Airline on-time performance data from 1987 to 2008. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,185 +21,183 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- #AirlineData87to08: Airline On-Time Performance Data 
- ##Description
- 
+
+
+
+
+ # AirlineData87to08: Airline On-Time Performance Data 
+ ## Description
+
 Airline on-time performance data from 1987 to 2008.
- 
- 
- ##Format
- 
+
+
+ ## Format
+
 An .xdf file with 123534969 observations on the following 29 variables.
 
 
-###`Year`
+### `Year`
 year of the flight (stored as factor).
 
 
-###`Month`
+### `Month`
 month of the flight (stored as factor).
 
 
-###`DayOfMonth`
+### `DayOfMonth`
 day of the month (1 to 31) (stored as integer).
 
 
-###`DayOfWeek`
+### `DayOfWeek`
 day of the week (stored as factor).
 
 
-###`DepTime`
+### `DepTime`
 actual departure time (stored as float).
 
 
-###`CRSDepTime`
+### `CRSDepTime`
 scheduled departure time (stored as float).
 
 
-###`ArrTime`
+### `ArrTime`
 actual arrival time (stored as float).
 
 
-###`CRSArrTime`
+### `CRSArrTime`
 scheduled arrival time (stored as float).
 
 
-###`UniqueCarrier`
+### `UniqueCarrier`
 carrier ID (stored as factor).
 
 
-###`FlightNum`
+### `FlightNum`
 flight number (stored as factor).
 
 
-###`TailNum`
+### `TailNum`
 plane's tail number (stored as factor).
 
 
-###`ActualElapsedTime`
+### `ActualElapsedTime`
 actual elapsed time of the flight, in minutes  (stored as integer).
 
 
-###`CRSElapsedTime`
+### `CRSElapsedTime`
 scheduled elapsed time of the flight, in minutes (stored as integer).
 
 
-###`AirTime`
+### `AirTime`
 airborne time for the flight, in minutes (stored as integer).
 
 
-###`ArrDelay`
+### `ArrDelay`
 arrival delay, in minutes (stored as integer).
 
 
-###`DepDelay`
+### `DepDelay`
 departure delay, in minutes (stored as integer).
 
 
-###`Origin`
+### `Origin`
 originating airport (stored as factor).
 
 
-###`Dest`
+### `Dest`
 destination airport (stored as factor).
 
 
-###`Distance`
+### `Distance`
 flight distance (stored as integer).
 
 
-###`TaxiIn`
+### `TaxiIn`
  taxi time from wheels down to arrival at the gate, in minutes (stored as integer).
 
 
-###`TaxiOut`
+### `TaxiOut`
 taxi time from departure from the gate to wheels up, in minutes (stored as integer).
 
 
-###`Cancelled`
+### `Cancelled`
 cancellation status (stored as logical).
 
 
-###`CancellationCode`
+### `CancellationCode`
 cancellation code, if applicable (stored as factor).
 
 
-###`Diverted`
+### `Diverted`
 diversion status (stored as logical).
 
 
-###`CarrierDelay`
+### `CarrierDelay`
 delay, in minutes, attributable to the carrier (stored integer).
 
 
-###`WeatherDelay`
+### `WeatherDelay`
 delay, in minutes, attributable to weather factors (stored as integer).
 
 
-###`NASDelay`
+### `NASDelay`
 delay, in minutes, attributable to the National Aviation System (stored as integer).
 
 
-###`SecurityDelay`
+### `SecurityDelay`
 delay, in minutes, attributable to security factors (stored as integer).
 
 
-###`LateAircraftDelay`
+### `LateAircraftDelay`
 delay, in minutes, attributable to late-arriving aircraft (stored as integer).
 
 
 
- 
- 
- ##Details
- 
+
+
+ ## Details
+
 This data set contains on-time performance data from 1987 to 2008. It is an
 .xdf file, which means that the data are stored in *blocks*. The
 AirlineData87to08.xdf data file contains 832 blocks.
- 
- 
- ##Source
-  
+
+
+ ## Source
+
 American Statistical Association Statistical Computing Group, Data Expo '09.
 [`http://stat-computing.org/dataexpo/2009/the-data.html`](http://stat-computing.org/dataexpo/2009/the-data.html)
 
- 
- 
- ##Author(s)
+
+
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
- 
- 
- ##References
- 
+
+
+ ## References
+
 U.S. Department of Transportation, Bureau of Transportation Statistics,
 Research and Innovative Technology Administration. Airline On-Time Statistics. 
 [`http://www.bts.gov/xml/ontimesummarystatistics/src/index.xml`](http://www.bts.gov/xml/ontimesummarystatistics/src/index.xml)
 
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 [AirlineDemoSmall](AirlineDemoSmall.md)
-   
- ##Examples
+
+ ## Examples
 
  ```
-   
+
   ## Not run:
- 
+
 airlineDemoBig <- rxDataStep(file = "AirlineData87to08.xdf",
                             varsToKeep = c("ArrDelay", "DepDelay", "DayOfWeek"),
                             startRow = 100000, numRows = 1000) 
 summary(airlineDemoBig) 
  ## End(Not run) 
-  
- 
 ```
- 
- 
+
+

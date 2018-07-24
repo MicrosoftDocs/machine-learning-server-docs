@@ -1,5 +1,5 @@
 --- 
- 
+
 # required metadata 
 title: "RxXdfData-class class (revoAnalytics) | Microsoft Docs" 
 description: " Xdf data source connection class. " 
@@ -11,7 +11,7 @@ ms.topic: "reference"
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
- 
+
 # optional metadata 
 ROBOTS: "" 
 audience: "" 
@@ -21,104 +21,104 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
+
 --- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- #RxXdfData-class: Class RxXdfData 
- ##Description
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ # RxXdfData-class: Class RxXdfData 
+ ## Description
+
 Xdf data source connection class.
- 
- 
+
+
  ## Generators 
 
- 
+
 The targeted generator [RxXdfData](RxXdfData.md) as well as the general generator
 [rxNewDataSource](rxNew.md).
- 
+
  ## Extends 
 
- 
+
 Class RxFileData, directly.
 Class RxDataSource, by class RxFileData.
- 
- 
+
+
  ## Methods 
 
- 
 
 
-###`colnames`
+
+### `colnames`
 `signature(x = "RxXdfData")`: ... 
 
 
-###`dim`
+### `dim`
 `signature(x = "RxXdfData")`: ... 
 
 
-###`dimnames`
+### `dimnames`
 `signature(x = "RxXdfData")`: ... 
 
 
-###`formula`
+### `formula`
 `signature(x = "RxXdfData")`: ... 
 
 
-###`length`
+### `length`
 `signature(x = "RxXdfData")`: ... 
 
 
-###`names`
+### `names`
 `signature(x = "RxXdfData")`: ... 
 
 
-###`names<-`
+### `names<-`
 `signature(x = "RxXdfData")`: ... 
 
 
-###`row.names`
+### `row.names`
 `signature(x = "RxXdfData")`: ... 
 
 
-###`show`
+### `show`
 `signature(object = "RxXdfData")`: ... 
 
 
-###`str`
+### `str`
 `signature(object = "RxXdfData")`: ... 
 
 
 
- 
- 
- ##Author(s)
+
+
+ ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
- 
- 
- ##See Also
- 
+
+
+ ## See Also
+
 [RxDataSource-class](RxDataSource-class.md),
 [RxXdfData](RxXdfData.md),
 [rxNewDataSource](rxNew.md)
-   
- 
- ##Examples
+
+
+ ## Examples
 
  ```
-   
+
   DS <- RxXdfData(file.path(rxGetOption("sampleDataDir"), "fourthgraders.xdf"))
   head(DS)
   tail(DS)
@@ -128,16 +128,16 @@ Class RxDataSource, by class RxFileData.
   nrow(DS)
   ncol(DS)
   str(DS)
-  
+
   # formula examples
   formula(DS)
   formula(DS, varsToDrop = "male")
   formula(DS, depVar = "height")
   formula(DS, depVar = "height", inter = list(c("male", "eyecolor")))
-  
+
   # summarize variables in data source
   summary(DS)
-  
+
   # renaming variables in .xdf file via replacement method
   XDF <- file.path(tempdir(), "iris.xdf")
   rxDataStep(iris, XDF, overwrite = TRUE)
@@ -146,8 +146,7 @@ Class RxDataSource, by class RxFileData.
   names(irisDS) <- c("cow","horse","chicken","goat","squirrel")
   names(irisDS)
   if (file.exists(XDF)) file.remove(XDF)
- 
 ```
- 
- 
- 
+
+
+

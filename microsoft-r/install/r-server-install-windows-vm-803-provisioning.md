@@ -46,8 +46,8 @@ To create the R Server VM from the Microsoft Azure Marketplace
 3. Continue to provision the virtual machine as described in this article: https://azure.microsoft.com/documentation/articles/virtual-machines-windows-hero-tutorial/
 4. After the VM has been created and is running, click the **Connect** button to open a connection and log into the new machine.
 5. When you connect, **Server Manager** is opened by default, but no additional server configuration is required. Close **Server Manager** to get to the desktop, and proceed with the next steps: 
-+ Installing additional R tools or development tools
-+ Configuring DeployR
+6. Installing additional R tools or development tools
+7. Configuring DeployR
 
 To locate the R Server VM in the Azure Classic Portal
 
@@ -86,7 +86,7 @@ When you need to use data from your Azure storage account, there are several opt
 + Copy the data from your storage account to the local file system using a utility, such as [AzCopy](https://docs.microsoft.com/en-us/azure/storage/storage-use-azcopy#copy-files-in-azure-file-storage-with-azcopy-preview-version-only).
 + Add the files to a file share on your storage account and then mount the file share as a network drive on your VM. For more information, see [Mounting Azure files](https://docs.microsoft.com/en-us/azure/storage/storage-dotnet-how-to-use-files).
 
- ## Resources
+  ## Resources
 
 Additional documentation about Microsoft R can be found in the MSDSN library: [R Server and Scale R](https://msdn.microsoft.com/en-us/microsoft-r/microsoft-r-getting-started)
 
