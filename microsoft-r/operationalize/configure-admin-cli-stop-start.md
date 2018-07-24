@@ -40,6 +40,8 @@ In Machine Learning Server 9.3, you can use `admin` extension of the Azure Comma
 
 1. Run the command to either monitor, stop, or start a node.
    ```azurecli
+   # With elevated privileges, run the following commands.
+
    # Monitor nodes 
    az ml admin node list
 

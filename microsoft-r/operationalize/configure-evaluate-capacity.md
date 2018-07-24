@@ -52,6 +52,7 @@ In Machine Learning Server 9.3, you can use `admin` extension of the Azure Comma
 
 1. Define and run the capacity evaluation. For help, run `az ml admin capacity --help`
    ```azurecli
+   # With elevated privileges, run the following commands.
    az ml admin capacity run
    ```
 

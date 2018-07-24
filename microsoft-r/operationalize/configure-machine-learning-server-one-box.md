@@ -59,6 +59,7 @@ A one-box configuration, as the name suggests, involves a single [web node and c
    + [Test the configuration](../operationalize/configure-run-diagnostics.md).
 
    ```azurecli
+   # With elevated privileges, run the following commands.
    # Set up both nodes on one machine
    az ml admin node setup --onebox --admin-password <Password> --confirm-password <Password>
 
