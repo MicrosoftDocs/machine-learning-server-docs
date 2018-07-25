@@ -24,6 +24,8 @@
       href: install/machine-learning-server-windows-commandline.md
     - name: Uninstall from Windows
       href: install/machine-learning-server-windows-uninstall.md
+    - name: R and Python package management
+      href: install/machine-learning-server-windows-package-management.md
   - name: Linux
     items:
     - name: Install on Linux
@@ -32,6 +34,8 @@
       href: install/machine-learning-server-linux-offline.md
     - name: Uninstall from Linux
       href: install/machine-learning-server-linux-uninstall.md  
+    - name: R and Python package management
+      href: install/machine-learning-server-linux-package-management.md
   - name: Hadoop
     items:
     - name: Install on Cloudera
