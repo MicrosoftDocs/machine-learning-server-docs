@@ -14,6 +14,26 @@
     "redirect_url" : "https://docs.microsoft.com/machine-learning-server/install/machine-learning-server-azure-vm-on-linux"
   },
   {
+    "source_path" : "machine-learning-server-on-azure-hdinsight.md",
+    "redirect_url" : "https://docs.microsoft.com/azure/hdinsight/r-server/r-server-overview"
+  },
+  {
+    "source_path" : "microsoft-r/install/r-server-install-hadoop-800.md",
+    "redirect_url" : "/machine-learning-server/install/machine-learning-server-install"
+  },
+  {
+  "source_path" : "microsoft-r/install/r-server-install-linux-server-800.md",
+  "redirect_url" : "/machine-learning-server/install/machine-learning-server-install"
+  },
+  {
+  "source_path" : "microsoft-r/install/r-server-install-teradata-800.md",
+  "redirect_url" : "/machine-learning-server/install/machine-learning-server-install"
+  },
+  {
+      "source_path" : "microsoft-r/operationalize/configure-use-admin-utility.md",
+      "redirect_url" : "/machine-learning-server/operationalize/configure-admin-cli-launch"
+  },
+  {
       "source_path" : "microsoft-r/what-is-microsoft-r-server.md",
       "redirect_url" : "/r-server/rebranding-microsoft-r-server"
   },
@@ -66,12 +86,12 @@
       "redirect_url" : "/r-server/operationalize/how-to-deploy-web-service-publish-manage-in-r"
   },
     {
-     "source_path" : "microsoft-r/microsoft-r-getting-started.md",
-     "redirect_url" : "/r-server/index"
+    "source_path" : "microsoft-r/microsoft-r-getting-started.md",
+    "redirect_url" : "/r-server/index"
   },
     {
-     "source_path" : "STARTMSDN--DO_NOT_ADD_NEW_ENTRIES_BEYOND_THIS_POINT.md",
-     "redirect_url" : "/r-server/index"
+    "source_path" : "STARTMSDN--DO_NOT_ADD_NEW_ENTRIES_BEYOND_THIS_POINT.md",
+    "redirect_url" : "/r-server/index"
   },
     { 
       "source_path" : "microsoft-r/deployr-about.md",
@@ -499,7 +519,7 @@
   },
     {
       "source_path" : "microsoft-r/operationalize/admin-utility.md",
-      "redirect_url" : "/r-server/operationalize/configure-use-admin-utility"
+      "redirect_url" : "/r-server/operationalize/configure-admin-cli-launch"
   },
     {
       "source_path" : "microsoft-r/operationalize/app-developer-get-started.md",
@@ -1965,5 +1985,5 @@
       "source_path" : "microsoft-r/sqlrutils/packagehelp/setInputParameterValue.md",
       "redirect_url" : "/r-server/r-reference/sqlrutils/setinputparametervalue"
     }
- ]
-}
+  ]
+ }
