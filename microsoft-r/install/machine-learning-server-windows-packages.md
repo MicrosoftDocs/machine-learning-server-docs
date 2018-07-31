@@ -62,9 +62,10 @@ To verify the base library versions on your system, start a command line tool an
 
 On Linux, packages installed and used by Machine Learning Server can be found at these locations:
 
-+ For R: `/opt/microsoft/mlserver/9.3.0/`
++ For R: `C:\Program Files\Microsoft\ML Server\R_SERVER\library`
 
-+ For Python: `/opt/microsoft/mlserver/9.3.0/runtime/python/pkgs`
++ For Python: `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\Lib\site-packages`
+
 
 ## Add or remove R packages
 
@@ -72,13 +73,32 @@ R packages tend to have with multiple dependencies so we generally recommend usi
 
 ## Add or remote Python packages
 
-On a command prompt with elevated permissions, install new Python 3.5 compatible packages by running the following command: 
+Run the following commmands from an administrator prompt.
 
-   `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts\pip.exe install <packagename>`
+**Using pip**
 
-Uninstall packages by reversig the action using the same executable (also with elevated permissions): 
+```
+# Add a package
+cd C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts
+pip install <packagename>
 
-   `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts\pip.exe uninstall <packagename>`
+# Remove a package
+cd C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts
+pip uninstall <packagename>
+```
+
+**Using conda**
+
+```
+# Add a package
+cd C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts
+conda install <packagename>
+
+# Remove a package
+cd C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts
+conda uninstall <packagename>
+```
+
 
 ## See also
 

@@ -68,9 +68,34 @@ R packages tend to have with multiple dependencies so we generally recommend usi
 
 ## Add or remote Python packages
 
-To install Python 3.5 compatible packages, run the following command with sudo or root permissions: `/opt/microsoft/mlserver/9.3.0/runtime/python/bin/pip install <packagename>`
+Anaconda includes **pip** and **conda** that you can use to add or remove Python packages. When adding or removing packages, keep the following points in mind:
 
-To uninstall any Python packages that you previously added, reverse the action using the same executable (also with elevated permissions): `/opt/microsoft/mlserver/9.3.0/runtime/python/bin/pip uninstall <packagename>`
++ Install as root or sudo user.
++ For utilities not in the PATH, prepend with `mlserver-python -m`, as in `mlserver-python -m pip install <package-name>` (or equivalent for **conda**).  Alternatively, you coudl do this: `./pip install <package-name>`.
+
+**Using pip**
+
+```
+# Add a package
+cd /opt/microsoft/mlserver/9.3.0/runtime/python/bin/
+pip install <packagename>
+
+# Remove a package
+cd /opt/microsoft/mlserver/9.3.0/runtime/python/bin/
+pip uninstall <packagename>
+```
+
+**Using conda**
+
+```
+# Add a package
+cd /opt/microsoft/mlserver/9.3.0/runtime/python/bin/
+conda install <packagename>
+
+# Remove a package
+cd /opt/microsoft/mlserver/9.3.0/runtime/python/bin/
+conda uninstall <packagename>
+```
 
 ## See also
 
