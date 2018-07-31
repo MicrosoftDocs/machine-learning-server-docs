@@ -30,7 +30,9 @@ You can add open-source and third-party R and Python packages to the same local 
 
 ## Version requirements
 
-Product-specific packages like RevoScaleR and revoscalepy are built on base libraries of R and Python respectively.  Any new packages that you add must be compatible with the base libraries installed with the product. Upgrading or downgrading the version of R or Python installed by Machine Learning Server setup is not supported.
+Product-specific packages like RevoScaleR and revoscalepy are built on base libraries of R and Python respectively.  Any new packages that you add must be compatible with the base libraries installed with the product. 
+
+Upgrading or downgrading the base R or Python libraries installed by setup is not supported. Microsoft's proprietary packages are built on specific distributions and versions of the base libraries. Substituting different versions of those libraries could destabilize your installation.
 
 Base R is distributed through Microsoft R Open, as installed by Machine Learning Server or R Server. Python is distributed though Anaconda, also installed by Machine Learning server.
 
