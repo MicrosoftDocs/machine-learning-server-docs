@@ -2,7 +2,7 @@
 
 # required metadata 
 title: "rxPredict function (revoAnalytics) | Microsoft Docs" 
-description: " Compute predicted values and residuals using rxLinMod, rxLogit and rxGlm objects. " 
+description: "Predicted values and residuals for model objects built using RevoScaleR" 
 keywords: "(revoAnalytics), rxPredict, rxPredict.default, methods, models, regression" 
 author: "heidisteen" 
 manager: "cgronlun" 
@@ -26,11 +26,10 @@ ms.custom: ""
 
 
 
- # rxPredict: Predicted Values and Residuals for rxLinMod, rxLogit, and rxGlm 
+ # rxPredict: Predicted values and residuals for model objects built using RevoScaleR 
  ## Description
 
-Compute predicted values and residuals using `rxLinMod`, `rxLogit` and `rxGlm` objects.
-
+Compute predicted values and residuals using the following objects: [rxLinMod](rxLinMod.md), [rxGlm](rxGlm.md), [rxLogit](rxLogit.md), [rxDTree](rxDTree.md), [rxBTrees](rxBTrees.md), and [rxDForest](rxDForest.md).
 
  ## Usage
 
@@ -52,10 +51,8 @@ rxPredict  (modelObject, data = NULL, outData = NULL,
 
  ## Arguments
 
-
-
  ### `modelObject`
- object returned from a call to `rxLinMod`, `rxLogit`, or `rxGlm`. Objects with multiple dependent variables are not supported in rxPredict. 
+ object returned from a RevoScaleR model fitting function. Valid values include `rxLinMod`, `rxLogit`, `rxGlm`, `rxDTree`, `rxBTrees`, and `rxDForest`. Objects with multiple dependent variables are not supported in rxPredict. 
 
 
 
@@ -90,9 +87,7 @@ rxPredict  (modelObject, data = NULL, outData = NULL,
 
 
  ### `type`
- the type of prediction desired for [rxGlm](rxGLM.md) and [rxLogit](rxLogit.md). Supported choices are: `"response"`and `"link"`. If `type = "response"`, the predictions are on the scale of the response variable. For instance, for  the binomial model, the predictions are in the range (0,1). If `type = "link"`, the predictions are on the scale of the linear predictors. Thus for the binomial model, the predictions are of log-odds. 
-
-
+Applies to [rxGlm](rxGLM.md) and [rxLogit](rxLogit.md), used to set the type of prediction. Valid values are `"response"`and `"link"`. If `type = "response"`, the predictions are on the scale of the response variable. For instance, for  the binomial model, the predictions are in the range (0,1). If `type = "link"`, the predictions are on the scale of the linear predictors. Thus for the binomial model, the predictions are of log-odds. 
 
  ### `writeModelVars`
  logical value. If `TRUE`, and the output data set is different from the input data set, variables in the model will be written to the output data set in addition to the predictions (and residuals, standard errors, and confidence bounds, if requested). If variables from the input data set are transformed in the model, the transformed variables will also be included. 
@@ -183,7 +178,9 @@ rxPredict  (modelObject, data = NULL, outData = NULL,
  ## Details
 
 `rxPredict` computes predicted values and/or residuals from an existing
-rxLinMod or rxLogit model. For rxLogit, the residuals are equivalent to those
+model type. The most common way to call rxPredict is `rxPredict(modelObject, data, outData)`. Typically, all the other arguments are left at their defaults.
+
+For rxLogit, the residuals are equivalent to those
 computed for `glm` with `type` set to `"response"`, e.g.,
 `residuals(glmObj, type="response")`.
 
@@ -295,7 +292,7 @@ in the data) have no effect.
 
  ```
 
-  # Make a copy of the built-in iris data set
+  # Load the built-in iris data set and predict sepal length
   myIris <- iris
   myIris[1:5,]
   form <- Sepal.Length ~ Sepal.Width + Petal.Length + Petal.Width + Species
