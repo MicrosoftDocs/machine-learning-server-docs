@@ -71,7 +71,7 @@ R packages tend to have with multiple dependencies so we generally recommend usi
 Anaconda includes **pip** and **conda** that you can use to add or remove Python packages. When adding or removing packages, keep the following points in mind:
 
 + Install as root or sudo user.
-+ For utilities not in the PATH, prepend with `mlserver-python -m`, as in `mlserver-python -m pip install <package-name>` (or equivalent for **conda**).  Alternatively, you coudl do this: `./pip install <package-name>`.
++ For utilities not in the PATH, prepend with `mlserver-python -m`, as in `mlserver-python -m pip install <package-name>` (or equivalent for **conda**).  Alternatively, you could do this: `./pip install <package-name>`.
 
 **Using pip**
 
