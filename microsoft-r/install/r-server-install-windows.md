@@ -110,7 +110,7 @@ As a verification step, connect to the server and execute a few ScaleR functions
 4. Type `print(Revo.version)` to show the software version.
 5. Type `rxSummary(~., iris)` to return summary statistics on the built-in iris sample dataset. The `rxSummary` function is from `RevoScaleR`. 
 
-Additionally, run the [Administrator Utility](../operationalize/configure-use-admin-utility.md) to configure your R Server for remote access and execution, web service deployment, or multi-server installation.
+Additionally, run the [Administrator Utility](../operationalize/configure-admin-cli-launch.md) to configure your R Server for remote access and execution, web service deployment, or multi-server installation.
 
 ## Enable Remote Connections and Analytic Deployment
 

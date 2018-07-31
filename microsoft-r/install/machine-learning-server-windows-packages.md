@@ -30,7 +30,9 @@ You can add open-source and third-party R and Python packages to the same local 
 
 ## Version requirements
 
-Product-specific packages like RevoScaleR and revoscalepy are built on base libraries of R and Python respectively.  Any new packages that you add must be compatible with the base libraries installed with the product. Upgrading or downgrading the version of R or Python installed by Machine Learning Server setup is not supported.
+Product-specific packages like RevoScaleR and revoscalepy are built on base libraries of R and Python respectively.  Any new packages that you add must be compatible with the base libraries installed with the product. 
+
+Upgrading or downgrading the base R or Python libraries installed by setup is not supported. Microsoft's proprietary packages are built on specific distributions and versions of the base libraries. Substituting different versions of those libraries could destabilize your installation.
 
 Base R is distributed through Microsoft R Open, as installed by Machine Learning Server or R Server. Python is distributed though Anaconda, also installed by Machine Learning server.
 
@@ -62,23 +64,43 @@ To verify the base library versions on your system, start a command line tool an
 
 On Linux, packages installed and used by Machine Learning Server can be found at these locations:
 
-+ For R: `/opt/microsoft/mlserver/9.3.0/`
++ For R: `C:\Program Files\Microsoft\ML Server\R_SERVER\library`
 
-+ For Python: `/opt/microsoft/mlserver/9.3.0/runtime/python/pkgs`
++ For Python: `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\Lib\site-packages`
+
 
 ## Add or remove R packages
 
 R packages tend to have with multiple dependencies so we generally recommend using a tool like miniCran. For more information and alternative methodologies, see [R package management](../operationalize/configure-manage-r-packages.md).
 
-## Add or remote Python packages
+## Add or remove Python packages
 
-On a command prompt with elevated permissions, install new Python 3.5 compatible packages by running the following command: 
+Run the following commmands from an administrator prompt.
 
-   `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts\pip.exe install <packagename>`
+**Using pip**
 
-Uninstall packages by reversig the action using the same executable (also with elevated permissions): 
+```
+# Add a package
+cd C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts
+pip install <packagename>
 
-   `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts\pip.exe uninstall <packagename>`
+# Remove a package
+cd C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts
+pip uninstall <packagename>
+```
+
+**Using conda**
+
+```
+# Add a package
+cd C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts
+conda install <packagename>
+
+# Remove a package
+cd C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts
+conda uninstall <packagename>
+```
+
 
 ## See also
 

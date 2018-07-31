@@ -43,8 +43,6 @@ The following procedure explains how to use the Azure portal to view the full ra
 
 VM images include the custom [R packages](../r-reference/introducing-r-server-r-package-reference.md) and [Python libraries](../python-reference/introducing-python-package-reference.md) from Machine Learning Server that offer machine learning algorithms, R and Python helpers for deploying analytics, and portable, scalable, and distributable data analysis functions.
 
-> [!Note]
-> If you require a specific previous version, search the portal for *R Server* and use these links for installation instructions: [R Server 9.1-9.2.1](r-server-vm-azure-linux.md), [ R Server 9.0.1](r-server-vm-azure-linux-9-0-1.md), or [R Server 8.0.5](r-server-vm-azure-linux-8-0-5.md). 
 
 ## How to provision with templates
 
