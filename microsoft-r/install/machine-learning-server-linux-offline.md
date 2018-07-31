@@ -6,7 +6,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "02/16/2018"
+ms.date: "07/24/2018"
 ms.topic: "conceptual"
 ms.prod: "mlserver"
 
@@ -78,7 +78,6 @@ The following packages comprise a full Machine Learning Server installation:
  microsoft-mlserver-adminutil-9.3           ** operationalization (optional)
  microsoft-mlserver-computenode-9.3         ** operationalization (optional)
  microsoft-mlserver-config-rserve-9.3       ** operationalization (optional) 
- microsoft-mlserver-dotnet-9.3              ** operationalization (optional)
  microsoft-mlserver-webnode-9.3             ** operationalization (optional)
  azure-cli-2.0.25-1.el7.x86_64              ** operationalization (optional)
 ```

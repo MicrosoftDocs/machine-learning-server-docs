@@ -42,6 +42,7 @@ To update port values:
 
 1. Run the command to update the port value(s), where `<Port>` should be replaced by the actual port number without the brackets.
    ```azurecli
+   # With elevated privileges, run the following commands.
    # List current port values
    az ml admin port list
 

@@ -68,7 +68,9 @@ In the Enterprise configuration, side-by-side installations of a web and compute
 
 1. In a command line window or terminal launched with administrator (Windows) or root/sudo (Linux) privileges, run [CLI commands](configure-admin-cli-launch.md) to configure a compute node.
    ```azurecli
+   # With elevated privileges, run the following commands.
    # Set up a compute node
+
    az ml admin node setup --computenode
    
    # Check the node is now running
