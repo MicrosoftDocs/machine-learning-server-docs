@@ -2,24 +2,16 @@
  "redirections":
  [
   {
-    "source_path" : "machine-learning-server-on-azure-hdinsight.md",
-    "redirect_url" : "https://docs.microsoft.com/azure/hdinsight/r-server/r-server-overview"
+    "source_path" : "microsoft-r/install/r-server-vm-azure-linux.md",
+    "redirect_url" : "https://docs.microsoft.com/machine-learning-server/install/machine-learning-server-azure-vm-on-linux"
   },
   {
-    "source_path" : "microsoft-r/install/r-server-install-hadoop-800.md",
-    "redirect_url" : "/machine-learning-server/install/machine-learning-server-install"
+    "source_path" : "microsoft-r/install/r-server-vm-azure-linux-8-0-5.md",
+    "redirect_url" : "https://docs.microsoft.com/machine-learning-server/install/machine-learning-server-azure-vm-on-linux"
   },
   {
-  "source_path" : "microsoft-r/install/r-server-install-linux-server-800.md",
-  "redirect_url" : "/machine-learning-server/install/machine-learning-server-install"
-  },
-  {
-  "source_path" : "microsoft-r/install/r-server-install-teradata-800.md",
-  "redirect_url" : "/machine-learning-server/install/machine-learning-server-install"
-  },
-  {
-      "source_path" : "microsoft-r/operationalize/configure-use-admin-utility.md",
-      "redirect_url" : "/machine-learning-server/operationalize/configure-admin-cli-launch"
+    "source_path" : "microsoft-r/install/r-server-vm-azure-linux-9-0-1.md",
+    "redirect_url" : "https://docs.microsoft.com/machine-learning-server/install/machine-learning-server-azure-vm-on-linux"
   },
   {
       "source_path" : "microsoft-r/what-is-microsoft-r-server.md",
@@ -507,7 +499,7 @@
   },
     {
       "source_path" : "microsoft-r/operationalize/admin-utility.md",
-      "redirect_url" : "/r-server/operationalize/configure-admin-cli-launch"
+      "redirect_url" : "/r-server/operationalize/configure-use-admin-utility"
   },
     {
       "source_path" : "microsoft-r/operationalize/app-developer-get-started.md",
