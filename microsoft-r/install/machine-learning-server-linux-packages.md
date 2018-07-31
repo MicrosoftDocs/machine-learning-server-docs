@@ -66,11 +66,11 @@ On Linux, packages installed and used by Machine Learning Server can be found at
 
 R packages tend to have with multiple dependencies so we generally recommend using a tool like miniCran. For more information and alternative methodologies, see [R package management](../operationalize/configure-manage-r-packages.md).
 
-## Add or remote Python packages
+## Add or remove Python packages
 
 Anaconda includes **pip** and **conda** that you can use to add or remove Python packages. When adding or removing packages, keep the following points in mind:
 
-+ Install as root or sudo user.
++ Install as root or super user.
 + For utilities not in the PATH, prepend with `mlserver-python -m`, as in `mlserver-python -m pip install <package-name>` (or equivalent for **conda**).  Alternatively, you could do this: `./pip install <package-name>`.
 
 **Using pip**

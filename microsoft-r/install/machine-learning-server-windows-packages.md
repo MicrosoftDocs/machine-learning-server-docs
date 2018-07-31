@@ -71,7 +71,7 @@ On Linux, packages installed and used by Machine Learning Server can be found at
 
 R packages tend to have with multiple dependencies so we generally recommend using a tool like miniCran. For more information and alternative methodologies, see [R package management](../operationalize/configure-manage-r-packages.md).
 
-## Add or remote Python packages
+## Add or remove Python packages
 
 Run the following commmands from an administrator prompt.
 
