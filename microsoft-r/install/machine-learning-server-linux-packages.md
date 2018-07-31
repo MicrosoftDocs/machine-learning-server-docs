@@ -46,11 +46,11 @@ For R, from `/Home` or any other working directory: `[<path>] $ Revo64`
 
 `R version 3.4.3 (2017-11-30) -- "Kite-Eating Tree"
 Copyright (C) 2017 The R Foundation for Statistical Computing
-Platform: x86_64-w64-mingw32/x64 (64-bit)`
+Platform: x86_64-pc-linux-gnu (64-bit)`
 
 For Python, do this: `[<path>] $ mlserver-python`
 
-`Python 3.5.2 |Anaconda 4.2.0 (64-bit)| (default, Jul  5 2016, 11:41:13) [MSC v.1900 64 bit (AMD64)] on win32
+`Python 3.5.2 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:53:06) [GCC 4.4.7 20120313] on linux
 Type "help", "copyright", "credits" or "license" for more information.`
 
 
@@ -58,7 +58,7 @@ Type "help", "copyright", "credits" or "license" for more information.`
 
 On Linux, packages installed and used by Machine Learning Server can be found at these locations:
 
-+ For R: `/opt/microsoft/mlserver/9.3.0/`
++ For R: `/opt/microsoft/mlserver/9.3.0/runtime/R/library`
 
 + For Python: `/opt/microsoft/mlserver/9.3.0/runtime/python/pkgs`
 
