@@ -88,7 +88,7 @@ Uninstall reverses the installation steps, including uninstalling any package de
 
 7. Remove the entire directory:
 
-   + `$ rm -fr ls /opt/microsoft/mlserver/9.3.0/`
+   + `$ rm -fr /opt/microsoft/mlserver/9.3.0/`
 
 RM removes the folder. Parameter "f" is for force and "r" for recursive, deleting everything under microsoft/mlserver. This command is destructive and irrevocable, so be sure you have the correct directory before you press Enter.
 
