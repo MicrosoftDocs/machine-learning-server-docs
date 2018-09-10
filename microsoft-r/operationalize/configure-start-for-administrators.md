@@ -53,7 +53,7 @@ All configurations have at least a single web node, single compute node, and a d
 
 + **Compute nodes** are used to execute R and Python code as a session or service. Each compute node has its own [pool of R and python shells](../operationalize/configure-evaluate-capacity.md#pool) and can therefore execute multiple requests at the same time. Scaling out compute nodes enables you to have more R and Python execution shells and benefit from load balancing across these compute nodes. 
 
-+ The **database**. An SQLite 3.7+ database is installed by default, but you can, and in some cases must, [use a SQL Server (Windows) or PostgreSQL (Linux)](../operationalize/configure-remote-database-to-operationalize.md) database instead.
++ The **database**. An SQLite 3.7+ database is installed by default, but you can, and in some cases must, [use a SQL Server or PostgreSQL](../operationalize/configure-remote-database-to-operationalize.md) database instead.
 
 ### One-box vs. Enterprise configurations
 
