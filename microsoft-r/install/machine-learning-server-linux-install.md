@@ -59,7 +59,7 @@ Machine Learning Server is licensed as a SQL Server supplemental feature. On dev
 On production servers, the enterprise edition of Machine Learning Server for Linux is licensed by the core. Enterprise licenses are sold in 2-core packs, and you must have a license for every core on the machine. For example, on an 8-core server, you would need four 2-core packs. For more information, start with the [SQL Server pricing page](https://www.microsoft.com/sql-server/sql-server-2017-pricing).
 
 > [!Note]
-> When you purchase an enterprise license of Machine Learning Server for Linux, you can install [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) for free (10 nodes for each core licensed under enterprise licensing).
+> When you purchase an enterprise license of Machine Learning Server for Linux, you can install [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) for free (5 nodes for each core licensed under enterprise licensing).
 
 <a name="package-manager"></a>
 
