@@ -35,13 +35,13 @@ Use the "extraSparkConfig" option to direct jobs to a specific YARN queue.
 ````
 RxSpark(.., extraSparkConfig='--conf spark.yarn.queue=mrsjobs')
 
-RxSparkConnect(..,
+rxSparkConnect(..,
      extraSparkConfig='--conf spark.yarn.queue=mrsjobs')
 ````
 
 ## Overrides
 
-Use of a specific queue can be enforced by the Hadoop system administrator by providing an installation override to the `RxSpark()`, `RxSparkConnect()`, and `RxHadoopMR()` compute context functions. A benefit is that you no longer have to explicitly specify the queue.  
+Use of a specific queue can be enforced by the Hadoop system administrator by providing an installation override to the `RxSpark()`, `rxSparkConnect()`, and `RxHadoopMR()` compute context functions. A benefit is that you no longer have to explicitly specify the queue.  
 
 This procedure involves creating a custom R package that contains the function overrides, installing that package on the nodes in use by end users, and adding the package to the default search path on these nodes. The following code block provides an example. If you use this code as a template, remember to change the ‘mrsjobs’ YARN queue name to the queue name that's valid for your system.
 
@@ -68,7 +68,7 @@ This procedure involves creating a custom R package that contains the function o
    NAMESPACE – text file containing the list of overridden functions to be exported:
 
    ~~~~
-   export("RxHadoopMR", "RxSpark", “RxSparkConnect”)
+   export("RxHadoopMR", "RxSpark", “rxSparkConnect”)
    ~~~~
 
    LICENSE – create a text file named ‘LICENSE’ in the package directory with a single line for the license associated with the R package:
@@ -77,11 +77,11 @@ This procedure involves creating a custom R package that contains the function o
    This package is for internal Company ABC use only -- not for redistribution.
    ~~~~
 
-3. In the package’s R directory add one or more `*.R` files with the code for the functions to be overridden. The following sample code provides for overriding `RxHadoopMR`, `RxSpark`, and `RxSparkConnect` that you might save to a file called "ccOverrides.r" in that directory. The `RxSparkConnect` function is only available in V9 and later releases. 
+3. In the package’s R directory add one or more `*.R` files with the code for the functions to be overridden. The following sample code provides for overriding `RxHadoopMR`, `RxSpark`, and `rxSparkConnect` that you might save to a file called "ccOverrides.r" in that directory. The `RxSparkConnect` function is only available in V9 and later releases. 
 
    ~~~~
     # sample code to enforce use of YARN queues for RxHadoopMR, RxSpark,
-    # and RxSparkConnect
+    # and rxSparkConnect
 
    RxHadoopMR <- function(...) {
       dotargs <- list(...)
@@ -121,7 +121,7 @@ This procedure involves creating a custom R package that contains the function o
       do.call( RevoScaleR::RxSpark, dotargs )
    } }
 
-   RxSparkConnect <- function(...) {
+   rxSparkConnect <- function(...) {
       dotargs <- list(...)
       hswitch <- dotargs$extraSparkConfig
 
@@ -137,7 +137,7 @@ This procedure involves creating a custom R package that contains the function o
 
       # add in the required queue info
       dotargs$extraSparkConfig <- paste(y,'--conf spark.yarn.queue=mrsjobs')
-      do.call( RevoScaleR::RxSparkConnect, dotargs )
+      do.call( RevoScaleR::rxSparkConnect, dotargs )
    }
    ~~~~
 
