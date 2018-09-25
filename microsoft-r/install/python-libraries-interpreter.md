@@ -80,8 +80,12 @@ On each supported OS, the package manager downloads packages from the repository
 
 With root or sudo permissions, run the following commands:
 ```
-# Set location of the package repository. For example for 16.04.
-wget https://packages.microsoft.com/ubuntu/16.04/prod/pool/main/m/microsoft-mlserver-packages-py-9.3.0/microsoft-mlserver-packages-py-9.3.0.deb
+# Download packages-microsoft-prod.deb to set location of the package repository. For example for 16.04.
+wget https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
+dpkg -i packages-microsoft-prod.deb
+
+# Add the Microsoft public signing key for Secure APT
+apt-key adv --keyserver packages.microsoft.com --recv-keys 52E16F86FEE04B979B07E28DB02C46DF417A0893
 
 # Verification step: look for the mlserver.list configuration file
 ls -la /etc/apt/sources.list.d/
