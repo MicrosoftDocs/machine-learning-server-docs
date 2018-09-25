@@ -88,7 +88,7 @@ On the machine onto which you are installing, follow this guidance before you be
 
    1. Download Microsoft R Client from https://aka.ms/rclient/.
 
-   1. Download the Microsoft R Open ( *.cab) needed to install R Client from https://go.microsoft.com/fwlink/?LinkId=852724.
+   1. Download the Microsoft R Open ( *.cab) needed to install R Client from https://go.microsoft.com/fwlink/?LinkId=867186.
 
    1. Download .NET Framework 4.5.2 from https://www.microsoft.com/download/details.aspx?id=42642.
 
