@@ -31,7 +31,6 @@ Machine Learning Server for Linux runs machine learning and data mining solution
 This article explains how to install Machine Learning Server on a standalone Linux server that has an internet connection. If your server has restrictions on internet access, see [offline installation](machine-learning-server-linux-offline.md). 
 
 This article covers the following items:
-> [!div class="checklist"]
 > - Prerequisites
 > - Package manager overview
 > - In-place upgrades of existing installations
