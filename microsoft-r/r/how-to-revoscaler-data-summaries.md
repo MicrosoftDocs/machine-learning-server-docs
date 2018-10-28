@@ -54,7 +54,7 @@ The [names function](https://www.rdocumentation.org/packages/base/versions/3.4.3
 
 	  [1] "age" "incwage" "perwt" "sex" "wkswork1" "state"
 
-Once you have a variable name, you can drill down futher to examine its metadata. This is the output for age:
+Once you have a variable name, you can drill down further to examine its metadata. This is the output for age:
 
 	names(censusWorkerInfo$age)
 
