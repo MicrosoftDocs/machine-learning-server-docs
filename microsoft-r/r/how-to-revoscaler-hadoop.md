@@ -130,7 +130,7 @@ You can have many compute context objects but only one is active at any one time
 
 #### Define a Compute Context on a High-Availability Cluster
 
-If you are running on a Hadoop cluster configured for high-availabilty, you must specify the node providing the name service using the *nameNode* argument to *RxHadoopMR*, and also specify the Hadoop port with the *port* argument:
+If you are running on a Hadoop cluster configured for high-availability, you must specify the node providing the name service using the *nameNode* argument to *RxHadoopMR*, and also specify the Hadoop port with the *port* argument:
 
 	myHadoopCluster <- RxHadoopMR(nameNode = "my-name-service-server",
 	    port = 8020)

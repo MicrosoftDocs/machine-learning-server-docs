@@ -34,7 +34,7 @@ Install R packages from repositories or install local files for the current sess
 
  ## Usage
 
-```   
+```r
 
   rxInstallPackages(pkgs, skipMissing = FALSE, repos = getOption("repos"), verbose = getOption("verbose"), 
         scope = "private", owner = '', computeContext = rxGetOption("computeContext"))
@@ -85,7 +85,7 @@ Install R packages from repositories or install local files for the current sess
  ## Details
 
 This is a simple wrapper for install.packages. 
-For [RxInSqlServer](RxInSqlServer.md) compute context the user specified as part of connection string is used for installing the packages if `owner` argument is empty. The user calling this function needs to be granted permissions by database owner by making them member of either `'rpkgs-shared'` or `'rpkgs-private'` database role. Users in `'rpkgs-shared'` role can install packages to `"shared"` location and `"private"` location. Users in `'rpkgs-private'` role can only install packages `"private"` location for their own use. To use the packages installed on the SQL server a user needs to be member atleast `'rpkgs-users'` role.
+For [RxInSqlServer](RxInSqlServer.md) compute context the user specified as part of connection string is used for installing the packages if `owner` argument is empty. The user calling this function needs to be granted permissions by database owner by making them member of either `'rpkgs-shared'` or `'rpkgs-private'` database role. Users in `'rpkgs-shared'` role can install packages to `"shared"` location and `"private"` location. Users in `'rpkgs-private'` role can only install packages `"private"` location for their own use. To use the packages installed on the SQL server a user needs to be a member of at least the `'rpkgs-users'` role.
 
 See the help file for additional details.
 
@@ -113,7 +113,7 @@ require
 
  ## Examples
 
- ```
+ ```r
 
   ## Not run:
 

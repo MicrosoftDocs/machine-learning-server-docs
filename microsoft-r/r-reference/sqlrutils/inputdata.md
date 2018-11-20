@@ -39,7 +39,7 @@ the embedded R function takes in a data frame input parameter.
 
  ## Usage
 
-```   
+```r
   InputData(name, defaultQuery = NULL, query = NULL)
 
 ```
@@ -59,7 +59,7 @@ the embedded R function takes in a data frame input parameter.
 
 
  ### `query`
- A character string specifing the query that will be used to retrive the data in the next run of the stored procedure. 
+ A character string specifing the query that will be used to retrieve the data in the next run of the stored procedure. 
 
 
 
@@ -69,7 +69,7 @@ InputData Object
 
  ## Examples
 
- ```
+ ```r
 
   ## Not run:
 
