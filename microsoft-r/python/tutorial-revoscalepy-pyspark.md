@@ -139,7 +139,7 @@ The sample data used in this tutorial is airline arrival and departure data, whi
 
 ## Create the model
 
-A logistic regression model requires a symbolic formula, specifying the dependent and indepdendent variables, and a data set. You can output the results using the print function.
+A logistic regression model requires a symbolic formula, specifying the dependent and independent variables, and a data set. You can output the results using the print function.
 
  ```Python
     # Create the formula
