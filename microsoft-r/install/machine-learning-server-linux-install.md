@@ -6,7 +6,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "03/01/2018"
+ms.date: "11/20/2018"
 ms.topic: "conceptual"
 ms.prod: "mlserver"
 
@@ -37,9 +37,6 @@ This article covers the following items:
 > - In-place upgrades of existing installations
 > - Installation steps
 > - An inventory of what's installed
-> 
-> [!Note]
-> These instructions use package managers to connect to Microsoft sites, download the distributions, and install the server. If you know and prefer working with gzip files on a local machine, you can download **en_machine_learning_server_9.2.1_for_linux_x64_100352967.gz** from [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/).
 
 
 ## System and setup requirements
