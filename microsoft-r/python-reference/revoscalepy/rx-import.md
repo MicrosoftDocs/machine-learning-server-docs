@@ -206,7 +206,7 @@ as factor data you must use the column_info argument, documented below.
 
 List of named variable information lists. Each variable
 information list contains one or more of the named elements given below.
-When importing fixed format data, either column_info or an an ‘.sts’ schema
+When importing fixed format data, either column_info or an ‘.sts’ schema
 file should be supplied. For fixed format text files, only the variables
 specified will be imported. For all text types, the information supplied
 for column_info overrides that supplied for column_classes.
