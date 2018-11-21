@@ -53,7 +53,7 @@ This takes you to the **Custom deployment** page in the Azure portal where you n
 
 ![custom-deployment](./media/quickstart-application-integration-with-swagger/2-custom-deployment.png)
 
-Agree to the Terms and Conditions and click **Purchase**. Find the **mlserver** resource in **All resources**, click **Connect** after the sever has been created.
+Agree to the Terms and Conditions and click **Purchase**. Find the **mlserver** resource in **All resources**, click **Connect** after the server has been created.
 
 ![mlserver-azure-resource](./media/quickstart-application-integration-with-swagger/3-mlserver-azure-resource.png)
 
