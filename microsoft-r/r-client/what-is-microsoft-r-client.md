@@ -44,8 +44,7 @@ You can work with R Client standalone. You can also use it with Machine Learning
 
 Getting started with Microsoft R Client is as easy as 1-2-3. Click a step to get started:
 
-![Step 1](./media/
-what-is-microsoft-r-client/Step1.png)
+ ![Step 1](./media/what-is-microsoft-r-client/Step1.png)
 
 <a name="installrclient"></a>
 

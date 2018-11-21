@@ -75,7 +75,7 @@ R packages tend to have with multiple dependencies so we generally recommend usi
 
 ## Add or remove Python packages
 
-Run the following commmands from an administrator prompt.
+Run the following commands from an administrator prompt.
 
 **Using pip**
 

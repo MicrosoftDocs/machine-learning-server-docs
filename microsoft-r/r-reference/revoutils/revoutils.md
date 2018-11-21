@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "RevoUtils Functions R Package for Mirosoft R "
+title: "RevoUtils Functions R Package for Microsoft R "
 description: "A package providing utility functions useful for script running on the Microsoft R ScaleR engine."
 keywords: "RevoUtils package reference"
 author: "HeidiSteen"

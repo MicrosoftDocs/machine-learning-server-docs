@@ -97,11 +97,11 @@ Feature Extractors that can be used with mtText.
  ## Details
 
 `ngramCount` allows defining arguments for count-based feature
-extraction. It accepts following options: `ngramLenght`, `skipLenght`,
+extraction. It accepts following options: `ngramLength`, `skipLength`,
 `maxNumTerms` and `weighting`.
 
 `ngramHash` allows defining arguments for hashing-based feature
-extraction.  It accepts the following options: `ngramLenght`, `skipLenght`, 
+extraction.  It accepts the following options: `ngramLength`, `skipLength`, 
 `hashBits`, `seed`, `ordered` and `invertHash`.
 
 
