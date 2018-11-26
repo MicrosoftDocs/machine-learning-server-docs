@@ -396,6 +396,36 @@ Microsoft .NET Core 2.0, used for operationalization, must be added to Ubuntu:
 
 Additional open-source packages are installed if a package is required but not found on the system. This list varies for each installation. Refer to [offline installation](machine-learning-server-linux-offline.md) for an example list.
 
+## Configure RStudio for RevoScaleR
+
+If you are using the RStudio IDE, perform the following steps to load RevoScaleR and other R Client libraries.
+
+1. Close RStudio if it is already open.
+
+2. Start a terminal session and sign on as root (`sudo su`).
+
+3. Open the **Renviron** file for editing:
+
+  ```bash
+  gedit /opt/microsoft/rclient/3.4.3/runtime/R/etc/Renviron
+  ```
+
+4. Scroll down to **R_LIBS_USER** and add a new configuration setting just below it:
+
+  ```bash
+  R_LIBS_SITE=/opt/microsoft/rclient/3.4.3/libraries/RServer
+  ```
+
+5. Save the file.
+
+6. Start RStudio. In the Console window, you should see messages indicating the both Microsoft R Open and Microsoft R Client packages are loaded.
+
+7. To confirm RevoScaleR is operational, run the RevoScaleR **rxSummary** function to return statistical summary information on the built-in Iris dataset: 
+
+  ```r
+  rxSummary(~., iris)
+  ```
+
 ## Next steps
 
 We recommend starting with any Quickstart tutorial listed in the contents pane. 
