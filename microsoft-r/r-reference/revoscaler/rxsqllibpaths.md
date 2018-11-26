@@ -56,7 +56,6 @@ When rxExec() function is called from a client machine with [RxInSqlServer](RxIn
 
 
  ## Value
-
 A character vector of the library paths containing both `"shared"` or `"private"` scope of the packages if the user specified in the connection string is allowed access. On acccess denied, it returns an empty character vector.
 
 

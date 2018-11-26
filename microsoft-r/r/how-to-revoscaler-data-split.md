@@ -98,7 +98,7 @@ Create an XDF source object:
     
 Connect to the cluster:
 
-	myCluster <- RxSparkConnect(nameNode = "my-name-service-server", port = 8020, wait = TRUE)
+	myCluster <- rxSparkConnect(nameNode = "my-name-service-server", port = 8020, wait = TRUE)
 
 Set the compute context to your cluster:
 

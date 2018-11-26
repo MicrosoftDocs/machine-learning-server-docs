@@ -44,8 +44,7 @@ You can work with R Client standalone. You can also use it with Machine Learning
 
 Getting started with Microsoft R Client is as easy as 1-2-3. Click a step to get started:
 
-![Step 1](./media/
-what-is-microsoft-r-client/Step1.png)
+ ![Step 1](./media/what-is-microsoft-r-client/Step1.png)
 
 <a name="installrclient"></a>
 
@@ -68,6 +67,8 @@ While R is a command line driven program, you can also use your favorite R integ
 + **Set up RTVS for R Client on Windows**: [R Tools for Visual Studio](https://docs.microsoft.com/visualstudio/rtvs/installation) (RTVS) is an integrated development environment available as a free add-in for any edition of Visual Studio.  To make R Client the default R engine for RTVS, choose Change R to Microsoft R Client from the R Tools menu.  
 
 + **Set up RStudio for R Client on Windows or Linux**: [RStudio](https://www.rstudio.com/products/rstudio/download2/) is another popular R IDE. To make R Client the default R engine for RStudio, [update the path to R](https://support.rstudio.com/hc/en-us/articles/200486138-Using-Different-Versions-of-R). For example, point to `C:\Program Files\Microsoft\R Client\R_SERVER\bin\x64` on Windows. 
+
+Similarly, on Linux add "R_LIBS_SITE=/opt/microsoft/rclient/3.4.3/libraries/RServer" on bottom of the file "/opt/microsoft/rclient/3.4.3/runtime/R/etc/Renviron". [Source](https://github.com/rstudio/rstudio/issues/2455#issuecomment-375327109).
 
 After you configure the IDE, a message appears in the console signaling that the Microsoft R Client packages were loaded.
 
