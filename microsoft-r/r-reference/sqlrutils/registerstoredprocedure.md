@@ -2,7 +2,7 @@
 
 # required metadata 
 title: "registerStoredProcedure function (sqlrutils) | Microsoft Docs" 
-description: " registerStoredProcedure: Uses the the StoredProcedure object to register the stored procedure with the specified database " 
+description: " registerStoredProcedure: Uses the StoredProcedure object to register the stored procedure with the specified database " 
 keywords: "(sqlrutils), registerStoredProcedure" 
 author: "heidisteen" 
 manager: "cgronlun" 
@@ -30,7 +30,7 @@ ms.custom: ""
  # registerStoredProcedure: Register a SQL Stored Procedure with a Database 
  ## Description
 
-`registerStoredProcedure`: Uses the the StoredProcedure object to register
+`registerStoredProcedure`: Uses the StoredProcedure object to register
 the stored procedure with the specified database
 
 

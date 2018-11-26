@@ -245,7 +245,7 @@ At the other extreme, let’s draw an ROC curve for our great model:
 
 ![](media/how-to-revoscaler-logistic-regression/image15.png)
 
-With perfect predictions, we see the the True Positive Rate is 1 for all thresholds, and the AUC is 1. We’d expect a random guess ROC curve to lie along with white diagonal line.
+With perfect predictions, we see the True Positive Rate is 1 for all thresholds, and the AUC is 1. We’d expect a random guess ROC curve to lie along with white diagonal line.
 
 Now let’s use actual model predictions in an ROC curve. We’ll use the small mortgage default sample data to estimate a logistic model and them compute predicted values:
 

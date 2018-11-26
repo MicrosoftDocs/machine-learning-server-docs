@@ -74,7 +74,7 @@ of a "compute context" such as a cluster.
 
 
  ### `timesToRun`
- integer specifying the the total number of instances of the function  `FUN` to run. If `timesToRun=-1`, the default, then times is set to the  length of the `elemArgs` argument, if it exists, else to the number of nodes or cores specified in the compute context object, if that is exact. In the latter case, if the `elemType="nodes"` and a single set of arguments is being passed to each node, each  element of the return list will be named with the name of the node that computed that element. If `timesToRun` is not -1, it must be consistent with this other information.  
+ integer specifying the total number of instances of the function  `FUN` to run. If `timesToRun=-1`, the default, then times is set to the  length of the `elemArgs` argument, if it exists, else to the number of nodes or cores specified in the compute context object, if that is exact. In the latter case, if the `elemType="nodes"` and a single set of arguments is being passed to each node, each  element of the return list will be named with the name of the node that computed that element. If `timesToRun` is not -1, it must be consistent with this other information.  
 
 
 

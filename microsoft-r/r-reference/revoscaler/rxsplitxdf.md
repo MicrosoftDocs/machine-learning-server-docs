@@ -74,7 +74,7 @@ Split an input .xdf file or data frame into multiple .xdf files or a list of dat
   
     
  ### `outFilesBase`
- a character string or vector defining the file names/paths to use in forming the the output .xdf files. These names/paths will be embellished with any specified `outFileSuffixes`. For `rxSplit`, `outFilesBase = NULL` means that the default value for .xdf and [RxXdfData](RxXdfData.md)`inData` objects will be `basename(rxXdfFileName(inData))` while it will be a blank string for `inData` a data frame.   
+ a character string or vector defining the file names/paths to use in forming the output .xdf files. These names/paths will be embellished with any specified `outFileSuffixes`. For `rxSplit`, `outFilesBase = NULL` means that the default value for .xdf and [RxXdfData](RxXdfData.md)`inData` objects will be `basename(rxXdfFileName(inData))` while it will be a blank string for `inData` a data frame.   
   
   
     
