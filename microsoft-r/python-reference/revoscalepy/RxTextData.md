@@ -131,7 +131,7 @@ which column should be converted to which type.
 
 List of named variable information lists. Each variable
 information list contains one or more of the named elements given below. When
-importing fixed format data, either column_info or an an ‘.sts’ schema file
+importing fixed format data, either column_info or an ‘.sts’ schema file
 should be supplied. For such fixed format data, only the variables specified
 will be imported. For all text types, the information supplied for column_info
 overrides that supplied for column_classes.
