@@ -142,4 +142,4 @@ Now that you know how to load the Python libraries, you might want to explore th
 
 ## See also
 
-For more about Machine Learning Sever in general, see [Overview of Machine Learning Server](../what-is-machine-learning-server.md) 
+For more about Machine Learning Server in general, see [Overview of Machine Learning Server](../what-is-machine-learning-server.md) 

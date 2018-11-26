@@ -76,7 +76,7 @@ Prior to using `RxOdbcData` against Hive, we recommend that you begin by install
 
 ## Check Hadoop cluster health
 
-Hadoop includes example programs that help verify the health of your cluster. One exmaple is the jar file hadoop-mapreduce-examples.jar. The following command should display a list of the available examples:
+Hadoop includes example programs that help verify the health of your cluster. One example is the jar file hadoop-mapreduce-examples.jar. The following command should display a list of the available examples:
 
 	hadoop jar /usr/lib/hadoop-mapreduce/hadoop-mapreduce-examples.jar
 
