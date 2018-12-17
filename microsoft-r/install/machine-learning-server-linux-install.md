@@ -60,7 +60,7 @@ On production servers where code supports ongoing business operations or is part
 If you have questions, [review the pricing page or contact Microsoft](https://www.microsoft.com/sql-server/sql-server-2017-pricing) for more information.
 
 > [!Note]
-> When you purchase an enterprise license of Machine Learning Server for Windows, you can install [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) for free (5 nodes for each core licensed under enterprise licensing).
+> When you purchase an enterprise license of Machine Learning Server for Linux, you can install [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) for free (5 nodes for each core licensed under enterprise licensing).
 
 <a name="package-manager"></a>
 
