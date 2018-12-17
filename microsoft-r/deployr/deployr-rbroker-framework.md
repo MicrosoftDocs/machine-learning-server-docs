@@ -283,7 +283,7 @@ The Discrete Task Runtime acquires DeployR grid resources per RTask on-demand, w
 
 1.  If an appropriate slot on the grid can be acquired by the RBroker, then an RTask will be executed.
 
-2.  If an appropriate slot on the grid can not be acquired by the the RBroker, then the RTask result will indicate an `RGridException` failure.
+2.  If an appropriate slot on the grid can not be acquired by the RBroker, then the RTask result will indicate an `RGridException` failure.
 
 3.  Any RTask indicating an `RGridException` failure can be resubmitted to the RBroker.
 

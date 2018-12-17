@@ -6,7 +6,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "07/24/2018"
+ms.date: "12/17/2018"
 ms.topic: "conceptual"
 ms.prod: "mlserver"
 
@@ -29,9 +29,6 @@ ms.prod: "mlserver"
 By default, installers connect to Microsoft download sites to get required and updated components for Machine Learning Server 9.x for Linux. If firewall constraints prevent the installer from reaching these sites, you can use an internet-connected device to download files, transfer files to an offline server, and then run setup.
 
 Before you start, review the following article for general information about setup: [Install Machine Learning Server on Linux](machine-learning-server-linux-install.md).
-
-> [!Note]
-> These instructions use package managers to connect to Microsoft sites, download the distributions, and install the server. If you know and prefer working with gzip files on a local machine, you can download **en_machine_learning_server_9.2.1_for_linux_x64_100352967.gz** from [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/).
 
 <a name="package-manager"></a>
 
@@ -188,6 +185,14 @@ Run the activation script from either the R or Python directory:
     Description: Microsoft Machine Learning Server
 	  . . .
    ```
+
+## Set a MKL_CBWR variable
+
+Set an MKL_CBWR environment variable to ensure consistent output from Intel Math Kernel Library (MKL) calculations.
+
++ Edit or create a file named **.bash_profile** in your user home directory, adding the line `export MKL_CBWR="AUTO"` to the file.
+
++ Execute this file by typing **source .bash_profile** at a bash command prompt.
 
 ### Start Revo64
 

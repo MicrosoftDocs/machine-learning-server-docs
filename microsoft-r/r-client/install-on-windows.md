@@ -133,6 +133,19 @@ To install Microsoft R Client from a script on Windows, use the following comman
 |Silent|`RClientSetup.exe /quiet`|No prompts nor progress indicator|
  
 
+## Set environment variables
+
+Create an **MKL_CBWR** environment variable to [ensure consistent output](https://software.intel.com/articles/introduction-to-the-conditional-numerical-reproducibility-cnr) from Intel Math Kernel Library (MKL) calculations.
+
+1. In Control Panel, click **System and Security** > **System** > **Advanced System Settings** > **Environment Variables**.
+
+2. Create a new User or System variable. 
+
+  + Set variable name to `MKL_CBWR`
+  + Set the variable value to `AUTO`
+
+This step requires a computer restart. 
+
 ## What's Installed with R Client
 
 Microsoft R Client installs the R base packages and a set of enhanced and proprietary R packages that support parallel processing, improved performance, and connectivity to data sources including SQL Server and Hadoop. The R libraries are installed under the R Client installation directory, `C:\Program Files\Microsoft\R Client\R_SERVER`. Additionally, this directory contains the documentation for the R base packages, sample data, and the R library.

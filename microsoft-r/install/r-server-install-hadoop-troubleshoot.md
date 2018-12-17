@@ -19,7 +19,6 @@ ms.prod: "mlserver"
 #ms.tgt_pltfrm: ""
 #ms.technology: ""
 #ms.custom: ""
-
 ---
 # Troubleshoot Microsoft R installation problems on Hadoop
 

@@ -1,5 +1,4 @@
 --- 
- 
 # required metadata 
 title: "rxSplitXdf function (revoAnalytics) | Microsoft Docs" 
 description: "    Split an input .xdf file or data frame into multiple .xdf files or a list of data frames. " 
@@ -21,10 +20,7 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
- 
 --- 
- 
- 
  
  # rxSplitXdf: Split a Single Data Set into Multiple Sets 
  ## Description
@@ -385,7 +381,3 @@ a list of data frames or an invisible list of `RxXdfData` data source objects co
           args.legend = list(x = "topright"),
           ylim = c(0, 1.5 * max(numBlocksData)))
 ```
- 
-         
- 
- 
