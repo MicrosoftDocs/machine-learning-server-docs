@@ -6,7 +6,7 @@ keywords: ""
 
 author: "HeidiSteen"
 ms.author: "heidist"
-ms.date: "2/16/2018"
+ms.date: "11/26/2018"
 ms.topic: "conceptual"
 ms.prod: "mlserver"
 

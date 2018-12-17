@@ -7,7 +7,7 @@ keywords: "R Client, R IDE configuration, RTVS,  Microsoft R Client Linux"
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "02/16/2018"
+ms.date: "12/17/2018"
 ms.topic: "conceptual"
 ms.prod: "mlserver"
 
@@ -277,6 +277,14 @@ This step completes installation.
 
 You can now [set up your IDE and try out some sample code](../r-client-get-started.md). Also, consider package management as described in the next section.
 
+### Set a MKL_CBWR variable
+
+Set an MKL_CBWR environment variable to ensure consistent output from Intel Math Kernel Library (MKL) calculations.
+
++ Edit or create a file named **.bash_profile** in your user home directory, adding the line `export MKL_CBWR="AUTO"` to the file.
+
++ Execute this file by typing **source .bash_profile** at a bash command prompt.
+
 ### Offline Package Management
 
 Review the recommendations in [Package Management](../operationalize/configure-manage-r-packages.md#offline) for instructions on how to set up a local package repository using MRAN or miniCRAN. As we mentioned earlier, you must install the `gcc-c++` and `gcc-gfortran` binary packages to be able to build and install packages, including miniCRAN.
@@ -308,6 +316,35 @@ Review the recommendations in [Package Management](../operationalize/configure-m
 
 RM removes the folder. Parameter "f" is for force and "r" for recursive, deleting everything under microsoft/rclient. This command is destructive and irrevocable, so be sure you have the correct directory before you press Enter.
 
+## Configure RStudio for RevoScaleR
+
+If you are using the RStudio IDE, perform the following steps to load RevoScaleR and other R Client libraries.
+
+1. Close RStudio if it is already open.
+
+2. Start a terminal session and sign on as root (`sudo su`).
+
+3. Open the **Renviron** file for editing:
+
+   ```bash
+   gedit /opt/microsoft/rclient/3.4.3/runtime/R/etc/Renviron
+   ```
+
+4. Scroll down to **R_LIBS_USER** and add a new configuration setting just below it:
+
+   ```bash
+   R_LIBS_SITE=/opt/microsoft/rclient/3.4.3/libraries/RServer
+   ```
+
+5. Save the file.
+
+6. Start RStudio. In the Console window, you should see messages indicating the both Microsoft R Open and Microsoft R Client packages are loaded.
+
+7. To confirm RevoScaleR is operational, run the RevoScaleR **rxSummary** function to return statistical summary information on the built-in Iris dataset: 
+
+   ```r
+   rxSummary(~., iris)
+   ```
 
 ## Learn More
 

@@ -6,7 +6,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "02/16/2018"
+ms.date: "12/16/2018"
 ms.topic: "conceptual"
 ms.prod: "mlserver"
 
@@ -85,6 +85,19 @@ If there are errors during Setup, check the log files located in the system temp
   ![Machine Learning Server setup log files](./media/mlserver-setup-log-files.png)
 
 <a name="connect-validate"></a>
+
+### Set environment variables
+
+Create an **MKL_CBWR** environment variable to [ensure consistent output](https://software.intel.com/articles/introduction-to-the-conditional-numerical-reproducibility-cnr) from Intel Math Kernel Library (MKL) calculations.
+
+1. In Control Panel, click **System and Security** > **System** > **Advanced System Settings** > **Environment Variables**.
+
+2. Create a new User or System variable. 
+
+  + Set variable name to `MKL_CBWR`
+  + Set the variable value to `AUTO`
+
+This step requires a server restart. 
 
 ## Connect and validate
 

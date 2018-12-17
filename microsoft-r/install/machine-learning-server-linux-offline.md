@@ -6,7 +6,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "11/24/2018"
+ms.date: "12/17/2018"
 ms.topic: "conceptual"
 ms.prod: "mlserver"
 
@@ -185,6 +185,14 @@ Run the activation script from either the R or Python directory:
     Description: Microsoft Machine Learning Server
 	  . . .
    ```
+
+## Set a MKL_CBWR variable
+
+Set an MKL_CBWR environment variable to ensure consistent output from Intel Math Kernel Library (MKL) calculations.
+
++ Edit or create a file named **.bash_profile** in your user home directory, adding the line `export MKL_CBWR="AUTO"` to the file.
+
++ Execute this file by typing **source .bash_profile** at a bash command prompt.
 
 ### Start Revo64
 
