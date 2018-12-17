@@ -7,7 +7,7 @@ keywords: "R Client, R IDE configuration, RTVS,  Microsoft R Client Linux"
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "11/26/2018"
+ms.date: "12/17/2018"
 ms.topic: "conceptual"
 ms.prod: "mlserver"
 
@@ -276,6 +276,14 @@ This step completes installation.
    ```
 
 You can now [set up your IDE and try out some sample code](../r-client-get-started.md). Also, consider package management as described in the next section.
+
+### Set a MKL_CBWR variable
+
+Set an MKL_CBWR environment variable to ensure consistent output from Intel Math Kernel Library (MKL) calculations.
+
++ Edit or create a file named **.bash_profile** in your user home directory, adding the line `export MKL_CBWR="AUTO"` to the file.
+
++ Execute this file by typing **source .bash_profile** at a bash command prompt.
 
 ### Offline Package Management
 

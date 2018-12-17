@@ -6,7 +6,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "02/16/2018"
+ms.date: "12/16/2018"
 ms.topic: "conceptual"
 ms.prod: "mlserver"
 
@@ -51,9 +51,13 @@ The following additional components are included in Setup and required for Machi
 
 ## Licensing
 
-Machine Learning Server is licensed as a SQL Server supplemental feature. On development workstations, you can install the developer edition at no charge. 
+Machine Learning Server is licensed as a SQL Server supplemental feature, even though SQL Server itself is not installed or required on a standalone Machine Learning Server installation. 
 
-On production servers, the enterprise edition of Machine Learning Server for Windows is licensed by the core. Enterprise licenses are sold in 2-core packs, and you must have a license for every core on the machine. For example, on an 8-core server, you would need four 2-core packs. For more information, start with the [SQL Server pricing page](https://www.microsoft.com/sql-server/sql-server-2017-pricing).
+On development workstations, you can install the developer edition at no charge. For example, if you are learning how to use the RevoScaleR libraries, or developing a solution that is not in production, you would use this edition. 
+
+On production servers where code supports ongoing business operations or is part of a solution you are selling commercially, you will need the enterprise edition. The enterprise edition of Machine Learning Server for Windows is licensed by the core. Enterprise licenses are sold in 2-core packs, and you must have a license for every core on the machine. For example, on an 8-core server, you would need four 2-core packs.
+
+If you have questions, [review the pricing page or contact Microsoft](https://www.microsoft.com/sql-server/sql-server-2017-pricing) for more information.
 
 > [!Note]
 > When you purchase an enterprise license of Machine Learning Server for Windows, you can install [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) for free (5 nodes for each core licensed under enterprise licensing).
@@ -121,6 +125,19 @@ The setup wizard installs, upgrades, and uninstalls all in one workflow.
 If there were errors during Setup, check the log files located in the system temp directory. An easy way to get there is typing `%temp%` as a Run command or search operation in Windows. If you installed all components, your log file list looks similar to this screenshot:
 
   ![Machine Learning Server setup log files](./media/mlserver-setup-log-files.png)
+
+### Set environment variables
+
+Create an **MKL_CBWR** environment variable to [ensure consistent output](https://software.intel.com/articles/introduction-to-the-conditional-numerical-reproducibility-cnr) from Intel Math Kernel Library (MKL) calculations.
+
+1. In Control Panel, click **System and Security** > **System** > **Advanced System Settings** > **Environment Variables**.
+
+2. Create a new User or System variable. 
+
+  + Set variable name to `MKL_CBWR`
+  + Set the variable value to `AUTO`
+
+This step requires a server restart. 
 
 <a name="connect-validate"></a>
 
