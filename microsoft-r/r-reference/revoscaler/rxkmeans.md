@@ -222,7 +222,7 @@ An object of class "rxKmeans" which is a list with components:
 
 
 ### `cluster`
-A vector of integers indicating the cluster to which each point is allocated. This information is always returned if the data source is a data frame. If the data source is not a data frame and `outFile` is specified. i.e., not `NULL`, the the cluster indexes are written/appended to the specified file with a column name as defined by `outColName`.
+A vector of integers indicating the cluster to which each point is allocated. This information is always returned if the data source is a data frame. If the data source is not a data frame and `outFile` is specified. i.e., not `NULL`, the cluster indexes are written/appended to the specified file with a column name as defined by `outColName`.
 
 
 

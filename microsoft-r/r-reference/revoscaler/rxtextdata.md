@@ -97,7 +97,7 @@ This is the main generator for S4 class RxTextData, which extends RxDataSource.
 
 
  ### `colInfo`
- list of named variable information lists. Each variable information list contains one or more of the named elements given below. When importing fixed format data, either `colInfo` or an an .sts schema file should be supplied. For such fixed format data, only the variables specified will be imported. For all text types, the information supplied for `colInfo`overrides that supplied for `colClasses`.   
+ list of named variable information lists. Each variable information list contains one or more of the named elements given below. When importing fixed format data, either `colInfo` or an .sts schema file should be supplied. For such fixed format data, only the variables specified will be imported. For all text types, the information supplied for `colInfo`overrides that supplied for `colClasses`.   
 *   Currently available properties for a column information list are: 
 * `type` - character string specifying the data type for the column. See `colClasses` argument description for the available types. If the `type` is not specified for fixed format data, it will be read as character data.  
 * `newName` - character string specifying a new name for the variable.   

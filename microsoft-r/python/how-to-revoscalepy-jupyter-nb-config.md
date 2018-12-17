@@ -7,7 +7,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "03/12/2018"
+ms.date: "12/17/2018"
 ms.topic: "conceptual"
 ms.prod: "mlserver"
 
@@ -44,12 +44,14 @@ Run the following command to install the kernel:
 sudo /usr/bin/anaconda/bin/jupyter kernelspec install /opt/microsoft/mlserver/9.2.1/libraries/jupyter/kernels/MMLSPy
 ```
 
+If the `/usr/bin/anaconda/bin/jupyter` folder doesn't exist, then the server is not a JupyterHub or multi-user server. For more information, see [JupyterHub documentation](https://jupyterhub.readthedocs.io/en/stable/). 
+
 ## Check kernel installation
 
 Verify the file is in the expected location.
 
-1. Run `jupyter –data-dir` from the node on which Jupyter Notebook Server is installed.
-2. Note the path returned by `-data-dir`. This is where Jupyter stores its data directories, including kernels.
+1. Run `jupyter –-data-dir` from the node on which Jupyter Notebook Server is installed.
+2. Note the path returned by `--data-dir`. This is where Jupyter stores its data directories, including kernels.
 3. Navigate to the folder. You should see **MLSPython** listed.
 
 If the installation command did not succeed, you can manually copy the **MLSPython** directory from `/opt/microsoft/mlserver/9.3.0/libraries/kernels/` to the kernels subdirectory under the data directory.

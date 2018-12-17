@@ -78,7 +78,7 @@ Now that you've tried this example, you can start developing your own solutions 
 
 ## See also
 
-For more about Machine Learning Sever in general, see [Overview of Machine Learning Server](../what-is-machine-learning-server.md) 
+For more about Machine Learning Server in general, see [Overview of Machine Learning Server](../what-is-machine-learning-server.md) 
 
 
 For more machine learning samples using the microsoftml Python package, see [Python samples for MicrosoftML](samples-microsoftml-python.md).
