@@ -30,7 +30,7 @@ You can assess the health of your web and compute node environment using the dia
 
 Armed with this information, you can identify unresponsive components, execution problems, and access [the log files](#logs). 
 
-The sets of diagnostic tests include:
+The set of diagnostic tests include:
 + A general health check of the configuration
 + A trace of an execution (R code, Python code, or a web service)
 
