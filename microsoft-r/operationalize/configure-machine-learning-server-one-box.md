@@ -135,8 +135,6 @@ Carefully review the following steps.
 
    If you need help with CLI commands, run the command but add `--help` to the end.
 
-   You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
-
 7. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
 
 >[!Important]

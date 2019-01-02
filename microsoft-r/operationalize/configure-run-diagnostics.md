@@ -30,7 +30,7 @@ You can assess the health of your web and compute node environment using the dia
 
 Armed with this information, you can identify unresponsive components, execution problems, and access [the log files](#logs). 
 
-The set of diagnostic tests include:
+The sets of diagnostic tests include:
 + A general health check of the configuration
 + A trace of an execution (R code, Python code, or a web service)
 
@@ -348,4 +348,4 @@ If you encounter this error, you can re-add the extension as such:
 **Linux:**
 
 ```azurecli
-> az extension add --source ./microsoft/mlserver/9.3.0/o16n/azure_ml_admin_cli-0.0.1-py2.py3-none-any.whl --yes
+> az extension add --source /opt/microsoft/mlserver/9.3.0/o16n/azure_ml_admin_cli-0.0.1-py2.py3-none-any.whl --yes

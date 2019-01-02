@@ -28,25 +28,15 @@ ms.prod: "mlserver"
 
 Learn how to build and use API Client libraries from Swagger to integrate into your applications. Swagger is a machine-readable representation of a RESTful API that enables support for interactive documentation, client SDK generation, and discoverability.
 
-While data scientists can work with R directly in an R console window or R IDE, application developers often need a different set of tools to leverage R inside applications. As an application developer integrating with these web services, typically your interest is in executing R code, not writing it. Data scientists with the R programming skills write the R code. Then, using some core APIs, this R code can be published as a Machine Learning Server-hosted analytics Web service. 
+While data scientists can work with R or Python directly in an console window or IDE, application developers often need a different set of tools to leverage R inside applications. As an application developer integrating with these web services, typically your interest is in executing R / Python code, not writing it. Data scientists with the R programming skills write the R / Python code. Then, using some core APIs, this code can be published as a Machine Learning Server-hosted analytics Web service. 
 
-To simplify the integration of your R analytics web services, Machine Learning Server (formerly R Server) provides [Swagger templates](http://swagger.io/) for operationalization. These Swagger-based JSON files define the list of calls and resources available in the REST [APIs](concept-api.md).    
+To simplify the integration of your R / Python analytics web services, Machine Learning Server (formerly R Server) provides [Swagger templates](http://swagger.io/) for operationalization. These Swagger-based JSON files define the list of calls and resources available in the REST [APIs](concept-api.md).    
 
-To access these RESTful APIs outside of R, generate an API client library in your preferred programming language, such as .NET, C#, Java, JS, Python, or node.js. This library is built with a Swagger tool. The resulting API client library simplifies the making of calls, encoding of data, and markup response handling on the API.    
+To access these RESTful APIs outside of R / Python, generate an API client library in your preferred programming language, such as .NET, C#, Java, JS, Python, or node.js. This library is built with a Swagger tool. The resulting API client library simplifies the making of calls, encoding of data, and markup response handling on the API.    
 
 ## Swagger workflow
 
 ![Swagger Workflow: build api clients from swagger for app integration](./media/how-to-build-api-clients-from-swagger-for-app-integration/api-swagger-workflow.png)
-
-## Get a swagger generation tool
-
-1. Install a Swagger code generator on your local machine. 
-
-   Popular Swagger code generation tools include [Azure AutoRest](https://github.com/Azure/autorest) (requires node.js) and [Swagger Codegen](https://github.com/swagger-api/swagger-codegen). 
-
-   ![Generate Swagger](./media/how-to-build-api-clients-from-swagger-for-app-integration/app-dev-autorest.png)
-
-1. Familiarize yourself with the tool so you can generate the API client libraries in your preferred programming language. 
 
 ## Get the Swagger file
 
@@ -60,7 +50,13 @@ Service-specific&nbsp;APIs|Get the service-specific APIs defined in `swagger.jso
 
 ## Build the core client library
 ### Option 1. Build using a Swagger code generator
-To build a client library, run the file through the Swagger code generator, and specify the language you want. If you use AutoRest to generate a C# client library, it might look like  command:
+To build a client library, run the file through the Swagger code generator, and specify the language you want. Popular Swagger code generation tools include [Azure AutoRest](https://github.com/Azure/autorest) (requires node.js) and [Swagger Codegen](https://github.com/swagger-api/swagger-codegen). 
+
+   ![Generate Swagger](./media/how-to-build-api-clients-from-swagger-for-app-integration/app-dev-autorest.png)
+
+Familiarize yourself with the tool so you can generate the API client libraries in your preferred programming language.
+
+If you use AutoRest to generate a C# client library, it might look like the following command:
 ```
 AutoRest.exe -CodeGenerator CSharp -Modeler Swagger -Input mlserver-swagger-<version>.json -Namespace MyNamespace
 ```
@@ -71,8 +67,7 @@ You can now provide some custom headers and make other changes before using the 
 ### Option 2. Build using an online Swagger editor
 You are not required to install a Swagger code generator on your machine. Instead, you can  build the client library in your preferred language using an online Swagger editor. 
 
-1. Go to https://swagger.io/.
-1. Choose **Swagger Editor** from the **Tools** menu on the homepage. The editor appears with default contents.
+1. Go to http://editor.swagger.io/. The editor appears with default contents.
 1. Delete the default contents so the editor is empty.
 1. Open the Swagger file on your local machine in a text editor of your choice.
 1. Copy the Swagger contents to your clipboard.
