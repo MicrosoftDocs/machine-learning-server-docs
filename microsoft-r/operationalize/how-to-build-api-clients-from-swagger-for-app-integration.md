@@ -28,7 +28,7 @@ ms.prod: "mlserver"
 
 Learn how to build and use API Client libraries from Swagger to integrate into your applications. Swagger is a machine-readable representation of a RESTful API that enables support for interactive documentation, client SDK generation, and discoverability.
 
-While data scientists can work with R or Python directly in an console window or IDE, application developers often need a different set of tools to leverage R inside applications. As an application developer integrating with these web services, typically your interest is in executing R / Python code, not writing it. Data scientists with the R programming skills write the R / Python code. Then, using some core APIs, this code can be published as a Machine Learning Server-hosted analytics Web service. 
+While data scientists can work with R / Python directly in an console window or IDE, application developers often need a different set of tools to leverage R inside applications. As an application developer integrating with these web services, typically your interest is in executing R / Python code, not writing it. Data scientists with the R programming skills write the R / Python code. Then, using some core APIs, this code can be published as a Machine Learning Server-hosted analytics Web service. 
 
 To simplify the integration of your R / Python analytics web services, Machine Learning Server (formerly R Server) provides [Swagger templates](http://swagger.io/) for operationalization. These Swagger-based JSON files define the list of calls and resources available in the REST [APIs](concept-api.md).    
 
