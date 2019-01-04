@@ -26,11 +26,11 @@ ms.prod: "mlserver"
 
 **Applies to: Machine Learning Server 9.x**
 
-Learn how to deploy an Python model as a [web service with Machine Learning Server](../concept-what-are-web-services.md). Data scientists work locally in their preferred Python IDE and favorite version control tools to build scripts and models. Using the [azureml-model-management-sdk Python package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) that ships with Machine Learning Server, you can develop, test, and ultimately deploy these Python analytics as web services in your production environment. 
+Learn how to deploy a Python model as a [web service with Machine Learning Server](../concept-what-are-web-services.md). Data scientists work locally in their preferred Python IDE and favorite version control tools to build scripts and models. Using the [azureml-model-management-sdk Python package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) that ships with Machine Learning Server, you can develop, test, and ultimately deploy these Python analytics as web services in your production environment. 
 
 In Machine Learning Server, a web service is a model and/or code that has been deployed and hosted in the server.  Each web service is uniquely defined by a `name` and `version`. When consumed, the service consists of the code execution on a [compute node](../configure-start-for-administrators.md#configure-server-for-operationalization). Learn more [about web services](../concept-what-are-web-services.md).
 
-You can use the functions in [the azureml-model-management-sdk Python library ](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) to manage the web service's lifecycle from a Python script. A set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis) are also available to provide direct programmatic access to a service's lifecycle. 
+You can use the functions in [the azureml-model-management-sdk Python library ](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) to manage the web service's lifecycle from a Python script. A set of RESTful APIs is also available to provide direct programmatic access to a service's lifecycle. 
 
 
 ## Time estimate
@@ -87,7 +87,7 @@ This section provides a quick summary of useful links for data scientists lookin
  + [Functions in azureml-model-management-sdk package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)    
  + [Connecting to Machine Learning Server in Python](how-to-authenticate-in-python.md)    
  + [Working with web services in Python](how-to-deploy-manage-web-services.md)  
- + [Example of deploying realtime web service](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/operationalize/Publish_Realtime_Web_Service_in_Python.ipynb)  
+ + [Example of deploying real-time web service](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/operationalize/Publish_Realtime_Web_Service_in_Python.ipynb)  
  + [How to consume web services in Python synchronously (request/response)](how-to-consume-web-services.md)    
  + [How to consume web services in Python asynchronously (batch)](how-to-consume-web-services-async.md)    
  + [How to integrate web services and authentication into your application](../how-to-build-api-clients-from-swagger-for-app-integration.md)    
