@@ -348,4 +348,4 @@ If you encounter this error, you can re-add the extension as such:
 **Linux:**
 
 ```azurecli
-> az extension add --source ./microsoft/mlserver/9.3.0/o16n/azure_ml_admin_cli-0.0.1-py2.py3-none-any.whl --yes
+> az extension add --source /opt/microsoft/mlserver/9.3.0/o16n/azure_ml_admin_cli-0.0.1-py2.py3-none-any.whl --yes
