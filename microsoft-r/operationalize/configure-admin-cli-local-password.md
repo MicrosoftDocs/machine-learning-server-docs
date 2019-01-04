@@ -50,7 +50,7 @@ To update the password:
    ```azurecli
    # With elevated privileges, run the following commands.
    # Update the admin account password
-   az ml admin password set --old-password <OLD-PW> --new-password <NEW-PW> --confirm-password <NEW-PW>
+   az ml admin password set --old-password <OLD-PW> --admin-password <NEW-PW> --confirm-password <NEW-PW>
    ```
 
 ## Earlier versions: 9.0 - 9.2
