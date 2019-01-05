@@ -51,7 +51,7 @@ Features provided by [Machine Learning Server](what-is-microsoft-r-server.md), [
 |<b>Memory & Storage</b>|Memory bound<sup>1</sup>|Memory bound<sup>1</sup> &amp; operates on large volumes when connected to R Server.|Memory across multiple nodes as well as data chunking across multiple disks.<br />Operates on bigger volumes &amp; factors.|
 |<b>Speed of Analysis</b>|Multithreaded via MKL<sup>2</sup> for non-RevoScaleR functions.|Multithreaded via MKL<sup>2</sup> for non-RevoScaleR functions, but only up to 2 threads for ScaleR functions with a local compute context.|Full parallel threading &amp; processing for revoscalepy and RevoScaleR functions as well as for non-proprietary functions (via MKL<sup>2</sup>) in both local and remote compute contexts.|
 |<b>Analytic Breadth &amp; Depth</b>|Open&nbsp;source&nbsp;packages only.|Open source R packages plus proprietary packages.|Open source R packages plus proprietary packages with support for parallelization and distributed workloads. Proprietary Python packages for solutions written in that language.|
-|<b><a href="what-is-operationalization.md">Operationalizing</a> R Analytics</b>|Not available|Not available|Includes the instant deployment and easy consumption of R analytics, interactive remote code execution, speedy realtime scoring, scalability, and enterprise-grade security.|
+|<b><a href="what-is-operationalization.md">Operationalizing</a> R Analytics</b>|Not available|Not available|Includes the instant deployment and easy consumption of R analytics, interactive remote code execution, speedy real-time scoring, scalability, and enterprise-grade security.|
 
 <sup>1</sup> Memory bound because product can only process datasets that fit into the available memory.
 

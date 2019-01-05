@@ -33,8 +33,7 @@ The following issues are known in the 9.3 release.
 
 ### 1. Missing `azure-ml-admin-cli` extension on DSVM environments
 
-If for some reason your `azure-ml-admin-cli` extension is not available or has been removed
-you will be met with the following error:
+If for some reason your `azure-ml-admin-cli` extension is not available or has been removed, you will be met with the following error:
 
 ```azurecli
 # With elevated privileges, run the following commands.
@@ -102,7 +101,7 @@ If you customarily switch the compute context among multiple machines, you might
 ```
 To deserialize the model, switch to a newer server or consider upgrading the older remote server. As a best practice, it helps when all servers and client apps are at the same functional level.
 
-### 5. azureml-model-management-sdk only supports up to 3 aruguments as the input of the web service
+### 5. azureml-model-management-sdk only supports up to 3 arguments as the input of the web service
 
 When consuming the web services using python, sending multiple variables (more than three) as inputs of consume() or the alias function is returning KeyError or TypeError. Alternative: use DataFrames as the input type.
 
@@ -186,7 +185,7 @@ If you are consuming a long-running web service via batch mode, you may encounte
 
 The workaround to bypass the timeout is to modify the webnode appsetting.json file. 
 
-1. Change the field "ConnectionTimeout" under the "ComputeNodesConfiguration" section. The default value is "01:00:00" which is one hour.
+1. Change the field "ConnectionTimeout" under the "ComputeNodesConfiguration" section. The default value is "01:00:00", which is one hour.
 
 1. Add a new field "BatchExecutionCheckoutTimeSpan" at the base level of the json file. For example:
 
