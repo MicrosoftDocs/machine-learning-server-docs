@@ -68,7 +68,7 @@ If a query is provided:
 `execute2D` validates a query object (optional), generates an mdx query string from the query object, executes the mdx query across, and returns the result as a data frame.
 
 If an MDX string is provided:
-`execute2D` executes the mdx query , and returns the result as a data frame.
+`execute2D` executes the mdx query, and returns the result as a data frame.
 
 
 

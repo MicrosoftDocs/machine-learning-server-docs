@@ -595,7 +595,7 @@ Install DeployR as follows:
 
 6.  When the installer starts, accept the terms of the agreement to continue.
 
-7.  When prompted by the installer, choose installation `Option 3`. This installs the DeployR server and configure it for the remote database you installed above.
+7.  When prompted by the installer, choose installation `Option 3`. This installs the DeployR server and configures it for the remote database you installed above.
 
 8.  Enter the directory path in which to install. If you are keeping an older version of DeployR on this same machine for the purposes of migrating data, for example, then be sure to install this version in its own directory.
 
@@ -674,7 +674,7 @@ Before you can install DeployR on the main server machine, you must manually ins
 
                 R CMD INSTALL deployrRserve_7.4.2_for_R_3.2.x.tgz
 
-        -   If you have RRO RRO 8.x or R 3.1.x, then run this command:
+        -   If you have RRO 8.x or R 3.1.x, then run this command:
 
                 R CMD INSTALL deployrRserve_7.4.2_for_R_3.1.x.tgz
 

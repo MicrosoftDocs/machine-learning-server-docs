@@ -238,7 +238,7 @@ But, these estimates are conditional on the fact that a claim was made.
 
 ### An Example Using the Tweedie Family
 
-The Tweedie family of distributions provide flexible models for estimation. The power parameter *var.power* determines the shape of the distribution, with familiar models as special cases: if *var.power* is set to 0, Tweedie is a normal distribution; when set to 1, it is Poisson; when 2, it is Gamma; when 3, it is inverse Gaussian. If *var.power* is between 1 and 2, it is a compound Poisson distribution and is appropriate for positive data that also contains exact zeros, for example, insurance claims data, rainfall data, or fish-catch data. If *var.power* is greater than 2, it is appropriate for positive data.
+The Tweedie family of distributions provides flexible models for estimation. The power parameter *var.power* determines the shape of the distribution, with familiar models as special cases: if *var.power* is set to 0, Tweedie is a normal distribution; when set to 1, it is Poisson; when 2, it is Gamma; when 3, it is inverse Gaussian. If *var.power* is between 1 and 2, it is a compound Poisson distribution and is appropriate for positive data that also contains exact zeros, for example, insurance claims data, rainfall data, or fish-catch data. If *var.power* is greater than 2, it is appropriate for positive data.
 
 In this example, we use a subsample from the 5% sample of the U.S. 2000 census. We consider the annual cost of property insurance for heads of household ages 21 through 89, and its relationship to age, sex, and region. A variable “perwt” in the data set represents the probability weight for that observation. First, to create the subsample (specify the correct data path for your downloaded data):
 

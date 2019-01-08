@@ -30,7 +30,7 @@ The DeployR Repository Manager is a Web interface that serves as a bridge betwee
 Simply put, this tool is primarily designed for two purposes:
 
 1. To enable a collaborative workflow between data scientists and application developers
-2. To facilitate repository file and directory management through a easy-to-use web interface
+2. To facilitate repository file and directory management through an easy-to-use web interface
 
 **Collaboration** between data scientists and application developers makes it possible to deliver sophisticated software solutions powered by R analytics. Whenever data scientists develop new analytics or improve existing ones, they must inform the application developers on the team that they are ready, and then hand off those analytics. The Repository Manager has been designed with this collaboration in mind. How you share and collaborate on these R analytics is detailed in the Collaborate section of the [Data Scientist’s Getting Started Guide](../deployr/deployr-data-scientist-getting-started.md#collaborate).
 

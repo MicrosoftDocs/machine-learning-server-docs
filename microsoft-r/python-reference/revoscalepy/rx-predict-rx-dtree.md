@@ -104,7 +104,7 @@ write_model_vars is True, model variables will be included as well.
 
 ### append
 
-Either “none” to create a new files or “rows” to append rows
+Either “none” to create a new file or “rows” to append rows
 to an existing file. If output_data exists and append is “none”, the overwrite
 argument must be set to True. Ignored for data frames.
 

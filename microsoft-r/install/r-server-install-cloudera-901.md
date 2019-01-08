@@ -36,7 +36,7 @@ You can find the generate_r_parcel.py script at the following link: https://aka.
 
 You can find the Parcel Generator used to run the script in the *MRS-x.y.z/bin* directory. You might need to ensure that the script has execute permission using the `chmod` command, or you can call it as `python generate\_r\_parcel.py`.)
 
-When calling the script, yprovide a name and a version number for the resulting parcel, together with the path to the library you would like to package. When choosing a name for your parcel, be sure to pick a name that is unique in your parcel repository (typically /opt/cloudera/parcel-repo). For example, to package the library /home/RevoUser/R/library, you might call the script as follows:
+When calling the script, provide a name and a version number for the resulting parcel, together with the path to the library you would like to package. When choosing a name for your parcel, be sure to pick a name that is unique in your parcel repository (typically /opt/cloudera/parcel-repo). For example, to package the library /home/RevoUser/R/library, you might call the script as follows:
 
 	generate_r_parcel.py –p "RevoUserPkgs" –v "0.1" –l /home/RevoUser/R/library
 

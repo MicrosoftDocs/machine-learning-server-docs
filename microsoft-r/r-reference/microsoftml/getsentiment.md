@@ -30,7 +30,7 @@ ms.custom: ""
  # getSentiment: Machine Learning Sentiment Analyzer Transform 
  ## Description
 
-Scores natual language text and creates a column that 
+Scores natural language text and creates a column that 
 contains probabilities that the sentiments in the text are positive.
 
 

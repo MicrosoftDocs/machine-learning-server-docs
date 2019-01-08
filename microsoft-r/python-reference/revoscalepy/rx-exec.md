@@ -114,7 +114,7 @@ attempt will be made to rerun that job. (Python errors, however, will cause
 immediate failure as usual.) Furthermore, should a process instance of a job
 fail due to a user code failure, the rest of the processes will continue, and
 the failed process will produce a warning when the output is collected.
-Additionally, the position in the returned list where the failure occured will
+Additionally, the position in the returned list where the failure occurred will
 contain the error as opposed to a result.
 
 

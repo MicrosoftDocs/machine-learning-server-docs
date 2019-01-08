@@ -70,7 +70,7 @@ Updates an existing web service on an R Server instance.
 *   Filepath to a local `.RData` file holding R objects to be loaded. For example,  `model = "/path/to/glm-model.RData"` 
 *   Filepath to a local `.R` file that is evaluated into an environment and loaded. For example,  `model = "/path/to/glm-model.R"` 
 *   An object. For example,  `model = "model = am.glm"` 
- For realtime web services (serviceType = 'Realtime'), only an R model  object is accepted. For example, `model = "model = am.glm"` 
+ For real-time web services (serviceType = 'Realtime'), only an R model  object is accepted. For example, `model = "model = am.glm"` 
 
 
 
@@ -111,7 +111,7 @@ Updates an existing web service on an R Server instance.
 
 
  ### `alias`
- (optional) An alias name of the predication remote procedure call (RPC) function used to consume the service. If code is a function,  then it will use that function name by default. 
+ (optional) An alias name of the prediction remote procedure call (RPC) function used to consume the service. If code is a function,  then it will use that function name by default. 
 
 
 
@@ -170,7 +170,7 @@ updateService(
    serviceType = "Script"
 )
 
-# Updates a Realtime service's `descr` description field using `serviceType`
+# Updates a real-time service's `descr` description field using `serviceType`
 updateService(
  "kyphosisLogRegModel",
  "v1.0.0",

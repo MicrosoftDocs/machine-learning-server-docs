@@ -108,7 +108,7 @@ strings into factors.
 
 The maximum size of a data frame that will be
 read in, measured by the number of rows times the number of columns. If the
-numer of rows times the number of columns being extracted from the “.xdf”
+number of rows times the number of columns being extracted from the “.xdf”
 file exceeds this, a warning will be reported and a smaller number of rows
 will be read in than requested. If max_rows_by_columns is set to be too large,
 you may experience problems from loading a huge data frame into memory. To

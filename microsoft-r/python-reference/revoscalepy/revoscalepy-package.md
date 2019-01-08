@@ -154,7 +154,7 @@ In an [RxSpark](RxSpark.md) context, job management is built in. You only need j
 | Function | Compute Context | Description |
 |----------|---------------- |-------------|
 |[rx_serialize_model](rx-serialize-model.md)  | All | Serialize a given python model. |
-|[rx_read_object](rx-read-object.md) | All | Retrieves an ODBC data source objects. |
+|[rx_read_object](rx-read-object.md) | All | Retrieves an ODBC data source object. |
 |[rx_read_xdf](rx-read-xdf.md) | All | Read data from an .xdf file into a data frame.|
 |[rx_write_object](rx-write-object.md)   | All | Stores an ODBC data source object. |
 |[rx_delete_object](rx-delete-object.md)  | All | Deletes an object from the ODBC data source. |

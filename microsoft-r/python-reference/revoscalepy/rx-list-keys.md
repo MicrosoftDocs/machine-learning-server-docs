@@ -57,9 +57,9 @@ keys in the table. Otherwise, it enumerates all versions for the given
 key. Returns a single column data frame.
 
 The key and the version should be of some SQL character type
-(CHAR, VARCHAR, NVARCHAR, etc) supported by the data source. The value
+(CHAR, VARCHAR, NVARCHAR, etc.) supported by the data source. The value
 column should be a binary type (VARBINARY for instance). Some
-conversions to other types might work, however, they are dependant on
+conversions to other types might work, however, they are dependent on
 the ODBC driver and on the underlying package functions.
 
 

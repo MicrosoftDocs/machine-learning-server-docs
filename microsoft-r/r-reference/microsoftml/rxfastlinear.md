@@ -60,7 +60,7 @@ convergence. In general, the larger the `l2Weight`, the faster
 SDCA converges.
 
 Note that `rxFastLinear` is a stochastic and streaming optimization
-algorithm. The results depends on the order of the training data. For
+algorithm. The result depends on the order of the training data. For
 reproducible results, it is recommended that one sets `shuffle` to
 `FALSE` and `trainThreads` to `1`.
 
@@ -194,7 +194,7 @@ Normalization rescales disparate data ranges to a standard scale. Feature scalin
 
 
  ### `transformPackages`
- A character vector specifying additional R packages (outside of those specified in `rxGetOption("transformPackages")`) to be made available and preloaded for use in variable transformation functions. For exmple, those explicitly defined in **RevoScaleR** functions via their `transforms` and `transformFunc` arguments or those defined implicitly via their `formula` or `rowSelection` arguments.  The `transformPackages` argument may also be `NULL`, indicating that no packages outside `rxGetOption("transformPackages")` are preloaded. 
+ A character vector specifying additional R packages (outside of those specified in `rxGetOption("transformPackages")`) to be made available and preloaded for use in variable transformation functions. For example, those explicitly defined in **RevoScaleR** functions via their `transforms` and `transformFunc` arguments or those defined implicitly via their `formula` or `rowSelection` arguments.  The `transformPackages` argument may also be `NULL`, indicating that no packages outside `rxGetOption("transformPackages")` are preloaded. 
 
 
 

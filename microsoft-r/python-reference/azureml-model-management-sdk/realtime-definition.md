@@ -41,7 +41,7 @@ azureml.deploy.operationalization.RealtimeDefinition(name, op)
 
 Bases: [`azureml.deploy.operationalization.OperationalizationDefinition`](operationalization-definition.md)
 
-Realtime class defining a *realtime* service’s properties for publishing.
+Real-time class defining a *real-time* service’s properties for publishing.
 
 
 
@@ -164,7 +164,7 @@ Serialized model.
 
 ### model
 
-The required serialized model used for this realtime
+The required serialized model used for this real-time
 service.
 
 

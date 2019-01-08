@@ -29,7 +29,7 @@ Microsoft R Client is a free, data science tool for high-performance analytics t
 
 R Client allows you to work with production data locally using the full set of RevoScaleR functions, with these constraints: data must fit in local memory, and processing is capped at two threads for RevoScaleR functions. 
 
-For information about the current release, see [What's new in R Client](what-is-microsoft-r-client.md#r-client-whats-new)..
+For information about the current release, see [What's new in R Client](what-is-microsoft-r-client.md#r-client-whats-new).
 
 ## System Requirements
 
@@ -88,7 +88,7 @@ On the machine onto which you are installing, follow this guidance before you be
 
    1. Download Microsoft R Client from https://aka.ms/rclient/.
 
-   1. Download the Microsoft R Open ( *.cab) needed to install R Client from https://go.microsoft.com/fwlink/?LinkId=867186.
+   1. Download the Microsoft R Open (*.cab) needed to install R Client from https://go.microsoft.com/fwlink/?LinkId=867186.
 
    1. Download .NET Framework 4.5.2 from https://www.microsoft.com/download/details.aspx?id=42642.
 
@@ -125,7 +125,7 @@ On the machine onto which you are installing, follow this guidance before you be
 
 ## Silent and Passive Installs
 
-To install Microsoft R Client from a script on Windows, use the following command line switches:
+To install Microsoft R Client from a script on Windows, use the following command-line switches:
 
 |Mode        |Install Command|Description|
 |-----------|-------------------------------|--------------|

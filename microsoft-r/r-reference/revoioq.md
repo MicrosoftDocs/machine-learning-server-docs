@@ -38,7 +38,7 @@ ms.custom: ""
  
 ## How to use RevoIOQ
 
-Load and run RevoIOQ from a command line interface or R IDE. The following command executes tests and returns results.
+Load and run RevoIOQ from a command-line interface or R IDE. The following command executes tests and returns results.
 
 1. Start Revo64 (on Linux) or an R IDE providing an R prompt.
 2. Load RevoIOQ: `library("RevoIOQ")`
@@ -85,7 +85,7 @@ Load and run RevoIOQ from a command line interface or R IDE. The following comma
   
     
  ### `testLocal`
- logical flag. If `TRUE`, a set of basic tests is created and run for all locally-installed packages. 
+ logical flag. If `TRUE`, a set of basic tests is created and run for all locally installed packages. 
   
     
  ### `testScaleR`

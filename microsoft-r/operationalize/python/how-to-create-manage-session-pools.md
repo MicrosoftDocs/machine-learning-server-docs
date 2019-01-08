@@ -93,7 +93,7 @@ This feature is still under development. In rare cases, the [delete_service_pool
  # Deletes the dedicated session pool and releases resources
  client.delete_service_ool(name = "myWebService1234", version = "v1.0.0")
  
- # Check the realtime status of dedicated pool
+ # Check the real-time status of dedicated pool
  client.get_service_pool_status(name = "myWebService1234", version = "v1.0.0")
  
  # make sure the returned status is NotFound on all computeNodes

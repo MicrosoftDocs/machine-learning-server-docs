@@ -100,13 +100,13 @@ ignored. Cannot be used with vars_to_keep.
 
 ### start_row
 
-Starting row for retrieval of data if a data frame or
+Starting row for retrieval of data of a data frame or
 “.xdf” file.
 
 
 ### num_rows
 
-Number of rows of data to retrieve if a data frame or
+Number of rows of data to retrieve of a data frame or
 “.xdf” file.
 
 
@@ -115,7 +115,7 @@ Number of rows of data to retrieve if a data frame or
 Bool value. If True, and get_var_info is True,
 variable information (e.g., high/low values) for non-xdf data sources will
 be computed by reading through the data set. If True, and get_var_info is
-False, the number of variables will be gotten from from non-xdf data
+False, the number of variables will be gotten from non-xdf data
 sources (but not the number of rows).
 
 

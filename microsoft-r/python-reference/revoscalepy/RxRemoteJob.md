@@ -65,7 +65,7 @@ deserialize_job(job_id: str) -> revoscalepy.computecontext.RxRemoteJob.RxRemoteJ
 
 
 
-Deserializes a RxRemoteJob given the job id
+Deserializes a RxRemoteJob given the job ID
 
 
 ## Returns

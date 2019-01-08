@@ -37,7 +37,7 @@ Washington.
 
  ## Format
 
-An .xdf file with 351121 observations on the following 6 variables.
+An .xdf file with 351121 observations on the following 6 variables:
 
 
 ### `age`

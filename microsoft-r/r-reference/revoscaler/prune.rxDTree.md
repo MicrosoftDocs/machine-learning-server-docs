@@ -73,7 +73,7 @@ an object of class `"rxDTree"` representing the pruned tree.
 It is a list with components similar to those of class `"rpart"` with the following distinctions:
 
 
-* `where` -  A vector of integers indicating the node to which each point is allocated.  This information is always returned if the data source is a data frame.  If the data source is not a data frame and `outFile` is specified.  i.e., not `NULL`, the node indices are written/appended to  the specified file with a column name as defined by `outColName`.
+* `where` -  A vector of integers indicating the node to which each point is allocated. This information is always returned if the data source is a data frame. If the data source is not a data frame and `outFile` is specified that is, not `NULL`, the node indices are written/appended to the specified file with a column name as defined by `outColName`.
 
 
 

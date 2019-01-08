@@ -166,7 +166,7 @@ value is 0.1.
 ### max_norm
 
 Specifies an upper bound to constrain the norm of the incoming
-weight vector at each hidden unit. This can be very important in maxout
+weight vector at each hidden unit. This can be very important in max out
 neural networks as well as in cases where training produces unbounded weights.
 
 
@@ -974,7 +974,7 @@ Rows Read: 5, Total Rows Processed: 5, Total Chunk Time: 0.001 seconds
 
 ## optimizers
 
-* [*microsoftml.adadelta_optimizer*: Adaptive learing rate method](adadelta-optimizer.md) 
+* [*microsoftml.adadelta_optimizer*: Adaptive learning rate method](adadelta-optimizer.md) 
 
 * [*microsoftml.sgd_optimizer*: Stochastic gradient descent](sgd-optimizer.md) 
 

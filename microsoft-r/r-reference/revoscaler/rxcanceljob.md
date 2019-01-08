@@ -62,7 +62,7 @@ Causes R to cancel an existing distributed computing job.
 
  ## Details
 
-This funtion does not attempt to retrieve any output objects; if the output is desired,
+This function does not attempt to retrieve any output objects; if the output is desired,
 the `consoleOutput` flag can be used to display it. This function does, however,
 remove all job-related artifacts from the distributed computing resources, including
 any job results.

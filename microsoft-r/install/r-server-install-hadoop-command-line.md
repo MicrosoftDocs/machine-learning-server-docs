@@ -22,7 +22,7 @@ ms.prod: "mlserver"
 #ms.custom: ""
 ---
 
-# Command line installation for R Server 9.1 on Hadoop (CDH, HDP, MapR)
+# Command-line installation for R Server 9.1 on Hadoop (CDH, HDP, MapR)
 
 **Looking for the latest release? See [Machine Learning Server for Hadoop installation](machine-learning-server-hadoop-install.md)**
 
@@ -103,7 +103,7 @@ The distribution includes one installer for Microsoft R Server. For a gzipped TA
 The Hadoop component is deployed by running the install script with the **-p** parameter, which you can install at the root, or as super user via `sudo`.
 
 1. Log in as root or as a user with super user privileges (`sudo -s`). 
-2. Verify system repositories are up to date:
+2. Verify system repositories are up-to-date:
 		[username] $ `sudo yum clean all`
 3. Change to the directory to which you mounted or unpacked the installer (for example, /tmp/MRS91Hadoop if you unpacked the tar.gz file):
 		[username] $ `cd /tmp`

@@ -48,11 +48,11 @@ VM images include the custom [R packages](../r-reference/introducing-r-server-r-
 
 The easiest approach is to use an ARM template that both installs and configures the VM and Machine Learning Server. The template defines a resource group, the virtual network, a DNS name. 
 
-ARM templates are available on Github, with options for a single-server install or distributed installation that places web nodes and compute nodes on different VMs within the same virtual network. There are also template options for data Science VMs, which include a broader selection of tools and technologies, of which Machine Learning Server is just one.
+ARM templates are available on GitHub, with options for a single-server install or distributed installation that places web nodes and compute nodes on different VMs within the same virtual network. There are also template options for data Science VMs, which include a broader selection of tools and technologies, of which Machine Learning Server is just one.
 
 When you use a template, the server is operationalized for remote connections, web service deployment, logging, and so forth. For more information, see [Operationalize analytics with Machine Learning Server](../what-is-operationalization.md).
 
-1. Go to the Github repo containing the templates: [https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates)
+1. Go to the GitHub repo containing the templates: [https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates)
 
 1. Choose your configuration. Click **one-box configuration** to install all packages and features on a single VM, or click **enterprise-configuration** if you need a cluster.
 

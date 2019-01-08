@@ -94,7 +94,7 @@ plot  (x, type = "l", lty = 1:5, lwd = 1, pch = NULL, col = 1:6,
 
 
  ### `outFile`
-  either an RxXdfData data source object or a character string  specifying the .xdf file for storing the resulting OOB predictions.  If `NULL` or the input data is a data frame, then no OOB predictions are stored to disk.    If `rowSelection` is specified and not `NULL`,  then `outFile` cannot be the same as the `data`since the resulting set of OOB predictions will generally not  have the same number of rows as the original data source. 
+  either an RxXdfData data source object or a character string  specifying the .xdf file for storing the resulting OOB predictions.  If `NULL` or the input data is a data frame, then no OOB predictions are stored to disk. If `rowSelection` is specified and not `NULL`,  then `outFile` cannot be the same as the `data`since the resulting set of OOB predictions will generally not have the same number of rows as the original data source. 
 
 
 
@@ -164,7 +164,7 @@ plot  (x, type = "l", lty = 1:5, lwd = 1, pch = NULL, col = 1:6,
  ### `useSurrogate`
   an integer specifying how surrogates are to be used in the splitting process:  
 * `0` - display-only; observations with a missing value for the primary split variable are not sent further down the tree.  
-* `1` - use surrogates,in order, to split observations missing the primary split variable. If all surrogates are missing, the  observation is not split.  
+* `1` - use surrogates, in order, to split observations missing the primary split variable. If all surrogates are missing, the  observation is not split.  
 * `2` - use surrogates, in order, to split observations missing the primary split variable. If all surrogates are missing or `maxSurrogate=0`, send the observation in the majority direction.   
  The `0` value corresponds to the behavior of the `tree` function, and `2` (the default) corresponds to the recommendations of Breiman et al. 
 
@@ -182,7 +182,7 @@ plot  (x, type = "l", lty = 1:5, lwd = 1, pch = NULL, col = 1:6,
 
 
  ### `mTry`
-  a positive integer specifying the number of variables to sample as split candidates at each tree node. The default values is `sqrt(num of vars)` for classification and `(num of vars)/3` for regression.     
+  a positive integer specifying the number of variables to sample as split candidates at each tree node. The default values are `sqrt(num of vars)` for classification and `(num of vars)/3` for regression.     
 
 
  ### `replace`
@@ -200,8 +200,8 @@ plot  (x, type = "l", lty = 1:5, lwd = 1, pch = NULL, col = 1:6,
 
  ### `sampRate`
   a scalar or a vector of positive values specifying the percentage(s) of observations to sample for each tree:  
-   * for unstratified sampling:  a scalar of positive value specifying the percentage of observations to sample for each tree. The default is 1.0 for sampling with replacement (i.e., `replace=TRUE`) and  0.632 for sampling without replacement (i.e., `replace=FALSE`).    
-   * for stratified sampling:  a vector of positive values of length equal to the number of strata specifying  the percentages of observations to sample from the strata for each tree.   
+   * for unstratified sampling:  a scalar of positive value specifying the percentage of observations to sample for each tree. The default is 1.0 for sampling with replacement (that is, `replace=TRUE`) and  0.632 for sampling without replacement (that is, `replace=FALSE`).    
+   * for stratified sampling:  a vector of positive values of length equal to the number of strata specifying the percentages of observations to sample from the strata for each tree.
 
 
 
@@ -251,7 +251,7 @@ plot  (x, type = "l", lty = 1:5, lwd = 1, pch = NULL, col = 1:6,
 
 
  ### `findSplitsInParallel`
-  logical value.  If `TRUE`, optimal splits for each node are determined using parallelization methods;  this will typically speed up computation as the number of nodes on the same level is increased. Note that when it is `TRUE`, the number of nodes being processed in parallel is also  printed to the console, interleaved with the number of rows read from the input data set. 
+  logical value. If `TRUE`, optimal splits for each node are determined using parallelization methods; this will typically speed up computation as the number of nodes on the same level is increased. Note that when it is `TRUE`, the number of nodes being processed in parallel is also  printed to the console, interleaved with the number of rows read from the input data set. 
 
 
 
@@ -381,7 +381,7 @@ a list containing the entire forest.
 
 
 ### `oob.err`
-a data frame containing the out-of-bag error estimate. For classification forests, this includes the OOB error estimate, which represents the proportion of times the predicted class is  not equal to the true class, and the cumulative number of out-of-bag observations for the forest. For   regression forests, this includes the OOB error estimate, which here represents the sum of squared  residuals of the out-of-bag observations divided by the number of out-of-bag observations, the number  of out-of-bag observations, the out-of-bag variance, and the "pseudo-R-Squared", which is 1 minus the quotient of the `oob.err` and `oob.var`.
+a data frame containing the out-of-bag error estimate. For classification forests, this includes the OOB error estimate, which represents the proportion of times the predicted class is  not equal to the true class, and the cumulative number of out-of-bag observations for the forest. For regression forests, this includes the OOB error estimate, which here represents the sum of squared  residuals of the out-of-bag observations divided by the number of out-of-bag observations, the number  of out-of-bag observations, the out-of-bag variance, and the "pseudo-R-Squared", which is 1 minus the quotient of the `oob.err` and `oob.var`.
 
 
 

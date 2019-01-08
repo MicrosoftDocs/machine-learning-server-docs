@@ -48,7 +48,7 @@ revoscalepy.rx_write_object(dest: revoscalepy.datasource.RxOdbcData.RxOdbcData,
 
 ## Description
 
-Stores objects in an ODBC data source. The APIs are modelled
+Stores objects in an ODBC data source. The APIs are modeled
 after a simple key value store.
 
 
@@ -60,9 +60,9 @@ default, the object is serialized and compressed. Returns True if
 successful.
 
 The key and the version should be of some SQL character type
-(CHAR, VARCHAR, NVARCHAR, etc) supported by the data source. The value
+(CHAR, VARCHAR, NVARCHAR, etc.) supported by the data source. The value
 column should be a binary type (VARBINARY for instance). Some
-conversions to other types might work, however, they are dependant on
+conversions to other types might work, however, they are dependent on
 the ODBC driver and on the underlying package functions.
 
 

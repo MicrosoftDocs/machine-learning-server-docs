@@ -45,7 +45,7 @@ Selects a set of columns to retrain, dropping all others.
    
   
  ### `vars`
- Specifiies character vector or list of the names of the variables to keep. 
+ Specifies character vector or list of the names of the variables to keep. 
   
   
   

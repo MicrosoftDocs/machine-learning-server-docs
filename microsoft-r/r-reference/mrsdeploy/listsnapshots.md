@@ -48,7 +48,7 @@ Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https
 
  ## Value
 
-A character vector containing the snapshot ids.
+A character vector containing the snapshot IDs.
 
  ## See Also
 

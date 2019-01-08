@@ -45,7 +45,7 @@ Combines several columns into a single vector-valued column.
 
 
  ### `vars`
- A named list of character vectors of input variable names and the name of the output variable. Note that all the input variables must be of the same type. It is possible to produce mulitple output columns  with the concatenation transform. In this case, you need to use a list of  vectors to define a one-to-one mappings between input and output variables. For example, to concatenate columns InNameA and InNameB into column OutName1 and also columns InNameC and InNameD into column OutName2, use the list:  (list(OutName1 = c(InNameA, InNameB), outName2 = c(InNameC, InNameD))) 
+ A named list of character vectors of input variable names and the name of the output variable. Note that all the input variables must be of the same type. It is possible to produce multiple output columns  with the concatenation transform. In this case, you need to use a list of  vectors to define a one-to-one mapping between input and output variables. For example, to concatenate columns InNameA and InNameB into column OutName1 and also columns InNameC and InNameD into column OutName2, use the list:  (list(OutName1 = c(InNameA, InNameB), outName2 = c(InNameC, InNameD))) 
 
 
 

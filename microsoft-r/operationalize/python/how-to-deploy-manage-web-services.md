@@ -57,7 +57,7 @@ Before you can use the web service management functions in the [azureml-model-ma
 
 ## Web service definitions
 
-The list of available parameters that can be defined for a web service depends on whether it is a standard or realtime web service. 
+The list of available parameters that can be defined for a web service depends on whether it is a standard or real-time web service. 
 
 ### Parameters for standard web services
 
@@ -81,15 +81,15 @@ This table presents the supported data types for the input and output schemas of
 |Boolean &rarr; bool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Dataframe &rarr; numpy.DataFrame|
 |String &rarr; str||
 
-### Parameters for realtime web services
+### Parameters for real-time web services
 
-[Realtime web services](../concept-what-are-web-services.md#realtime) are also identified by their name and version. The following additional parameters can be defined for the realtime service: 
+[Real-time web services](../concept-what-are-web-services.md#realtime) are also identified by their name and version. The following additional parameters can be defined for the real-time service:
 + A description
 + A model created with certain [supported functions](../concept-what-are-web-services.md#realtime) and serialized with [revoscalepy.rx_serialize_model](../../python-reference/revoscalepy/rx-serialize-model.md)
 
 Dataframes are assumed for inputs and outputs. Code is not supported.
 
-For a full example of realtime web services in Python, try out [this Jupyter notebook](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/operationalize/Publish_Realtime_Web_Service_in_Python.ipynb).
+For a full example of real-time web services in Python, try out [this Jupyter notebook](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/operationalize/Publish_Realtime_Web_Service_in_Python.ipynb).
 
 ## Deploy and update services
 
@@ -108,7 +108,7 @@ service = client.service('myService')\
         .deploy()
 ```
 
-Here is a realtime web service example:
+Here is a real-time web service example:
 
 <a name="realtime-example"></a>
 
@@ -117,7 +117,7 @@ Here is a realtime web service example:
 from revoscalepy import rx_serialize_model
 s_model = rx_serialize_model(model, realtime_scoring_only=True)
 
-# Publish the realtime service 
+# Publish the real-time service 
 webserv = client.realtime_service('myService') \
         .version('1.0') \
         .serialized_model(s_model) \
@@ -125,7 +125,7 @@ webserv = client.realtime_service('myService') \
         .deploy()
 ```
 
-For a full example of realtime web services in Python, try out [this Jupyter notebook](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/operationalize/Publish_Realtime_Web_Service_in_Python.ipynb).
+For a full example of real-time web services in Python, try out [this Jupyter notebook](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/operationalize/Publish_Realtime_Web_Service_in_Python.ipynb).
 
 ### Update an existing service version
 

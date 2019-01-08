@@ -27,9 +27,9 @@ ms.prod: "mlserver"
 
 A crucial step in many analyses is transforming the data into a form best suited for the chosen analysis. For example, to reduce variations in scale between variables, you might take a log or a power of the original variable before fitting the dataset to a linear model. Additionally, transforming data minimizes passes through the data, which is more efficient.
 
-In RevoScaleR, you can perform data transformations in virtually all of its functions, from **rxImport** to **rxDataStep**, as well as the analysis functions **rxSummary**, **rxLinMod**, **rxLogit**, **rxGlm**,**rxCrossTabs**, **rxCube**, **rxCovCor**, and **rxKmeans**. 
+In RevoScaleR, you can perform data transformations in virtually all of its functions, from **rxImport** to **rxDataStep**, as well as the analysis functions **rxSummary**, **rxLinMod**, **rxLogit**, **rxGlm**, **rxCrossTabs**, **rxCube**, **rxCovCor**, and **rxKmeans**.
 
-In all cases, the basic approach for data transforms are the same. The heart of the RevoScaleR data step is a list of *transforms*, each of which specifies an R expression to be evaluated. The data step is typically is an assignment that either creates a new variable or modifies an existing variable from the original data set.
+In all cases, the basic approach for data transforms is the same. The heart of the RevoScaleR data step is a list of *transforms*, each of which specifies an R expression to be evaluated. The data step typically is an assignment that either creates a new variable or modifies an existing variable from the original data set.
 
 This article uses examples to illustrate common data manipulation tasks. For more background, see [Data Transformations](concept-what-is-data-transformations.md).
 
@@ -560,7 +560,7 @@ A common use case is replace missing values with the variable mean. This example
 	myData1$y[ymiss] <- NA
 	rxGetInfo(myData1, numRows = 5)
 
-A call to **rxGetInfo** returns precomputed metadata showing missing values "NA" in both variables.:
+A call to **rxGetInfo** returns precomputed metadata showing missing values "NA" in both variables:
 
 	Data frame: myData1 
 	Number of observations: 100 
@@ -596,7 +596,7 @@ Finally, pass the computed means into a **rxDataStep** using the *transformObjec
 	    transformObjects = list(meanVals = meanVals))
 	rxGetInfo(myData2, numRows = 5)
 
-The resulting data set information substituates NA with computed means generated in the previous step:
+The resulting data set information substitutes NA with computed means generated in the previous step:
 
 	Data frame: myData2 
 	Number of observations: 100 
@@ -724,7 +724,7 @@ We could use this function with **rxDataStep** to add a variable to our data set
 
 ## Extended example showing a series of transformations
 
-A *transforms* argument can be a powerful way to effect a sequence of changes on a row by row basis. The *transforms* argument is specified as a list of expressions. Given R expressions operates row-by-row (that is, the computed value of the new variable for an observation is only dependent on values of other variables for that observation), you can combine them into a single *transforms* argument, as this example demonstrates.
+A *transforms* argument can be a powerful way to effect a sequence of changes on a row by row basis. The *transforms* argument is specified as a list of expressions. Given R expressions operate row-by-row (that is, the computed value of the new variable for an observation is only dependent on values of other variables for that observation), you can combine them into a single *transforms* argument, as this example demonstrates.
 
 Start with a simple data frame containing a small sample of transaction data:
 	
