@@ -797,7 +797,7 @@
       - name: rxHashEnv
         href: r-reference/microsoftml/rxhashenv.md
       - name: rxLogisticRegression
-        href: r-reference/microsoftml/logisticregression.md
+        href: r-reference/microsoftml/rxlogisticregression.md
       - name: rxNeuralNet
         href: r-reference/microsoftml/rxneuralnet.md
       - name: rxOneClassSvm

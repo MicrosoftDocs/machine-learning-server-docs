@@ -27,7 +27,7 @@ ms.custom: ""
 
 
 
- # deleteService: Delete a web service.. 
+ # deleteService: Delete a web service.
  ## Description
 
 Delete a web service on an R Server instance.

@@ -527,7 +527,7 @@ The *rxDataStep* function processes data a chunk at a time, reading from one dat
 	if (rxTeradataTableExists("ccScoreOutput2"))
 	    rxTeradataDropTable("ccScoreOutput2")
 
-Now we call the *rxDataStep* function, specifying the transforms we want in a list. We also specifying the additional R packages that are needed to perform the transformations. These packages must be pre-installed on the nodes of your Teradata platform.
+Now we call the *rxDataStep* function, specifying the transforms we want in a list. We are also specifying the additional R packages that are needed to perform the transformations. These packages must be pre-installed on the nodes of your Teradata platform.
 
 	rxDataStep(inData = teradataScoreDS, outFile = teradataOutDS2,
 		transforms = list(ccFraudProb = inv.logit(ccFraudLogitScore)),

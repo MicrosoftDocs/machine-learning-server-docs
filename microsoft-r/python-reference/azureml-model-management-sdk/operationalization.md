@@ -143,7 +143,7 @@ get_service(name, **opts)
 
 
 
-Retrieve service meta-data from the name source and return an new
+Retrieve service meta-data from the name source and return a new
 service instance.
 
 Sub-class should override and implement.
@@ -191,7 +191,7 @@ realtime_service(name)
 
 
 
-Begin fluent API chaining of properties for defining a *realtime* web
+Begin fluent API chaining of properties for defining a *real-time* web
 service.
 
 **Example:**
@@ -200,7 +200,7 @@ service.
 
 ```
 client.realtime_service('scoring')
-   .description('A new realtime web service')
+   .description('A new real-time web service')
    .version('v1.0.0')
 ```
 

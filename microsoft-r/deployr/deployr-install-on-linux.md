@@ -475,7 +475,7 @@ The following instructions walk you through a migration of DeployR 8.0.0 or earl
 
         cd $DEPLOYR_HOME/deployr/tools/mongoMigration    
         ./exportMongoDB.sh -m "<DEPLOYR_HOME_OLD_VERSION>/mongo/mongo/bin/mongoexport" -p <MongoDB_Database_Password> -o db_backup.zip
-    Where `<MongoDB_Database_Password>` is the password defined in the `grails/mongo/password` parameter in the `deployr.groovy` file. 
+    Where `<MongoDB_Database_Password>` is the password defined in the `grails/mongo/password` parameter in the `deployr.groovy` file.
 
 7.  Download `db_backup.zip`.
 

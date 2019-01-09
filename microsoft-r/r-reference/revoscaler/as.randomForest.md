@@ -74,7 +74,7 @@ These functions convert an existing object of class rxDForest, rxDTree,
 or rpart to an object of class `randomForest`, respectively.
 The underlying structure of the output object will be a subset of 
 that produced by an equivalent call to `randomForest`. 
-In many cases, this method can be used to coerce an object for use with the **pmml** package.
+Often, this method can be used to coerce an object for use with the **pmml** package.
 **RevoScaleR** model objects that contain `transforms` or a `transformFunc` are not supported.
 
 

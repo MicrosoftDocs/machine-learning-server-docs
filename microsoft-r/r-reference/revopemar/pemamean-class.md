@@ -33,7 +33,7 @@ ms.assetid: ""
  
  ## Description
  
-Example PEMA reference class to compute mean
+Example PEMA reference class to compute mean.
  
  
  ## Generators 

@@ -58,9 +58,9 @@ Returns the object. If the data source parameter defines a query, the
 key and the version parameters are ignored.
 
 The key and the version should be of some SQL character type
-(CHAR, VARCHAR, NVARCHAR, etc) supported by the data source. The value
+(CHAR, VARCHAR, NVARCHAR, etc.) supported by the data source. The value
 column should be a binary type (VARBINARY for instance). Some
-conversions to other types might work, however, they are dependant on
+conversions to other types might work, however, they are dependent on
 the ODBC driver and on the underlying package functions.
 
 

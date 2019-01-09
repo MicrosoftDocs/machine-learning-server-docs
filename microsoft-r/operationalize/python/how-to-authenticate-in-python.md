@@ -99,7 +99,7 @@ context = {
 client = DeployClient(HOST, use=MLServer, auth=context)
 ```
 
-If you do not know your tenant id, clientid, or other details, contact your administrator. Or, if you have access to the Azure portal for the relevant Azure subscription, you can find [these authentication details](../configure-authentication.md#azure-active-directory).  
+If you do not know your tenant ID, clientid, or other details, contact your administrator. Or, if you have access to the Azure portal for the relevant Azure subscription, you can find [these authentication details](../configure-authentication.md#azure-active-directory).  
 
 |Argument|Description|
 |--- | --- |

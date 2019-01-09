@@ -35,7 +35,7 @@ You can use a smaller or larger data set with this tutorial. Datasets for this t
 
 - *AirOnTime87to12*: An .xdf file containing information on flight arrival and departure details for all commercial flights within the USA, from October 1987 to December 2012. This is a large dataset: there are nearly 150 million records in total. It is just under 4 GB unpacked.
 
-- *AirOnTime7Pct*: A 7% subsample of AirOnTimeData87to12. This is an .xdf file containing just the variables used in the examples in this tutorials. It can be used as an alternative. This subsample contains a little over 10 million rows of data. It is about 100 MB unpacked.
+- *AirOnTime7Pct*: A 7% subsample of AirOnTimeData87to12. This is an .xdf file containing just the variables used in the examples in this tutorial. It can be used as an alternative. This subsample contains a little over 10 million rows of data. It is about 100 MB unpacked.
 
 When downloading these files, put them in a directory where you can easily access them. For example, create a directory "C:\MRS\BigData" and unpack the files there. When running examples using these files, you will want to specify this location as your *bigDataDir*. For example:
 

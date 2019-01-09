@@ -29,7 +29,7 @@ RevoScaleR provides functions for managing the thread pool used for parallel exe
 
 On Windows, thread pool management is enabled and should not be turned off. 
 
-On Linux, thread pool management is turned off by default to avoid interferring with how Unix systems fork processes. Process forking is only available on Unix-based systems. You can turn the thread pool on if you do not fork your R process. RevoScaleR provides an interface to activate the thread pool:
+On Linux, thread pool management is turned off by default to avoid interfering with how Unix systems fork processes. Process forking is only available on Unix-based systems. You can turn the thread pool on if you do not fork your R process. RevoScaleR provides an interface to activate the thread pool:
 
 	rxSetEnableThreadPool(TRUE)
 
@@ -51,5 +51,5 @@ The *.First.sys* function is normally run after all other initialization is comp
 ## See Also
 
 + [Machine Learning Server](../what-is-machine-learning-server.md)
-+ [How-to guides in Machine Learing Server](how-to-introduction.md)
++ [How-to guides in Machine Learning Server](how-to-introduction.md)
 + [RevoScaleR Functions](~/r-reference/revoscaler/revoscaler.md)

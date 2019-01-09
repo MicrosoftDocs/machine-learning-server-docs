@@ -31,7 +31,7 @@ This article details how you can publish and manage your [analytic web services]
 
 These web services can be [consumed in R](how-to-consume-web-service-interact-in-r.md) by other authenticated users or in the [language of their choice via Swagger](how-to-build-api-clients-from-swagger-for-app-integration.md).
 
-Using the mrsdeploy R package, you can [publish](#publishService), [update](#updateService), and  [delete](#deleteService) two kinds of R web services: [standard R web services and realtime R web services](concept-what-are-web-services.md).  
+Using the mrsdeploy R package, you can [publish](#publishService), [update](#updateService), and  [delete](#deleteService) two kinds of R web services: [standard R web services and real-time R web services](concept-what-are-web-services.md).  
 
 Additionally, you can get a [list of all services](how-to-consume-web-service-interact-in-r.md#listServices), retrieve a [web service object](how-to-consume-web-service-interact-in-r.md#getService) for consumption, and [share services](how-to-consume-web-service-interact-in-r.md#consume-service) with others. You can also publish or interact with a web service outside of R using the [RESTful APIs](concept-api.md), which provide direct programmatic access to a service's lifecycle.
 
@@ -111,21 +111,21 @@ For a full example, you can also follow the quickstart article "[Deploying an R 
 
 <a name="realtime"></a>
 
-#### Realtime web services
+#### Real-time web services
 
-Realtime web services offer even lower latency to produce results faster and score more models in parallel. 
+Real-time web services offer even lower latency to produce results faster and score more models in parallel. 
  [Learn more...](concept-what-are-web-services.md)
 
-Realtime web services are also identified by their name and version. However, unlike standard web services, you cannot specify the following for realtime web services:
+Real-time web services are also identified by their name and version. However, unlike standard web services, you cannot specify the following for real-time web services:
 + inputs and outputs (dataframes are assumed)
 + code (only [certain models are supported](concept-what-are-web-services.md#realtime))
 
-Realtime web services only accept model objects created with the [supported functions](concept-what-are-web-services.md#realtime) from packages installed with the product.
+Real-time web services only accept model objects created with the [supported functions](concept-what-are-web-services.md#realtime) from packages installed with the product.
 
-Example of realtime service (supported since R Server 9.1): 
+Example of real-time service (supported since R Server 9.1): 
 
 ```R
-# Publish a realtime service 'kyphosisService' version 'v1.0'
+# Publish a real-time service 'kyphosisService' version 'v1.0'
 # Assign service to 'realtimeApi' variable
 realtimeApi <- publishService(
      serviceType = "Realtime",
@@ -736,14 +736,14 @@ remoteLogout()
 
 <a name="realtime-example"></a>
 
-## Realtime workflow example
+## Real-time workflow example
 
 In this example, the local model object (`model = kyphosisModel`) is generated using the `rxLogit` modeling function in the RevoScaleR package. 
 
-Realtime web services were introduced in R Server 9.1. To learn more about the supported model formats, supported product versions, and supported platforms for realtime web services, [see here](#realtime).
+Real-time web services were introduced in R Server 9.1. To learn more about the supported model formats, supported product versions, and supported platforms for real-time web services, [see here](#realtime).
 
 ```R
-##          REALTIME WEB SERVICE EXAMPLE                ##
+##          REAL-TIME WEB SERVICE EXAMPLE                ##
  
 ##########################################################
 #   Create/Test Logistic Regression Model with rxLogit   #
@@ -772,7 +772,7 @@ remoteLogin("http://localhost:12800",
             session = FALSE)
 
 ##########################################################
-#    Publish Kyphosis Model as a Realtime Service        #
+#    Publish Kyphosis Model as a real-time Service        #
 ##########################################################
 
 # Generate a unique serviceName for demos 
@@ -792,7 +792,7 @@ realtimeApi <- publishService(
 )
  
 ##########################################################
-#           Consume Realtime Service in R                #
+#           Consume real-time Service in R                #
 ##########################################################
    
 # Print capabilities that define the service holdings: service 

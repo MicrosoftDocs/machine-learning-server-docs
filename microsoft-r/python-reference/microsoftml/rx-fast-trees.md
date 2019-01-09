@@ -73,7 +73,7 @@ a machine learning technique for regression problems. It builds each
 regression tree in a step-wise fashion, using a predefined loss function to
 measure the error for each step and corrects for it in the next. So this
 prediction model is actually an ensemble of weaker prediction models. In
-regression problems, boosting builds a series of of such trees in a step-wise
+regression problems, boosting builds a series of such trees in a step-wise
 fashion and then selects the optimal tree using an arbitrary differentiable
 loss function.
 
@@ -151,7 +151,7 @@ Determines the size of the step taken in the direction
 of the gradient in each step of the learning process.  This determines how
 fast or slow the learner converges on the optimal solution.  If the step
 size is too big, you might overshoot the optimal solution.  If the step size
-is too samll, training takes longer to converge to the best solution.
+is too small, training takes longer to converge to the best solution.
 
 
 ### min_split

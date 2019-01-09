@@ -57,7 +57,7 @@ The full set of DeployR security features available to you as a system administr
 
 The primary function of the DeployR server is to support the execution of R code on behalf of client applications. One of your key objectives as a DeployR administrator is to ensure a reliable, consistent execution environment for that code.
 
-The R code developed and deployed by [data scientists](deployr-data-scientist-getting-started.md) within your community will frequently depend on one or more R packages. Those R packages may be hosted on [CRAN](https://cran.r-project.org/), [MRAN](https://mran.microsoft.com), [github](https://github.com/), in your own local CRAN repository or elsewhere.
+The R code developed and deployed by [data scientists](deployr-data-scientist-getting-started.md) within your community will frequently depend on one or more R packages. Those R packages may be hosted on [CRAN](https://cran.r-project.org/), [MRAN](https://mran.microsoft.com), [GitHub](https://github.com/), in your own local CRAN repository or elsewhere.
 
 Making sure that these R package dependencies are available to the code executing on the DeployR server requires active participation from you, the administrator. There are two R package management policies you can adopt for your deployment, which are detailed in this [R Package Management guide](../operationalize/configure-manage-r-packages.md).
 
@@ -74,7 +74,7 @@ The [Administration Console](deployr-admin-console-about.md) offers a [Server Po
 -   Runtime policies governing authenticated, asynchronous, and anonymous operations
 -   Runtime policies governing concurrent operation limits, file upload limits, and event stream access
 
-The full set of general policy options available with the **Server Policies** tab are detailed in this [online help topic](deployr-admin-managing-server-policies.md).
+The full set of general policy options available with the **Server Policies** tab is detailed in this [online help topic](deployr-admin-managing-server-policies.md).
 
 ### Availability
 

@@ -28,10 +28,10 @@ ms.custom: ""
 
 
 
- # as.gbm: Conversion of an rxBTrees, rxDTree, or rpart object to an gbm Object 
+ # as.gbm: Conversion of an rxBTrees, rxDTree, or rpart object to a gbm Object 
  ## Description
 
-Converts objects containing decision tree results to an gbm object.
+Converts objects containing decision tree results to a gbm object.
 
 
  ## Usage
@@ -78,7 +78,7 @@ These functions convert an existing object of class rxBTrees, rxDTree,
 or rpart to an object of class `gbm`, respectively.
 The underlying structure of the output object will be a subset of 
 that produced by an equivalent call to `gbm`. 
-In many cases, this method can be used to coerce an object for use with the **pmml** package.
+Often, this method can be used to coerce an object for use with the **pmml** package.
 **RevoScaleR** model objects that contain `transforms` or a `transformFunc` are not supported.
 
 

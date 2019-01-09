@@ -24,7 +24,7 @@ ms.prod: "mlserver"
 
 # About DeployR
 
-**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](../whats-new-in-r-server.md#8vs9))
+**Applies to: DeployR 8.x** (See [comparison between 8.x and 9.x](../whats-new-in-r-server.md#8vs9))
 
 >Looking to deploy with Machine Learning Server? [Start here](../what-is-operationalization.md).
 
@@ -47,7 +47,7 @@ The workflow is simple. A data scientist develops an R script (using standard R 
 
 The following real-world scenario demonstrates the key concepts introduced in preceding workflow diagram.
 
-While this scenario is provided as an example only, it highlights how DeployR acts as a effective bridge between data scientist and application developer workflows. By supporting a clean separation of concerns, DeployR delivers arbitrarily sophisticated R analytics to any network-enabled application, system or software solution.
+While this scenario is provided as an example only, it highlights how DeployR acts as an effective bridge between data scientist and application developer workflows. By supporting a clean separation of concerns, DeployR delivers arbitrarily sophisticated R analytics to any network-enabled application, system or software solution.
 
 > **The Scenario:** As a solutions provider at an insurance company, you have been tasked with enhancing an existing customer support system to deliver real-time, high-quality policy quotes to customers who contact your customer support center.
 > 
@@ -59,7 +59,7 @@ While this scenario is provided as an example only, it highlights how DeployR ac
 > 
 > 3. **Verify:** As a final step, the data scientist should test and verify the scoring function against a live DeployR server via the Repository Manager.
 > 
->    >Handoff From Data Scientist to Application Developer  
+>    >Handoff From Data Scientist to Application Developer
 > 
 > 4. **Integrate:** Application developers choose and download their preferred client application integration tool: RBroker framework, client library or working with the raw API.
 > 
@@ -132,7 +132,7 @@ Not unlike the responsibilities typically associated with managing and maintaini
 
 [Consult the administration documentation](deployr-administrator-getting-started.md) that details the various DeployR tools made available to administrators. These tools simplify common and advanced administrative tasks.
 
->**DeployR Security**  
+>**DeployR Security**
 >DeployR supports a highly flexible, enterprise-grade security framework that verifies identity, enforces permissions, and ensures privacy.
 >
 >Identity is established and verified using many well-known authentication solutions. Basic authentication, using username and password credentials, is available to all DeployR installations by default. The DeployR Enterprise extends support for authentication by providing a seamless integration with established enterprise security solutions including CA Single Sign-On, PAM authentication, LDAP authentication, and Active Directory authentication.
@@ -149,7 +149,7 @@ Behaving like an on-demand R analytics engine, DeployR exposes a wide range of r
 
 The fact that DeployR is a standalone product means that any software solution, whether it's a backend enterprise messaging system or a client application running on a mobile phone, can [leverage DeployR-powered analytics services](deployr-tools-and-samples.md).
 
-DeployR Enterprise supports a scalable grid framework, providing load balancing capabilities across a network of node resources. For more on planning and provisioning your grid framework, see the [Scale & Throughput](deployr-admin-scale-and-throughput.md) guide.
+DeployR Enterprise supports a scalable grid framework, providing load-balancing capabilities across a network of node resources. For more on planning and provisioning your grid framework, see the [Scale & Throughput](deployr-admin-scale-and-throughput.md) guide.
 
 ## Glossary Of Terms
 

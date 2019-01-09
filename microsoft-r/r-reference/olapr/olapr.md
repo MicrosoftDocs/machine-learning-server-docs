@@ -77,7 +77,7 @@ Finally, pass the `olapCnn` and query into either `executeMD` or `execute2D` to 
 
 MDX is the query language for multidimensional OLAP (MOLAP) cubes containing processed and aggregated data stored in structures optimized for data analysis and exploration. Cubes are used in business and scientific applications to draw insights about relationships in historical data. Internally, cubes consist of mostly quantifiable numeric data, which is sliced along dimensions like date and time, geography, or other entities. A typical query might roll up sales for a given region and time period, sliced by product category, promotion, sales channel, and so forth.
 
- Cube data can be accessed using a variety of operations:
+ Cube data can be accessed using various operations:
 
 * Slicing - Taking a subset of the cube by picking a value for one dimension, resulting in a cube that is one dimension smaller.
 
@@ -89,7 +89,7 @@ MDX is the query language for multidimensional OLAP (MOLAP) cubes containing pro
 
 * Pivot - Rotate the cube.
 
-MDX queries are similar to SQL queries but, because of the flexibility of OLAP databases, can contain up to 128 query axes. The first four axes are named for convenience: Columns, Rows, Pages, and Chapters. It's also common to just use two (Rows and Columns), as shown in the following example.
+MDX queries are similar to SQL queries but, because of the flexibility of OLAP databases, can contain up to 128 query axes. The first four axes are named for convenience: Columns, Rows, Pages, and Chapters. It's also common to just use two (Rows and Columns), as shown in the following example:
 
 ~~~~
 SELECT {[Measures].[Internet Sales Count], [Measures].[Internet Sales-Sales Amount]} ON COLUMNS, 
@@ -98,7 +98,7 @@ FROM [Analysis Services Tutorial]
 WHERE [Sales Territory].[Sales Territory Country].[Australia]
 ~~~~
 
-Using an AdventureWorks Olap cube from the [multidimensional cube tutorial](https://docs.microsoft.com/sql/analysis-services/multidimensional-modeling-adventure-works-tutorial), this MDX query selects the internet sales count and sales amount and places them on the Column axis. On the Row axis it places all possible values of the "Product Line" dimension. Then, using the WHERE clause (which is the slicer axis in MDX queries), it filters the query so that only the sales from Australia matter. Without the slicer axis, we would roll up and summarize the sales from all countries.
+Using an AdventureWorks OLAP cube from the [multidimensional cube tutorial](https://docs.microsoft.com/sql/analysis-services/multidimensional-modeling-adventure-works-tutorial), this MDX query selects the internet sales count and sales amount and places them on the Column axis. On the Row axis it places all possible values of the "Product Line" dimension. Then, using the WHERE clause (which is the slicer axis in MDX queries), it filters the query so that only the sales from Australia matter. Without the slicer axis, we would roll up and summarize the sales from all countries.
 
  ## olapR examples
 
@@ -140,7 +140,7 @@ Learn more about MDX concepts:
 
 ## See also
 
-+ [Using data from Olap cubes in R (SQL Server)](https://docs.microsoft.com/sql/advanced-analytics/r/using-data-from-olap-cubes-in-r)
++ [Using data from OLAP cubes in R (SQL Server)](https://docs.microsoft.com/sql/advanced-analytics/r/using-data-from-olap-cubes-in-r)
 + [R Package Reference](../introducing-r-server-r-package-reference.md) 
 + [R Client](../../r-client/what-is-microsoft-r-client.md) 
 + [R Server](../../what-is-microsoft-r-server.md)

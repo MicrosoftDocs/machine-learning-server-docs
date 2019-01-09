@@ -40,7 +40,7 @@ The 9.3 release marks the beginning of a faster release cadence, with fewer feat
 
 | Feature | Area | Details |
 |---------|------|---------|
-| [Administration command line interface](operationalize/configure-admin-cli-launch.md) | [Operationalization](what-is-operationalization.md) | Refactored tooling for Machine Learning Server configuration. The new command line interface is similar to Azure CLIs and offers full parity with the previous utility. <br/><br/>Use the tool to enable web service deployment, web and compute node designations, and remote execution (R only). You can also manage ports, nodes, credentials; run diagnostic reports; and test the capacity and throughput of web services you create. |
+| [Administration command line interface](operationalize/configure-admin-cli-launch.md) | [Operationalization](what-is-operationalization.md) | Refactored tooling for Machine Learning Server configuration. The new command-line interface is similar to Azure CLIs and offers full parity with the previous utility. <br/><br/>Use the tool to enable web service deployment, web and compute node designations, and remote execution (R only). You can also manage ports, nodes, credentials; run diagnostic reports; and test the capacity and throughput of web services you create. |
 | Dedicated session pools | [Operationalization](what-is-operationalization.md) | You can construct a dedicated session pool for a specific web service to provide ready-to-use connections with preloaded dependencies for fast access to production code. This capability is in addition to the [generic session pools](operationalize/configure-evaluate-capacity.md#pool) that you can establish server-wide as a shared resource for all web services. [Configure in R](operationalize/how-to-create-manage-session-pools.md) &#124; [Configure in Python](operationalize/python/how-to-create-manage-session-pools.md). <br/><br/>For R script, the [mrsdeploy](r-reference/mrsdeploy/mrsdeploy-package.md) function library provides three new functions for managing dedicated sessions: [configureServicePool](r-reference/mrsdeploy/configureServicePool.md), [getPoolStatus](r-reference/mrsdeploy/getPoolStatus.md), [deleteServicePool](r-reference/mrsdeploy/deleteServicePool.md). <br/><br/>For Python, the [azureml-model-management-sdk](python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) provides the following methods in the mlserver class: [create_or_update_service_pool](python-reference/azureml-model-management-sdk/mlserver.md#create_or_update_service_pool), [delete_service_pool](python-reference/azureml-model-management-sdk/mlserver.md#delete_service_pool), [get_service_pool_status](python-reference/azureml-model-management-sdk/mlserver.md#get_service_pool_status).| 
 | CDH 5.12 | Supported platforms | Version 5.12 of Cloudera distribution of Apache Hadoop (CDH) is now supported for [Machine Learning Server for Hadoop](install/machine-learning-server-hadoop-install.md).|
 
@@ -60,8 +60,8 @@ The following table summarizes the Python and R features that were introduced in
 | [Pre-trained models](install/microsoftml-install-pretrained-models.md) | Python | Ready-to-use machine learning models for image classification and sentiment detection articulated in Python. |
 | [azureml-model-management-sdk library](python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) | Python | The first release of this library, used to programmatically build web services encapsulating your Python script. |
 | [Standard web service support](operationalize/concept-what-are-web-services.md#standard-web-services) | Python | Contains Python code, models, and model assets. Accepts specific inputs and provides specific outputs for integration with other services and applications. |
-| [Realtime web service support](operationalize/concept-what-are-web-services.md#realtime) | Python | A fully encapsulated web service with no inputs or outputs (operates on dataframes). |
-| [Realtime model scoring](operationalize/how-to-deploy-web-service-publish-manage-in-r.md#realtime) | R | Now supported on Linux. |
+| [Real-time web service support](operationalize/concept-what-are-web-services.md#realtime) | Python | A fully encapsulated web service with no inputs or outputs (operates on dataframes). |
+| [Real-time model scoring](operationalize/how-to-deploy-web-service-publish-manage-in-r.md#realtime) | R | Now supported on Linux. |
 |[Role-based access control](operationalize/configure-roles.md) (RBAC) | Both| RBAC was extended with a new explicit Reader role. |
 | [Administration utility update](operationalize/configure-admin-cli-compute-uris.md) | Both | The utility simplifies registration of compute nodes with web nodes. |
 
@@ -74,7 +74,7 @@ In Machine Learning Server, Python libraries used in script execute locally, or 
 
 ### R development
 
-R function libraries are built on [Microsoft R Open (MRO)](https://mran.microsoft.com/open/), Microsoft's distribution of open source R 3.4.1. 
+R function libraries are built on [Microsoft R Open (MRO)](https://mran.microsoft.com/open/), Microsoft's distribution of open-source R 3.4.1. 
 
 The last several releases of R Server added substantial capability for R developers. To review recent additions to R functionality, see [feature announcements](whats-new-in-r-server.md) for previous versions.
 

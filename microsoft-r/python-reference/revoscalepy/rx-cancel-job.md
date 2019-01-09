@@ -61,13 +61,13 @@ A job to cancel
 ### console_output
 
 If *None* use the console option that was present when the job was created, if *True*
-output any console output that was present when the job was cancelled will be displayed.  If *False* then
+output any console output that was present when the job was canceled will be displayed.  If *False* then
 all console output will not be displayed.
 
 
 ## Returns
 
-*True* if the job is successfully cancelled; *False* otherwise.z
+*True* if the job is successfully canceled; *False* otherwise.z
 
 
 ## See also

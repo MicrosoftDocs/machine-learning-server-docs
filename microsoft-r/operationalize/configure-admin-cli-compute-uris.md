@@ -44,7 +44,7 @@ In Machine Learning Server 9.3, you can use `admin` extension of the Azure Comma
 >- You must first [set up your compute nodes](configure-machine-learning-server-enterprise.md) before doing anything else with the `admin` extension of the CLI.
 >- You do not need an Azure subscription to use this CLI. It is installed as part of Machine Learning Server and runs locally.  
 
-1. On the machine hosting the node, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
+1. On the machine hosting the node, launch a command-line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
 
 2. If you are not yet authenticated in the CLI, do so now. This is an administrator task only, so you must have the Owner role to declare or manage URIs. The account name is `admin` unless LDAP or AAD is configured.
    ```azurecli

@@ -33,8 +33,7 @@ The following issues are known in the 9.3 release.
 
 ### 1. Missing `azure-ml-admin-cli` extension on DSVM environments
 
-If for some reason your `azure-ml-admin-cli` extension is not available or has been removed
-you will be met with the following error:
+If for some reason your `azure-ml-admin-cli` extension is not available or has been removed, you will be met with the following error:
 
 ```azurecli
 # With elevated privileges, run the following commands.
@@ -68,7 +67,7 @@ az extension add --source ./microsoft/mlserver/9.3.0/o16n/azure_ml_admin_cli-0.0
 
 ### 2. Compute nodes fail on a Python-only install on Ubuntu 14.04
 
-This issue applies to both 9.3 and 9.2.1 installations. On a Ubuntu 14.04 installation of a Python-only Machine Learning Server configured for operationalization, the compute node eventually fails. For example, if you run [diagnostics](operationalize/configure-run-diagnostics.md), the script fails with "BackEndBusy Exception".
+This issue applies to both 9.3 and 9.2.1 installations. On an Ubuntu 14.04 installation of a Python-only Machine Learning Server configured for operationalization, the compute node eventually fails. For example, if you run [diagnostics](operationalize/configure-run-diagnostics.md), the script fails with "BackEndBusy Exception".
 
 To work around this issue, comment out the stop service entry in the config file:
 
@@ -102,7 +101,7 @@ If you customarily switch the compute context among multiple machines, you might
 ```
 To deserialize the model, switch to a newer server or consider upgrading the older remote server. As a best practice, it helps when all servers and client apps are at the same functional level.
 
-### 5. azureml-model-management-sdk only supports up to 3 aruguments as the input of the web service
+### 5. azureml-model-management-sdk only supports up to 3 arguments as the input of the web service
 
 When consuming the web services using python, sending multiple variables (more than three) as inputs of consume() or the alias function is returning KeyError or TypeError. Alternative: use DataFrames as the input type.
 
@@ -184,9 +183,9 @@ If you are using a client certificate, both the Subject AND Issuer need to be se
 
 If you are consuming a long-running web service via batch mode, you may encounter a connection timeout between the web and compute node. In batch executions, if a web service is still running after 10 minutes, the connection from the web node to the compute node times out. The web node then starts another session on another compute node or shell. The initial shell that was running when the connection timed out continues to run but never returns a result. 
 
-The workaround to bypass the timeout is to modify the webnode appsetting.json file. 
+The workaround to bypass the timeout is to modify the web node appsetting.json file. 
 
-1. Change the field "ConnectionTimeout" under the "ComputeNodesConfiguration" section. The default value is "01:00:00" which is one hour.
+1. Change the field "ConnectionTimeout" under the "ComputeNodesConfiguration" section. The default value is "01:00:00", which is one hour.
 
 1. Add a new field "BatchExecutionCheckoutTimeSpan" at the base level of the json file. For example:
 

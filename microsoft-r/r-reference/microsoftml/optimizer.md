@@ -91,12 +91,12 @@ Specifies Optimization Algorithms for Neural Net.
 
 
  ### `lRateRedFreq`
- Sets the learning rate reduction frequency by specifying  number of iterations betweeen reductions. For example, if `10` is  specified, the learning rate is reduced once every 10 iterations. 
+ Sets the learning rate reduction frequency by specifying  number of iterations between reductions. For example, if `10` is  specified, the learning rate is reduced once every 10 iterations. 
 
 
 
  ### `lRateRedErrorRatio`
- Spefifies the learning rate reduction error criterion.  If set to `0`, the learning rate is reduced if the loss increases between iterations. If set to a fractional value greater than`0`, the learning rate is reduced if the loss decreases by less than that fraction of its previous value. 
+ Specifies the learning rate reduction error criterion.  If set to `0`, the learning rate is reduced if the loss increases between iterations. If set to a fractional value greater than`0`, the learning rate is reduced if the loss decreases by less than that fraction of its previous value. 
 
 
 

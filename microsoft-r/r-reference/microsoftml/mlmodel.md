@@ -104,7 +104,7 @@ This is a data frame containing the statistics for each coefficient in the model
 *   EstimateThe estimated coefficient value of the model.  
 *   Std ErrorThis is the square root of the large-sample variance of the estimate of the coefficient. 
 *   z-ScoreWe can test against the null hypothesis, which states that the coefficient should be zero, concerning the significance of the coefficient by calculating the ratio of its estimate and its standard error.  Under the null hypothesis, if there is no regularization applied, the estimate of the concerning coefficient follows a normal distribution with mean 0 and a standard deviation equal to the standard error computed above.  The z-score outputs the ratio between the estimate of a coefficient and the standard error of the coefficient.  
-*   Pr(>|z|)This is the corresponding p-value for the two-sided test of the z-score. Based on the significance level, a significance indicator is appended to the p-value. If `F(x)` is the CDF of the standard normal distribution `N(0, 1)`, then `P(>|z|) = 2 - ``2 * F(|z|)`.  
+*   Pr(>|z|) This is the corresponding p-value for the two-sided test of the z-score. Based on the significance level, a significance indicator is appended to the p-value. If `F(x)` is the CDF of the standard normal distribution `N(0, 1)`, then `P(>|z|) = 2 - ``2 * F(|z|)`.  
 
 
 

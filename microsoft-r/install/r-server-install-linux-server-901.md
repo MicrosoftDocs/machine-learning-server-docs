@@ -165,7 +165,7 @@ In this section, we discuss file management for your Microsoft R Server installa
 
 ### File ownership
 
-If followed the instructions provided, the installed files are all owned by root. For single-user workstations where the user has either sudo privileges or access to the root password, this is normally fine. In enterprise environments, however, it's common to have third-party applications such as Microsoft R Server installed into an account owned by a non-root user; this can make maintenance easier and reduce security concerns. In such an environment, you may wish to create an "RUser" account, and change ownership of the files to that user. You can do that as follows:
+If you followed the instructions provided, the installed files are all owned by root. For single-user workstations where the user has either sudo privileges or access to the root password, this is normally fine. In enterprise environments, however, it's common to have third-party applications such as Microsoft R Server installed into an account owned by a non-root user; this can make maintenance easier and reduce security concerns. In such an environment, you may wish to create an "RUser" account, and change ownership of the files to that user. You can do that as follows:
 
 1. Install Microsoft R Server as root, as usual.
 2. Create the "RUser" account if it does not already exist. Assign this user to a suitable group, if desired.
@@ -230,7 +230,7 @@ Creating a repository from an MRAN snapshot is very straightforward:
 
 		library(miniCRAN)
 
-3. Specify an MRAN snaphot:
+3. Specify an MRAN snapshot:
 
 		CRAN <- "http://mran.revolutionanalytics.com/snapshot/2015-11-30"
 

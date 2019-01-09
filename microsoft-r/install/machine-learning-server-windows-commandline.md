@@ -22,11 +22,11 @@ ms.prod: "mlserver"
 
 ---
 
-# Command line install for Machine Learning Server for Windows
+# Command-line install for Machine Learning Server for Windows
 
 **Applies to:  Machine Learning Server 9.2.1 | 9.3**
 
-This article provides syntax and examples for running Machine Learning Server **ServerSetup.exe** from the command line. You can use command line parameters for an internet-connected or offline installation. A command line installation requires administrator permissions.
+This article provides syntax and examples for running Machine Learning Server **ServerSetup.exe** from the command line. You can use command-line parameters for an internet-connected or offline installation. A command-line installation requires administrator permissions.
 
 Before you start, review  [Install Machine Learning Server on Windows](machine-learning-server-windows-install.md) for:
 
@@ -37,7 +37,7 @@ Before you start, review  [Install Machine Learning Server on Windows](machine-l
 
 This article assumes you have already downloaded and extracted the setup program.
 
-## Command line options
+## Command-line options
 
 You can run ServerSetup.exe from the command line with options to expose or hide the wizard, set an install mode, or specify options for adding features or using custom folder locations.
 
@@ -76,7 +76,7 @@ You can run ServerSetup.exe from the command line with options to expose or hide
 
 A default installation includes R and Python, but not the pre-trained models. You must explicitly add `/models` to an installation to add this feature.
 
-The command line equivalent of a double-click invocation of ServerSetup.exe is `serversetup.exe /install /full`.
+The command-line equivalent of a double-click invocation of ServerSetup.exe is `serversetup.exe /install /full`.
 
 ## Examples
 

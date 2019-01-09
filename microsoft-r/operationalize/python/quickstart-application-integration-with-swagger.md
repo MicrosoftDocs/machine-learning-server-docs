@@ -1,9 +1,9 @@
 ---
 
 # required metadata
-title: "Quickstart: Integrate a realtime web service into an application using Swagger - Machine Learning Server"
+title: "Quickstart: Integrate a real-time web service into an application using Swagger - Machine Learning Server"
 description: "In this quickstart you learn how to deploy an python model as a service into an application using Swagger."
-keywords: "quickstart, Machine Learning Server, deploy python models, realtime web service, Swagger"
+keywords: "quickstart, Machine Learning Server, deploy python models, real-time web service, Swagger"
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
@@ -23,16 +23,16 @@ ms.custom: "mvc"
 
 
 ---
-# Quickstart: Integrate a realtime web service into an application using Swagger
+# Quickstart: Integrate a real-time web service into an application using Swagger
 
 **Applies to: Microsoft Learning Server 9.x**
 
-This quickstart shows how to use a Swagger-generated client to consume a Python model deployed as a realtime web service in Machine Learning Server. A web service is a model or code that has been deployed and hosted in a server. Realtime web services only accept models created with the functions supported by the packages installed with the product. The [revoscalepy](./../../python-reference/revoscalepy/revoscalepy-package.md) package installed on the Machine Learning Server supports the `rx_lin_mod` function used by the linear model in this quickstart.
+This quickstart shows how to use a Swagger-generated client to consume a Python model deployed as a real-time web service in Machine Learning Server. A web service is a model or code that has been deployed and hosted in a server. Real-time web services only accept models created with the functions supported by the packages installed with the product. The [revoscalepy](./../../python-reference/revoscalepy/revoscalepy-package.md) package installed on the Machine Learning Server supports the `rx_lin_mod` function used by the linear model in this quickstart.
 
 This quickstart shows you how to:
 
 - deploy a Machine Learning Server in Azure
-- create a realtime web service from a Python script
+- create a real-time web service from a Python script
 - use Swagger to integrate the service into a C# application.
 
 This quickstart has been designed for new users and is self-contained. You must have an [Azure subscription](https://azure.microsoft.com/en-us/free/) and [Visual Studio](https://www.visualstudio.com/downloads/), or some other IDE for developing a C# application, installed to complete it. It also assumes some familiarity with Python and C#. After you have deployed the Machine Learning Server on Azure, this quickstart takes approximately 10 minutes to complete.
@@ -66,7 +66,7 @@ For more information on options for configuring a server for operationalization,
 
 In this step, you build a linear model to predict the ratings from the data in the other columns (complaints, privileges, learning, raises, critical, advance) of the attitude dataset and publish it as a web service. 
 
-This quickstart walks you through the individual steps needed for the two tasks in this section. But it also summarizes the commands after the walkthrough in a script that execute all of the commands needed to build and deploy the web service and provides a link to a Jupyter notebook that contains these (and some additional) commands.
+This quickstart walks you through the individual steps needed for the two tasks in this section. But it also summarizes the commands after the walkthrough in a script that executes all of the commands needed to build and deploy the web service and provides a link to a Jupyter notebook that contains these (and some additional) commands.
 
 To launch Python command window, open **File Explorer**, copy the full path to the executable: 
 
@@ -77,7 +77,7 @@ Paste it into **Address Bar** of **File Explorer** and press **Enter**.
  
 ### Read in the attitude dataset
 
-From your local machine, read in the data that you use to build the linear model. We use the attitude dataset .
+From your local machine, read in the data that you use to build the linear model. We use the attitude dataset.
 
 	#-- Import the dataset from the microsoftml package
 	from microsoftml.datasets.datasets import DataSetAttitude
@@ -155,9 +155,9 @@ This model can now be used to estimate the ratings expected from the attitude da
 	3    61.226842
 	4    74.453799
 
-### Publish the model as a realtime web service
+### Publish the model as a real-time web service
 
-To publish any model as a realtime service, you must first serialize the model object using the revoscalepy [rx_serialize_model](./../../python-reference/revoscalepy/rx-serialize-model.md) function.
+To publish any model as a real-time service, you must first serialize the model object using the revoscalepy [rx_serialize_model](./../../python-reference/revoscalepy/rx-serialize-model.md) function.
 
 	# Import the needed classes and functions
 	from revoscalepy import rx_serialize_model
@@ -165,16 +165,16 @@ To publish any model as a realtime service, you must first serialize the model o
 	# Serialize the model with rx_serialize_model
 	s_model = rx_serialize_model(model, realtime_scoring_only=True)
 
-Initiate a [realtimeDefinition](./../../python-reference/azureml-model-management-sdk/realtime-definition.md) object from the [azureml-model-management-sdk package](./../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) to publish the linear model as a realtime Python web service to Machine Learning Server.
+Initiate a [realtimeDefinition](./../../python-reference/azureml-model-management-sdk/realtime-definition.md) object from the [azureml-model-management-sdk package](./../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) to publish the linear model as a real-time Python web service to Machine Learning Server.
 
 	service = client.realtime_service("LinModService") \
 		.version('1.0') \
 		.serialized_model(s_model) \
-		.description("This is a realtime model.") \
+		.description("This is a real-time model.") \
 		.deploy()
 
 
-Verify that the web service results match the results obtained when the model was run locally. To consume the realtime service, call `.consume` on the realtime [service](./../../python-reference/azureml-model-management-sdk/service.md) object. You can consume the model using the [Service](./../../python-reference/azureml-model-management-sdk/service.md) object returned from `.deploy()` because you are in the same session as the one you in which you deployed.
+Verify that the web service results match the results obtained when the model was run locally. To consume the real-time service, call `.consume` on the real-time [service](./../../python-reference/azureml-model-management-sdk/service.md) object. You can consume the model using the [Service](./../../python-reference/azureml-model-management-sdk/service.md) object returned from `.deploy()` because you are in the same session as the one you in which you deployed.
 
 	# -- To consume the service, pluck out the named output: outputData. --​
 	print(service.consume(df.head(5)).outputs['outputData'])
@@ -221,7 +221,7 @@ This script can be run with Python.exe to create the model and deploy it as a we
 	service = client.realtime_service("LinModService") \
 		.version('1.0') \
 		.serialized_model(s_model) \
-		.description("This is a realtime model.") \
+		.description("This is a real-time model.") \
 		.deploy()
 	print(service.consume(df.head(5)).outputs['outputData'])
 
@@ -230,7 +230,7 @@ This script can be run with Python.exe to create the model and deploy it as a we
 
 There is also a [Publish_Realtime_Web_Service_in_Python.ipynb](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/operationalize/Publish_Realtime_Web_Service_in_Python.ipynb) Jupyter Notebook that can be used on the Machine Learning Server to build  and deploy this model as a web service. 
 
-First you must download the notebook from the Microsoft Machine Learning Python Samples Github repo onto your server:
+First you must download the notebook from the Microsoft Machine Learning Python Samples GitHub repo onto your server:
 
 1. Go to the [Microsoft Machine Learning Python Samples](https://github.com/Microsoft/ML-Server-Python-Samples) repo from your Machine Learning Server.
 2. Click on the **Clone or download** button and select the **Download ZIP** option.

@@ -111,7 +111,7 @@ ms.custom: ""
 `axis` returns a vector of strings. 
 `slicers` returns a vector of strings. 
 `compose` returns a string. 
-`is.Query` returns an boolean.
+`is.Query` returns a boolean.
 
 
  ## Note

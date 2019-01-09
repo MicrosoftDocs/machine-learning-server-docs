@@ -34,7 +34,7 @@ Microsoft R Client is backwards compatible with the following versions of Machin
 |Machine Learning Server <br/>&nbsp;&nbsp;&nbsp;& R Server for **Windows**|9.1 - 9.3|
 |HDInsight: cluster type = Machine Learning or R Server|9.2 - 9.3|
 
-Although R Client is backwards compaible, R Client and Machine Learning Server follow the same release cycle and it is a best practice to use packages at the same functional level. The following versions of R Client correspond to Machine Learning Server versions:
+Although R Client is backwards compatible, R Client and Machine Learning Server follow the same release cycle and it is a best practice to use packages at the same functional level. The following versions of R Client correspond to Machine Learning Server versions:
 
 |R Client releases | Server releases| Release date |
 |------------------|----------------|--------------|

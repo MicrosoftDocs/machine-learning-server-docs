@@ -63,7 +63,7 @@ This function converts an existing object of class rxCrossTabs or rxCube into an
 The underlying structure of the output object will be the same as that produced by an equivalent call to
 xtabs. However, you should expect the `"call"` attribute to be different, 
 since it is a copy of the original call stored in the rxCrossTabs or rxCube input object.
-In many cases, this method can be used to coerce an object
+Often, this method can be used to coerce an object
 for use with the **pmml** package. **RevoScaleR** model objects that contain
 `transforms` or a `transformFunc` are not supported.
 

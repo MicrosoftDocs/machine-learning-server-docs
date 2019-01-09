@@ -82,7 +82,7 @@ a model.
 
 
  ### `language`
- Secifies the language used in the data set. The following  values are supported:   
+ Specifies the language used in the data set. The following  values are supported:   
 *   `"AutoDetect"`: for automatic language detection.    
 *   `"English"`.    
 *   `"French"`.    
@@ -98,7 +98,7 @@ a model.
  ### `stopwordsRemover`
  Specifies the stopwords remover to use. There are three options supported:   
 *   `NULL` No stopwords remover is used.   
-*   `stopwordsDefault`: A precompiled language-specific lists of stop words is used that includes the most common words from Microsoft Office.    
+*   `stopwordsDefault`: A precompiled language-specific list of stop words is used that includes the most common words from Microsoft Office.    
 *   `stopwordsCustom`: A user-defined list of stopwords. It accepts   the following option: `dataFile`.   
  The default value is `NULL`. 
 
@@ -176,7 +176,7 @@ There are two ways it can do this:
 
 
 * 
- build a dictionary of n-grams and use the id in the dictionary as the index in the bag;
+ build a dictionary of n-grams and use the ID in the dictionary as the index in the bag;
 
 * 
  hash each n-gram and use the hash value as the index in the bag.

@@ -37,9 +37,9 @@ Airline on-time performance data from 1987 to 2012.
 
  ## Format
 
-AirOnTime87to12 is an .xdf file with 148617414 observations on the following 29 variables.
+AirOnTime87to12 is an .xdf file with 148617414 observations on the following 29 variables:
 AirOnTime7Pct is a 7 percent subsample with a subset of 9 variables: ArrDelay, ArrDel15,
-CRSDepTime, DayOfWeek, DepDelay, Dest,Origin, UniqueCarrier, Year.
+CRSDepTime, DayOfWeek, DepDelay, Dest, Origin, UniqueCarrier, Year.
 
 
 ### `Year`
@@ -99,11 +99,11 @@ destination airport, state code (stored as factor).
 
 
 ### `CRSDepTime`
-scheduled local departure time (stored as decimal float, e.g., 12:45 is stored as 12.75).
+scheduled local departure time (stored as decimal float, for example, 12:45 is stored as 12.75).
 
 
 ### `DepTime`
-actual local departure time (stored as decimal float, e.g., 12:45 is stored as 12.75).
+actual local departure time (stored as decimal float, for example, 12:45 is stored as 12.75).
 
 
 ### `DepDelay`
@@ -127,11 +127,11 @@ taxi time from departure from the gate to wheels off, in minutes (stored as inte
 
 
 ### `WheelsOff`
-wheels off time in local time (stored as decimal float, e.g., 12:45 is stored as 12.75).
+wheels off time in local time (stored as decimal float, for example, 12:45 is stored as 12.75).
 
 
 ### `WheelsOn`
-wheels on time in local time (stored as decimal float, e.g., 12:45 is stored as 12.75).
+wheels on time in local time (stored as decimal float, for example, 12:45 is stored as 12.75).
 
 
 ### `TaxiIn`
@@ -139,11 +139,11 @@ taxi in time in minutes (stored as integer).
 
 
 ### `CRSArrTime`
-scheduled arrival in local time (stored as decimal float, e.g., 12:45 is stored as 12.75).
+scheduled arrival in local time (stored as decimal float, for example, 12:45 is stored as 12.75).
 
 
 ### `ArrTime`
-actual arrival time in local time (stored as decimal float, e.g., 12:45 is stored as 12.75).
+actual arrival time in local time (stored as decimal float, for example, 12:45 is stored as 12.75).
 
 
 ### `ArrDelay`
@@ -163,7 +163,7 @@ arrival delay intervals, every 15 minutes from < -15 to > 180 (stored as a facto
 
 
 ### `Cancelled`
-cancelled flight indicator (stored as logical).
+canceled flight indicator (stored as logical).
 
 
 ### `CancellationCode`

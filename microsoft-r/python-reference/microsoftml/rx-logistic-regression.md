@@ -107,7 +107,7 @@ limitations. It can improve its predictive accuracy, for example, when
 the number of predictors is greater than the sample size.
 If `x = l1_weight` and `y = l2_weight`, `ax + by = c`
 defines the linear span of the regularization terms. The default values
-of x and y are both `1`. An agressive regularization can harm predictive
+of x and y are both `1`. An aggressive regularization can harm predictive
 capacity by excluding important variables out of the model. So choosing the
 optimal values for the regularization parameters is important for the
 performance of the logistic regression model.
@@ -196,7 +196,7 @@ the range from which values are drawn for the initial weights. These
 weights are initialized randomly from within this range. For
 example, if the diameter is specified to be `d`, then the weights
 are uniformly distributed between `-d/2` and `d/2`. The
-default value is `0`, which specifies that allthe  weights are
+default value is `0`, which specifies that all the  weights are
 initialized to `0`.
 
 
@@ -247,9 +247,9 @@ Specifies a list of MicrosoftML transforms to be
 performed on the data before training or *None* if no transforms are
 to be performed. See [`featurize_text`](featurize-text.md),
 [`categorical`](categorical.md),
-and [`categorical_hash`](categorical-hash.md), for transformations that aresupported.
+and [`categorical_hash`](categorical-hash.md), for transformations that are supported.
 These transformations are performed after any specified Python transformations.
-The default avlue is *None*.
+The default value is *None*.
 
 
 ### ml_transform_vars

@@ -29,7 +29,7 @@ ms.prod: "mlserver"
 
 >Looking to deploy with Machine Learning Server? [Start here](../what-is-operationalization.md).
 
-This topic describes how to update the configuration of DeployR (Apache Tomcat, etc. ) after a Java JRE/JDK.
+This topic describes how to update the configuration of DeployR (Apache Tomcat, etc.) after a Java JRE/JDK.
 
 
 **To update the configuration for the new Java version:**

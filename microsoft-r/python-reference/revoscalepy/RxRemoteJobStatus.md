@@ -49,7 +49,7 @@ values indicating job status:
 
 *FAILED* - The job has failed
 
-*CANCELED* - The job was cancelled before it could run to successful completion by using *rx_cancel_job*
+*CANCELED* - The job was canceled before it could run to successful completion by using *rx_cancel_job*
 
 *UNDETERMINED* - The job’s status could not be determined, typically meaning it has been executed on the server
 and the job has already been cleaned up by calling *rx_get_job_results* or *rx_cleanup_jobs*

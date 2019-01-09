@@ -120,7 +120,7 @@ If your R script has R package dependencies, those packages must be installed on
 
 Certain functions are masked from execution, such as 'help', 'browser', 'q' and 'quit'.   
 
-In a remote context, you cannot display vignettes or get help at your command line prompt.  
+In a remote context, you cannot display vignettes or get help at your command-line prompt.  
 
 In most cases, “system” commands work.  However, system commands that write to stdout/stderr may not display their output nor wait until the entire system command has completed before displaying output.   `install.packages` is the only exception for which we explicitly handle stdout and stderr in a remote context. 
 

@@ -127,7 +127,7 @@ We strongly recommend the following approach to collaboration:
 1.  Share only stable, tested snapshots of your R analytic files with application developers.
 2.  Provide the application developers with all necessary details regarding your R analytic files.
 
-### Share Stable, Tested Snapsots
+### Share Stable, Tested Snapshots
 
 We recommend sharing your R analytic files with application developers prior to their final iteration. By releasing early versions or prototypes of your work, you make it possible for the application developers to begin their integration work. You can then continue refining, adding, and testing your R analytics in tandem.
 

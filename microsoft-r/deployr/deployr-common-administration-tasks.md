@@ -130,8 +130,8 @@ For example:
 
 The log file captures the following events related to HTTP session creation and release:
 
--   `[HTTP-SESSION]: CREATED` - denoting the creation of a HTTP session
--   `[HTTP-SESSION]: RELEASED` - denoting the release of a HTTP session
+-   `[HTTP-SESSION]: CREATED` - denoting the creation of an HTTP session
+-   `[HTTP-SESSION]: RELEASED` - denoting the release of an HTTP session
 
 <br>
 For example:

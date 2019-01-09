@@ -99,7 +99,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
    |QueryUserPasswordEncrypted|True/False. If 'True', it means the value of QueryUserPassword is an encrypted string.|
    |SearchBase|Context name to search in, relative to the base of the configured ContextSource, for example, 'ou=users,dc=example,dc=com'.| 
    |SearchFilter|The pattern to be used for the user search. "SearchFilter": "cn={0}" is for each user's DN. In legacy systems, some use "SearchFilter": "sAMAccountName={0}"|
-   |UniqueUserIdentifierAttributeName|(Version 9.1) The attribute name that stores the unique user id for each user. If you are configuring roles, you must ensure that the username returned for this value matches the username returned by SearchFilter. For example, if "SearchFilter": "cn={0}" and "UniqueUserIdentifierAttributeName": "userPrincipalName", then the values for cn and userPrincipalName must match.|
+   |UniqueUserIdentifierAttributeName|(Version 9.1) The attribute name that stores the unique user ID for each user. If you are configuring roles, you must ensure that the username returned for this value matches the username returned by SearchFilter. For example, if "SearchFilter": "cn={0}" and "UniqueUserIdentifierAttributeName": "userPrincipalName", then the values for cn and userPrincipalName must match.|
    |DisplayNameAttributeName|(Version 9.1) The attribute name that stores the display name for each user.|
    |EmailAttributeName|(Version 9.1) The attribute name that stores the email address for each user.|
 

@@ -26,13 +26,13 @@ ms.assetid: ""
 --- 
 
 
- # pemaCompute:  Comute PEMA 
+ # pemaCompute:  Compute PEMA 
 
  Applies to version 8.0.3 of package RevoPemaR.
 
  ## Description
 
-Use a PemaBaseClass reference class object to perform a Parallel External Memory Algorithm computation.
+Use a PemaBaseClass reference class object to perform a Parallel External Memory Algorithm (PEMA) computation.
 
 
  ## Usage
@@ -66,7 +66,7 @@ Use a PemaBaseClass reference class object to perform a Parallel External Memory
 
 
  ### append
- either `"none"` to create a new files, `"rows"` to append rows to an existing file, or `"cols"` to append columns to an existing file. If `outFile` exists and `append` is `"none"`,  the `overwrite` argument must be set to `TRUE`. Ignored when `outData` is not specified or not relevant. You cannot append to `RxTextData` or `RxTeradata` data sources,  and appending is not supported for composite .xdf files or when using the `RxHadoopMR` compute context. 
+ either `"none"` to create a new file, `"rows"` to append rows to an existing file, or `"cols"` to append columns to an existing file. If `outFile` exists and `append` is `"none"`,  the `overwrite` argument must be set to `TRUE`. Ignored when `outData` is not specified or not relevant. You cannot append to `RxTextData` or `RxTeradata` data sources,  and appending is not supported for composite .xdf files or when using the `RxHadoopMR` compute context. 
 
 
 
@@ -95,7 +95,7 @@ parallelized when run on cluster supported by **RevoScaleR**.
  ## Value
 
 The value returned that returned by the `PemaBaseClass` `processResults` method.
-Note that the reference class `PemaBaseClass` will be reinitalized at the beginning
+Note that the reference class `PemaBaseClass` will be reinitialized at the beginning
 of the analysis unless `initPema` is set to `TRUE`, and will contain updated values upon completion.
 
 

@@ -49,7 +49,7 @@ Creates a list containing the function name and arguments to train a
    
   
  ### `numTrees`
- Specifies the total number of decision trees to create in  the ensemble.By creating more decision trees, you can potentially get  better coverage, but the training time increases. The default value is 100. 
+ Specifies the total number of decision trees to create in  the ensemble. By creating more decision trees, you can potentially get  better coverage, but the training time increases. The default value is 100. 
   
   
   

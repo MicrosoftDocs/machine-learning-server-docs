@@ -228,7 +228,7 @@ Let’s start with a simple example. Suppose we have a data set with 10 observat
 	    goodPred = c( .01, .01, .01, .01, .01,.99, .99, .99, .99, .99))
 
 
-We can now call the *rxRocCurve* function to compute the sensitivity and specificty for the ‘bad’ predictions, and draw the ROC curve. The numBreaks argument indicates the number of breaks to use in determining the thresholds for computing the true and false positive rates.
+We can now call the *rxRocCurve* function to compute the sensitivity and specificity for the ‘bad’ predictions, and draw the ROC curve. The numBreaks argument indicates the number of breaks to use in determining the thresholds for computing the true and false positive rates.
 
     rxRocCurve(actualVarName = "actual", predVarNames = "badPred",
 	data = sampleDF, numBreaks = 10, title = "ROC for Bad Predictions")

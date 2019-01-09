@@ -51,7 +51,7 @@ Featurizes an image using a pre-trained deep neural network model.
 ## Details
 
 `featurize_image` featurizes an image using the specified
-pre-trained deep neural network model. The input variables to this transforms must
+pre-trained deep neural network model. The input variables to this transform must
 be extracted pixel values.
 
 

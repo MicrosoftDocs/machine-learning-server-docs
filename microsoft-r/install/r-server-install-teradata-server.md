@@ -96,8 +96,8 @@ PUT is a browser-based utility, and we recommend that you upgrade to the latest 
 
       tar -zxf en_r_server_910_for_teradata_x64_10324043.tar.gz
 
-      This creates the directory MRS91Teradata
-      This is where the you can find the libstdc++6-5.3.1.x86_64.rpm (dependency discussed above). If you cannot install this rpm MRS 9.1 will not work.
+      This creates the directory MRS91Teradata.
+      This is where you can find the libstdc++6-5.3.1.x86_64.rpm (dependency discussed above). If you cannot install this rpm MRS 9.1 will not work.
 
    2. Agree to license agreements:
       /MRS90Teradata/ MRO_EULA.txt

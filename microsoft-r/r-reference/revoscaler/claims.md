@@ -37,7 +37,7 @@ Observations on automobile insurance claims.
 
  ## Format
 
-An .xdf file with 127 observations on the following 6 variables.
+An .xdf file with 127 observations on the following 6 variables:
 
 
 ### `RowNum`

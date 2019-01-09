@@ -52,7 +52,7 @@ You can use any Python IDE to write Python scripts that call the classes and fun
 There are three primary use cases for this release: 
 
 + Adding authentication logic to your Python script
-+ Deploying standard or realtime Python web services
++ Deploying standard or real-time Python web services
 + Managing and consuming these web services
 
 ## Main classes and functions

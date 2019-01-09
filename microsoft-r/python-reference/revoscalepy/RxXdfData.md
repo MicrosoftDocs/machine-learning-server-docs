@@ -107,8 +107,7 @@ subdirectory, the data will be split across a set of ‘.xdfd’ files (see
 blocks_per_composite_file below for determining how many blocks of data will be
 in each file). In the ‘metadata’ subdirectory there is a single ‘.xdfm’ file,
 which contains the meta data for all of the ‘.xdfd’ files in the ‘data’
-subdirectory. When the compute context is RxSpark, a composite set of files
-are always created.
+subdirectory. When the compute context is RxSpark, a composite set of files is always created.
 
 
 ### create_partition_set

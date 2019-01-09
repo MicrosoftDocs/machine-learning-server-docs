@@ -62,7 +62,7 @@ as.glm  (x, ...)
 This function converts an existing object of class [rxLogit](rxLogit.md) or 
 [rxGlm](rxGLM.md) to an object of class glm.
 The underlying structure of the output object will be a subset of that produced by an equivalent call to
-glm. In many cases, this method can be used to coerce an object
+glm. Often, this method can be used to coerce an object
 for use with the **pmml** package. **RevoScaleR** model objects that contain
 `transforms` or a `transformFunc` are not supported.
 
