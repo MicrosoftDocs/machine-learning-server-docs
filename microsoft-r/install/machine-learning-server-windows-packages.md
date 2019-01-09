@@ -42,7 +42,7 @@ Base R is distributed through Microsoft R Open, as installed by Machine Learning
 | 9.2             | 3.4.1 |  4.2/3.5 |
 | 9.1             | 3.3.3 |  not applicable |
 
-To verify the base library versions on your system, start a command line tool and check the version information displayed when the tool starts. 
+To verify the base library versions on your system, start a command-line tool and check the version information displayed when the tool starts. 
 
 1. For R, start **R.exe** from \Program Files\Microsoft\ML Server\R_SERVER\bin\x64.
 

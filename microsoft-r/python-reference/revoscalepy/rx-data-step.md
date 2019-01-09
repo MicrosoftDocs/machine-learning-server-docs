@@ -180,7 +180,7 @@ frames.
 ### max_rows_by_cols
 
 The maximum size of a data frame that will be returned
-if output_file is set to None and inData is an ‘.xdf’ file , measured by the number
+if output_file is set to None and inData is an ‘.xdf’ file, measured by the number
 of rows times the number of columns. If the number of rows times the number of
 columns being created from the ‘.xdf’ file exceeds this, a warning will be
 reported and the number of rows in the returned data frame will be truncated.

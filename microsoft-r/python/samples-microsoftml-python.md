@@ -55,7 +55,7 @@ The sentiment analysis quickstart uses a pre-trained model. Pre-trained models a
 
 The [Grid Search](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/202/plot_grid_search.py) sample analyzes the [Epileptic Seizure Recognition Data Set](https://archive.ics.uci.edu/ml/datasets/Epileptic+Seizure+Recognition) to determine whether epileptic seizures have occurred. The sample uses logistic regression on regrouped data for the binary classification to make predictions.
 
-The sample then shows how to improve the prediction by choosing optimal hyperparameters for the learner. All learners employ [hyperparameters](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)) which impact the way a model is trained. Most of the time, they have a default value which works on most of the datasets. But the default values are not usually the best possible value for a particular dataset. This sample show how to find optimal values for this dataset.
+The sample then shows how to improve the prediction by choosing optimal hyperparameters for the learner. All learners employ [hyperparameters](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)) which impact the way a model is trained. Most of the time, they have a default value which works on most of the datasets. But the default values are not usually the best possible value for a particular dataset. This sample shows how to find optimal values for this dataset.
 
 
 ## Sentiment analysis with text featurization

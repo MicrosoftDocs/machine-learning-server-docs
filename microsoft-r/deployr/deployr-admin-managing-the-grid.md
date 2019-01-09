@@ -73,7 +73,7 @@ The operation type assigned to a node and the cluster named for the request (if 
 
 ### Operation-Clusters Workload Distribution
 
-The set of nodes dedicated to the same operation type are automatically members of the same operation-cluster. In this way, the operation-cluster workload distribution model provides a simple and automatic way to partition the workload on the grid. There are four operation-clusters, one for each type of operation (authenticated, asynchronous, or anonymous) and one for mixed mode nodes.
+The set of nodes dedicated to the same operation type is automatically members of the same operation-cluster. In this way, the operation-cluster workload distribution model provides a simple and automatic way to partition the workload on the grid. There are four operation-clusters, one for each type of operation (authenticated, asynchronous, or anonymous) and one for mixed mode nodes.
 The specific manner in which an operation is allocated onto a node using the operation-cluster workload distribution model is a function of:
 
 - The type of operation being requested (authenticated, asynchronous, or anonymous)
@@ -102,9 +102,9 @@ Whenever a custom cluster has been named for the requested operation, the grid b
 
 When all of the nodes of a custom cluster are busy, any additional requests for that cluster are funneled to a node configured for the mixed mode operation type, if one is available. Whenever a custom cluster on the grid or the entire grid is operating a maximum capacity, any additional requests for authenticated or anonymous operations will be rejected and any additional requests for asynchronous operations will be queued.
 
-For example, if the grid determines that a request is made for an operation to use the "high-mem"cluster, the grid will look for all nodes within the "high-mem" cluster and then send the request to the least busy node within that cluster. However, if all nodes within the "high-mem" cluster are busy, then the request is funneled to the least burdened node of mixed mode type.
+For example, if the grid determines that a request is made for an operation to use the "high-mem" cluster, the grid will look for all nodes within the "high-mem" cluster and then send the request to the least busy node within that cluster. However, if all nodes within the "high-mem" cluster are busy, then the request is funneled to the least burdened node of mixed mode type.
 
-Any node can belong to a custom cluster if the administrator has assigned the node to a that cluster by entering its custom name in the **Cluster name**&nbsp;[field](#node-properties). Custom cluster names are not case-sensitive.
+Any node can belong to a custom cluster if the administrator has assigned the node to that cluster by entering its custom name in the **Cluster name**&nbsp;[field](#node-properties). Custom cluster names are not case-sensitive.
 
 ## Node Validation and Errors
 
@@ -183,7 +183,7 @@ You can see which slots are currently in use and how they are being used by a pa
 |`Context`|Provides the name of project, job, or script being executed|
 |`Started`|Specifies the time that has elapsed since execution commenced|
 |`Owner` and `Owner address`|Lists the username of person or IP address who initiated the request|
-|`HTTP Session`|Lists the unique id for this HTTP session|
+|`HTTP Session`|Lists the unique ID for this HTTP session|
 |`Event Stream`|Provides a link to open the event console|
 
 You can force the termination of a current operation on slot, by clicking the **Shutdown** link.
@@ -254,7 +254,7 @@ In the **Grid Node Details** page, you can review the slot activity.
 
 Additionally, you can shut down slots in order to terminate activity. This is a last resort for unwanted activity on the server.
 
->This list is not updated in real-time. Refresh your page to see the latest activity.
+>This list is not updated in real time. Refresh your page to see the latest activity.
 
 To review the slot activity for a node and shutdown slots:
 

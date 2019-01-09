@@ -90,7 +90,7 @@ Machine Learning Logistic Regression
 
 
  ### `initWtsScale`
- Sets the initial weights diameter that specifies  the range from which values are drawn for the initial weights. These   weights are initialized randomly from within this range. For  example, if the diameter is specified to be `d`, then the weights  are uniformly distributed between `-d/2` and `d/2`. The default value is `0`, which specifies that allthe  weights are  initialized to `0`. 
+ Sets the initial weights diameter that specifies  the range from which values are drawn for the initial weights. These   weights are initialized randomly from within this range. For  example, if the diameter is specified to be `d`, then the weights  are uniformly distributed between `-d/2` and `d/2`. The default value is `0`, which specifies that all the  weights are  initialized to `0`. 
 
 
 
@@ -130,7 +130,7 @@ Normalization rescales disparate data ranges to a standard scale. Feature scalin
 
 
  ### `mlTransforms`
- Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](featurizeText.md), [categorical](categorical.md), and [categoricalHash](categoricalHash.md), for transformations that aresupported. These transformations are performed after any specified R transformations. The default avlue is `NULL`. 
+ Specifies a list of MicrosoftML transforms to be performed on the data before training or `NULL` if no transforms are  to be performed. See [featurizeText](featurizeText.md), [categorical](categorical.md), and [categoricalHash](categoricalHash.md), for transformations that are supported. These transformations are performed after any specified R transformations. The default value is `NULL`. 
 
 
 
@@ -165,7 +165,7 @@ Normalization rescales disparate data ranges to a standard scale. Feature scalin
 
 
  ### `transformPackages`
- A character vector specifying additional R packages (outside of those specified in `rxGetOption("transformPackages")`) to be made available and preloaded for use in variable transformation functions. For exmple, those explicitly defined in **RevoScaleR** functions via their `transforms` and `transformFunc` arguments or those defined implicitly via their `formula` or `rowSelection` arguments.  The `transformPackages` argument may also be `NULL`, indicating that no packages outside `rxGetOption("transformPackages")` are preloaded. 
+ A character vector specifying additional R packages (outside of those specified in `rxGetOption("transformPackages")`) to be made available and preloaded for use in variable transformation functions. For example, those explicitly defined in **RevoScaleR** functions via their `transforms` and `transformFunc` arguments or those defined implicitly via their `formula` or `rowSelection` arguments.  The `transformPackages` argument may also be `NULL`, indicating that no packages outside `rxGetOption("transformPackages")` are preloaded. 
 
 
 
@@ -258,7 +258,7 @@ limitations. It can improve its predictive accuracy, for example, when
 the number of predictors is greater than the sample size.
 If `x = l1Weight` and `y = l2Weight`, `ax + by = c`
 defines the linear span of the regularization terms. The default values 
-of x and y are both `1`. An agressive regularization can harm predictive
+of x and y are both `1`. An aggressive regularization can harm predictive
 capacity by excluding important variables out of the model. So choosing the 
 optimal values for the regularization parameters is important for the 
 performance of the logistic regression model.

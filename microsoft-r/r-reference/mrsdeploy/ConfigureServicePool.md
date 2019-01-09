@@ -46,22 +46,22 @@ Machine Learning Server.
 
 
  ### `name`
- A string representing the web service name. To create or update  a dedicated pool, you must provide the specific name and version of the  service that the pool is associated with. 
+ A string representing the web service name. To create or update a dedicated pool, you must provide the specific name and version of the  service that the pool is associated with.
 
 
 
  ### `version`
- A string representing the web service version. To create or  update a dedicated pool, you must provide the specific name and version of the  service that the pool is associated with. 
+ A string representing the web service version. To create or update a dedicated pool, you must provide the specific name and version of the  service that the pool is associated with. 
 
 
 
  ### `initialPoolSize`
- An integer representing the initial pool size of the  dedicated pool. This amount of shells will be generated while creating the  dedicated pool. If more shells are in need, the dedicated pool will continue  to create new shells in addition to the initial shells up to the maxPoolSize. 
+ An integer representing the initial pool size of the dedicated pool. This number of shells will be generated while creating the dedicated pool. If more shells are in need, the dedicated pool will continue  to create new shells in addition to the initial shells up to the maxPoolSize.
 
 
 
  ### `maxPoolSize`
- An integer representing the max pool size of the dedicated pool. This is the maximum number of shells that could be generated in the  dedicated pool during any period of time 
+ An integer representing the max pool size of the dedicated pool. This is the maximum number of shells that could be generated in the  dedicated pool during any period of time.
 
 
 

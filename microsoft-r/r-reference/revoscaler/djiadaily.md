@@ -35,7 +35,7 @@ Daily data for the Dow Jones Industrial Average.
 
  ## Format
 
-An .xdf file with 20,636 observations on the following 13 variables.
+An .xdf file with 20,636 observations on the following 13 variables:
 
 
 ### `Date`

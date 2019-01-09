@@ -93,7 +93,7 @@ Creating a repository from an MRAN snapshot is very straightforward:
 
 		library(miniCRAN)
 
-3. Specify an MRAN snaphot:
+3. Specify an MRAN snapshot:
 
 		CRAN <- "http://mran.revolutionanalytics.com/snapshot/2015-11-30"
 

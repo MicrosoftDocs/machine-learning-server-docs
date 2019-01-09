@@ -39,7 +39,7 @@ To run the example code, your environment must provide the following criteria:
 + A Hadoop cluster with Spark and valid installation of Machine Learning Server
 + Machine Learning Server configured for Hadoop and Spark
 + Machine Learning Server SampleData loaded into HDFS
-+ gcc and g++ installed on the edgenode that the example runs on
++ gcc and g++ installed on the edge node that the example runs on
 + Write permissions to the R Library Directory
 + Read/Write permissions to HDFS directory /user/RevoShare
 + An internet connection or the ability to download and manually install sparklyr

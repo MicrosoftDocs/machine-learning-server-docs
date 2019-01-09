@@ -58,7 +58,7 @@ On SQL Server, set the compute context to [RxInSQLServer](RxInSqlServer.md). The
 
 + Call **RevoScaleR** functions in R script executing in a SQL Server [compute context](../../r/concept-what-is-compute-context.md). In your script, you can set a compute context to shift execution of **RevoScaleR** operations to a remote SQL Server instance that has the **RevoScaleR** interpreter.
 
-Some functions in **RevoScaleR** are specific to particular compute contexts. A filtered list of functions include the following:
+Some functions in **RevoScaleR** are specific to particular compute contexts. A filtered list of functions includes the following:
 + [Computing on a Hadoop Cluster](revoscaler-hadoop-functions.md)
 + [Computing on SQL Server](https://docs.microsoft.com/sql/advanced-analytics/r/scaler-functions-for-working-with-sql-server-data)
 
@@ -152,7 +152,7 @@ This section lists the functions by category to give you an idea of how each one
 |[rxGetFuzzyKeys](rxgetfuzzykeys.md)  |Get fuzzy keys for a character vector. | 
 |[rxSplit](rxsplitxdf.md)  |Splits an .xdf file or data frame into multiple .xdf files or data frames. | 
 |[rxSort](rxsortxdf.md)  |Multi-key sorting of the variables an .xdf file or data frame. | 
-|[rxMerge](rxmergexdf.md)  |Merges two .xdf files or data frames using a variety of merge types. | 
+|[rxMerge](rxmergexdf.md)  |Merges two .xdf files or data frames using various merge types. | 
 |[rxExecuteSQLDDL](rxexecutesqlddl.md)  |SQL Server R Services only. Runs an arbitrary SQL DDL command. | 
 
 <sup>*</sup> Signifies the most popular functions in this category.
@@ -165,7 +165,7 @@ This section lists the functions by category to give you an idea of how each one
 |---------------|-------------|
 |[rxHistogram](rxhistogram.md)  |Creates a histogram from data. | 
 |[rxLinePlot](rxlineplot.md) |Creates a line plot from data. | 
-|[rxLorenz](rxlorenz.md)  |Computes a Lorenz curve which can be plotted. | 
+|[rxLorenz](rxlorenz.md)  |Computes a Lorenz curve that can be plotted. | 
 |[rxRocCurve](rxroc.md)  |Computes and plots ROC curves from actual and predicted data. | 
 
 <a name="statistics-functions"></a>
@@ -282,7 +282,7 @@ Add R packages to your computer by running setup:
 + [Machine Learning Server](../../install/machine-learning-server-install.md)
 + [R Client](../../r-client/what-is-microsoft-r-client.md) 
 
-Next, follow these tutorials for hands on experience:
+Next, follow these tutorials for hands-on experience:
 
 + [Explore R and RevoScaleR in 25 functions](../../r/tutorial-r-to-revoscaler.md)  
 + [Quickstart: Run R Code](../../r/quickstart-run-r-code.md)

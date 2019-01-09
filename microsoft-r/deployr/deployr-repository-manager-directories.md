@@ -124,7 +124,7 @@ To rename a directory:
 
 **Don'ts**
 
-1. Don't use these special characters when naming your directories : " * ? \ / . < >
+1. Don't use these special characters when naming your directories: " * ? \ / . < >
 
 2. Don't use a name that is already in use.
 

@@ -22,7 +22,7 @@ ms.prod: "mlserver"
 #ms.custom: ""
 ---
 
-# Evaluate the load balancing capacity of your configuration
+# Evaluate the load-balancing capacity of your configuration
 
 **Applies to: Machine Learning Server, Microsoft R Server 9.x**
 
@@ -48,7 +48,7 @@ In Machine Learning Server 9.3, you can use `admin` extension of the Azure Comma
 >- You must first [set up your nodes](configure-machine-learning-server-one-box.md) before doing anything else with the `admin` extension of the CLI.
 >- You do not need an Azure subscription to use this CLI. It is installed as part of Machine Learning Server and runs locally.  
 
-1. On the machine hosting the node, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
+1. On the machine hosting the node, launch a command-line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
 
 1. Define and run the capacity evaluation. For help, run `az ml admin capacity --help`
    ```azurecli
@@ -150,7 +150,7 @@ You can also explore the results visually in a break-down graph using the URL th
 
 When using Machine Learning Server for operationalization, code is executed in a session or as a service on a compute node. In order to optimize load-balancing performance, Machine Learning Server is capable of establishing and maintaining a pool of R and Python sessions for code execution. 
 
-There is a cost to creating a session both in time and memory. So having a pool of existing sessions awaiting code execution requests means no time is lost on session creation at runtime thereby shortening the processing time. Instead, the time needed to create sessions for the pool occurs whenever the compute node is restarted. For this reason, the larger the defined initial pool size (InitialSize), the longer it takes to start up the compute node. New sessions are added to the pool as needed to execute in parallel. However, after a request is handled and the session is idle, the ssession is closed if the number of shells exceeds the maximum pool size (MaxSize). 
+There is a cost to creating a session both in time and memory. So having a pool of existing sessions awaiting code execution requests means no time is lost on session creation at runtime thereby shortening the processing time. Instead, the time needed to create sessions for the pool occurs whenever the compute node is restarted. For this reason, the larger the defined initial pool size (InitialSize), the longer it takes to start up the compute node. New sessions are added to the pool as needed to execute in parallel. However, after a request is handled and the session is idle, the session is closed if the number of shells exceeds the maximum pool size (MaxSize). 
 
 However, during simulation test, the test continues until the test threshold is met (maximum threads or latency). If the number of shells needed to run the test exceeds the number of sessions in the pool, a new session is created on-demand when the request is made and the time it takes to execute the code is longer since time is spent creating the session itself. 
 

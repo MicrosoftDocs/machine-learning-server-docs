@@ -63,7 +63,7 @@ The `featurize_text` transform produces a bag of counts of
 sequences of consecutive words, called n-grams, from a given corpus of text.
 There are two ways it can do this:
 
-* build a dictionary of n-grams and use the id in the dictionary as the index in the bag; 
+* build a dictionary of n-grams and use the ID in the dictionary as the index in the bag; 
 
 * hash each n-gram and use the hash value as the index in the bag. 
 
@@ -127,7 +127,7 @@ three options supported:
 
 * *None*: No stopwords remover is used. 
 
-* `predefined`: A precompiled language-specific lists of stop words is used that includes the most common words from Microsoft Office. 
+* `predefined`: A precompiled language-specific list of stop words is used that includes the most common words from Microsoft Office. 
 
 * `custom`: A user-defined list of stopwords. It accepts the following option: `stopword`. 
 

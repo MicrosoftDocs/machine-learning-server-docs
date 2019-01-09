@@ -25,7 +25,7 @@ ms.prod: "mlserver"
 
 # Install Microsoft R Client on Linux
 
-Microsoft R Client is a free, data science tool for high-performance analytics that you can install on popular Linux operating systems, including CentOS, Red Hat, and Ubuntu. R Client is built on top of [Microsoft R Open](https://mran.microsoft.com/open) so you can use any open-source R packages to build your analytics, and includes the [R function libraries from Microsoft](../r-reference/introducing-r-server-r-package-reference.md#r-function-libraries) that execute locally on R Client or remotely on a more powerful ][Machine Learning Server](../what-is-machine-learning-server.md). 
+Microsoft R Client is a free, data science tool for high-performance analytics that you can install on popular Linux operating systems, including CentOS, Red Hat, and Ubuntu. R Client is built on top of [Microsoft R Open](https://mran.microsoft.com/open) so you can use any open-source R packages to build your analytics, and includes the [R function libraries from Microsoft](../r-reference/introducing-r-server-r-package-reference.md#r-function-libraries) that execute locally on R Client or remotely on a more powerful [Machine Learning Server](../what-is-machine-learning-server.md). 
 
 R Client allows you to work with production data locally using the full set of RevoScaleR functions, with these constraints: data must fit in local memory, and processing is capped at two threads for RevoScaleR functions. 
 
@@ -160,7 +160,7 @@ You can now [set up your IDE and try out some sample code](../r-client-get-start
 
 By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or limits on internet access prevent the installer from reaching these sites, you can download individual components on a computer that has internet access, copy the files to another computer behind the firewall, manually install prerequisites and packages, and then run setup.
 
-If you previously installed version 3.4.1, it will be replaced with the 3.4.3 version. 
+If you previously installed version 3.4.1, it will be replaced with the 3.4.3 version.
 
 Packages for all supported versions of Linux can be found at [packages.microsoft.com](https://packages.microsoft.com). 
 
@@ -338,7 +338,7 @@ If you are using the RStudio IDE, perform the following steps to load RevoScaleR
 
 5. Save the file.
 
-6. Start RStudio. In the Console window, you should see messages indicating the both Microsoft R Open and Microsoft R Client packages are loaded.
+6. Start RStudio. In the Console window, you should see messages indicating both the Microsoft R Open and Microsoft R Client packages are loaded.
 
 7. To confirm RevoScaleR is operational, run the RevoScaleR **rxSummary** function to return statistical summary information on the built-in Iris dataset: 
 

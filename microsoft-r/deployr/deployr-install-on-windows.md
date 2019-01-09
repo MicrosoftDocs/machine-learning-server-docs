@@ -101,7 +101,7 @@ After installing the [prerequisites](#depend) above, install DeployR as follows:
      1. Once you've signed the license purchase agreement with Microsoft, you'll get your credentials. 
      1. Log in and search for **SQL Server 2016 Enterprise Edition**. 
      1. In the product page, click **Continue**.  
-     1. Download the **SQL Server Enterprise Edition 2016 DeployR 64 Bit** ISO file. 
+     1. Download the **SQL Server Enterprise Edition 2016 DeployR 64-Bit** ISO file. 
      1. Double-click the ISO file to mount it as a DVD drive. 
      1. Then, select and run `DeployR-Enterprise-8.0.5.exe`.
 
@@ -308,7 +308,7 @@ If you want to use a local or remote SQL Server database for DeployR instead of 
 
 1. Log into the SQL Server Management Studio.
 
-1. Create a database with the name `deployr` and an instance called `DEPLOYREXPRESS`. For help creating that database, visit: https://technet.microsoft.com/en-us/library/ms186312(v=sql.130).aspx
+1. Create a database with the name `deployr` and an instance called `DEPLOYREXPRESS`. For help with creating that database, visit: https://technet.microsoft.com/en-us/library/ms186312(v=sql.130).aspx
 
     >The JDBC drivers are installed with DeployR. 
 
@@ -434,7 +434,7 @@ The following instructions will walk you through a migration of DeployR 8.0.0 or
 
         cd $DEPLOYR_HOME\deployr\tools\mongoMigration    
         exportMongoDB.bat -m "<OLD_VERSION_INSTALL_DIR>\mongo\bin\mongoexport.exe" -p <MongoDB_Database_Password> -o db_backup.zip
-    Where `<MongoDB_Database_Password>` is the password defined in the `grails/mongo/password` parameter in the `deployr.groovy` file. 
+    Where `<MongoDB_Database_Password>` is the password defined in the `grails/mongo/password` parameter in the `deployr.groovy` file.
 
 7.  Download `db_backup.zip`.
 

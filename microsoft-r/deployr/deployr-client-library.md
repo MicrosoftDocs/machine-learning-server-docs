@@ -753,7 +753,7 @@ A background job is simply a request to execute an R analytics Web service in th
 
 >By default, each background job execution stores its results in a *persistent project*. Persistent projects are discussed in the [*Authenticated Project Service*](#project-services) section.
 
-Each job moves through a simple lifecycle on the server, starting with submission, followed by queueing, running, and eventually reaching a completion state indicating success or failure. The status of each background job can be queried, jobs can be cancelled, and when a job completes the *authenticated* user that submitted the job can collect the results of the execution.
+Each job moves through a simple lifecycle on the server, starting with submission, followed by queueing, running, and eventually reaching a completion state indicating success or failure. The status of each background job can be queried, jobs can be canceled, and when a job completes the *authenticated* user that submitted the job can collect the results of the execution.
 
 The following code snippets demonstrate some of the ways the client libraries make these services available.
 
@@ -1532,7 +1532,7 @@ The *on-execution* parameters allow the caller to control certain aspects of the
 
     //
     // Parameter: enableConsoleEvents
-    // Controls whether console events are delivered in realtime on the event
+    // Controls whether console events are delivered in real time on the event
     // stream for the current execution. Console events are disabled by default.
     //
     // This parameter should only be enabled in environments where the rate
@@ -1584,7 +1584,7 @@ The *on-execution* parameters allow the caller to control certain aspects of the
 
     //
     // Parameter: enableConsoleEvents
-    // Controls whether console events are delivered in realtime on the event
+    // Controls whether console events are delivered in real time on the event
     // stream for the current execution. Console events are disabled by default.
     //
     // This parameter should only be enabled in environments where the rate
@@ -1631,7 +1631,7 @@ The *on-execution* parameters allow the caller to control certain aspects of the
 
     //
     // Parameter: enableConsoleEvents
-    // Controls whether console events are delivered in realtime on the event
+    // Controls whether console events are delivered in real time on the event
     // stream for the current execution. Console events are disabled by default.
     //
     // This parameter should only be enabled in environments where the rate

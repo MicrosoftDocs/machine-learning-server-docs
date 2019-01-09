@@ -49,7 +49,7 @@ authentication(context)
 
 **Override**
 
-Authentication lifecycle method method called by the framework. Invokes
+Authentication lifecycle method called by the framework. Invokes
 the authentication entry-point for the class hierarchy.
 
 ML Server supports two forms of authentication contexts:
@@ -72,7 +72,7 @@ The authentication context: LDAP, Azure Active Directory
 
 ### HttpException
 
-If a HTTP fault occurred calling the ML Server.
+If an HTTP fault occurred calling the ML Server.
 
 <a name="create_or_update_service_pool"></a>
 
@@ -128,7 +128,7 @@ requests.models.Response: HTTP Status indicating if the request was submitted su
 
 ### HttpException
 
-If a HTTP fault occurred calling the ML Server.
+If an HTTP fault occurred calling the ML Server.
 
 ## delete_service
 
@@ -171,7 +171,7 @@ A `bool` indicating the service deletion was succeeded.
 
 ### HttpException
 
-If a HTTP fault occurred calling the ML Server.
+If an HTTP fault occurred calling the ML Server.
 
 
 <a name="delete_service_pool"></a>
@@ -213,7 +213,7 @@ requests.models.Response: HTTP Status if the pool was deleted for the service.
 
 ### HttpException
 
-If a HTTP fault occurred calling the ML Server.
+If an HTTP fault occurred calling the ML Server.
 
 ## deploy_realtime
 
@@ -224,7 +224,7 @@ deploy_realtime(name, **opts)
 
 
 
-Publish a new *realtime* web service on the ML Server by *name* and
+Publish a new *real-time* web service on the ML Server by *name* and
 *version*.
 
 All input and output types are defined as a `pandas.DataFrame`.
@@ -235,7 +235,7 @@ All input and output types are defined as a `pandas.DataFrame`.
 model = rx_serialize_model(model, realtime_scoring_only=True)
 opts = {
     'version': 'v1.0.0',
-    'description': 'Realtime service description.',
+    'description': 'Real-time service description.',
     'serialized_model': model
 }
 
@@ -274,12 +274,12 @@ supports the following optional properties:
 ### Returns
 
 A new instance of [`Service`](service.md) representing the
-realtime service *redeployed*.
+real-time service *redeployed*.
 
 
 ### HttpException
 
-If a HTTP fault occurred calling the ML Server.
+If an HTTP fault occurred calling the ML Server.
 
 ## deploy_service
 
@@ -290,7 +290,7 @@ deploy_service(name, **opts)
 
 
 
-Publish an new web service on the ML Server by *name* and *version*.
+Publish a new web service on the ML Server by *name* and *version*.
 
 **Example:**
 
@@ -394,7 +394,7 @@ service *deployed*.
 
 ### HttpException
 
-If a HTTP fault occurred calling the ML Server.
+If an HTTP fault occurred calling the ML Server.
 
 
 ## destructor
@@ -453,7 +453,7 @@ A new instance of [`Service`](service.md).
 
 ### HttpException
 
-If a HTTP fault occurred calling the ML Server.
+If an HTTP fault occurred calling the ML Server.
 
 
 <a name="get_service_pool_status"></a>
@@ -505,7 +505,7 @@ str: json representing the status of pool on each compute node for the deployed 
 
 ### HttpException
 
-If a HTTP fault occurred calling the ML Server.
+If an HTTP fault occurred calling the ML Server.
 
 ```python
 initializer(http_client, config, adapters=None)
@@ -593,7 +593,7 @@ A `list` of service metadata.
 
 ### HttpException
 
-If a HTTP fault occurred calling the ML Server.
+If an HTTP fault occurred calling the ML Server.
 
 ## realtime_service
 
@@ -604,7 +604,7 @@ realtime_service(name)
 
 
 
-Begin fluent API chaining of properties for defining a *realtime* web
+Begin fluent API chaining of properties for defining a *real-time* web
 service.
 
 **Example:**
@@ -613,7 +613,7 @@ service.
 
 ```python
 client.realtime_service('scoring')
-   .description('A new realtime web service')
+   .description('A new real-time web service')
    .version('v1.0.0')
 ```
 
@@ -641,7 +641,7 @@ redeploy_realtime(name, **opts)
 
 
 
-Updates properties on an existing *realtime* web service on the
+Updates properties on an existing *real-time* web service on the
 Server by *name* and *version*. If `version=None` the most recent
 service will be updated.
 
@@ -655,7 +655,7 @@ All input and output types are defined as a `pandas.DataFrame`.
 model = rx_serialize_model(model, realtime_scoring_only=True)
 opts = {
     'version': 'v1.0.0',
-    'description': 'Realtime service description.',
+    'description': 'Real-time service description.',
     'serialized_model': model
  }
 
@@ -694,12 +694,12 @@ supports the following optional properties:
 ### Returns
 
 A new instance of [`Service`](service.md) representing the
-realtime service *redeployed*.
+real-time service *redeployed*.
 
 
 ### HttpException
 
-If a HTTP fault occurred calling the ML Server.
+If an HTTP fault occurred calling the ML Server.
 
 ## redeploy_service
 
@@ -790,7 +790,7 @@ service *deployed*.
 
 ### HttpException
 
-If a HTTP fault occurred calling the ML Server.
+If an HTTP fault occurred calling the ML Server.
 
 ## service
 

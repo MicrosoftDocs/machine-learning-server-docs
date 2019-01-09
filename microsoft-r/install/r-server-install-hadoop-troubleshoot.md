@@ -71,7 +71,7 @@ export LD\_LIBRARY\_PATH=$LD\_LIBRARY\_PATH:/path/to/libjvm.so
 
 An ODBC connection to Hive from an edge node can be useful for both importing the results of Hive queries, and directly streaming results into ScaleR algorithms for analysis. 
 
-Prior to using `RxOdbcData` against Hive, we recommend that you begin by installing and configuring the ODBC drivers provided by your Hadoop vendor for your installed distro. Next, work with your Hadoop vendor to debug the ODBC setup until you are able to successfully run Hive queries using a Hive command line tool such as ‘beeline’. Lastly, take one of those queries that you ran from the command line and try running it from within R Server on the edge node via `RxOdbcData`.
+Prior to using `RxOdbcData` against Hive, we recommend that you begin by installing and configuring the ODBC drivers provided by your Hadoop vendor for your installed distro. Next, work with your Hadoop vendor to debug the ODBC setup until you are able to successfully run Hive queries using a Hive command-line tool such as ‘beeline’. Lastly, take one of those queries that you ran from the command line and try running it from within R Server on the edge node via `RxOdbcData`.
 
 ## Check Hadoop cluster health
 

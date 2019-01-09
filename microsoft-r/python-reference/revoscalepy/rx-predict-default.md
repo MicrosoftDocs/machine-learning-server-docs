@@ -110,7 +110,7 @@ the interval [0, 1].
 
 ### compute_residuals
 
-bool Balue. If True, residuals are computed.
+bool Value. If True, residuals are computed.
 
 
 ### type
@@ -147,7 +147,7 @@ Bool value. If True, rows with missing values are removed.
 
 ### append
 
-either “none” to create a new files or “rows” to append rows
+either “none” to create a new file or “rows” to append rows
 to an existing file. If output_data exists and append is “none”, the overwrite
 argument must be set to True. Ignored for data frames.
 

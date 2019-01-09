@@ -25,7 +25,7 @@ ms.prod: "mlserver"
 
 # Upgrading or Reinstalling R
 
-**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](../whats-new-in-r-server.md#8vs9))
+**Applies to: DeployR 8.x** (See [comparison between 8.x and 9.x](../whats-new-in-r-server.md#8vs9))
 
 >Looking to deploy with Machine Learning Server? [Start here](../what-is-operationalization.md).
 

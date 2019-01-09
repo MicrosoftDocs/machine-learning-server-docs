@@ -50,7 +50,7 @@ Creates a list containing the function name and arguments to train a
    
   
  ### `numTrees`
- Specifies the total number of decision trees to create in  the ensemble.By creating more decision trees, you can potentially get  better coverage, but the training time increases. The default value is 100. 
+ Specifies the total number of decision trees to create in  the ensemble. By creating more decision trees, you can potentially get  better coverage, but the training time increases. The default value is 100. 
   
   
   
@@ -60,7 +60,7 @@ Creates a list containing the function name and arguments to train a
   
   
  ### `learningRate`
- Determines the size of the step taken in the direction of the gradient in each step of the learning process.  This determines how fast or slow the learner converges on the optimal solution.  If the step size is too big, you might overshoot the optimal solution.  If the step size is too samll, training takes longer to converge to the best solution. 
+ Determines the size of the step taken in the direction of the gradient in each step of the learning process.  This determines how fast or slow the learner converges on the optimal solution.  If the step size is too big, you might overshoot the optimal solution.  If the step size is too small, training takes longer to converge to the best solution. 
   
   
   

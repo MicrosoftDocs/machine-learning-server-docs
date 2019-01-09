@@ -30,7 +30,7 @@ This article notifies you about pending status changes to features and function 
 
 ## Machine Learning Server 9.3
 
-There are no announcements for package or function deprecation, discontinuation, or changes to existing fucntionality.
+There are no announcements for package or function deprecation, discontinuation, or changes to existing functionality.
 
 To learn more about this release, see [What's New](whats-new-in-machine-learning-server.md) for feature announcements and [Known issues](resources-known-issues.md) for descriptions and possible workarounds to known problems found in this release.
 
@@ -83,7 +83,7 @@ In **RevoMods** functions are discontinued (all were intended for use solely by 
 + R Server is built on Microsoft R Open 3.3.2 (R 3.3.2).
 + R packages added to MRO include `curl`, `Jsonlite`, and `R6`.
 + R packages added to R Server include `mrupdate` (for automated update checks) and `CompatibilityAPI` (to check for feature compatibility between versions).
-+ DeployR (now referred to as operationalization) no longer supports MongoDB. Use PostGreSQL, SQL Server, or Azure SQL Database instead.
++ DeployR (now referred to as operationalization) no longer supports MongoDB. Use PostgreSQL, SQL Server, or Azure SQL Database instead.
 
 ### Deprecated or Discontinued
 

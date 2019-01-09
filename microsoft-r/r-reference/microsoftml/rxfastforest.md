@@ -73,7 +73,7 @@ Machine Learning Fast Forest
 
 
  ### `numTrees`
- Specifies the total number of decision trees to create in  the ensemble.By creating more decision trees, you can potentially get  better coverage, but the training time increases. The default value is 100. 
+ Specifies the total number of decision trees to create in  the ensemble. By creating more decision trees, you can potentially get  better coverage, but the training time increases. The default value is 100. 
 
 
 
@@ -113,7 +113,7 @@ Machine Learning Fast Forest
 
 
  ### `gainConfLevel`
- Tree fitting gain confidence requirement (should be in the range [0,1) ). The default value is 0. 
+ Tree fitting gain confidence requirement (should be in the range [0,1)). The default value is 0. 
 
 
 
@@ -163,7 +163,7 @@ Machine Learning Fast Forest
 
 
  ### `transformPackages`
- A character vector specifying additional R packages (outside of those specified in `rxGetOption("transformPackages")`) to be made available and preloaded for use in variable transformation functions. For exmple, those explicitly defined in **RevoScaleR** functions via their `transforms` and `transformFunc` arguments or those defined implicitly via their `formula` or `rowSelection` arguments.  The `transformPackages` argument may also be `NULL`, indicating that no packages outside `rxGetOption("transformPackages")` are preloaded. 
+ A character vector specifying additional R packages (outside of those specified in `rxGetOption("transformPackages")`) to be made available and preloaded for use in variable transformation functions. For example, those explicitly defined in **RevoScaleR** functions via their `transforms` and `transformFunc` arguments or those defined implicitly via their `formula` or `rowSelection` arguments.  The `transformPackages` argument may also be `NULL`, indicating that no packages outside `rxGetOption("transformPackages")` are preloaded. 
 
 
 

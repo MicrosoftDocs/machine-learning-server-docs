@@ -462,7 +462,7 @@ Building a better understanding of the distribution of each variable and the rel
 
 The functions rxGetVarInfo and rxSummary provide useful information can help in this effort, but these two functions may need to be used differently when the data contain many variables. 
 
-As a first step, import the data to an .xdf so that you can execute functions providing metadata and summary statistics. Recall that rxGetVarInfo returns metadata about the data object. After loading data into an XDF data soource, the data type information can easily be accessed using the rxGetVarInfo function. 
+As a first step, import the data to an .xdf so that you can execute functions providing metadata and summary statistics. Recall that rxGetVarInfo returns metadata about the data object. After loading data into an XDF data source, the data type information can easily be accessed using the rxGetVarInfo function. 
 
 Because wide data has so many variables, printed output can be hard to read. As an alternative, save the variable information to an object that can serve as in informal data dictionary. We demonstrate this using the Claims data from the sample data directory:
 

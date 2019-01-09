@@ -201,7 +201,7 @@ in the splitting process:
 
     split variable are not sent further down the tree.
 
-1: Use surrogates,in order, to split observations missing the primary
+1: Use surrogates, in order, to split observations missing the primary
     split variable. If all surrogates are missing, the observation is not
     split.
 

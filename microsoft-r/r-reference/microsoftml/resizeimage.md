@@ -72,7 +72,7 @@ resizing method.
  ## Details
 
 `resizeImage` resizes an image to the specified height and width
-using a specified resizing method. The input variables to this transforms must 
+using a specified resizing method. The input variables to this transform must 
 be images, typically the result of the `loadImage` transform.
 
 

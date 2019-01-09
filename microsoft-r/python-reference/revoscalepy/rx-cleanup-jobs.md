@@ -65,8 +65,8 @@ The jobs for which to remove the artifacts, this can be a list of jobs or a sing
 
 ### force
 
-True indicates the cleanup should happen regardless of whether or not the job status can be determined
-and job results have already been retrieved false indicates that the should be cleaned up by calling
+*True* indicates the cleanup should happen regardless of whether or not the job status can be determined
+and job results have already been retrieved. *False* indicates that the should be cleaned up by calling
 *rx_get_job_results* or the job should have completed unsuccessfully (such as by using rx_cancel_job).
 
 

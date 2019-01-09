@@ -78,7 +78,7 @@ convergence. In general, the larger the `l2_weight`, the faster
 SDCA converges.
 
 Note that `rx_fast_linear` is a stochastic and streaming optimization
-algorithm. The results depends on the order of the training data. For
+algorithm. The results depend on the order of the training data. For
 reproducible results, it is recommended that one sets `shuffle` to
 `False` and `train_threads` to `1`.
 
@@ -223,7 +223,7 @@ to be performed. See [`featurize_text`](featurize-text.md),
 [`categorical`](categorical.md),
 and [`categorical_hash`](categorical-hash.md), for transformations that are supported.
 These transformations are performed after any specified Python transformations.
-The default avlue is *None*.
+The default value is *None*.
 
 
 ### ml_transform_vars

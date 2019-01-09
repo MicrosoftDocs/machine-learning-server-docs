@@ -39,7 +39,7 @@ Follow these links to get started:
 
 + [One-click installation of an auto-scale environment to operationalize your R analytics](https://blogs.msdn.microsoft.com/mlserver/2017/07/07/set-up-an-auto-scale-environment-to-operationalize-your-r-analytics-with-just-one-click/)
 
-+ [Machine Learning Server ARM templates on Github](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates/)
++ [Machine Learning Server ARM templates on GitHub](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates/)
 
 Other options include:
 

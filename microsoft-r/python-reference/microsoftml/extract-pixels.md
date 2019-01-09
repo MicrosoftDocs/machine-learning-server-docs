@@ -24,7 +24,7 @@ ms.custom: ""
  
 ---
 
-# *microsoftml.extract_pixels*: Extracts pixels form an image
+# *microsoftml.extract_pixels*: Extracts pixels from an image
 
 
 
@@ -55,7 +55,7 @@ Extracts the pixel values from an image.
 
 `extract_pixels` extracts the pixel values from an image. The input variables
 are images of the same size, typically the output of a `resizeImage` transform. The
-output are pixel data in vector form that are typically used as features for a learner.
+output is pixel data in vector form that are typically used as features for a learner.
 
 
 ## Arguments

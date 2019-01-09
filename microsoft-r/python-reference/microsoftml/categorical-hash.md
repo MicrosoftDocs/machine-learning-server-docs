@@ -91,7 +91,7 @@ hash. Otherwise, `False`. The default value is `True`.
 An integer specifying the limit on the number of keys
 that can be used to generate the slot name. `0` means no invert
 hashing; `-1` means no limit. While a zero value gives better
-performance, a non-zero value is needed to get meaningful coefficent names.
+performance, a non-zero value is needed to get meaningful coefficient names.
 The default value is `0`.
 
 
@@ -104,7 +104,7 @@ of output kind.
 
 * `"Ind"`: Outputs an indicator vector. The input column is a vector of categories, and the output contains one indicator vector per slot in the input column. 
 
-* `"Key`: Outputs an index. The output is an integer id (between 1 and the number of categories in the dictionary) of the category. 
+* `"Key`: Outputs an index. The output is an integer ID (between 1 and the number of categories in the dictionary) of the category. 
 
 * `"Bin`: Outputs a vector which is the binary representation of the category. 
 

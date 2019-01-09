@@ -106,7 +106,7 @@ Use these functions to indicate whether the payload is a code block or script.
 |[remoteScript](remotescript.md)|A simple wrapper function for executing a remote R script.|
 |[diffLocalRemote](difflocalremote.md)|Generate a 'diff' report between local and remote.|
 
-### 5-Remote command line functions
+### 5-Remote command-line functions
 
 |Function | Description |
 |---------|---------|

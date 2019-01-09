@@ -85,7 +85,7 @@ However, if you cannot reach the landing page, the `admin` can log into the serv
      >All output from the diagnostic test are stored into `$DEPLOYR_HOME/deployr/tmp/logs/diagnostics.zip`.
 
 #### For DeployR 8.0.0
-+ **On Windows**: Run the following commands. All output from the diagnostic test are stored in `C:\Program Files\Microsoft\DeployR-<VERSION>\deployr\logs\diagnostics.zip`.
++ **On Windows**: Run the following commands. All output from the diagnostic test is stored in `C:\Program Files\Microsoft\DeployR-<VERSION>\deployr\logs\diagnostics.zip`.
    ```NA
    cd C:\Program Files\Microsoft\DeployR-8.0\deployr\diagnostics 
    diagnostics.bat
@@ -93,7 +93,7 @@ However, if you cannot reach the landing page, the `admin` can log into the serv
 
    > If the server log, `catalina.[YYYY-MM-DD].log`, contains information you do not wish to share with technical support, you can exclude that file. To do so, add `--exclude-server-log`, such as:`diagnostics.bat --exclude-server-log`
 
-+ **On Linux / OS X**: Run the following commands. All output from the diagnostic test are stored in the `$DEPLOYR_HOME/deployr/logs/diagnostics.tar.gz`.
++ **On Linux / OS X**: Run the following commands. All output from the diagnostic test is stored in the `$DEPLOYR_HOME/deployr/logs/diagnostics.tar.gz`.
    ```NA
    cd $DEPLOYR_HOME/deployr/diagnostics 
    ./diagnostics.sh
@@ -103,7 +103,7 @@ However, if you cannot reach the landing page, the `admin` can log into the serv
 
 ### Inspecting Diagnostic Log Files
 
-A copy of the following log and configuration files are bundled together during the diagnostic check. Review the log and configuration files for any component that was identified as experiencing issues.
+A copy of the following log and configuration files is bundled together during the diagnostic check. Review the log and configuration files for any component that was identified as experiencing issues.
 
 **For Windows**
 
@@ -166,7 +166,7 @@ This section contains pointers to help you troubleshoot some problems that can o
 
 During the installation of DeployR on Windows, if you get the error `DeployR RServe package download failed`, this may be due to several potential issues, including:
 + Unavailable or poor network connectivity
-+ The package zip could not be found in Github
++ The package zip could not be found in GitHub
 + Download is disabled on machine for reasons such as corporate policy
 
 If this should occur, do the following:
@@ -481,7 +481,7 @@ If you run into conflicts with other applications, consider changing the port nu
 
 1. From the main menu, choose the option to **Change DeployR Ports**. 
 
-1. Choose the option cooresponding to the port you want to change and change the port number.
+1. Choose the option corresponding to the port you want to change and change the port number.
 
 1. Return to the main menu and choose the option to restart the server. 
 

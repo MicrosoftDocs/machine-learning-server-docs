@@ -161,7 +161,7 @@ Run **rxGetInfo** to return metadata, including the number of composite data fil
 
 ## Control generated file output
 
-Number of generated .xdfd files depends on characteristics of source data, but it is generally one file per HDFS block. However, if the original source data is distributed among multiple smaller files, each file counts as a block even if the file size is well below HDFS block size, thus the files The HDFS block size varies from installation to installation, but is typically either 64MB or 128MB. For more in depth information about the composite XDF format and its use within a Hadoop compute context, see [Get started with HadoopMR and RevoScaleR](how-to-revoscaler-hadoop.md).
+Number of generated .xdfd files depends on characteristics of source data, but it is generally one file per HDFS block. However, if the original source data is distributed among multiple smaller files, each file counts as a block even if the file size is well below HDFS block size. The HDFS block size varies from installation to installation, but is typically either 64MB or 128MB. For more in-depth information about the composite XDF format and its use within a Hadoop compute context, see [Get started with HadoopMR and RevoScaleR](how-to-revoscaler-hadoop.md).
 
 Filenames are based on the parent directory name.
 

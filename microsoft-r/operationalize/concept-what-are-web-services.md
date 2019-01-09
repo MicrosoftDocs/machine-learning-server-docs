@@ -30,7 +30,7 @@ In Machine Learning Server, a web service is an R or Python code execution on th
 
 Data scientists can deploy R and Python code and models as web services into Machine Learning Server to give other users a chance to use their code and predictive models. Once hosted there, these web services are exposed and available for consumption. 
 
-Web services can be consumed directly in R or Python, programmatically using [REST APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis), or via [Swagger-generated client libraries](how-to-build-api-clients-from-swagger-for-app-integration.md).  They can be consumed synchronously, in realtime, or in batch mode. They can also be deployed from one platform and consumed on another.
+Web services can be consumed directly in R or Python, programmatically using [REST APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis), or via [Swagger-generated client libraries](how-to-build-api-clients-from-swagger-for-app-integration.md).  They can be consumed synchronously, in real-time, or in batch mode. They can also be deployed from one platform and consumed on another.
 
 Web services facilitate the consumption and integration of the operationalized models and code they contain.  Once you've built a predictive model, in many cases the next step is to operationalize the model. That is to generate predictions from the pre-trained model on demand. In this scenario, where new data often become available one row at a time, latency becomes the critical metric. It is important to respond with the single prediction (or score) as quickly as possible.
 
@@ -38,7 +38,7 @@ Each web service is uniquely defined by its name and version. You can use the fu
 
 **Requirement!** Before you can deploy and work with web services, you must have access to a Machine Learning Server instance [configured to host web services](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization). 
 
-There are two types of web services: standard and realtime. 
+There are two types of web services: standard and real-time.
 
 <a name="standard"></a>
 
@@ -52,21 +52,21 @@ Standard web services, like all web services, are identified by their name and v
 
 <a name="realtime"></a>
 
-## Realtime web services
+## Real-time web services
 
-Realtime web services do not support arbitrary code and only accept models created with the supported functions from packages installed with the product. See the following sections for the list of supported functions by language and package.
+Real-time web services do not support arbitrary code and only accept models created with the supported functions from packages installed with the product. See the following sections for the list of supported functions by language and package.
 
-Realtime web services offer even lower latency to produce results faster and score more models in parallel. The improved performance boost comes from the fact that these web services do not depend on an interpreter at consumption time even though the services use the objects created by the model. Therefore, fewer additional resources and less time is spent spinning up a session for each call. Additionally, the model is only loaded once in the compute node and can be scored multiple times.
+Real-time web services offer even lower latency to produce results faster and score more models in parallel. The improved performance boost comes from the fact that these web services do not depend on an interpreter at consumption time even though the services use the objects created by the model. Therefore, fewer additional resources and less time is spent spinning up a session for each call. Additionally, the model is only loaded once in the compute node and can be scored multiple times.
 
-For realtime services, you do **not** need to specify:
+For real-time services, you do **not** need to specify:
 + inputs and outputs (dataframes are assumed)
 + code (only serialized models are supported)
 
-**See realtime web service deployment examples: [R](how-to-deploy-web-service-publish-manage-in-r.md#realtime-example)  |  [Python](python/how-to-deploy-manage-web-services.md#realtime-example)**
+**See real-time web service deployment examples: [R](how-to-deploy-web-service-publish-manage-in-r.md#realtime-example)  |  [Python](python/how-to-deploy-manage-web-services.md#realtime-example)**
 
 <a name="r"></a>
 
-### Supported R functions for realtime
+### Supported R functions for real time
 
 A model object created with these supported functions:
 
@@ -74,7 +74,7 @@ A model object created with these supported functions:
 |                            R package                             |                                                                                                                                                                                                                       Supported functions                                                                                                                                                                                                                       |
 |------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |      [RevoScaleR](../r-reference/revoscaler/revoscaler.md)       |                                                                                                                                                                                                         rxBTrees, rxDTree, rxDForest, rxLogit, rxLinMod                                                                                                                                                                                                         |
-| [MicrosoftML](../r-reference/microsoftml/microsoftml-package.md) | Machine learning and transform tasks:<br/>rxFastTrees, rxFastForest, rxLogisticRegression, rxOneClassSvm, rxNeuralNet, rxFastLinear, featurizeText, concat, categorical, categoricalHash, selectFeatures, featurizeImage, getSentiment, loadimage, resizeImage, extractPixels, selectColumns, and dropColumns<br><br>While mlTransform featurization is supported in realtime scoring, R transforms are not supported. Instead, use sp_execute_external_script. |
+| [MicrosoftML](../r-reference/microsoftml/microsoftml-package.md) | Machine learning and transform tasks:<br/>rxFastTrees, rxFastForest, rxLogisticRegression, rxOneClassSvm, rxNeuralNet, rxFastLinear, featurizeText, concat, categorical, categoricalHash, selectFeatures, featurizeImage, getSentiment, loadimage, resizeImage, extractPixels, selectColumns, and dropColumns<br><br>While mlTransform featurization is supported in real-time scoring, R transforms are not supported. Instead, use sp_execute_external_script. |
 
 <a name="inputdf"></a>
 There are additional restrictions on the input dataframe format for microsoftml models:
@@ -87,7 +87,7 @@ There are additional restrictions on the input dataframe format for microsoftml 
 
 <a name="python"></a>
 
-### Supported Python functions for realtime
+### Supported Python functions for real time
 
 |Python package|Supported functions|
 |-------------|--------------------|

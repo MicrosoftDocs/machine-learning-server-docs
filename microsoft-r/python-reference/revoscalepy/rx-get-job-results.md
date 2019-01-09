@@ -77,7 +77,7 @@ rxGetJobResults, and the console output via rxGetJobOutput until the
 rxCleanupJobs is used to delete the artifacts. If not None, this flag
 overwrites the value set in the compute context when the job was submitted.
 If you routinely set auto_cleanup=False, you will eventually fill your hard
-disk with compute artifacts.If you set auto_cleanup=True and experience
+disk with compute artifacts. If you set auto_cleanup=True and experience
 performance degradation on a Windows XP client, consider setting
 auto_cleanup=False.
 

@@ -26,10 +26,10 @@ ms.custom: ""
 
 
 
- # as.rpart: Conversion of a RevoScaleR rxDTree object to an rpart Object 
+ # as.rpart: Conversion of a RevoScaleR rxDTree object to a rpart Object 
  ## Description
 
-Converts objects containing decision tree results to an rpart object.
+Converts objects containing decision tree results to a rpart object.
 
 
  ## Usage
@@ -59,7 +59,7 @@ as.rpart  (x, ...)
 This function converts an existing object of class rxDTree an object of
 class `rpart`.
 The underlying structure of the output object will be a subset of that produced by an equivalent call to
-`rpart`. In many cases, this method can be used to coerce an object
+`rpart`. Often, this method can be used to coerce an object
 for use with the **pmml** package.  **RevoScaleR** model objects that contain
 `transforms` or a `transformFunc` are not supported.
 

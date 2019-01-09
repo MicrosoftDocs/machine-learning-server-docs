@@ -79,7 +79,7 @@ The download file is sw_dvd5_r_server_2016_english_-2_for_RdHtLinux_mlf_x20-9871
 Microsoft R Server for Linux is deployed by running the install script with no parameters, which you can install at the root, or as super user via `sudo`.
 
 1. Log in as root or a user with sudo privileges (`sudo su`). The following instructions assume user privileges with the sudo override.
-2. Verify system repositories are up to date:
+2. Verify system repositories are up-to-date:
 		`[username] $ sudo yum clean all`
 3. Change to the directory to which you downloaded the rpm (for example, **/tmp**):
 		`[username] $ cd /tmp`
@@ -155,7 +155,7 @@ In this section, we discuss file management for your Microsoft R Server installa
 
 ### File ownership
 
-If followed the instructions provided, the installed files are all owned by root. For single-user workstations where the user has either sudo privileges or access to the root password, this is normally fine. In enterprise environments, however, it's common to have third-party applications such as Microsoft R Server installed into an account owned by a non-root user; this can make maintenance easier and reduce security concerns. In such an environment, you may wish to create an "RUser" account, and change ownership of the files to that user. You can do that as follows:
+If you followed the instructions provided, the installed files are all owned by root. For single-user workstations where the user has either sudo privileges or access to the root password, this is normally fine. In enterprise environments, however, it's common to have third-party applications such as Microsoft R Server installed into an account owned by a non-root user; this can make maintenance easier and reduce security concerns. In such an environment, you may wish to create an "RUser" account, and change ownership of the files to that user. You can do that as follows:
 
 1. Install Microsoft R Server as root, as usual.
 2. Create the "RUser" account if it does not already exist. Assign this user to a suitable group, if desired.
@@ -220,7 +220,7 @@ Creating a repository from an MRAN snapshot is very straightforward:
 
 		library(miniCRAN)
 
-3. Specify an MRAN snaphot:
+3. Specify an MRAN snapshot:
 
 		CRAN <- "http://mran.revolutionanalytics.com/snapshot/2015-11-30"
 

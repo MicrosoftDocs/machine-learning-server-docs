@@ -59,7 +59,7 @@ as.kmeans  (x, ...)
 This function converts an existing object of class `"rxKmeans"` an object of
 class `"kmeans"`.
 The underlying structure of the output object will be a subset of that produced by an equivalent call to
-`kmeans`. In many cases, this method can be used to coerce an object
+`kmeans`. Often, this method can be used to coerce an object
 for use with the **pmml** package. **RevoScaleR** model objects that contain
 `transforms` or a `transformFunc` are not supported.
 

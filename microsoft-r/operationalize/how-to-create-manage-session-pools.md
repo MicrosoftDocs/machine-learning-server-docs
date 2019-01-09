@@ -75,7 +75,7 @@ This feature is still under development. In rare cases, the [deleteServicePool](
  # Deletes the dedicated session pool and releases resources
  deleteServicePool(name = "myWebService1234", version = "v1.0.0")
  
- # Check the realtime status of dedicated pool
+ # Check the real-time status of dedicated pool
  getPoolStatus(name = "myWebService1234", version = "v1.0.0")
  
  # make sure the return status is NotFound on all computeNodes

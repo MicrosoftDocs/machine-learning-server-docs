@@ -112,7 +112,7 @@ User-defined transforms and transform functions are evaluated in essentially the
 
 An evaluation environment is constructed from the base environment together with the utils, stats, methods packages, any packages specified with the *transformPackages* argument, and any specified *transformObjects*, and the closure of the transform function. 
 
-Functions are then evaluated in the context of this environment. Function that are in packages but not part of the evaluation environment can be used if fully qualified (specifically, prefixed by the package name and two or three colons, depending on whether the function is exported).
+Functions are then evaluated in the context of this environment. Functions that are in packages but not part of the evaluation environment can be used if fully qualified (specifically, prefixed by the package name and two or three colons, depending on whether the function is exported).
 
 If you are using methods packages, you can modify the basic list by setting the **rxOption** *transformPackages* argument.
 
@@ -125,7 +125,7 @@ Transform functions are very powerful, but there are four types of transformatio
 3. Transformations that have the possibility of creating different mappings of factor codes to factor labels.
 4. Transformations that involve sampling with replacement. Again, this is because RevoScaleR works on chunks of data, and sampling with replacement chunk by chunk is not equivalent to sampling with replacement from the full data set.
 
-If you change the length of one variable, you will get errors from subsequent analysis functions that not all variables are the same length. If you try to change the length of all variables (essentially, performing some sort of row selection), you need to pass all of your data through the transform function, and this can be very inefficient. To avoid this problem, use row selection to work on data one slice at a time..
+If you change the length of one variable, you will get errors from subsequent analysis functions that not all variables are the same length. If you try to change the length of all variables (essentially, performing some sort of row selection), you need to pass all of your data through the transform function, and this can be very inefficient. To avoid this problem, use row selection to work on data one slice at a time.
 
 If you create a factor within a transformation function, you may get unexpected results because all of the data is not in memory at one time. When creating a factor within a transformation function, you should always explicitly set the values and labels. For example:
 

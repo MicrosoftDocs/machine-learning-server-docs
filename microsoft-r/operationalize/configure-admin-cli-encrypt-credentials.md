@@ -44,7 +44,7 @@ The encryption function available in the administration utility relies on the RS
 
      You do not need an Azure subscription to use this CLI. It is installed as part of Machine Learning Server and runs locally.
 
-     1. On the machine hosting the node, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
+     1. On the machine hosting the node, launch a command-line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
 
      1. Run the command to encrypt:
         ```azurecli

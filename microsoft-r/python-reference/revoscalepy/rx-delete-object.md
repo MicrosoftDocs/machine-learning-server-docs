@@ -47,7 +47,7 @@ revoscalepy.rx_delete_object(src: revoscalepy.datasource.RxOdbcData.RxOdbcData,
 
 ## Description
 
-Deletes an object from an ODBC data source. The APIs are modelled
+Deletes an object from an ODBC data source. The APIs are modeled
 after a simple key value store.
 
 
@@ -58,9 +58,9 @@ are multiple objects identified by the key/version combination, all are
 deleted.
 
 The key and the version column should be of some SQL character type
-(CHAR, VARCHAR, NVARCHAR, etc) supported by the data source. The value
+(CHAR, VARCHAR, NVARCHAR, etc.) supported by the data source. The value
 column should be a binary type (VARBINARY for instance). Some
-conversions to other types might work, however, they are dependant on
+conversions to other types might work, however, they are dependent on
 the ODBC driver and on the underlying package functions.
 
 
@@ -98,8 +98,8 @@ version in the underlying table.
 
 ### all
 
-Bool value. True to remove all objects from the data source.
-If True, the ‘key’ parameter is ignored.
+Bool value. *True* to remove all objects from the data source.
+If *True*, the ‘key’ parameter is ignored.
 
 
 ## Returns
