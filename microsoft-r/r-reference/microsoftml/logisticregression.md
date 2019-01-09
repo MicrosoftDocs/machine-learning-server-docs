@@ -69,7 +69,7 @@ Creates a list containing the function name and arguments to train a
   
   
  ### `initWtsScale`
- Sets the initial weights diameter that specifies  the range from which values are drawn for the initial weights. These   weights are initialized randomly from within this range. For  example, if the diameter is specified to be `d`, then the weights  are uniformly distributed between `-d/2` and `d/2`. The default value is `0`, which specifies that allthe  weights are  initialized to `0`. 
+ Sets the initial weights diameter that specifies  the range from which values are drawn for the initial weights. These   weights are initialized randomly from within this range. For  example, if the diameter is specified to be `d`, then the weights  are uniformly distributed between `-d/2` and `d/2`. The default value is `0`, which specifies that all the  weights are  initialized to `0`. 
   
   
   

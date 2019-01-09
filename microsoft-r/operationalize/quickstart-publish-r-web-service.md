@@ -28,7 +28,7 @@ ms.prod: "mlserver"
 
 Learn how to publish an R model as a web service with Machine Learning Server, formerly known as Microsoft R Server. Data scientists work locally with [Microsoft R Client](../r-client-get-started.md) in their preferred R IDE and favorite version control tools to build scripts and models. Using the mrsdeploy package that ships with Microsoft R Client and Machine Learning Server, you can develop, test, and ultimately deploy these R analytics as web services in your production environment. 
 
-An Machine Learning Server R web service is an R code execution on the [operationalization compute node](configure-start-for-administrators.md#configure-server-for-operationalization). Each web service is uniquely defined by a `name` and `version`. You can use the functions in [the mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md) to gain access a service's lifecycle from an R script. A set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis) are also available to provide direct programmatic access to a service's lifecycle directly. 
+A Machine Learning Server R web service is an R code execution on the [operationalization compute node](configure-start-for-administrators.md#configure-server-for-operationalization). Each web service is uniquely defined by a `name` and `version`. You can use the functions in [the mrsdeploy package](../r-reference/mrsdeploy/mrsdeploy-package.md) to gain access a service's lifecycle from an R script. A set of [RESTful APIs](https://microsoft.github.io/deployr-api-docs/#services-management-apis) is also available to provide direct programmatic access to a service's lifecycle directly. 
 
 ## Time estimate
 

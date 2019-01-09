@@ -269,7 +269,7 @@ The following table presents the complete list of LDAP and Active Directory conf
 | ldap.search.timeLimit                 | 0 (unlimited)                  | The time to wait before the search fails.                                                                                                           |
 | ldap.search.attributesToReturn        | null (all)                     | The attributes to return as part of the search.                                                                                                     |
 | ldap.authenticator.dnPatterns         | null (none)                    | "Optional pattern(s) used to create DN search patterns, e.g. \[""cn={0},ou=people""\]."                                                             |
-| ldap.authenticator.attributesToReturn | null (all)                     | Names of attribute ids to return; use null to return all and an empty list to return none.                                                          |
+| ldap.authenticator.attributesToReturn | null (all)                     | Names of attribute IDs to return; use null to return all and an empty list to return none.                                                          |
 
 **Authorities Properties**
 

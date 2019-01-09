@@ -38,7 +38,7 @@ A small sample of airline on-time performance data.
 
  ## Format
 
-An .xdf file with 600000 observations on the following 3 variables.
+An .xdf file with 600000 observations on the following 3 variables:
 
 
 ### `ArrDelay`

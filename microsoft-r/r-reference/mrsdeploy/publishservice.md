@@ -2,7 +2,7 @@
 
 # required metadata 
 title: "publishService function (mrsdeploy) | Microsoft Docs" 
-description: " Publishes an R code block or a Realtime model as a new web service running on R Server. " 
+description: " Publishes an R code block or a real-time model as a new web service running on R Server." 
 keywords: "(mrsdeploy), publishService" 
 author: "heidisteen" 
 manager: "cgronlun" 
@@ -27,10 +27,10 @@ ms.custom: ""
 
 
 
- # publishService: Publishes an R code block or a Realtime model as a new web service. 
+ # publishService: Publishes an R code block or a real-time model as a new web service. 
  ## Description
 
-Publishes an R code block or a Realtime model as a new web service running on
+Publishes an R code block or a real-time model as a new web service running on
 R Server.
 
 
@@ -66,7 +66,7 @@ R Server.
 *   Filepath to a local `.RData` file holding R objects to be loaded. For example,  `model = "/path/to/glm-model.RData"` 
 *   Filepath to a local `.R` file that is evaluated into an environment and loaded. For example,  `model = "/path/to/glm-model.R"` 
 *   An object. For example,  `model = "model = am.glm"` 
- For realtime web services (serviceType = 'Realtime'), only an R model  object is accepted. For example, `model = "model = am.glm"` 
+ For real-time web services (serviceType = 'Realtime'), only an R model  object is accepted. For example, `model = "model = am.glm"` 
 
 
 
@@ -112,7 +112,7 @@ R Server.
 
 
  ### `alias`
- (optional) An alias name of the predication remote procedure call (RPC) function used to consume the service. If code is a function,  then it will use that function name by default. 
+ (optional) An alias name of the prediction remote procedure call (RPC) function used to consume the service. If code is a function,  then it will use that function name by default. 
 
 
 
@@ -189,7 +189,7 @@ publishService(
     outputs = list(result = "numeric")
 )
 
-# --- Publish service using Realtime model
+# --- Publish service using real-time model
 publishService(
   "kyphosisLogRegModel",
   code = NULL,

@@ -405,7 +405,7 @@ Right after submission, the job status will typically return *"running"*. When t
 
 You should always assign the *jobInfo* object so that you can easily track your work, but if you forget, the most recent *jobInfo* object is saved in the global environment as the object *rxgLastPendingJob*. (By default, after you’ve retrieved your job results, the results are removed from the cluster. To have your job results remain, set the *autoCleanup* argument to *FALSE* in *RxHadoopMR*.)
 
-If, after submitting a job in a non-waiting compute context, you decide you don’t want to complete the job, you can cancel the job using the *rxCancelJob* function:
+If after submitting a job in a non-waiting compute context, you decide you don’t want to complete the job, you can cancel the job using the *rxCancelJob* function:
 
 	job2 <- rxLinMod(ArrDelay ~ DayOfWeek, data = airDS)
 	rxCancelJob(job2)
@@ -611,7 +611,7 @@ The data set contains a variable *UniqueCarrier*, which contains airline codes f
 	delayCarrier <- rxLinMod(ArrDelay ~ UniqueCarrier,
 		data = airData, cube = TRUE)
 
-Next, sort the coefficient vector so that the we can see the airlines with the highest and lowest values.
+Next, sort the coefficient vector so that we can see the airlines with the highest and lowest values.
 
 	dcCoef <- sort(coef(delayCarrier))
 
@@ -680,7 +680,7 @@ You can predict (or score) from a fitted model on Hadoop using *rxPredict*. In t
     rxPredict(modelObject=logitObj, data=airData, outData=airDataPred,
 		computeResiduals=TRUE)
 
-By putting in a call to *rxGetVarInfo* we see that two variables, *ArrDel15\_Pred* and *ArrDel15\_Resid* were written to the *airDataPred* composite XDF. If, in addition to the prediction variables, we wanted to have the variables used in the model written to our *outData* we would need to add the *writeModelVars=TRUE* to our *rxPredict* call.
+By putting in a call to *rxGetVarInfo* we see that two variables, *ArrDel15\_Pred* and *ArrDel15\_Resid* were written to the *airDataPred* composite XDF. If in addition to the prediction variables, we wanted to have the variables used in the model written to our *outData* we would need to add the *writeModelVars=TRUE* to our *rxPredict* call.
 
 Alternatively, we can update the *airData* to include the predicted values and residuals by not specifying an *outData* argument, which is *NULL* by default. Since the airData composite XDF already exists, we would need to add *overwrite=TRUE* to the *rxPredict* call.
 
@@ -749,7 +749,7 @@ After you’ve exported the query results to a text file, it can be streamed dir
 
 ### Writing to CSV in HDFS
 
-If you converted your CSV to XDF to take advantage of the efficiency while running analyses, but now wish to convert your data back to CSV you can do so using *rxDataStep*. (This feature is still experimental.) To create a folder of CSV files, first create an RxTextData object using a directory name as the file argument; this represents the folder in which to create the CSV files. This directory is created when you run the *rxDataStep*.Then, point to this *RxTextData* object in the *outFile* argument of the *rxDataStep*. Each CSV created will be named based on the directory name and followed by a number.
+If you converted your CSV to XDF to take advantage of the efficiency while running analyses, but now wish to convert your data back to CSV you can do so using *rxDataStep*. (This feature is still experimental.) To create a folder of CSV files, first create an RxTextData object using a directory name as the file argument; this represents the folder in which to create the CSV files. This directory is created when you run the *rxDataStep*. Then, point to this *RxTextData* object in the *outFile* argument of the *rxDataStep*. Each CSV created will be named based on the directory name and followed by a number.
 
 Suppose we want to write out a folder of CSV in HDFS from our airData composite XDF after we performed the logistic regression and prediction, so that the new CSV files contain the predicted values and residuals. We can do this as follows:
 

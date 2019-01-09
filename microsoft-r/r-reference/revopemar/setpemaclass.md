@@ -84,7 +84,7 @@ Returns a generator function for creating analysis reference class objects to us
  ## Details
 
 See setRefClass for more information on arguments and using reference classes.
-The `setPemaCLass` genrator provides a framework for writing parallel, external memory
+The `setPemaCLass` generator provides a framework for writing parallel, external memory
 algorithms (PEMAs) that can be run serially on a single computer, and will be automatically
 parallelized when run on cluster supported by **RevoScaleR**.
 

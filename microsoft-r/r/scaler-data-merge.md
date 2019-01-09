@@ -90,7 +90,7 @@ Then we use rxMerge to create an inner merge matching on the columns *acct* and 
 	 5  763 Tom D        1 OffVisit
 	 6  763 Tom D        1 AdultPro
 	 
-Because the patient 1 in account 538 and patient 1 in account 1534 had no visits, they are omitted from the merged file. Similarly, patient 2 in account 763 had a visit, but does not have any information in the accounts file, so it too is omitted from the merged data set. Also, note that the two input data files are automatically sorted on the merge keys before merging.
+Because the patient 1 in account 538 and patient 1 in account 1534 had no visits, they are omitted from the merged file. Similarly, patient 2 in account 763 had a visit, but does not have any information in the accounts file, so it to is omitted from the merged data set. Also, note that the two input data files are automatically sorted on the merge keys before merging.
 
 ## Outer merge
 

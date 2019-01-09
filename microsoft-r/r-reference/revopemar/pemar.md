@@ -38,7 +38,7 @@ The **RevoPemaR** package provides a framework for creating Parallel External Me
  
 ## How to use RevoPemaR
 
-When used with the **RevoScaleR** package, analyses can be distributed automatically on Hadoop clusters using Cloudera's CDH or Hortonworks' HDP. For additional documentation, see [Get started with PemaR functions in Microsoft R](https://msdn.microsoft.com/microsoft-r/pemar-getting-started).
+When used with the **RevoScaleR** package, analyses can be distributed automatically on Hadoop clusters using Cloudera's CDH or Hortonworks' HDP. For more information, see [Get started with PemaR functions in Microsoft R](https://msdn.microsoft.com/microsoft-r/pemar-getting-started).
 
 In an R session, load **RevoPemaR** from the command line by typing`library(RevoPemaR)`.
 

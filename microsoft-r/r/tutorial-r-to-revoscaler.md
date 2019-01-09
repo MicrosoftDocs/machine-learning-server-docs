@@ -403,7 +403,7 @@ Output:
 	[2,]   10   26    8
 	[3,]   14   30    4
 
-Matrix multipliation uses the expected operators:
+Matrix multiplication uses the expected operators:
 
 	A * A
 
@@ -493,7 +493,7 @@ The function `lapply` can be used to apply the same function to each component o
 
 <a name="ExploreScaleRFunctions"></a>
 
-## Expore RevoScaleR Functions
+## Explore RevoScaleR Functions
 
 The **RevoScaleR** package, included in Machine Learning Server and R Client, provides a framework for quickly writing start-to-finish, scalable R code for data analysis. When you start the R console application on a computer that has Machine Learning Server or R Client, the RevoScaleR function library is loaded automatically.
 

@@ -103,7 +103,7 @@ You can run a script in the **Test** page using the script's source code as-is r
 <br/>
 ### Running Entire Scripts with Modified Inputs
 
-You can supply new and modified input values for a script, and then pass those inputs those inputs values when executing the script.
+You can supply new and modified input values for a script, and then pass those input values when executing the script.
 
 Supply new input values in the following ways:
 
@@ -146,7 +146,7 @@ If you own the script and have [**POWER_USER**](../what-is-operationalization.md
 
 In the **Debug Console Output** pane, you can see all of the R session console output generated during the execution of the code on the DeployR server. Each time code is executed in this **Test** page, this pane is automatically populated for you.
 
-While this pane bears some resemblance to R's console, the **Debug Console Output** pane in Repository Manager is designed to help you learn more about your script's behavior for the purposes of debugging the script, not act as your primary development environment. This **Debug Console Output** pane executes code exclusively on the server and does not have the same capabilities as a full R console.
+While this pane bears some resemblance to R's console, the **Debug Console Output** pane in Repository Manager is designed to help you learn more about your script's behavior for the purposes of debugging the script, not to act as your primary development environment. This **Debug Console Output** pane executes code exclusively on the server and does not have the same capabilities as a full R console.
 
 If you are an owner assigned the **POWER_USER** role, you can select and run elements from the **Source** pane and inspect the workspace here to see the objects and their values.
 
@@ -214,7 +214,7 @@ To clear the pane, workspace or working directory:
 1.  Select one of the following options:
 
 	-  **Clear Pane** to clear the output visible on the pane without affecting on the underlying R session.
-	-  **Clear Workspace** to clear **all** binary R objects or models from the workspace on the underlying R session regardless of whether they were generate during code execution or loaded into the session.
+	-  **Clear Workspace** to clear **all** binary R objects or models from the workspace on the underlying R session regardless of whether they were generated during code execution or loaded into the session.
 	-  **Clear Working Directory** to clear **all** files from the working directory on the underlying R session.
 	-  **Clear Both** to clear all binary R objects from the workspace and all files from the working directory on the underlying R session.
 

@@ -99,10 +99,10 @@ For additional instructions on configuring a multi-user server, see [How to add 
 
 ### How to load Python samples on Windows
 
-1. Download just the .ipynb files from the Github repo [https://github.com/Microsoft/ML-Server-Python-Samples](https://github.com/Microsoft/ML-Server-Python-Samples):
+1. Download just the .ipynb files from the GitHub repo [https://github.com/Microsoft/ML-Server-Python-Samples](https://github.com/Microsoft/ML-Server-Python-Samples):
 
    + Go to the source page: [ML-Server-Python-Samples/microsoftml/quickstarts/binary-classification/Binary+Classification+Quickstart.ipynb](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/quickstarts/binary-classification/Binary%2BClassification%2BQuickstart.ipynb)
-   + In the Github page for this notebook, click **Raw** to show the Python script.
+   + In the GitHub page for this notebook, click **Raw** to show the Python script.
    + Use the browser save-as command to save a local copy of the file. Apply an **.ipynb** file extension.
 
    > [!Note]

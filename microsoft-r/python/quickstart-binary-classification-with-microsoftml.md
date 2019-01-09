@@ -37,7 +37,7 @@ After you have completed the prerequisites, this task takes approximately *10* m
 
 ## Prerequisites
 
-Before you begin this QuickStart, have an the following ready:
+Before you begin this QuickStart, have the following ready:
 
 > [!div class="checklist"]
 > * An instance of [Machine Learning Server ](../what-is-machine-learning-server.md) installed with the Python option.<br/>&nbsp;

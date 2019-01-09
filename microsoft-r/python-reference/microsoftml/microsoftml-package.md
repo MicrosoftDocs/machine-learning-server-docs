@@ -99,7 +99,7 @@ This section lists the functions by category to give you an idea of how each one
 |----------|-------------|
 |[microsoftml.load_image](load-image.md) | Loads an image |
 |[microsoftml.resize_image](resize-image.md) | Resizes an Image |
-|[microsoftml.extract_pixels](extract-pixels.md) | Extracts pixels form an image |
+|[microsoftml.extract_pixels](extract-pixels.md) | Extracts pixels from an image |
 |[microsoftml.featurize_image](featurize-image.md) | Converts an image into features |
 
 
@@ -123,7 +123,7 @@ For SQL Server, add both Python modules to your computer by running setup:
 
 + [Set up Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
 
-Follow this SQL Server tutorial for hands on experience: 
+Follow this SQL Server tutorial for hands-on experience: 
 
 + [Using the MicrosoftML Package with SQL Server](https://docs.microsoft.com/en-us/sql/advanced-analytics/using-the-microsoftml-package) 
 

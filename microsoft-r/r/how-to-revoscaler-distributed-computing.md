@@ -25,7 +25,7 @@ ms.prod: "mlserver"
 
 # Distributed and parallel computing in Machine Learning Server
 
-Machine Learning Server's computational engine is built for distributed and parallel processing, automatically partitioning a workload across multiple nodes in a cluster, or on the available threads on multi-core machine. Access to the engine is through functions in our properietary packages: [RevoScaleR (R)](../r-reference/revoscaler/revoscaler.md), [revoscalepy (Python)](../python-reference/revoscalepy/revoscalepy-package.md), and machine learning algorithms in [MicrosoftML (R)](../r-reference/microsoftml/microsoftml-package.md) and [microsoftml (Python)](../python-reference/microsoftml/microsoftml-package.md), respectively.  
+Machine Learning Server's computational engine is built for distributed and parallel processing, automatically partitioning a workload across multiple nodes in a cluster, or on the available threads on multi-core machine. Access to the engine is through functions in our proprietary packages: [RevoScaleR (R)](../r-reference/revoscaler/revoscaler.md), [revoscalepy (Python)](../python-reference/revoscalepy/revoscalepy-package.md), and machine learning algorithms in [MicrosoftML (R)](../r-reference/microsoftml/microsoftml-package.md) and [microsoftml (Python)](../python-reference/microsoftml/microsoftml-package.md), respectively.  
 
 RevoScaleR and revoscalepy provide data structures and data operations used in downstream analyses and predictions. Both libraries are designed to process large data one chunk at a time, independently and in parallel. Each computing resource needs access only to that portion of the total data source required for its particular computation. This capability is amplified on distributed computing platforms like Spark. Instead of passing large amounts of data from node to node, the computations are farmed out to nodes in the cluster, executing on the node providing the data.
 
@@ -82,7 +82,7 @@ The following analytical functions execute in parallel, with the results unified
 
 ## User-defined distributed analysis
 
-An alternative approach is to use the [rxExec (R)](../r-reference/revoscaler/rxexec.md) or [rx-exec (Python)](../python-reference/revoscalepy/rx-exec.md)function, which can run arbitrary R functions in a distributed fashion on available cores, and all available nodes in a cluster. You can create new functions or call existing functions in sequence, packaged as a single execution perfromed by rxExec.
+An alternative approach is to use the [rxExec (R)](../r-reference/revoscaler/rxexec.md) or [rx-exec (Python)](../python-reference/revoscalepy/rx-exec.md)function, which can run arbitrary R functions in a distributed fashion on available cores, and all available nodes in a cluster. You can create new functions or call existing functions in sequence, packaged as a single execution performed by rxExec.
 
 When using rxExec, you largely control how the computational tasks are distributed and you are responsible for any aggregation and final processing of results. 
 

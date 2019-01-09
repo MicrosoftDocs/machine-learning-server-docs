@@ -430,7 +430,7 @@ If you are using the RStudio IDE, perform the following steps to load RevoScaleR
 
 5. Save the file.
 
-6. Start RStudio. In the Console window, you should see messages indicating the both Microsoft R Open and Microsoft R Client packages are loaded.
+6. Start RStudio. In the Console window, you should see messages indicating both the Microsoft R Open and Microsoft R Client packages are loaded.
 
 7. To confirm RevoScaleR is operational, run the RevoScaleR **rxSummary** function to return statistical summary information on the built-in Iris dataset: 
 

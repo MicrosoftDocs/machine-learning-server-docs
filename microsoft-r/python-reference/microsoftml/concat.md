@@ -63,9 +63,9 @@ is as large as hundreds to thousands.
 A character dict or list of variable names to transform. If
 `dict`, the keys represent the names of new variables to be created.
 Note that all the input variables must
-be of the same type. It is possible to produce mulitple output columns
+be of the same type. It is possible to produce multiple output columns
 with the concatenation transform. In this case, you need to use a list of
-vectors to define a one-to-one mappings between input and output variables.
+vectors to define a one-to-one mapping between input and output variables.
 For example, to concatenate columns InNameA and InNameB into column OutName1
 and also columns InNameC and InNameD into column OutName2, use the dict:
 dict(OutName1 = [InNameA, InNameB], outName2 = [InNameC, InNameD])

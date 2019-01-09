@@ -176,7 +176,7 @@ If you move a file into a directory in which a file by the same name already exi
 
 **To move a file to another directory:**
 
-1. From the **Files** tab, select the file in the table.The **Manage** dropdown menu appears.
+1. From the **Files** tab, select the file in the table. The **Manage** dropdown menu appears.
 
 1. In the **Manage** dropdown menu, choose **Move**. The **Move File** dialog appears.
 
@@ -239,7 +239,7 @@ By default, an R Script or any other repository-managed file is visible on the A
 
 If you are an owner of a file, you can add additional owners to *support collaboration* during the file's development.
 
-Granting ownership does more than just allow a user to view or download a file, or even to execute a script; it also allows the user to edit the file, grant others ownership or revoke those rights, and even delete the file. For example, you might want add someone else as an owner so they can provide feedback on your script.  Or, as another example, you might grant ownership of an R script or any other file to permit development to continue while you are away on vacation.
+Granting ownership does more than just allow a user to view or download a file, or even to execute a script; it also allows the user to edit the file, grant others ownership or revoke those rights, and even delete the file. For example, you might want to add someone else as an owner so they can provide feedback on your script.  Or, as another example, you might grant ownership of an R script or any other file to permit development to continue while you are away on vacation.
 
 If your objective is to permit other users and/or applications to see files and/or execute scripts, we recommend setting the appropriate [access rights](#about-file-properties) using the **Restricted**, **Shared** or **Public** access rights as a means of controlling that access.
 
@@ -261,7 +261,7 @@ To add or remove owners:
 
 	-  To remove owners from a file, click the **x** next to the name. The name disappears from the list of owners. If that user was an owner before you started this task, the file will no longer be in any of his or her directories under **My Files**.
 
-4.  Once the list reflect the owners who should be able to collaborate on this file, click **OK**. The dialog closes.
+4.  Once the list reflects the owners who should be able to collaborate on this file, click **OK**. The dialog closes.
  
 <a name="working-with-historical-versions"></a>
 
@@ -271,7 +271,7 @@ The DeployR repository supports a versioned file system, thereby offering you a 
 
 >You can only see the history for the files you own.
 
-The current working version of a file is referred to as the ***Latest* version**. You can edit the Latest version of a file you own, but all historical version are read-only.
+The current working version of a file is referred to as the ***Latest* version**. You can edit the Latest version of a file you own, but all historical versions are read-only.
 
 For any file you own, you can access the file's version history. From this version history, you can:
 

@@ -25,7 +25,7 @@ ms.prod: "mlserver"
 
 # DeployR Server and Grid High Availability
 
-**Applies to: DeployR 8.x**   (See [comparison between 8.x and 9.x](../whats-new-in-r-server.md#8vs9))
+**Applies to: DeployR 8.x** (See [comparison between 8.x and 9.x](../whats-new-in-r-server.md#8vs9))
 
 >Looking to deploy with Machine Learning Server? [Start here](../what-is-operationalization.md).
 
@@ -81,7 +81,7 @@ A potentially better deployment model would isolate failures, in order to ensure
 
 ### Load Balanced Deployment
 
-While multiple DeployR servers can not participate in a classic cluster configuration with automatic failover,, it is possible to deploy multiple servers behind a HTTP load balancer to distribute load and even adapt to server failures at runtime.
+While multiple DeployR servers cannot participate in a classic cluster configuration with automatic failover, it is possible to deploy multiple servers behind an HTTP load balancer to distribute load and even adapt to server failures at runtime.
 
 The following steps detail how to configure this type of deployment:
 

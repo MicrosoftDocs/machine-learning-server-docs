@@ -30,7 +30,7 @@ You can assess the health of your web and compute node environment using the dia
 
 Armed with this information, you can identify unresponsive components, execution problems, and access [the log files](#logs). 
 
-The set of diagnostic tests include:
+The set of diagnostic tests includes:
 + A general health check of the configuration
 + A trace of an execution (R code, Python code, or a web service)
 
@@ -41,7 +41,7 @@ Additional [troubleshooting topics](#trouble) are also covered.
 ## Test your configuration
 
 1. Launch the diagnostic tests:
-   + On Machine Learning Server 9.3 (or any other machine that has access to Machine Learning Server), launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges and run this command.
+   + On Machine Learning Server 9.3 (or any other machine that has access to Machine Learning Server), launch a command-line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges and run this command.
      ```azurecli
      # With elevated privileges, run the following commands.
      # Authenticate with the CLI if you haven't already
@@ -74,7 +74,7 @@ You can also get a health report directly using the [status](https://microsoft.g
 To go through the execution of a specific line of code and retrieve request IDs for debugging purposes, run a trace. 
 
 1. Launch the code trace tests:
-   + On Machine Learning Server 9.3, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges and run one of run these commands to trace the execution of a code block or script:
+   + On Machine Learning Server 9.3, launch a command-line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges and run one of these commands to trace the execution of a code block or script:
      ```azurecli
      # Authenticate with the CLI if you haven't already
      az login --mls
@@ -108,7 +108,7 @@ To go through the execution of a specific line of code and retrieve request IDs 
 To go through the execution of a specific web service and retrieve request IDs for debugging purposes, run a trace. 
 
 1. Launch the web service execution tests:
-   + On Machine Learning Server 9.3, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges and run this command specifying the web service name and version:
+   + On Machine Learning Server 9.3, launch a command-line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges and run this command specifying the web service name and version:
      ```azurecli
      # Authenticate with the CLI if you haven't already
      az login --mls

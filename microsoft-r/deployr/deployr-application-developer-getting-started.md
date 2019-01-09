@@ -51,7 +51,7 @@ DeployR offers these features and many more through a set of [Analytics Web Serv
 
 As an application developer, you typically leave R coding and model building to the [data scientists](deployr-data-scientist-getting-started.md). And now with DeployR, you can also leave all aspects of R session management to the DeployR server. This frees you up to focus on simple integrations with DeployR services that deliver the [phenomenal power of R](https://mran.microsoft.com/documents/getting-started/) directly within your applications.
 
-The sections that follow explain [Analytics Web Services](#analytics-web-services) in greater detail and also introduce the set of [developer tools](#developer-tools) that make it simple to consume these services within your applications. This document also presents a series of [tutorials](#tutorials) with sample source code and introduces a complete [example application](#real-world-example). This example gives a concrete demonstration of building a classic application, an R analytics realtime scoring engine.
+The sections that follow explain [Analytics Web Services](#analytics-web-services) in greater detail and also introduce the set of [developer tools](#developer-tools) that make it simple to consume these services within your applications. This document also presents a series of [tutorials](#tutorials) with sample source code and introduces a complete [example application](#real-world-example). This example gives a concrete demonstration of building a classic application, an R analytics real-time scoring engine.
 
 >For a general introduction to DeployR, read the [About DeployR](deployr-about.md) document.
 
@@ -213,7 +213,7 @@ The following tutorials are available:
 
 ### Command Line Interface
 
-While each of the DeployR code tutorials found on github provide their own complete set of instructions for downloading and running the code, we also provide the [DeployR CLI](https://github.com/Microsoft/deployr-cli) to make running these tutorials even easier. The DeployR CLI is a [Command Line Tool (CLI)](https://en.wikipedia.org/wiki/Command-line_interface) for running useful DeployR utilities, such as the automated installation and execution of any [DeployR code tutorial](#tutorials) found on github.
+While each of the DeployR code tutorials found on GitHub provides their own complete set of instructions for downloading and running the code, we also provide the [DeployR CLI](https://github.com/Microsoft/deployr-cli) to make running these tutorials even easier. The DeployR CLI is a [Command Line Tool (CLI)](https://en.wikipedia.org/wiki/Command-line_interface) for running useful DeployR utilities, such as the automated installation and execution of any [DeployR code tutorial](#tutorials) found on GitHub.
 
 Install and use the CLI as follows:
 
@@ -229,7 +229,7 @@ Install and use the CLI as follows:
 
     ![DeployR CLI](./media/deployr-application-developer-getting-started/cli.png)
 
-3.  From the CLI main menu, choose **Install an example** to see the complete list of available examples, including all of the latest DeployR code tutorials found on github.
+3.  From the CLI main menu, choose **Install an example** to see the complete list of available examples, including all of the latest DeployR code tutorials found on GitHub.
 
 4.  Select the example to install. That example is automatically downloaded, installed and launched in your terminal window.
 
@@ -237,15 +237,15 @@ Install and use the CLI as follows:
 
 The [Developer Tools](#developer-tools) section introduced the available tool set and some initial fragments of sample code. In the [Tutorials](#tutorials) section, you were introduced to more complete sample code that highlighted some important design patterns when working with DeployR. In this section you will be introduced to a complete sample application that demonstrates one approach to building an end-to-end solution using DeployR.
 
-The sample application is a classic application in the analytics space, a realtime scoring engine powered by DeployR. The example scenario mimics a real world application where employees at a fictitious bank can request fraud scores for one or more bank account records on-demand in order to help detect fraudulent account activity:
+The sample application is a classic application in the analytics space, a real-time scoring engine powered by DeployR. The example scenario mimics a real world application where employees at a fictitious bank can request fraud scores for one or more bank account records on-demand in order to help detect fraudulent account activity:
 
 ![Fraud Score Example Application](./media/deployr-application-developer-getting-started/fraud-score-example.png)
 
-Note, as this is a sample application the Web browser UI component has been implemented to display profiling information on the [RBroker's realtime performance](deployr-rbroker-framework.md#client-application-profiling). This functionality is provided as an aid to application developers, but is not something that would typically be included in a true production application.
+Note, as this is a sample application the Web browser UI component has been implemented to display profiling information on the [RBroker's real-time performance](deployr-rbroker-framework.md#client-application-profiling). This functionality is provided as an aid to application developers, but is not something that would typically be included in a true production application.
 
 In keeping with the recommended approach to building DeployR-enabled solutions, a data scientist developed the scoring function and predictive model used by this application [data scientist](deployr-data-scientist-getting-started.md) and an application developer wrote the application itself.
 
-The application design overview, source code in both Java and JavaScript, and the associated instructions needed to run the fraud score application can be found [on github](https://github.com/Microsoft/java-example-fraud-score). Check it out, and post any questions you have directly to the [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
+The application design overview, source code in both Java and JavaScript, and the associated instructions needed to run the fraud score application can be found [on GitHub](https://github.com/Microsoft/java-example-fraud-score). Check it out, and post any questions you have directly to the [DeployR Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr).
 
 ## More Resources
 

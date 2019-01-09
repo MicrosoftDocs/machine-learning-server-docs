@@ -138,7 +138,7 @@ It is often convenient to store a large amount of data in an .xdf file and then 
 	  rowSelection = state == "Washington" & age > 40,
 	  varsToKeep = c("age", "perwt", "sex"))
 
-When subsampling rows, we need to be aware that the rowSelection is processed on each chunk of data after it is read in. Consider an example where we want to extract every 10<sup>th</sup> row of the data set. For each chunk we will create a sequence starting with the start row number in that chunk (provided by the internal variable, .rxStartRow) with a length equal to the number of rows in the data chunk. We will determine that number of rows by using the length of the of one of the variables that has been read from the data set, age. We will keep only the rows where the remainder after dividing the row number by 10 is 0:
+When subsampling rows, we need to be aware that the rowSelection is processed on each chunk of data after it is read in. Consider an example where we want to extract every 10<sup>th</sup> row of the data set. For each chunk we will create a sequence starting with the start row number in that chunk (provided by the internal variable, .rxStartRow) with a length equal to the number of rows in the data chunk. We will determine that number of rows by using the length of one of the variables that has been read from the data set, age. We will keep only the rows where the remainder after dividing the row number by 10 is 0:
 
 	myCensusSample <- rxDataStep(inData=inFile, 
 	    rowSelection= (seq(from=.rxStartRow,length.out=.rxNumRows) %% 10) == 0 )

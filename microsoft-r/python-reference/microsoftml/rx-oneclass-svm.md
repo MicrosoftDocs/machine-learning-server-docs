@@ -106,13 +106,13 @@ A character string representing the kernel used for computing
 inner products. For more information, see `ma_kernel()`. The
 following choices are available:
 
-* `rbf_kernel`: Radial basis function kernel. It’s parameter represents``gamma`` in the term `exp(-gamma|x-y|^2`. If not specified, it defaults to `1` divided by the number of features used. For example, `rbf_kernel(gamma = .1)`. This is the default value. 
+* `rbf_kernel`: Radial basis function kernel. Its parameter represents``gamma`` in the term `exp(-gamma|x-y|^2`. If not specified, it defaults to `1` divided by the number of features used. For example, `rbf_kernel(gamma = .1)`. This is the default value. 
 
 * `linear_kernel`: Linear kernel. 
 
 * `polynomial_kernel`: Polynomial kernel with parameter names `a`, `bias`, and `deg` in the term `(a*<x,y> + bias)^deg`. The `bias`, defaults to `0`. The degree, `deg`, defaults to `3`. If `a` is not specified, it is set to `1` divided by the number of features. 
 
-* `sigmoid_kernel`: Sigmoid kernel with parameter names `gamma` and `coef0` in the term `tanh(gamma*<x,y> + coef0)`. `gamma`, defaults to to `1` divided by the number of features. The parameter `coef0` defaults to `0`.  For example, `sigmoid_kernel(gamma = .1, coef0 = 0)`. 
+* `sigmoid_kernel`: Sigmoid kernel with parameter names `gamma` and `coef0` in the term `tanh(gamma*<x,y> + coef0)`. `gamma`, defaults to `1` divided by the number of features. The parameter `coef0` defaults to `0`.  For example, `sigmoid_kernel(gamma = .1, coef0 = 0)`. 
 
 
 ### epsilon
@@ -164,9 +164,9 @@ Specifies a list of MicrosoftML transforms to be
 performed on the data before training or *None* if no transforms are
 to be performed. See [`featurize_text`](featurize-text.md),
 [`categorical`](categorical.md),
-and [`categorical_hash`](categorical-hash.md), for transformations that aresupported.
+and [`categorical_hash`](categorical-hash.md), for transformations that are supported.
 These transformations are performed after any specified Python transformations.
-The default avlue is *None*.
+The default value is *None*.
 
 
 ### ml_transform_vars

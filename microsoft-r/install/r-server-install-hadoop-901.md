@@ -95,7 +95,7 @@ The distribution includes one installer for Microsoft R Server. For a gzipped TA
 Microsoft R Server 2016 for Hadoop is deployed by running the install script with the **-p** parameter, which you can install at the root, or as super user via `sudo`.
 
 1. Log in as root or a user with sudo privileges (`sudo su`). The following instructions assume user privileges with the sudo override.
-2. Verify system repositories are up to date:
+2. Verify system repositories are up-to-date:
 		[username] $ `sudo yum clean all`
 3. Change to the directory to which you mounted or unpacked the installer (for example, /mnt/mrsimage for an .img file, or /tmp/MRS90HADOOP if you unpacked the tar.gz file):
 		[username] $ `cd /tmp`

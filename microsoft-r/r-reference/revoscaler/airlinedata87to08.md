@@ -35,7 +35,7 @@ Airline on-time performance data from 1987 to 2008.
 
  ## Format
 
-An .xdf file with 123534969 observations on the following 29 variables.
+An .xdf file with 123534969 observations on the following 29 variables:
 
 
 ### `Year`

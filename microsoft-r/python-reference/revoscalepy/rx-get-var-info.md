@@ -103,7 +103,7 @@ master node is not controlled by the end user.
 
 list with named elements corresponding to the variables in the data set.
 
-Each list element is also a list with with following possible elements:
+Each list element is also a list with following possible elements:
 
     description: character string specifying the variable description
     varType: character string specifying the variable type

@@ -45,7 +45,7 @@ Simulated data on mortgage defaults.
 
  ## Format
 
-An .xdf file with 50000 observations on the following 6 variables.
+An .xdf file with 50000 observations on the following 6 variables:
 
 
 ### `creditScore`

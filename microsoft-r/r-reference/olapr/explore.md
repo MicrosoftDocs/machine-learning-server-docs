@@ -77,12 +77,12 @@ Allows for exploration of cube metadata
  ## Value
 
 Prints cube metadata. Returns NULL.
-An error is thrown if arguements are invalid
+An error is thrown if arguments are invalid.
 
 
  ## Note
 
-Arguements must be specified in order. Eg: In order to explore hierarchies, a dimension and a cube must be specified.
+Arguments must be specified in order. For example: In order to explore hierarchies, a dimension and a cube must be specified.
 
 
 

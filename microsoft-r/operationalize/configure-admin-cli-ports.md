@@ -38,7 +38,7 @@ In Machine Learning Server 9.3, you can use `admin` extension of the Azure Comma
 
 To update port values:
 
-1. On the machine hosting the node, launch a command line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
+1. On the machine hosting the node, launch a command-line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
 
 1. Run the command to update the port value(s), where `<Port>` should be replaced by the actual port number without the brackets.
    ```azurecli

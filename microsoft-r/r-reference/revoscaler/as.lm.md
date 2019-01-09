@@ -59,7 +59,7 @@ as.lm  (x, ...)
 This function converts an existing object of class rxLinMod an object of
 class lm.
 The underlying structure of the output object will be a subset of that produced by an equivalent call to
-lm. In many cases, this method can be used to coerce an object
+lm. Often, this method can be used to coerce an object
 for use with the **pmml** package.  **RevoScaleR** model objects that contain
 `transforms` or a `transformFunc` are not supported.
 

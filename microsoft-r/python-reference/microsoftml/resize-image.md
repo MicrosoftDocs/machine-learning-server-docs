@@ -53,7 +53,7 @@ resizing method.
 ## Details
 
 `resize_image` resizes an image to the specified height and width
-using a specified resizing method. The input variables to this transforms must
+using a specified resizing method. The input variables to this transform must
 be images, typically the result of the `load_image` transform.
 
 

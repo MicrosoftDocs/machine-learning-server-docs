@@ -41,7 +41,7 @@ revoscalepy.RxNativeFileSystem
 
 ## Description
 
-Main generator class for objects repreresenting the native file system.
+Main generator class for objects representing the native file system.
 
 
 ## Returns

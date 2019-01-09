@@ -88,7 +88,7 @@ Once enabled, your client applications can make API calls that connect over HTTP
 
    9. Exit the utility.
 
-4. Test these changes by logging into the landing page and visiting DeployR Administration Console using the new HTTPS URL at `https://<DEPLOYR_SERVER_IP>:8051/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine. If you are using an untrusted, self-signed certificate, and you or your users are have difficulty reaching DeployR in your browser, see this [Alert](#alertusers).
+4. Test these changes by logging into the landing page and visiting DeployR Administration Console using the new HTTPS URL at `https://<DEPLOYR_SERVER_IP>:8051/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine. If you are using an untrusted, self-signed certificate, and you or your users are having difficulty reaching DeployR in your browser, see this [Alert](#alertusers).
 
 
 <br />
@@ -96,7 +96,7 @@ Once enabled, your client applications can make API calls that connect over HTTP
 
 If your corporate policies require that you secure the communications between the Web server and the DeployR database, then you should configure DeployR to use either a [SQL Server database](deployr-install-on-windows.md#sqlserver) or a [PostgreSQL database](deployr-install-on-linux.md#postgresql) rather than the default H2 database.
 
-After configuring DeployR to use one of those databases, you must also configure properly secure the database connections and force encryption.
+After configuring DeployR to use one of those databases, you must also properly secure the database connections and force encryption.
 
 + For SQL Server 2016, you should: 
 
@@ -277,12 +277,12 @@ After configuring DeployR to use one of those databases, you must also configure
         ```
         
      Upon completion of this script with `-https true`, the following changes will have been made to the [server policies](deployr-admin-managing-server-policies.md#server-policy-properties) in the Administration Console:
-     + The server web context now ressembles `https://xx.xx.xx.xx:8001/deployr` instead of `http://xx.xx.xx.xx:8000/deployr`.
-     + The `Enable HTTPS` property for each of operation policies (authenticated, anonymous, and asynchronous) are all checked.
+     + The server web context now resembles `https://xx.xx.xx.xx:8001/deployr` instead of `http://xx.xx.xx.xx:8000/deployr`.
+     + The `Enable HTTPS` properties for each of operation policies (authenticated, anonymous, and asynchronous) are all checked.
 
 4. **Restart DeployR** by [stopping and starting all its services](deployr-common-administration-tasks.md#startstop) so the changes can take effect. Between stopping and starting, be sure to pause long enough for the Tomcat process to terminate.  
 
-5. **Test** these changes by logging into the landing page and visiting DeployR Administration Console using the new HTTPS URL at `https://<DEPLOYR_SERVER_IP>:8001/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine. If you are using an untrusted, self-signed certificate, and you or your users are have difficulty reaching DeployR in your browser, see the [Alert](#alertusers) at the end of step 1.
+5. **Test** these changes by logging into the landing page and visiting DeployR Administration Console using the new HTTPS URL at `https://<DEPLOYR_SERVER_IP>:8001/deployr/landing`. `<DEPLOYR_SERVER_IP>` is the IP address of the DeployR main server machine. If you are using an untrusted, self-signed certificate, and you or your users are having difficulty reaching DeployR in your browser, see the [Alert](#alertusers) at the end of step 1.
 
 <a href="" id="temporary-keystore"></a>
 
@@ -497,6 +497,6 @@ The **Secure Sockets Layer (SSL)** is a commonly-used protocol for managing the 
         
 Upon completion of the `setWebContext` script with `-https false`, the following changes will have been made to the [server policies](deployr-admin-managing-server-policies.md#server-policy-properties) in the Administration Console:
 
-+ The server web context now ressembles `http://xx.xx.xx.xx:8000/deployr`.
++ The server web context now resembles `http://xx.xx.xx.xx:8000/deployr`.
 
-+ The `Enable HTTPS` property for each of operation policies (authenticated, anonymous, and asynchronous) are disabled.
++ The `Enable HTTPS` properties for each of operation policies (authenticated, anonymous, and asynchronous) are disabled.

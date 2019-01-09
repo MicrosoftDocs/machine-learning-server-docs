@@ -70,13 +70,13 @@ Configure one or more compute nodes as needed. We highly recommend that you conf
 
    + Linux instructions: [Installation steps](../install/machine-learning-server-linux-install.md) | [Offline steps](../install/machine-learning-server-linux-offline.md)
 
-1. [Launch the administration utility](../operationalize/configure-admin-cli-launch.md) with administrator privileges. 
+1. [Launch the administration utility](../operationalize/configure-admin-cli-launch.md) with administrator privileges.
 
-1. From the main utility menu, choose **Configure server** and then choose **Configure a compute node** from the submenu. 
+1. From the main utility menu, choose **Configure server** and then choose **Configure a compute node** from the submenu.
 
 1. If you plan on configuring SSL/TLS and [install the necessary certificates](../operationalize/configure-https.md) on the compute node, do so now.
 
-1. Open the port 12805 _on every compute node_. If you plan to configure SSL/TLS, you must do so BEFORE opening this port. 
+1. Open the port 12805 _on every compute node_. If you plan to configure SSL/TLS, you must do so BEFORE opening this port.
 
    + On Windows: Add a firewall exception to open the port number. 
   

@@ -24,7 +24,7 @@ ms.prod: "mlserver"
 
 # Install Machine Learning Server for Windows
 
-**Applies to:  Machine Learning Serve 9.2.1 | 9.3**
+**Applies to:  Machine Learning Server 9.2.1 | 9.3**
 
 Machine Learning Server for Windows runs machine learning and data mining solutions written in R or Python in standalone and clustered topologies. 
 

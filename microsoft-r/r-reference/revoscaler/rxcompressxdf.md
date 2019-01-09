@@ -55,7 +55,7 @@ Compress one or more .xdf files
 
 
  ### `overwrite`
-  If `outFile` is specified and is different from `inFile`, `overwrite` must be set to `TRUE` in order to have `outFile` overwritten.  
+  If `outFile` is specified and is different from `inFile`, `overwrite` must be set to `TRUE` to have `outFile` overwritten.  
 
 
  ### `reportProgress`

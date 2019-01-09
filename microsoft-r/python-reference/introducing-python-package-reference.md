@@ -51,7 +51,7 @@ You can use these libraries and functions in combination with other open source 
 
 ## How to get packages
 
-You can get the packages when you install Machine Learning Server, or SQL Server 2017, and choose the option for Python support. In addition to Python packages, Machine Learning Server setup and SQL Server setup both install the Python interpreters and base modules required to run any script or code that calls functions from properietary package.
+You can get the packages when you install Machine Learning Server, or SQL Server 2017, and choose the option for Python support. In addition to Python packages, Machine Learning Server setup and SQL Server setup both install the Python interpreters and base modules required to run any script or code that calls functions from proprietary package.
 
 For SQL Server, packages are installed by default in the \Program files\Microsoft SQL Server\*instance name*\PYTHON_SERVICES
 
@@ -96,9 +96,9 @@ First, read the introduction to each package to learn about common use case scen
 + [microsoftmlpackage for Python](microsoftml/microsoftml-package.md) 
 + [revoscalepy package for Python](revoscalepy/revoscalepy-package.md)  
 
-Next, follow these tutorials for hands on experience:
+Next, follow these tutorials for hands-on experience:
 
-+ [Use revoscalpy to create a model (in SQL Server)](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model) 
++ [Use revoscalepy to create a model (in SQL Server)](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model) 
 + [Run Python in T-SQL](https://docs.microsoft.com/sql/advanced-analytics/tutorials/run-python-using-t-sql) 
 + [Deploy a model as a web service in Python](../operationalize/python/quickstart-deploy-python-web-service.md)
 

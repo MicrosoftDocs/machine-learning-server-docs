@@ -67,7 +67,7 @@ training a model.
 
 
  ### `invertHash`
- An integer specifying the limit on the number of keys  that can be used to generate the slot name. `0` means no invert  hashing; `-1` means no limit. While a zero value gives better  performance, a non-zero value is needed to get meaningful coefficent names. The default value is `0`. 
+ An integer specifying the limit on the number of keys  that can be used to generate the slot name. `0` means no invert  hashing; `-1` means no limit. While a zero value gives better  performance, a non-zero value is needed to get meaningful coefficient names. The default value is `0`. 
 
 
 
@@ -75,7 +75,7 @@ training a model.
  A character string that specifies the kind of output kind.   
 *   `"ind"`: Outputs an indicator vector. The input column is a vector   of categories, and the output contains one indicator vector per slot in   the input column.    
 *   `"bag"`: Outputs a multi-set vector. If the input column is a  vector of categories, the output contains one vector, where the value in   each slot is the number of occurrences of the category in the input  vector. If the input column contains a single category, the indicator  vector and the bag vector are equivalent   
-*   `"key"`: Outputs an index. The output is an integer id (between 1 and the number of categories in the dictionary) of the category.   
+*   `"key"`: Outputs an index. The output is an integer ID (between 1 and the number of categories in the dictionary) of the category.   
  The default value is `"Bag"`. 
 
 

@@ -49,7 +49,7 @@ It is the responsibility of the DeployR administrator to configure and manage th
 
 >NFS configuration for external directories is required only if your DeployR environment has multiple grid nodes. 
 
-To benefit from external directory support in a multi-grid node DeployR environment, you (the administrator) must install and configure a Network File System (NFS) shared directory on the DeployR main server as well as any grid node from which they want to access to this big data files.
+To benefit from external directory support in a multi-grid node DeployR environment, you (the administrator) must install and configure a Network File System (NFS) shared directory on the DeployR main server as well as any grid node from which they want to access to these big data files.
 
 <br />
 ### Configure NFS on Windows

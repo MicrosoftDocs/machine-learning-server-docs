@@ -133,7 +133,7 @@ On each machine hosting a web node:
 
 1. Run the [diagnostic tool](configure-run-diagnostics.md) to send a test HTTPs request.
 
-1. Restart the node or just run 'iisreset' on the command-line.
+1. Restart the node or just run 'iisreset' on the command line.
 
 1. Repeat on every web node.
 
@@ -257,7 +257,7 @@ When encrypting, you have the choice of using one of the following **compute nod
 
 1. Launch IIS and follow the [instructions above](#iis).
 
-1. Restart the node or just run 'iisreset' on the command-line.
+1. Restart the node or just run 'iisreset' on the command line.
 
 
 #### Linux: Encrypting Traffic between Web Node and Compute Node
