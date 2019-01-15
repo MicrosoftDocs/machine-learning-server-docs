@@ -41,10 +41,6 @@ For Python script, the [MLServer](../../python-reference/azureml-model-managemen
 
 You can use a [Python interactive window](../../python/quickstart-python-tools.md) to run the following commands on the local server if you configured Machine Learning Server for one-box, or on a compute node if you have a distributed topology.
 
-> ![Tip]
-> To create and deploy a web service for testing, 
-
-
 ```python
  # load modules and classes
  from azureml.deploy import DeployClient
