@@ -62,7 +62,7 @@ $ az extension add --source 'C:\Program Files\Microsoft\ML Server\Setup\azure_ml
 **Linux:**
 
 ```azurecli
-az extension add --source ./microsoft/mlserver/9.3.0/o16n/azure_ml_admin_cli-0.0.1-py2.py3-none-any.whl --yes
+az extension add --source /opt/microsoft/mlserver/9.3.0/o16n/azure_ml_admin_cli-0.0.1-py2.py3-none-any.whl --yes
 ```
 
 ### 2. Compute nodes fail on a Python-only install on Ubuntu 14.04
