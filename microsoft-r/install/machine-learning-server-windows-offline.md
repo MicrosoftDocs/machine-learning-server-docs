@@ -156,6 +156,16 @@ Python runs when you execute a .py script or run commands in a Python console wi
     7          94975.0
     ~~~~
 
+**Verify CLI**
+
+> [!Note]
+> Before you continue, reboot the machine.
+
+1. Open an Administrator command prompt.
+
+2. Enter the following command to check availability of the CLI: `az ml admin --help`. If you receive the following error: `az: error argument _command_package: invalid choice: ml`, follow the [instructions to re-add the extension to the CLI](https://docs.microsoft.com/en-us/machine-learning-server/resources-known-issues#1-missing-azure-ml-admin-cli-extension-on-dsvm-environments
+). 
+
 ## Next steps
 
 We recommend starting with any Quickstart tutorial listed in the contents pane. 
