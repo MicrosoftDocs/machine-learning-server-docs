@@ -6,7 +6,7 @@ description: " Creates a list containing the function name and arguments to trai
 keywords: "(MicrosoftML), logisticRegression" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "09/13/2017" 
+ms.date: "01/16/2019" 
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 
@@ -69,7 +69,7 @@ Creates a list containing the function name and arguments to train a
   
   
  ### `initWtsScale`
- Sets the initial weights diameter that specifies  the range from which values are drawn for the initial weights. These   weights are initialized randomly from within this range. For  example, if the diameter is specified to be `d`, then the weights  are uniformly distributed between `-d/2` and `d/2`. The default value is `0`, which specifies that all the  weights are  initialized to `0`. 
+ Sets the initial weights diameter that specifies  the range from which values are drawn for the initial weights. These   weights are initialized randomly from within this range. For  example, if the diameter is specified to be `d`, then the weights  are uniformly distributed between `-d/2` and `d/2`. The default value is `0`, which specifies that all the weights are  initialized to `0`. 
   
   
   

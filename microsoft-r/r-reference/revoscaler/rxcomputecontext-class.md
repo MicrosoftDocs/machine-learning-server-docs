@@ -47,11 +47,11 @@ The generator for classes that extend RxComputeContext is
 
  ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
-
-
- ## See Also
-
-RxHadoopMR,
+ 
+ 
+ ##See Also
+ 
+[RxHadoopMR](RevoScaleR-deprecated.md),
 [RxSpark](RxSpark.md),
 [RxInSqlServer](RxInSqlServer.md),
 [RxLocalSeq](RxLocalSeq.md),

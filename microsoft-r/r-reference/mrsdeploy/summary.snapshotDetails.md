@@ -6,7 +6,7 @@ description: " Defines the R summary generic for snapshotDetails during a  listS
 keywords: "(mrsdeploy), summary.snapshotDetails" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "02/05/2018" 
+ms.date: "01/18/2019" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

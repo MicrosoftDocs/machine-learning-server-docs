@@ -87,7 +87,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
 [rxGetJobs](rxGetJobs.md), 
 [rxGetJobOutput](rxGetJobOutput.md),
 [RxSpark](RxSpark.md),
-RxHadoopMR,
+[RxHadoopMR](RevoScaleR-deprecated.md),
 [rxGetJobResults](rxGetJobResults.md)
 
  ## Examples

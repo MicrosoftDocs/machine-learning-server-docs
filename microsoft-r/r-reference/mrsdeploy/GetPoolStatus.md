@@ -6,7 +6,7 @@ description: " Get the status of the dedicated pool for a published web service 
 keywords: "(mrsdeploy), getPoolStatus" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "02/05/2018" 
+ms.date: "01/18/2019" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

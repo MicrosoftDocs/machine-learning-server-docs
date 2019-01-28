@@ -99,6 +99,34 @@ older versions of RevoScaleR only, and may be defunct as soon as the next releas
             verbose = 0, xdfCompressionLevel = rxGetOption("xdfCompressionLevel"),
             blocksPerRead = -1,  ...)                                        		
                   
+  RxHadoopMR(object, 
+                hdfsShareDir = paste( "/user/RevoShare", Sys.info()[["user"]], sep="/" ),
+                shareDir = paste( "/var/RevoShare", Sys.info()[["user"]], sep="/" ),
+                clientShareDir = rxGetDefaultTmpDirByOS(),
+                hadoopRPath = rxGetOption("unixRPath"),
+                hadoopSwitches = "",
+                revoPath = rxGetOption("unixRPath"),
+                sshUsername = Sys.info()[["user"]],
+                sshHostname = NULL,
+                sshSwitches = "",
+                sshProfileScript = NULL,
+                sshClientDir = "",
+                usingRunAsUserMode = FALSE,
+                nameNode = rxGetOption("hdfsHost"),
+                jobTrackerURL = NULL,
+                port = rxGetOption("hdfsPort"),
+                onClusterNode = NULL,
+                wait = TRUE,
+                consoleOutput = FALSE,
+                showOutputWhileWaiting = TRUE,
+                autoCleanup = TRUE,
+                workingDir = NULL,
+                dataPath = NULL,
+                outDataPath = NULL,
+                fileSystem = NULL,
+                packagesToLoad = NULL,
+                resultsTimeout = 15,
+                ...  )
  
 ```
  
@@ -252,7 +280,7 @@ older versions of RevoScaleR only, and may be defunct as soon as the next releas
   
     
  ### `returnTransformObjects`
- logical value.  If `TRUE`,  the list of `transformObjects` will be returned instead of  a data frame or data source object.  If the input `transformObjects` have been modified, by using `.rxSet` or `.rxModify` in the `transformFunc`, the updated values will be returned.  Any data returned from the `transformFunc` is ignored. If no `transformObjects` are used, `NULL` is returned. This argument allows for user-defined  computations within a `transformFunc` without creating new data. `returnTransformObjects` is not supported in distributed compute contexts  such as [RxHadoopMR](RxHadoopMR.md). 
+ logical value.  If `TRUE`,  the list of `transformObjects` will be returned instead of  a data frame or data source object.  If the input `transformObjects` have been modified, by using `.rxSet` or `.rxModify` in the `transformFunc`, the updated values will be returned.  Any data returned from the `transformFunc` is ignored. If no `transformObjects` are used, `NULL` is returned. This argument allows for user-defined  computations within a `transformFunc` without creating new data. `returnTransformObjects` is not supported in distributed compute contexts  such as [RxHadoopMR](RevoScaleR-deprecated.md). 
    
   
     
@@ -457,6 +485,146 @@ older versions of RevoScaleR only, and may be defunct as soon as the next releas
  additional arguments to be passed to the input data source. 
   
   
+  
+    
+ ### `object`
+ object of class RxHadoopMR. This argument is optional. If supplied, the values of  e other specified arguments are used to replace those of `object` and the modified object is turned. 
+  
+  
+    
+ ### `hdfsShareDir`
+ character string specifying the file sharing location within HDFS. You must ave permissions to read and write to this location. 
+  
+  
+    
+ ### `shareDir`
+ character string specifying the directory on the master (perhaps edge) node that is  ared among all the nodes of the cluster and any client host. You must have permissions to read and write   this directory.  
+  
+  
+    
+ ### `clientShareDir`
+ character string specifying the absolute path of the temporary directory on the client.  faults to /tmp for POSIX-compliant non-Windows clients. For Windows and non-compliant POSIX clients,  faults to the value of the TEMP environment variable if defined, else to the TMP environment variable   defined, else to `NULL`. If the default directory does not exist, defaults to NULL.  C paths ("`\\host\dir`") are not supported. 
+  
+  
+    
+ ### `hadoopRPath`
+ character string specifying the path to the directory on the cluster  mpute nodes containing the files R.exe and Rterm.exe.  The invocation of R on each  de must be identical.  
+  
+  
+    
+ ### `revoPath`
+ character string specifying the path to the directory on the master (perhaps edge) node  ntaining the files R.exe and Rterm.exe.   
+  
+  
+    
+ ### `hadoopSwitches`
+ character string specifying optional generic Hadoop command line switches, r example `-conf myconf.xml`. e [`http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/CommandsManual.html`](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/CommandsManual.html)  r details on the Hadoop command line generic options.  
+  
+  
+    
+ ### `sshUsername`
+ character string specifying the username for making an ssh connection to the doop cluster. This is not needed if you are running your R client directly on the cluster. faults to the username of the user running the R client (that is, the value of `Sys.info()[["user"]]`). 
+  
+  
+    
+ ### `sshHostname`
+ character string specifying the hostname or IP address of the Hadoop cluster  de or edge node that the client will log into for launching Hadoop jobs and for copying files  tween the client machine and the Hadoop cluster. Defaults to the hostname of the machine running  e R client (that is, the value of `Sys.info()[["nodename"]]`)  This field is only used if  odeonClusterNode is `NULL` or `FALSE`.  If you are using PuTTY on a Windows system, this can be the name of a saved PuTTY session that n include the user name and authentication file to use.  
+  
+  
+    
+ ### `sshSwitches`
+ character string specifying any switches needed for making an ssh connection to the doop cluster. This is not needed if one is running one's R client directly on the cluster. 
+  
+  
+    
+ ### `sshProfileScript`
+ Optional character string specifying the absolute path to a profile script that will exists on the hHostname host.  This is used when the target ssh host does not automatically read in a .bash_profile, .profile or other shell vironment configuration file for the definition of requisite variables such as HADOOP_STREAMING. 
+  
+  
+    
+ ### `sshClientDir`
+ character string specifying the Windows directory where Cygwin's ssh.exe  d scp.exe or PuTTY's plink.exe and pscp.exe executables can be found. Needed only for Windows.  t needed if these executables are on the Windows Path or if Cygwin's location can be found in  e Windows Registry. Defaults to the empty string. 
+  
+  
+    
+ ### `usingRunAsUserMode`
+ logical scalar specifying whether run-as-user mode is being used on the Hadoop cluster. en using run-as-user mode, local R processes started by the map-reduce framework will run as the same user that started the b, and will have any allocated local permissions.  When not using run-as-user mode (the default for many Hadoop systems), cal R processes will run as user mapred.  Note that when running as user mapred, permissions for files and directories will ve to be more open in order to allow hand-offs between the user and mapred.  n-as-user mode is controlled for the Hadoop map-reduce framework by the xml setting,  odemapred.task.tracker.task-controller, in the `mapred-site.xml` nfiguration file.  If it is set to the value `org.apache.hadoop.mapred.LinuxTaskController`, then  n-as-user mode is in use.  If it is set to the value `org.apache.hadoop.mapred.DefaultTaskController`, then  n-as-user mode is not in use. 
+  
+  
+    
+ ### `nameNode`
+ character string specifying the Hadoop name node hostname or IP address. pically you can leave this at its default value.  set to a value other than "default" or the empty string (see below), is must be an address that can be resolved by the data nodes and used by them to contact the  me node. Depending on your cluster, it may need to be set to a private network address  ch as `"master.local"`. If set to the empty string, "", then the master process will set  is to the name of the node on which it is running, as returned by `Sys.info()[["nodename"]]`.  is is likely to work when the sshHostname points to the name node or the sshHostname is not  ecified and the R client is running on the name node. Defaults to rxGetOption("hdfsHost"). 
+  
+  
+    
+ ### `jobTrackerURL`
+ character scalar specifying the full URL for the jobtracker web interface. is is used only for the purpose of loading the job tracker web page from the `rxLaunchClusterJobManager` nvenience function.  It is never used for job control, and its specification in the compute context is completely tional.  See the [rxLaunchClusterJobManager](rxLaunchClusterTaskManager.md) page for more information. 
+  
+  
+    
+ ### `port`
+ numeric scalar specifying the port used by the name node for hadoop jobs.  Needs  be able to be cast to an integer. Defaults to rxGetOption("hdfsPort"). 
+  
+  
+    
+ ### `onClusterNode`
+ logical scalar or NULL specifying whether the user is initiating the job from a client that will connect to ther an edge node or an actual cluster node, directly from either an edge node or node within the cluster.  If set to  odeFALSE or `NULL`, then `sshHostname` must be a valid host. 
+  
+  
+    
+ ### `wait`
+ logical value.  If `TRUE`, the job will be blocking  nd will not return until it has completed or has failed. If `FALSE`,  he job will be non-blocking return immediately,  lowing you to continue running other R code. The object `rxgLastPendingJob` is created th the job information. You can pass this object to the   ode[rxGetJobStatus](rxGetJobResults.md) function to check on the processing status of the job.  ode[rxWaitForJob](rxWaitForJob.md) will change a non-waiting job   a waiting job. Conversely, pressing ESC changes a waiting job to a non-waiting job, ovided that the HPC scheduler has accepted the job. If you press ESC before the job has en accepted, the job is canceled. 
+  
+  
+    
+ ### `consoleOutput`
+ logical scalar. If `TRUE`, causes the standard output   the R processes to be printed to the user console.  
+  
+  
+    
+ ### `showOutputWhileWaiting`
+ logical scalar. If `TRUE`, causes the standard output   the remote primary R and hadoop job process to be printed to the user console while waiting for (blocking on)  job. 
+  
+  
+    
+ ### `autoCleanup`
+ logical scalar. If `TRUE`, the default behavior is to clean up the  mporary computational artifacts and delete the result objects upon retrival.  If `FALSE`,  en the computational results are not deleted, and the results may be acquired using  ode[rxGetJobResults](rxGetJobResults.md), and the output via [rxGetJobOutput](rxGetJobOutput.md) until the  ode[rxCleanupJobs](rxCleanup.md) is used to delete the results and other artifacts. Leaving this ag set to `FALSE` can result in accumulation of compute artifacts which you may entually need to delete before they fill up your hard drive. 
+  
+  
+    
+ ### `workingDir`
+ character string specifying a working directory for the processes   the master node. 
+  
+  
+    
+ ### `dataPath`
+ NOT YET IMPLEMENTED. character vector defining the search path(s) for the data source(s). 
+  
+  
+    
+ ### `outDataPath`
+ NOT YET IMPLEMENTED. `NULL` or character vector defining the search path(s) for  ew output data file(s).  If not `NULL`, this overrides any specification for `outDataPath`n [rxOptions](rxOptions.md)  
+   
+  
+    
+ ### `fileSystem`
+ `NULL` or an [RxHdfsFileSystem](RxHdfsFileSystem.md) to use as the default file system for data sources when created when this compute context is active. 
+  
+  
+    
+ ### `packagesToLoad`
+ optional character vector specifying additional packages to be  aded on the nodes when jobs are run in this compute context.  
+  
+  
+    
+ ### `resultsTimeout`
+ A numeric value indicating for how long attempts should be made   retrieve results from the cluster.  Under normal conditions, results are available immediately.   wever, under certain high load conditions, the processes on the nodes have reported as completed, but e results have not been fully committed to disk by the operating system.  Increase this parameter  results retrievial is failing on high load clusters. 
+  
+    
+ ### ` ...`
+ additional arguments to be passed directly to the Microsoft R Services Compute Engine. 
+  
+  
  
  
  ## Details
@@ -467,6 +635,7 @@ Use [rxDataStep](rxDataStep.md) instead of  `rxDataFrameToXdf`.
 Use [rxDataStep](rxDataStep.md) instead of  `rxXdfToDataFrame`.
 Use [rxSort](rxSortXdf.md) instead of  `rxSortXdf`.
 Use [rxGetAvailableNodes](rxGetAvailableNodes.md) instead of  `rxGetNodes`.
+Use [rxSparkConnect](RxSpark.md) instead of  `RxHadoopMR`.
  
  
  ## Value
@@ -482,7 +651,8 @@ is returned; otherwise `FALSE`is returned.
  
 [rxImport](rxImport.md),
 [rxDataStep](rxDataStep.md),
-[RevoScaleR-defunct](RevoScaleR-defunct.md).
+[rxSparkConnect](RxSpark.md),
+["RevoScaleR-defunct"](RevoScaleR-defunct.md).
    
  
  

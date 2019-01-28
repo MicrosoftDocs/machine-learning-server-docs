@@ -6,7 +6,7 @@ description: " Creates a list containing the function name and arguments to trai
 keywords: "(MicrosoftML), neuralNet" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "09/13/2017" 
+ms.date: "01/16/2019" 
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 
@@ -79,7 +79,7 @@ Creates a list containing the function name and arguments to train a
   
  ### `acceleration`
  Specifies the type of hardware acceleration to use.  Possible values are "sse" and "gpu".  For GPU acceleration, it is recommended to use a miniBatchSize greater than one.  If you want to use the GPU acceleration, there are additional manual setup steps are required:    
-*  Download and install NVidia CUDA Toolkit 6.5  ([`CUDA Toolkit`](https://developer.nvidia.com/cuda-toolkit-65))).  
+*  Download and install NVidia CUDA Toolkit 6.5  ([`CUDA Toolkit`](https://developer.nvidia.com/cuda-toolkit-65) ).  
 *  Download and install NVidia cuDNN v2 Library  ([`cudnn Library`](https://developer.nvidia.com/rdp/cudnn-archive) ).  
 *  Find the libs directory of the MicrosoftRML package by calling `system.file("mxLibs/x64", package = "MicrosoftML")`.  
 *  Copy cublas64_65.dll, cudart64_65.dll and cusparse64_65.dll from the CUDA Toolkit 6.5 into the libs directory of the MicrosoftML package. 

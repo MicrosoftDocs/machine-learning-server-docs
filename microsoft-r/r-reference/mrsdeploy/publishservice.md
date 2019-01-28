@@ -6,7 +6,7 @@ description: " Publishes an R code block or a real-time model as a new web servi
 keywords: "(mrsdeploy), publishService" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "02/05/2018" 
+ms.date: "01/18/2019" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
@@ -23,14 +23,17 @@ ms.technology: "r-server"
 ms.custom: "" 
 
 --- 
+ 
+ 
+ 
+ 
+ #publishService: Publishes a R code block or a Realtime model as a new web service.
 
-
-
-
- # publishService: Publishes an R code block or a real-time model as a new web service. 
- ## Description
-
-Publishes an R code block or a real-time model as a new web service running on
+ Applies to version 1.1.3 of package mrsdeploy.
+ 
+ ##Description
+ 
+Publishes a R code block or a Realtime model as a new web service running on
 R Server.
 
 
