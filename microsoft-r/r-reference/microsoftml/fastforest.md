@@ -6,7 +6,7 @@ description: " Creates a list containing the function name and arguments to trai
 keywords: "(MicrosoftML), fastForest" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "09/13/2017" 
+ms.date: "01/16/2019" 
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 
@@ -89,7 +89,7 @@ Creates a list containing the function name and arguments to train a
   
   
  ### `gainConfLevel`
- Tree fitting gain confidence requirement (should be in the range [0,1) ). The default value is 0. 
+ Tree fitting gain confidence requirement (should be in the range [0,1)). The default value is 0. 
   
   
   

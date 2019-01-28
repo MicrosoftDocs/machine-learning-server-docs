@@ -6,7 +6,7 @@ description: " Delete a file from the working directory of the remote R session.
 keywords: "(mrsdeploy), deleteRemoteFile" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "02/05/2018" 
+ms.date: "01/18/2019" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

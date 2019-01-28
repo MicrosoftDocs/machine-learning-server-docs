@@ -6,7 +6,7 @@ description: " Categorical transform that can be performed on data before  train
 keywords: "(MicrosoftML), categorical, transform" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "09/13/2017" 
+ms.date: "01/16/2019" 
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

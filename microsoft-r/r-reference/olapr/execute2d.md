@@ -6,7 +6,7 @@ description: "   Takes a Query object or an MDX string, and returns the result a
 keywords: "(olapR), execute2D" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: "01/16/2019" 
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

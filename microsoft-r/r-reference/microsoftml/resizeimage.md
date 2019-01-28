@@ -6,7 +6,7 @@ description: " Resizes an image to a specified dimension using a specified resiz
 keywords: "(MicrosoftML), resizeImage, image, transform" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "09/13/2017" 
+ms.date: "01/16/2019" 
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

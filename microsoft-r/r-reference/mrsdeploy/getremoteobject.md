@@ -6,7 +6,7 @@ description: " Get an object from the workspace of the remote R session and load
 keywords: "(mrsdeploy), getRemoteObject" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "02/05/2018" 
+ms.date: "01/18/2019" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

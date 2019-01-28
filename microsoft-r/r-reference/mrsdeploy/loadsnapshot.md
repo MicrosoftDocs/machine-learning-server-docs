@@ -6,7 +6,7 @@ description: " Loads the specified snapshot from the R server into the remote se
 keywords: "(mrsdeploy), loadSnapshot" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "02/05/2018" 
+ms.date: "01/18/2019" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

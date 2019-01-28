@@ -6,7 +6,7 @@ description: " Neural networks for regression modeling and for Binary and multi-
 keywords: "(MicrosoftML), rxNeuralNet, classification, dnn, models, network, neural, regression" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "09/13/2017" 
+ms.date: "01/16/2019" 
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 
