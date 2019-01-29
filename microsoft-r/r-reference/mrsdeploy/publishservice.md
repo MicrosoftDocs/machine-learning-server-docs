@@ -25,9 +25,7 @@ ms.custom: ""
 --- 
  
  
- 
- 
- #publishService: Publishes a R code block or a Realtime model as a new web service.
+ # publishService: Publishes a R code block or a Realtime model as a new web service.
 
  Applies to version 1.1.3 of package mrsdeploy.
  
