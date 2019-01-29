@@ -826,6 +826,7 @@
       - name: diffLocalRemote
         href: r-reference/mrsdeploy/difflocalremote.md
       - name: downloadSnapshot
+        href: r-reference/mrsdeploy/downloadsnapshot.md
       - name: getPoolStatus
         href: r-reference/mrsdeploy/getpoolstatus.md
       - name: getRemoteFile

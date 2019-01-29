@@ -6,7 +6,7 @@ description: " Reports per-instance scoring results in a data frame or RevoScale
 keywords: "(MicrosoftML), rxPredict.mlModel, manip" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "09/13/2017" 
+ms.date: "01/16/2019" 
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

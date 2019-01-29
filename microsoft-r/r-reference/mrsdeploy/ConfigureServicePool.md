@@ -6,7 +6,7 @@ description: " Create or Update a dedicated pool for a published web service run
 keywords: "(mrsdeploy), configureServicePool" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "02/05/2018" 
+ms.date: "01/18/2019" 
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 
