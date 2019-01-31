@@ -230,8 +230,8 @@ The following example is for the first package. Each command references the vers
 + Download to CentOS or RHEL 6: `wget https://packages.microsoft.com/rhel/6/prod/microsoft-r-client-packages-3.4.3.rpm` 
 + Download to CentOS or RHEL 7: `wget https://packages.microsoft.com/rhel/7/prod/microsoft-r-client-packages-3.4.3.rpm` 
 + Download to SUSE: `wget https://packages.microsoft.com/sles/11/prod/microsoft-r-client-packages-3.4.3.rpm`
-+ Download to Ubuntu 14.04: `wget https://packages.microsoft.com/prod/ubuntu/14.04/microsoft-r-client-packages-3.4.1.deb`
-+ Download to Ubuntu 16.04: `wget https://packages.microsoft.com/prod/ubuntu/16.04/microsoft-r-client-packages-3.4.3.deb`
++ Download to Ubuntu 14.04: `wget https://packages.microsoft.com/ubuntu/14.04/prod/pool/main/m/microsoft-r-client-packages-3.4.3/`
++ Download to Ubuntu 16.04: `wget https://packages.microsoft.com/ubuntu/16.04/prod/pool/main/m/microsoft-r-client-packages-3.4.3/microsoft-r-client-packages-3.4.3.deb`
 
 Repeat for each package.
 
@@ -290,7 +290,7 @@ Set an MKL_CBWR environment variable to ensure consistent output from Intel Math
 Review the recommendations in [Package Management](../operationalize/configure-manage-r-packages.md#offline) for instructions on how to set up a local package repository using MRAN or miniCRAN. As we mentioned earlier, you must install the `gcc-c++` and `gcc-gfortran` binary packages to be able to build and install packages, including miniCRAN.
 
 
-## How to uninstall R Client 3.4.1
+## How to uninstall R Client 3.4.3
 
 1. On root@, uninstall Microsoft R Open (MRO) first. This action removes any dependent packages used only by MRO, which includes packages like microsoft-mlserver-packages-r. 
 
