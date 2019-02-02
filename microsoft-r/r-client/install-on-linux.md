@@ -40,9 +40,9 @@ For information about the current release, see [What's new in R Client](what-is-
 |Free disk space|600 MB recommended, after installation of all prerequisites<br>1.2 GB recommended if pre-trained models are installed|
 |Internet access|Needed to download R Client and any dependencies. If you do not have an internet connection, for the instructions for an [offline installation](#offline)|
 
-Also included and required for R Client setup is [Microsoft R Open (MRO)](https://mran.microsoft.com/open). Microsoft R Open is a built-in dependency of Microsoft R Client. In offline scenarios when no internet connection is available on the target machine, you must manually download the MRO installer *of the version required by R Client*. Use only the link specified in the installer or in this article. Do NOT go to MRAN and download it from there or you may inadvertently get the wrong version for your Microsoft R product. 
-
 ## MRO (R) and R Client version matrix
+
+Included and required for R Client setup is [Microsoft R Open (MRO)](https://mran.microsoft.com/open). Microsoft R Open is a built-in dependency of Microsoft R Client. In offline scenarios when no internet connection is available on the target machine, you must manually download the MRO installer *of the version required by R Client*. Use only the link specified in the installer or in this article. Do NOT go to MRAN and download it from there or you may inadvertently get the wrong version for your Microsoft R product. 
 
 You can use links and instructions in this article to install either 3.4.1 or 3.4.3 versions of R Client.
 
@@ -53,7 +53,7 @@ You can use links and instructions in this article to install either 3.4.1 or 3.
 
 ## Setup Requirements
 
-+ A package manager from this list:
++ Use a package manager from this list:
 
   |                                                          Package manager                                                           |      Platform      |
   |------------------------------------------------------------------------------------------------------------------------------------|--------------------|
@@ -64,7 +64,7 @@ You can use links and instructions in this article to install either 3.4.1 or 3.
   | [rpm](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/System_Administration_Guide/s1-rpm-using.html) | RHEL, CentOS, SUSE |
 
 
-+ Root or super user permissions
++ Root or super user permissions are required.
 
 + You must install Microsoft R Client to a local drive on your computer.
 
@@ -80,7 +80,7 @@ There is no support for side-by-side installations of older and newer versions.
 
 ## How to install (with internet access)
 
-This section walks you through an R Client 3.4.3 deployment. Under these instructions, your installation includes the ability to use the RevoScaleR, MicrosoftML, and mrsdeploy (mrsdeploy is server-side; calls to mrsdeploy must also include remote compute context functions that shift execution to a remote server).
+This section walks you through an R Client deployment. Under these instructions, your installation includes the ability to use the RevoScaleR, MicrosoftML, and mrsdeploy (mrsdeploy is server-side; calls to mrsdeploy must also include remote compute context functions that shift execution to a remote server).
 
 The package manager downloads packages from the packages.microsoft.com repo, determines dependencies, retrieves additional packages, sets the installation order, and installs the software. For example syntax on setting the repo, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
@@ -158,7 +158,7 @@ zypper ar -f http://packages.microsoft.com/sles/11/prod packages-microsoft-com
 zypper update
 
 # Install the 3.4.3 packages
-# Alternative for 3.4.1: zypper install microsoft-r-client-packages-3.4.3
+# Alternative for 3.4.1: zypper install microsoft-r-client-packages-3.4.1
 zypper install microsoft-r-client-packages-3.4.3
 ``` 
 
@@ -186,7 +186,7 @@ Packages for all supported versions of Linux can be found at [packages.microsoft
 
 ### Package list
 
-The package list is the same for both 3.4.1 and 3.4.3. The following packages comprise a full R Client 3.4.3 installation:
+The package list is the same for both 3.4.1 and 3.4.3, with version numbers being the only difference. The following packages comprise a full R Client 3.4.3 installation:
 
 ```
  microsoft-r-client-packages-3.4.3     ** core
@@ -316,7 +316,7 @@ Review the recommendations in [Package Management](../operationalize/configure-m
 
 ## How to uninstall R Client
 
-You can uninstall earlier versions using the same commands, replacing 3.4.3 with 3.4.1 or an even earlier version.
+This section walks you through a 3.4.3 uninstall. To uninstall 3.4.1, use the same commands, modifying the version.
 
 1. On root@, uninstall Microsoft R Open (MRO) first. This action removes any dependent packages used only by MRO, which includes packages like microsoft-mlserver-packages-r. 
 
