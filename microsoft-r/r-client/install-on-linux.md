@@ -244,7 +244,7 @@ The following example is for the first package. Each command references the vers
 + Download to CentOS or RHEL 6: `wget https://packages.microsoft.com/rhel/6/prod/microsoft-r-client-packages-3.4.3.rpm` 
 + Download to CentOS or RHEL 7: `wget https://packages.microsoft.com/rhel/7/prod/microsoft-r-client-packages-3.4.3.rpm` 
 + Download to SUSE: `wget https://packages.microsoft.com/sles/11/prod/microsoft-r-client-packages-3.4.3.rpm`
-+ Download to Ubuntu 14.04: `wget https://packages.microsoft.com/ubuntu/14.04/prod/pool/main/m/microsoft-r-client-packages-3.4.3/`
++ Download to Ubuntu 14.04: `wget https://packages.microsoft.com/ubuntu/14.04/prod/pool/main/m/microsoft-r-client-packages-3.4.3/microsoft-r-client-packages-3.4.3.deb`
 + Download to Ubuntu 16.04: `wget https://packages.microsoft.com/ubuntu/16.04/prod/pool/main/m/microsoft-r-client-packages-3.4.3/microsoft-r-client-packages-3.4.3.deb`
 
 Repeat for each package.
@@ -254,7 +254,7 @@ Repeat for each package.
 + Download to CentOS or RHEL 6: `wget https://packages.microsoft.com/rhel/6/prod/microsoft-r-client-packages-3.4.1.rpm` 
 + Download to CentOS or RHEL 7: `wget https://packages.microsoft.com/rhel/7/prod/microsoft-r-client-packages-3.4.1.rpm` 
 + Download to SUSE: `wget https://packages.microsoft.com/sles/11/prod/microsoft-r-client-packages-3.4.1.rpm`
-+ Download to Ubuntu 14.04: `wget https://packages.microsoft.com/ubuntu/14.04/prod/pool/main/m/microsoft-r-client-packages-3.4.1/`
++ Download to Ubuntu 14.04: `wget https://packages.microsoft.com/ubuntu/14.04/prod/pool/main/m/microsoft-r-client-packages-3.4.1/microsoft-r-client-packages-3.4.1.deb`
 + Download to Ubuntu 16.04: `wget https://packages.microsoft.com/ubuntu/16.04/prod/pool/main/m/microsoft-r-client-packages-3.4.1/microsoft-r-client-packages-3.4.1.deb`
 
 Repeat for each package.
