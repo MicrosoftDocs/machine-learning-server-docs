@@ -7,7 +7,7 @@ keywords: "R Client, R IDE configuration, RTVS,  Microsoft R Client Linux"
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "12/17/2018"
+ms.date: "02/01/2019"
 ms.topic: "conceptual"
 ms.prod: "mlserver"
 
@@ -25,7 +25,7 @@ ms.prod: "mlserver"
 
 # Install Microsoft R Client on Linux
 
-Microsoft R Client is a free, data science tool for high-performance analytics that you can install on popular Linux operating systems, including CentOS, Red Hat, and Ubuntu. R Client is built on top of [Microsoft R Open](https://mran.microsoft.com/open) so you can use any open-source R packages to build your analytics, and includes the [R function libraries from Microsoft](../r-reference/introducing-r-server-r-package-reference.md#r-function-libraries) that execute locally on R Client or remotely on a more powerful [Machine Learning Server](../what-is-machine-learning-server.md). 
+Microsoft R Client is a free data science tool for high-performance analytics that you can install on popular Linux operating systems, including CentOS, Red Hat, and Ubuntu. R Client is built on top of [Microsoft R Open](https://mran.microsoft.com/open) so you can use any open-source R packages to build your analytics, and includes the [R function libraries from Microsoft](../r-reference/introducing-r-server-r-package-reference.md#r-function-libraries) that execute locally on R Client or remotely on a more powerful [Machine Learning Server](../what-is-machine-learning-server.md). 
 
 R Client allows you to work with production data locally using the full set of RevoScaleR functions, with these constraints: data must fit in local memory, and processing is capped at two threads for RevoScaleR functions. 
 
@@ -40,11 +40,20 @@ For information about the current release, see [What's new in R Client](what-is-
 |Free disk space|600 MB recommended, after installation of all prerequisites<br>1.2 GB recommended if pre-trained models are installed|
 |Internet access|Needed to download R Client and any dependencies. If you do not have an internet connection, for the instructions for an [offline installation](#offline)|
 
-Also included and required for R Client setup is Microsoft R Open 3.4.3.  Microsoft R Open is a requirement of Microsoft R Client. In offline scenarios when no internet connection is available on the target machine, you must manually download the R Open installer. Use only the link specified in the installer or installation guide. Do NOT go to MRAN and download it from there or you may inadvertently get the wrong version for your Microsoft R product. 
+## MRO (R) and R Client version matrix
+
+Included and required for R Client setup is [Microsoft R Open (MRO)](https://mran.microsoft.com/open). Microsoft R Open is a built-in dependency of Microsoft R Client. In offline scenarios when no internet connection is available on the target machine, you must manually download the MRO installer *of the version required by R Client*. Use only the link specified in the installer or in this article. Do NOT go to MRAN and download it from there or you may inadvertently get the wrong version for your Microsoft R product. 
+
+You can use links and instructions in this article to install either 3.4.1 or 3.4.3 versions of R Client.
+
+| R version | MRO version | R Client version | R Server version |
+|-----------|-------------|------------------|------------------|
+| 3.4.3     | 3.4.3       | 3.4.3            | 9.3              |
+| 3.4.1     | 3.4.1       | 3.4.1            | 9.2.1            |
 
 ## Setup Requirements
 
-+ A package manager from this list:
++ Use a package manager from this list:
 
   |                                                          Package manager                                                           |      Platform      |
   |------------------------------------------------------------------------------------------------------------------------------------|--------------------|
@@ -55,7 +64,7 @@ Also included and required for R Client setup is Microsoft R Open 3.4.3.  Micros
   | [rpm](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/System_Administration_Guide/s1-rpm-using.html) | RHEL, CentOS, SUSE |
 
 
-+ Root or super user permissions
++ Root or super user permissions are required.
 
 + You must install Microsoft R Client to a local drive on your computer.
 
@@ -63,15 +72,15 @@ Also included and required for R Client setup is Microsoft R Open 3.4.3.  Micros
 
 ## Installation paths
 After installation completes, software can be found at the following paths:
-+ Install root: /opt/microsoft/rclient/3.4.3
-+ Microsoft R Open root: /opt/microsoft/ropen/3.4.3
++ Install root: /opt/microsoft/rclient/3.4.3 (or 3.4.1)
++ Microsoft R Open root: /opt/microsoft/ropen/3.4.3 (or 3.4.1)
 + Executables like Revo64 are under /usr/bin
 
 There is no support for side-by-side installations of older and newer versions. 
 
 ## How to install (with internet access)
 
-This section walks you through an R Client 3.4.3 deployment. Under these instructions, your installation includes the ability to use the RevoScaleR, MicrosoftML packages, and mrsdeploy.
+This section walks you through an R Client deployment. Under these instructions, your installation includes the ability to use the RevoScaleR, MicrosoftML, and mrsdeploy (mrsdeploy is server-side; calls to mrsdeploy must also include remote compute context functions that shift execution to a remote server).
 
 The package manager downloads packages from the packages.microsoft.com repo, determines dependencies, retrieves additional packages, sets the installation order, and installs the software. For example syntax on setting the repo, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
@@ -103,7 +112,8 @@ ls -la /etc/apt/sources.list.d/
 # Update packages on your system
 apt-get update
 
-# Install the packages
+# Install the 3.4.3 packages
+# Alternative for 3.4.1: apt-get install microsoft-r-client-packages-3.4.1
 apt-get install microsoft-r-client-packages-3.4.3
 
 # List the packages
@@ -129,7 +139,8 @@ ls -la /etc/yum.repos.d/
 # Update packages on your system
 yum update
 
-# Install the packages
+# Install the 3.4.3 packages
+# Alternative for 3.4.1: yum install microsoft-r-client-packages-3.4.1
 yum install microsoft-r-client-packages-3.4.3
 ``` 
 
@@ -146,7 +157,8 @@ zypper ar -f http://packages.microsoft.com/sles/11/prod packages-microsoft-com
 # Update packages on your system
 zypper update
 
-# Install the packages
+# Install the 3.4.3 packages
+# Alternative for 3.4.1: zypper install microsoft-r-client-packages-3.4.1
 zypper install microsoft-r-client-packages-3.4.3
 ``` 
 
@@ -174,7 +186,7 @@ Packages for all supported versions of Linux can be found at [packages.microsoft
 
 ### Package list
 
-The following packages comprise a full R Client installation:
+The package list is the same for both 3.4.1 and 3.4.3, with version numbers being the only difference. The following packages comprise a full R Client 3.4.3 installation:
 
 ```
  microsoft-r-client-packages-3.4.3     ** core
@@ -227,11 +239,23 @@ If your system provides a graphical user interface, you can click a file to down
 
 The following example is for the first package. Each command references the version number of the platform. Remember to change the number if your version is different. For more information, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
+#### R Client 3.4.3 downloads
+
 + Download to CentOS or RHEL 6: `wget https://packages.microsoft.com/rhel/6/prod/microsoft-r-client-packages-3.4.3.rpm` 
 + Download to CentOS or RHEL 7: `wget https://packages.microsoft.com/rhel/7/prod/microsoft-r-client-packages-3.4.3.rpm` 
 + Download to SUSE: `wget https://packages.microsoft.com/sles/11/prod/microsoft-r-client-packages-3.4.3.rpm`
-+ Download to Ubuntu 14.04: `wget https://packages.microsoft.com/prod/ubuntu/14.04/microsoft-r-client-packages-3.4.1.deb`
-+ Download to Ubuntu 16.04: `wget https://packages.microsoft.com/prod/ubuntu/16.04/microsoft-r-client-packages-3.4.3.deb`
++ Download to Ubuntu 14.04: `wget https://packages.microsoft.com/ubuntu/14.04/prod/pool/main/m/microsoft-r-client-packages-3.4.3/microsoft-r-client-packages-3.4.3.deb`
++ Download to Ubuntu 16.04: `wget https://packages.microsoft.com/ubuntu/16.04/prod/pool/main/m/microsoft-r-client-packages-3.4.3/microsoft-r-client-packages-3.4.3.deb`
+
+Repeat for each package.
+
+#### R Client 3.4.1 downloads
+
++ Download to CentOS or RHEL 6: `wget https://packages.microsoft.com/rhel/6/prod/microsoft-r-client-packages-3.4.1.rpm` 
++ Download to CentOS or RHEL 7: `wget https://packages.microsoft.com/rhel/7/prod/microsoft-r-client-packages-3.4.1.rpm` 
++ Download to SUSE: `wget https://packages.microsoft.com/sles/11/prod/microsoft-r-client-packages-3.4.1.rpm`
++ Download to Ubuntu 14.04: `wget https://packages.microsoft.com/ubuntu/14.04/prod/pool/main/m/microsoft-r-client-packages-3.4.1/microsoft-r-client-packages-3.4.1.deb`
++ Download to Ubuntu 16.04: `wget https://packages.microsoft.com/ubuntu/16.04/prod/pool/main/m/microsoft-r-client-packages-3.4.1/microsoft-r-client-packages-3.4.1.deb`
 
 Repeat for each package.
 
@@ -290,7 +314,9 @@ Set an MKL_CBWR environment variable to ensure consistent output from Intel Math
 Review the recommendations in [Package Management](../operationalize/configure-manage-r-packages.md#offline) for instructions on how to set up a local package repository using MRAN or miniCRAN. As we mentioned earlier, you must install the `gcc-c++` and `gcc-gfortran` binary packages to be able to build and install packages, including miniCRAN.
 
 
-## How to uninstall R Client 3.4.1
+## How to uninstall R Client
+
+This section walks you through a 3.4.3 uninstall. To uninstall 3.4.1, use the same commands, modifying the version.
 
 1. On root@, uninstall Microsoft R Open (MRO) first. This action removes any dependent packages used only by MRO, which includes packages like microsoft-mlserver-packages-r. 
 
