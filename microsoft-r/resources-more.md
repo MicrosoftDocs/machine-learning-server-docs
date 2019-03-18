@@ -47,10 +47,10 @@ The following resources are available to you:
 * [More Data Sources](https://mran.microsoft.com/documents/data/)
 * [Blog Post on Data Sources](http://www.inside-r.org/howto/finding-data-internet)
 
-## R Server on Azure 
+## ML Server on Azure 
 * [Azure ML Support Forum](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=MachineLearning) 
 * [Microsoft Azure Blog](https://azure.microsoft.com/en-us/blog/)
-* [R Server VM offers in the Azure Marketplace](https://azure.microsoft.com/en-us/marketplace/virtual-machines/all/?term=machine+learning+server)
+* [ML Server VM offers in the Azure Marketplace](https://azure.microsoft.com/en-us/marketplace/virtual-machines/all/?term=machine+learning+server)
 
 
 ## R Tools for Visual Studio
