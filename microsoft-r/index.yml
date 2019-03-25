@@ -36,8 +36,8 @@ sections:
         - href: 
       - title: Create a Python model with revoscalepy
         values:
-        - href: python/quickstart-revoscalepy-linear-regression-model
         - href: 
+        - href: python/quickstart-revoscalepy-linear-regression-model
       - title: Run a binary classification using microsoftml 
         values:
           - href: 
