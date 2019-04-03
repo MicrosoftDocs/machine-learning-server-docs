@@ -61,17 +61,16 @@ The encryption function available in the administration utility relies on the RS
         # ]
         
         
-        # Encrypt a secret
+        # Encrypt a secret.
         az ml admin credentials set ---cert-store-name <CERT_STORE_NAME> --cert-store-location <CERT_STORE_LOCATION> --cert-subject_name <CERT_SUBJECT_NAME> --secret <secret>
         ```
-
         |CLI&nbsp;options|Description|
         |:----------:|----------------|
         |list|Returns the list of certificates found on the machine.|
         |set|Returns an encrypted string when you specify a certificate and a secret to be encrypted.|
         |--cert-store-name| The certificate store name. In Windows, it is usually one of "My", "Root", "TrustedPeople" etc.|
         |--cert-store-location | The certificate store location. In Windows, it is either "CurrentUser" or "LocalMachine".|
-        |--cert-subject_name | The subject name of certificate. You could check it from "az ml admin credentials list". In the above example, the subject name is "DC=Windows Azure CRP Certificate Generator".|
+        |--cert-subject_name | The subject name of certificate. You could check it from "az ml admin credentials list". In the above example, the subject name is "DC=Windows Azure CRP Certificate Generator". For multiple entries on the subject name, escape the subject name as follows: `az ml admin credentials --cert-subject_name "\"CN=myhost.mydomain.local, O=myCompany, L=Local, C=MyCountry\""`|
         |--secret|Enter information you want to encrypt. |
 
         The CLI returns an encrypted string.
