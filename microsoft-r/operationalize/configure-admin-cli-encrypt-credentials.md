@@ -64,6 +64,7 @@ The encryption function available in the administration utility relies on the RS
         # Encrypt a secret
         az ml admin credentials set ---cert-store-name <CERT_STORE_NAME> --cert-store-location <CERT_STORE_LOCATION> --cert-subject_name <CERT_SUBJECT_NAME> --secret <secret>
         ```
+        
         |CLI&nbsp;options|Description|
         |:----------:|----------------|
         |list|Returns the list of certificates found on the machine.|
