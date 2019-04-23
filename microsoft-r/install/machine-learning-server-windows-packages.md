@@ -62,7 +62,7 @@ To verify the base library versions on your system, start a command-line tool an
 
 ## Package location
 
-On Linux, packages installed and used by Machine Learning Server can be found at these locations:
+On Windows, packages installed and used by Machine Learning Server can be found at these locations:
 
 + For R: `C:\Program Files\Microsoft\ML Server\R_SERVER\library`
 
