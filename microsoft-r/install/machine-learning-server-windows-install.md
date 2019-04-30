@@ -24,7 +24,7 @@ ms.prod: "mlserver"
 
 # Install Machine Learning Server for Windows
 
-**Applies to:  Machine Learning Server 9.2.1 | 9.3**
+**Applies to:  Machine Learning Server 9.2.1 | 9.3 | 9.4**
 
 Machine Learning Server for Windows runs machine learning and data mining solutions written in R or Python in standalone and clustered topologies. 
 
@@ -42,7 +42,7 @@ This article explains how to install Machine Learning Server on a standalone Win
 
 The following additional components are included in Setup and required for Machine Learning Server on Windows.
 
-* Microsoft R Open 3.4.3 (if you add R)
+* Microsoft R Open 3.5.2 (if you add R)
 * Anaconda 4.2 with Python 3.5 (if you add Python)
 * Azure CLI
 * Microsoft Visual C++ 2015 Redistributable
@@ -71,7 +71,7 @@ If your existing server was configured for [operationalization](../what-is-opera
 
 For all other configurations, Setup performs an in-place upgrade over existing installations. Although the installation path is new (\Program Files\Microsoft\ML Server), when R Server 9.x is present, setup finds R Server at the old path and upgrades it to the new version. 
 
-There is no support for side-by-side installations of older and newer versions, nor is there support for hybrid versions (such as R Server 9.1 and Python 9.3). An installation is either entirely 9.3 or an earlier version.
+There is no support for side-by-side installations of older and newer versions, nor is there support for hybrid versions (such as R Server 9.1 and Machine Learning Server 9.4). An installation is either entirely 9.4 or an earlier version.
 
 ## Download Machine Learning Server installer
 
@@ -79,7 +79,7 @@ You can get the zipped installation file from one of the following download site
 
 | Site | Edition | Details |
 |------|---------|---------|
-| [Volume Licensing Service Center (VLSC)](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2017", and then choose a per-core licensing option. A selection for **Machine Learning Server 9.3** is provided on this site. |
+| [Volume Licensing Service Center (VLSC)](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2017", and then choose a per-core licensing option. A selection for **Machine Learning Server 9.4** is provided on this site. TODO|
 | [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. |
 
   For downloads from [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/):

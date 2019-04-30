@@ -24,11 +24,26 @@ ms.prod: "mlserver"
 
 # Offline installation for Machine Learning Server for Windows
 
-**Applies to:  Machine Learning Server 9.2.1 | 9.3**
+**Applies to:  Machine Learning Server 9.2.1 | 9.3 | 9.4**
 
 By default, installers connect to Microsoft download sites to get required and updated components for Machine Learning Server for Windows. If firewall constraints prevent the installer from reaching these sites, you can use an internet-connected device to download files, transfer files to an offline server, and then run setup.
 
 Before you start, review the following article for requirements and general information about setup: [Install Machine Learning Server on Windows](machine-learning-server-windows-install.md).
+
+## 9.4.0 Downloads
+
+On an internet-connected computer, download all of the following files.
+
+<a name="file-list-94"></a>
+
+| Component | Download | Used for | 
+|-----------|----------|----------|
+|Machine Learning Server setup | Get *Machine Learning Server for Windows* (en_machine_learning_server_for_windows_x64_<build-number>.zip) from one of these sites:<br/><br/>[Visual Studio Dev Essentials](https://my.visualstudio.com/Downloads?q=machine%20learning%20server&pgroup=) TODO<br/>[Volume Licensing Service Center (VLSC)](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) TODO | R Server |
+|Pre-trained Models |[MLM_9.4.0.0_1033.cab](TODO) | Pre-trained models, R or Python |
+|Microsoft R Open 3.5.2.0|[SRO_3.5.2.0_1033.cab](TODO) | R |
+|Microsoft Python Open |[SPO_9.4.0.0_1033.cab](TODO) | Python |
+|Microsoft Python Server |[SPS_9.4.0.0_1033.cab](TODO) | Python |
+|Python script |[Install-PyForMLS](https://aka.ms/mls93-py) | Python |
 
 ## 9.3.0 Downloads
 
@@ -136,7 +151,7 @@ Python runs when you execute a .py script or run commands in a Python console wi
 
     ~~~~ 
     Summary Statistics Results for: ArrDelay+DayOfWeek
-    File name: /opt/microsoft/mlserver/9.3.0/libraries/PythonServer/revoscalepy/data/sample_data/AirlineDemoSmall.xdf
+    File name: /opt/microsoft/mlserver/9.4.0/libraries/PythonServer/revoscalepy/data/sample_data/AirlineDemoSmall.xdf
     Number of valid observations: 600000.0
     
             Name       Mean     StdDev   Min     Max  ValidObs  MissingObs

@@ -23,7 +23,7 @@ ms.prod: "mlserver"
 
 ---
 
-# What's new in Machine Learning Server 9.3
+# What's new in Machine Learning Server 9.4
 
 Machine Learning Server provides powerful R and Python function libraries for data science and machine learning on small-to-massive data sets, in parallel on local or distributed systems, with modern algorithms for predictive analytics, supervised learning, and data mining. 
 
@@ -32,11 +32,15 @@ Functionality is delivered through proprietary R and Python packages, internal c
 In this article, learn about the new capabilities introduced in the latest packages and tools. If you develop in R, you might also want to review feature announcements from recent past releases. 
 
 > [!Note]
-> For updates to R Client, see [What's New for Microsoft R Client](r-client/what-is-microsoft-r-client.md#r-client-whats-new). For known issues and workarounds, see [Known issues in 9.3](resources-known-issues.md).
+> For updates to R Client, see [What's New for Microsoft R Client](r-client/what-is-microsoft-r-client.md#r-client-whats-new). For known issues and workarounds, see [Known issues in 9.4](resources-known-issues.md).
+
+## Announced in 9.4
+
+9.4 updates the R and Python engines and adds support for Spark 2.4 and CDH 6.1. Also, on Spark customers can install either R or Python or both.
 
 ## Announced in 9.3
 
-The 9.3 release marks the beginning of a faster release cadence, with fewer features delivered more frequently. New capabilities introduced in 9.3 are listed in the following table.
+New capabilities introduced in 9.3 are listed in the following table.
 
 | Feature | Area | Details |
 |---------|------|---------|

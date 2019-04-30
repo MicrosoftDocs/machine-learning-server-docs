@@ -26,6 +26,9 @@ ms.prod: "mlserver"
 
 **Applies to:  Machine Learning Server, Microsoft R Server 9.x**
 
+## Machine Learning Server 9.4
+TODO
+
 ## Machine Learning Server 9.3
 
 The installation path depends on the operating system and the type of node (web or compute).

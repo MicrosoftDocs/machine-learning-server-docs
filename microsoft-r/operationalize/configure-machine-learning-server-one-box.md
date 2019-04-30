@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Configure Machine Learning Server 9.3 to operationalize analytics (one-box)"
-description: "Configure Machine Learning Server 9.3 to operationalize analytics on a single machine (One-box)"
+title: "Configure Machine Learning Server 9.3 and later to operationalize analytics (one-box)"
+description: "Configure Machine Learning Server 9.3 and later to operationalize analytics on a single machine (One-box)"
 keywords: "setup machine learning server for deployment; install machine learning server for deploying"
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -22,9 +22,9 @@ ms.prod: "mlserver"
 #ms.custom: ""
 ---
 
-# Configure Machine Learning Server 9.3 to operationalize analytics on a single machine (One-box)
+# Configure Machine Learning Server 9.3 and later to operationalize analytics on a single machine (One-box)
 
-**Applies to: Machine Learning Server 9.3** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For older versions: [ML Server 9.2.1](configure-machine-learning-server-one-box-9-2.md) | [R Server 9.x](../install/operationalize-r-server-one-box-config.md)
+**Applies to: Machine Learning Server 9.3 and later** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For older versions: [ML Server 9.2.1](configure-machine-learning-server-one-box-9-2.md) | [R Server 9.x](../install/operationalize-r-server-one-box-config.md)
 
 You can configure Microsoft Learning Server after installation to act as a deployment server and to host analytic web services for operationalization. Machine Learning Server offers two types of configuration for operationalizing analytics and remote execution: **One-box and Enterprise**. This article describes the one-box configuration. For more on enterprise configurations, [see here](configure-machine-learning-server-enterprise.md).
 
@@ -100,7 +100,7 @@ Carefully review the following steps.
    >[!Warning]
    >If you skip this SQLite database backup step, your database data will be lost.
 
-3. Uninstall the old version. The uninstall process stashes away a copy of your configuration files for a seamlessly upgrade to Machine Learning Server 9.3.
+3. Uninstall the old version. The uninstall process stashes away a copy of your configuration files for a seamlessly upgrade to Machine Learning Server 9.3 and later.
     + For Machine Learning Server 9.2.1, read these instructions: [Windows](../install/machine-learning-server-windows-uninstall.md) | [Linux](../install/machine-learning-server-linux-uninstall.md).
     + For Microsoft R Server 9.x, read this [Uninstall Microsoft R Server to upgrade to a newer version](../install/r-server-install-uninstall-upgrade.md). 
 

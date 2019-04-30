@@ -25,11 +25,11 @@ ms.prod: "mlserver"
 
 # Known issues in Machine Learning Server
 
-The following issues are known in the 9.3 release.
+The following issues are known in the 9.4 release.
 
 <a name="revo-rxserializemodel"></a>
 
-## Known issues in 9.3
+## Known issues in 9.4
 
 ### 1. Missing `azure-ml-admin-cli` extension on DSVM environments
 

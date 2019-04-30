@@ -28,9 +28,9 @@ ms.prod: "mlserver"
 
 You can update the ports numbers for the web node, compute node, or [deployr-rserve](https://github.com/Microsoft/deployr-rserve) (a forked version of RServe).
 
-## Machine Learning Server 9.3
+## Machine Learning Server 9.3 and later
 
-In Machine Learning Server 9.3, you can use `admin` extension of the Azure Command Line Interface ([Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)) to set up and manage your configuration, including updating the local 'admin' account password.
+In Machine Learning Server 9.3 and later, you can use `admin` extension of the Azure Command Line Interface ([Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)) to set up and manage your configuration, including updating the local 'admin' account password.
 
 >[!Important]
 >- This password is set while you are first configuring your nodes.

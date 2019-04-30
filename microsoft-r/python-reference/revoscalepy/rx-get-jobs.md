@@ -37,8 +37,8 @@ ms.custom: ""
 ```
 revoscalepy.rx_get_jobs(compute_context: revoscalepy.computecontext.RxRemoteComputeContext.RxRemoteComputeContext,
     exact_match: bool = False,
-    start_time: <module 'datetime' from 'C:\\swarm\\workspace\\bigAnalytics-9.3.0\\runtime\\Python\\lib\\datetime.py'> = None,
-    end_time: <module 'datetime' from 'C:\\swarm\\workspace\\bigAnalytics-9.3.0\\runtime\\Python\\lib\\datetime.py'> = None,
+    start_time: <module 'datetime' from 'C:\\swarm\\workspace\\bigAnalytics-9.4.0\\runtime\\Python\\lib\\datetime.py'> = None,
+    end_time: <module 'datetime' from 'C:\\swarm\\workspace\\bigAnalytics-9.4.0\\runtime\\Python\\lib\\datetime.py'> = None,
     states: list = None, verbose: bool = True) -> list
 ```
 

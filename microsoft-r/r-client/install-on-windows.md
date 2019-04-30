@@ -42,7 +42,7 @@ For information about the current release, see [What's new in R Client](what-is-
 |.NET Framework 4.5.2| Framework component must be installed to run setup. Use the link provided in the setup wizard. Installing this component requires a computer restart.|
 
 The following additional components are included in Setup and required:
-+ Microsoft R Open 3.4.3
++ Microsoft R Open 3.5.2
 + Microsoft MPI 8.1
 + AS OLE DB (SQL Server 2016) provider
 + Microsoft Visual C++ 2015 Redistributable

@@ -24,7 +24,7 @@ ms.prod: "mlserver"
 
 # Command-line install for Machine Learning Server for Windows
 
-**Applies to:  Machine Learning Server 9.2.1 | 9.3**
+**Applies to:  Machine Learning Server 9.2.1 | 9.3 | 9.4**
 
 This article provides syntax and examples for running Machine Learning Server **ServerSetup.exe** from the command line. You can use command-line parameters for an internet-connected or offline installation. A command-line installation requires administrator permissions.
 
@@ -63,8 +63,8 @@ You can run ServerSetup.exe from the command line with options to expose or hide
 
 | Parameter | Description |
 |-----------|-------------|
-| `/r` | Install just the R feature. Use with `/install`. Applies to version 9.3 only. |
-| `/python` | Install just the Python feature. Use with `/install`. Applies to version 9.3 only. |
+| `/r` | Install just the R feature. Use with `/install`. Applies to version 9.3 and 9.4 only. |
+| `/python` | Install just the Python feature. Use with `/install`. Applies to version 9.3 and 9.4 only. |
 | `/offline` | Instructs setup to find [.cab files](#cab-files) on the local system in the `mediadir` location. This option requires that the server is disconnected from the internet.|
 | `/installdir=""` | Specifies the installation directory. By default, this is C:\Program Files\Microsoft\R Server\R_SERVER. |
 | `/cachedir=""` | A download location for the .cab files. By default, setup uses `%temp%` for the local admin user. Assuming an online installation scenario, you can set this parameter to have setup download the .cabs to the folder you specify. |
@@ -80,7 +80,7 @@ The command-line equivalent of a double-click invocation of ServerSetup.exe is `
 
 ## Examples
 
-1. Run setup in unattended mode with no prompts or user interaction, to install everything. For version 9.2.1, both R Server and Python Server are included in every installation; the pre-trained models are optional and have to be explicitly specified to include them in the installation. For version 9.3 only, you can set flags to install individual components: R, Python, pre-trained models:
+1. Run setup in unattended mode with no prompts or user interaction, to install everything. For version 9.2.1, both R Server and Python Server are included in every installation; the pre-trained models are optional and have to be explicitly specified to include them in the installation. For version 9.3 and 9.4 only, you can set flags to install individual components: R, Python, pre-trained models:
 
    +  `serversetup.exe /quiet /r`
    +  `serversetup.exe /quiet /python`
@@ -99,6 +99,18 @@ The command-line equivalent of a double-click invocation of ServerSetup.exe is `
    `serversetup.exe /quiet /offline /mediadir="D:/Public/CABS` 
 
 <a name="cab-files"></a>
+
+## 9.4 CAB file list
+
+For unattended setup or offline setup, copy the .cab files to either the setup user's temp directory (**C:\Users\<user-name>\AppData\Local\Temp**) or to a folder specified via the `/mediadir` flag.
+
+| Component | Download | Used for | 
+|-----------|----------|----------|
+|MLM|[MLM_9.4.0.0_1033.cab](TODO)|Pre-trained models, R or Python|
+|Microsoft R Open|[SRO_3.4.3.0_1033.cab](TODO)|R|
+|Microsoft Python Open|[SPO_9.4.0.0_1033.cab](TODO)|Python|
+
+There is no separate Python Server package in the 9.4 version.
 
 ## 9.3 CAB file list
 

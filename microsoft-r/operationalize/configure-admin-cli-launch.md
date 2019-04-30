@@ -29,7 +29,7 @@ ms.prod: "mlserver"
 This article describes how to launch the tool used to manage the web and compute nodes for Machine Learning Server. These nodes enable you to operationalize your analytics with Machine Learning Server.
 
 The tool you use to set up and manage your configuration depends on your version:
-+ In Machine Learning Server 9.3, use the command-line interface (CLI).
++ In Machine Learning Server 9.3 and later, use the command-line interface (CLI).
 + In versions 9.0 - 9.2, use the Administration Utility.
 
 With this tool, you can:
@@ -42,7 +42,7 @@ With this tool, you can:
 + [Update the local admin password](configure-admin-cli-local-password.md)  
 + [Evaluate the capacity of your configuration](configure-evaluate-capacity.md)     
 
-## Machine Learning Server 9.3: Administration with Azure CLI
+## Machine Learning Server 9.3 and later: Administration with Azure CLI
 
 In this release, use the `admin` extension of the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) to set up and manage your Machine Learning Server node configuration.
 

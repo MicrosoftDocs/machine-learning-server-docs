@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Configure Machine Learning Server 9.3 to operationalize analytics (Enterprise)"
-description: "Configure Machine Learning Server 9.3 to operationalize analytics (Enterprise setup) with load balancing"
+title: "Configure Machine Learning Server 9.3 and later to operationalize analytics (Enterprise)"
+description: "Configure Machine Learning Server 9.3 and later to operationalize analytics (Enterprise setup) with load balancing"
 keywords: "setup machine learning server for deployment; install machine learning server for deploying"
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -22,9 +22,9 @@ ms.prod: "mlserver"
 #ms.custom: ""
 ---
 
-# Configure Machine Learning Server 9.3 to operationalize analytics (Enterprise)
+# Configure Machine Learning Server 9.3 and later to operationalize analytics (Enterprise)
 
-**Applies to: Machine Learning Server 9.3** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For older versions: [ML Server 9.2.1](configure-machine-learning-server-enterprise-9-2.md) | [R Server 9.x](../install/operationalize-r-server-enterprise-config.md)
+**Applies to: Machine Learning Server 9.3 and later** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For older versions: [ML Server 9.2.1](configure-machine-learning-server-enterprise-9-2.md) | [R Server 9.x](../install/operationalize-r-server-enterprise-config.md)
 
 You can configure Microsoft Learning Server after installation to act as a deployment server and to host analytic web services for operationalization. Machine Learning Server offers two types of configuration for operationalizing analytics and remote execution: **One-box and Enterprise**. This article describes the enterprise configuration. For more on one-box configurations, [see here](configure-machine-learning-server-one-box.md).
 
@@ -192,7 +192,7 @@ Carefully review the steps in the following sections.
 >[!IMPORTANT]
 >Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
 
-1. Uninstall the old version. The uninstall process stashes away a copy of your configuration files for a seamlessly upgrade to Machine Learning Server 9.3.
+1. Uninstall the old version. The uninstall process stashes away a copy of your configuration files for a seamlessly upgrade to Machine Learning Server 9.3 and later.
     + For Machine Learning Server 9.2.1, read these instructions: [Windows](../install/machine-learning-server-windows-uninstall.md) | [Linux](../install/machine-learning-server-linux-uninstall.md).
     + For Microsoft R Server 9.x, read this [Uninstall Microsoft R Server to upgrade to a newer version](../install/r-server-install-uninstall-upgrade.md). 
 
@@ -227,7 +227,7 @@ You can now **repeat these steps** for each compute node.
 >[!IMPORTANT]
 >Before you begin, back up the appsettings.json file on each node in case of an issue during the upgrade process.
 
-1. Uninstall the old version. The uninstall process stashes away a copy of your configuration files for a seamlessly upgrade to Machine Learning Server 9.3.
+1. Uninstall the old version. The uninstall process stashes away a copy of your configuration files for a seamlessly upgrade to Machine Learning Server 9.3 and later.
     + For Machine Learning Server 9.2.1, read these instructions: [Windows](../install/machine-learning-server-windows-uninstall.md) | [Linux](../install/machine-learning-server-linux-uninstall.md).
     + For Microsoft R Server 9.x, read this [Uninstall Microsoft R Server to upgrade to a newer version](../install/r-server-install-uninstall-upgrade.md). 
     
