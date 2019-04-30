@@ -36,7 +36,7 @@ In this article, learn about the new capabilities introduced in the latest packa
 
 ## Announced in 9.4
 
-9.4 updates the R and Python engines and adds support for Spark 2.4 and CDH 6.1. Also, on Spark customers can install either R or Python or both.
+9.4 updates the R and Python engines and adds support for Spark 2.4 and CDH 6.1. Also, on CDH customers can install either R or Python or both.
 
 ## Announced in 9.3
 
