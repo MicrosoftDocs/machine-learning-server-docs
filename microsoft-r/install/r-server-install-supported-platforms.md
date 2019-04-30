@@ -33,10 +33,11 @@ This article specifies the operating systems and platforms for on-premises insta
 
 ## Machine Learning Server 9.4
 
-In this release, R support includes [Microsoft R Open 3.5.2](https://mran.microsoft.com/open/) based on R-3.5.2. Python support is based on Python 3.7.1. We support Apache Spark 2.4 on Hadoop distributions CDH, HDP or MapR.
+In this release, R support includes [Microsoft R Open 3.5.2](https://mran.microsoft.com/open/) based on R-3.5.2. Python support is based on Miniconda 4.5.12 with Python 3.7.1. We support Apache Spark 2.4 on Hadoop distributions CDH, HDP or MapR.
 
 [Operationalization](../what-is-operationalization.md) is available on server platforms, on operating systems supporting .NET Core, version 2.0. [MicrosoftML (R)](../r-reference/microsoftml/microsoftml-package.md) has a .NET Core dependency for scoring, but runs on both client and server operating systems. These requirements affect feature availability on some platforms. 
 
+TODO
 | Operating system or platform | SKU | Operationalization? | MicrosoftML for R? | 
 |------------------------------|-----|--------------------|-----------------|
 | Windows 10 <br>Windows 8.1<br>Windows 7 SP1 | [Machine Learning Server for Windows <br>(developer edition)](machine-learning-server-windows-install.md) | No | Yes |
@@ -49,10 +50,6 @@ In this release, R support includes [Microsoft R Open 3.5.2](https://mran.micros
 | MapR 5.0-6.1 | [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md)| Edge nodes only | All nodes |
 
 You can install Machine Learning Server on open-source Apache Hadoop from [http://hadoop.apache.org](http://hadoop.apache.org) but we can only offer support for commercial distributions.
-
-## Machine Learning Server 9.4
-
-TODO
 
 ## Machine Learning Server 9.3
 

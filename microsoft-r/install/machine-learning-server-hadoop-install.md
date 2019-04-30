@@ -147,7 +147,7 @@ The following packages comprise a full Machine Learning Server installation:
  microsoft-mlserver-webnode-9.4             ** operationalization (optional)
  azure-cli-2.0.25-1.el7.x86_64              ** operationalization (optional)
 ```
-The microsoft-mlserver-python-9.4.0 package provides Anaconda 4.2 with Python 3.5, executing as mlserver-python, found in `/opt/microsoft/mlserver/9.4.0/bin/python/python`
+The microsoft-mlserver-python-9.4.0 package provides Miniconda 4.5.12 with Python 3.7.1, executing as mlserver-python, found in `/opt/microsoft/mlserver/9.4.0/bin/python/python`
 
 Microsoft R Open is required for R execution:
 

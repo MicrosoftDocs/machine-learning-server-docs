@@ -38,7 +38,7 @@ Base R is distributed through Microsoft R Open, as installed by Machine Learning
 
 | Product version | R version | Anaconda/Python version |
 |-----------------|-----------|-------------------------|
-| 9.4             | 3.5.2 |  /3.7.1|
+| 9.4             | 3.5.2 |  Miniconda 4.5.12/3.7.1|
 | 9.3             | 3.4.3 |  4.2/3.5 |
 | 9.2             | 3.4.1 |  4.2/3.5 |
 | 9.1             | 3.3.3 |  not applicable |

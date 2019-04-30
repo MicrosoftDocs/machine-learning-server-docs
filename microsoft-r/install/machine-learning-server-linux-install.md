@@ -365,13 +365,9 @@ An installation of Machine Learning Server includes some or all of the following
 | Microsoft R Open (MRO) | An open-source distribution of the base R language, plus the Intel Math Kernel library (int-mkl). |
 | R proprietary libraries and script engine | Properietary R libraries are co-located with R base libraries. Libraries include RevoScaleR, MicrosoftML, mrsdeploy, olapR, RevoPemaR, and others listed in [R Package Reference](../r-reference/introducing-r-server-r-package-reference.md). <br/><br/>On Linux, the default R installation directory is `/opt/microsoft/mlserver/9.4.0`. <br/><br/>RevoScaleR is engineered for distributed and parallel processing for all multi-threaded functions, utilizing available cores and disk storage of the local machine. RevoScaleR also supports the ability to transfer computations to other RevoScaleRr instances on other computers and platforms through compute context instructions. |
 | Python proprietary libraries | Proprietary packages provide modules of class objects and static functions. Libraries include revoscalepy, microsoftml, and azureml-model-management-sdk. |
-| Anaconda 4.2 with Python 3.5.2 | An open-source distribution of Python.|
+| Miniconda 4.5.12 with Python 3.7.1 | An open-source distribution of Python.|
 | [Admin CLI](../operationalize/configure-admin-cli-launch.md) | Used for enabling remote execution and web service deployment, operationalizing analytics, and configuring web and compute nodes.| 
 | [Pre-trained models](microsoftml-install-pretrained-models.md) | Used for sentiment analysis and image detection. |
-
-Consider adding a development tool on the server to build script or solutions using R Server features:
-
-+ [Visual Studio 2017](https://www.visualstudio.com/downloads/) followed by the [R Tools for Visual Studio (RTVS) add-in](https://docs.microsoft.com/visualstudio/rtvs/installation) and the [Python for Visual Studio (PTVS)](https://www.visualstudio.com/vs/python/).
 
 <a name="package-list"></a>
 
@@ -395,7 +391,7 @@ The following packages comprise a full Machine Learning Server installation:
  microsoft-mlserver-webnode-9.4             ** operationalization (optional)
  azure-cli-2.0.25-1.el7.x86_64              ** operationalization (optional)
 ```
-The microsoft-mlserver-python-9.4.0 package provides Python 3.7.1, executing as mlserver-python, found in `/opt/microsoft/mlserver/9.4.0/bin/python/python`
+The microsoft-mlserver-python-9.4.0 package provides Miniconda 4.5.12 with Python 3.7.1, executing as mlserver-python, found in `/opt/microsoft/mlserver/9.4.0/bin/python/python`
 
 Microsoft R Open is required for R execution:
 

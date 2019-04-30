@@ -108,7 +108,7 @@ See here: https://docs.microsoft.com/en-us/machine-learning-server/resources-kno
 ### Deprecated or Discontinued
 
 + The **R Productivity Environment** (RPE) IDE for Revolution R Enterprise:
-  + The RPE is now defunct. We recommend use of R Tools for Visual Studio (RTVS), which provides a more modern and flexible IDE.
+  + The RPE is now defunct. We recommend use of alternative IDEs.
   + These R packages that support the RPE have been removed: `revoIpe`, `pkgXMLBuilder`, `XML`, and `RevoRpeConnector`.
 
 + `RevoScaleR` changes:

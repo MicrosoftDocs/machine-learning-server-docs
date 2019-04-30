@@ -52,10 +52,6 @@ The following resources are available to you:
 * [Microsoft Azure Blog](https://azure.microsoft.com/en-us/blog/)
 * [ML Server VM offers in the Azure Marketplace](https://azure.microsoft.com/en-us/marketplace/virtual-machines/all/?term=machine+learning+server)
 
-
-## R Tools for Visual Studio
-* [R Tools for Visual Studio (RTVS)](https://docs.microsoft.com/visualstudio/rtvs/installation)
-
 ## Python support in Visual Studio
 * [Install Python support in Visual Studio on Windows](https://docs.microsoft.com/visualstudio/python/installing-python-support-in-visual-studio)
 
@@ -145,7 +141,7 @@ Trellis graphics are discussed thoroughly in Cleveland’s *Visualizing Data*. C
 ### Archived Product Documentation
 
 **R Productivity Environment (RPE)**
-The RPE is an older development tool that is now superseded by [R Tools for Visual Studio]((https://docs.microsoft.com/visualstudio/rtvs/installation). RPE documentation can be found at the following links:
+The RPE is an older development tool. RPE documentation can be found at the following links:
 * [RPE Getting Started](r/rpe/revorpe-getting-started.md)
 * [RPE User's Guide](r/rpe/revorpe-users-guide.md)
 

@@ -100,7 +100,7 @@ Post-installation, you can check the log files (RServerSetup_<timestamp>.log) lo
 
 ### Connect and validate
 
-R Server runs on demand as a background process, as **Microsoft R Engine** in Task Manager. Server startup occurs when a client application like [R Tools for Visual Studio](https://docs.microsoft.com/visualstudio/rtvs/installation) or Rgui.exe connects to the server.
+R Server runs on demand as a background process, as **Microsoft R Engine** in Task Manager. Server startup occurs when a client application like Rgui.exe connects to the server.
 
 As a verification step, connect to the server and execute a few ScaleR functions to validate the installation.
 
@@ -126,10 +126,6 @@ An installation of Microsoft R Server includes the following components.
 | Microsoft R Server proprietary libraries and script engine | MRS packages provide libraries of functions. MRS libraries are co-located with R libraries in the `<install-directory>\library` folder. Libraries include RevoScaleR, MicrosoftML, mrsdeploy, olapR, RevoPemaR, and others listed in [Package Reference](../r-reference/introducing-r-server-r-package-reference.md). <br/><br/>On Windows, the default R Server installation directory is `C:\Program Files\Microsoft\R Server\R_SERVER`. <br/><br/>R Server is engineered for distributed and parallel processing for all multi-threaded functions, utilizing available cores and disk storage of the local machine. R Server also supports the ability to transfer computations to other R Server instances on other platforms through compute context instructions. |
 | [Admin tool](../operationalize/configure-use-admin-utility.md) | Used for enabling remote execution and web service deployment, operationalizing analytics, and configuring web and compute nodes.| 
 | [pre-trained models](microsoftml-install-pretrained-models.md) | Used for sentiment analysis and image featurization. |
-
-Consider adding a development tool on the server to build script or solutions using R Server features:
-
-+ [Visual Studio 2015](https://www.visualstudio.com/downloads/) followed by the [R Tools for Visual Studio (RTVS) add-in](https://docs.microsoft.com/visualstudio/rtvs/installation)
 
 > [!NOTE]
 > By default, telemetry data is collected during your usage of R Server. To turn this feature off, use the RevoScaleR package function `rxPrivacyControl(FALSE)`. To turn it back on, change the setting to `TRUE`.
@@ -161,7 +157,7 @@ Two support plans <sup>1</sup>  are available for R Server for Windows. The inst
 
 **Location of R binaries** 
 
-The Windows installer and SQL Server installer create different library folder paths for the R packages. This is something to be aware of when using tools like R Tools for Visual Studio (RTVS) or RStudio, both of which retain library folder location references.
+The Windows installer and SQL Server installer create different library folder paths for the R packages. This is something to be aware of when using tools like RStudio, both of which retain library folder location references.
 
 | File location | Installer |
 |---------------|-----------|

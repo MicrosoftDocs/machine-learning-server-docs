@@ -82,7 +82,7 @@ If you are new to using Azure VMs, we recommend that you review [this article](h
 1. After the VM is deployed and running, [connect](#connect) to the VM to begin interacting with Machine Learning Server. 
 
 1. At this point, you can also: 
-    + [Install an R IDE](#ride) or a Python interpreter.
+    + Install an R IDE or a Python interpreter.
 
     + Configure Machine Learning Server to [operationalize your analytics](#o16n) so it acts as a deployment server and host analytic web services. 
 

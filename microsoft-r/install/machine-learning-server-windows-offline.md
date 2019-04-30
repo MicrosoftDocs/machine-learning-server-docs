@@ -120,7 +120,7 @@ Machine Learning Server executes on demand as R Server or as a Python applicatio
 
 **For R**
 
-R Server runs as a background process, as **Microsoft ML Server Engine** in Task Manager. Server startup occurs when a client application like [R Tools for Visual Studio](https://docs.microsoft.com/visualstudio/rtvs/installation) or Rgui.exe connects to the server.
+R Server runs as a background process, as **Microsoft ML Server Engine** in Task Manager. Server startup occurs when a client application like Rgui.exe connects to the server.
 
 1. Go to C:\Program Files\Microsoft\ML Server\R_SERVER\bin\x64.
 2. Double-click **Rgui.exe** to start the R Console application.

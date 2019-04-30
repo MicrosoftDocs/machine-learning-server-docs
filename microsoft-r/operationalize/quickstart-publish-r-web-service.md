@@ -38,7 +38,7 @@ If you have completed the prerequisites, this task takes approximately *10* minu
 
 Before you begin this QuickStart, have the following ready:
 
-+ An instance of [Microsoft R Client installed](../r-client-get-started.md) on your local machine. You can optionally configure an R IDE of your choice, such as R Tools for Visual Studio, to run Microsoft R Client.   
++ An instance of [Microsoft R Client installed](../r-client-get-started.md) on your local machine. You can optionally configure an R IDE of your choice, such as RStudio, to run Microsoft R Client.   
 
 + An instance of [Machine Learning Server installed](../what-is-machine-learning-server.md) that has been [configured to operationalize analytics](configure-start-for-administrators.md#configure-server-for-operationalization). 
 
