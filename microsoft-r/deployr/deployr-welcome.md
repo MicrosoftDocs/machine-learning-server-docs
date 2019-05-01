@@ -30,15 +30,15 @@ This page provides links to the MSDN documentation for the versions of DeployR E
 
 Start here:
 
-+ [Operationalizing with R Server](https://msdn.microsoft.com/microsoft-r/operationalize/about)
-+ [Configuration](https://msdn.microsoft.com/microsoft-r/operationalize/configuration-initial)
++ [Operationalizing with R Server](../what-is-operationalization.md)
++ [Configuration](../installoperationalize-r-server-one-box-config.md)
 
 
 ## Looking for v8.0.0 and v8.0.5 documentation?
 
 Start here:
-+ [About DeployR](https://msdn.microsoft.com/microsoft-r/deployr-about)
-+ [Installation](https://msdn.microsoft.com/microsoft-r/deployr-installation)
++ [About DeployR](deployr-about.md)
++ [Installation](deployr-installation.md)
 
 <br>
 

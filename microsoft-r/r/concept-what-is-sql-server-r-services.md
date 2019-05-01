@@ -80,7 +80,7 @@ You can develop your R solutions in your preferred R IDE. We recommend that you 
 
 To run R code within the context of SQL Server, you have two options:
 + Run code from your laptop or any remote workstation, but set the compute context to SQL Server.
-+ Copy R code into the @script argument of a special SQL stored procedure, [sp_execute_external_script](https://msdn.microsoft.com/library/mt604368.aspx). You can provide input data as a parameter of the stored procedure, call the stored procedure from any application that supports SQL calls, and easily export results to any application that can consume SQL data.
++ Copy R code into the @script argument of a special SQL stored procedure, [sp_execute_external_script](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql). You can provide input data as a parameter of the stored procedure, call the stored procedure from any application that supports SQL calls, and easily export results to any application that can consume SQL data.
 
 ### Deploying, Managing, and Optimizing Solutions
 
