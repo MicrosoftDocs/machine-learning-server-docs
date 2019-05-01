@@ -39,7 +39,7 @@ There is no Python client or workstation version for Machine Learning Server. Yo
 
 
 >[!IMPORTANT]
->For information on SQL Server Machine Learning Services, please visit the corresponding documentation here: https://docs.microsoft.com/en-us/sql/advanced-analytics/r/sql-server-r-services.
+>For information on SQL Server Machine Learning Services, please visit the corresponding documentation here: https://docs.microsoft.com/sql/advanced-analytics/r/sql-server-r-services.
 
 ## Compare features by product
 

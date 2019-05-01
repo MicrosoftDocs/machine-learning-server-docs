@@ -38,7 +38,7 @@ A one-box configuration, as the name suggests, involves a single [web node and c
 ## How to configure
 
 >[!Important]
-> You can create a ready-to-use server with just a few clicks using Azure Marketplace VM [Machine Learning Server Operationalization](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/deploy-r.operationalization?tab=Overview). Navigate to the virtual machine listing on [Azure portal](https://portal.azure.com/#create/deploy-r.operationalizationonebox), select the **Create** button at the bottom, provide necessary inputs to create the Operationalization Server. 
+> You can create a ready-to-use server with just a few clicks using Azure Marketplace VM [Machine Learning Server Operationalization](https://azuremarketplace.microsoft.com/marketplace/apps/deploy-r.operationalization?tab=Overview). Navigate to the virtual machine listing on [Azure portal](https://portal.azure.com/#create/deploy-r.operationalizationonebox), select the **Create** button at the bottom, provide necessary inputs to create the Operationalization Server. 
 >
 > [Azure Resource Management templates](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates) are also provided in GitHub. This [blog post](https://blogs.msdn.microsoft.com/mlserver/2018/02/27/configuring-microsoft-machine-learning-server-9-3-to-operationalize-analytics-using-arm-templates/) provides more information. 
 >
@@ -81,7 +81,7 @@ A one-box configuration, as the name suggests, involves a single [web node and c
 1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
 
 >[!Important]
->Machine Learning Server uses Kestrel as the web server for its operationalization web nodes. Therefore, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy setup.
+>Machine Learning Server uses Kestrel as the web server for its operationalization web nodes. Therefore, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com//aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy setup.
 
 You are now ready to begin operationalizing your R and Python analytics with Machine Learning Server.
 
@@ -138,7 +138,7 @@ Carefully review the following steps.
 7. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
 
 >[!Important]
->Machine Learning Server uses Kestrel as the web server for its operationalization web nodes. Therefore, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy setup.
+>Machine Learning Server uses Kestrel as the web server for its operationalization web nodes. Therefore, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com//aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy setup.
 
 You are now ready to begin operationalizing your R and Python analytics with Machine Learning Server.
 

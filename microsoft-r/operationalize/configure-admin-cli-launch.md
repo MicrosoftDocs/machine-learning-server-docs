@@ -44,7 +44,7 @@ With this tool, you can:
 
 ## Machine Learning Server 9.3 and later: Administration with Azure CLI
 
-In this release, use the `admin` extension of the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) to set up and manage your Machine Learning Server node configuration.
+In this release, use the `admin` extension of the [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) to set up and manage your Machine Learning Server node configuration.
 
   >[!Important]
   >- You do not need an Azure subscription to use this CLI. 

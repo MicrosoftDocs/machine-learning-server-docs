@@ -149,9 +149,9 @@ In order to operationalize your analytics with Machine Learning Server, you can 
 
 When you need to use data from your Azure storage account, there are several options for accessing or moving the data:
 
-+ Copy the data from your storage account to the local file system using a utility, such as [AzCopy.](https://azure.microsoft.com/en-us/documentation/articles/storage-use-azcopy/)
++ Copy the data from your storage account to the local file system using a utility, such as [AzCopy.](https://azure.microsoft.com/documentation/articles/storage-use-azcopy/)
 
-+ Add the files to a file share on your storage account and then mount the file share as a network drive on your VM. For more information, see [Mounting Azure files.](https://azure.microsoft.com/en-us/documentation/articles/storage-how-to-use-files-linux/)
++ Add the files to a file share on your storage account and then mount the file share as a network drive on your VM. For more information, see [Mounting Azure files.](https://azure.microsoft.com/documentation/articles/storage-how-to-use-files-linux/)
 
 
 ## Resources & Documentation

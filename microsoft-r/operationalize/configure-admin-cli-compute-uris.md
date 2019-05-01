@@ -38,7 +38,7 @@ R Server 9.1 administrators must declare URIs manually for each web node in thei
 
 ## Machine Learning Server 9.3 and later
 
-In Machine Learning Server 9.3 and later, you can use `admin` extension of the Azure Command Line Interface ([Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)) to set up and manage your configuration, including the declaration and management of compute nodes with your web nodes.
+In Machine Learning Server 9.3 and later, you can use `admin` extension of the Azure Command Line Interface ([Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)) to set up and manage your configuration, including the declaration and management of compute nodes with your web nodes.
 
 >[!NOTE]
 >- You must first [set up your compute nodes](configure-machine-learning-server-enterprise.md) before doing anything else with the `admin` extension of the CLI.

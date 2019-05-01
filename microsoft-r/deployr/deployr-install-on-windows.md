@@ -77,7 +77,7 @@ DeployR Enterprise depends on the manual installation and configuration of these
 
 1. On the DeployR server, [download](http://go.microsoft.com/fwlink/?LinkId=789397) and install **Java™ Runtime Environment 8**, `jre-8u<NUMBER>-windows-x64.exe`. Java is only required on the DeployR server, not on any grid node machines.
 
-1. Download **[SQL Server 2016 and R Server (standalone)](https://aka.ms/eval-sql-server-2016 )**, which includes ScaleR for multi-processor and big data support. Then, follow [the instructions](https://docs.microsoft.com/en-us/sql/advanced-analytics/install/sql-machine-learning-standalone-windows-install) provided with R Server to install it as well as any of its dependencies. 
+1. Download **[SQL Server 2016 and R Server (standalone)](https://aka.ms/eval-sql-server-2016 )**, which includes ScaleR for multi-processor and big data support. Then, follow [the instructions](https://docs.microsoft.com/sql/advanced-analytics/install/sql-machine-learning-standalone-windows-install) provided with R Server to install it as well as any of its dependencies. 
 
 1. _If you have internet access_ while installing DeployR, the DeployR installation setup will attempt to install the DeployR Rserve dependency for you. 
 

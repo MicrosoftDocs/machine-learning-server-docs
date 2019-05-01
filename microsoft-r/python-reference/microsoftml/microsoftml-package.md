@@ -125,7 +125,7 @@ For SQL Server, add both Python modules to your computer by running setup:
 
 Follow this SQL Server tutorial for hands-on experience: 
 
-+ [Using the MicrosoftML Package with SQL Server](https://docs.microsoft.com/en-us/sql/advanced-analytics/using-the-microsoftml-package) 
++ [Using the MicrosoftML Package with SQL Server](https://docs.microsoft.com/sql/advanced-analytics/using-the-microsoftml-package) 
 
 ## See also
 

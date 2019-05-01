@@ -54,7 +54,7 @@ The following additional components are included in Setup and required for an R 
 
 ## How to install
 
-This section walks you through an R Server 9.1 deployment using the standalone Windows installer. Under these instructions, your installation will be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912) and includes the ability to [operationalize your analytics](../what-is-operationalization.md).
+This section walks you through an R Server 9.1 deployment using the standalone Windows installer. Under these instructions, your installation will be serviced under the [Modern Lifecycle policy](https://support.microsoft.com/help/447912) and includes the ability to [operationalize your analytics](../what-is-operationalization.md).
 
 <a name="download"><a/>
 
@@ -146,14 +146,14 @@ Two support plans <sup>1</sup>  are available for R Server for Windows. The inst
 
 | Service Plan | Details | How to get this plan |
 |--------------|---------|----------------------|
-|[Modern Lifecycle policy](https://support.microsoft.com/en-us/help/447912)| Requires running the latest version of R Server. | [Install R Server for Windows using a standalone Windows installer](#howtoinstall) |
-| SQL Server support policy | Service updates are on the SQL Server release schedule. | [Install SQL Server Machine Learning Services (In-database) as part of a SQL Server Database engine instance](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/sql-server-r-services) <br/> - or - <br/>[Install R Server (Standalone) using the SQL Server installer](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/r-server-standalone) <sup>2, </sup> <sup>3</sup>| 
+|[Modern Lifecycle policy](https://support.microsoft.com/help/447912)| Requires running the latest version of R Server. | [Install R Server for Windows using a standalone Windows installer](#howtoinstall) |
+| SQL Server support policy | Service updates are on the SQL Server release schedule. | [Install SQL Server Machine Learning Services (In-database) as part of a SQL Server Database engine instance](https://docs.microsoft.com/sql/advanced-analytics/r/sql-server-r-services) <br/> - or - <br/>[Install R Server (Standalone) using the SQL Server installer](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone) <sup>2, </sup> <sup>3</sup>| 
 
 <sup>1</sup> For details, go to [Microsoft Lifecycle Policy](https://support.microsoft.com/lifecycle/selectindex). Use the index to navigate to **R Server** or **SQl Server 2016**.
 
-<sup>2</sup> You can [unbind an existing R Services instance from the SQL Server support plan](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/use-sqlbindr-exe-to-upgrade-an-instance-of-sql-server) and rebind it to Modern Lifecycle. The terms and duration of your license are the same. The only difference is that under Modern Lifecycle, you would adopt newer versions of R Server at a faster cadence than what might be typical for SQL Server deployments.
+<sup>2</sup> You can [unbind an existing R Services instance from the SQL Server support plan](https://docs.microsoft.com/sql/advanced-analytics/r/use-sqlbindr-exe-to-upgrade-an-instance-of-sql-server) and rebind it to Modern Lifecycle. The terms and duration of your license are the same. The only difference is that under Modern Lifecycle, you would adopt newer versions of R Server at a faster cadence than what might be typical for SQL Server deployments.
 
-<sup>3</sup> You can provision an Azure virtual machine running Windows that has SQL Server R Server (Standalone) already installed. This VM is provisioned under the SQL Server service plan, but you could rebind to the Modern Lifecycle support policy. For more information, see [Provision an R Server Virtual Machine](https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/provision-vm).
+<sup>3</sup> You can provision an Azure virtual machine running Windows that has SQL Server R Server (Standalone) already installed. This VM is provisioned under the SQL Server service plan, but you could rebind to the Modern Lifecycle support policy. For more information, see [Provision an R Server Virtual Machine](https://docs.microsoft.com/azure/machine-learning/data-science-virtual-machine/provision-vm).
 
 **Location of R binaries** 
 
@@ -177,7 +177,7 @@ Earlier versions are supported, but with limited availability on Microsoft downl
 
 | Version | Details|
 |---------|--------|
-| Version 8.0.5  | This version of R Server for Windows, released as Microsoft R Server 2016, is integrated with the enterprise edition of SQL Server 2016. Licensing, installation, and support of this version of R Server for Windows is through SQL Server. Using SQL Server setup, you can install R Server as a standalone server, or as multi-instance service within SQL Server. For more information, see [R Server for Windows](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/r-server-standalone) and [SQL Server R Services - R Server install page](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/r-server-standalone) in SQL Server 2016 technical documentation.|
+| Version 8.0.5  | This version of R Server for Windows, released as Microsoft R Server 2016, is integrated with the enterprise edition of SQL Server 2016. Licensing, installation, and support of this version of R Server for Windows is through SQL Server. Using SQL Server setup, you can install R Server as a standalone server, or as multi-instance service within SQL Server. For more information, see [R Server for Windows](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone) and [SQL Server R Services - R Server install page](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone) in SQL Server 2016 technical documentation.|
 
 ## See Also
 

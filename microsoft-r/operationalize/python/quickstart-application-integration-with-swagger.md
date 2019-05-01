@@ -35,7 +35,7 @@ This quickstart shows you how to:
 - create a real-time web service from a Python script
 - use Swagger to integrate the service into a C# application.
 
-This quickstart has been designed for new users and is self-contained. You must have an [Azure subscription](https://azure.microsoft.com/en-us/free/) and [Visual Studio](https://www.visualstudio.com/downloads/), or some other IDE for developing a C# application, installed to complete it. It also assumes some familiarity with Python and C#. After you have deployed the Machine Learning Server on Azure, this quickstart takes approximately 10 minutes to complete.
+This quickstart has been designed for new users and is self-contained. You must have an [Azure subscription](https://azure.microsoft.com/free/) and [Visual Studio](https://www.visualstudio.com/downloads/), or some other IDE for developing a C# application, installed to complete it. It also assumes some familiarity with Python and C#. After you have deployed the Machine Learning Server on Azure, this quickstart takes approximately 10 minutes to complete.
 
 
 ## Deploy Machine Learning Server with an ARM template

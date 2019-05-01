@@ -112,7 +112,7 @@ This feature uses a SQLite 3.7+ database by default, but can be configured to us
 
     1. Save the changes you've made to appsettings.json.
 
-1. Open the database port on the remote machine to the public IP of each web node as described in these articles: [SQL Server](https://technet.microsoft.com/en-us/library/ms175043(v=sql.130).aspx) | [PostgreSQL](https://www.postgresql.org/docs/current/static/auth-pg-hba-conf.html)
+1. Open the database port on the remote machine to the public IP of each web node as described in these articles: [SQL Server](https://docs.microsoft.com//sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access) | [PostgreSQL](https://www.postgresql.org/docs/current/static/auth-pg-hba-conf.html)
          
 1. [Start the web node](configure-admin-cli-stop-start.md) and the database is created upon restart.
 

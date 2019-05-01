@@ -31,13 +31,13 @@ Applies To: Azure Virtual Machines, provisioned as the 8.0.3 version of "R Serve
 
 If you already have an existing 8.0.3 version of "R Server Only SQL Server 2016 Enterprise" Virtual Machine on Azure, these instructions apply to your VM. 
 
-A newer version (9.0.1) is the current VM image on Azure. You can no longer obtain the previous version (8.0.3). If installation and provisioning is still ahead of you, we recommend that you get the newest version. For instructions, see [Provision the R Server Only SQL Server 2016 Enterprise VM on Azure](https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/provision-vm).
+A newer version (9.0.1) is the current VM image on Azure. You can no longer obtain the previous version (8.0.3). If installation and provisioning is still ahead of you, we recommend that you get the newest version. For instructions, see [Provision the R Server Only SQL Server 2016 Enterprise VM on Azure](https://docs.microsoft.com/azure/machine-learning/data-science-virtual-machine/provision-vm).
 
 ## Provision the R Server 8.0.3 Virtual Machine
 
 Version 8.0.3 includes DeployR Enterprise, for deploying R analytics inside applications and backend systems. For more information, see [About Deploy R](../deployr/deployr-about.md).
 
-As a prerequisite, review this article for more information about using the portal and configuring a virtual machine. [Virtual Machines - Getting started](https://azure.microsoft.com/en-us/documentation/learning-paths/virtual-machines/)
+As a prerequisite, review this article for more information about using the portal and configuring a virtual machine. [Virtual Machines - Getting started](https://azure.microsoft.com/documentation/learning-paths/virtual-machines/)
 
 To create the R Server VM from the Microsoft Azure Marketplace
 
@@ -82,8 +82,8 @@ Update the Windows Firewall as described here: [Updating the firewall](../deploy
 
 When you need to use data from your Azure storage account, there are several options for accessing or moving the data:
 
-+ Copy the data from your storage account to the local file system using a utility, such as [AzCopy](https://docs.microsoft.com/en-us/azure/storage/storage-use-azcopy#copy-files-in-azure-file-storage-with-azcopy-preview-version-only).
-+ Add the files to a file share on your storage account and then mount the file share as a network drive on your VM. For more information, see [Mounting Azure files](https://docs.microsoft.com/en-us/azure/storage/storage-dotnet-how-to-use-files).
++ Copy the data from your storage account to the local file system using a utility, such as [AzCopy](https://docs.microsoft.com/azure/storage/storage-use-azcopy#copy-files-in-azure-file-storage-with-azcopy-preview-version-only).
++ Add the files to a file share on your storage account and then mount the file share as a network drive on your VM. For more information, see [Mounting Azure files](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-files).
 
   ## Resources
 
@@ -97,4 +97,4 @@ See these additional resources to learn about R in general:
 
 ## See Also
 
-[SQL Server Machine Learning Services](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/sql-server-r-services)
+[SQL Server Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/r/sql-server-r-services)
