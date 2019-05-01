@@ -308,7 +308,7 @@ If you want to use a local or remote SQL Server database for DeployR instead of 
 
 1. Log into the SQL Server Management Studio.
 
-1. Create a database with the name `deployr` and an instance called `DEPLOYREXPRESS`. For help with creating that database, visit: https://technet.microsoft.com/en-us/library/ms186312(v=sql.130).aspx
+1. Create a database with the name `deployr` and an instance called `DEPLOYREXPRESS`. For help with creating that database, visit: https://docs.microsoft.com/sql/relational-databases/databases/create-a-database?view=sql-server-2017
 
     >The JDBC drivers are installed with DeployR. 
 
