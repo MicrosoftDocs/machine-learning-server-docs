@@ -27,7 +27,18 @@ ms.prod: "mlserver"
 **Applies to:  Machine Learning Server, Microsoft R Server 9.x**
 
 ## Machine Learning Server 9.4
-TODO
+
+The installation path depends on the operating system and the type of node (web or compute).
+
++ **Find path to your server directory:**<br/>
+
+  |   OS    |                                               \<server-directory>                                               |
+  |---------|-----------------------------------------------------------------------------------------------------------------|
+  | Windows | C:\Program Files\Microsoft\ML Server\PYTHON\_SERVER\o16n<br>C:\Program Files\Microsoft\ML Server\R\_SERVER\o16n |
+  |  Linux  |                                       /opt/microsoft/mlserver/9.4.0/o16n                                        |
+
+  <br/>
+
 
 ## Machine Learning Server 9.3
 
