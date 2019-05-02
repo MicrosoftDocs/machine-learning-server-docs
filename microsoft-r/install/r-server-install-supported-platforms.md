@@ -37,17 +37,14 @@ In this release, R support includes [Microsoft R Open 3.5.2](https://mran.micros
 
 [Operationalization](../what-is-operationalization.md) is available on server platforms, on operating systems supporting .NET Core, version 2.0. [MicrosoftML (R)](../r-reference/microsoftml/microsoftml-package.md) has a .NET Core dependency for scoring, but runs on both client and server operating systems. These requirements affect feature availability on some platforms. 
 
-TODO
 | Operating system or platform | SKU | Operationalization? | MicrosoftML for R? | 
 |------------------------------|-----|--------------------|-----------------|
-| Windows 10 <br>Windows 8.1<br>Windows 7 SP1 | [Machine Learning Server for Windows <br>(developer edition)](machine-learning-server-windows-install.md) | No | Yes |
+| Windows 10| [Machine Learning Server for Windows <br>(developer edition)](machine-learning-server-windows-install.md) | No | Yes |
 | Windows Server 2019<br>Windows Server 2016<br>Windows Server 2012 R2 | [Machine Learning Server for Windows](machine-learning-server-windows-install.md) | Yes | Yes |
-| CentOS/ RedHat 6.x - 7.x  | [Machine Learning Server for Linux](machine-learning-server-linux-install.md#redhat) | 6.x - No <br>7.x - Yes | 6.x - No <br>7.x - Yes |
-| Ubuntu 14.04<br>Ubuntu 16.04| [Machine Learning Server for Linux](machine-learning-server-linux-install.md#ubuntu)| Yes | Yes | 
-| SUSE Linux Enterprise Server 11 SP3 and above | [Machine Learning Server for Linux](machine-learning-server-linux-install.md#suse)| No | No | 
+| CentOS/ RedHat 7.x - 8.x | [Machine Learning Server for Linux](machine-learning-server-linux-install.md#redhat) | 6.x - No <br>7.x - Yes | 6.x - No <br>7.x - Yes |
+| Ubuntu 16.04<br>Ubuntu 18.04| [Machine Learning Server for Linux](machine-learning-server-linux-install.md#ubuntu)| Yes | Yes | 
+| SUSE Linux Enterprise Server 12<br>SUSE Linux Enterprise Server 15 | [Machine Learning Server for Linux](machine-learning-server-linux-install.md#suse)| No | No | 
 | Cloudera CDH 6.1| [Cloudera Manager installation](machine-learning-server-cloudera-install.md) | No | All nodes |
-| Hortonworks HDP 2.5-3.1| [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md) | Edge nodes only | All nodes |
-| MapR 5.0-6.1 | [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md)| Edge nodes only | All nodes |
 
 You can install Machine Learning Server on open-source Apache Hadoop from [http://hadoop.apache.org](http://hadoop.apache.org) but we can only offer support for commercial distributions.
 

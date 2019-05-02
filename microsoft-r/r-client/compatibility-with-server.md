@@ -38,7 +38,8 @@ Although R Client is backwards compatible, R Client and Machine Learning Server 
 
 |R Client releases | Server releases| Release date | Downloads|
 |------------------|----------------|--------------|--------------------|
-| 3.4.3 | 9.3 | February 2018 | [Linux](https://aka.ms/rclientlinux)<br/> [Windows](https://aka.ms/rclient) |
+| 3.5.2 | 9.4 | TODO | [Linux](https://aka.ms/rclientlinux)<br/> [Windows](https://aka.ms/rclient) |
+| 3.4.3 | 9.3 | February 2018 | [Linux](https://aka.ms/rclientlinux)<br/> [Windows](TODO) |
 | 3.4.1 | 9.2.1 | September 2017 | [Linux](https://aka.ms/rclientlinux)<br/>[Windows](http://download.microsoft.com/download/A/E/E/AEE0FDC0-11CB-49C7-BCAF-A942A2830F3B/RClientSetup3.4.1.exe)|
 | 3.3.3 (Windows only) | 9.1 | March 2017 | [Windows](http://download.microsoft.com/download/F/B/0/FB04AB56-F035-4FF8-A2DB-3602DE423301/RClientSetup3.3.3.exe) | 
 | 3.3.2 (Windows only) | 9.0 | December 2016 | [Windows](http://download.microsoft.com/download/D/1/0/D10D147D-AAF4-4927-A59D-FD85B3B65310/RClientSetup.exe)|

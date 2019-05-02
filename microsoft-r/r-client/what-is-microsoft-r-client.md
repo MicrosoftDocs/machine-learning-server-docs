@@ -92,11 +92,11 @@ When ready, you can run that R code using R Client or even send those R commands
 
 ### Microsoft R Client 3.5.2
 
-TODO
+This release of R Client, built on open-source R 3.5.2, is at the same functional level as Machine Learning Server 9.4. Download R Client from https://aka.ms/rclient (Windows) or https://aka.ms/rclientlinux (Linux). 
 
 ### Microsoft R Client 3.4.3
 
-This release of R Client, built on open-source R 3.4.3, is at the same functional level as Machine Learning Server 9.4. Download R Client from https://aka.ms/rclient (Windows) or https://aka.ms/rclientlinux (Linux). 
+This release of R Client, built on open-source R 3.4.3, is at the same functional level as Machine Learning Server 9.3. 
 
 R Client includes these enhancements:
 
