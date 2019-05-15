@@ -97,7 +97,6 @@ You can run parcel generator with the following flags to suppress prompts or cho
 flag | Option | Description
 -----|--------|------------
  -m | --distro-name [DISTRO]| Target Linux distribution for this parcel, one of: el6 el7 sles11
- -l | --add-mml  | Add Python and microsoftml to the Parcel regardless of the target system.
  -a | --accept-eula | Accept all end-user license agreements.
  -d | --download-mro | Download Microsoft r open for distribution to an offline system.
  -s | --silent | Perform a silent, unattended install.
@@ -111,7 +110,7 @@ flag | Option | Description
 Repeat the command without **-n** parameter to create the files: `bash generate_mlserver_parcel.sh`
 
 + The parcel generator file name is **MLServer-9.4.0-[DISTRO].parcel**
-+ The CSD file name is **MLServer**
++ The CSD file name is **MLServer-{version}-CONFIG.jar**
 
 > [!Note]
 > The parcel generator file name includes a placeholder for the distribution. Remember to replace it with a valid value before executing the copy commands.
@@ -125,11 +124,19 @@ This section explains how to place parcel generator script and CSD files in CDH.
 By default, Cloudera Manager finds parcels in the Cloudera parcel repository. In this step, copy the parcel you generated to the repository.
 
 
-1. Copy **MLServer-9.4.0** and **MLServer-9.4.0.sha** to the Cloudera parcel repository, typically /opt/cloudera/parcels.
+1. Copy **MLServer-9.4.0** and **MLServer-9.4.0.sha** to the Cloudera parcel repository, typically /opt/cloudera/parcels and make sure the permissions are set correctly.
 
     `cp ./MLServer-9.4.0-[DISTRO].parcel /opt/cloudera/parcel-repo/`
 
     `cp ./MLServer-9.4.0-[DISTRO].parcel.sha /opt/cloudera/parcel-repo/`
+    
+    `sudo chmod 644 /opt/cloudera/parcel-repo/MLServer-{version}-[DISTRO].parcel`
+    
+    `sudo chmod 644 /opt/cloudera/parcel-repo/MLServer-{version}-[DISTRO].parcel`
+    
+    `sudo chown cloudera-scm:cloudera-scm /opt/cloudera/parcel-repo/MLServer-{version}-[DISTRO].parcel`
+    
+    `sudo chown cloudera-scm:cloudera-scm /opt/cloudera/parcel-repo/MLServer-{version}-[DISTRO].parcel`
 
 ### Copy to the CSD repository
 
