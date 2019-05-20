@@ -41,7 +41,7 @@ In this release, R support includes [Microsoft R Open 3.5.2](https://mran.micros
 |------------------------------|-----|--------------------|-----------------|
 | Windows 10| [Machine Learning Server for Windows <br>(developer edition)](machine-learning-server-windows-install.md) | No | Yes |
 | Windows Server 2016<br>Windows Server 2012 R2 | [Machine Learning Server for Windows](machine-learning-server-windows-install.md) | Yes | Yes |
-| CentOS/ RedHat 7.x - 8.x | [Machine Learning Server for Linux](machine-learning-server-linux-install.md#redhat) | 6.x - No <br>7.x - Yes | 6.x - No <br>7.x - Yes |
+| CentOS/ RedHat 7.x - 8.x | [Machine Learning Server for Linux](machine-learning-server-linux-install.md#redhat) | Yes | Yes |
 | Ubuntu 16.04<br>Ubuntu 18.04| [Machine Learning Server for Linux](machine-learning-server-linux-install.md#ubuntu)| Yes | Yes | 
 | SUSE Linux Enterprise Server 12<br>SUSE Linux Enterprise Server 15 | [Machine Learning Server for Linux](machine-learning-server-linux-install.md#suse)| No | No | 
 | Cloudera CDH 6.1| [Cloudera Manager installation](machine-learning-server-cloudera-install.md) | No | All nodes |
