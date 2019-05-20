@@ -56,7 +56,7 @@ If you encounter this error,  you can re-add the extension as such:
 **Windows:**
 
 ```azurecli
-$ az extension add --source 'C:\Program Files\Microsoft\ML Server\Setup\azure_ml_admin_cli-0.0.1-py2.py3-none-any. whl' --yes
+$ az extension add --source 'C:\Program Files\Microsoft\ML Server\Setup\azure_ml_admin_cli-0.0.1-py2.py3-none-any.whl' --yes
 ````
 
 **Linux:**
