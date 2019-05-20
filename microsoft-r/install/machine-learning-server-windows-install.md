@@ -220,7 +220,7 @@ If you have multiple servers, you can designate each one as either a web node or
 
 1. Open an Administrator command prompt.
 
-2. Enter the following command to configure the server: `az ml admin bootstrap`
+2. Enter the following command to configure the server: `az mlserver admin bootstrap` (use `az ml admin bootstrap` for 9.3)
 
    ![CLI screenshot](./media/machine-learning-server-windows-install/cli-onebox.png)
 
