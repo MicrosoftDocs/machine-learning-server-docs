@@ -68,12 +68,12 @@ A one-box configuration, as the name suggests, involves a single [web node and c
 
    # Authenticate via CLI
    # Account name is `admin` if LDAP or AAD is not set up.
-   az login --mls
+   az mlserver login
 
    TODO
 
    # Test configuration to validate setup
-   az ml admin diagnostic run
+   az mlserver admin diagnostic run
    ``` 
 
    You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
@@ -128,10 +128,10 @@ Carefully review the following steps.
    
    ```azurecli
    # Set up both nodes on one machine
-   az ml admin node setup --onebox --admin-password <Password> --confirm-password <Password>
+   az mlserver admin node setup --onebox --admin-password <Password> --confirm-password <Password>
 
    # Check that the nodes are now running
-   az ml admin node list
+   az mlserver admin node list
    ``` 
    You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
 
