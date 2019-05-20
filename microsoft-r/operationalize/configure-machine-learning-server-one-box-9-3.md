@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Configure Machine Learning Server 9.4 to operationalize analytics (one-box)"
-description: "Configure Machine Learning Server 9.4 to operationalize analytics on a single machine (One-box)"
+title: "Configure Machine Learning Server 9.3 to operationalize analytics (one-box)"
+description: "Configure Machine Learning Server 9.3 to operationalize analytics on a single machine (One-box)"
 keywords: "setup machine learning server for deployment; install machine learning server for deploying"
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -22,9 +22,9 @@ ms.prod: "mlserver"
 #ms.custom: ""
 ---
 
-# Configure Machine Learning Server 9.4 to operationalize analytics on a single machine (One-box)
+# Configure Machine Learning Server 9.3 to operationalize analytics on a single machine (One-box)
 
-**Applies to: Machine Learning Server 9.4** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For older versions: [ML Server 9.3](configure-machine-learning-server-one-box-9.3.md) | [ML Server 9.2.1](configure-machine-learning-server-one-box-9-2.md) | [R Server 9.x](../install/operationalize-r-server-one-box-config.md)
+**Applies to: Machine Learning Server 9.3** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For older versions: [ML Server 9.2.1](configure-machine-learning-server-one-box-9-2.md) | [R Server 9.x](../install/operationalize-r-server-one-box-config.md)
 
 You can configure Microsoft Learning Server after installation to act as a deployment server and to host analytic web services for operationalization. Machine Learning Server offers two types of configuration for operationalizing analytics and remote execution: **One-box and Enterprise**. This article describes the one-box configuration. For more on enterprise configurations, [see here](configure-machine-learning-server-enterprise.md).
 
@@ -61,16 +61,14 @@ A one-box configuration, as the name suggests, involves a single [web node and c
    ```azurecli
    # With elevated privileges, run the following commands.
    # Set up both nodes on one machine
-   az mlserver admin node setup --onebox --admin-password <Password> --confirm-password <Password>
+   az ml admin node setup --onebox --admin-password <Password> --confirm-password <Password>
 
    # Check that the nodes are now running
-   az mlserver admin node list
+   az ml admin node list
 
    # Authenticate via CLI
    # Account name is `admin` if LDAP or AAD is not set up.
    az login --mls
-
-   TODO
 
    # Test configuration to validate setup
    az ml admin diagnostic run

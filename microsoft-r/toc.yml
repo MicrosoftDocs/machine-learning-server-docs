@@ -52,8 +52,10 @@
     - name: 'Configure: One-box'
       href: operationalize/configure-machine-learning-server-one-box.md
       items:
-      - name: 9.3
+      - name: 9.4
         href: operationalize/configure-machine-learning-server-one-box.md
+      - name: 9.3
+        href: operationalize/configure-machine-learning-server-one-box-9-3.md  
       - name: 9.2.1
         href: operationalize/configure-machine-learning-server-one-box-9-2.md
       - name: 9.0/9.1

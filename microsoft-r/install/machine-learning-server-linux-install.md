@@ -92,7 +92,7 @@ There is no support for side-by-side installations of older and newer versions, 
 
 After installation completes, software can be found at the following paths:
 
-+ Install root: `/opt/microsoft/mlserver/9.4.0`
++ Install root: `/opt/microsoft/mlserver/9.4.7`
 + Microsoft R Open root: `/opt/microsoft/ropen/3.5.2`
 + Executables like Revo64 and mlserver-python are at `/usr/bin`
 
@@ -125,17 +125,17 @@ Run the following commands to install Machine Learning Server for Linux on Red H
   
   # Install the server
   # The following command is for version 7.x
-  # For 6.x: yum install microsoft-mlserver-el6-9.4.0
-  yum install microsoft-mlserver-all-9.4.0
+  # For 6.x: yum install microsoft-mlserver-el6-9.4.7
+  yum install microsoft-mlserver-all-9.4.7
   
   # Activate the server
-  /opt/microsoft/mlserver/9.4.0/bin/R/activate.sh
+  /opt/microsoft/mlserver/9.4.7/bin/R/activate.sh
 
   # List installed packages as a verification step
   rpm -qa | grep microsoft
   
   # Choose a package name and obtain verbose version information
-  rpm -qi microsoft-mlserver-packages-r-9.4.0
+  rpm -qi microsoft-mlserver-packages-r-9.4.7
   ```
 
 
@@ -172,16 +172,16 @@ Follow these instructions for Machine Learning Server for Linux on Ubuntu (14.04
   apt-get update
   
   # Install the server
-  apt-get install microsoft-mlserver-all-9.4.0
-  
+  apt-get install microsoft-mlserver-all-9.4.7
+
   # Activate the server
-  /opt/microsoft/mlserver/9.4.0/bin/R/activate.sh     
+  /opt/microsoft/mlserver/9.4.7/bin/R/activate.sh     
   
   # List installed packages as a verification step
   apt list --installed | grep microsoft  
   
   # Choose a package name and obtain verbose version information
-  dpkg --status microsoft-mlserver-packages-r-9.4.0
+  dpkg --status microsoft-mlserver-packages-r-9.4.7
   ```
 
 ## <a name="suse">Install on SUSE </a>
@@ -200,7 +200,7 @@ Follow these instructions for Machine Learning Server for Linux on SUSE (SLES11 
   zypper update
   
   # Install the server
-  zypper install microsoft-mlserver-sles11-9.4.0
+  zypper install microsoft-mlserver-sles11-9.4.7
   
   # You might get a message stating that PackageKit is blocking zypper
   # Enter `y` to quit PackageKit and allow zypper to continue
@@ -222,13 +222,13 @@ Follow these instructions for Machine Learning Server for Linux on SUSE (SLES11 
   y
   
   #Activate the server
-  /opt/microsoft/mlserver/9.4.0/bin/R/activate.sh
+  /opt/microsoft/mlserver/9.4.7/bin/R/activate.sh
   
   # List installed packages as a verification step
   zypper se microsoft
   
   # Choose a package name and obtain verbose version information
-  zypper info microsoft-mlserver-packages-r-9.4.0
+  zypper info microsoft-mlserver-packages-r-9.4.7
   ```
 
 ## Set a MKL_CBWR variable
@@ -303,7 +303,7 @@ To quit the program, type `q()` at the command line with no arguments.
 
     ~~~~ 
     Summary Statistics Results for: ArrDelay+DayOfWeek
-    File name: /opt/microsoft/mlserver/9.4.0/libraries/PythonServer/revoscalepy/data/sample_data/AirlineDemoSmall.xdf
+    File name: /opt/microsoft/mlserver/9.4.7/libraries/PythonServer/revoscalepy/data/sample_data/AirlineDemoSmall.xdf
     Number of valid observations: 600000.0
     
             Name       Mean     StdDev   Min     Max  ValidObs  MissingObs
@@ -363,7 +363,7 @@ An installation of Machine Learning Server includes some or all of the following
 | Component | Description |
 |-----------|-------------|
 | Microsoft R Open (MRO) | An open-source distribution of the base R language, plus the Intel Math Kernel library (int-mkl). |
-| R proprietary libraries and script engine | Properietary R libraries are co-located with R base libraries. Libraries include RevoScaleR, MicrosoftML, mrsdeploy, olapR, RevoPemaR, and others listed in [R Package Reference](../r-reference/introducing-r-server-r-package-reference.md). <br/><br/>On Linux, the default R installation directory is `/opt/microsoft/mlserver/9.4.0`. <br/><br/>RevoScaleR is engineered for distributed and parallel processing for all multi-threaded functions, utilizing available cores and disk storage of the local machine. RevoScaleR also supports the ability to transfer computations to other RevoScaleRr instances on other computers and platforms through compute context instructions. |
+| R proprietary libraries and script engine | Properietary R libraries are co-located with R base libraries. Libraries include RevoScaleR, MicrosoftML, mrsdeploy, olapR, RevoPemaR, and others listed in [R Package Reference](../r-reference/introducing-r-server-r-package-reference.md). <br/><br/>On Linux, the default R installation directory is `/opt/microsoft/mlserver/9.4.7`. <br/><br/>RevoScaleR is engineered for distributed and parallel processing for all multi-threaded functions, utilizing available cores and disk storage of the local machine. RevoScaleR also supports the ability to transfer computations to other RevoScaleRr instances on other computers and platforms through compute context instructions. |
 | Python proprietary libraries | Proprietary packages provide modules of class objects and static functions. Libraries include revoscalepy, microsoftml, and azureml-model-management-sdk. |
 | Miniconda 4.5.12 with Python 3.7.1 | An open-source distribution of Python.|
 | [Admin CLI](../operationalize/configure-admin-cli-launch.md) | Used for enabling remote execution and web service deployment, operationalizing analytics, and configuring web and compute nodes.| 
@@ -376,14 +376,14 @@ An installation of Machine Learning Server includes some or all of the following
 The following packages comprise a full Machine Learning Server installation:
 
 ```
- microsoft-mlserver-packages-r-9.4.0        ** core
- microsoft-mlserver-python-9.4.0            ** core
- microsoft-mlserver-packages-py-9.4.0       ** core
- microsoft-mlserver-mml-r-9.4.0             ** microsoftml for R (optional)
- microsoft-mlserver-mml-py-9.4.0            ** microsoftml for Python (optional)
- microsoft-mlserver-mlm-r-9.4.0             ** pre-trained models (requires mml)
- microsoft-mlserver-mlm-py-9.4.0            ** pre-trained models (requires mml)
- microsoft-mlserver-hadoop-9.4.0            ** hadoop (required for hadoop)
+ microsoft-mlserver-packages-r-9.4.7        ** core
+ microsoft-mlserver-python-9.4.7            ** core
+ microsoft-mlserver-packages-py-9.4.7       ** core
+ microsoft-mlserver-mml-r-9.4.7             ** microsoftml for R (optional)
+ microsoft-mlserver-mml-py-9.4.7            ** microsoftml for Python (optional)
+ microsoft-mlserver-mlm-r-9.4.7             ** pre-trained models (requires mml)
+ microsoft-mlserver-mlm-py-9.4.7            ** pre-trained models (requires mml)
+ microsoft-mlserver-hadoop-9.4.7            ** hadoop (required for hadoop)
  microsoft-mlserver-adminutil-9.4           ** operationalization (optional)
  microsoft-mlserver-computenode-9.4         ** operationalization (optional)
  microsoft-mlserver-config-rserve-9.4       ** operationalization (optional) 
@@ -391,7 +391,7 @@ The following packages comprise a full Machine Learning Server installation:
  microsoft-mlserver-webnode-9.4             ** operationalization (optional)
  azure-cli-2.0.25-1.el7.x86_64              ** operationalization (optional)
 ```
-The microsoft-mlserver-python-9.4.0 package provides Miniconda 4.5.12 with Python 3.7.1, executing as mlserver-python, found in `/opt/microsoft/mlserver/9.4.0/bin/python/python`
+The microsoft-mlserver-python-9.4.7 package provides Miniconda 4.5.12 with Python 3.7.1, executing as mlserver-python, found in `/opt/microsoft/mlserver/9.4.7/bin/python/python`
 
 Microsoft R Open is required for R execution:
 
