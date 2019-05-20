@@ -37,9 +37,9 @@ If for some reason your `azure-ml-admin-cli` extension is not available or has b
 
 ```azurecli
 # With elevated privileges, run the following commands.
-$ az ml admin --help
+$ az mlserver admin --help
 
-az: error: argument _command_package: invalid choice: ml
+az: error: argument _command_package: invalid choice: mlserver
 usage: az [-h] [--verbose] [--debug] [--output {tsv,table,json,jsonc}]
           [--query JMESPATH]
           {aks,backup,redis,network,cosmosdb,batch,iot,dla,group,webapp,acr,dls,
