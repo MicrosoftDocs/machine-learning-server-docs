@@ -329,7 +329,7 @@ To quit the program, type `quit()` at the command line with no arguments.
 
 1. Open an Administrator command prompt.
 
-2. Enter the following command to check availability of the CLI: `az ml admin --help`. If you receive the following error: `az: error argument _command_package: invalid choice: ml`, follow the [instructions to re-add the extension to the CLI](https://docs.microsoft.com/machine-learning-server/resources-known-issues#1-missing-azure-ml-admin-cli-extension-on-dsvm-environments
+2. Enter the following command to check availability of the CLI: `az mlserver admin --help` (use `az ml admin --help` for 9.3 or older). If you receive the following error: `az: error argument _command_package: invalid choice: ml`, follow the [instructions to re-add the extension to the CLI](https://docs.microsoft.com/machine-learning-server/resources-known-issues#1-missing-azure-ml-admin-cli-extension-on-dsvm-environments
 ).
 
 ## Enable web service deployment and remote connections
@@ -342,7 +342,7 @@ Alternatively, if you have multiple servers, you can designate each one as eithe
 
 1. Open an Administrator command prompt.
 
-2. Enter the following command to invoke the Administrator Command Line Interface (CLI) and configure the server: `az ml admin bootstrap`
+2. Enter the following command to invoke the Administrator Command Line Interface (CLI) and configure the server: `az mlserver admin bootstrap` (use `az ml admin bootstrap` for 9.3 or older)
 
 3. Set a password used to protect your configuration settings. Later, after configuration is finished, anyone who wants to use the CLI to modify a configuration must provide this password to gain access to settings and operations.  
 
