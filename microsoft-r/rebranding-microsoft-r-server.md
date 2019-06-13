@@ -29,11 +29,7 @@ In September 2017, Microsoft R Server was released under the new name of **Micro
 
 In subsequent releases, including the current version of 9.4, the R components that originated in R Server continue to be  distributed under this product name. Specifically, the R components in Machine Learning Server include packages such as RevoScaleR, olapR, and mrsdeploy to name a few.
 
-As related to R components, highlights of the previous versions include the following:
-
-+ In the 9.3 version, Machine Learning Server improves operationalization and deployment of web services containing R or Python code. 
-
-+ In the 9.4 version, Machine Learning Server improved the installation experience on Spark. Read the [What's new in this release](whats-new-in-machine-learning-server.md) to learn more.
+As related to R components, some highlights from previous versions include improvements to web service deployment in version 9.3, and improvements to Apache Spark deployment in verison 9.4. Read the [What's new in this release](whats-new-in-machine-learning-server.md) to learn more.
 
 ## Building on our commitment to R
 
@@ -45,12 +41,9 @@ R components are backwards compatible. You should be able to run existing R scri
 
 Moving from R Server to Machine Learning Server is an in-place upgrade unless you configured the server for operationalization (using mrsdeploy or deployR, depending on the product version you are using). 
 
-1. Follow these instructions to [install Machine Learning Server](install/machine-learning-server-install.md) on Windows, Linux, or Hadoop.  
+1. Follow these instructions to [install Machine Learning Server](install/machine-learning-server-install.md) on Windows, Linux, or Hadoop. Microsoft R Server 9.1 for Teradata was the last release for that platform and does not have a Machine Learning Server equivalent. 
 
-   >[!NOTE]
-   > **Microsoft R Server 9.1 for Teradata** was the last release and does not have a Machine Learning Server equivalent. This version of R Server is no longer supported.
-
-1. [Upgrade your web and compute nodes](operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) if the server is operationalized.
+1. Perform additional steps to [upgrade your web and compute nodes](operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) if the server is operationalized.
 
 ## Download prior R Server releases
 

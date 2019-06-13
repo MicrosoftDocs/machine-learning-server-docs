@@ -7,7 +7,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "01/30/2018"
+ms.date: "07/15/2019"
 ms.topic: "conceptual"
 ms.prod: "mlserver"
 
@@ -22,17 +22,15 @@ ms.prod: "mlserver"
 #ms.custom: ""
 
 ---
-# Opting out of usage data collection
+# Opting out of usage data collection (Machine Learning Server)
 
-**Applies to:** Machine Learning Server, Microsoft R Server 9.x
-
-By default, telemetry data is collected during your usage of Machine Learning Server, Microsoft R Server, and R Client for the purpose of improving products and services. Anonymous usage data includes device information, operating system version, regional and language settings, and errors reports. Please see the [Microsoft privacy statement](https://privacy.microsoft.com/privacystatement) for a detailed explanation.
+By default, telemetry data is collected during your usage of Machine Learning Server and R Client for the purpose of improving products and services. Anonymous usage data includes device information, operating system version, regional and language settings, and errors reports. You can review the [Microsoft privacy statement](https://privacy.microsoft.com/privacystatement) for a detailed explanation.
 
 To turn data collection on or off, use [rxPrivacyControl](r-reference/revoscaler/rxprivacycontrol.md) from [RevoScaleR](r-reference/revoscaler/revoscaler.md) on any platform, or [rx_privacy_control](python-reference/revoscalepy/rx-privacy-control.md) from [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md).
 
 ## Version Requirements
 
-Privacy controls are in newer versions of the server. To verify server version is 9.x or later (or 3.4.x for R Client), open an R IDE, such the R Console (RGui.exe). The console app reports server version information for Microsoft R Open, R Client, and R Server. From the console, you can use the `print` command to return verbose version information:
+Privacy controls are in server version 9.x and later, and R Client 3.4.x and later. To get version informaton, open an R IDE, such the R Console (RGui.exe). The console app reports server version information for Microsoft R Open, R Client, and R Server. From the console, you can use the `print` command to return verbose version information:
 
     > print(Revo.version)
 
