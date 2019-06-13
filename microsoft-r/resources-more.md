@@ -48,7 +48,7 @@ Use the links in this article for recommended resources about R and Python.
 
 ## New to Python
 
-Python is installed through a distribution of Anaconda, adding tools and packages that are in common use across the development community. Jupyter Notebooks, included in Anaconda, is added to your system when you install Machine Learning Server with Python support. We recommend using Jupyter Notebooks for beginners. It's interactive environment, with visualization support, is easy to use and a mainstay of Python training content. 
+Python is installed through a distribution of Anaconda, adding tools and packages that are in common use across the development community. Jupyter Notebooks, included in Anaconda, is added to your system when you install Machine Learning Server with Python support. We recommend using Jupyter Notebooks for beginners. Its interactive environment, with visualization support, is easy to use and a mainstay of Python training content. 
 
 To start Jupyter Notebooks, go to C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts and run Jupyter-Notebook.exe. A browser window will open to localhost, with options for creating or opening new Python files. For help on getting started, see [Jupyter Notebook Tips, Tricks, and Shortcuts](https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/). 
 

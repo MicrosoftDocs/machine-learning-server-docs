@@ -31,17 +31,17 @@ It's also available in the cloud on Azure virtual machines (VM), and through Azu
 
 ## Azure virtual machines with Machine Learning Server
 
-You can provision an Azure virtual machine, running either a Windows or Linux operating system, that already has Machine Learning Server with both R and Python support. In the [Azure portal](https://portal.azure.com), you can search for "machine learning server" to see your options for the most current release. The following screenshot happens to show version 9.3.
+You can provision an Azure virtual machine, running either a Windows or Linux operating system, that already has Machine Learning Server with both R and Python support. In the [Azure portal](https://portal.azure.com), you can search for "machine learning server" to see your options for the most current release. The following screenshot happens to show version 9.3. Other versions might be available but this gives you an idea of what to expect.
 
-![Azure resources for machine learning server](media/resources-more/azure-vm-mls.png)
+![Azure resources for machine learning server](media/machine-learning-server-in-the-cloud/azure-vm-mls.png)
 
-Perhaps the easiest way to provision the VM is one-click install using an ARM template. If you have an Azure subscription, you can use an ARM template that performs the following tasks: provisions a virtual machine, installs Machine Learning Server, opens port 12800, and configures the server for operationalization. 
+Perhaps the easiest way to provision the VM is one-click install using an Resource Manager template. If you have an Azure subscription, you can use an Resource Manager template that performs the following tasks: provisions a virtual machine, installs Machine Learning Server, opens port 12800, and configures the server for operationalization. 
 
 Follow these links to get started:
 
-+ [One-click installation of an auto-scale environment to operationalize your R analytics](https://blogs.msdn.microsoft.com/mlserver/2017/07/07/set-up-an-auto-scale-environment-to-operationalize-your-r-analytics-with-just-one-click/)
++ [One-click installation of an autoscale environment to operationalize your R analytics](https://blogs.msdn.microsoft.com/mlserver/2017/07/07/set-up-an-auto-scale-environment-to-operationalize-your-r-analytics-with-just-one-click/)
 
-+ [Machine Learning Server ARM templates on GitHub](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates/)
++ [Machine Learning Server Resource Manager templates on GitHub](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates/)
 
 Other options include:
 

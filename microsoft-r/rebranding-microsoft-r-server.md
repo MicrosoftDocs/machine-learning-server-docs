@@ -29,7 +29,7 @@ In September 2017, Microsoft R Server was released under the new name of **Micro
 
 In subsequent releases, including the current version of 9.4, the R components that originated in R Server continue to be  distributed under the Machine Learning Server product name. Specifically, the R components in Machine Learning Server include packages such as RevoScaleR, olapR, and mrsdeploy to name a few.
 
-As related to R components, some highlights from previous versions include improvements to web service deployment in version 9.3, and improvements to Apache Spark deployment in verison 9.4. Read the [What's new in this release](whats-new-in-machine-learning-server.md) to learn more.
+As related to R components, some highlights from previous versions include improvements to web service deployment in version 9.3, and improvements to Apache Spark deployment in version 9.4. Read the [What's new in this release](whats-new-in-machine-learning-server.md) to learn more.
 
 ## Building on our commitment to R
 
