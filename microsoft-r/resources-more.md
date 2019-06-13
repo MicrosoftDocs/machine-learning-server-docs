@@ -25,7 +25,7 @@ ms.prod: "mlserver"
 
 # Additional Resources for Machine Learning Server and Microsoft R
 
-The following resources are available to you:
+Use the links in this article for recommended resources about R and Python.
 
 ## Blogs and resources
 * [Product web page](https://www.microsoft.com/sql-server/machinelearningserver)
@@ -46,13 +46,11 @@ The following resources are available to you:
 * [Sample Dataset Directory](https://packages.revolutionanalytics.com/datasets/)
 * [More Data Sources](https://mran.microsoft.com/documents/data/)
 
-## Machine Learning Server on Azure 
+## New to Python
 
-Cloud support for Machine Learning Server consists of running the server on an Azure virtual machine. You can provision a virtual machine with a Machine Learning Server. In the [Azure portal](https://portal.azure.com), you can search for "machine learning server" to see your options for the most current release.
+Python is installed through a distribution of Anaconda, adding tools and packages that are in common use across the development community. Jupyter Notebooks, included in Anaconda, is added to your system when you install Machine Learning Server with Python support. We recommend using Jupyter Notebooks for beginners. It's interactive environment, with visualization support, is easy to use and a mainstay of Python training content. 
 
-![Azure resources for machine learning server](media/resources-more/azure-vm-mls.png)
-
-As a cloud service, with support for RevoScaleR and other packages, you can use Azure SQL Database. For more information, see [Azure SQL Database Machine Learning Services with R (preview)](https://docs.microsoft.com/azure/sql-database/sql-database-machine-learning-services-overview). Microsoft offers other machine-learning-related products and services, but cloud service support of Revo packages is only available through Azure SQL Database.
+To start Jupyter Notebooks, go to C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts and run Jupyter-Notebook.exe. A browser window will open to localhost, with options for creating or opening new Python files. For help on getting started, see [Jupyter Notebook Tips, Tricks, and Shortcuts](https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/). 
 
 ## New to R
 

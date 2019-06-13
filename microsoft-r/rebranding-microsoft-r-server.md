@@ -1,7 +1,7 @@
 ---
 
 # required metadata
-title: "What happened to Microsoft R Server - Machine Learning Server "
+title: "Microsoft R Server is renamed - Machine Learning Server "
 description: "Microsoft R Server was rebranded as Machine Learning Server in Sept. 2017."
 keywords: ""
 author: "HeidiSteen"
@@ -27,7 +27,7 @@ ms.prod: "mlserver"
 
 In September 2017, Microsoft R Server was released under the new name of **Microsoft Machine Learning Server**. The product was renamed from R Server to Machine Learning Server to reflect the addition of Python-based analytics.
 
-In subsequent releases, including the current version of 9.4, the R components that originated in R Server continue to be  distributed under this product name. Specifically, the R components in Machine Learning Server include packages such as RevoScaleR, olapR, and mrsdeploy to name a few.
+In subsequent releases, including the current version of 9.4, the R components that originated in R Server continue to be  distributed under the Machine Learning Server product name. Specifically, the R components in Machine Learning Server include packages such as RevoScaleR, olapR, and mrsdeploy to name a few.
 
 As related to R components, some highlights from previous versions include improvements to web service deployment in version 9.3, and improvements to Apache Spark deployment in verison 9.4. Read the [What's new in this release](whats-new-in-machine-learning-server.md) to learn more.
 
@@ -47,21 +47,7 @@ Moving from R Server to Machine Learning Server is an in-place upgrade unless yo
 
 ## Download prior R Server releases
 
-The following table provides links for downloading older versions of Microsoft R Server. [Find the instructions for installing R Server here](install/r-server-install.md). 
-
-| Site for R Server | Edition | Details |
-|------|---------|---------|
-| [Visual Studio Dev Essentials](https://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. |
-|[Volume Licensing Service Center (VLSC)](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for R Server. Choose the right version for your OS. |
-
-From [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/):
-
-1. Click **Join or access now** to sign up for download benefits.
-2. Check the URL to verify it changed to *https://my.visualstudio.com/*.
-3. Click **Downloads** to search for R Server.
-4. Click **Downloads** for a specific version to select the platform.
-
-![Download page on Visual Studio benefits page](./install/media/mlserver-install-older-versions.png)
+You can no longer download older versions of Microsoft R Server. All Microsoft distributions are now some version of Machine Learning Server.
 
 ## Get support
 

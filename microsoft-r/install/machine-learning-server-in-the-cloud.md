@@ -7,7 +7,7 @@ keywords: "Machine Learning Server, R Server, azure, virtual machine"
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "05/02/2018"
+ms.date: "07/15/2019"
 ms.topic: "conceptual"
 ms.prod: "mlserver"
 
@@ -31,9 +31,11 @@ It's also available in the cloud on Azure virtual machines (VM), and through Azu
 
 ## Azure virtual machines with Machine Learning Server
 
-You can provision an Azure virtual machine, running either a Windows or Linux operating system, that already has Machine Learning Server with both R and Python support. 
+You can provision an Azure virtual machine, running either a Windows or Linux operating system, that already has Machine Learning Server with both R and Python support. In the [Azure portal](https://portal.azure.com), you can search for "machine learning server" to see your options for the most current release. The following screenshot happens to show version 9.3.
 
-The easiest way to provision the VM is one-click install using an ARM template. If you have an Azure subscription, you can use an ARM template that performs the following tasks: provisions a virtual machine, installs Machine Learning Server, opens port 12800, and configures the server for operationalization. 
+![Azure resources for machine learning server](media/resources-more/azure-vm-mls.png)
+
+Perhaps the easiest way to provision the VM is one-click install using an ARM template. If you have an Azure subscription, you can use an ARM template that performs the following tasks: provisions a virtual machine, installs Machine Learning Server, opens port 12800, and configures the server for operationalization. 
 
 Follow these links to get started:
 
@@ -50,10 +52,12 @@ Other options include:
 
 ## Data science VM
 
-Azure also offers a data science VM that has a full toolset, where the R and Python packages in Machine Learning Server are just one component. For more information, see [Machine Learning Server on the Microsoft Data Science Virtual Machine](r-server-vm-data-science.md).
+Azure also offers a data science VM that has a full toolset, where the R and Python packages in Machine Learning Server are just one component. For more information, see [What's included in the Data Science VM](https://docs.microsoft.com/azure/machine-learning/data-science-virtual-machine/overview#whats-included-in-the-data-science-vm).
 
 ## Azure services
 
 The following Azure services include R and Python packages:
+
++ [Azure SQL Database Machine Learning Services with R (preview)](https://docs.microsoft.com/azure/sql-database/sql-database-machine-learning-services-overview)
 
 + [R Server on Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/r-server/r-server-overview)
