@@ -7,7 +7,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "05/08/2018"
+ms.date: "07/15/2019"
 ms.topic: "conceptual"
 ms.prod: "mlserver"
 
@@ -57,7 +57,7 @@ If you encounter this error,  you can re-add the extension as such:
 
 ```azurecli
 $ az extension add --source "C:\Program Files\Microsoft\ML Server\Setup\azure_ml_admin_cli-0.0.1-py2.py3-none-any.whl" --yes
-````
+```
 
 **Linux:**
 

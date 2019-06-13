@@ -7,7 +7,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "2/16/2018"
+ms.date: "07/15/2019"
 ms.topic: "conceptual"
 ms.prod: "mlserver"
 
@@ -22,11 +22,15 @@ ms.prod: "mlserver"
 #ms.custom: ""
 
 ---
-# Deprecated, discontinued, or changed features
-
-**Applies to: Machine Learning Server and Microsoft R Server**
+# Deprecated, discontinued, or changed features in Machine Learning Server
 
 This article notifies you about pending status changes to features and function libraries, such as deprecated and discontinued functions in the custom packages and libraries installed with the product.
+
+## Machine Learning Server 9.4
+
+There are no announcements for package or function deprecation, discontinuation, or changes to existing functionality.
+
+To learn more about this release, see [What's New](whats-new-in-machine-learning-server.md) for feature announcements and [Known issues](resources-known-issues.md) for descriptions and possible workarounds to known problems found in this release.
 
 ## Machine Learning Server 9.3
 
