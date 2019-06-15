@@ -10,8 +10,9 @@
   - name: R Server's new name
     href: rebranding-microsoft-r-server.md
 - name: Install & configure
-  href: install/machine-learning-server-install.md
   items:
+  - name: Installation overview
+    href: install/machine-learning-server-install.md
   - name: Supported platforms
     href: install/r-server-install-supported-platforms.md
   - name: Windows
@@ -45,13 +46,15 @@
     - name: Uninstall from Hadoop
       href: install/machine-learning-server-hadoop-uninstall.md
   - name: Configure to operationalize
-    href: what-is-operationalization.md
     items:
+    - name: Operationalization overview
+      href: what-is-operationalization.md
     - name: 'Get started: admins'
       href: operationalize/configure-start-for-administrators.md
     - name: 'Configure: One-box'
-      href: operationalize/configure-machine-learning-server-one-box.md
       items:
+      - name: One-box deployment
+        href: operationalize/configure-machine-learning-server-one-box.md
       - name: 9.4
         href: operationalize/configure-machine-learning-server-one-box.md
       - name: 9.3
@@ -59,8 +62,9 @@
       - name: 9.2.1
         href: operationalize/configure-machine-learning-server-one-box-9-2.md
     - name: 'Configure: Enterprise'
-      href: operationalize/configure-machine-learning-server-enterprise.md
       items:
+      - name: Enterprise deployment
+        href: operationalize/configure-machine-learning-server-enterprise.md
       - name: 9.3
         href: operationalize/configure-machine-learning-server-enterprise.md
       - name: 9.2.1
@@ -98,8 +102,9 @@
     - name: Default file paths
       href: operationalize/configure-find-admin-configuration-file.md
   - name: Azure cloud
-    href: install/machine-learning-server-in-the-cloud.md
     items:
+    - name: Cloud installation choices
+      href: install/machine-learning-server-in-the-cloud.md
     - name: Overview
       href: install/machine-learning-server-in-the-cloud.md
     - name: Data Science VM
@@ -109,8 +114,9 @@
   - name: Client-side
     items:
     - name: Microsoft R Client
-      href: r-client/what-is-microsoft-r-client.md
       items:
+      - name: R Client introduction
+        href: r-client/what-is-microsoft-r-client.md
       - name: Install on Windows
         href: r-client/install-on-windows.md
       - name: Install on Linux
@@ -149,8 +155,9 @@
     - name: PySpark and revoscalepy interoperability
       href: python/tutorial-revoscalepy-pyspark.md
   - name: R
-    href: r/tutorial-introduction.md
     items:
+    - name: R tutorial overview
+      href: r/tutorial-introduction.md
     - name: Explore R-to-RevoScaleR
       href: r/tutorial-r-to-revoscaler.md
     - name: Import & transform data
@@ -170,13 +177,15 @@
 - name: Samples & solutions
   items:
   - name: Python
-    href: python/python-samples.md
     items:
+    - name: Python samples overview
+      href: python/python-samples.md
     - name: Python samples for MicrosoftML
       href: python/samples-microsoftml-python.md
   - name: R
-    href: r/r-samples.md
     items:
+    - name: R samples overview
+      href: r/r-samples.md
     - name: Sample data in RevoScaleR
       href: r/sample-built-in-data.md
     - name: RevoScaleR rxExecBy parallel processing example
@@ -202,8 +211,9 @@
   - name: RevoScaleR
     href: r/concept-what-is-revoscaler.md
 - name: How-to guides
-  href: r/how-to-introduction.md
   items:
+  - name: Introduction
+    href: r/how-to-introduction.md
   - name: Data & models
     items:
     - name: Python
@@ -247,8 +257,9 @@
       - name: Visualization
         href: r/how-to-revoscaler-visualize-huge-data-sets.md
       - name: Data modeling
-        href: r/how-to-revoscaler-models.md
         items:
+        - name: Data modeling overview
+          href: r/how-to-revoscaler-models.md
         - name: Linear regression
           href: r/how-to-revoscaler-linear-model.md
         - name: Logistic regression
@@ -340,11 +351,13 @@
 - name: Reference
   items:
   - name: Python packages
-    href: python-reference/introducing-python-package-reference.md
     items:
+    - name: Python package overview
+      href: python-reference/introducing-python-package-reference.md
     - name: azureml-model-management-sdk
-      href: python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md
       items:
+      - name: Package overview
+        href: python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md
       - name: DeployClient
         href: python-reference/azureml-model-management-sdk/deploy-client.md
       - name: MLServer
@@ -366,8 +379,9 @@
       - name: BatchResponse
         href: python-reference/azureml-model-management-sdk/batch-response.md
     - name: microsoftml
-      href: python-reference/microsoftml/microsoftml-package.md
       items:
+      - name: Package overview
+        href: python-reference/microsoftml/microsoftml-package.md
       - name: categorical
         href: python-reference/microsoftml/categorical.md
       - name: categorical_hash
@@ -413,8 +427,9 @@
       - name: select_columns
         href: python-reference/microsoftml/select-columns.md        
     - name: revoscalepy
-      href: python-reference/revoscalepy/revoscalepy-package.md
       items:
+      - name: Package overview
+        href: python-reference/revoscalepy/revoscalepy-package.md
       - name: rx_btrees
         href: python-reference/revoscalepy/rx-btrees.md
       - name: rx_cancel_job
@@ -560,11 +575,13 @@
       - name: RxXdfData
         href: python-reference/revoscalepy/RxXdfData.md
   - name: R packages
-    href: r-reference/introducing-r-server-r-package-reference.md
     items:
+    - name: R package overview
+      href: r-reference/introducing-r-server-r-package-reference.md
     - name: MicrosoftML
-      href: r-reference/microsoftml/microsoftml-package.md
       items:
+      - name: Package overview
+        href: r-reference/microsoftml/microsoftml-package.md
       - name: categorical
         href: r-reference/microsoftml/categorical.md
       - name: categoricalHash
@@ -632,8 +649,9 @@
       - name: selectFeatures
         href: r-reference/microsoftml/selectfeatures.md
     - name: mrsdeploy
-      href: r-reference/mrsdeploy/mrsdeploy-package.md
       items:
+      - name: Package overview
+        href: r-reference/mrsdeploy/mrsdeploy-package.md
       - name: configureServicePool
         href: r-reference/mrsdeploy/configureservicepool.md
       - name: createSnapshot
@@ -707,8 +725,9 @@
       - name: updateService
         href: r-reference/mrsdeploy/updateservice.md
     - name: olapR
-      href: r-reference/olapr/olapr.md
       items:
+      - name: Package overview
+        href: r-reference/olapr/olapr.md
       - name: Execute2D
         href: r-reference/olapr/execute2d.md
       - name: ExecuteMD
@@ -722,8 +741,9 @@
     - name: RevoIOQ
       href: r-reference/revoioq.md
     - name: RevoPemaR
-      href: r-reference/revopemar/pemar.md
       items:
+      - name: Package overview
+        href: r-reference/revopemar/pemar.md
       - name: PemaBaseClass-class
         href: r-reference/revopemar/pemabaseclass-class.md
       - name: PemaBaseClass
@@ -741,8 +761,9 @@
       - name: setPemaClass
         href: r-reference/revopemar/setpemaclass.md
     - name: RevoScaleR
-      href: r-reference/revoscaler/revoscaler.md
       items:
+      - name: Package overview
+        href: r-reference/revoscaler/revoscaler.md
       - name: Data sets
         items:
         - name: AirlineData87to08
@@ -1094,8 +1115,9 @@
       - name: Teradata functions
         href: r-reference/revoscaler/revoscaler-teradata-functions.md
     - name: RevoUtils
-      href: r-reference/revoutils/revoutils.md
       items:
+      - name: Package overview
+        href: r-reference/revoutils/revoutils.md
       - name: getRevoRepos
         href: r-reference/revoutils/getrevorepos.md
       - name: readNews
@@ -1107,8 +1129,9 @@
       - name: totalSystemMemory
         href: r-reference/revoutils/totalsystemmemory.md
     - name: sqlrutils
-      href: r-reference/sqlrutils/sqlrutils.md
       items:
+      - name: Package overview
+        href: r-reference/sqlrutils/sqlrutils.md
       - name: executeStoredProcedure
         href: r-reference/sqlrutils/executestoredprocedure.md
       - name: getInputParameters
@@ -1218,8 +1241,9 @@
   - name: DeployR 8.x 
     items:
     - name: How to install DeployR
-      href: deployr/deployr-installation.md
       items:
+      - name: Installation overview
+        href: deployr/deployr-installation.md
       - name: Install DeployR for R Server for Windows
         href: deployr/deployr-install-on-windows.md
       - name: Install DeployR for Microsoft R Server 8.0.5 on Linux
