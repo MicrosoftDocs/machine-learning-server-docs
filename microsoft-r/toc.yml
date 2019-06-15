@@ -294,7 +294,7 @@
           href: install/r-server-install-hadoop-yarnqueueusage.md
     - name: Choose a MicrosoftML algorithm
       href: r/how-to-choose-microsoftml-algorithms-cheatsheet.md
-  - name: "Operationalize models & code"
+  - name: Operationalize models & code
     items:
     - name: Python
       items:
