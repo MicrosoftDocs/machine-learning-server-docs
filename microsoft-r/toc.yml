@@ -319,7 +319,7 @@
       - name: Create and manage session pools
         href: operationalize/how-to-create-manage-session-pools.md
      - name: APIs
-      items:
+       items:
       - name: About the REST APIs
         href: operationalize/concept-api.md
       - name: Integrate services into apps
