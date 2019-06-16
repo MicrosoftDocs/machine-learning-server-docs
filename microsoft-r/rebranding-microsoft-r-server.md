@@ -33,7 +33,7 @@ As related to R components, some highlights from previous versions include impro
 
 ## Building on our commitment to R
 
-Microsoft continues its commitment and development in R, not only in the latest Machine Learning Server release, but also in the newest [Microsoft R Client](r-client/what-is-microsoft-r-client.md) and [Microsoft R Open](https://mran.microsoft.com) releases.
+Microsoft continues its commitment and development in R, not only in the latest Machine Learning Server release, but also in the newest [Microsoft R Client](r-client/what-is-microsoft-r-client.md) and [Microsoft R Open](https://mran.microsoft.com) releases. You can also find R and Python support in [SQL Server Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/sql-server-machine-learning-services) on Windows and Linux, and R support in [Azure SQL Database](https://docs.microsoft.com/azure/sql-database/sql-database-machine-learning-services-overview).
 
 ## Upgrade to Machine Learning Server
 

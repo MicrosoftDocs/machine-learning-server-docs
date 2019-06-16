@@ -7,7 +7,7 @@ metadata:
   author: "HeidiSteen"
   ms.author: "heidist"
   manager: "cgronlun"
-  ms.date: "2/16/2018"
+  ms.date: 07/15/2019
   ms.topic: "conceptual"
   #ms.suite: ""
   ms.prod: "mlserver"
@@ -16,7 +16,7 @@ metadata:
   ms.topic: landing-page
   ms.technology:
 abstract:
-  description: <div style="text-align:left;">Microsoft R Server is now <b>Microsoft Machine Learning Server</b>, renamed to reflect Python language support. <a href="rebranding-microsoft-r-server">(more)</a></div><br><a href="what-is-machine-learning-server">Machine Learning Server</a> is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business. It includes a collection of <a href="r-reference/introducing-r-server-r-package-reference">R packages</a>, <a href="python-reference/introducing-python-package-reference">Python packages</a>, interpreters, and infrastructure for developing and  <a href="what-is-operationalization">deploying</a> distributed R and Python-based machine learning and data science solutions on a <a href="install/r-server-install-supported-platforms">range of platforms</a>  across on-premises and cloud configurations.
+  description: <div style="text-align:left;">Microsoft Machine Learning Server includes **R_SERVER** and **PYTHON_SERVER** components, with packages from Microsoft that enable analytics at scale. In addition to packages, it includes interpreters and infrastructure for deploying distributed R and Python-based machine learning and data science solutions on a <a href="install/r-server-install-supported-platforms">range of platforms</a> across on-premises and cloud configurations.
 sections:
 - title: 5-Minute Quickstarts
   items:
