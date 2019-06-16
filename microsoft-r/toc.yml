@@ -318,8 +318,8 @@
         href: operationalize/how-to-consume-web-service-asynchronously-batch.md
       - name: Create and manage session pools
         href: operationalize/how-to-create-manage-session-pools.md
-     - name: APIs
-       items:
+    - name: APIs
+      items:
       - name: About the REST APIs
         href: operationalize/concept-api.md
       - name: Integrate services into apps
@@ -1261,8 +1261,9 @@
       - name: Getting Started for Data Scientists
         href: deployr/deployr-data-scientist-getting-started.md
     - name: Administration & Configuration
-      href: deployr/deployr-administrator-getting-started.md
       items:
+      - name: Get started with DeployR administration
+        href: deployr/deployr-administrator-getting-started.md
       - name: Administration Console Help
         href: deployr/deployr-admin-console-about.md
       - name: About DeployR Administration Console
@@ -1306,7 +1307,6 @@
       - name: Reinstalling or Upgrading the R Dependency
         href: deployr/deployr-admin-configure-reinstall-r.md
     - name: Security on DeployR
-      href: deployr/deployr-security.md
       items:
       - name: Introduction
         href: deployr/deployr-security.md
@@ -1325,7 +1325,6 @@
       - name: RServe Execution Context
         href: deployr/deployr-security-rserve-execution-context.md
     - name: APIs & Client Libraries
-      href: deployr/deployr-tools-and-samples.md
       items:
       - name: Developer Docs & Downloads
         href: deployr/deployr-tools-and-samples.md
@@ -1340,7 +1339,6 @@
     - name: Writing Portable R Code
       href: deployr/deployr-data-scientist-write-portable-r-code.md
     - name: Repository Manager Help
-      href: deployr/deployr-repository-manager-about.md
       items:
       - name: About Repository Manager
         href: deployr/deployr-repository-manager-about.md
