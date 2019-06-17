@@ -137,7 +137,7 @@ The following example is for the first package. Each command references the vers
 + Download to Ubuntu 16.04: `wget https://packages.microsoft.com/ubuntu/16.04/prod/pool/main/m/microsoft-mlserver-packages-r-9.4.0/microsoft-mlserver-packages-r-9.4.0.deb`
 + Download to SUSE: `wget https://packages.microsoft.com/sles/11/prod/microsoft-mlserver-packages-r-9.4.0.rpm`
 
-Repeat for each package in the [package list](#Package%20list).
+Repeat for each package in the [package list](#package-list).
 
 ## Install packages
 
