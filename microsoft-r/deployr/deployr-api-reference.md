@@ -55,7 +55,7 @@ One of the first steps for most typical applications using this API is to provid
 
 To sign in, a user must provide username and password credentials. These credentials are verified by the DeployR server using the [/r/user/login](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-user-login) call. Credentials are matched against user account data stored in the DeployR database or against user account data stored in LDAP, Active Directory, or PAM directory services.
 
-If these credentials are verified by the DeployR server, then we say that the user is an *authenticated* user. An *authenticated* user is granted access to the full API, allowing the user to work on [projects](#projects-on-the-api), submit or schedule [jobs](#jobs-on-the-api) and work with [repository-managed](#repository-on-the-api) files and scripts.
+If these credentials are verified by the DeployR server, then we say that the user is an *authenticated* user. An *authenticated* user is granted access to the full API, allowing the user to work on projects, submit or schedule jobsand work with repository-managed files and scripts.
 
 **Pre-Authenticated Users**
 
@@ -646,7 +646,7 @@ To make life easier for the client developers using this API, DeployR also provi
 
 **DeployR Public API**
 
-This document describes the DeployR Public API and the complete set of API services provided for [users](#users-on-the-api), [projects](#projects-on-the-api), [jobs](#jobs-on-the-api), [repository-managed](#repository-on-the-api) files, and scripts and the [event stream](#event-stream). Using this API directly or by taking advantage of the DeployR client libraries developers can integrate R-based analytics into their client applications.
+This document describes the DeployR Public API and the complete set of API services provided for users, projects, jobs, repository-managed files, and scripts and the event stream. Using this API directly or by taking advantage of the DeployR client libraries developers can integrate R-based analytics into their client applications.
 
 **DeployR Administration Console**
 

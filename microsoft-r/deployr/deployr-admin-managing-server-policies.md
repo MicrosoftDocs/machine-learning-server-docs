@@ -61,7 +61,8 @@ There are a number of settings that can be defined for each server. They are gro
 |`Default R boundary`| Name of an R boundary to be applied as the system-wide default. Grid node boundaries take precedence over boundaries associated with users. Likewise, grid node R boundaries and user R boundaries take precedence over this default R boundary. If no other boundary is specified, then the default system-wide boundary is applied.|
 |`Console idle timeout`|The length of idle time in seconds before a session in the Administration Console expires.
 
-<br/>
+<a name="#authenticated-operation-policies"</a>
+
 ### Authenticated Operation Policies
 
 These policies govern how [authenticated operations](deployr-admin-managing-the-grid.md#node-operation-types) are handled. Authenticated operations refer to operations on projects requested by authenticated users. These operations are executed on grid nodes designated for either authenticated or mixed operation modes.
@@ -72,7 +73,8 @@ These policies govern how [authenticated operations](deployr-admin-managing-the
 |`IP filter`|The name of the filter to be applied to all authenticated operations. If defined, then only authenticated users who connect from a qualified IP address (as defined by the filter) can make calls on the API.<br /><br />The [IP filtering](deployr-admin-managing-access-with-ip-filters.md) restrictions specified on a server context determine the full publicly accessible exposure of that server context.|
 |`API timeout`|The length of time in seconds that an authenticated user can remain idle while connected to the server before the HTTP session is automatically timed-out and disconnected. 
 
-<br/>
+<a name="asynchronous-operation-policies"></a>
+
 ### Asynchronous Operation Policies
 
 These policies govern how [asynchronous operations](deployr-admin-managing-the-grid.md#node-operation-types) are handled. Asynchronous operations are scheduled jobs executing in the background on behalf of authenticated users. These jobs are executed on grid nodes designated for either asynchronous or mixedoperation modes.
@@ -82,7 +84,8 @@ These policies govern how [asynchronous operations](deployr-admin-managing-the-
 |`HTTPS encrypted`|<small>(Applies to DeployR 8.0.0 or older only)</small><br>By default this option is unchecked, which sets it to False, where calls on the API can be made over a plain HTTP connection. If set to true, the server will only accept API calls over an encrypted channel (HTTPS). Learn more about [DeployR Server Support for SSL/TLS (HTTPS)](../operationalize/configure-https.md).<br /><br /> **Note:** If you enable HTTPS for one or more operations types, you must also provide a valid HTTPS URL in the Server web context property on this page.|
 |`IP filter`|The filter to be applied to all authenticated operations. If defined, then only jobs from authenticated users who connect from a qualified IP address can make calls on the API. The [IP filtering](deployr-admin-managing-access-with-ip-filters.md) restrictions specified on a server context determine the full publicly accessible exposure of that server context.|
 
-<br/>
+<a name="anonymous-operation-policies"><a/>
+
 ### Anonymous Operation Policies
 
 These policies govern how [anonymous operations](deployr-admin-managing-the-grid.md#node-operation-types) are handled. Anonymous operations are executed on grid nodes designated for either anonymous or mixed operation modes. Anonymous operations refer to operations from users executing scripts anonymously.
@@ -93,7 +96,8 @@ These policies govern how [anonymous operations](deployr-admin-managing-the-gri
 |`IP filter`|The name of the filter to be applied to all anonymous operations. If selected, then only anonymous users who connect from a qualified IP address (as defined by the filter) can execute R scripts on the API.<br /><br />The [IP filtering](deployr-admin-managing-access-with-ip-filters.md) restrictions specified on a server context determine the full publicly accessible exposure of that server context.|
 |`API timeout`|The length of time in seconds an anonymous operation remains live on the grid before it is automatically terminated. The automatic termination will release all resources associated with that operation.|
 
-<br/>
+<a name="project-persistence-policies"></a>
+
 ### Project Persistence Policies
 
 These policies govern certain project behaviors and limits.
@@ -124,7 +128,8 @@ While leaving them disabled is typically recommended, enabling the policies can 
 |`Per-user asynchronous limit`|This value limits the number of scheduled jobs that a given authenticated user can run simultaneously on the grid. Whenever the number of scheduled jobs awaiting execution exceeds this limit for a given user, every pending job for that user remains queued until one or more of the currently running jobs complete.|
 |`Per HTTP anonymous limit`|The value specified here limits the number of concurrent R scripts that an anonymous user at a given HTTP address can run simultaneously on the grid. Where the number of executing R scripts reaches this limit all further requests by the user to execute R scripts will be rejected on the API until one or more of the existing R script executions complete.|
 
-<br/>
+<a name="event-stream-access-policies"</a>
+
 ### Event Stream Access Policies
 
 These settings limit access to the event streams. There are three distinct event streams pushed by DeployR.
@@ -139,7 +144,8 @@ These settings limit access to the event streams. There are three distinct event
 |`Disable anonymous event stream`|When selected, the anonymous event stream is off.  When this checkbox is unselected, the anonymous stream pushes events to anonymous users.|
 |`Management event stream restriction`|Only those authenticated users assigned to the role defined here can access the management event stream. By default, only `admin` can access this stream.|
 
-<br/>
+<a name="server-runtime-policies"></a>
+
 ### Server Runtime Policies
 
 |Properties|Description|

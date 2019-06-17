@@ -84,9 +84,10 @@ Some functions in **RevoScaleR** are specific to particular compute contexts. A 
 
 
 Whenever you want to perform an analysis using `RevoScaleR` functions, you should specify three distinct pieces of information:
- + The [**analytic function**](#analytics), which specifies the analysis to be performed
+
+ + The **analytic function**, which specifies the analysis to be performed
  + The [**compute context**](#compute), which specifies where the computations should take place
- + The [**data source**](#data), which is the data to be used
+ + The [**data source**](#data-source-functions), which is the data to be used
 
 ## Functions by category
 

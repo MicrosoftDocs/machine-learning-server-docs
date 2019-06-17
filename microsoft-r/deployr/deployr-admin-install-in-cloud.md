@@ -43,7 +43,7 @@ You can set up DeployR on **Microsoft Azure** or **AWS**. For each instance, be 
 ## Enabling DeployR on Azure
 
 You can set up DeployR on **Microsoft Azure**. For each Azure instance, be sure to:
-1. Set the [server Web context](#setting-the-server-web-context) to an external, public IP address.
+1. Set the server Web context to an external, public IP address.
 
 1. Open three DeployR external ports by adding [Azure endpoints](#configuring-azure-endpoints) to set the appropriate permissions.
 
