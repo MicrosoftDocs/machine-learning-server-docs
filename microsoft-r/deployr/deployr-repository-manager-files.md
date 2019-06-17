@@ -309,7 +309,7 @@ When a file has two or more versions, you can compare the differences between on
 
 1. Review the differences between the past version, which is referenced by its ID, and the Latest version.
 
-1. If desired, you can click **Revert** to [revert](#reverting-a-past-version-to-the-latest-version) the past version to *Latest*.
+1. If desired, you can click **Revert** to revert the past version to *Latest*.
 
  
 <br>
