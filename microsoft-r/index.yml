@@ -16,7 +16,7 @@ metadata:
   ms.topic: landing-page
   ms.technology:
 abstract:
-  description: <div style="text-align:left;">Microsoft Machine Learning Server includes **R_SERVER** and **PYTHON_SERVER** components, with packages from Microsoft that enable analytics at scale. In addition to packages, it includes interpreters and infrastructure for deploying distributed R and Python-based machine learning and data science solutions on a <a href="install/r-server-install-supported-platforms">range of platforms</a> across on-premises and cloud configurations.
+  description: Microsoft Machine Learning Server includes <b>R_SERVER</b> and <b>PYTHON_SERVER</b> components, with packages from Microsoft that enable analytics at scale. In addition to packages, it includes interpreters and infrastructure for deploying distributed R and Python-based machine learning and data science solutions on a <a href="install/r-server-install-supported-platforms">range of platforms</a> across on-premises and cloud configurations.
 sections:
 - title: 5-Minute Quickstarts
   items:
