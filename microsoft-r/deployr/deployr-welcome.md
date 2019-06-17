@@ -31,7 +31,7 @@ This page provides links to the MSDN documentation for the versions of DeployR E
 Start here:
 
 + [Operationalizing with R Server](../what-is-operationalization.md)
-+ [Configuration](../installoperationalize-r-server-one-box-config.md)
++ [Configuration](../install/operationalize-r-server-one-box-config.md)
 
 
 ## Looking for v8.0.0 and v8.0.5 documentation?

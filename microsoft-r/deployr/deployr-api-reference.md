@@ -675,7 +675,7 @@ The DeployR API exposes a set of services via a Web service interface using HTTP
 
 Most API calls respond with well-formed markup. On such calls, you can request the response markup in JSON format. Some API calls return binary data such as image plots, structured data like CSV files, or gzip compressed archives. In all cases, the type of data being returned will always be indicated by the *Content-Type* header on the response.
 
-Additionally, each request returns a meaningful HTTP status code on the response. For a list of response codes that can be indicated on this API and that should be handled by all applications, refer to section [API Response Codes](#api-response-code-overview).
+Additionally, each request returns a meaningful HTTP status code on the response. For a list of response codes that can be indicated on this API and that should be handled by all applications, refer to section API Response Codes.
 
 <br />
 ### API Parameter Overview
@@ -1642,7 +1642,7 @@ Also, a new on-execution parameter has been added:
 
 -  enableConsoleEvents - (optional) when enabled R console events are delivered on the event stream for the current execution
 
-The introduction of the enableConsoleEvents is a breaking change for those using the [event stream](#event-stream). Prior versions of DeployR enabled R console events by default and there was no way on the API to disable these events. As of 7.3, R console events on the event stream are disabled by default and if necessary, must be explicitly requested by enabling this new parameter.
+The introduction of the enableConsoleEvents is a breaking change for those using the event stream. Prior versions of DeployR enabled R console events by default and there was no way on the API to disable these events. As of 7.3, R console events on the event stream are disabled by default and if necessary, must be explicitly requested by enabling this new parameter.
 
 These two changes apply across all execution APIs:
 

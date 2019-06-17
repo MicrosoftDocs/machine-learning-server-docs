@@ -72,14 +72,14 @@ These properties support collaborative development. The **Owners** field lists t
 
 When you own a file you are permitted to do almost anything to that file, including:
 
-- [Download](#downloading-files) files from directories
-- [Copy](#copying-files) and [move](#moving-files) files across directories
-- [Open](#opening-files) files for viewing or [editing](#editing-file-properties)
-- [Share files and collaborate](#sharing-files-with-others) with others
-- [View](#working-with-historical-versions), [compare](#comparing-version-differences), and [revert](#reverting-a-past-version-to-the-latest-version) versions in the file's history
+- Download files from directories
+- Copy and[move files across directories
+- Open files for viewing or editing
+- Share files and collaborate with others
+- View, compare, and revert versions in the file's history
 - [Test scripts](deployr-repository-manager-testing-debugging-scripts.md) in a live debugging environment (R scripts only)
-- [Close](#closing-files) files
-- [Delete](#deleting-files) files from directories
+- Close files
+- Delete files from directories
 
 ## The Files You Don't Own
 
@@ -87,9 +87,9 @@ If you do not own a file and do not have [access rights](#about-file-properties)
 
 If you have [access rights](#about-file-properties) to a particular file you don't own, then you will see that file in one of directories under Other Files in the Files tab. Despite the fact that you do not own the file, you can still access the file in read-only mode. Possible operations include:
 
-- [Open](#opening-files) files and [review the file properties](#about-file-properties) of the Latest version
+- Open files and [review the file properties](#about-file-properties) of the Latest version
 - [Test R scripts](deployr-repository-manager-testing-debugging-scripts.md), including the review of [source code*](deployr-repository-manager-testing-debugging-scripts.md#inspecting-the-source-code), [loading*](deployr-repository-manager-testing-debugging-scripts.md#loading-data-into-the-r-session) of files into the R session, and testing of [modified input values*](deployr-repository-manager-testing-debugging-scripts.md#supplying-input-values) in a debug environment (R scripts only)*
-- [Close](#closing-files) files
+-[Close files
 
 *Certain [server policies ](../what-is-operationalization.md)can affect your ability to see, download, and load files that aren't yours.
 
@@ -206,7 +206,7 @@ If you see a file in the Files tab, you can open it. Your right to access, edit,
 
 1. Click the number to the left of the version you want to open. A new file tab opens and displays the [file properties](#about-file-properties).
 
->To learn more about a version without opening a file, you can also [compare](#comparing-version-differences) a historical version to the Latest version of a file.
+>To learn more about a version without opening a file, you can also compare a historical version to the Latest version of a file.
 
 ## Editing File Properties
 
@@ -275,9 +275,9 @@ The current working version of a file is referred to as the ***Latest* version**
 
 For any file you own, you can access the file's version history. From this version history, you can:
 
-- [Open](#opening-files) a version
-- [Compare](#comparing-version-differences) one past version to the Latest version of the file
-- [Revert](#reverting-a-past-version-to-the-latest-version) a past version to the *Latest* version of the file
+- Open a version
+- Compare one past version to the Latest version of the file
+- Revert a past version to the *Latest* version of the file
 
 >You cannot delete an individual version from the version history. If you [delete a file](#deleting-files), all of its version history is also deleted.
 
@@ -309,13 +309,13 @@ When a file has two or more versions, you can compare the differences between on
 
 1. Review the differences between the past version, which is referenced by its ID, and the Latest version.
 
-1. If desired, you can click **Revert** to [revert](d#reverting-a-past-version-to-the-latest-version) the past version to *Latest*.
+1. If desired, you can click **Revert** to [revert](#reverting-a-past-version-to-the-latest-version) the past version to *Latest*.
 
  
 <br>
 ### Reverting a Past Version to the Latest Version
 
-If you want to restore a historical version to Latest version of a file, you can [revert that version](#comparing-version-differences). Reverting will copy the contents of the selected past version and make that copy the Latest version of the file. What was previously the Latest version is now preserved in the file's version history with a version ID.
+If you want to restore a historical version to Latest version of a file, you can revert that version. Reverting will copy the contents of the selected past version and make that copy the Latest version of the file. What was previously the Latest version is now preserved in the file's version history with a version ID.
 
 <br/>
 <em>Figure: Workflow for Restoring Files</em>
