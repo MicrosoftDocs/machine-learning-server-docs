@@ -7,7 +7,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "2/16/2018"
+ms.date: "07/15/2019"
 ms.topic: "conceptual"
 ms.prod: "mlserver"
 
@@ -22,11 +22,15 @@ ms.prod: "mlserver"
 #ms.custom: ""
 
 ---
-# Deprecated, discontinued, or changed features
-
-**Applies to: Machine Learning Server and Microsoft R Server**
+# Deprecated, discontinued, or changed features in Machine Learning Server
 
 This article notifies you about pending status changes to features and function libraries, such as deprecated and discontinued functions in the custom packages and libraries installed with the product.
+
+## Machine Learning Server 9.4
+
+There are no announcements for package or function deprecation, discontinuation, or changes to existing functionality.
+
+To learn more about this release, see [What's New](whats-new-in-machine-learning-server.md) for feature announcements and [Known issues](resources-known-issues.md) for descriptions and possible workarounds to known problems found in this release.
 
 ## Machine Learning Server 9.3
 
@@ -101,14 +105,14 @@ In **RevoMods** functions are discontinued (all were intended for use solely by 
 
 ### Known Issues
 
-See here: https://docs.microsoft.com/en-us/machine-learning-server/resources-known-issues
+See here: https://docs.microsoft.com/machine-learning-server/resources-known-issues
 
 ## Microsoft R Server 8.0.5
 
 ### Deprecated or Discontinued
 
 + The **R Productivity Environment** (RPE) IDE for Revolution R Enterprise:
-  + The RPE is now defunct. We recommend use of R Tools for Visual Studio (RTVS), which provides a more modern and flexible IDE.
+  + The RPE is now defunct. We recommend use of alternative IDEs.
   + These R packages that support the RPE have been removed: `revoIpe`, `pkgXMLBuilder`, `XML`, and `RevoRpeConnector`.
 
 + `RevoScaleR` changes:
@@ -179,7 +183,7 @@ prediction data set.
 
 **Known Issues**
 
-See here: https://docs.microsoft.com/en-us/machine-learning-server/resources-known-issues
+See here: https://docs.microsoft.com/machine-learning-server/resources-known-issues
 
 ## Microsoft R Server 8.0.0
 

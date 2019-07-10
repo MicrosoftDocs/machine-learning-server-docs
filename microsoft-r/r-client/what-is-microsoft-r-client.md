@@ -62,13 +62,11 @@ The first step is to download Microsoft R Client for your operating system and i
 
 ### 2. Configure Your IDE
 
-While R is a command-line driven program, you can also use your favorite R integrated development environment (IDE) to interact with Microsoft R Client. To do so, you must point that IDE to the R Client R executable. This way, whenever you execute your R code, you'll do so using R Client and benefit from the proprietary packages installed with R Client.  R IDE options include R Tools for Visual Studio on Windows (Recommended), RStudio, or any other R development environment.
-
-+ **Set up RTVS for R Client on Windows**: [R Tools for Visual Studio](https://docs.microsoft.com/visualstudio/rtvs/installation) (RTVS) is an integrated development environment available as a free add-in for any edition of Visual Studio.  To make R Client the default R engine for RTVS, choose Change R to Microsoft R Client from the R Tools menu.  
+While R is a command-line driven program, you can also use your favorite R integrated development environment (IDE) to interact with Microsoft R Client. To do so, you must point that IDE to the R Client R executable. This way, whenever you execute your R code, you'll do so using R Client and benefit from the proprietary packages installed with R Client.  R IDE options include RStudio, or any other R development environment.
 
 + **Set up RStudio for R Client on Windows or Linux**: [RStudio](https://www.rstudio.com/products/rstudio/download2/) is another popular R IDE. To make R Client the default R engine for RStudio, [update the path to R](https://support.rstudio.com/hc/en-us/articles/200486138-Using-Different-Versions-of-R). For example, point to `C:\Program Files\Microsoft\R Client\R_SERVER\bin\x64` on Windows. 
 
-Similarly, on Linux add "R_LIBS_SITE=/opt/microsoft/rclient/3.4.3/libraries/RServer" on bottom of the file "/opt/microsoft/rclient/3.4.3/runtime/R/etc/Renviron". [Source](https://github.com/rstudio/rstudio/issues/2455#issuecomment-375327109).
+Similarly, on Linux add "R_LIBS_SITE=/opt/microsoft/rclient/3.5.2/libraries/RServer" on bottom of the file "/opt/microsoft/rclient/3.5.2/runtime/R/etc/Renviron". [Source](https://github.com/rstudio/rstudio/issues/2455#issuecomment-375327109).
 
 After you configure the IDE, a message appears in the console signaling that the Microsoft R Client packages were loaded.
 
@@ -92,9 +90,13 @@ When ready, you can run that R code using R Client or even send those R commands
 
 ## What's new in Microsoft R Client
 
+### Microsoft R Client 3.5.2
+
+This release of R Client, built on open-source R 3.5.2, is at the same functional level as Machine Learning Server 9.4. Download R Client from https://aka.ms/rclient (Windows) or https://aka.ms/rclientlinux (Linux). 
+
 ### Microsoft R Client 3.4.3
 
-This release of R Client, built on open-source R 3.4.3, is at the same functional level as Machine Learning Server 9.3. Download R Client from https://aka.ms/rclient (Windows) or https://aka.ms/rclientlinux (Linux). 
+This release of R Client, built on open-source R 3.4.3, is at the same functional level as Machine Learning Server 9.3. 
 
 R Client includes these enhancements:
 

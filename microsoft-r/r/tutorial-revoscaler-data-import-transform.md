@@ -436,7 +436,7 @@ This tutorial demonstrated data import and exploration, but there are several mo
 
 ### Try demo scripts
 
- Another way to learn about RevoScaleR is through demo scripts. Scripts provided in your Machine Learning Server installation contain code that's very similar to what you see in the tutorials. You can highlight portions of the script, right-click **Execute in Interactive** to run the script in [R Tools for Visual Studio](https://www.visualstudio.com/vs/rtvs/).
+ Another way to learn about RevoScaleR is through demo scripts. Scripts provided in your Machine Learning Server installation contain code that's very similar to what you see in the tutorials.
 
  Demo scripts are located in the *demoScripts* subdirectory of your Machine Learning Server installation. On Windows, this is typically:
 

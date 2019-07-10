@@ -24,7 +24,7 @@ ms.prod: "mlserver"
 
 # How to add or remove R and Python packages on Machine Learning Server for Windows
 
-**Applies to:  Machine Learning Server 9.2.1 | 9.3**
+**Applies to:  Machine Learning Server 9.2.1 | 9.3 | 9.4**
 
 You can add open-source and third-party R and Python packages to the same local repository containing the product-specific packages for Machine Learning Server, allowing you to call functions from any library in the same script. Any packages you add to the repository must be compatible with the base R and Anaconda distributions upon which Microsoft's R and Python libraries are built.
 
@@ -38,6 +38,7 @@ Base R is distributed through Microsoft R Open, as installed by Machine Learning
 
 | Product version | R version | Anaconda/Python version |
 |-----------------|-----------|-------------------------|
+| 9.4             | 3.5.2 |  Miniconda 4.5.12/3.7.1|
 | 9.3             | 3.4.3 |  4.2/3.5 |
 | 9.2             | 3.4.1 |  4.2/3.5 |
 | 9.1             | 3.3.3 |  not applicable |

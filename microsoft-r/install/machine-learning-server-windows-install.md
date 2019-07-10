@@ -24,7 +24,7 @@ ms.prod: "mlserver"
 
 # Install Machine Learning Server for Windows
 
-**Applies to:  Machine Learning Server 9.2.1 | 9.3**
+**Applies to:  Machine Learning Server 9.2.1 | 9.3 | 9.4**
 
 Machine Learning Server for Windows runs machine learning and data mining solutions written in R or Python in standalone and clustered topologies. 
 
@@ -42,8 +42,8 @@ This article explains how to install Machine Learning Server on a standalone Win
 
 The following additional components are included in Setup and required for Machine Learning Server on Windows.
 
-* Microsoft R Open 3.4.3 (if you add R)
-* Anaconda 4.2 with Python 3.5 (if you add Python)
+* Microsoft R Open 3.5.2 (if you add R)
+* Miniconda 4.5.12 with Python 3.7.1 (if you add Python)
 * Azure CLI
 * Microsoft Visual C++ 2015 Redistributable
 * Microsoft MPI 8.1
@@ -71,7 +71,7 @@ If your existing server was configured for [operationalization](../what-is-opera
 
 For all other configurations, Setup performs an in-place upgrade over existing installations. Although the installation path is new (\Program Files\Microsoft\ML Server), when R Server 9.x is present, setup finds R Server at the old path and upgrades it to the new version. 
 
-There is no support for side-by-side installations of older and newer versions, nor is there support for hybrid versions (such as R Server 9.1 and Python 9.3). An installation is either entirely 9.3 or an earlier version.
+There is no support for side-by-side installations of older and newer versions, nor is there support for hybrid versions (such as R Server 9.1 and Machine Learning Server 9.4). An installation is either entirely 9.4 or an earlier version.
 
 ## Download Machine Learning Server installer
 
@@ -79,7 +79,7 @@ You can get the zipped installation file from one of the following download site
 
 | Site | Edition | Details |
 |------|---------|---------|
-| [Volume Licensing Service Center (VLSC)](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2017", and then choose a per-core licensing option. A selection for **Machine Learning Server 9.3** is provided on this site. |
+| [Volume Licensing Service Center (VLSC)](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2017", and then choose a per-core licensing option. A selection for **Machine Learning Server 9.4** is provided on this site. TODO|
 | [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. |
 
   For downloads from [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/):
@@ -110,7 +110,7 @@ The setup wizard installs, upgrades, and uninstalls all in one workflow.
 
     + **Core components** are listed for visibility, but are not configurable. Core components are required.
     + **R** adds R Open and the R libraries.  
-    + **Python** adds Anaconda and the Python libraries. 
+    + **Python** adds the Python libraries. 
     + [**Pre-trained Models**](microsoftml-install-pretrained-models.md) are used for image classification and sentiment detection. You can install the models with R or Python, but not as a standalone component.
 
 4. Accept the license agreement for Machine Learning Server, as well as the license agreements for Microsoft R Open and Anaconda.
@@ -147,7 +147,7 @@ Machine Learning Server executes on demand as R Server or as a Python applicatio
 
 **For R**
 
-R Server runs as a background process, as **Microsoft ML Server Engine** in Task Manager. Server startup occurs when a client application like [R Tools for Visual Studio](https://docs.microsoft.com/visualstudio/rtvs/installation) or Rgui.exe connects to the server.
+R Server runs as a background process, as **Microsoft ML Server Engine** in Task Manager. Server startup occurs when a client application like Rgui.exe connects to the server.
 
 1. Go to C:\Program Files\Microsoft\ML Server\R_SERVER\bin\x64.
 2. Double-click **Rgui.exe** to start the R Console application.
@@ -207,7 +207,7 @@ To quit the program, type `quit()` at the command line with no arguments.
 
 1. Open an Administrator command prompt.
 
-2. Enter the following command to check availability of the CLI: `az ml admin --help`. If you receive the following error: `az: error argument _command_package: invalid choice: ml`, follow the [instructions to re-add the extension to the CLI](https://docs.microsoft.com/en-us/machine-learning-server/resources-known-issues#1-missing-azure-ml-admin-cli-extension-on-dsvm-environments
+2. Enter the following command to check availability of the CLI: `az mlserver admin --help` (use `az ml admin --help` for version 9.3). If you receive the following error: `az: error argument _command_package: invalid choice: mlserver` (`ml` for 9.3), follow the [instructions to re-add the extension to the CLI](https://docs.microsoft.com/machine-learning-server/resources-known-issues#1-missing-azure-ml-admin-cli-extension-on-dsvm-environments
 ). 
 
 ## Enable web service deployment and remote connections
@@ -220,9 +220,7 @@ If you have multiple servers, you can designate each one as either a web node or
 
 1. Open an Administrator command prompt.
 
-2. Enter the following command to configure the server: `az ml admin bootstrap`
-
-   ![CLI screenshot](./media/machine-learning-server-windows-install/cli-onebox.png)
+2. Enter the following command to configure the server: `az mlserver admin bootstrap` (use `az ml admin bootstrap` for 9.3)
 
    This command invokes the Administrator Command Line Interface (CLI), installed by Machine Learning Server and added as a system environment variable to your path so that you can run it anywhere.
 
@@ -247,13 +245,9 @@ An installation of Machine Learning Server includes some or all of the following
 | Microsoft R Open (MRO) | An open-source distribution of the base R language, plus the Intel Math Kernel library (int-mkl). The distribution includes standard libraries, documentation, and tools like R.exe and RGui.exe. <br/><br/>Tools for the standard base R (RTerm, Rgui.exe, and RScript) are under `<install-directory>\bin`. Documentation is under `<install-directory>\doc` and in `<install-directory>\doc\manual`. One easy way to open these files is to open `RGui`, click **Help**, and select one of the options. |
 | R proprietary libraries and script engine | Proprietary libraries are co-located with R base libraries in the `<install-directory>\library` folder. Libraries include RevoScaleR, MicrosoftML, mrsdeploy, olapR, RevoPemaR, and others listed in [R Package Reference](../r-reference/introducing-r-server-r-package-reference.md). <br/><br/>On Windows, the default R installation directory is `C:\Program Files\Microsoft\ML Server\R_SERVER`. <br/><br/>RevoScaleR is engineered for distributed and parallel processing of all multi-threaded functions, utilizing available cores and disk storage of the local machine. RevoScaleR also supports the ability to transfer computations to other RevoScaleR instances on other platforms and computers through compute context instructions. |
 | Python proprietary libraries | Proprietary packages provide modules of class objects and static functions. Python libraries are in the `<install-directory>\lib\site-packages` folder. Libraries include revoscalepy, microsoftml, and azureml-model-management-sdk. <br/><br/>On Windows, the default installation directory is `C:\Program Files\Microsoft\ML Server\PYTHON_SERVER`.  |
-| Anaconda 4.2 with Python 3.5.2 | An open-source distribution of Python.|
+| Miniconda 4.5.12 with Python 3.7.1 | An open-source distribution of Python.|
 | [Admin CLI](../operationalize/configure-admin-cli-launch.md) | Used for enabling remote execution and web service deployment, operationalizing analytics, and configuring web and compute nodes.| 
 | [Pre-trained models](microsoftml-install-pretrained-models.md) | Used for sentiment analysis and image detection. |
-
-Consider adding a development tool on the server to build script or solutions using R Server features:
-
-+ [Visual Studio 2017](https://www.visualstudio.com/downloads/) followed by the [R Tools for Visual Studio (RTVS) add-in](https://docs.microsoft.com/visualstudio/rtvs/installation) and the [Python for Visual Studio (PTVS)](https://www.visualstudio.com/vs/python/).
 
 ## Next steps
 

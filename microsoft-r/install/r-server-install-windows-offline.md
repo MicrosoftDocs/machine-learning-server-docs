@@ -139,10 +139,6 @@ An installation of Microsoft R Server includes the following components.
 | [Admin tool](../operationalize/configure-use-admin-utility.md) | Used for enabling remote execution and web service deployment, operationalizing analytics, and configuring web and compute nodes.| 
 | [Pretrained models](microsoftml-install-pretrained-models.md) | Used for sentiment analysis and image featurization. | 
 
-Consider adding a development tool on the server to build script or solutions using R Server features:
-
-+ [Visual Studio 2015](https://www.visualstudio.com/downloads/) followed by the [R Tools for Visual Studio (RTVS) add-in](https://docs.microsoft.com/visualstudio/rtvs/installation)
-
 > [!NOTE]
 > By default, telemetry data is collected during your usage of R Server. To turn this feature off, use the RevoScaleR package function `rxPrivacyControl(FALSE)`. To turn it back on, change the setting to `TRUE`.
 

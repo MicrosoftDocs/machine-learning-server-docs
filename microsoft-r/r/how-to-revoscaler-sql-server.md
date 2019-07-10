@@ -44,7 +44,7 @@ All tutorials include sample code, along with explanations of how to work with S
 The **RevoScaleR** package is included when you install **SQL Server R Services** on an instance of SQL Server 2016. **RevoScaleR** is also included in all installations of **Machine Learning Server**.  
 
 ### Development
-You can develop your R solutions in any R IDE you prefer. We recommend that you use a standalone R IDE when testing your code and exploring your data, rather than trying to write R code inside of T-SQL. For R Services in particular, [R Tools for Visual Studio](https://www.visualstudio.com/features/rtvs-vs.aspx) is a good choice, because it has strong support for both R code and integration with SQL Server, but you can use any IDE that supports database connectivity.
+You can develop your R solutions in any R IDE you prefer. We recommend that you use a standalone R IDE when testing your code and exploring your data, rather than trying to write R code inside of T-SQL. 
 
 To run R code within the context of SQL Server, you have two options:
 + Run code from your laptop or any remote workstation, but set the compute context to SQL Server..

@@ -30,7 +30,7 @@ ms.prod: "mlserver"
 
 This forked version of RServe is the R execution component behind the compute node for Machine Learning Server (and R Server). Compute nodes are used to execute R code as a session or service. Each compute node has its own [pool of R shells](configure-evaluate-capacity.md#pool).
 
-This RServe fork acts as an interface to R, which by default is single threaded. However, if you use [RevoScaleR package functions](https://docs.microsoft.com/en-us/machine-learning-server/r-reference/revoscaler/revoscaler#functions-by-category), you benefit from multi-threaded processing in the R shell.
+This RServe fork acts as an interface to R, which by default is single threaded. However, if you use [RevoScaleR package functions](https://docs.microsoft.com//machine-learning-server/r-reference/revoscaler/revoscaler#functions-by-category), you benefit from multi-threaded processing in the R shell.
 
 ## The Execution Context
 
@@ -42,4 +42,4 @@ Machine Learning Server provides various [API calls](concept-api.md) that permit
 
 In the R language, users can change files in the file system, download content from the web, download packages, and so on.	
 
-In order to mitigate some of the risks associated with RServe, the service is set up to run using **a single locked down account with write permissions** ONLY to the R working directory <MRS_home>\o16n\Rserve\workdir, which is the directory under which R sessions and service calls store artifacts, files, and workspaces. While the custom Rserve service can only write to the working directory, there is no user isolation between the session folders. However, all sessions execution requests can only be initiated by authenticated users and you can further control user permissions to services using [RBAC](https://docs.microsoft.com/en-us/machine-learning-server/operationalize/configure-roles).
+In order to mitigate some of the risks associated with RServe, the service is set up to run using **a single locked down account with write permissions** ONLY to the R working directory <MRS_home>\o16n\Rserve\workdir, which is the directory under which R sessions and service calls store artifacts, files, and workspaces. While the custom Rserve service can only write to the working directory, there is no user isolation between the session folders. However, all sessions execution requests can only be initiated by authenticated users and you can further control user permissions to services using [RBAC](https://docs.microsoft.com//machine-learning-server/operationalize/configure-roles).

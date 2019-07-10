@@ -97,7 +97,7 @@ apt-get update
 apt-get install apt-transport-https
 
 # Install the packages
-apt-get install microsoft-mlserver-packages-py-9.3.0
+apt-get install microsoft-mlserver-packages-py-9.4.0
 ```     
 
 **Red Hat and CentOS 6/7**
@@ -105,13 +105,13 @@ apt-get install microsoft-mlserver-packages-py-9.3.0
 With root or sudo permissions, run the following commands:
 ```
 # Set location of the package repository. For example for 7.
-rpm -Uvh https://packages.microsoft.com/rhel/7/prod/microsoft-mlserver-packages-py-9.3.0.rpm
+rpm -Uvh https://packages.microsoft.com/rhel/7/prod/microsoft-mlserver-packages-py-9.4.0.rpm
 
 # Verification step: look for the mlserver.list configuration file
 ls -la /etc/apt/sources.list.d/
 
 # Install the packages
-yum install microsoft-mlserver-packages-py-9.3.0
+yum install microsoft-mlserver-packages-py-9.4.0
 ``` 
 
 **SUSE Linux Enterprise Server 11**
@@ -119,13 +119,13 @@ yum install microsoft-mlserver-packages-py-9.3.0
 With root or sudo permissions, run the following commands:
 ```
 # Set location of the package repository. For example for SLES 11.
-rpm -Uvh https://packages.microsoft.com/sles/11/prod/microsoft-mlserver-packages-py-9.3.0.rpm
+rpm -Uvh https://packages.microsoft.com/sles/11/prod/microsoft-mlserver-packages-py-9.4.0.rpm
 
 # Verification step: look for the mlserver.list configuration file
 ls -la /etc/apt/sources.list.d/
 
 # Install the packages
-zypper install microsoft-mlserver-packages-py-9.3.0
+zypper install microsoft-mlserver-packages-py-9.4.0
 ``` 
 
 

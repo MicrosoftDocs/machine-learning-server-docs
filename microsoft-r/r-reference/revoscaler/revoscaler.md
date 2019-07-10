@@ -31,8 +31,8 @@ Functions run on the **RevoScaleR** interpreter, built on open-source R, enginee
 
 | Package details | |
 |--------|-|
-| Current version: |  9.3 |
-| Built on: | R 3.4.3 |
+| Current version: |  9.4 |
+| Built on: | R 3.5.2 |
 | Package distribution: | [Machine Learning Server](../../what-is-machine-learning-server.md) <br/>[R Client (Windows and Linux)](../../r-client/what-is-microsoft-r-client.md) <br/>[R Server 9.1 and earlier](../../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
 
 
@@ -84,9 +84,10 @@ Some functions in **RevoScaleR** are specific to particular compute contexts. A 
 
 
 Whenever you want to perform an analysis using `RevoScaleR` functions, you should specify three distinct pieces of information:
- + The [**analytic function**](#analytics), which specifies the analysis to be performed
+
+ + The **analytic function**, which specifies the analysis to be performed
  + The [**compute context**](#compute), which specifies where the computations should take place
- + The [**data source**](#data), which is the data to be used
+ + The [**data source**](#data-source-functions), which is the data to be used
 
 ## Functions by category
 

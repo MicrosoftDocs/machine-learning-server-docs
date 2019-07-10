@@ -1,6 +1,6 @@
 ---
 # required metadata
-title: "Linux offline installation for Machine Learning Server 9.3 "
+title: "Linux offline installation for Machine Learning Server 9.4 "
 description: "How to install Machine Learning Server for Linux with no internet connection."
 keywords: ""
 author: "HeidiSteen"
@@ -24,7 +24,7 @@ ms.prod: "mlserver"
 
 # Offline installation Machine Learning Server for Linux 
 
-**Applies to:  Machine Learning Server 9.2.1 | 9.3**
+**Applies to:  Machine Learning Server 9.2.1 | 9.3 | 9.4**
 
 By default, installers connect to Microsoft download sites to get required and updated components for Machine Learning Server 9.x for Linux. If firewall constraints prevent the installer from reaching these sites, you can use an internet-connected device to download files, transfer files to an offline server, and then run setup.
 
@@ -64,28 +64,28 @@ Packages for all supported versions of Linux can be found at [packages.microsoft
 The following packages comprise a full Machine Learning Server installation:
 
 ```
- microsoft-mlserver-packages-r-9.3.0        ** core
- microsoft-mlserver-python-9.3.0            ** core
- microsoft-mlserver-packages-py-9.3.0       ** core
- microsoft-mlserver-mml-r-9.3.0             ** microsoftml for R (optional)
- microsoft-mlserver-mml-py-9.3.0            ** microsoftml for Python (optional)
- microsoft-mlserver-mlm-r-9.3.0             ** pre-trained models (requires mml)
- microsoft-mlserver-mlm-py-9.3.0            ** pre-trained models (requires mml)
- microsoft-mlserver-hadoop-9.3.0            ** hadoop (required for hadoop)
- microsoft-mlserver-adminutil-9.3           ** operationalization (optional)
- microsoft-mlserver-computenode-9.3         ** operationalization (optional)
- microsoft-mlserver-config-rserve-9.3       ** operationalization (optional) 
- microsoft-mlserver-webnode-9.3             ** operationalization (optional)
+ microsoft-mlserver-packages-r-9.4.0        ** core
+ microsoft-mlserver-python-9.4.0            ** core
+ microsoft-mlserver-packages-py-9.4.0       ** core
+ microsoft-mlserver-mml-r-9.4.0             ** microsoftml for R (optional)
+ microsoft-mlserver-mml-py-9.4.0            ** microsoftml for Python (optional)
+ microsoft-mlserver-mlm-r-9.4.0             ** pre-trained models (requires mml)
+ microsoft-mlserver-mlm-py-9.4.0            ** pre-trained models (requires mml)
+ microsoft-mlserver-hadoop-9.4.0            ** hadoop (required for hadoop)
+ microsoft-mlserver-adminutil-9.4           ** operationalization (optional)
+ microsoft-mlserver-computenode-9.4         ** operationalization (optional)
+ microsoft-mlserver-config-rserve-9.4       ** operationalization (optional) 
+ microsoft-mlserver-webnode-9.4             ** operationalization (optional)
  azure-cli-2.0.25-1.el7.x86_64              ** operationalization (optional)
 ```
-The microsoft-mlserver-python-9.3.0 package provides Anaconda 4.2 with Python 3.5, executing as mlserver-python, found in `/opt/microsoft/mlserver/9.3.0/bin/python/python`
+The microsoft-mlserver-python-9.4.0 package provides Python 3.7.1, executing as mlserver-python, found in `/opt/microsoft/mlserver/9.4.0/bin/python/python`
 
 Microsoft R Open is required for R execution:
 
 ```
- microsoft-r-open-foreachiterators-3.4.3 
- microsoft-r-open-mkl-3.4.3
- microsoft-r-open-mro-3.4.3 
+ microsoft-r-open-foreachiterators-3.5.2 
+ microsoft-r-open-mkl-3.5.2
+ microsoft-r-open-mro-3.5.2 
 ```
 
 Microsoft .NET Core 2.0, used for operationalization, must be added to Ubuntu:
@@ -133,11 +133,11 @@ If your system provides a graphical user interface, you can click a file to down
 
 The following example is for the first package. Each command references the version number of the platform. Remember to change the number if your version is different. For more information, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
 
-+ Download to CentOS or RHEL: `wget https://packages.microsoft.com/rhel/7/prod/microsoft-mlserver-packages-r-9.3.0.rpm` 
-+ Download to Ubuntu 16.04: `wget https://packages.microsoft.com/ubuntu/16.04/prod/pool/main/m/microsoft-mlserver-packages-r-9.3.0/microsoft-mlserver-packages-r-9.3.0.deb`
-+ Download to SUSE: `wget https://packages.microsoft.com/sles/11/prod/microsoft-mlserver-packages-r-9.3.0.rpm`
++ Download to CentOS or RHEL: `wget https://packages.microsoft.com/rhel/7/prod/microsoft-mlserver-packages-r-9.4.0.rpm` 
++ Download to Ubuntu 16.04: `wget https://packages.microsoft.com/ubuntu/16.04/prod/pool/main/m/microsoft-mlserver-packages-r-9.4.0/microsoft-mlserver-packages-r-9.4.0.deb`
++ Download to SUSE: `wget https://packages.microsoft.com/sles/11/prod/microsoft-mlserver-packages-r-9.4.0.rpm`
 
-Repeat for each package in the [package list](#Package%20list).
+Repeat for each package in the [package list](#package-list).
 
 ## Install packages
 
@@ -153,8 +153,8 @@ This step completes installation.
 
 Run the activation script from either the R or Python directory:
 
-+ `/opt/microsoft/mlserver/9.3.0/bin/R/activate.sh`
-+ or `/opt/microsoft/mlserver/9.3.0/bin/python/activate.sh`
++ `/opt/microsoft/mlserver/9.4.0/bin/R/activate.sh`
++ or `/opt/microsoft/mlserver/9.4.0/bin/python/activate.sh`
 
 ## Connect and validate
 
@@ -166,22 +166,22 @@ Run the activation script from either the R or Python directory:
 
 2. Once you have a package name, you can obtain verbose version information. For example:
 
-   + On CentOS and RHEL: `$ rpm -qi microsoft-mlserver-packages-r-9.3.0`
-   + On Ubuntu: `$ dpkg --status microsoft-mlserver-packages-r-9.3.0`  
-   + On SLES: `zypper info microsoft-mlserver-packages-r-9.3.0`
+   + On CentOS and RHEL: `$ rpm -qi microsoft-mlserver-packages-r-9.4.0`
+   + On Ubuntu: `$ dpkg --status microsoft-mlserver-packages-r-9.4.0`  
+   + On SLES: `zypper info microsoft-mlserver-packages-r-9.4.0`
 
    Output on Ubuntu is as follows:
 
    ```
-    Package: microsoft-mlserver-packages-r-9.3.0
+    Package: microsoft-mlserver-packages-r-9.4.0
     Status: install ok installed
     Priority: optional
     Section: devel
     Installed-Size: 195249
     Maintainer: revobuil@microsoft.com
     Architecture: amd64
-    Version: 9.3.0.1287
-    Depends: microsoft-r-open-mro-3.4.3, microsoft-r-open-mkl-3.4.3, microsoft-r-open-foreachiterators-3.4.3
+    Version: 9.4.0
+    Depends: microsoft-r-open-mro-3.5.2, microsoft-r-open-mkl-3.5.2, microsoft-r-open-foreachiterators-3.5.2
     Description: Microsoft Machine Learning Server
 	  . . .
    ```
@@ -258,7 +258,7 @@ To quit the program, type `q()` at the command line with no arguments.
 
     ~~~~ 
     Summary Statistics Results for: ArrDelay+DayOfWeek
-    File name: /opt/microsoft/mlserver/9.3.0/libraries/PythonServer/revoscalepy/data/sample_data/AirlineDemoSmall.xdf
+    File name: /opt/microsoft/mlserver/9.4.0/libraries/PythonServer/revoscalepy/data/sample_data/AirlineDemoSmall.xdf
     Number of valid observations: 600000.0
     
             Name       Mean     StdDev   Min     Max  ValidObs  MissingObs
@@ -284,7 +284,7 @@ To quit the program, type `quit()` at the command line with no arguments.
 
 1. Open an Administrator command prompt.
 
-2. Enter the following command to check availability of the CLI: `az ml admin --help`. If you receive the following error: `az: error argument _command_package: invalid choice: ml`, follow the [instructions to re-add the extension to the CLI](https://docs.microsoft.com/en-us/machine-learning-server/resources-known-issues#1-missing-azure-ml-admin-cli-extension-on-dsvm-environments
+2. Enter the following command to check availability of the CLI: `az ml admin --help`. If you receive the following error: `az: error argument _command_package: invalid choice: ml`, follow the [instructions to re-add the extension to the CLI](https://docs.microsoft.com/machine-learning-server/resources-known-issues#1-missing-azure-ml-admin-cli-extension-on-dsvm-environments
 ).
 
 ## Next steps

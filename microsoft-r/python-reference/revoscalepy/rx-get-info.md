@@ -188,7 +188,7 @@ Output:
 
 
 ```
-File name:C:\swarm\workspace\bigAnalytics-9.3.0\python\revoscalepy\revoscalepy\data\sample_data\claims.xdf
+File name:C:\swarm\workspace\bigAnalytics-9.4.0\python\revoscalepy\revoscalepy\data\sample_data\claims.xdf
 Number of observations:128.0
 Number of variables:6.0
 Number of blocks:1.0
