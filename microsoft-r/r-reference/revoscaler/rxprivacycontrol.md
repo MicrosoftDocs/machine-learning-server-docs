@@ -6,7 +6,7 @@ description: "     Sets the state to be opted-in or out for anonymous usage coll
 keywords: "(revoAnalytics), rxPrivacyControl, privacy, optin" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

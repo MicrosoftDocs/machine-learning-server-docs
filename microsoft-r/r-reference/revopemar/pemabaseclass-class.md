@@ -7,7 +7,7 @@ keywords: "RevoPemaR, PemaBaseClass-class, classes"
 author: "richcalaway"
 ms.author: "richcala" 
 manager: "cgronlun" 
-ms.date: "01/18/2019" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

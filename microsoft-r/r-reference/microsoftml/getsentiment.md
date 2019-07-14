@@ -6,7 +6,7 @@ description: " Scores natual language text and creates a column that  contains p
 keywords: "(MicrosoftML), getSentiment, nlp, sentiment, text, transform" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/16/2019" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

@@ -6,7 +6,7 @@ description: " Defines the R print generic for serviceDetails during a  listServ
 keywords: "(mrsdeploy), print.serviceDetails" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/18/2019" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

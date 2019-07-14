@@ -6,7 +6,7 @@ description: " Get a list of all the snapshots on the R server that are availabl
 keywords: "(mrsdeploy), listSnapshots" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/18/2019" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

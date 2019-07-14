@@ -6,7 +6,7 @@ description: " Converts valid computer names into valid R variable names.  Shoul
 keywords: "(revoAnalytics), rxMakeRNodeNames, IO" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

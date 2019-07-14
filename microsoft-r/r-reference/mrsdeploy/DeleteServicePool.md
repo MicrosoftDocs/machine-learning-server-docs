@@ -6,7 +6,7 @@ description: " Delete an existing dedicated pool for a published web service run
 keywords: "(mrsdeploy), deleteServicePool" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "02/05/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

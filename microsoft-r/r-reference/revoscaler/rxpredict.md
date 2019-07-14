@@ -6,7 +6,7 @@ description: "Predicted values and residuals for model objects built using RevoS
 keywords: "(revoAnalytics), rxPredict, rxPredict.default, methods, models, regression" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

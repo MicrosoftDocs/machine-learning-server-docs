@@ -6,7 +6,7 @@ description: " Attempts to find the cp for optimal model pruning, where optimal 
 keywords: "(revoAnalytics), rxDTreeBestCp, models, tree, classif, regression" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019 
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

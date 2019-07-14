@@ -6,7 +6,7 @@ description: " Generate an RxSpssData object that contains information about an 
 keywords: "(revoAnalytics), RxSpssData, head.RxSpssData, tail.RxSpssData, file, connection" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019 
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

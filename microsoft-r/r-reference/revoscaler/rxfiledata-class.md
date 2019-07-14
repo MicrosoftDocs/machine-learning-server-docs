@@ -6,7 +6,7 @@ description: " File-based data source connection class. "
 keywords: "(revoAnalytics), RxFileData-class, show,RxFileData-method, classes" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

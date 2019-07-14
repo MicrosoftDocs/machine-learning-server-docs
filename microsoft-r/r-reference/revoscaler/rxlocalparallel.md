@@ -6,7 +6,7 @@ description: " Creates a local compute context object that uses the doParallel b
 keywords: "(revoAnalytics), RxLocalParallel, IO" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

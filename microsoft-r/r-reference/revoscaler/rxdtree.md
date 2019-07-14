@@ -6,7 +6,7 @@ description: "     Fit classification and regression trees on an .xdf file or da
 keywords: "(revoAnalytics), rxDTree, print.rxDTree, models, tree, classif, regression, classification" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019 
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

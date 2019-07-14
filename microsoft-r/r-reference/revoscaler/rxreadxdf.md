@@ -6,7 +6,7 @@ description: " Read data from an .xdf file into a data frame. "
 keywords: "(revoAnalytics), rxReadXdf, file, connection" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

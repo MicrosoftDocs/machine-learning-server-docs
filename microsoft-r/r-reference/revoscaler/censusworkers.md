@@ -6,7 +6,7 @@ description: " A small subset of the IPUMS 5% sample of the 2000 U.S. Census dat
 keywords: "(revoAnalytics), CensusWorkers, CensusWorkers.xdf, datasets" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

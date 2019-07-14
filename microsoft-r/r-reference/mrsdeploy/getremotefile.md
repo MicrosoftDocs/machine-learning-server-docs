@@ -6,7 +6,7 @@ description: " Get the content of a file from the working directory of the remot
 keywords: "(mrsdeploy), getRemoteFile" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/18/2019" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

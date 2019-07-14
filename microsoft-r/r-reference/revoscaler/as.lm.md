@@ -6,7 +6,7 @@ description: " Converts objects containing linear model results to an lm object.
 keywords: "(revoAnalytics), as.lm, as.lm.rxLinMod, category, models" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

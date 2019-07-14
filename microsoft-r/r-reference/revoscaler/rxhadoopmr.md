@@ -6,7 +6,7 @@ description: " Creates a compute context for use with a Hadoop cluster.  RxHadoo
 keywords: "(RevoScaleR), RxHadoopMR, IO" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "09/07/2017" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

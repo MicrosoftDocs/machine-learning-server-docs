@@ -6,7 +6,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "12/16/2018"
+ms.date: 07/15/2019
 ms.topic: "conceptual"
 ms.prod: "mlserver"
 
@@ -34,7 +34,7 @@ This article explains how to install Machine Learning Server on a standalone Win
 
 + Operating system must be a [supported version of 64-bit Windows](r-server-install-supported-platforms.md). 
 
-+ [Operationalization features](../what-is-operationalization.md) (administrator utility, web service deployment, remote sessions (R), web and compute node designations) are supported on Windows Server 2012 R2 or 2016. This functionality is not available on a Windows client.
++ [Operationalization features](../what-is-operationalization.md) (administrator utility, web service deployment, remote sessions (R), web and compute node designations) are supported on Windows Server 2012 R2 or 2016. This functionality is not available on Windows 10 or on Windows Server 2019.
 
 + Memory must be a minimum of 2 GB of RAM is required; 8 GB or more are recommended. Disk space must be a minimum of 500 MB.
 
@@ -44,9 +44,9 @@ The following additional components are included in Setup and required for Machi
 
 * Microsoft R Open 3.5.2 (if you add R)
 * Miniconda 4.5.12 with Python 3.7.1 (if you add Python)
-* Azure CLI
 * Microsoft Visual C++ 2015 Redistributable
-* Microsoft MPI 8.1
+* Azure CLI
+* Microsoft MPI 10.1
 * AS OLE DB (SQL Server 2016) provider
 
 ## Licensing
@@ -79,7 +79,7 @@ You can get the zipped installation file from one of the following download site
 
 | Site | Edition | Details |
 |------|---------|---------|
-| [Volume Licensing Service Center (VLSC)](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2017", and then choose a per-core licensing option. A selection for **Machine Learning Server 9.4** is provided on this site. TODO|
+| [Volume Licensing Service Center (VLSC)](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2017", and then choose a per-core licensing option. A selection for **Machine Learning Server 9.4** is provided on this site. |
 | [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. |
 
   For downloads from [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/):

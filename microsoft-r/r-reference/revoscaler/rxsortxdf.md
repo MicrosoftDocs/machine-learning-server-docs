@@ -6,7 +6,7 @@ description: " Efficient multi-key sorting of the variables in an .xdf file or d
 keywords: "(revoAnalytics), rxSort, file" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 
