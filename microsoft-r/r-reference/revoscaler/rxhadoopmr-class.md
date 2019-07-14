@@ -6,7 +6,7 @@ description: " Hadoop Map Reduce Local (File) compute context class. "
 keywords: "(RevoScaleR), RxHadoopMR-class, show,RxHadoopMR-method, classes" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "09/07/2017" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

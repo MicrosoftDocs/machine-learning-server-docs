@@ -6,7 +6,7 @@ description: "Deletes an object from an ODBC data source. The APIs are modelled 
 keywords: "delete, object" 
 author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/26/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

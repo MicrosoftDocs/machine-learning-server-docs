@@ -6,7 +6,7 @@ description: " Line or scatter plot using data from an .xdf file or data frame -
 keywords: "(revoAnalytics), rxLinePlot, hplot" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

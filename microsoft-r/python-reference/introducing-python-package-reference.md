@@ -6,7 +6,7 @@ description: "Function reference for Python packages: microsoftml, revoscalepy, 
 keywords: ""
 author: "HeidiSteen"
 manager: "cgronlun"
-ms.date: "02/12/2018"
+ms.date: 07/15/2019
 ms.author: heidist
 ms.topic: "conceptual"
 ms.prod: "mlserver"

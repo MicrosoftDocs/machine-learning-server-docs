@@ -6,7 +6,7 @@ description: " Converts RevoScaleR rxNaiveBayes objects to a (limited) e1071 nai
 keywords: "(revoAnalytics), as.naiveBayes, as.naiveBayes.rxNaiveBayes, category, models" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

@@ -7,7 +7,7 @@ keywords: ", readNews, utilities, documentation"
 author: "richcalaway"
 ms.author: "richcala" 
 manager: "cgronlun" 
-ms.date: "03/27/2017" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

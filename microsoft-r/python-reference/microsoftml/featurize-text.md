@@ -6,7 +6,7 @@ description: "Text transforms that can be performed on data before training a mo
 keywords: "transform, featurizer, text" 
 author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "09/05/2017" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

@@ -6,7 +6,7 @@ description: " Compute and plot an empirical Lorenz curve from a variable in a d
 keywords: "(revoAnalytics), rxLorenz, rxGini, rxGini.rxLorenz, plot.rxLorenz,  univar " 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

@@ -7,7 +7,7 @@ keywords: "RevoScaleR, ScaleR"
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "01/29/2018"
+ms.date: 07/15/2019
 ms.topic: "reference"
 ms.prod: "mlserver"
 

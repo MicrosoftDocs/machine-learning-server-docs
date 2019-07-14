@@ -6,7 +6,7 @@ description: "Installation and operation qualification of Machine Learning Serve
 keywords: "(RevoIOQ), RevoIOQ, package" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/29/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

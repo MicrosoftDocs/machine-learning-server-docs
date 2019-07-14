@@ -6,7 +6,7 @@ description: "Creates a compute context for running RevoScaleR analyses inside a
 keywords: ", RxInTeradata, IO" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "08/04/2017" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

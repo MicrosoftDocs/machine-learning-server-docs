@@ -6,7 +6,7 @@ description: "Selects the features for which the count of non-default values is 
 keywords: "feature, selection, count" 
 author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "09/05/2017" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

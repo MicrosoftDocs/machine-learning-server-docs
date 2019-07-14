@@ -6,7 +6,7 @@ description: " Allows different argument values to be passed to different (named
 keywords: "(revoAnalytics), rxElemArg, IO" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

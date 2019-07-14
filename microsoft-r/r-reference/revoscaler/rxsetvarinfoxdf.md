@@ -6,7 +6,7 @@ description: " Set the variable information for an .xdf file, including variable
 keywords: "(revoAnalytics), rxSetVarInfo, rxSetVarInfoXdf, attribute" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

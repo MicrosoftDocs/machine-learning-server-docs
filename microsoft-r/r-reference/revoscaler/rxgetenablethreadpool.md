@@ -6,7 +6,7 @@ description: " Gets or sets the current state of the thread pool (in a ready sta
 keywords: "(revoAnalytics), rxGetEnableThreadPool, rxSetEnableThreadPool, iteration" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

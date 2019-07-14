@@ -6,7 +6,7 @@ description: " Deletes the specified snapshot from the repository on the R Serve
 keywords: "(mrsdeploy), deleteSnapshot" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/18/2019" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

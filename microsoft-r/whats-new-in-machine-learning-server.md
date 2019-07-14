@@ -1,13 +1,13 @@
 ---
 
 # required metadata
-title: "New in Machine Learning Server 9.3 "
-description: "New features, improvements, and changes in release 9.3 of Machine Learning Server."
+title: "New in Machine Learning Server 9.4"
+description: "New features, improvements, and changes in release 9.4 of Machine Learning Server."
 keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "02/16/2018"
+ms.date: 07/15/2019
 ms.topic: "conceptual"
 ms.prod: "mlserver"
 

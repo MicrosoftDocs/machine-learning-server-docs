@@ -6,7 +6,7 @@ description: "Allows the distributed execution of an arbitrary R function in par
 keywords: "parallel execution, multiple executions, remote execution, sql" 
 author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/26/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

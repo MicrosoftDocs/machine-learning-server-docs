@@ -6,7 +6,7 @@ description: " Text transforms that can be performed on data before training  a 
 keywords: "(MicrosoftML), stopwordsDefault, featurizeText, stopwordsCustom, termDictionary, transform" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/16/2019" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

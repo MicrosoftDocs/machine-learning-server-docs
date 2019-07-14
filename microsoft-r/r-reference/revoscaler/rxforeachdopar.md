@@ -6,7 +6,7 @@ description: " Creates a compute context object using the registered foreach par
 keywords: "(revoAnalytics), RxForeachDoPar, IO" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

@@ -6,7 +6,7 @@ description: " Featurizes an image using a pre-trained deep neural network model
 keywords: "(MicrosoftML), featurizeImage, alexnet, cnn, dnn, featurize, image, resnet, transform" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/16/2019" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 
