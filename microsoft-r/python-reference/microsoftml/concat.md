@@ -6,7 +6,7 @@ description: "Combines several columns into a single vector-valued column."
 keywords: "transform, schema" 
 author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "09/05/2017" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

@@ -7,7 +7,7 @@ keywords: ""
 author: "HeidiSteen" 
 manager: "cgronlun" 
 ms.author: "heidist"
-ms.date: "02/16/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

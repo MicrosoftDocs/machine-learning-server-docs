@@ -6,7 +6,7 @@ description: "Returns a list of job objects associated with the given compute co
 keywords: "get, job" 
 author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/26/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

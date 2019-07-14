@@ -6,7 +6,7 @@ description: "Neural networks for regression modeling and for Binary and multi-c
 keywords: "models, classification, regression, neural network, dnn" 
 author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "09/05/2017" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

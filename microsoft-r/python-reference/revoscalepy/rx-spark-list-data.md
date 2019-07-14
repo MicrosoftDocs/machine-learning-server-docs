@@ -6,7 +6,7 @@ description: "Use these functions to manage the objects cached in the Spark memo
 keywords: "spark, data" 
 author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/26/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

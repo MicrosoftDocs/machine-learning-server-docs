@@ -6,7 +6,7 @@ description: "Partition input data sources by key values and save the results to
 keywords: "partition" 
 author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/26/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

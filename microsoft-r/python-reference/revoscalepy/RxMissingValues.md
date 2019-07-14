@@ -6,7 +6,7 @@ description: "revoscalepy package uses Pandas dataframe as the abstraction to ho
 keywords: "missing values, NA, NaN, nan, none, None" 
 author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/26/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 
