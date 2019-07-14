@@ -1,6 +1,6 @@
 ---
 # required metadata
-title: "Welcome to Machine Learning Server "
+title: "Welcome to Machine Learning Server"
 description: "Develop machine learning models and scripts in Python and R for on-premises deployment behind the firewall. R Server, Python server, packages, and interpreters are included."
 keywords: ""
 author: "HeidiSteen"
@@ -24,13 +24,13 @@ ms.prod: "mlserver"
 
 # What is Machine Learning Server
 
-Microsoft Machine Learning Server is enterprise software for data science, providing R and Python interpreters, base distributions of R and Python, additional high-performance libraries from Microsoft, and an [operationalization capability](what-is-operationalization.md)  for advanced deployment scenarios. Solutions that you develop in R or Python can be deployed as web service for direct access or as an upstream component of other solutions. 
+Microsoft Machine Learning Server 9.4.7 is enterprise software for data science, providing R and Python interpreters, base distributions of R and Python, additional high-performance libraries from Microsoft, and an [operationalization capability](what-is-operationalization.md) for advanced deployment scenarios. Solutions that you develop in R or Python can be deployed as a web service for direct access or as an upstream component to other solutions. 
 
 R support is built on a legacy of Microsoft R Server 9.x and Revolution R Enterprise products. Python support was added in the 9.2.1 release. 
 
-Machine Learning Server runs [on-premises and in the cloud on a variety of platforms](install/r-server-install-supported-platforms.md), on a variety of operating systems, and can run in a distributed mode if you want to isolate functions on different computers (as web and compute nodes). [Web services](operationalize/concept-what-are-web-services.md) are hosted on a server grid on-premises or in the cloud and can be integrated with line-of-business applications. Additionally, Machine Learning Server integrates seamlessly with [Active Directory and Azure Active Directory](operationalize/configure-authentication.md) and includes [role-based access control](operationalize/configure-roles.md) to satisfy security and compliance needs of your enterprise. The ability to deploy to an elastic grid lets you scale seamlessly with the needs of your business, both for batch and real-time scoring.
+Machine Learning Server runs [on-premises and in the cloud](install/r-server-install-supported-platforms.md), on a variety of operating systems, and can run in a distributed mode if you want to isolate functions on different computers (specifically, as dedicated web and compute nodes). [Web services](operationalize/concept-what-are-web-services.md) are hosted on a server grid on-premises or in the cloud and can be integrated with line-of-business applications. Additionally, Machine Learning Server integrates seamlessly with [Active Directory and Azure Active Directory](operationalize/configure-authentication.md) and includes [role-based access control](operationalize/configure-roles.md) to satisfy security and compliance needs of your enterprise. The ability to deploy to an elastic grid lets you scale seamlessly with the needs of your business, both for batch and real-time scoring.
 
-On two data platforms, SQL Server and Apache Spark (on HDFS), the R and Python libraries from Microsoft can compute and analyze data locally, returning the results while eliminating the need to pull data across the network. This capability is called *remote compute context*. It requires the R and Python libraries and interpreters from Microsoft on both client and server systems, but the client versions are free of charge.
+On two data platforms, SQL Server and Apache Spark (on HDFS), the R and Python libraries from Microsoft can compute and analyze data locally, returning just the results, without the need to pull data across the network. This capability is called *remote compute context*. It requires the R and Python libraries and interpreters from Microsoft on both client and server systems, but the client versions are free of charge.
 
 ## Key features of Machine Learning Server
 
