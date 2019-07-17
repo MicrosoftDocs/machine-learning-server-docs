@@ -6,7 +6,8 @@ description: "  Synchronizes all R packages installed in a database with the pac
 keywords: "(revoAnalytics), rxSyncPackages, sync, synchronize, use, packages, sql" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: 07/15/2019ms.date: 07/15/2019ms.topic: "reference" 
+ms.date: 07/15/2019
+ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 
 ms.assetid: "" 
