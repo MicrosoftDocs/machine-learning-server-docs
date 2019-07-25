@@ -70,8 +70,6 @@ A one-box configuration, as the name suggests, involves a single [web node and c
    # Account name is `admin` if LDAP or AAD is not set up.
    az mlserver login
 
-   TODO
-
    # Test configuration to validate setup
    az mlserver admin diagnostic run
    ``` 
