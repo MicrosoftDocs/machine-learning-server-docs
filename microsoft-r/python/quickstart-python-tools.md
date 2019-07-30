@@ -90,7 +90,7 @@ Jupyter Notebooks is distributed with Anaconda, which is the Python distribution
 
 + On Windows, go to **\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts\\** and double-click **jupyter-notebook.exe** to start a Jupyter Notebook session in the default browser window.
 
-+ On Linux, go to **/opt/microsoft/mlserver/9.4.0/runtime/python/bin/** and type `./jupyter notebook`. You should get a series of messages that includes the server endpoint and a URL that you can copy into a browser, assuming one is available on your computer.
++ On Linux, go to **/opt/microsoft/mlserver/9.4.7/runtime/python/bin/** and type `./jupyter notebook`. You should get a series of messages that includes the server endpoint and a URL that you can copy into a browser, assuming one is available on your computer.
 
 For additional instructions on configuring a multi-user server, see [How to add Machine Learning Server modules to single and multi-user Jupyter Notebook instances](how-to-revoscalepy-jupyter-nb-config.md).
 

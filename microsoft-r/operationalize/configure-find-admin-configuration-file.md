@@ -35,7 +35,7 @@ The installation path depends on the operating system and the type of node (web 
   |   OS    |                                               \<server-directory>                                               |
   |---------|-----------------------------------------------------------------------------------------------------------------|
   | Windows | C:\Program Files\Microsoft\ML Server\PYTHON\_SERVER\o16n<br>C:\Program Files\Microsoft\ML Server\R\_SERVER\o16n |
-  |  Linux  |                                       /opt/microsoft/mlserver/9.4.0/o16n                                        |
+  |  Linux  |                                       /opt/microsoft/mlserver/9.4.7/o16n                                        |
 
   <br/>
 
