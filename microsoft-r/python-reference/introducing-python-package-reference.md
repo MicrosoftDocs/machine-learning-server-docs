@@ -6,7 +6,7 @@ description: "Function reference for Python packages: microsoftml, revoscalepy, 
 keywords: ""
 author: "HeidiSteen"
 manager: "cgronlun"
-ms.date: "02/12/2018"
+ms.date: 07/15/2019
 ms.author: heidist
 ms.topic: "conceptual"
 ms.prod: "mlserver"
@@ -33,7 +33,7 @@ You can use these libraries and functions in combination with other open source 
 
 | Library details | |
 |--------|-|
-| [Supported platforms](../install/r-server-install-supported-platforms.md) | [Machine Learning Server 9.2.1 and 9.3](../what-is-machine-learning-server.md) </br>[SQL Server 2017  (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services) |
+| [Supported platforms](../install/r-server-install-supported-platforms.md) | [Machine Learning Server 9.2.1, 9.3 and 9.4](../what-is-machine-learning-server.md) </br>[SQL Server 2017  (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services) |
 | Built on: | [Anaconda 4.2](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you [add Python support](#how-to-install) during installation). |
 
 ## Python modules
@@ -41,8 +41,8 @@ You can use these libraries and functions in combination with other open source 
 |Module | Version | Description |
 |--------|---------|-------------|
 |[azureml-model-management-sdk](azureml-model-management-sdk/azureml-model-management-sdk.md) | 1.0.1 | Classes and functions to authenticate, deploy, manage, and consume analytic web services in Python.  |
-|[microsoftml](microsoftml/microsoftml-package.md)| 9.3 | A collection of Python functions used for machine learning operations, including training and transformations, scoring, text and image analysis, and feature extraction for deriving values from existing data. |
-|[revoscalepy](revoscalepy/revoscalepy-package.md) | 9.3 | Data access, manipulation and transformations, visualization, and statistical analysis. The revoscalepy functions support a broad spectrum of statistical and analytical tasks that operate at scale, bringing analytical operations to local data or remote on a Spark cluster or data residing in SQL Server. |
+|[microsoftml](microsoftml/microsoftml-package.md)| 9.4 | A collection of Python functions used for machine learning operations, including training and transformations, scoring, text and image analysis, and feature extraction for deriving values from existing data. |
+|[revoscalepy](revoscalepy/revoscalepy-package.md) | 9.4 | Data access, manipulation and transformations, visualization, and statistical analysis. The revoscalepy functions support a broad spectrum of statistical and analytical tasks that operate at scale, bringing analytical operations to local data or remote on a Spark cluster or data residing in SQL Server. |
 
 > [!Note]
 > Developers who are familiar with Microsoft R packages might notice similarities in the functions provided in revoscalepy and microsoftml. Conceptually, revoscalepy and microsftml are the Python equivalents of the RevoScaleR R package and the MicrosoftML R package, respectively.

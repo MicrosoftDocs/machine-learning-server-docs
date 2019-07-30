@@ -57,7 +57,7 @@ print(summary)
 
 ## Visual Studio 2017 with Python
 
-The setup program for Machine Learning Server 9.3 adds Python distribution information to the registry, which makes loading Python modules more straightforward than in previous releases. 
+The setup program for Machine Learning Server 9.4 adds Python distribution information to the registry, which makes loading Python modules more straightforward than in previous releases. 
 
 However, when using an earlier release or to confirm settings, follow these steps to add Machine Learning Server's Python distribution information to an environment. For more information, see [Python environments (Visual Studio docs)](https://docs.microsoft.com/visualstudio/python/managing-python-environments-in-visual-studio).
 
@@ -90,7 +90,7 @@ Jupyter Notebooks is distributed with Anaconda, which is the Python distribution
 
 + On Windows, go to **\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts\\** and double-click **jupyter-notebook.exe** to start a Jupyter Notebook session in the default browser window.
 
-+ On Linux, go to **/opt/microsoft/mlserver/9.3.0/runtime/python/bin/** and type `./jupyter notebook`. You should get a series of messages that includes the server endpoint and a URL that you can copy into a browser, assuming one is available on your computer.
++ On Linux, go to **/opt/microsoft/mlserver/9.4.0/runtime/python/bin/** and type `./jupyter notebook`. You should get a series of messages that includes the server endpoint and a URL that you can copy into a browser, assuming one is available on your computer.
 
 For additional instructions on configuring a multi-user server, see [How to add Machine Learning Server modules to single and multi-user Jupyter Notebook instances](how-to-revoscalepy-jupyter-nb-config.md).
 

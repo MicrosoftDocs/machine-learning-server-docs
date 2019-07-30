@@ -6,7 +6,7 @@ description: " This is the main generator for S4 class RxSqlServerData, which ex
 keywords: "(revoAnalytics), RxSqlServerData, head.RxSqlServerData, tail.RxSqlServerData, database, connection" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 
@@ -206,12 +206,6 @@ object of class RxSqlServerData.
 
  ## Author(s)
  Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
-
-
- ## References
-
-TODO: Update references.
-
 
  ## See Also
 

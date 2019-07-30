@@ -6,7 +6,7 @@ description: " Chi-squared Test, Fisher's Exact Test, and Kendall's  Tau Rank Co
 keywords: "(revoAnalytics), rxChiSquaredTest, rxFisherTest, rxKendallCor, htest" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

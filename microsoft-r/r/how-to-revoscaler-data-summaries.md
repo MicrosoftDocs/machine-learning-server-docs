@@ -50,7 +50,7 @@ The [rxGetVarInfo](../r-reference/revoscaler/rxgetvarinfo.md) function returns i
 	censusWorkerInfo <- rxGetVarInfo(censusWorkers)
 	names(censusWorkerInfo)
 
-The [names function](https://www.rdocumentation.org/packages/base/versions/3.4.3/topics/names) is a base R function, which is called on the object to return the following variable names:
+The [names function](https://www.rdocumentation.org/packages/base/versions/3.5.2/topics/names) is a base R function, which is called on the object to return the following variable names:
 
 	  [1] "age" "incwage" "perwt" "sex" "wkswork1" "state"
 
@@ -128,7 +128,7 @@ To reset the low and high values, repeat the previous steps with the original va
 
 The [rxSummary](../r-reference/revoscaler/rxsummary.md) function provides descriptive statistics using a *formula* argument similar to that used in R’s modeling functions. The formula specifies the independent variables to summarize. 
 
-The basic structure of a formula is a [tilde](https://www.rdocumentation.org/packages/base/versions/3.4.3/topics/tilde) symbol "~" with one or more independent or right-hand variables, separated by "+". To include all of the variables, you can append a dot (.) to the tilde as "~.".
+The basic structure of a formula is a [tilde](https://www.rdocumentation.org/packages/base/versions/3.5.2/topics/tilde) symbol "~" with one or more independent or right-hand variables, separated by "+". To include all of the variables, you can append a dot (.) to the tilde as "~.".
 
 The rxSummary function also takes a data object as the source of the variables. 
 
@@ -172,7 +172,7 @@ For each term in the formula, the mean, standard deviation, minimum, maximum, an
 
 You might have noticed that rxSummary does not compute a median value for each variable. This is because rxSummary only produces statistics that can be computed in chunks, and a median computation is not a chunkable calculation. Median calculations are predicated on a sort operation, which is expensive on large data sets, and thus excluded from rxSummary. 
 
-Assuming your data set fits in memory, you could get the median value of a given variable using the base R [median](https://www.rdocumentation.org/packages/stats/versions/3.4.3/topics/median) function:
+Assuming your data set fits in memory, you could get the median value of a given variable using the base R [median](https://www.rdocumentation.org/packages/stats/versions/3.5.2/topics/median) function:
 
     # Load data into a dataframe
     mydataframe <- rxImport(censusWorkers)

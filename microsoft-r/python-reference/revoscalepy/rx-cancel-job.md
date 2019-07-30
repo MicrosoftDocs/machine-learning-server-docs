@@ -6,7 +6,7 @@ description: "This function does not attempt to retrieve any output objects; if 
 keywords: "cancel" 
 author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/26/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

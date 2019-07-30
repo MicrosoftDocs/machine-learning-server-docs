@@ -6,7 +6,7 @@ description: "Import data and store as an .xdf file on disk or in-memory as a da
 keywords: "import, datasource" 
 author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/26/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

@@ -6,7 +6,7 @@ description: "Gets a PySpark connection from the current Spark compute context."
 keywords: "" 
 author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/26/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

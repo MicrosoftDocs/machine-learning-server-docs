@@ -6,7 +6,7 @@ description: "     Utility Functions for rxDForest. "
 keywords: "(revoAnalytics), rxDForestUtils, rxVarImpPlot, rxLeafSize, rxTreeDepth, rxTreeSize, rxVarUsed, rxGetTree, models, tree, classif, regression, classification" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

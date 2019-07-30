@@ -6,7 +6,7 @@ description: "     Fit Naive Bayes Classifiers on an .xdf file or data frame    
 keywords: "(revoAnalytics), rxNaiveBayes, print.rxNaiveBayes, models, tree, classif, classification" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

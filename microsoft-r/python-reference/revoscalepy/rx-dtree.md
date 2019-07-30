@@ -6,7 +6,7 @@ description: "Fit classification and regression trees on an .xdf file or data fr
 keywords: "learner, tree" 
 author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/26/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

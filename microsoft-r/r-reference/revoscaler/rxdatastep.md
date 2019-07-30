@@ -6,7 +6,7 @@ description: "    Transform data from an input data set to an output data set. T
 keywords: "(revoAnalytics), rxDataStep, manip, file" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

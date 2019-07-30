@@ -6,7 +6,7 @@ description: " Execute a SQL statement that drops a table or checks for existenc
 keywords: "(revoAnalytics), rxSqlServerDropTable, rxSqlServerTableExists, file" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

@@ -6,7 +6,7 @@ description: "Loads image data."
 keywords: "transform, image" 
 author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "09/05/2017" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

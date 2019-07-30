@@ -6,7 +6,7 @@ description: " RxSpark creates a Spark compute context. rxSparkConnect creates t
 keywords: "(revoAnalytics), RxSpark, rxSparkConnect, rxSparkDisconnect, IO" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

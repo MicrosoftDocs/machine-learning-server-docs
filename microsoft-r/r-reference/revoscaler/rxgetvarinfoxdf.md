@@ -6,7 +6,7 @@ description: " Get variable information for a RevoScaleR data source or data fra
 keywords: "(RevoScaleR), rxGetVarInfo, attribute" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "09/07/2017" 
+ms.date: 07/15/2019 
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

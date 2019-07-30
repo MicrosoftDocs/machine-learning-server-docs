@@ -55,7 +55,7 @@ One of the first steps for most typical applications using this API is to provid
 
 To sign in, a user must provide username and password credentials. These credentials are verified by the DeployR server using the [/r/user/login](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-user-login) call. Credentials are matched against user account data stored in the DeployR database or against user account data stored in LDAP, Active Directory, or PAM directory services.
 
-If these credentials are verified by the DeployR server, then we say that the user is an *authenticated* user. An *authenticated* user is granted access to the full API, allowing the user to work on [projects](#projects-on-the-api), submit or schedule [jobs](#jobs-on-the-api) and work with [repository-managed](#repository-on-the-api) files and scripts.
+If these credentials are verified by the DeployR server, then we say that the user is an *authenticated* user. An *authenticated* user is granted access to the full API, allowing the user to work on projects, submit or schedule jobsand work with repository-managed files and scripts.
 
 **Pre-Authenticated Users**
 
@@ -646,7 +646,7 @@ To make life easier for the client developers using this API, DeployR also provi
 
 **DeployR Public API**
 
-This document describes the DeployR Public API and the complete set of API services provided for [users](#users-on-the-api), [projects](#projects-on-the-api), [jobs](#jobs-on-the-api), [repository-managed](#repository-on-the-api) files, and scripts and the [event stream](#event-stream). Using this API directly or by taking advantage of the DeployR client libraries developers can integrate R-based analytics into their client applications.
+This document describes the DeployR Public API and the complete set of API services provided for users, projects, jobs, repository-managed files, and scripts and the event stream. Using this API directly or by taking advantage of the DeployR client libraries developers can integrate R-based analytics into their client applications.
 
 **DeployR Administration Console**
 
@@ -675,7 +675,7 @@ The DeployR API exposes a set of services via a Web service interface using HTTP
 
 Most API calls respond with well-formed markup. On such calls, you can request the response markup in JSON format. Some API calls return binary data such as image plots, structured data like CSV files, or gzip compressed archives. In all cases, the type of data being returned will always be indicated by the *Content-Type* header on the response.
 
-Additionally, each request returns a meaningful HTTP status code on the response. For a list of response codes that can be indicated on this API and that should be handled by all applications, refer to section [API Response Codes](#api-response-code-overview).
+Additionally, each request returns a meaningful HTTP status code on the response. For a list of response codes that can be indicated on this API and that should be handled by all applications, refer to section API Response Codes.
 
 <br />
 ### API Parameter Overview
@@ -1642,7 +1642,7 @@ Also, a new on-execution parameter has been added:
 
 -  enableConsoleEvents - (optional) when enabled R console events are delivered on the event stream for the current execution
 
-The introduction of the enableConsoleEvents is a breaking change for those using the [event stream](#event-stream). Prior versions of DeployR enabled R console events by default and there was no way on the API to disable these events. As of 7.3, R console events on the event stream are disabled by default and if necessary, must be explicitly requested by enabling this new parameter.
+The introduction of the enableConsoleEvents is a breaking change for those using the event stream. Prior versions of DeployR enabled R console events by default and there was no way on the API to disable these events. As of 7.3, R console events on the event stream are disabled by default and if necessary, must be explicitly requested by enabling this new parameter.
 
 These two changes apply across all execution APIs:
 

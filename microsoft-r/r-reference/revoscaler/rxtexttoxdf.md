@@ -6,7 +6,7 @@ description: " Import text data into to an .xdf file using fastText mode. Can al
 keywords: "(revoAnalytics), rxTextToXdf, file, connection" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

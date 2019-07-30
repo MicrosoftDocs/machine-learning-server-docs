@@ -6,7 +6,7 @@ description: "Shuts down the remote Spark application and switches to a local co
 keywords: "" 
 author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/26/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

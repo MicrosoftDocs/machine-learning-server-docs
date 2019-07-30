@@ -34,9 +34,9 @@ The admin password must be 8-16 characters long and contain:
 + At least one number
 + At least one of the following special characters:<br/> `~ ! @ # $ % ^ & ( ) - _ + = | < > \ / ; : , .`
 
-## Machine Learning Server 9.3
+## Machine Learning Server 9.3 and later
 
-In Machine Learning Server 9.3, you can use `admin` extension of the Azure Command Line Interface ([Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)) to set up and manage your configuration, including updating the local 'admin' account password.
+In Machine Learning Server 9.3 and later, you can use `admin` extension of the Azure Command Line Interface ([Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)) to set up and manage your configuration, including updating the local 'admin' account password.
 
 >[!Important]
 >- This password is set while you are first configuring your nodes.

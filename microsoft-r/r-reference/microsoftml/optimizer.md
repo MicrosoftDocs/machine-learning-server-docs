@@ -6,7 +6,7 @@ description: " Specifies Optimization Algorithms for Neural Net. "
 keywords: "(MicrosoftML), maOptimizer, adaDeltaSgd, sgd, optimizer" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/16/2019" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

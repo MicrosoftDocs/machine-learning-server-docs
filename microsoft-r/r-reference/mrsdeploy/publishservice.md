@@ -6,7 +6,7 @@ description: " Publishes an R code block or a real-time model as a new web servi
 keywords: "(mrsdeploy), publishService" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/18/2019" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

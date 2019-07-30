@@ -6,7 +6,7 @@ description: "Main generator class for objects repreresenting the native file sy
 keywords: "filesystem native" 
 author: "HeidiSteen" 
 manager: "cgronlun" 
-ms.date: "01/26/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

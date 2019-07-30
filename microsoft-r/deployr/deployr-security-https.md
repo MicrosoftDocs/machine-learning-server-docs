@@ -101,9 +101,9 @@ After configuring DeployR to use one of those databases, you must also properly 
 + For SQL Server 2016, you should: 
 
     + Read these articles for information on how to enable TLS for SQL Server: 
-        + https://support.microsoft.com/en-us/kb/316898 
-        + https://docs.microsoft.com/en-us/sql/connect/jdbc/securing-jdbc-driver-applications
-        + https://support.microsoft.com/en-us/kb/3135244
+        + https://support.microsoft.com/kb/316898 
+        + https://docs.microsoft.com/nnect/jdbc/securing-jdbc-driver-applications
+        + https://support.microsoft.com/kb/3135244
 
     + In the `$DEPLOYR_HOME/deployr/deployr.groovy` external configuration file, add `encrypt=true;trustServerCertificate=true` to the connection string.
 

@@ -6,7 +6,7 @@ description: "     Calculate predicted or fitted values for a data set from an r
 keywords: "(revoAnalytics), rxPredict.rxDTree, models, tree, classif, regression, classification" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

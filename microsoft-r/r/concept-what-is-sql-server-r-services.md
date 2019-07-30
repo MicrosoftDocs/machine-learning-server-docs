@@ -76,11 +76,11 @@ If you run R code within T-SQL code, the server is always used as the compute co
 For more information, see [Data Exploration and Predictive Modeling with R](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/data-exploration-and-predictive-modeling-with-r)
  
 ### Using Development Tools
-You can develop your R solutions in your preferred R IDE. We recommend that you use a standalone R IDE when testing your code and exploring your data, rather than trying to write R code inside of T-SQL. For R Services in particular, [R Tools for Visual Studio](https://www.visualstudio.com/features/rtvs-vs.aspx) is a good choice, because it has strong support for both R code and integration with SQL Server, but you can use any IDE that supports database connectivity.
+You can develop your R solutions in your preferred R IDE. We recommend that you use a standalone R IDE when testing your code and exploring your data, rather than trying to write R code inside of T-SQL. 
 
 To run R code within the context of SQL Server, you have two options:
 + Run code from your laptop or any remote workstation, but set the compute context to SQL Server.
-+ Copy R code into the @script argument of a special SQL stored procedure, [sp_execute_external_script](https://msdn.microsoft.com/library/mt604368.aspx). You can provide input data as a parameter of the stored procedure, call the stored procedure from any application that supports SQL calls, and easily export results to any application that can consume SQL data.
++ Copy R code into the @script argument of a special SQL stored procedure, [sp_execute_external_script](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql). You can provide input data as a parameter of the stored procedure, call the stored procedure from any application that supports SQL calls, and easily export results to any application that can consume SQL data.
 
 ### Deploying, Managing, and Optimizing Solutions
 

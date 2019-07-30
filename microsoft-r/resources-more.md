@@ -7,7 +7,7 @@ keywords: ""
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "2/16/2018"
+ms.date: "07/15/2019"
 ms.topic: "conceptual"
 ms.prod: "mlserver"
 
@@ -25,10 +25,10 @@ ms.prod: "mlserver"
 
 # Additional Resources for Machine Learning Server and Microsoft R
 
-The following resources are available to you:
+Use the links in this article for recommended resources about R and Python.
 
 ## Blogs and resources
-* [Product web page](https://www.microsoft.com/en-us/server-cloud/products/r-server/)
+* [Product web page](https://www.microsoft.com/sql-server/machinelearningserver)
 * [Supported platforms](install/r-server-install-supported-platforms.md)
 * [About R](https://mran.microsoft.com/documents/what-is-r/)
 * [R Language Resources](https://mran.microsoft.com/documents/getting-started/)
@@ -36,42 +36,29 @@ The following resources are available to you:
 * [Operationalization Examples](https://blogs.msdn.microsoft.com/rserver/2017/02/03/microsoft-r-server-operationalization-examples/)
 * [Galaxy classification with neural networks: a data science workflow](https://blogs.msdn.microsoft.com/rserver/2017/03/22/galaxy-classification-with-neural-networks-a-data-science-workflow/)
 * [Running your R code on Azure with mrsdeploy](https://blog.revolutionanalytics.com/2017/03/running-your-r-code-azure.html)
-* [Python programming tutorial](https://mva.microsoft.com/en-us/training-courses/introduction-to-programming-with-python-8360?l=lqhuMxFz_8904984382)
 
 
 ## Support
-* [User Support Forum](https://social.technet.microsoft.com/Forums/en-US/home?forum=MicrosoftR)
+* [Machine Learning Server support forum](https://social.technet.microsoft.com/Forums/en-US/home?forum=MicrosoftR)
+* [Microsoft R Open support forum](https://social.technet.microsoft.com/Forums/en-US/home?forum=ropen)
 
 ## Sample datasets
 * [Sample Dataset Directory](https://packages.revolutionanalytics.com/datasets/)
 * [More Data Sources](https://mran.microsoft.com/documents/data/)
-* [Blog Post on Data Sources](http://www.inside-r.org/howto/finding-data-internet)
 
-## ML Server on Azure 
-* [Azure ML Support Forum](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=MachineLearning) 
-* [Microsoft Azure Blog](https://azure.microsoft.com/en-us/blog/)
-* [ML Server VM offers in the Azure Marketplace](https://azure.microsoft.com/en-us/marketplace/virtual-machines/all/?term=machine+learning+server)
+## New to Python
 
+Python is installed through a distribution of Anaconda, adding tools and packages that are in common use across the development community. Jupyter Notebooks, included in Anaconda, is added to your system when you install Machine Learning Server with Python support. We recommend using Jupyter Notebooks for beginners. Its interactive environment, with visualization support, is easy to use and a mainstay of Python training content. 
 
-## R Tools for Visual Studio
-* [R Tools for Visual Studio (RTVS)](https://docs.microsoft.com/visualstudio/rtvs/installation)
+To start Jupyter Notebooks, go to C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\Scripts and run Jupyter-Notebook.exe. A browser window will open to localhost, with options for creating or opening new Python files. For help on getting started, see [Jupyter Notebook Tips, Tricks, and Shortcuts](https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/). 
 
-## Python support in Visual Studio
-* [Install Python support in Visual Studio on Windows](https://docs.microsoft.com/visualstudio/python/installing-python-support-in-visual-studio)
+## New to R
 
-## Documentation Roadmap
+If you are just getting started with R, we recommend the R Core Team manuals, which are part of every R distribution, including *An Introduction to R*, *The R Language Definition*, *Writing R Extensions*. You can access that on the CRAN website or in your R installation directory.
 
-We recommend that you begin with the Quickstarts on this site. After you've completed those tutorials, you'll be ready start using R for your own purposes. While the tutorials have given you the basic tools to begin exploring, you may still want more guidance for your specific tasks. Luckily, there is a huge library of Microsoft R, open-source R, and S documentation that can help you perform almost any task with R. This brief roadmap points you toward some of the most useful documentation that Microsoft is aware of. (If you find other useful resources, drop us a line at revodoc@microsoft.com!)
+Beyond the standard R manuals, there are many books available to help you learn R, and to help you use R to do particular tasks. The rest of this article helps point you in the right direction. 
 
-The obvious place to start is with the rest of the document set, which includes documentation on the **RevoScaleR** package for scalable data analysis (on all platforms). You can find this documentation on this site using the table of contents on this page.
-
-Next, we recommend the R Core Team manuals, which are part of every R distribution, including *An Introduction to R*, *The R Language Definition*, *Writing R Extensions*. You can access that on the CRAN website or in your R installation directory.
-
-Beyond the standard R manuals, there are many books available to help you learn R, and to help you use R to do particular things. The rest of this article helps point you in the right direction. 
-
-### Introductory Material
-
-#### New to R?
+### For beginners
 
 + _R for Dummies_ by Andrie de Vries and Joris Meys
   <br>Excellent starting place if you are new to R, filled with examples and tips
@@ -81,7 +68,7 @@ Beyond the standard R manuals, there are many books available to help you learn 
 + _An Introduction to R_ by the R Development Core Team, 2008
   <br>Based on “Notes on S-Plus” by Bill Venables and David Smith. Includes an extensive sample session in Appendix A
 
-#### Intermediate R Users
+### Intermediate R Users
 
 + _O’Reilly’s R Cookbook_ by Paul Teetor
   <br>A book filled with recipes to help you accomplish specific tasks.
@@ -89,7 +76,7 @@ Beyond the standard R manuals, there are many books available to help you learn 
 + _The Essential R Reference_ by Mark Gardener
   <br>A dictionary-like reference to more than 400-R commands, including cross-references and examples
 
-#### For SAS or SPSS Users
+### For SAS or SPSS Users
 
 + _R for SAS and SPSS Users_ by Robert Muenchen
   <br>Good starting point for users of SAS or SPSS who are new to R
@@ -98,7 +85,7 @@ Beyond the standard R manuals, there are many books available to help you learn 
 
 + _Analysis of Correlated Data with SAS and R_ by Mohamed M. Shoukri and Mohammad A. Chaudhary
 
-<br>
+
 ### Information on Data Analysis and Statistics
 
 A good source of information on introductory data analysis and statistics is Peter Dalgaard’s *Introductory Statistics with R*. After a chapter on basic R operations, Dalgaard discusses probability and distributions, descriptive statistics and graphics, one- and two-sample tests, regression and correlation, ANOVA and Kruskal-Wallis, tabular data, power and computation of sample size, multiple regression, linear models, logistic regression, and survival.
@@ -145,7 +132,7 @@ Trellis graphics are discussed thoroughly in Cleveland’s *Visualizing Data*. C
 ### Archived Product Documentation
 
 **R Productivity Environment (RPE)**
-The RPE is an older development tool that is now superseded by [R Tools for Visual Studio]((https://docs.microsoft.com/visualstudio/rtvs/installation). RPE documentation can be found at the following links:
+The RPE is an older development tool. RPE documentation can be found at the following links:
 * [RPE Getting Started](r/rpe/revorpe-getting-started.md)
 * [RPE User's Guide](r/rpe/revorpe-users-guide.md)
 

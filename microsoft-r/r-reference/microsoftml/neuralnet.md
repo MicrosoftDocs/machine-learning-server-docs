@@ -6,7 +6,7 @@ description: " Creates a list containing the function name and arguments to trai
 keywords: "(MicrosoftML), neuralNet" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/16/2019" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 
@@ -63,7 +63,7 @@ Creates a list containing the function name and arguments to train a
   
   
  ### `netDefinition`
- The Net# definition of the structure of the neural network. For more information about the Net# language, see   [`Reference Guide`](https://azure.microsoft.com/en-us/documentation/articles/machine-learning-azure-ml-netsharp-reference-guide/)  
+ The Net# definition of the structure of the neural network. For more information about the Net# language, see   [`Reference Guide`](https://azure.microsoft.com/documentation/articles/machine-learning-azure-ml-netsharp-reference-guide/)  
   
   
   

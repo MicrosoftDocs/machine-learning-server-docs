@@ -7,7 +7,7 @@ keywords: ""
 author: "HeidiSteen" 
 manager: "cgronlun" 
 ms.author: "heidist"
-ms.date: "02/16/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 
@@ -33,7 +33,7 @@ Functions run on the **revoscalepy** interpreter, built on open-source Python, e
 
 | Package details | |
 |--------|-|
-| Current version: |  9.3 |
+| Current version: |  9.4 |
 | Built on: | [Anaconda 4.2](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) |
 | Package distribution: | [Machine Learning Server 9.x](../../what-is-machine-learning-server.md) </br>[SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) </br>[SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) |
 

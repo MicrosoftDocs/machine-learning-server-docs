@@ -6,7 +6,7 @@ description: " Displays the 'REMOTE>' command prompt and provides a remote execu
 keywords: "(mrsdeploy), remoteCommandLine" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/18/2019" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "microsoft-r" 
 ms.service: "" 

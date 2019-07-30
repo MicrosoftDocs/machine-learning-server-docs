@@ -7,7 +7,7 @@ keywords: "mrsdeploy package reference"
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
-ms.date: "2/16/2018"
+ms.date: 07/15/2019
 ms.topic: "conceptual"
 ms.prod: "mlserver"
 

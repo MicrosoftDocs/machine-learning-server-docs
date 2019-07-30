@@ -24,7 +24,7 @@ ms.prod: "mlserver"
 
 # How to add or remove R and Python packages on Machine Learning Server for Linux
 
-**Applies to:  Machine Learning Server 9.2.1 | 9.3**
+**Applies to:  Machine Learning Server 9.2.1 | 9.3 | 9.4**
 
 You can add open-source and third-party R and Python packages to the same local repository containing the product-specific packages for Machine Learning Server, allowing you to call functions from any library in the same script. Any packages you add to the repository must be compatible with the base R and Anaconda distributions upon which Microsoft's R and Python libraries are built.
 
@@ -38,6 +38,7 @@ Base R is distributed through Microsoft R Open, as installed by Machine Learning
 
 | Product version | R version | Anaconda/Python version |
 |-----------------|-----------|-------------------------|
+| 9.4             | 3.5.2 | /3.7.1 |
 | 9.3             | 3.4.3 |  4.2/3.5 |
 | 9.2             | 3.4.1 |  4.2/3.5 |
 | 9.1             | 3.3.3 |  not applicable |
@@ -60,9 +61,9 @@ Type "help", "copyright", "credits" or "license" for more information.`
 
 On Linux, packages installed and used by Machine Learning Server can be found at these locations:
 
-+ For R: `/opt/microsoft/mlserver/9.3.0/runtime/R/library`
++ For R: `/opt/microsoft/mlserver/9.4.0/runtime/R/library`
 
-+ For Python: `/opt/microsoft/mlserver/9.3.0/runtime/python/pkgs`
++ For Python: `/opt/microsoft/mlserver/9.4.0/runtime/python/pkgs`
 
 ## Add or remove R packages
 
@@ -79,11 +80,11 @@ Anaconda includes **pip** and **conda** that you can use to add or remove Python
 
 ```
 # Add a package
-cd /opt/microsoft/mlserver/9.3.0/runtime/python/bin/
+cd /opt/microsoft/mlserver/9.4.0/runtime/python/bin/
 pip install <packagename>
 
 # Remove a package
-cd /opt/microsoft/mlserver/9.3.0/runtime/python/bin/
+cd /opt/microsoft/mlserver/9.4.0/runtime/python/bin/
 pip uninstall <packagename>
 ```
 
@@ -91,11 +92,11 @@ pip uninstall <packagename>
 
 ```
 # Add a package
-cd /opt/microsoft/mlserver/9.3.0/runtime/python/bin/
+cd /opt/microsoft/mlserver/9.4.0/runtime/python/bin/
 conda install <packagename>
 
 # Remove a package
-cd /opt/microsoft/mlserver/9.3.0/runtime/python/bin/
+cd /opt/microsoft/mlserver/9.4.0/runtime/python/bin/
 conda uninstall <packagename>
 ```
 

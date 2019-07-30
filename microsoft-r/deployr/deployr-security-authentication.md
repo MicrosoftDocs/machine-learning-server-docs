@@ -67,7 +67,7 @@ The standard protocol for reading data from and writing data to Active Directory
 Reasons for enabling LDAP-S include:
 + Organizational security policies typically require that all client/server communication is encrypted.
 + Applications use simple BIND to transport credentials and authenticate against a DC. As simple BIND exposes the users’ credentials in clear text, using SSL/TLS to encrypt the authentication session is strongly recommended.
-+ Use of proxy binding or password change over LDAP, which requires LDAP-S. [Bind to an AD LDS instance Through a Proxy Object](https://technet.microsoft.com/en-us/library/cc794922%28WS.10%29.aspx?f=255&MSPPError=-2147217396)
++ Use of proxy binding or password change over LDAP, which requires LDAP-S. [Bind to an AD LDS instance Through a Proxy Object](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794922(v=ws.10))
 + Applications that integrate with LDAP servers (such as Active Directory or Active Directory Domain Controllers) might require encrypted LDAP communications.
 
 >Basic authentication remains enabled even with LDAP enabled.

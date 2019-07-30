@@ -30,8 +30,8 @@ The **microsoftml** module is a collection of Python functions used in machine l
 
 | Package details | |
 |--------|-|
-| Current version: |  9.3 |
-| Built on: | [Anaconda 4.2](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) |
+| Current version: |  9.4 |
+| Built on: | [Anaconda 4.2](https://www.continuum.io/why-anaconda) distribution of [Python 3.7.1](https://www.python.org/doc) |
 | Package distribution: | [Machine Learning Server 9.x](../../what-is-machine-learning-server.md) </br>[SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) </br>[SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone) |
 
 
@@ -125,7 +125,7 @@ For SQL Server, add both Python modules to your computer by running setup:
 
 Follow this SQL Server tutorial for hands-on experience: 
 
-+ [Using the MicrosoftML Package with SQL Server](https://docs.microsoft.com/en-us/sql/advanced-analytics/using-the-microsoftml-package) 
++ [Using the MicrosoftML Package with SQL Server](https://docs.microsoft.com/sql/advanced-analytics/using-the-microsoftml-package) 
 
 ## See also
 

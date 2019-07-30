@@ -6,7 +6,7 @@ description: " Use rxGlm to fit generalized linear regression models for small o
 keywords: "(revoAnalytics), rxGlm, models, regression" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

@@ -123,7 +123,7 @@ Next, unpack the R Server distribution and copy the gzipped MRO distribution to 
 
 ## Run the MRS install script
 
-R Server for Hadoop is deployed by running the install script with no parameters. At this point, you could opt for [unattended install](#unattended) to bypass EULA prompts.
+R Server for Hadoop is deployed by running the install script with no parameters. At this point, you could opt for unattended install to bypass EULA prompts.
 
 1. Switch to the `MRS91Hadoop` directory containing the installation script:
 

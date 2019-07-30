@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Configure Machine Learning Server 9.3 to operationalize analytics (one-box)"
-description: "Configure Machine Learning Server 9.3 to operationalize analytics on a single machine (One-box)"
+title: "Configure Machine Learning Server 9.4 to operationalize analytics (one-box)"
+description: "Configure Machine Learning Server 9.4 to operationalize analytics on a single machine (One-box)"
 keywords: "setup machine learning server for deployment; install machine learning server for deploying"
 author: "HeidiSteen"
 ms.author: "heidist"
@@ -22,9 +22,9 @@ ms.prod: "mlserver"
 #ms.custom: ""
 ---
 
-# Configure Machine Learning Server 9.3 to operationalize analytics on a single machine (One-box)
+# Configure Machine Learning Server 9.4 to operationalize analytics on a single machine (One-box)
 
-**Applies to: Machine Learning Server 9.3** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For older versions: [ML Server 9.2.1](configure-machine-learning-server-one-box-9-2.md) | [R Server 9.x](../install/operationalize-r-server-one-box-config.md)
+**Applies to: Machine Learning Server 9.4** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For older versions: [ML Server 9.3](configure-machine-learning-server-one-box-9-3.md) | [ML Server 9.2.1](configure-machine-learning-server-one-box-9-2.md) | [R Server 9.x](../install/operationalize-r-server-one-box-config.md)
 
 You can configure Microsoft Learning Server after installation to act as a deployment server and to host analytic web services for operationalization. Machine Learning Server offers two types of configuration for operationalizing analytics and remote execution: **One-box and Enterprise**. This article describes the one-box configuration. For more on enterprise configurations, [see here](configure-machine-learning-server-enterprise.md).
 
@@ -38,7 +38,7 @@ A one-box configuration, as the name suggests, involves a single [web node and c
 ## How to configure
 
 >[!Important]
-> You can create a ready-to-use server with just a few clicks using Azure Marketplace VM [Machine Learning Server Operationalization](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/deploy-r.operationalization?tab=Overview). Navigate to the virtual machine listing on [Azure portal](https://portal.azure.com/#create/deploy-r.operationalizationonebox), select the **Create** button at the bottom, provide necessary inputs to create the Operationalization Server. 
+> You can create a ready-to-use server with just a few clicks using Azure Marketplace VM [Machine Learning Server Operationalization](https://azuremarketplace.microsoft.com/marketplace/apps/deploy-r.operationalization?tab=Overview). Navigate to the virtual machine listing on [Azure portal](https://portal.azure.com/#create/deploy-r.operationalizationonebox), select the **Create** button at the bottom, provide necessary inputs to create the Operationalization Server. 
 >
 > [Azure Resource Management templates](https://github.com/Microsoft/microsoft-r/tree/master/mlserver-arm-templates) are also provided in GitHub. This [blog post](https://blogs.msdn.microsoft.com/mlserver/2018/02/27/configuring-microsoft-machine-learning-server-9-3-to-operationalize-analytics-using-arm-templates/) provides more information. 
 >
@@ -61,17 +61,17 @@ A one-box configuration, as the name suggests, involves a single [web node and c
    ```azurecli
    # With elevated privileges, run the following commands.
    # Set up both nodes on one machine
-   az ml admin node setup --onebox --admin-password <Password> --confirm-password <Password>
+   az mlserver admin node setup --onebox --admin-password <Password> --confirm-password <Password>
 
    # Check that the nodes are now running
-   az ml admin node list
+   az mlserver admin node list
 
    # Authenticate via CLI
    # Account name is `admin` if LDAP or AAD is not set up.
-   az login --mls
+   az mlserver login
 
    # Test configuration to validate setup
-   az ml admin diagnostic run
+   az mlserver admin diagnostic run
    ``` 
 
    You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
@@ -81,7 +81,7 @@ A one-box configuration, as the name suggests, involves a single [web node and c
 1. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
 
 >[!Important]
->Machine Learning Server uses Kestrel as the web server for its operationalization web nodes. Therefore, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy setup.
+>Machine Learning Server uses Kestrel as the web server for its operationalization web nodes. Therefore, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com//aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy setup.
 
 You are now ready to begin operationalizing your R and Python analytics with Machine Learning Server.
 
@@ -100,7 +100,7 @@ Carefully review the following steps.
    >[!Warning]
    >If you skip this SQLite database backup step, your database data will be lost.
 
-3. Uninstall the old version. The uninstall process stashes away a copy of your configuration files for a seamlessly upgrade to Machine Learning Server 9.3.
+3. Uninstall the old version. The uninstall process stashes away a copy of your configuration files for a seamlessly upgrade to Machine Learning Server 9.3 and later.
     + For Machine Learning Server 9.2.1, read these instructions: [Windows](../install/machine-learning-server-windows-uninstall.md) | [Linux](../install/machine-learning-server-linux-uninstall.md).
     + For Microsoft R Server 9.x, read this [Uninstall Microsoft R Server to upgrade to a newer version](../install/r-server-install-uninstall-upgrade.md). 
 
@@ -126,10 +126,10 @@ Carefully review the following steps.
    
    ```azurecli
    # Set up both nodes on one machine
-   az ml admin node setup --onebox --admin-password <Password> --confirm-password <Password>
+   az mlserver admin node setup --onebox --admin-password <Password> --confirm-password <Password>
 
    # Check that the nodes are now running
-   az ml admin node list
+   az mlserver admin node list
    ``` 
    You can always configure the server to authenticate against  [Active Directory (LDAP) or Azure Active Directory](../deployr/../operationalize/configure-admin-cli-local-password.md) later.
 
@@ -138,7 +138,7 @@ Carefully review the following steps.
 7. If on Linux and using the IPTABLES firewall or equivalent service, then use the `iptables` command (or the equivalent) to open port 12800 to the public IP of the web node so that remote machines can access it.
 
 >[!Important]
->Machine Learning Server uses Kestrel as the web server for its operationalization web nodes. Therefore, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy setup.
+>Machine Learning Server uses Kestrel as the web server for its operationalization web nodes. Therefore, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com//aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy setup.
 
 You are now ready to begin operationalizing your R and Python analytics with Machine Learning Server.
 

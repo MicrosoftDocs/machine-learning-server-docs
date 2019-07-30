@@ -6,7 +6,7 @@ description: " Produces a dummy generalized linear model family object that can 
 keywords: "(revoAnalytics), rxTweedie, regression" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

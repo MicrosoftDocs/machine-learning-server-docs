@@ -129,7 +129,7 @@ To replace an older version, you can uninstall the older distribution before ins
 ## How to configure for the enterprise
 
 >[!Important]
->For your convenience, [Azure Resource Management templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure Microsoft R Server for operationalization in Azure.  
+>For your convenience, [Azure Resource Management templates](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#template-deployment) are available to quickly deploy and configure Microsoft R Server for operationalization in Azure.  
 >
 >Get one of [these templates on GitHub](https://github.com/Microsoft/microsoft-r/tree/master/rserver-arm-templates). Then, learn how to use it with this [blog post](https://blogs.msdn.microsoft.com/rserver/2017/07/07/set-up-an-auto-scale-environment-to-operationalize-your-r-analytics-with-just-one-click/).
 
@@ -288,7 +288,7 @@ In an enterprise configuration, you can set up one or more web nodes. Note that 
 Your web node is now configured. Repeat these steps for each web node you want to add.
 
 >[!Important]
->R Server uses Kestrel as the web server for its operationalization web nodes. Therefore, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy setup.
+>R Server uses Kestrel as the web server for its operationalization web nodes. Therefore, if you expose your application to the Internet, we recommend that you review the [guidelines for Kestrel](https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel) regarding reverse proxy setup.
 
 ### 4. Setup enterprise-grade security
 
@@ -303,7 +303,7 @@ In production environments, we strongly recommend the following approaches:
 
 ### 5. Provision on the cloud
 
-If you are provisioning on a cloud service, then you must also [create inbound security rule for port 12800 in Azure](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-classic-setup-endpoints/) or open the port through the AWS console. This endpoint allows clients to communicate with the R Server's operationalization server.
+If you are provisioning on a cloud service, then you must also [create inbound security rule for port 12800 in Azure](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-classic-setup-endpoints/) or open the port through the AWS console. This endpoint allows clients to communicate with the R Server's operationalization server.
 
 ### 6. Set up a load balancer
 

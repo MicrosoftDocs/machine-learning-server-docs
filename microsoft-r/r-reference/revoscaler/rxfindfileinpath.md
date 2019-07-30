@@ -6,7 +6,7 @@ description: " Sequentially checks the entries in a delimited path string for a 
 keywords: "(revoAnalytics), rxFindFileInPath, IO" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 

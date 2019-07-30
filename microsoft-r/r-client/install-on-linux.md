@@ -46,8 +46,9 @@ Included and required for R Client setup is [Microsoft R Open (MRO)](https://mra
 
 You can use links and instructions in this article to install either 3.4.1 or 3.4.3 versions of R Client.
 
-| R version | MRO version | R Client version | R Server version |
+| R version | MRO version | R Client version | ML Server version |
 |-----------|-------------|------------------|------------------|
+| 3.5.2     | 3.5.2       | 3.5.2            | 9.4              |
 | 3.4.3     | 3.4.3       | 3.4.3            | 9.3              |
 | 3.4.1     | 3.4.1       | 3.4.1            | 9.2.1            |
 
@@ -72,8 +73,8 @@ You can use links and instructions in this article to install either 3.4.1 or 3.
 
 ## Installation paths
 After installation completes, software can be found at the following paths:
-+ Install root: /opt/microsoft/rclient/3.4.3 (or 3.4.1)
-+ Microsoft R Open root: /opt/microsoft/ropen/3.4.3 (or 3.4.1)
++ Install root: /opt/microsoft/rclient/3.5.2 (or 3.4.3, 3.4.1)
++ Microsoft R Open root: /opt/microsoft/ropen/3.5.2 (or 3.4.3, 3.4.1)
 + Executables like Revo64 are under /usr/bin
 
 There is no support for side-by-side installations of older and newer versions. 
@@ -112,9 +113,10 @@ ls -la /etc/apt/sources.list.d/
 # Update packages on your system
 apt-get update
 
-# Install the 3.4.3 packages
+# Install the 3.5.2 packages
 # Alternative for 3.4.1: apt-get install microsoft-r-client-packages-3.4.1
-apt-get install microsoft-r-client-packages-3.4.3
+# Alternative for 3.4.3: apt-get install microsoft-r-client-packages-3.4.3
+apt-get install microsoft-r-client-packages-3.5.2
 
 # List the packages
 ls /opt/microsoft/rclient/
@@ -139,9 +141,10 @@ ls -la /etc/yum.repos.d/
 # Update packages on your system
 yum update
 
-# Install the 3.4.3 packages
+# Install the 3.5.2 packages
 # Alternative for 3.4.1: yum install microsoft-r-client-packages-3.4.1
-yum install microsoft-r-client-packages-3.4.3
+# Alternative for 3.4.3: yum install microsoft-r-client-packages-3.4.3
+yum install microsoft-r-client-packages-3.5.2
 ``` 
 
 **SUSE Linux Enterprise Server 11**
@@ -157,9 +160,10 @@ zypper ar -f http://packages.microsoft.com/sles/11/prod packages-microsoft-com
 # Update packages on your system
 zypper update
 
-# Install the 3.4.3 packages
+# Install the 3.5.2 packages
 # Alternative for 3.4.1: zypper install microsoft-r-client-packages-3.4.1
-zypper install microsoft-r-client-packages-3.4.3
+# Alternative for 3.4.3: zypper install microsoft-r-client-packages-3.4.3
+zypper install microsoft-r-client-packages-3.5.2
 ``` 
 
 
@@ -172,7 +176,7 @@ You can now [set up your IDE and try out some sample code](../r-client-get-start
 
 By default, installers connect to Microsoft download sites to get required and updated components. If firewall restrictions or limits on internet access prevent the installer from reaching these sites, you can download individual components on a computer that has internet access, copy the files to another computer behind the firewall, manually install prerequisites and packages, and then run setup.
 
-If you previously installed version 3.4.1, it will be replaced with the 3.4.3 version.
+If you previously installed version 3.4.1 or 3.4.3, it will be replaced with the 3.5.2 version.
 
 Packages for all supported versions of Linux can be found at [packages.microsoft.com](https://packages.microsoft.com). 
 
@@ -186,20 +190,20 @@ Packages for all supported versions of Linux can be found at [packages.microsoft
 
 ### Package list
 
-The package list is the same for both 3.4.1 and 3.4.3, with version numbers being the only difference. The following packages comprise a full R Client 3.4.3 installation:
+The package list is the same for both 3.4.1, 3.4.3 and 3.5.2, with version numbers being the only difference. The following packages comprise a full R Client 3.5.2 installation:
 
 ```
- microsoft-r-client-packages-3.4.3     ** core
- microsoft-r-client-mml-3.4.3          ** microsoftml for R (optional)
- microsoft-r-client-mlm-3.4.3          ** pre-trained models (requires microsoftml)
+ microsoft-r-client-packages-3.5.2     ** core
+ microsoft-r-client-mml-3.5.2          ** microsoftml for R (optional)
+ microsoft-r-client-mlm-3.5.2          ** pre-trained models (requires microsoftml)
 ```
 
 Microsoft R Open is required for R execution:
 
 ```
- microsoft-r-open-foreachiterators-3.4.3 
- microsoft-r-open-mkl-3.4.3
- microsoft-r-open-mro-3.4.3 
+ microsoft-r-open-foreachiterators-3.5.2
+ microsoft-r-open-mkl-3.5.2
+ microsoft-r-open-mro-3.5.2 
 ```
 
 Additional open-source packages must be installed if a package is required but not found on the system. This list varies for each installation. Here is one example of the additional packages that were added to a clean RHEL image during a connected (online) setup:
@@ -238,6 +242,16 @@ Additional open-source packages must be installed if a package is required but n
 If your system provides a graphical user interface, you can click a file to download it. Otherwise, use `wget`. We recommend downloading all packages to a single directory so that you can install all of them in a single command. By default, `wget` uses the working directory, but you can specify an alternative path using the `-outfile` parameter.
 
 The following example is for the first package. Each command references the version number of the platform. Remember to change the number if your version is different. For more information, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
+
+#### R Client 3.5.2 downloads
+
++ Download to CentOS or RHEL 6: `wget https://packages.microsoft.com/rhel/6/prod/microsoft-r-client-packages-3.5.2.rpm` 
++ Download to CentOS or RHEL 7: `wget https://packages.microsoft.com/rhel/7/prod/microsoft-r-client-packages-3.5.2.rpm` 
++ Download to SUSE: `wget https://packages.microsoft.com/sles/11/prod/microsoft-r-client-packages-3.5.2.rpm`
++ Download to Ubuntu 14.04: `wget https://packages.microsoft.com/ubuntu/14.04/prod/pool/main/m/microsoft-r-client-packages-3.5.2/microsoft-r-client-packages-3.5.2.deb`
++ Download to Ubuntu 16.04: `wget https://packages.microsoft.com/ubuntu/16.04/prod/pool/main/m/microsoft-r-client-packages-3.5.2/microsoft-r-client-packages-3.5.2.deb`
+
+Repeat for each package.
 
 #### R Client 3.4.3 downloads
 
@@ -279,23 +293,23 @@ This step completes installation.
 
 2. Once you have a package name, you can obtain verbose version information. For example:
 
-   + On CentOS and RHEL: `$ rpm -qi microsoft-r-client-packages-3.4.3`
-   + On Ubuntu: `$ dpkg --status microsoft-r-client-packages-3.4.3`  
-   + On SLES: `zypper info microsoft-r-client-packages-3.4.3`
+   + On CentOS and RHEL: `$ rpm -qi microsoft-r-client-packages-3.5.2`
+   + On Ubuntu: `$ dpkg --status microsoft-r-client-packages-3.5.2`  
+   + On SLES: `zypper info microsoft-r-client-packages-3.5.2`
 
    Output on Ubuntu is as follows:
 
    ```
-    Package: microsoft-r-client-packages-3.4.3
+    Package: microsoft-r-client-packages-3.5.2
     Status: install ok installed
     Priority: optional
     Section: devel
     Installed-Size: 195249
     Maintainer: revobuil@microsoft.com
     Architecture: amd64
-    Version: 3.4.3
-    Depends: microsoft-r-open-mro-3.4.3, microsoft-r-open-mkl-3.4.3, microsoft-r-open-foreachiterators-3.4.3
-    Description: Microsoft R Client 3.4.3
+    Version: 3.5.2
+    Depends: microsoft-r-open-mro-3.5.2, microsoft-r-open-mkl-3.5.2, microsoft-r-open-foreachiterators-3.5.2
+    Description: Microsoft R Client 3.5.2
       . . .
    ```
 
@@ -316,13 +330,13 @@ Review the recommendations in [Package Management](../operationalize/configure-m
 
 ## How to uninstall R Client
 
-This section walks you through a 3.4.3 uninstall. To uninstall 3.4.1, use the same commands, modifying the version.
+This section walks you through a 3.5.2 uninstall. To uninstall 3.4.1 or 3.4.3, use the same commands, modifying the version.
 
 1. On root@, uninstall Microsoft R Open (MRO) first. This action removes any dependent packages used only by MRO, which includes packages like microsoft-mlserver-packages-r. 
 
-   + On RHEL: `yum erase microsoft-r-open-mro-3.4.3`     
-   + On Ubuntu: `apt-get purge microsoft-r-open-mro-3.4.3`  
-   + On SUSE: `zypper remove microsoft-r-open-mro-3.4.3`    
+   + On RHEL: `yum erase microsoft-r-open-mro-3.5.2`     
+   + On Ubuntu: `apt-get purge microsoft-r-open-mro-3.5.2`  
+   + On SUSE: `zypper remove microsoft-r-open-mro-3.5.2`    
 
 2. Re-list the packages from Microsoft to check for remaining files:
 
@@ -334,11 +348,11 @@ This section walks you through a 3.4.3 uninstall. To uninstall 3.4.1, use the sa
 
 3. After packages are uninstalled, remove remaining files. On root@, determine whether additional files still exist:
 
-   + `$ ls /opt/microsoft/rclient/3.4.3/`
+   + `$ ls /opt/microsoft/rclient/3.5.2/`
 
 4. Remove the entire directory:
 
-   + `$ rm -fr ls /opt/microsoft/rclient/3.4.3/`
+   + `$ rm -fr ls /opt/microsoft/rclient/3.5.2/`
 
 RM removes the folder. Parameter "f" is for force and "r" for recursive, deleting everything under microsoft/rclient. This command is destructive and irrevocable, so be sure you have the correct directory before you press Enter.
 
@@ -353,13 +367,13 @@ If you are using the RStudio IDE, perform the following steps to load RevoScaleR
 3. Open the **Renviron** file for editing:
 
    ```bash
-   gedit /opt/microsoft/rclient/3.4.3/runtime/R/etc/Renviron
+   gedit /opt/microsoft/rclient/3.5.2/runtime/R/etc/Renviron
    ```
 
 4. Scroll down to **R_LIBS_USER** and add a new configuration setting just below it:
 
    ```bash
-   R_LIBS_SITE=/opt/microsoft/rclient/3.4.3/libraries/RServer
+   R_LIBS_SITE=/opt/microsoft/rclient/3.5.2/libraries/RServer
    ```
 
 5. Save the file.

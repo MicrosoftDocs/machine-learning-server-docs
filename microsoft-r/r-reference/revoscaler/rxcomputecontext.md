@@ -6,7 +6,7 @@ description: " This is the main generator for RxComputeContext S4 classes. "
 keywords: "(revoAnalytics), RxComputeContext, file, connection" 
 author: "heidisteen" 
 manager: "cgronlun" 
-ms.date: "01/24/2018" 
+ms.date: 07/15/2019
 ms.topic: "reference" 
 ms.prod: "mlserver" 
 ms.service: "" 
