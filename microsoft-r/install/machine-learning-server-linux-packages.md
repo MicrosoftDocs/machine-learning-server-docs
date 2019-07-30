@@ -61,9 +61,9 @@ Type "help", "copyright", "credits" or "license" for more information.`
 
 On Linux, packages installed and used by Machine Learning Server can be found at these locations:
 
-+ For R: `/opt/microsoft/mlserver/9.4.0/runtime/R/library`
++ For R: `/opt/microsoft/mlserver/9.4.7/runtime/R/library`
 
-+ For Python: `/opt/microsoft/mlserver/9.4.0/runtime/python/pkgs`
++ For Python: `/opt/microsoft/mlserver/9.4.7/runtime/python/pkgs`
 
 ## Add or remove R packages
 
@@ -80,11 +80,11 @@ Anaconda includes **pip** and **conda** that you can use to add or remove Python
 
 ```
 # Add a package
-cd /opt/microsoft/mlserver/9.4.0/runtime/python/bin/
+cd /opt/microsoft/mlserver/9.4.7/runtime/python/bin/
 pip install <packagename>
 
 # Remove a package
-cd /opt/microsoft/mlserver/9.4.0/runtime/python/bin/
+cd /opt/microsoft/mlserver/9.4.7/runtime/python/bin/
 pip uninstall <packagename>
 ```
 
@@ -92,11 +92,11 @@ pip uninstall <packagename>
 
 ```
 # Add a package
-cd /opt/microsoft/mlserver/9.4.0/runtime/python/bin/
+cd /opt/microsoft/mlserver/9.4.7/runtime/python/bin/
 conda install <packagename>
 
 # Remove a package
-cd /opt/microsoft/mlserver/9.4.0/runtime/python/bin/
+cd /opt/microsoft/mlserver/9.4.7/runtime/python/bin/
 conda uninstall <packagename>
 ```
 

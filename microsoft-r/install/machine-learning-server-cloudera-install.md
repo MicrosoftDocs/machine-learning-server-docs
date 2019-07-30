@@ -51,7 +51,7 @@ A package manager installation used for Linux or Hadoop won't provide the parcel
 3. Make sure you're in the right place: *https://my.visualstudio.com/Benefits*.
 4. Click **Downloads**.
 5. Search for *Machine Learning Server*.
-6. Download **Machine Learning Server 9.4.0 for Hadoop** to a writable directory, such as **/tmp/**, on one of the nodes.
+6. Download **Machine Learning Server 9.4.7 for Hadoop** to a writable directory, such as **/tmp/**, on one of the nodes.
 
 ![Download page on Visual Studio benefits page](./media/machine-learning-server-windows-install/search-downloads.png)
 
@@ -109,7 +109,7 @@ flag | Option | Description
 
 Repeat the command without **-n** parameter to create the files: `bash generate_mlserver_parcel.sh`
 
-+ The parcel generator file name is **MLServer-9.4.0-[DISTRO].parcel**
++ The parcel generator file name is **MLServer-9.4.7-[DISTRO].parcel**
 + The CSD file name is **MLServer-{version}-CONFIG.jar**
 
 > [!Note]
@@ -124,11 +124,11 @@ This section explains how to place parcel generator script and CSD files in CDH.
 By default, Cloudera Manager finds parcels in the Cloudera parcel repository. In this step, copy the parcel you generated to the repository.
 
 
-1. Copy **MLServer-9.4.0** and **MLServer-9.4.0.sha** to the Cloudera parcel repository, typically /opt/cloudera/parcels and make sure the permissions are set correctly.
+1. Copy **MLServer-9.4.7** and **MLServer-9.4.7.sha** to the Cloudera parcel repository, typically /opt/cloudera/parcels and make sure the permissions are set correctly.
 
-    `cp ./MLServer-9.4.0-[DISTRO].parcel /opt/cloudera/parcel-repo/`
+    `cp ./MLServer-9.4.7-[DISTRO].parcel /opt/cloudera/parcel-repo/`
 
-    `cp ./MLServer-9.4.0-[DISTRO].parcel.sha /opt/cloudera/parcel-repo/`
+    `cp ./MLServer-9.4.7-[DISTRO].parcel.sha /opt/cloudera/parcel-repo/`
     
     `sudo chmod 644 /opt/cloudera/parcel-repo/MLServer-{version}-[DISTRO].parcel`
     
@@ -142,15 +142,15 @@ By default, Cloudera Manager finds parcels in the Cloudera parcel repository. In
 
 The Custom Service Descriptor (CSD) enables monitoring and administration from within Cloudera Manager. In this step, copy the CSD (a .jar file) to the Cloudera repository for CSD files. 
 
-1. Copy the CSD file **MLServer-9.4.0-CONFIG.jar** to the Cloudera CSD directory, typically /opt/cloudera/csd.
+1. Copy the CSD file **MLServer-9.4.7-CONFIG.jar** to the Cloudera CSD directory, typically /opt/cloudera/csd.
 
-    `cp ./MLServer-9.4.0-CONFIG.jar /opt/cloudera/csd/`
+    `cp ./MLServer-9.4.7-CONFIG.jar /opt/cloudera/csd/`
 
 2. Modify the permissions of CSD file as follows: 
 
-    `sudo chmod 644 /opt/cloudera/csd/MLServer-9.4.0-CONFIG.jar`
+    `sudo chmod 644 /opt/cloudera/csd/MLServer-9.4.7-CONFIG.jar`
 
-    `sudo chown cloudera-scm:cloudera-scm /opt/cloudera/csd/MLServer-9.4.0-CONFIG.jar`
+    `sudo chown cloudera-scm:cloudera-scm /opt/cloudera/csd/MLServer-9.4.7-CONFIG.jar`
 
 3.	Restart the cloudera-scm-server service:
 
@@ -162,9 +162,9 @@ The Custom Service Descriptor (CSD) enables monitoring and administration from w
 
    ![parcel icon in cloudera manager](./media/r-server-install-cloudera-deploy-activate/cloudera-manager-parcel-icon.png)
 
-2. On the left, find and select **MLServer-9.4.0** in the parcel list. If you don't see it, check the parcel-repo folder. 
+2. On the left, find and select **MLServer-9.4.7** in the parcel list. If you don't see it, check the parcel-repo folder. 
 
-3. On the right, in the parcel details page, **MLServer-9.4.0** should have a status of *Downloaded* with an option to *Distribute*. Click **Distribute** to roll out Machine Learning Server on available nodes.
+3. On the right, in the parcel details page, **MLServer-9.4.7** should have a status of *Downloaded* with an option to *Distribute*. Click **Distribute** to roll out Machine Learning Server on available nodes.
 
 4. Status changes to *distributed*. Click **Activate** on the button to make Machine Learning Server operational in the cluster.
 
@@ -172,13 +172,13 @@ The Custom Service Descriptor (CSD) enables monitoring and administration from w
 
 You are finished with this task when status is "distributed, activated" and the next available action is *Deactivate*.
 
-## Add MLServer-9.4.0 as a service
+## Add MLServer-9.4.7 as a service
 
 1. In Cloudera Manager home page, click the down arrow by the cluster name and choose **Add Service**.
 
    ![add service command in cloudera manager](./media/r-server-install-cloudera-deploy-activate/cloudera-manager-add-service.png)
 
-2. Find and select **MLServer-9.4.0** and click **Continue** to start a wizard for adding services.
+2. Find and select **MLServer-9.4.7** and click **Continue** to start a wizard for adding services.
 
 3. In the next page, add role assignments on all nodes used to run the service, both edge and data nodes. Click **Continue**.
 
@@ -192,11 +192,11 @@ You have the option of rolling back the active deployment in Cloudera Manager, p
 
 1. In Cloudera Manager, click the Parcel icon to open the parcel list.
 
-2. Find MLServer-9.4.0 and click **Deactivate**.
+2. Find MLServer-9.4.7 and click **Deactivate**.
 
 The parcel still exists, but Machine Learning Server is not operational in the cluster.
 
-The above steps apply to 9.3.0 and 9.4.0. If you have R Server (either 9.1 or 9.0.1), see [Install R Server 9.1 on CDH](r-server-install-cloudera.md) and [Install R Server 9.0.1 on CDH](r-server-install-cloudera-901.md) for release-specific documentation.
+The above steps apply to 9.3.0 and 9.4.7. If you have R Server (either 9.1 or 9.0.1), see [Install R Server 9.1 on CDH](r-server-install-cloudera.md) and [Install R Server 9.0.1 on CDH](r-server-install-cloudera-901.md) for release-specific documentation.
 
 ## Next steps
 

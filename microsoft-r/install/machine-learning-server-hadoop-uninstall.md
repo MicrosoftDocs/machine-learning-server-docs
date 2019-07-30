@@ -41,25 +41,25 @@ You can uninstall existing software and upgrade to newer versions node by node a
    + On Ubuntu: `apt list --installed | grep microsoft`  
    + On SUSE: `zypper search \*microsoft-r\*`    
 
-2. Operationalization features run on edge nodes. On a 9.4.0 installation, this is the [azureml-model-management library](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) or [mrsdeploy](../r-reference/mrsdeploy/mrsdeploy-package.md), which you can uninstall using the syntax from the previous step. Multiple packages provide the feature. Uninstall each one in the following order:
+2. Operationalization features run on edge nodes. On a 9.4.7 installation, this is the [azureml-model-management library](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) or [mrsdeploy](../r-reference/mrsdeploy/mrsdeploy-package.md), which you can uninstall using the syntax from the previous step. Multiple packages provide the feature. Uninstall each one in the following order:
 
    **On CentOS and RHEL**
 
-   + `yum erase microsoft-mlserver-adminutil-9.4`
-   + `yum erase microsoft-mlserver-webnode-9.4`
-   + `yum erase microsoft-mlserver-computenode-9.4`
+   + `yum erase microsoft-mlserver-adminutil-9.4.7`
+   + `yum erase microsoft-mlserver-webnode-9.4.7`
+   + `yum erase microsoft-mlserver-computenode-9.4.7`
 
    **On Ubunute**
 
-   + `apt-get purge microsoft-mlserver-adminutil-9.4` 
-   + `apt-get purge microsoft-mlserver-webnode-9.4` 
-   + `apt-get purge microsoft-mlserver-computenode-9.4`  
+   + `apt-get purge microsoft-mlserver-adminutil-9.4.7` 
+   + `apt-get purge microsoft-mlserver-webnode-9.4.7` 
+   + `apt-get purge microsoft-mlserver-computenode-9.4.7`  
  
    **On SUSE**
 
-   + `zypper remove microsoft-mlserver-adminutil-9.4`   
-   + `zypper remove microsoft-mlserver-webnode-9.4`   
-   + `zypper remove microsoft-mlserver-computenode-9.4`   
+   + `zypper remove microsoft-mlserver-adminutil-9.4.7`   
+   + `zypper remove microsoft-mlserver-webnode-9.4.7`   
+   + `zypper remove microsoft-mlserver-computenode-9.4.7`   
 
 ## Uninstall data nodes
 
@@ -71,15 +71,15 @@ You can uninstall existing software and upgrade to newer versions node by node a
 
 2. Remove the Machine Learning Server Python packages:
 
-   + On RHEL: `yum erase microsoft-mlserver-python-9.4.0`     
-   + On Ubuntu: `apt-get purge microsoft-mlserver-python-9.4.0`  
-   + On SUSE: `zypper remove microsoft-mlserver-python-9.4.0`
+   + On RHEL: `yum erase microsoft-mlserver-python-9.4.7`     
+   + On Ubuntu: `apt-get purge microsoft-mlserver-python-9.4.7`  
+   + On SUSE: `zypper remove microsoft-mlserver-python-9.4.7`
 
 3. Remove the Hadoop package:
 
-   + On RHEL: `yum erase microsoft-mlserver-hadoop-9.4.0`     
-   + On Ubuntu: `apt-get purge microsoft-mlserver-hadoop-9.4.0`  
-   + On SUSE: `zypper remove microsoft-mlserver-hadoop-9.4.0`
+   + On RHEL: `yum erase microsoft-mlserver-hadoop-9.4.7`     
+   + On Ubuntu: `apt-get purge microsoft-mlserver-hadoop-9.4.7`  
+   + On SUSE: `zypper remove microsoft-mlserver-hadoop-9.4.7`
 
 4. Re-list the packages from Microsoft to check for remaining files:
 
@@ -91,11 +91,11 @@ You can uninstall existing software and upgrade to newer versions node by node a
 
 5. After packages are uninstalled, remove remaining files. On root@, determine whether additional files still exist:
 
-   + `$ ls /opt/microsoft/mlserver/9.4.0/`
+   + `$ ls /opt/microsoft/mlserver/9.4.7/`
 
 6. Remove the entire directory:
 
-   + `$ rm -fr ls /opt/microsoft/mlserver/9.4.0/`
+   + `$ rm -fr ls /opt/microsoft/mlserver/9.4.7/`
 
 RM removes the folder. Parameter "f" is for force and "r" for recursive, deleting everything under microsoft/mlserver. This command is destructive and irrevocable, so be sure you have the correct directory before you press Enter.
 
@@ -109,19 +109,19 @@ Machine Learning Server for Hadoop adds the following packages at a minimum. Whe
     dotnet-hostfxr-2.0.0
     dotnet-runtime-2.0.0 
     
-    microsoft-mlserver-adminutil-9.4
-    microsoft-mlserver-all-9.4.0 
-    microsoft-mlserver-computenode-9.4
-    microsoft-mlserver-config-rserve-9.4
-    microsoft-mlserver-hadoop-9.4.0
-    microsoft-mlserver-mlm-py-9.4.0 
-    microsoft-mlserver-mlm-r-9.4.0
-    microsoft-mlserver-mml-py-9.4.0
-    microsoft-mlserver-mml-r-9.4.0
-    microsoft-mlserver-packages-py-9.4.0 
-    microsoft-mlserver-packages-r-9.4.0
-    microsoft-mlserver-python-9.4.0 
-    microsoft-mlserver-webnode-9.4
+    microsoft-mlserver-adminutil-9.4.7
+    microsoft-mlserver-all-9.4.7 
+    microsoft-mlserver-computenode-9.4.7
+    microsoft-mlserver-config-rserve-9.4.7
+    microsoft-mlserver-hadoop-9.4.7
+    microsoft-mlserver-mlm-py-9.4.7 
+    microsoft-mlserver-mlm-r-9.4.7
+    microsoft-mlserver-mml-py-9.4.7
+    microsoft-mlserver-mml-r-9.4.7
+    microsoft-mlserver-packages-py-9.4.7
+    microsoft-mlserver-packages-r-9.4.7
+    microsoft-mlserver-python-9.4.7 
+    microsoft-mlserver-webnode-9.4.7
     microsoft-r-open-foreachiterators-3.5.2
     microsoft-r-open-mkl-3.5.2
     microsoft-r-open-mro-3.5.2 

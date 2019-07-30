@@ -65,7 +65,7 @@ Installation is through package managers. Unlike previous releases, there is no 
 
 ## Running setup on existing installations
 
-The installation path for Machine Learning Server is new: `/opt/microsoft/mlserver/9.4.0`. However, if R Server 9.x is present, Machine Learning Server 9.x finds R Server at the old path (`/usr/lib64/microsoft-r/9.1.0`) and replaces it with the new version. 
+The installation path for Machine Learning Server is new: `/opt/microsoft/mlserver/9.4.7`. However, if R Server 9.x is present, Machine Learning Server 9.x finds R Server at the old path (`/usr/lib64/microsoft-r/9.1.0`) and replaces it with the new version. 
 
 There is no support for side-by-side installations of older and newer versions, nor is there support for hybrid versions (such as R Server 9.1 and Machine Learning Server 9.4). An installation is either entirely 9.4 or an earlier version.
 
@@ -73,7 +73,7 @@ There is no support for side-by-side installations of older and newer versions, 
 
 After installation completes, software can be found at the following paths:
 
-+ Install root: `/opt/microsoft/mlserver/9.4`
++ Install root: `/opt/microsoft/mlserver/9.4.7`
 + Microsoft R Open root: `/opt/microsoft/ropen/3.5.2`
 + Executables such as Revo64 and mlserver-python are at `/usr/bin`
 
@@ -92,7 +92,7 @@ You can continue installation by running Setup on any data node, either sequenti
 
 **Approach 1: Package managers for full installation** 
 
-Again, we recommend running the [full setup](machine-learning-server-linux-install.md) on every node. This approach is fast because package managers do most of the work, including adding the Hadoop package (microsoft-mlserver-hadoop-9.4.0) and setting it up for activation.
+Again, we recommend running the [full setup](machine-learning-server-linux-install.md) on every node. This approach is fast because package managers do most of the work, including adding the Hadoop package (microsoft-mlserver-hadoop-9.4.7) and setting it up for activation.
 
 As before, follow the installation steps for the Linux operating system used by your cluster: [Linux install > How to install](machine-learning-server-linux-install.md#how-to-install).
 
@@ -121,7 +121,7 @@ Alternatively, you can install a subset of packages. You might do this if you do
     + On Ubuntu offline: `dpkg -i *.deb`
     + On CentOS and RHEL: `yum install *.rpm` 
 
-7. Activate the server: `/opt/microsoft/mlserver/9.4.0/bin/R/activate.sh`
+7. Activate the server: `/opt/microsoft/mlserver/9.4.7/bin/R/activate.sh`
 
 Repeat this procedure on remaining nodes.
 
@@ -132,22 +132,22 @@ Repeat this procedure on remaining nodes.
 The following packages comprise a full Machine Learning Server installation:
 
 ```
- microsoft-mlserver-packages-r-9.4.0        ** core
- microsoft-mlserver-python-9.4.0            ** core
- microsoft-mlserver-packages-py-9.4.0       ** core
- microsoft-mlserver-hadoop-9.4.0            ** hadoop (required for hadoop)
- microsoft-mlserver-mml-r-9.4.0             ** microsoftml for R (optional)
- microsoft-mlserver-mml-py-9.4.0            ** microsoftml for Python (optional)
- microsoft-mlserver-mlm-r-9.4.0             ** pre-trained models (requires mml)
- microsoft-mlserver-mlm-py-9.4.0            ** pre-trained models (requires mml)
- microsoft-mlserver-adminutil-9.4           ** operationalization (optional)
- microsoft-mlserver-computenode-9.4         ** operationalization (optional)
- microsoft-mlserver-config-rserve-9.4       ** operationalization (optional) 
- microsoft-mlserver-dotnet-9.4              ** operationalization (optional)
- microsoft-mlserver-webnode-9.4             ** operationalization (optional)
+ microsoft-mlserver-packages-r-9.4.7        ** core
+ microsoft-mlserver-python-9.4.7            ** core
+ microsoft-mlserver-packages-py-9.4.7       ** core
+ microsoft-mlserver-hadoop-9.4.7            ** hadoop (required for hadoop)
+ microsoft-mlserver-mml-r-9.4.7             ** microsoftml for R (optional)
+ microsoft-mlserver-mml-py-9.4.7            ** microsoftml for Python (optional)
+ microsoft-mlserver-mlm-r-9.4.7             ** pre-trained models (requires mml)
+ microsoft-mlserver-mlm-py-9.4.7            ** pre-trained models (requires mml)
+ microsoft-mlserver-adminutil-9.4.7         ** operationalization (optional)
+ microsoft-mlserver-computenode-9.4.7       ** operationalization (optional)
+ microsoft-mlserver-config-rserve-9.4.7     ** operationalization (optional) 
+ microsoft-mlserver-dotnet-9.4.7            ** operationalization (optional)
+ microsoft-mlserver-webnode-9.4.7           ** operationalization (optional)
  azure-cli-2.0.25-1.el7.x86_64              ** operationalization (optional)
 ```
-The microsoft-mlserver-python-9.4.0 package provides Miniconda 4.5.12 with Python 3.7.1, executing as mlserver-python, found in `/opt/microsoft/mlserver/9.4.0/bin/python/python`
+The microsoft-mlserver-python-9.4.7 package provides Miniconda 4.5.12 with Python 3.7.1, executing as mlserver-python, found in `/opt/microsoft/mlserver/9.4.7/bin/python/python`
 
 Microsoft R Open is required for R execution:
 

@@ -35,7 +35,7 @@ At the end of a version’s life cycle, the software is removed from the Microso
 
 |Version History|Availability                       |Support End Date                  |
 |:-------------------:|:---------------------------------:|:--------------------------------:|
-|Machine Learning Server 9.4.0|7/2019|7/2021|
+|Machine Learning Server 9.4.7|7/2019|7/2021|
 |Machine Learning Server 9.3.0|3/1/2018|3/1/2020|
 |Machine Learning Server 9.2.1|10/1/2017|10/1/2019|
 |Microsoft R Server 9.1.0|5/1/2017|5/1/2019|

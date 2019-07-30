@@ -107,9 +107,9 @@ For unattended setup or offline setup, copy the .cab files to either the setup u
 <!--
 | Component | Download | Used for | 
 |-----------|----------|----------|
-|MLM|[MLM_9.4.0.0_1033.cab](TODO)|Pre-trained models, R or Python|
+|MLM|[MLM_9.4.7.0_1033.cab](TODO)|Pre-trained models, R or Python|
 |Microsoft R Open|[SRO_3.4.3.0_1033.cab](TODO)|R|
-|Microsoft Python Open|[SPO_9.4.0.0_1033.cab](TODO)|Python|
+|Microsoft Python Open|[SPO_9.4.7.0_1033.cab](TODO)|Python|
 -->
 
 There is no separate Python Server package in the 9.4 version.

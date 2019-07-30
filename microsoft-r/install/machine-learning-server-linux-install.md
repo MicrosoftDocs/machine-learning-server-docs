@@ -84,7 +84,7 @@ Machine Learning Server activation is a separate step *not* performed by the pac
 
 If your existing server was configured for [operationalization](../what-is-operationalization.md), follow these alternative steps for upgrade: [Configure Machine Learning Server to operationalize analytics (One-box) > How to upgrade](../operationalize/configure-machine-learning-server-one-box.md#how-to-upgrade) or [Configure Machine Learning Server to operationalize analytics (Enterprise) > How to upgrade](../operationalize/configure-machine-learning-server-enterprise.md#how-to-upgrade).
 
-For all other configurations, Setup performs an in-place upgrade on an existing installation. Although the installation path is new (`/opt/microsoft/mlserver/9.4`), when R Server 9.x is present, Machine Learning Server 9.4 finds R Server at the old path (`/usr/lib64/microsoft-r/9.1.0`) and upgrades it to the new version. 
+For all other configurations, Setup performs an in-place upgrade on an existing installation. Although the installation path is new (`/opt/microsoft/mlserver/9.4.7`), when R Server 9.x is present, Machine Learning Server 9.4 finds R Server at the old path (`/usr/lib64/microsoft-r/9.1.0`) and upgrades it to the new version. 
 
 There is no support for side-by-side installations of older and newer versions, nor is there support for hybrid versions (such as R Server 9.1 and Machine Learning Server 9.4). An installation is either entirely 9.4 or an earlier version.
 
@@ -384,11 +384,11 @@ The following packages comprise a full Machine Learning Server installation:
  microsoft-mlserver-mlm-r-9.4.7             ** pre-trained models (requires mml)
  microsoft-mlserver-mlm-py-9.4.7            ** pre-trained models (requires mml)
  microsoft-mlserver-hadoop-9.4.7            ** hadoop (required for hadoop)
- microsoft-mlserver-adminutil-9.4           ** operationalization (optional)
- microsoft-mlserver-computenode-9.4         ** operationalization (optional)
- microsoft-mlserver-config-rserve-9.4       ** operationalization (optional) 
- microsoft-mlserver-dotnet-9.4              ** operationalization (optional)
- microsoft-mlserver-webnode-9.4             ** operationalization (optional)
+ microsoft-mlserver-adminutil-9.4.7         ** operationalization (optional)
+ microsoft-mlserver-computenode-9.4.7       ** operationalization (optional)
+ microsoft-mlserver-config-rserve-9.4.7     ** operationalization (optional) 
+ microsoft-mlserver-dotnet-9.4.7            ** operationalization (optional)
+ microsoft-mlserver-webnode-9.4.7           ** operationalization (optional)
  azure-cli-2.0.25-1.el7.x86_64              ** operationalization (optional)
 ```
 The microsoft-mlserver-python-9.4.7 package provides Miniconda 4.5.12 with Python 3.7.1, executing as mlserver-python, found in `/opt/microsoft/mlserver/9.4.7/bin/python/python`
