@@ -30,7 +30,7 @@ By default, installers connect to Microsoft download sites to get required and u
 
 Before you start, review the following article for requirements and general information about setup: [Install Machine Learning Server on Windows](machine-learning-server-windows-install.md).
 
-## 9.4.0 Downloads
+## 9.4.7 Downloads
 
 On an internet-connected computer, download all of the following files.
 
@@ -38,12 +38,14 @@ On an internet-connected computer, download all of the following files.
 
 | Component | Download | Used for | 
 |-----------|----------|----------|
-|Machine Learning Server setup | Get *Machine Learning Server for Windows* (en_machine_learning_server_for_windows_x64_<build-number>.zip) from one of these sites:<br/><br/>[Visual Studio Dev Essentials](https://my.visualstudio.com/Downloads?q=machine%20learning%20server&pgroup=) TODO<br/>[Volume Licensing Service Center (VLSC)](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) TODO | R Server |
-|Pre-trained Models |[MLM_9.4.0.0_1033.cab](TODO) | Pre-trained models, R or Python |
+|Machine Learning Server setup | Get *Machine Learning Server for Windows* (en_machine_learning_server_for_windows_x64_<build-number>.zip) from one of these sites:<br/><br/>[Visual Studio Dev Essentials](https://my.visualstudio.com/Downloads?q=machine%20learning%20server%209.4.7)<br/>[Volume Licensing Service Center (VLSC)](https://www.microsoft.com/Licensing/servicecenter/default.aspx) | ML Server |
+<!--
+|Pre-trained Models |[MLM_9.4.7.0_1033.cab](TODO) | Pre-trained models, R or Python |
 |Microsoft R Open 3.5.2.0|[SRO_3.5.2.0_1033.cab](TODO) | R |
-|Microsoft Python Open |[SPO_9.4.0.0_1033.cab](TODO) | Python |
-|Microsoft Python Server |[SPS_9.4.0.0_1033.cab](TODO) | Python |
-|Python script |[Install-PyForMLS](https://aka.ms/mls93-py) | Python |
+|Microsoft Python Open |[SPO_9.4.7.0_1033.cab](TODO) | Python |
+|Microsoft Python Server |[SPS_9.4.7.0_1033.cab](TODO) | Python |
+|Python script |[Install-PyForMLS](TODO) | Python |
+-->
 
 ## 9.3.0 Downloads
 
