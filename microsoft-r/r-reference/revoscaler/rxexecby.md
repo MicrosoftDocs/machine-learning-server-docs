@@ -51,7 +51,7 @@ Currently supported in `local`, `localpar`, [RxInSqlServer](RxInSqlServer.md) an
 
 
  ### `inData`
- a data source object suppported in currently active compute context, e.g., [RxSqlServerData](RxSqlServerData.md) for [RxInSqlServer](RxInSqlServer.md) and [RxHiveData](RxSparkData.md) for [RxSpark](RxSpark.md). In `local` and `localpar` compute contexts, a character string specifying a .xdf file or a data frame object can be also used. 
+ a data source object supported in currently active compute context, e.g., [RxSqlServerData](RxSqlServerData.md) for [RxInSqlServer](RxInSqlServer.md) and [RxHiveData](RxSparkData.md) for [RxSpark](RxSpark.md). In `local` and `localpar` compute contexts, a character string specifying a .xdf file or a data frame object can be also used. 
 
 
 
