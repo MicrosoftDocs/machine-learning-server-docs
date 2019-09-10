@@ -59,7 +59,7 @@ A package manager installation used for Linux or Hadoop won't provide the parcel
 
 1. Log on as root or a user with super user privileges:`sudo su`
 2. Switch to the **/tmp/** directory (assuming it's the download location): `cd /tmp/`
-3. Unpack the file: `tar zxvf en_microsoft_ml_server_930_for_hadoop_x64_<some-number>.tar.gz`
+3. Unpack the file: `tar zxvf en_microsoft_ml_server_947_for_hadoop_x64_<some-number>.tar.gz`
 
 The distribution is unpacked into a **Hadoop** folder at the download location. The distribution includes the following files:
 
