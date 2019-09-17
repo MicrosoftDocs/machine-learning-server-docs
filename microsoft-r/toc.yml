@@ -1,7 +1,6 @@
 - name: Machine Learning Server Documentation
   href: index.yml
 - name: Overview
-  expanded: true
   items:
   - name: About Machine Learning Server
     href: what-is-machine-learning-server.md
@@ -9,6 +8,7 @@
     href: whats-new-in-machine-learning-server.md
   - name: R Server's new name
     href: rebranding-microsoft-r-server.md
+  expanded: true
 - name: Install & configure
   items:
   - name: Installation overview
@@ -34,7 +34,7 @@
     - name: Offline install
       href: install/machine-learning-server-linux-offline.md
     - name: Uninstall from Linux
-      href: install/machine-learning-server-linux-uninstall.md  
+      href: install/machine-learning-server-linux-uninstall.md
     - name: Install R/Python packages
       href: install/machine-learning-server-linux-packages.md
   - name: Hadoop
@@ -55,17 +55,17 @@
       items:
       - name: One-box deployment
         href: operationalize/configure-machine-learning-server-one-box.md
-      - name: 9.4
+      - name: "9.4"
         href: operationalize/configure-machine-learning-server-one-box.md
-      - name: 9.3
-        href: operationalize/configure-machine-learning-server-one-box-9-3.md  
+      - name: "9.3"
+        href: operationalize/configure-machine-learning-server-one-box-9-3.md
       - name: 9.2.1
         href: operationalize/configure-machine-learning-server-one-box-9-2.md
     - name: 'Configure: Enterprise'
       items:
       - name: Enterprise deployment
         href: operationalize/configure-machine-learning-server-enterprise.md
-      - name: 9.3
+      - name: "9.3"
         href: operationalize/configure-machine-learning-server-enterprise.md
       - name: 9.2.1
         href: operationalize/configure-machine-learning-server-enterprise-9-2.md
@@ -141,7 +141,6 @@
       href: python/quickstart-binary-classification-with-microsoftml.md
     - name: Create a linear regression model
       href: python/quickstart-revoscalepy-linear-regression-model.md
-
   - name: R
     items:
     - name: Run R code with new functions
@@ -199,8 +198,8 @@
 - name: Concepts
   items:
   - name: Compute context
-    href: r/concept-what-is-compute-context.md 
-  - name: Distributed computing 
+    href: r/concept-what-is-compute-context.md
+  - name: Distributed computing
     href: r/how-to-revoscaler-distributed-computing.md
   - name: Web services
     href: operationalize/concept-what-are-web-services.md
@@ -225,7 +224,7 @@
       - name: Set a compute context
         href: r/how-to-revoscaler-distributed-computing-compute-context.md
       - name: Data access and manipulation
-        items: 
+        items:
         - name: Data transformations
           href: r/concept-what-is-data-transformations.md
         - name: XDF files
@@ -425,7 +424,7 @@
       - name: rx_predict
         href: python-reference/microsoftml/rx-predict.md
       - name: select_columns
-        href: python-reference/microsoftml/select-columns.md        
+        href: python-reference/microsoftml/select-columns.md
     - name: revoscalepy
       items:
       - name: Package overview
@@ -712,7 +711,7 @@
         href: r-reference/mrsdeploy/remotescript.md
       - name: request
         href: r-reference/mrsdeploy/request.md
-      - name: resume        
+      - name: resume
         href: r-reference/mrsdeploy/resume.md
       - name: serviceOption
         href: r-reference/mrsdeploy/serviceOption.md
@@ -1166,185 +1165,3 @@
     href: resources-opting-out.md
   - name: Additional resources
     href: resources-more.md
-- name: Archive
-  items:
-  - name: R Server installation (9.1 and earlier)
-    items:
-    - name: Install older R Server releases
-      href: install/r-server-install.md
-    - name: Prior feature announcements
-      href: whats-new-in-r-server.md
-    - name: On Windows
-      items:
-      - name: 9.1 - Install
-        href: install/r-server-install-windows.md
-      - name: 9.1 - Offline
-        href: install/r-server-install-windows-offline.md
-      - name: 9.1 - Command line
-        href: install/r-server-install-windows-command-line.md
-    - name: On Linux
-      items:
-      - name: 9.1 - Install
-        href: install/r-server-install-linux-server.md
-      - name: 9.1 - Offline
-        href: install/r-server-install-linux-offline.md
-      - name: 9.1 - Uninstall
-        href: install/r-server-install-linux-uninstall.md
-      - name: 9.0.1 - Install
-        href: install/r-server-install-linux-server-901.md
-      - name: 8.0.5 - Install
-        href: install/r-server-install-linux-server-805.md
-      - name: Manage your R installation 
-        href: install/r-server-install-linux-manage-install.md    
-    - name: On Hadoop
-      items:
-      - name: 9.1 - Install
-        href: install/r-server-install-hadoop.md
-      - name: 9.1 - Commandline
-        href: install/r-server-install-hadoop-command-line.md
-      - name: 9.1 - Offline 
-        href: install/r-server-install-hadoop-offline.md
-      - name: 9.1 - Cloudera
-        href: install/r-server-install-cloudera.md
-      - name: 9.1 - Uninstall
-        href: install/r-server-install-uninstall-upgrade.md
-      - name: 9.0.1 - Install
-        href: install/r-server-install-hadoop-901.md
-      - name: 9.0.1 - Cloudera
-        href: install/r-server-install-cloudera-901.md
-      - name: 8.0.5 - Install
-        href: install/r-server-install-hadoop-805.md
-      - name: R Package dependency list
-        href: install/r-server-install-linux-hadoop-packages.md
-      - name: Manual R package install
-        href: install/r-server-install-hadoop-manual-package.md
-      - name: Hadoop configuration
-        href: install/r-server-install-hadoop-configuration-r-workloads.md
-      - name: Troubleshoot R installation
-        href: install/r-server-install-hadoop-troubleshoot.md
-    - name: On Teradata
-      items:
-      - name: Install R Server 9.x on a Teradata Server
-        href: install/r-server-install-teradata-server.md
-      - name: Install R Server 8.x on a Teradata Server
-        href: install/r-server-install-teradata-805.md
-      - name: Install R Server on a Teradata Client
-        href: install/r-server-install-teradata-client.md
-      - name: Get started RevoScaleR on Teradata
-        href: r/how-to-revoscaler-teradata.md
-  - name: R Server operationalization (9.1 and earlier)
-    items:
-    - name: Configure "one box" 9.0/9.1
-      href: install/operationalize-r-server-one-box-config.md
-    - name: Configure enterprise 9.0/9.1
-      href: install/operationalize-r-server-enterprise-config.md
-  - name: DeployR 8.x 
-    items:
-    - name: How to install DeployR
-      items:
-      - name: Installation overview
-        href: deployr/deployr-installation.md
-      - name: Install DeployR for R Server for Windows
-        href: deployr/deployr-install-on-windows.md
-      - name: Install DeployR for Microsoft R Server 8.0.5 on Linux
-        href: deployr/deployr-install-on-linux.md
-      - name: Install DeployR 8.0.0
-        href: deployr/deployr-installing-configuring.md
-    - name: Getting Started with DeployR
-      items:
-      - name: About DeployR 8.x
-        href: deployr/deployr-about.md
-      - name: Getting Started for Application Developers
-        href: deployr/deployr-application-developer-getting-started.md
-      - name: Getting Started for Administrators
-        href: deployr/deployr-administrator-getting-started.md
-      - name: Getting Started for Data Scientists
-        href: deployr/deployr-data-scientist-getting-started.md
-    - name: Administration & Configuration
-      items:
-      - name: Get started with DeployR administration
-        href: deployr/deployr-administrator-getting-started.md
-      - name: Administration Console Help
-        href: deployr/deployr-admin-console-about.md
-      - name: About DeployR Administration Console
-        href: deployr/deployr-admin-console-about.md
-      - name: Creating & Managing User Accounts
-        href: deployr/deployr-admin-console-user-accounts.md
-      - name: Managing Permissions with Roles
-        href: deployr/deployr-admin-console-permissions-with-roles.md
-      - name: Managing R Scripts
-        href: deployr/deployr-admin-console-managing-r-scripts.md
-      - name: Managing R Boundaries
-        href: deployr/deployr-admin-managing-r-boundaries.md
-      - name: Managing Access with IP Filters
-        href: deployr/deployr-admin-managing-access-with-ip-filters.md
-      - name: Managing the Grid
-        href: deployr/deployr-admin-managing-the-grid.md
-      - name: Managing Server Policies
-        href: deployr/deployr-admin-managing-server-policies.md
-      - name: Restoring & Backing Up the Database
-        href: deployr/deployr-admin-console-database.md
-      - name: Monitoring Events
-        href: deployr/deployr-admin-monitoring-events.md
-      - name: Common Administrative Tasks
-        href: deployr/deployr-common-administration-tasks.md
-      - name: Troubleshooting & Diagnostics
-        href: deployr/deployr-admin-diagnostics-troubleshooting.md
-      - name: Scale & Throughput
-        href: deployr/deployr-admin-scale-and-throughput.md
-      - name: DeployR in the Cloud
-        href: deployr/deployr-admin-install-in-cloud.md
-      - name: Server & Grid High Availability
-        href: deployr/deployr-admin-configure-high-availability.md
-      - name: Managing Big Data
-        href: deployr/deployr-admin-manage-big-data.md
-      - name: Using Hadoop Impersonation & DeployR
-        href: deployr/deployr-admin-hadoop-impersonation.md
-      - name: R Package Management
-        href: deployr/deployr-admin-r-package-management.md
-      - name: Updating DeployR after Java Update
-        href: deployr/deployr-admin-java-version.md
-      - name: Reinstalling or Upgrading the R Dependency
-        href: deployr/deployr-admin-configure-reinstall-r.md
-    - name: Security on DeployR
-      items:
-      - name: Introduction
-        href: deployr/deployr-security.md
-      - name: Authentication & Authorization
-        href: deployr/deployr-security-authentication.md
-      - name: HTTPS & SSL/TLS Support
-        href: deployr/deployr-security-https.md
-      - name: Server Access Policies
-        href: deployr/deployr-security-server-access.md
-      - name: Project & Repository File Access Controls
-        href: deployr/deployr-security-project-access.md
-      - name: Password Policies
-        href: deployr/deployr-security-passwords.md
-      - name: Account Locking Policies
-        href: deployr/deployr-security-account-locking.md
-      - name: RServe Execution Context
-        href: deployr/deployr-security-rserve-execution-context.md
-    - name: APIs & Client Libraries
-      items:
-      - name: Developer Docs & Downloads
-        href: deployr/deployr-tools-and-samples.md
-      - name: API Overview
-        href: deployr/deployr-api-reference.md
-      - name: Client Library Tutorial
-        href: deployr/deployr-client-library.md
-      - name: RBroker Framework Tutorial
-        href: deployr/deployr-rbroker-framework.md
-      - name: API Explorer Tool
-        href: deployr/deployr-api-explorer-tool.md
-    - name: Writing Portable R Code
-      href: deployr/deployr-data-scientist-write-portable-r-code.md
-    - name: Repository Manager Help
-      items:
-      - name: About Repository Manager
-        href: deployr/deployr-repository-manager-about.md
-      - name: Working with Directories
-        href: deployr/deployr-repository-manager-directories.md
-      - name: Working with Files
-        href: deployr/deployr-repository-manager-files.md
-      - name: Testing & Debugging Scripts
-        href: deployr/deployr-repository-manager-testing-debugging-scripts.md
