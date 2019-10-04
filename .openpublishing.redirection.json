@@ -2358,6 +2358,11 @@
       "source_path": "microsoft-r/deployr/deployr-repository-manager-testing-debugging-scripts.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-repository-manager-testing-debugging-scripts",
       "redirect_document_id": true
+    },
+    {
+      "source_path": "microsoft-r/resources-glossary.md",
+      "redirect_url": "https://docs.microsoft.com/machine-learning-server/index",
+      "redirect_document_id": false
     }
   ]
 }
