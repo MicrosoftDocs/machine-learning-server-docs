@@ -76,7 +76,7 @@ The following packages comprise a full Machine Learning Server installation:
  microsoft-mlserver-computenode-9.4.7       ** operationalization (optional)
  microsoft-mlserver-config-rserve-9.4.7     ** operationalization (optional) 
  microsoft-mlserver-webnode-9.4.7           ** operationalization (optional)
- azure-cli-2.0.25-1.el7.x86_64              ** operationalization (optional)
+ azure-cli_2.0.25-1.el7.x86_64              ** operationalization (optional)
 ```
 The microsoft-mlserver-python-9.4.7 package provides Python 3.7.1, executing as mlserver-python, found in `/opt/microsoft/mlserver/9.4.7/bin/python/python`
 
