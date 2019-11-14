@@ -55,7 +55,7 @@ You can no longer download older versions of Microsoft R Server. All Microsoft d
 
 + [Post in our user forum](https://social.technet.microsoft.com/Forums/en-US/home?forum=MicrosoftR)  
 
-## The future of Microsoft R Client
+## About Microsoft R Client
 
 [Microsoft R Client](r-client/what-is-microsoft-r-client.md) continues on as an R-only client for Machine Learning Server and R Server. 
 
