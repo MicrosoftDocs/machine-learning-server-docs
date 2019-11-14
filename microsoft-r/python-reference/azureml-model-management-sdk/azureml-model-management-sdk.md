@@ -1,9 +1,8 @@
 ---
 
 # required metadata
-title: "azureml-model-management-sdk package for Python - Machine Learning Server "
-description: "azureml-model-management-sdk Functions"
-keywords: "azureml-model-management-sdk package reference"
+title: "Deploy & manage Machine Learning Server web services in Python"
+description: "Manage your ML models in Python with the Machine Learning Server package, azureml-model-management-sdk"
 author: "HeidiSteen"
 ms.author: "heidist"
 manager: "cgronlun"
@@ -23,7 +22,7 @@ ms.prod: "mlserver"
 
 ---
 
-# azureml-model-management-sdk package
+# Machine Learning Server: manage web services with azureml-model-management-sdk
  
 **Applies to:  Machine Learning Server, SQL Server 2017**
 
