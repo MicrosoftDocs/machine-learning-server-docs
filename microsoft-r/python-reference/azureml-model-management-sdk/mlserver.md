@@ -1,8 +1,8 @@
 --- 
  
 # required metadata 
-title: "MLServer class: from azureml-model-management-sdk – Machine Learning Server | Microsoft Docs" 
-description: "" 
+title: "MLServer class for Microsoft Machine Learning Server"
+description: "This class is for Microsoft ML Server Python package for managing web services, azureml-model-management-sdk" 
 keywords: "" 
 author: "HeidiSteen" 
 ms.author: "heidist"
