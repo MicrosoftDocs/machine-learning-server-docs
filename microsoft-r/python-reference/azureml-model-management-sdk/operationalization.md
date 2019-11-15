@@ -1,8 +1,8 @@
 --- 
  
 # required metadata 
-title: "Operationalization class: from azureml-model-management-sdk Python module in Machine Learning Server" 
-description: "" 
+title: "Operationalization  class for Microsoft Machine Learning Server"
+description: "This class is for Microsoft ML Server Python package for managing web services." 
 keywords: "" 
 author: "HeidiSteen"
 ms.author: "heidist" 

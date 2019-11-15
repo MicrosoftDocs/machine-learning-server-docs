@@ -1,8 +1,8 @@
 --- 
  
 # required metadata 
-title: "BatchResponse class: from azureml-model-management-sdk Python module in Machine Learning Server" 
-description: "" 
+title: "BatchResponse in Machine Learning Server azureml-model-management-sdk" 
+description: "This class is for Microsoft ML Server" 
 keywords: "" 
 author: "HeidiSteen" 
 ms.author: "heidist"

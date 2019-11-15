@@ -52,7 +52,7 @@ The following features are included in Machine Learning Server. For feature desc
 [Choose a quickstart](index.yml) to test-drive capabilities in 10 minutes or less. Move on to tutorials for in-depth exploration.
 
 > [!Note]
-> You can use any R or Python IDE to write code using libraries from Machine Learning Server. Microsoft offers Python for Visual Studio and R for Visual Studio. To use Jupyter Notebook, see [How to configure Jupyter Notebooks](python/how-to-revoscalepy-jupyter-nb-config.md).
+> You can use any R or Python IDE to write code using libraries from Machine Learning Server. Microsoft offers [Python for Visual Studio](https://docs.microsoft.com/visualstudio/python/overview-of-python-tools-for-visual-studio) and [R for Visual Studio](https://docs.microsoft.com/visualstudio/rtvs). To use Jupyter Notebook, see [How to configure Jupyter Notebooks](python/how-to-revoscalepy-jupyter-nb-config.md).
 
 ## See also
 
