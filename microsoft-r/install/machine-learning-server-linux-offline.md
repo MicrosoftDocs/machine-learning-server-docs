@@ -83,7 +83,6 @@ The microsoft-mlserver-python-9.4.7 package provides Python 3.7.1, executing as 
 Microsoft R Open is required for R execution:
 
 ```
- microsoft-r-open-foreachiterators-3.5.2 
  microsoft-r-open-mkl-3.5.2
  microsoft-r-open-mro-3.5.2 
 ```
