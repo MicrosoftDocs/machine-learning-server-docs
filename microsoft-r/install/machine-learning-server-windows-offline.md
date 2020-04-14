@@ -41,7 +41,7 @@ On an internet-connected computer, download all of the following files.
 |Machine Learning Server setup | Get *Machine Learning Server for Windows* (en_machine_learning_server_for_windows_x64_<build-number>.zip) from one of these sites:<br/><br/>[Visual Studio Dev Essentials](https://my.visualstudio.com/Downloads?q=machine%20learning%20server%209.4.7)<br/>[Volume Licensing Service Center (VLSC)](https://www.microsoft.com/Licensing/servicecenter/default.aspx) | ML Server |
 |MLM|[MLM_9.4.7.0_1033.cab](https://download.microsoft.com/download/a/4/1/a41cbeb3-7933-4a57-848e-60f5cb40f2e2/MLM_9.4.7.0_1033.cab)|Pre-trained models, R or Python|
 |Microsoft R Open|[SRO_3.5.2.0_1033.cab](https://download.microsoft.com/download/4/a/3/4a34263a-069b-42bf-946f-69f3b708ab11/SRO_3.5.2.0_1033.cab)|R|
-|Microsoft Python Open|[SPO_4.5.12.0_1033.cab](https://download.microsoft.com/download/7/d/2/7d2aecbc-3495-4496-9dee-ca38fd7f55f0/SPO_4.5.12.0_1033.cab)|Python|
+|Microsoft Python Open|[SPO_4.5.12.0_1033.cab](https://download.microsoft.com/download/7/d/2/7d2aecbc-3495-4496-9dee-ca38fd7f55f0/SPO_9.4.7.0_1033.cab)|Python|
 |Microsoft Python Server|[SPS_9.4.7.0_1033.cab](https://download.microsoft.com/download/8/a/f/8af64f33-2014-42db-bdfb-bad77298636a/SPS_9.4.7.0_1033.cab)|Python|
 |Python script |[Install-PyForMLS](https://download.microsoft.com/download/b/f/0/bf030264-2414-4c01-821b-2ec88f426cde/Install-PyForMLS.ps1) | Python |
 
