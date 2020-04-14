@@ -74,7 +74,7 @@ For the ML Python Client 9.4.7, download the following cab files:
 
 | Component | Download | Used for | 
 |-----------|----------|----------|
-|Microsoft Python Open|[SPO_4.5.12.0_1033.cab](https://download.microsoft.com/download/7/d/2/7d2aecbc-3495-4496-9dee-ca38fd7f55f0/SPO_4.5.12.0_1033.cab)|Python|
+|Microsoft Python Open|[SPO_9.4.7.0_1033.cab](https://download.microsoft.com/download/7/d/2/7d2aecbc-3495-4496-9dee-ca38fd7f55f0/SPO_4.5.12.0_1033.cab)|Python|
 |Microsoft Python Server|[SPS_9.4.7.0_1033.cab](https://download.microsoft.com/download/8/a/f/8af64f33-2014-42db-bdfb-bad77298636a/SPS_9.4.7.0_1033.cab)|Python|
 
 For the ML Python Client 9.3 and 9.2, download the .cab files used for [offline installation](machine-learning-server-windows-offline.md#file-list-93).
