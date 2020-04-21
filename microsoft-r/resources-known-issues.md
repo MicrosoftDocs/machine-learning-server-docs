@@ -142,6 +142,32 @@ service = client.service(service_name)\
 res=service.consume(pd.DataFrame({ 'Age':[1], 'Gender':[2], 'Height':[3], 'Weight':[4] }))
 ```
 
+### 6. Python 3 Kernel error when using Jupyter Notebooks and Python Client 9.4.7
+
+A Python 3 Kernel error may occur when using Jupyter Notebooks for Microsoft Machine Learning Server with ML Python Client 9.4.7.
+
+For example:
+
+:::image type="content" source="media/resources-known-issues/python-kernel-error.png" alt-text="Python 3 Kernel error" border="true":::
+
+The workaround is to edit the file `C:\Program Files\Microsoft\PyForMLS\share\jupyter\kernels\python3\kernel.json` and replace all the contents with the following:
+
+```python
+{
+"display_name": "Python 3",
+"language": "python",
+"argv": [
+  "C:\\Program Files\\Microsoft\\PyForMLS\\python.exe",
+  "-m",
+  "ipykernel_launcher",
+  "-f",
+  "{connection_file}"
+]
+}
+```
+
+The file paths of `kernel.json` and `python.exe` may be different if the client was installed to a different folder.
+
 <a name="Prev"></a>
 
 ## Previous releases 

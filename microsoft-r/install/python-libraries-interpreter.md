@@ -52,7 +52,7 @@ While not required, it's a good idea to cross-check package versions so that you
 
 ## Install Python libraries on Windows
 
-1. Download the installation shell script from [https://aka.ms/mls93-py](https://aka.ms/mls93-py) (or use [https://aka.ms/mls-py](https://aka.ms/mls-py) for the 9.2. release). The script installs Anaconda 4.2.0, which includes Python 3.5.2, along with all packages listed previously.
+1. Download the installation shell script [Install-PyForMLS.ps1](https://download.microsoft.com/download/b/f/0/bf030264-2414-4c01-821b-2ec88f426cde/Install-PyForMLS.ps1) (or use [https://aka.ms/mls93-py](https://aka.ms/mls93-py) for the 9.3 release or [https://aka.ms/mls-py](https://aka.ms/mls-py) for the 9.2. release). The script installs Miniconda 4.5.12, which includes Python 3.7.2, along with all packages listed previously.
 
 2. Open PowerShell window with elevated administrator permissions (right-click **Run as administrator**).
 
@@ -68,7 +68,7 @@ The installation script does not modify the PATH environment variable on your co
 
 ## Offline install
 
-Download .cab files used for [offline installation](machine-learning-server-windows-offline.md#file-list-93) and place them in your %TEMP% directory. You can type %TEMP% in a Run command to get the exact location, but it is usually a user directory such as `C:\Users\<your-user-name>\AppData\Local\Temp`. 
+Download .cab files used for [offline installation](machine-learning-server-windows-offline.md#file-list-94) and place them in your %TEMP% directory. You can type %TEMP% in a Run command to get the exact location, but it is usually a user directory such as `C:\Users\<your-user-name>\AppData\Local\Temp`. 
 
 After copying the files, run the PowerShell script using the same syntax as an online install. The script knows to look in the temp directory for the files it needs.
 
