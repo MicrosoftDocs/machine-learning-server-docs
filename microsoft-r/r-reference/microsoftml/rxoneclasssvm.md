@@ -224,7 +224,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
 [`Anomaly detection`](https://en.wikipedia.org/wiki/Anomaly_detection)
 
 
-[`Azure Machine Learning Studio: One-Class Support Vector Machine`](https://msdn.microsoft.com/en-us/library/azure/dn913103.aspx)
+[`Azure Machine Learning Studio (classic): One-Class Support Vector Machine`](https://msdn.microsoft.com/library/azure/dn913103.aspx)
 
 
 [`Support of a High-Dimensional Distribution`](https://research.microsoft.com/pubs/69731/tr-99-87.pdf)
