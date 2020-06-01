@@ -74,7 +74,7 @@ landingContent:
             url: /machine-learning-server/r-client/what-is-microsoft-r-client  
       - linkListType: how-to-guide
         links:    
-          - text: Python interpreter and library 
+          - text: Install Python client libraries
             url: /machine-learning-server/install/python-libraries-interpreter
   
   # Card (optional)
