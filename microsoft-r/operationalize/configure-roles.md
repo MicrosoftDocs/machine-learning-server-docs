@@ -41,7 +41,7 @@ To assign groups of users in your Active Directory to Machine Learning Server ro
 
 + An instance of Machine Learning Server that is [configured to operationalize analytics](configure-start-for-administrators.md#configure-server-for-operationalization)
 
-+ Authentication for this instance must be via Active Directory/LDAP (AD/LADP) or Azure Active Directory (AAD) and [already configured](configure-authentication.md)
++ Authentication for this instance must be via Active Directory/LDAP (AD/LDAP) or Azure Active Directory (AAD) and [already configured](configure-authentication.md)
 
 + The names of the groups that contain the users to whom you want to give special permissions
 
