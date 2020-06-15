@@ -1,93 +1,114 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Machine Learning Server Documentation
+### YamlMime:Landing
+
+title: Machine Learning Server documentation # < 60 chars
+summary: Learn how to use Machine Learning Server to analyze data at scale, build intelligent apps, and discover valuable insights across your business. # < 160 chars
+
 metadata:
-  title: Welcome to the Machine Learning Server Documentation Center
-  description: Learn how to use Machine Learning Server to analyze data at scale, build intelligent apps, and discover valuable insights across your business.  
-  author: "dphansen"
-  ms.author: "heidist"
-  manager: "cgronlun"
-  ms.date: 11/19/2019
-  ms.prod: "mlserver"
-  ms.topic: landing-page
-  ms.technology:
-abstract:
-  description: Microsoft Machine Learning Server includes <b>R_SERVER</b> and <b>PYTHON_SERVER</b> components, with packages from Microsoft that enable analytics at scale. In addition to packages, it includes interpreters and infrastructure for deploying distributed R and Python-based machine learning and data science solutions on a <a href="install/r-server-install-supported-platforms">range of platforms</a> across on-premises and cloud configurations.
-sections:
-- title: 5-Minute Quickstarts
-  items:
-  - type: paragraph
-    text: 'Get started with Machine Learning Server using R or Python:'  
-  - type: table
-    style: dataMatrix
-    columns:
-      - image:
-          src: https://docs.microsoft.com/media/logos/logo_R.svg
-      - image:
-          src: https://docs.microsoft.com/media/logos/logo_python.svg
-    rows:
-      - title: 'Run R code in Machine Learning Server & R Client'
-        values:
-        - href: r/quickstart-run-r-code
-        - href: 
-      - title: Create a Python model with revoscalepy
-        values:
-        - href: 
-        - href: python/quickstart-revoscalepy-linear-regression-model
-      - title: Run a binary classification using microsoftml 
-        values:
-          - href: 
-          - href: python/quickstart-binary-classification-with-microsoftml
-      - title: Deploy a model as a web service
-        values:
-          - href: operationalize/quickstart-publish-r-web-service
-          - href: operationalize/python/quickstart-deploy-python-web-service
-- title: Step-by-Step Tutorials
-  items:
-  - type: paragraph
-    text: 'Learn how to discover insights faster and transform your business using Machine Learning Server.'
-  - type: paragraph
-    text: '&nbsp;<big>&nbsp;&nbsp;R Tutorials</big>'
-  - type: list
-    style: unordered
-    items:
-    - html: <a href="r/tutorial-r-to-revoscaler">Explore R-to-RevoScaleR</a>
-    - html: <a href="r/tutorial-revoscaler-data-import-transform">Import and transform data</a>
-    - html: <a href="r/tutorial-revoscaler-data-model-analysis">Visualize and analyze data</a>
-  - type: paragraph
-    text: '&nbsp;<big>&nbsp;&nbsp;Python Tutorials</big>'
-  - type: list
-    style: unordered
-    items:
-    - html: <a href="python/tutorial-revoscalepy-pyspark">Use PySpark and revoscalepy together</a>
-- title: Samples
-  items:
-  - type: paragraph
-    text: 'Find scripts and solutions to manage common tasks.'
-  - type: list
-    style: unordered
-    items:
-    - html: <a href="r/r-samples.md">R samples</a>
-    - html: <a href="python/python-samples.md">Python samples </a>
-    - html: <a href="r/sample-solutions">Solution templates</a>
-- title: Tools
-  items:
-  - type: paragraph
-    text: 'Use these tools to begin developing your analytics locally and then pushing the compute to the server:'
-  - type: list
-    style: unordered
-    items:
-    - html: <a href="r-client/what-is-microsoft-r-client">Microsoft R Client</a>
-    - html: <a href="install/python-libraries-interpreter">Python interpreter and library setup </a>
-- title: Reference
-  items:
-  - type: list
-    style: cards
-    className: cardsD
-    items:
-    - title: R Packages
-      html: <p><a href="r-reference/microsoftml/microsoftml-package">MicrosoftML</a></p><p><a href="r-reference/mrsdeploy/mrsdeploy-package">mrsdeploy</a></p><p><a href="r-reference/revoscaler/revoscaler">RevoScaleR</a></p><p><a href="r-reference/introducing-r-server-r-package-reference">more...</a></p>
-    - title: Python Packages
-      html: <p><a href="python-reference/azureml-model-management-sdk/azureml-model-management-sdk">azureml-model-management-sdk</a></p><p><a href="python-reference/microsoftml/microsoftml-package">microsoftml</a></p><p><a href="python-reference/revoscalepy/revoscalepy-package">revoscalepy</a></p><p><a href="python-reference/introducing-python-package-reference">more...</a></p>
-    - title: APIs
-      html: <p><a href="https://microsoft.github.io/deployr-api-docs/">REST API Reference</a></p>
+  title: Machine Learning Server documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
+  description: Learn how to use Machine Learning Server to analyze data at scale, build intelligent apps, and discover valuable insights across your business. # Required; article description that is displayed in search results. < 160 chars.
+  ms.service: machine-learning #Required; service per approved list. service slug assigned to your service by ACOM.
+  ms.topic: landing-page # Required
+  author: dphansen #Required; your GitHub user alias, with correct capitalization.
+  ms.author: heidist #Required; microsoft alias of author; optional team alias.
+  ms.date: 11/19/2019 #Required; mm/dd/yyyy format.
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
+
+landingContent:
+# Cards and links should be based on top customer tasks or top subjects
+# Start card title with a verb
+  # Card (optional)
+  - title: 5-Minute Quickstarts
+    linkLists:
+      - linkListType: quickstart
+        links:
+          - text: Run R code in Machine Learning Server & R Client
+            url: /machine-learning-server/r/quickstart-run-r-code
+          - text: Create a Python model with revoscalepy
+            url: /machine-learning-server/python/quickstart-revoscalepy-linear-regression-model
+          - text: Run a binary classification using microsoftml (Python)
+            url: /machine-learning-server/python/quickstart-binary-classification-with-microsoftml
+          - text: Deploy a model as a web service (R)
+            url: /machine-learning-server/operationalize/quickstart-publish-r-web-service
+          - text: Deploy a model as a web service (Python)
+            url: /machine-learning-server/operationalize/python/quickstart-deploy-python-web-service
+
+  # Card (optional)
+  - title: R Tutorials
+    linkLists:
+      - linkListType: tutorial
+        links:
+          - text: Explore R-to-RevoScaleR
+            url: /machine-learning-server/r/tutorial-r-to-revoscaler
+          - text: Data import and exploration
+            url: /machine-learning-server/r/tutorial-revoscaler-data-import-transform
+          - text: Visualize and analyze data
+            url: /machine-learning-server/r/tutorial-revoscaler-data-model-analysis
+
+  # Card (optional)
+  - title: Python Tutorials
+    linkLists:
+      - linkListType: tutorial
+        links:
+          - text: Use PySpark and revoscalepy together
+            url: /machine-learning-server/python/tutorial-revoscalepy-pyspark
+  
+  # Card (optional)
+  - title: Samples
+    linkLists:
+      - linkListType: sample
+        links:
+          - text: R samples
+            url: /machine-learning-server/r/r-samples
+          - text: Python samples
+            url: /machine-learning-server/python/python-samples
+          - text: Solution templates
+            url: /machine-learning-server/r/sample-solutions
+
+  # Card (optional)
+  - title: Tools
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Microsoft R Client
+            url: /machine-learning-server/r-client/what-is-microsoft-r-client  
+      - linkListType: how-to-guide
+        links:    
+          - text: Install Python client libraries
+            url: /machine-learning-server/install/python-libraries-interpreter
+  
+  # Card (optional)
+  - title: R Packages
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: MicrosoftML
+            url: /machine-learning-server/r-reference/microsoftml/microsoftml-package
+          - text: mrsdeploy
+            url: /machine-learning-server/r-reference/mrsdeploy/mrsdeploy-package
+          - text: RevoScaleR
+            url: /machine-learning-server/r-reference/revoscaler/revoscaler
+          - text: R Function Library Reference
+            url: /machine-learning-server/r-reference/introducing-r-server-r-package-reference
+  
+  # Card (optional)
+  - title: Python Packages
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: azureml-model-management-sdk
+            url: /machine-learning-server/python-reference/azureml-model-management-sdk/azureml-model-management-sdk
+          - text: microsoftml
+            url: /machine-learning-server/python-reference/microsoftml/microsoftml-package
+          - text: revoscalepy
+            url: /machine-learning-server/python-reference/revoscalepy/revoscalepy-package
+          - text: Python Function Library Reference
+            url: /machine-learning-server/python-reference/introducing-python-package-reference
+
+  # Card (optional)
+  - title: APIs
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: REST API Reference
+            url: https://microsoft.github.io/deployr-api-docs/
