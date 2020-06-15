@@ -79,7 +79,7 @@ This feature is still under development. In rare cases, the [deleteServicePool](
  getPoolStatus(name = "myWebService1234", version = "v1.0.0")
  
  # make sure the return status is NotFound on all computeNodes
- # if not, issue anthor deleteServicePool command again
+ # if not, issue another deleteServicePool command again
 ```
 ## See also
 
