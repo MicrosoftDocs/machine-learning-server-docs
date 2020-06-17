@@ -4,7 +4,7 @@
 title: "rx_get_info: Get data source information (revoscalepy)" 
 description: "Get basic information about a revoscalepy data source or data frame." 
 keywords: "xdf" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

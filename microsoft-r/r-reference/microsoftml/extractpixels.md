@@ -4,7 +4,7 @@
 title: "extractPixels function (MicrosoftML) " 
 description: " Extracts the pixel values from an image. " 
 keywords: "(MicrosoftML), extractPixels, image, transform" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

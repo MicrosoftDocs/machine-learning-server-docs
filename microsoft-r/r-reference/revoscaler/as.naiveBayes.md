@@ -4,7 +4,7 @@
 title: "as.naiveBayes function (revoAnalytics) | Microsoft Docs" 
 description: " Converts RevoScaleR rxNaiveBayes objects to a (limited) e1071 naiveBayes object. " 
 keywords: "(revoAnalytics), as.naiveBayes, as.naiveBayes.rxNaiveBayes, category, models" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

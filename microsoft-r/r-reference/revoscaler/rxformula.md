@@ -4,7 +4,7 @@
 title: "rxFormula function (revoAnalytics) | Microsoft Docs" 
 description: " Highlights of the similarities and differences in formulas between **RevoScaleR** and standard R functions. " 
 keywords: "(revoAnalytics), rxFormula, models" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

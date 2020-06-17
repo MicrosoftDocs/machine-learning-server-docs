@@ -4,7 +4,7 @@
 title: "rx_dforest: Fits classification and regression decision forests (revoscalepy)" 
 description: "Fits classification and regression decision forests on an .xdf file or data frame for small or large data using parallel external memory algorithm." 
 keywords: "learner, tree" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

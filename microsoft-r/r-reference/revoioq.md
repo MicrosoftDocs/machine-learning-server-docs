@@ -4,7 +4,7 @@
 title: "RevoIOQ function (RevoIOQ) - Machine Learning Server " 
 description: "Installation and operation qualification of Machine Learning Server" 
 keywords: "(RevoIOQ), RevoIOQ, package" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

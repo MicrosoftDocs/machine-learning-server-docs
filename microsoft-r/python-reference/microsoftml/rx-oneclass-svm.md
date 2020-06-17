@@ -4,7 +4,7 @@
 title: "rx_oneclass_svm: OneClass SVM" 
 description: "Machine Learning One Class Support Vector Machines" 
 keywords: "models, anomaly, detection" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

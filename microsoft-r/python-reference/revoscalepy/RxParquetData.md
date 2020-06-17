@@ -4,7 +4,7 @@
 title: "RxParquetData: Class generator for Parquet data source objects (revoscalepy)" 
 description: "Main generator for class RxParquetData, which extends RxSparkData." 
 keywords: "datasource, parquet" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

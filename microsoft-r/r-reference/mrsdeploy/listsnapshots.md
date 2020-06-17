@@ -4,7 +4,7 @@
 title: "listSnapshots function (mrsdeploy) | Microsoft Docs" 
 description: " Get a list of all the snapshots on the R server that are available to the current user. " 
 keywords: "(mrsdeploy), listSnapshots" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

@@ -4,7 +4,7 @@
 title: "RxLocalSeq: Generate local compute context (revoscalepy)" 
 description: "Creates a local compute context object. Computations using rx_exec will be processed sequentially. This is the default compute context." 
 keywords: "context, local" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

@@ -4,7 +4,7 @@
 title: "rxDistributeJob function (revoAnalytics) | Microsoft Docs" 
 description: " Allows distributed execution of a function in parallel across nodes (computers)  of a 'compute context' such as a cluster. A helper functions checks to see if the 'compute context' is appropriate. " 
 keywords: "(revoAnalytics), rxDistributeJob, rxIsDistributedContext, IO" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

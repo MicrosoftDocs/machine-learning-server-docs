@@ -4,7 +4,7 @@
 title: "summary.mlModel function (MicrosoftML) " 
 description: " Summary of a Microsoft R Machine Learning model. " 
 keywords: "(MicrosoftML), summary.mlModel, coef.mlModel, file, manip" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

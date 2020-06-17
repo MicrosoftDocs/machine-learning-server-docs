@@ -4,7 +4,7 @@
 title: "serviceTypes function (mrsdeploy) | Microsoft Docs" 
 description: " Defines the enumerated list of the supported service types. " 
 keywords: "(mrsdeploy), serviceTypes" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

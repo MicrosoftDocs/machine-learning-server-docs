@@ -4,7 +4,7 @@
 title: "RxLocalParallel-class class (revoAnalytics) | Microsoft Docs" 
 description: "   Class for the RevoScaleR Local Parallel Compute Context.   " 
 keywords: "(revoAnalytics), RxLocalParallel-class, show,RxLocalParallel-method, classes" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

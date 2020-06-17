@@ -4,8 +4,8 @@
 title: "Microsoft R Server vs R Client: Scale"
 description: "Learn about Microsoft R features and components in R Server, R Client, R Open."
 keywords: ""
-author: "HeidiSteen"
-ms.author: "heidist"
+author: "dphansen"
+ms.author: "davidph"
 manager: "cgronlun"
 ms.date: 07/15/2019
 ms.topic: "overview"

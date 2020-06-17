@@ -4,7 +4,7 @@
 title: "minCount function (MicrosoftML) " 
 description: " Count mode of feature selection used in the feature selection transform [selectFeatures](selectFeatures.md). " 
 keywords: "(MicrosoftML), minCount, count, feature, selection" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

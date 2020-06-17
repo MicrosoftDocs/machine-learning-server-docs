@@ -4,7 +4,7 @@
 title: "rx_fast_trees: Fast Tree" 
 description: "Machine Learning Fast Tree" 
 keywords: "models, classification, regression" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

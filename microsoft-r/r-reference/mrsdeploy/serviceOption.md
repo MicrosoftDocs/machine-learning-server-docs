@@ -4,7 +4,7 @@
 title: "serviceOption function (mrsdeploy) | Microsoft Docs" 
 description: " Retrieve, set, and list the different service options. " 
 keywords: "(mrsdeploy), serviceOption" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

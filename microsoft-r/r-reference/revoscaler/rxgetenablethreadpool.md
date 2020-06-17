@@ -4,7 +4,7 @@
 title: "rxGetEnableThreadPool function (revoAnalytics) | Microsoft Docs" 
 description: " Gets or sets the current state of the thread pool (in a ready state or created ad hoc). " 
 keywords: "(revoAnalytics), rxGetEnableThreadPool, rxSetEnableThreadPool, iteration" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

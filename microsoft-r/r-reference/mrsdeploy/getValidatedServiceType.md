@@ -4,7 +4,7 @@
 title: "getValidatedServiceType function (mrsdeploy) | Microsoft Docs" 
 description: " Test to see if supplied service type is supported. " 
 keywords: "(mrsdeploy), getValidatedServiceType" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

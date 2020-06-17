@@ -4,7 +4,7 @@
 title: "squared_loss: squared_loss" 
 description: "Squared loss." 
 keywords: "loss, squared" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

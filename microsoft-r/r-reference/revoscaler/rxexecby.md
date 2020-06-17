@@ -4,7 +4,7 @@
 title: "rxExecBy function (revoAnalytics) | Microsoft Docs" 
 description: " Partition input data source by keys and apply user defined function on individual partitions. If input data source is already partitioned, apply user defined function on partitions directly. Currently supported in local, localpar, [RxInSqlServer](RxInSqlServer.md) and [RxSpark](RxSpark.md) compute contexts. " 
 keywords: "(revoAnalytics), rxExecBy, ExecBy" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

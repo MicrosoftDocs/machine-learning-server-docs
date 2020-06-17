@@ -4,7 +4,7 @@
 title: "rx_get_jobs: Get Distributed Computing Jobs (revoscalepy)" 
 description: "Returns a list of job objects associated with the given compute context and matching the specified parameters." 
 keywords: "get, job" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

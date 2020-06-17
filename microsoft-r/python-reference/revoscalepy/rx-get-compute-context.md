@@ -4,7 +4,7 @@
 title: "rx_get_compute_context: Gets the current compute context (revoscalepy)" 
 description: "Gets the active compute context for revoscalepy computations" 
 keywords: "context" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

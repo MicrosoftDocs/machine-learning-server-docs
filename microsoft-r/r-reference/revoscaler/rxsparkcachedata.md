@@ -4,7 +4,7 @@
 title: "rxSparkCacheData {RevoScaleR} function (revoAnalytics) | Microsoft Docs" 
 description: " Use this function to set the cache flag to control whether data objects should be cached in Spark memory system, applicable for RxXdfData, RxHiveData, RxParquetData, and RxOrcData.  " 
 keywords: "(revoAnalytics), rxSparkCacheData {RevoScaleR}, rxSparkCacheData" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

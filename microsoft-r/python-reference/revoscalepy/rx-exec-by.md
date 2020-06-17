@@ -4,7 +4,7 @@
 title: "rx_exec_by: Partition by key and execute functions by partition (revoscalepy)" 
 description: "Partition input data source by keys and apply a user-defined function on individual partitions. If the input data source is already partitioned, apply a user-defined function directly on the partitions. Currently supported in local, localpar, RxInSqlServer and RxSpark compute contexts." 
 keywords: "execby, groupby" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

@@ -4,7 +4,7 @@
 title: "rx_read_object: Read an ODBC data source object (revoscalepy)" 
 description: "Retrieves an ODBC data source object by its key value." 
 keywords: "odbc" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 
