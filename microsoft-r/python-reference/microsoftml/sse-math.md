@@ -4,7 +4,7 @@
 title: "sse_math: sse_math" 
 description: "Implementation accelerated with SSE instructions." 
 keywords: "neural network, math, sse" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

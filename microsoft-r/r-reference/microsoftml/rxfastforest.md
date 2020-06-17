@@ -4,7 +4,7 @@
 title: "rxFastForest function (MicrosoftML) " 
 description: " Machine Learning Fast Forest " 
 keywords: "(MicrosoftML), rxFastForest, classification, models, regression" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

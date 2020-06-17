@@ -4,7 +4,7 @@
 title: "RxOrcData: Class generator for Orc data source objects (revoscalepy)" 
 description: "Main generator for class RxOrcData, which extends RxSparkData." 
 keywords: "datasource, orc" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

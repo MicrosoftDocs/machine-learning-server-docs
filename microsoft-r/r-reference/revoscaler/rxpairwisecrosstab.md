@@ -4,7 +4,7 @@
 title: "rxPairwiseCrossTab function (revoAnalytics) | Microsoft Docs" 
 description: " Apply a function 'FUN' to all pairwise combinations of the rows and columns of an xtabs object,  stratifying by higher dimensions. " 
 keywords: "(revoAnalytics), rxPairwiseCrossTab, print.rxPairwiseCrossTabList, print.rxPairwiseCrossTabTable, htest" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

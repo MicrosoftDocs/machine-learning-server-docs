@@ -4,7 +4,7 @@
 title: "rxSetFileSystem function (revoAnalytics) | Microsoft Docs" 
 description: " Set and get the default file system for RevoScaleR operations. " 
 keywords: "(revoAnalytics), rxSetFileSystem, rxGetFileSystem, file, connection" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

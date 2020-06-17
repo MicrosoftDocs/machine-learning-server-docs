@@ -4,7 +4,7 @@
 title: "selectColumns function (MicrosoftML) " 
 description: " Selects a set of columns to retrain, dropping all others. " 
 keywords: "(MicrosoftML), selectColumns, transform" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

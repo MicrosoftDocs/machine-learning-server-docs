@@ -4,7 +4,7 @@
 title: "putLocalWorkspace function (mrsdeploy) | Microsoft Docs" 
 description: " Copy all objects from the local R session and load them into the remote R session. " 
 keywords: "(mrsdeploy), putLocalWorkspace" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

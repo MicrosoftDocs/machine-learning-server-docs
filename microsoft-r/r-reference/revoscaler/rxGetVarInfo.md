@@ -4,7 +4,7 @@
 title: "rxGetVarInfo function (revoAnalytics) | Microsoft Docs" 
 description: " Get variable information for a RevoScaleR data source or data frame, including variable names, descriptions, and value labels " 
 keywords: "(revoAnalytics), rxGetVarInfo, attribute" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

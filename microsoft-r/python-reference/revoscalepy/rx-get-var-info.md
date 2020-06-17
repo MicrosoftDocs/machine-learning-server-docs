@@ -4,7 +4,7 @@
 title: "rx_get_var_info: Get variable information for a data source (revoscalepy)" 
 description: "Get variable information for a revoscalepy data source or data frame, including variable names, descriptions, and value labels" 
 keywords: "info" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

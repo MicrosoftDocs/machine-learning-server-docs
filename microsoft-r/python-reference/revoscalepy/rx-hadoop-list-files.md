@@ -4,7 +4,7 @@
 title: "rx_hadoop_list_files: Execute Hadoop list files commands (revoscalepy)" 
 description: "Wraps the Hadoop fs -ls or -lsr command." 
 keywords: "Hadoop Command" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

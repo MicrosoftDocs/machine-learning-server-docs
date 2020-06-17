@@ -4,7 +4,7 @@
 title: "remoteLoginAAD function (mrsdeploy) | Microsoft Docs" 
 description: " Authenticates the user and creates a remote R session. " 
 keywords: "(mrsdeploy), remoteLoginAAD" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

@@ -4,7 +4,7 @@
 title: "rxOneClassSvm function (MicrosoftML) " 
 description: " Machine Learning One Class Support Vector Machines " 
 keywords: "(MicrosoftML), rxOneClassSvm, anomaly, detection, models" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

@@ -4,7 +4,7 @@
 title: "rx_get_var_names: Variable names for a data source or data frame (revoscalepy)" 
 description: "Read the variable names for data source or data frame" 
 keywords: "variables" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

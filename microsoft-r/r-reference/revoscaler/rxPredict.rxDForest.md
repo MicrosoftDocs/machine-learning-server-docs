@@ -4,7 +4,7 @@
 title: "rxPredict.rxDForest function (revoAnalytics) | Microsoft Docs" 
 description: "     Calculate predicted or fitted values for a data set from an object inheriting from class rxDForest. " 
 keywords: "(revoAnalytics), rxPredict.rxDForest, rxPredict.rxBTrees, models, tree, classif, regression, classification" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

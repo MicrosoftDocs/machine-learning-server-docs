@@ -4,7 +4,7 @@
 title: "getNetDefinition function (MicrosoftML) " 
 description: " Returns the Net# definition from a trained neural network model. " 
 keywords: "(MicrosoftML), getNetDefinition, transform" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

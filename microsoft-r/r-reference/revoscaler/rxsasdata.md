@@ -4,7 +4,7 @@
 title: "RxSasData function (revoAnalytics) | Microsoft Docs" 
 description: " Generate an RxSasData object that contains information about a SAS data set to be imported or analyzed. RxSasData is an S4 class, which extends  RxDataSource. " 
 keywords: "(revoAnalytics), RxSasData, head.RxSasData, tail.RxSasData, file, connection" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

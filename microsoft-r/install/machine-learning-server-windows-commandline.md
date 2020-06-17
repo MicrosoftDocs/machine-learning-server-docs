@@ -3,8 +3,8 @@
 title: "Windows command line installation for Machine Learning Server"
 description: "How to install Machine Learning Server for Windows on the command line."
 keywords: ""
-author: "HeidiSteen"
-ms.author: "heidist"
+author: "dphansen"
+ms.author: "davidph"
 manager: "cgronlun"
 ms.date: 07/15/2019
 ms.topic: "conceptual"

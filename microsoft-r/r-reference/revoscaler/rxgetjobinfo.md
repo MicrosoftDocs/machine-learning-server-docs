@@ -4,7 +4,7 @@
 title: "rxGetJobInfo function (revoAnalytics) | Microsoft Docs" 
 description: " Gets job information for a given distributed computing job. " 
 keywords: "(revoAnalytics), rxGetJobInfo, IO" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

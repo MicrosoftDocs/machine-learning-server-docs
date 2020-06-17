@@ -4,7 +4,7 @@
 title: "diffLocalRemote function (mrsdeploy) | Microsoft Docs" 
 description: " Generate a 'diff' report between local and remote R sessions " 
 keywords: "(mrsdeploy), diffLocalRemote" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 
