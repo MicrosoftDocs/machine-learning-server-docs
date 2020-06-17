@@ -4,7 +4,7 @@
 title: "hinge_loss: hinge_loss" 
 description: "Hinge loss." 
 keywords: "loss, hinge" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

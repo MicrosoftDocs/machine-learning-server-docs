@@ -4,7 +4,7 @@
 title: "listServices function (mrsdeploy) | Microsoft Docs" 
 description: " List the different published web services on the R Server instance. " 
 keywords: "(mrsdeploy), listServices" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

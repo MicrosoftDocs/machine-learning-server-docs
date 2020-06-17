@@ -4,7 +4,7 @@
 title: "rxDTree function (revoAnalytics) | Microsoft Docs" 
 description: "     Fit classification and regression trees on an .xdf file or data frame     for small or large data using parallel external memory algorithm. " 
 keywords: "(revoAnalytics), rxDTree, print.rxDTree, models, tree, classif, regression, classification" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019 
 ms.topic: "reference" 

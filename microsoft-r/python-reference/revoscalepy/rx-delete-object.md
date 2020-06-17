@@ -4,7 +4,7 @@
 title: "rx_delete_object: Manage objects in ODBC data sources (revoscalepy)" 
 description: "Deletes an object from an ODBC data source. The APIs are modelled after a simple key value store." 
 keywords: "delete, object" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

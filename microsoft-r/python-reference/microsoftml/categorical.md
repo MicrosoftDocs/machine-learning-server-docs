@@ -4,7 +4,7 @@
 title: "categorical: Machine Learning Categorical Data Transform" 
 description: "Categorical transform that can be performed on data before training a model." 
 keywords: "transform, category" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

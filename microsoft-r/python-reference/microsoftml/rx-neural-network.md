@@ -4,7 +4,7 @@
 title: "rx_neural_network: Neural Net" 
 description: "Neural networks for regression modeling and for Binary and multi-class classification." 
 keywords: "models, classification, regression, neural network, dnn" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

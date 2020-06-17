@@ -4,7 +4,7 @@
 title: "RxNativeFileSystem function (revoAnalytics) | Microsoft Docs" 
 description: " This is the main generator for RxNativeFileSystem S3 class. " 
 keywords: "(revoAnalytics), RxNativeFileSystem, file, connection" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

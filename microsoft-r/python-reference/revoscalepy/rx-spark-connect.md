@@ -4,7 +4,7 @@
 title: "rx_spark_connect: Connect to remote Spark applications (revoscalepy)" 
 description: "Creates the compute context object with RxSpark and then immediately starts the remote Spark application." 
 keywords: "" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

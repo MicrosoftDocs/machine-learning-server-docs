@@ -4,7 +4,7 @@
 title: "rx_hadoop_make_dir: Execute Hadoop make directory commands (revoscalepy)" 
 description: "Wraps the Hadoop fs -mkdir -p command." 
 keywords: "Hadoop Command" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

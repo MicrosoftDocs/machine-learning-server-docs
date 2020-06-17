@@ -4,7 +4,7 @@
 title: "rx_create_col_info: Generate a column_info ordered dictionary from a data source (revoscalepy)" 
 description: "From the data source, generates an ordered dictionary of dictionaries with variable names as keys and column information dictionaries as values. It can be used in rx_import or an RxDataSource constructor. This function can be used to ensure consistent categorical (factor) levels when importing a series of text files to xdf. It is also useful for repeated analysis on non-xdf data sources." 
 keywords: "column, information, col, info" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

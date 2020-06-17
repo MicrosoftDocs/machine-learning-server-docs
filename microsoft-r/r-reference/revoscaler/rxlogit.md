@@ -4,7 +4,7 @@
 title: "rxLogit function (revoAnalytics) | Microsoft Docs" 
 description: " Use rxLogit to fit logistic regression models for small or large data. " 
 keywords: "(revoAnalytics), rxLogit, models, regression" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

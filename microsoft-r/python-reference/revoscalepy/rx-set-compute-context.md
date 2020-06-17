@@ -4,7 +4,7 @@
 title: "rx_set_compute_context: Sets the compute context (revoscalepy)" 
 description: "Sets the active compute context for revoscalepy computations" 
 keywords: "context" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

@@ -4,7 +4,7 @@
 title: "remoteCommandLine function (mrsdeploy) | Microsoft Docs" 
 description: " Displays the 'REMOTE>' command prompt and provides a remote execution context.  All R commands entered at the R console will be executed in the remote R session. " 
 keywords: "(mrsdeploy), remoteCommandLine" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

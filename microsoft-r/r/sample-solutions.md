@@ -3,8 +3,8 @@
 # required metadata
 title: "Solution templates for Machine Learning Server and R Server | Machine Learning Server "
 keywords: ""
-author: "HeidiSteen"
-ms.author: "heidist"
+author: "dphansen"
+ms.author: "davidph"
 manager: "cgronlun"
 ms.date: "2/16/2018"
 ms.topic: "conceptual"

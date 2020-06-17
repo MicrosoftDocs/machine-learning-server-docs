@@ -4,7 +4,7 @@
 title: "rx_data_step: Transform data from input to output dataset (revoscalepy)" 
 description: "Inline data transformations of an existing data set to an output data set" 
 keywords: "datasource" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

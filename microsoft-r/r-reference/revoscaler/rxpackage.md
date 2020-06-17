@@ -4,7 +4,7 @@
 title: "rxPackage function (revoAnalytics) | Microsoft Docs" 
 description: " This article explains how to enable and disable R package management on SQL Server Machine Learning Services (in-database), as well as installation, usage, and removal of individual packages. **RevoScaleR** provides the necessary rx functions for these tasks. " 
 keywords: "(revoAnalytics), rxPackage, packages, sql, install, uninstall, remove, use" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

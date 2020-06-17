@@ -4,7 +4,7 @@
 title: "RxSpssData-class class (revoAnalytics) | Microsoft Docs" 
 description: " SPSS data source connection class. " 
 keywords: "(revoAnalytics), RxSpssData-class, show,RxSpssData-method, classes" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

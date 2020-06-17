@@ -4,7 +4,7 @@
 title: "rx_list_keys: Manage objects in ODBC Data Sources (revoscalepy)" 
 description: "Retrieves object keys from ODBC data sources." 
 keywords: "keys" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

@@ -4,7 +4,7 @@
 title: "rx_fast_forest: Fast Forest" 
 description: "Machine Learning Fast Forest" 
 keywords: "models, classification, regression" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

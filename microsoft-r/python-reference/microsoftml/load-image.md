@@ -4,7 +4,7 @@
 title: "load_image: Machine Learning Load Image Transform" 
 description: "Loads image data." 
 keywords: "transform, image" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

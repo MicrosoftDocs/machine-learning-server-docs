@@ -4,7 +4,7 @@
 title: "rxCleanupJobs function (revoAnalytics) | Microsoft Docs" 
 description: " Removes artifacts created while executing a distributed computing job. " 
 keywords: "(revoAnalytics), rxCleanupJobs, IO" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

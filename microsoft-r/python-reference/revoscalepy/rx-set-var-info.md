@@ -4,7 +4,7 @@
 title: "rx_set_var_info: Set variables for .xdf files or data frames (revoscalepy)" 
 description: "Set the variable information for an .xdf file, including variable names, descriptions, and value labels, or set attributes for variables in a data frame" 
 keywords: "variables" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

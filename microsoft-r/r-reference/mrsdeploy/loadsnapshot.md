@@ -4,7 +4,7 @@
 title: "loadSnapshot function (mrsdeploy) | Microsoft Docs" 
 description: " Loads the specified snapshot from the R server into the remote session.The workspace is updated with the objects saved in the snapshot, and saved files are restored to the working directory. " 
 keywords: "(mrsdeploy), loadSnapshot" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

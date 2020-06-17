@@ -4,7 +4,7 @@
 title: "downloadSnapshot function (mrsdeploy) | Microsoft Docs" 
 description: " Downloads the specified snapshot from the R server in zip format. " 
 keywords: "(mrsdeploy), downloadSnapshot" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

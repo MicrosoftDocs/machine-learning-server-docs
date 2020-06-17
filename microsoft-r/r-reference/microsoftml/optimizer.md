@@ -4,7 +4,7 @@
 title: "maOptimizer function (MicrosoftML) " 
 description: " Specifies Optimization Algorithms for Neural Net. " 
 keywords: "(MicrosoftML), maOptimizer, adaDeltaSgd, sgd, optimizer" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

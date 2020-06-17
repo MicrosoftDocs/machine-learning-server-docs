@@ -4,8 +4,8 @@
 title: "RevoUtils Functions R Package for Microsoft R "
 description: "A package providing utility functions useful for script running on the Microsoft R ScaleR engine."
 keywords: "RevoUtils package reference"
-author: "HeidiSteen"
-ms.author: "heidist"
+author: "dphansen"
+ms.author: "davidph"
 manager: "cgronlun"
 ms.date: 07/15/2019
 ms.topic: "reference"

@@ -4,7 +4,7 @@
 title: "rx_hadoop_remove: Execute Hadoop remove commands (revoscalepy)" 
 description: "Wraps the Hadoop fs -rm or fs -rm -skipTrash command." 
 keywords: "Hadoop Command" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

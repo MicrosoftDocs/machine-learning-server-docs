@@ -4,7 +4,7 @@
 title: "rx_predict_rx_dtree: Prediction for Large Data Classification and Regression Trees (revoscalepy)" 
 description: "Calculate predicted or fitted values for a data set from an rx_dtree object." 
 keywords: "predict" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

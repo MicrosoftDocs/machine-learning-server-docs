@@ -4,7 +4,7 @@
 title: "rxMarginals function (revoAnalytics) | Microsoft Docs" 
 description: " Obtain marginal statistics on rxCrossTabs contingency tables. " 
 keywords: "(revoAnalytics), rxMarginals, rxMarginals.rxCrossTabs, category, models" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

@@ -4,8 +4,8 @@
 title: "New in Machine Learning Server 9.4"
 description: "New features, improvements, and changes in release 9.4 of Machine Learning Server."
 keywords: ""
-author: "HeidiSteen"
-ms.author: "heidist"
+author: "dphansen"
+ms.author: "davidph"
 manager: "cgronlun"
 ms.date: 07/15/2019
 ms.topic: "conceptual"

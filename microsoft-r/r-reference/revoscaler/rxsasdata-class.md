@@ -4,7 +4,7 @@
 title: "RxSasData-class class (revoAnalytics) | Microsoft Docs" 
 description: " SAS data source connection class. " 
 keywords: "(revoAnalytics), RxSasData-class, show,RxSasData-method, classes" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

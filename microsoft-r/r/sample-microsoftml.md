@@ -3,8 +3,8 @@
 # required metadata
 title: "R samples for MicrosoftML"
 keywords: ""
-author: "HeidiSteen"
-ms.author: "heidist"
+author: "dphansen"
+ms.author: "davidph"
 manager: "cgronlun"
 ms.date: "02/12/2018"
 ms.topic: "conceptual"

@@ -3,8 +3,8 @@
 title: "Add or remove R and Python on Machine Learning Server for Windows"
 description: "How to install or uninstall R and Python packages on Machine Learning Server for Windows."
 keywords: ""
-author: "HeidiSteen"
-ms.author: "heidist"
+author: "dphansen"
+ms.author: "davidph"
 manager: "cgronlun"
 ms.date: 07/15/2019
 ms.topic: "conceptual"

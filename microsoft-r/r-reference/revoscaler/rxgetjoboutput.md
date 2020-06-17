@@ -4,7 +4,7 @@
 title: "rxGetJobOutput function (revoAnalytics) | Microsoft Docs" 
 description: " Gets the console output from the various nodes in a non-waiting distributed computing job. " 
 keywords: "(revoAnalytics), rxGetJobOutput, IO" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

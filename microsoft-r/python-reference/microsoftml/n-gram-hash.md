@@ -4,7 +4,7 @@
 title: "n_gram_hash: n_gram_hash" 
 description: "Extracts NGrams from text and convert them to vector using hashing trick." 
 keywords: "N-Grams, hash" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

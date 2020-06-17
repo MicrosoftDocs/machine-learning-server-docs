@@ -4,7 +4,7 @@
 title: "CensusWorkers data (revoAnalytics) | Microsoft Docs" 
 description: " A small subset of the IPUMS 5% sample of the 2000 U.S. Census data containing information on the working population from Connecticut, Indiana, and Washington. " 
 keywords: "(revoAnalytics), CensusWorkers, CensusWorkers.xdf, datasets" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

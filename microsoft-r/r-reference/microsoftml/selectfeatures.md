@@ -4,7 +4,7 @@
 title: "selectFeatures function (MicrosoftML) " 
 description: " The feature selection transform selects features from the specified variables using the specified mode. " 
 keywords: "(MicrosoftML), selectFeatures, feature, selection, transform" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

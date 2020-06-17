@@ -4,7 +4,7 @@
 title: "rx_summary: Generate summary statistics (revoscalepy)" 
 description: "Produce univariate summaries of objects in revoscalepy." 
 keywords: "summary" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

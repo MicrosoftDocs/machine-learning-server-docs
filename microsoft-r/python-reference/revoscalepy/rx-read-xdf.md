@@ -4,7 +4,7 @@
 title: "rx_read_xdf: Read an XDF data source object (revoscalepy)" 
 description: "Read data from an “.xdf” file into a data frame." 
 keywords: "xdf" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

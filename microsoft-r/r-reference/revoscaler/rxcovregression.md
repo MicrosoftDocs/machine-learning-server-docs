@@ -4,7 +4,7 @@
 title: "rxCovCoef function (revoAnalytics) | Microsoft Docs" 
 description: " Obtain covariance and correlation matrices for the coefficient estimates within rxLinMod,  rxLogit, and rxGlm objects and explanatory variables within rxLinMod and rxLogit objects. " 
 keywords: "(revoAnalytics), rxCovCoef, rxCovCoef.rxLinMod, rxCovCoef.rxLogit, rxCovCoef.rxGlm, rxCorCoef, rxCorCoef.rxLinMod, rxCorCoef.rxLogit, rxCorCoef.rxGlm, rxCovData, rxCovData.rxLinMod, rxCovData.rxLogit, rxCorData, rxCorData.rxLinMod, rxCorData.rxLogit, models, regression" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

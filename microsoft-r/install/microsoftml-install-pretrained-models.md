@@ -3,8 +3,8 @@
 # required metadata
 title: "Pre-trained machine learning models for sentiment analysis and image detection - Machine Learning Server "
 keywords: ""
-author: "HeidiSteen"
-ms.author: "heidist"
+author: "dphansen"
+ms.author: "davidph"
 manager: "cgronlun"
 ms.date: "02/16/2018"
 ms.topic: "conceptual"

@@ -4,7 +4,7 @@
 title: "rx_logit: Fit a logistic regression model (revoscalepy)" 
 description: "Use rx_logit to fit logistic regression models for small or large data sets." 
 keywords: "logic" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 
