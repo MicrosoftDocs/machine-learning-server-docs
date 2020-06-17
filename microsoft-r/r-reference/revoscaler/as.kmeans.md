@@ -4,7 +4,7 @@
 title: "as.kmeans function (revoAnalytics) | Microsoft Docs" 
 description: " Converts objects containing RevoScaleR-computed k-means clusters to an R kmeans object. " 
 keywords: "(revoAnalytics), as.kmeans, as.kmeans.rxKmeans, category, models" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

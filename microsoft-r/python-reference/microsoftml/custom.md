@@ -4,7 +4,7 @@
 title: "custom: custom" 
 description: "Remover with list of stopwords specified by the user." 
 keywords: "stop-words" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

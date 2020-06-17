@@ -4,7 +4,7 @@
 title: "rxGetPartitions function (revoAnalytics) | Microsoft Docs" 
 description: " Get partitions enumeration of a partitioned Xdf data source. " 
 keywords: "(revoAnalytics), rxGetPartitions, GetPartitions" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

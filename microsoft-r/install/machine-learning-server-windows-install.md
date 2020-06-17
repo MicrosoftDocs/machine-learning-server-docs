@@ -3,8 +3,8 @@
 title: "Install Machine Learning Server for Windows"
 description: "How to install, connect to, and use Machine Learning Server on computers running the Windows operating system."
 keywords: ""
-author: "HeidiSteen"
-ms.author: "heidist"
+author: "dphansen"
+ms.author: "davidph"
 manager: "cgronlun"
 ms.date: 07/15/2019
 ms.topic: "conceptual"

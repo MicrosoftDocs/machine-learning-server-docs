@@ -4,7 +4,7 @@
 title: "getRemoteFile function (mrsdeploy) | Microsoft Docs" 
 description: " Get the content of a file from the working directory of the remote R session. " 
 keywords: "(mrsdeploy), getRemoteFile" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

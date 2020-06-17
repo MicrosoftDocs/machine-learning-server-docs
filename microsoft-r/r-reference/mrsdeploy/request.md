@@ -4,7 +4,7 @@
 title: "request function (mrsdeploy) | Microsoft Docs" 
 description: " HTTP requests made easy and more fluent around curl. " 
 keywords: "(mrsdeploy), request" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

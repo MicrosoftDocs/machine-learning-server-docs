@@ -4,7 +4,7 @@
 title: "rxSqlServerDropTable function (revoAnalytics) | Microsoft Docs" 
 description: " Execute a SQL statement that drops a table or checks for existence. " 
 keywords: "(revoAnalytics), rxSqlServerDropTable, rxSqlServerTableExists, file" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

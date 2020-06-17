@@ -4,7 +4,7 @@
 title: "ensembleControl function (MicrosoftML) " 
 description: " Control the parameters used to create an ensemble. " 
 keywords: "(MicrosoftML), ensembleControl" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

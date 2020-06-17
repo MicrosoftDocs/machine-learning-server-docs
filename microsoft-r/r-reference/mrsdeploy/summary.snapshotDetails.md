@@ -4,7 +4,7 @@
 title: "summary.snapshotDetails function (mrsdeploy) | Microsoft Docs" 
 description: " Defines the R summary generic for snapshotDetails during a  listSnapshots(). " 
 keywords: "(mrsdeploy), summary.snapshotDetails" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

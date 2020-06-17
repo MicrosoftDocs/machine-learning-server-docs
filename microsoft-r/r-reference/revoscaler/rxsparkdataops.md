@@ -4,7 +4,7 @@
 title: "rxSparkListData, rxSparkRemoveData {RevoScaleR} function (revoAnalytics) | Microsoft Docs" 
 description: " Use these functions to manage the objects cached in the Spark memory system. These functions are only applicable when using [RxSpark](RxSpark.md) compute context. " 
 keywords: "(revoAnalytics), rxSparkListData, rxSparkRemoveData {RevoScaleR}, rxSparkListData, rxSparkRemoveData" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

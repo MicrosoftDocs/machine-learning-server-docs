@@ -4,7 +4,7 @@
 title: "rx_get_partitions: Get partitions of a partitioned XDF data source (revoscalepy)" 
 description: "Get partitions enumeration of a partitioned .xdf file data source." 
 keywords: "partition, execby, " 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

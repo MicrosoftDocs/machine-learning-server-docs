@@ -4,7 +4,7 @@
 title: "deleteServicePool function (mrsdeploy) | Microsoft Docs" 
 description: " Delete an existing dedicated pool for a published web service running on Machine Learning Server. " 
 keywords: "(mrsdeploy), deleteServicePool" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

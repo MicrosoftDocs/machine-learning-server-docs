@@ -4,7 +4,7 @@
 title: "adadelta_optimizer: adadelta_optimizer" 
 description: "Adaptive learning rate method." 
 keywords: "optimizer, adadelta" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

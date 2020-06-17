@@ -9,7 +9,7 @@ metadata:
   ms.service: machine-learning #Required; service per approved list. service slug assigned to your service by ACOM.
   ms.topic: landing-page # Required
   author: dphansen #Required; your GitHub user alias, with correct capitalization.
-  ms.author: heidist #Required; microsoft alias of author; optional team alias.
+  ms.author: "davidph" #Required; microsoft alias of author; optional team alias.
   ms.date: 11/19/2019 #Required; mm/dd/yyyy format.
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new

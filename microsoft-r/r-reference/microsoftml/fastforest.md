@@ -4,7 +4,7 @@
 title: "fastForest function (MicrosoftML) " 
 description: " Creates a list containing the function name and arguments to train a  FastForest model with [rxEnsemble](rxEnsemble.md). " 
 keywords: "(MicrosoftML), fastForest" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

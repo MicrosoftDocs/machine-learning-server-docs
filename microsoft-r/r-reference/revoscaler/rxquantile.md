@@ -4,7 +4,7 @@
 title: "rxQuantile function (revoAnalytics) | Microsoft Docs" 
 description: " Quickly computes approximate quantiles (without sorting) " 
 keywords: "(revoAnalytics), rxQuantile, univar" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

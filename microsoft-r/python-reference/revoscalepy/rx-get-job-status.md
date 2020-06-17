@@ -4,7 +4,7 @@
 title: "rx_get_job_status: Obtain Distributed Computing Job Status (revoscalepy)" 
 description: "Obtain distributed computing processing status for the specified job." 
 keywords: "job, status" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

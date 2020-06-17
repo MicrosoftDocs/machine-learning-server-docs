@@ -4,7 +4,7 @@
 title: "rxMerge function (revoAnalytics) | Microsoft Docs" 
 description: " Merge (join) two data sources on one or more match variables. The rxMerge function is multi-threaded. In local compute context, the data sources may be sorted .xdf files or data frames. In [RxSpark](RxSpark.md) compute context, the data sources may be [RxParquetData](RxSparkData.md), [RxHiveData](RxSparkData.md), [RxOrcData](RxSparkData.md), [RxXdfData](RxXdfData.md) or [RxTextData](RxTextData.md). " 
 keywords: "(revoAnalytics), rxMerge, rxMergeXdf, file" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

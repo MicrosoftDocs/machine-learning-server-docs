@@ -4,7 +4,7 @@
 title: "RevoScaleR-defunct function (RevoScaleR) " 
 description: " The functions or variables listed here are no longer part of RevoScaleR as they are no longer needed.  " 
 keywords: "(RevoScaleR), RevoScaleR-defunct, rxGetVarInfoXdf, rxGetInfoXdf" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: "09/07/2017" 
 ms.topic: "reference" 

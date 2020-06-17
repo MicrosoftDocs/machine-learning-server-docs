@@ -4,7 +4,7 @@
 title: "rxOptions function (revoAnalytics) | Microsoft Docs" 
 description: " Functions to specify and retrieve options needed for **RevoScaleR** computations. These need to be set only once to carry out multiple computations. " 
 keywords: "(revoAnalytics), rxOptions, rxGetOption, rxIsExpressEdition, environment, error, print" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

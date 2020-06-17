@@ -4,7 +4,7 @@
 title: "drop_columns: Drops columns from the dataset" 
 description: "Specified columns to drop from the dataset." 
 keywords: "transform, schema" 
-author: "HeidiSteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

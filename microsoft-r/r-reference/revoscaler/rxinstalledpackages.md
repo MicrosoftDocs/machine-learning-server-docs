@@ -4,7 +4,7 @@
 title: "rxInstalledPackages function (revoAnalytics) | Microsoft Docs" 
 description: " Find (or retrieve) details of installed packages for a compute context. " 
 keywords: "(revoAnalytics), rxInstalledPackages, packages, sql, install, uninstall, remove, use" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

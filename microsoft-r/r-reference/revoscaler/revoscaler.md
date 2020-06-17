@@ -4,8 +4,8 @@
 title: "RevoScaleR package for R (Machine Learning Server) "
 description: "Function help reference for the RevoScaleR R package of Machine Learning Server and Microsoft R"
 keywords: "RevoScaleR, ScaleR"
-author: "HeidiSteen"
-ms.author: "heidist"
+author: "dphansen"
+ms.author: "davidph"
 manager: "cgronlun"
 ms.date: 07/15/2019
 ms.topic: "reference"

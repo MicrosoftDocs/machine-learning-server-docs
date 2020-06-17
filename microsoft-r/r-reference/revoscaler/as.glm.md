@@ -4,7 +4,7 @@
 title: "as.glm function (revoAnalytics) | Microsoft Docs" 
 description: " Converts objects containing generalized linear model results to a glm object. " 
 keywords: "(revoAnalytics), as.glm, as.glm.rxLogit, as.glm.rxGlm" 
-author: "heidisteen" 
+author: "dphansen" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 
