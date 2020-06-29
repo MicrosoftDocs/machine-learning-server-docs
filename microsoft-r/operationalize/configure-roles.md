@@ -141,7 +141,7 @@ On each web node, edit the appsettings.json configuration file in order to decla
    > 
    > 2. Ensure that the username returned for the value of 'UniqueUserIdentifierAttributeName' matches the username returned by 'SearchFilter'. For example, if `"SearchFilter": "cn={0}"` and `"UniqueUserIdentifierAttributeName": "userPrincipalName"`, then the values for `cn` and `userPrincipalName` must match.
    > 
-   > 3. For R Server 9.1 users: If you specify LDAP Root as the SearchBase in web node's appsettings.json, a search of the roles returns [LDAP referrals](https://technet.microsoft.com/en-us/library/cc978014.aspx) and throws a 'LDAPReferralException'. A workaround is to change the LDAP port in web node's appsettings.json from 389 to Global Catalog Port 3268. Or, for LDAPS, change Port to 3269 instead of 636. Global Catalogs do not return LDAP referrals in LDAP Search Results.  
+   > 3. For R Server 9.1 users: If you specify LDAP Root as the SearchBase in web node's appsettings.json, a search of the roles returns [LDAP referrals](https://technet.microsoft.com/library/cc978014.aspx) and throws a 'LDAPReferralException'. A workaround is to change the LDAP port in web node's appsettings.json from 389 to Global Catalog Port 3268. Or, for LDAPS, change Port to 3269 instead of 636. Global Catalogs do not return LDAP referrals in LDAP Search Results.  
 
 
 ### Step 2. Validate groups against AD/LDAP or AAD
