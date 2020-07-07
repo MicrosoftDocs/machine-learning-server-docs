@@ -194,7 +194,7 @@ rxLinePlot(incwage ~ age, data=censusWorkersCubeDF,
 
 The resulting plot shows clearly the relationship of income on age:
 
-![](media/how-to-revoscaler-crosstabs/image5.png)
+![Chart showing relationship of income and age](media/how-to-revoscaler-crosstabs/image5.png)
 
 ## Transforming Data
 
