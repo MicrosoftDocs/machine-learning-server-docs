@@ -472,9 +472,9 @@ The power of *rxCrossTabs* is most evident when you need to tabulate a data set 
 
 >The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](tutorial-revoscaler-data-import-transform.md#chunking)
 
+```r
 #  A Large Data Example
 
-```r
 bigDataDir <- "C:/MRS/Data"
 bigAirData <- file.path(bigDataDir, "AirOnTime87to12/AirOnTime87to12.xdf")
 arrDelayXT <- rxCrossTabs(ArrDelay ~ UniqueCarrier:DayOfWeek, 
