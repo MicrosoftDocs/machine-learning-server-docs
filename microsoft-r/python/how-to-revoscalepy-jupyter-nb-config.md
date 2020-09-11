@@ -2,7 +2,7 @@
 
 # required metadata
 title: "Configure Jupyter Notebooks in Machine Learning Server "
-description: "How to configure a Jupyter notebook to call Python functions from revoscalepay and microsofml modules in Machine learning Server."
+description: "How to configure a Jupyter Notebook to call Python functions from revoscalepay and microsofml modules in Machine learning Server."
 keywords: ""
 author: "dphansen"
 ms.author: "davidph"
