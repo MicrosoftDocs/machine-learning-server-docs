@@ -4,7 +4,7 @@
 title: "Return the Microsoft R Home Directory" 
 description: "Return the Microsoft R home directory. " 
 keywords: ", Revo.home, utilities, documentation" 
-author: "richcalaway"
+Author: "dphansen"
 ms.author: "richcala" 
 manager: "cgronlun" 
 ms.date: 07/15/2019

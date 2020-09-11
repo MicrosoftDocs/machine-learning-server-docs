@@ -391,7 +391,7 @@ regression](https://en.wikipedia.org/wiki/Logistic_regression)
 Training of L1-Regularized Log-Linear Models](https://research.microsoft.com/apps/pubs/default.aspx?id=78900)
 
 [Test Run - L1
-and L2 Regularization for Machine Learning](https://msdn.microsoft.com/en-us/magazine/dn904675.aspx)
+and L2 Regularization for Machine Learning](https://msdn.microsoft.com/magazine/dn904675.aspx)
 
 
 ## Example

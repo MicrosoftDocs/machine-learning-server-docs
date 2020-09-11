@@ -4,7 +4,7 @@
 title: "Class PemaMean" 
 description: " Example PEMA reference class to compute mean " 
 keywords: "RevoPemaR, PemaMean-class, classes" 
-author: "richcalaway"
+Author: "dphansen"
 ms.author: "richcala" 
 manager: "cgronlun" 
 ms.date: "03/23/2017" 

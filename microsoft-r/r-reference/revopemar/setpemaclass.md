@@ -4,7 +4,7 @@
 title: " PEMA classes " 
 description: " Returns a generator function for creating analysis reference class objects to use in pemaCompute. " 
 keywords: "RevoPemaR, setPemaClass, methods" 
-author: "richcalaway"
+Author: "dphansen"
 ms.author: "richcala" 
 manager: "cgronlun" 
 ms.date: "03/23/2017" 

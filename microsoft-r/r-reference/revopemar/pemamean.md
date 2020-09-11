@@ -4,7 +4,7 @@
 title: " Generator for an PemaMean reference class object " 
 description: " Generator for an PemaMean reference class object, inheriting from PemaBaseClass, to be used with pemaCompute. " 
 keywords: "RevoPemaR, PemaMean,  models " 
-author: "richcalaway"
+Author: "dphansen"
 ms.author: "richcala" 
 manager: "cgronlun" 
 ms.date: "03/23/2017" 

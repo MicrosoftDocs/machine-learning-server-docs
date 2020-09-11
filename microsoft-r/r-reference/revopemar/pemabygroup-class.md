@@ -4,7 +4,7 @@
 title: "Class PemaByGroup" 
 description: " Example PEMA reference class to compute arbitrary by-group statistics " 
 keywords: "RevoPemaR, PemaByGroup-class, classes" 
-author: "richcalaway"
+Author: "dphansen"
 ms.author: "richcala" 
 manager: "cgronlun" 
 ms.date: "03/23/2017" 

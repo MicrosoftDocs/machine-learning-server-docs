@@ -4,7 +4,7 @@
 title: " Generator for a PemaBaseClass reference class object " 
 description: " Generator for a PemaBaseClass reference class object to be used with pemaCompute. " 
 keywords: "RevoPemaR, PemaBaseClass,  models " 
-author: "richcalaway"
+Author: "dphansen"
 ms.author: "richcala" 
 manager: "cgronlun" 
 ms.date: "03/23/2017" 
