@@ -4,7 +4,7 @@
 title: " Comute PEMA " 
 description: " Use a PemaBaseClass reference class object to perform a Parallel External Memory Algorithm computation. " 
 keywords: "RevoPemaR, pemaCompute, models" 
-Author: "dphansen"
+author: "dphansen"
 ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: "03/23/2017" 

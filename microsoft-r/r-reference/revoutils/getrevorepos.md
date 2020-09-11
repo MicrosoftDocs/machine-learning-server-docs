@@ -4,7 +4,7 @@
 title: " Get Path to Package Repositories " 
 description: " `getRevoRepos` returns the path to either the Revolution Analytics CRAN mirror or the versioned package source repository maintained by Microsoft. " 
 keywords: ", getRevoRepos,  ~kwd1 ,  ~kwd2 " 
-Author: "dphansen"
+author: "dphansen"
 ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019

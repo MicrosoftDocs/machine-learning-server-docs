@@ -4,7 +4,7 @@
 title: " Obtain Total System Memory " 
 description: " Uses operating system tools to return total system memory. " 
 keywords: ", totalSystemMemory,  sysdata " 
-Author: "dphansen"
+author: "dphansen"
 ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019

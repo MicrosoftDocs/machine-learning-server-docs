@@ -4,7 +4,7 @@
 title: " Generator for an PemaByGroup reference class object " 
 description: " Generator for an PemaByGroup reference class object to be used with pemaCompute. This will compute arbitrary statistics by a grouping variable in a data set. " 
 keywords: "RevoPemaR, PemaByGroup,  models " 
-Author: "dphansen"
+author: "dphansen"
 ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: "03/23/2017" 
