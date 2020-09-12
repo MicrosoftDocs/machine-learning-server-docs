@@ -33,7 +33,7 @@ We recommend that you read this introduction to understand the requirements and 
 
 + [Data Science End-to-End Walkthrough](https://msdn.microsoft.com/library/mt612857.aspx): Load, explore, and analyze the New York City taxi dataset. Build models and deploy them to SQL Server for production.
 + [Using the RevoScaleR Packages](https://msdn.microsoft.com/library/mt637368.aspx): Deep dive on the anaytical sunctions provided by the **RevoScaleR** package. Demonstrates how to create and use compute contexts, how to move data between local and server compute contexts using XDF files, and creates a simulation using R code that runs in SQL Server.
-+ [Data Science Scenarios and Solution Templates](https://msdn.microsoft.com/en-us/library/mt693423.aspx): Includes all the R and T-SQL code you need for fraud detection, churn analysis, predictive maintenance, and demand forecasting.
++ [Data Science Scenarios and Solution Templates](https://msdn.microsoft.com/library/mt693423.aspx): Includes all the R and T-SQL code you need for fraud detection, churn analysis, predictive maintenance, and demand forecasting.
 
 All tutorials include sample code, along with explanations of how to work with SQL and R.
 
@@ -75,7 +75,7 @@ If you run R code within T-SQL code, the server is always used as the compute co
 
 For more information, see SQL Server 2016 Books Online:
  + [Data Exploration and Predictive Modeling with R](https://msdn.microsoft.com/library/mt590947.aspx) 
- + [R Interoperability in SQL Server R Services](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/r-interoperability-in-sql-server)
+ + [R Interoperability in SQL Server R Services](https://docs.microsoft.com/sql/advanced-analytics/r/r-interoperability-in-sql-server)
 
 ### Deploying, Managing, and Optimizing Solutions
 
@@ -90,7 +90,7 @@ Finally, because R Services is integrated with SQL Server, you can use database 
 For more information, see SQL Server 2016 Books Online:
  + [Operationalizing Your R Code](https://msdn.microsoft.com/library/mt590864.aspx)
  + [Resource Governance for R Services](https://msdn.microsoft.com/library/mt703708.aspx)
- + [SQL Server R Services Performance Tuning](https://msdn.microsoft.com/en-us/library/mt723573.aspx)
+ + [SQL Server R Services Performance Tuning](https://msdn.microsoft.com/library/mt723573.aspx)
 
 ## Related Guides
 

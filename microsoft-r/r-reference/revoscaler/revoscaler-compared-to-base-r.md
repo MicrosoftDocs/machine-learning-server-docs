@@ -88,4 +88,4 @@ This article provides a list of the functions provided by the **RevoScaleR** pac
 
 
 ## See Also  
- [SQL Server R Services Features and Tasks](https://msdn.microsoft.com/en-us/library/mt590811.aspx)  
+ [SQL Server R Services Features and Tasks](https://msdn.microsoft.com/library/mt590811.aspx)  

@@ -280,7 +280,7 @@ The following example uses the SalelOrderHeader table because it provides more c
 
 Continue on to the following data import articles to learn more about XDF, data source objects, and other data formats:
 
-+ [SQL Server tutorial for R](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/deepdive-create-sql-server-data-objects-using-rxsqlserverdata)	
++ [SQL Server tutorial for R](https://docs.microsoft.com/sql/advanced-analytics/tutorials/deepdive-create-sql-server-data-objects-using-rxsqlserverdata)	
 + [XDF files](concept-what-is-xdf.md)	
 + [Data Sources](how-to-revoscaler-data-source.md)	
 + [Import text data](how-to-revoscaler-data-import.md)

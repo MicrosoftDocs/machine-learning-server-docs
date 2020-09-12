@@ -2,7 +2,7 @@
 
 # required metadata 
 title: "rxRealTimeScoring function (revoAnalytics) | Microsoft Docs" 
-description: " Real-time scoring brings the rxPredict functionality available in **RevoScaleR/revoscalepy** and **MicrosoftML** packages to  Microsoft ML Server and SQL Server platforms with near real-time performance.  This functionality is available on SQL Server 2017+. On SQL Server 2016, you can take advantage of this functionality by upgrading your in-database R Services to the latest Microsoft ML Server using the information in the following [link](https://docs.microsoft.com/en-us/sql/advanced-analytics/r-services/use-sqlbindr-exe-to-upgrade-an-instance-of-r-services) .  **NOTE:** This document contains information regarding **Real-time scoring in SQL Server ML Services**. For information regarding **Real-time scoring in ML Server**, please refer to the [publishService](https://msdn.microsoft.com/en-us/microsoft-r/operationalize/data-scientist-manage-services#publishservice)  documentation. " 
+description: " Real-time scoring brings the rxPredict functionality available in **RevoScaleR/revoscalepy** and **MicrosoftML** packages to  Microsoft ML Server and SQL Server platforms with near real-time performance.  This functionality is available on SQL Server 2017+. On SQL Server 2016, you can take advantage of this functionality by upgrading your in-database R Services to the latest Microsoft ML Server using the information in the following [link](https://docs.microsoft.com/sql/advanced-analytics/r-services/use-sqlbindr-exe-to-upgrade-an-instance-of-r-services) .  **NOTE:** This document contains information regarding **Real-time scoring in SQL Server ML Services**. For information regarding **Real-time scoring in ML Server**, please refer to the [publishService](https://msdn.microsoft.com/microsoft-r/operationalize/data-scientist-manage-services#publishservice)  documentation. " 
 keywords: "(revoAnalytics), rxRealTimeScoring, rxRTS, realtime, realtimescoring, rts, rxPredict" 
 author: "dphansen" 
 manager: "cgronlun" 
@@ -31,10 +31,10 @@ ms.custom: ""
 
 Real-time scoring brings the `rxPredict` functionality available in **RevoScaleR/revoscalepy** and **MicrosoftML** packages to  Microsoft ML Server and SQL Server platforms with near real-time performance.
 
-This functionality is available on SQL Server 2017+. On SQL Server 2016, you can take advantage of this functionality by upgrading your in-database R Services to the latest Microsoft ML Server using the information in the following [`link`](https://docs.microsoft.com/en-us/sql/advanced-analytics/r-services/use-sqlbindr-exe-to-upgrade-an-instance-of-r-services)
+This functionality is available on SQL Server 2017+. On SQL Server 2016, you can take advantage of this functionality by upgrading your in-database R Services to the latest Microsoft ML Server using the information in the following [`link`](https://docs.microsoft.com/sql/advanced-analytics/r-services/use-sqlbindr-exe-to-upgrade-an-instance-of-r-services)
 .
 
-**NOTE:** This document contains information regarding **Real-time scoring in SQL Server ML Services**. For information regarding **Real-time scoring in ML Server**, please refer to the [`publishService`](https://msdn.microsoft.com/en-us/microsoft-r/operationalize/data-scientist-manage-services#publishservice)
+**NOTE:** This document contains information regarding **Real-time scoring in SQL Server ML Services**. For information regarding **Real-time scoring in ML Server**, please refer to the [`publishService`](https://msdn.microsoft.com/microsoft-r/operationalize/data-scientist-manage-services#publishservice)
  documentation.
 
 
@@ -248,7 +248,7 @@ Arguments other than `modelObject`/`data` available in `rxPredict` are not suppo
 
 
 1 
- `sp_rxPredict` with `RevoScaleR` model only supports only following .NET column types are double, float, short, ushort, long, ulong and string. You may need to filter out unsupported types in your input data before using it for real-time scoring. For corresponding SQL type information refer [`SQL-CLR Type Mapping`](https://msdn.microsoft.com/en-us/library/bb386947(v=vs.110).aspx)
+ `sp_rxPredict` with `RevoScaleR` model only supports only following .NET column types are double, float, short, ushort, long, ulong and string. You may need to filter out unsupported types in your input data before using it for real-time scoring. For corresponding SQL type information refer [`SQL-CLR Type Mapping`](https://msdn.microsoft.com/library/bb386947(v=vs.110).aspx)
 
 
 

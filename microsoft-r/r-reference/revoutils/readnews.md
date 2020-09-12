@@ -4,8 +4,8 @@
 title: "Read R or Package NEWS Files" 
 description: "Read the R NEWS file or a package's NEWS or NEWS.Rd file." 
 keywords: ", readNews, utilities, documentation" 
-author: "richcalaway"
-ms.author: "richcala" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

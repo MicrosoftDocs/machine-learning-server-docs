@@ -87,7 +87,7 @@ Returns an error if the Query is invalid.
  ## References
 
 Creating a Demo OLAP Cube (the same as the one used in the examples): 
-[`https://msdn.microsoft.com/en-us/library/ms170208.aspx`](https://msdn.microsoft.com/en-us/library/ms170208.aspx)
+[`https://msdn.microsoft.com/library/ms170208.aspx`](https://msdn.microsoft.com/library/ms170208.aspx)
 
 
 
