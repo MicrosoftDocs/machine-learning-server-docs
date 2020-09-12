@@ -4,8 +4,8 @@
 title: "Class PemaBaseClass" 
 description: " PEMA base reference class " 
 keywords: "RevoPemaR, PemaBaseClass-class, classes" 
-author: "richcalaway"
-ms.author: "richcala" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 
