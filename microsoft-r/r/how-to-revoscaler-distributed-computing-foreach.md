@@ -25,7 +25,7 @@ ms.prod: "mlserver"
 
 # Using foreach and iterators for manual parallel execution
 
-Although RevoScaleR performs parallel execution automatically, you can manage parallel execution yourself using the open-source [foreach package](https://CRAN.R-project.org/package=foreach). This package provides a looping structure for R script. When you need to loop through repeated operations, and you have multiple processors or nodes to work with, you can use **foreach** in your script to execute a for loop in parallel. 
+Although RevoScaleR performs parallel execution automatically, you can manage parallel execution yourself using the open-source [foreach package](https://CRAN.R-project.org/package=foreach). This package provides a looping structure for R script. When you need to loop through repeated operations, and you have multiple processors or nodes to work with, you can use **foreach** in your script to execute a [for loop](https://r-coder.com/for-loop-r/) in parallel. 
 Developed by Microsoft, foreach is an open-source package that is bundled with Machine Learning Server but is also available on the Comprehensive R Archive Network, CRAN.  
 
 > [!Tip]
@@ -44,7 +44,7 @@ vector `c(H, T)`. To run this simulation 10 times sequentially, use
 foreach with the `%do%` operator:
 
     > library(foreach)
-    > foreach(i=1:10) %do% sample(c("H", "T"), 10000, replace=TRUE)
+    > foreach(i = 1:10) %do% sample(c("H", "T"), 10000, replace = TRUE)
 
 Comparing the foreach output with that of a similar `for` loop shows
 one obvious difference: foreach returns a list containing the value
@@ -55,7 +55,7 @@ effects to do its work.
 We can parallelize the operation immediately by replacing `%do%` with
 `%dopar%`:
 
-    > foreach(i=1:10) %dopar% sample(c("H", "T"), 10000, replace=TRUE)
+    > foreach(i = 1:10) %dopar% sample(c("H", "T"), 10000, replace = TRUE)
 
 However, if we run this example, we see the following warning:
 
@@ -111,16 +111,16 @@ cluster and register it:
     > registerDoParallel(cl)
 
 Once you’ve registered the parallel backend, you’re ready to run
-foreac` code in parallel. For example, to see how long it takes to run
+foreach code in parallel. For example, to see how long it takes to run
 10,000 bootstrap iterations in parallel on all available cores, you can
 run the following code:
 
-    > x <- iris[which(iris[,5] != "setosa"), c(1,5)]
+    > x <- iris[which(iris[,5] != "setosa"), c(1, 5)]
     > trials <- 10000
     > ptime <- system.time({
     +     r <- foreach(icount(trials), .combine = cbind) %dopar% {
     +         ind <- sample(100, 100, replace = TRUE)
-    +         result1 <- glm(x[ind, 2] ~ x[ind, 1], family=binomial(logit))
+    +         result1 <- glm(x[ind, 2] ~ x[ind, 1], family = binomial(logit))
     +         coefficients(result1)
     +    }
     + })[3]
@@ -171,7 +171,7 @@ parallel):
     x <- matrix(0, length(avec), length(bvec))
     for (j in 1:length(bvec)) {
           for (i in 1:length(avec)) {
-                  x[i,j] <- sim(avec[i], bvec[j])
+                  x[i, j] <- sim(avec[i], bvec[j])
                     }
     }
     x
@@ -187,8 +187,8 @@ vectors, which are combined in the outer loop into a matrix. Here’s how
 to do that using the `%:%` operator:
 
     x <-
-      foreach(b=bvec, .combine='cbind') %:%
-          foreach(a=avec, .combine='c') %do% {
+      foreach(b = bvec, .combine = 'cbind') %:%
+          foreach(a = avec, .combine = 'c') %do% {
               sim(a, b)
           }
     x
@@ -227,8 +227,8 @@ operator in the example above. And when we parallelize that nested
 a single stream of tasks that can all be executed in parallel:
 
     x <-
-      foreach(b=bvec, .combine='cbind') %:%
-          foreach(a=avec, .combine='c') %dopar% {
+      foreach(b = bvec, .combine = 'cbind') %:%
+          foreach(a = avec, .combine = 'c') %dopar% {
               sim(a, b)
           }
     x
@@ -268,7 +268,7 @@ the values:
 You can create iterators from matrices and data frames, using the `by`
 argument to specify whether to iterate by row or column:
 
-    > istate <- iter(state.x77, by='row')
+    > istate <- iter(state.x77, by = 'row')
     > nextElem(istate)
             Population Income Illiteracy Life Exp Murder HS Grad Frost  Area
     Alabama       3615   3624        2.1    69.05   15.1    41.3    20 50708
@@ -288,9 +288,9 @@ can be an endless source of values:
 For practical applications, iterators can be paired with **foreach** to
 obtain parallel results quite easily:
 
-    > x <- matrix(rnorm(1000000), ncol=1000)
-    > itx <- iter(x, by='row')
-    > foreach(i=itx, .combine=c) %dopar% mean(i)
+    > x <- matrix(rnorm(1000000), ncol = 1000)
+    > itx <- iter(x, by = 'row')
+    > foreach(i = itx, .combine = c) %dopar% mean(i)
 
 ### Some Special Iterators
 
@@ -301,7 +301,7 @@ For example, the `irnorm` function creates an iterator for which each
 value is drawn from a specified random normal distribution:
 
     > library(iterators)
-    > itrn <- irnorm(1, count=10)
+    > itrn <- irnorm(1, count = 10)
     > nextElem(itrn)
     [1] 0.6300053
     > nextElem(itrn)
@@ -317,7 +317,7 @@ ensure independent random number streams on each worker.)
 
 We can then use these functions just as we used `irnorm`:
 
-    > itru <- irunif(1, count=10)
+    > itru <- irunif(1, count = 10)
     > nextElem(itru)
     [1] 0.4960539
     > nextElem(itru)
@@ -395,7 +395,7 @@ methods:
 
     iforever <- function(x) {
         nextEl <- function() x
-        obj <- list(nextElem=nextEl)
+        obj <- list(nextElem = nextEl)
         class(obj) <- c('iforever', 'abstractiter', 'iter')
         obj
     }
@@ -450,7 +450,7 @@ call the new function `irep`, and give it another argument called
             }
             x
         }
-        obj <- list(nextElem=nextEl)
+        obj <- list(nextElem = nextEl)
         class(obj) <- c('irep', 'abstractiter', 'iter')
         obj
     }
