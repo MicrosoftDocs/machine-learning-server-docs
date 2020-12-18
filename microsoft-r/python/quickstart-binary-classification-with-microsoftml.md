@@ -42,12 +42,12 @@ Before you begin this QuickStart, have the following ready:
 > [!div class="checklist"]
 > * An instance of [Machine Learning Server ](../what-is-machine-learning-server.md) installed with the Python option.<br/>&nbsp;
 > * Familiarity with Python. [Here's a video tutorial](https://mva.microsoft.com/en-us/training-courses/introduction-to-programming-with-python-8360?l=lqhuMxFz_8904984382).<br/>&nbsp;
-> * Familiarity with Jupyter notebooks. Learn [how to load sample Python notebooks](how-to-revoscalepy-jupyter-nb-config.md). 
+> * Familiarity with Jupyter Notebooks. Learn [how to load sample Python notebooks](how-to-revoscalepy-jupyter-nb-config.md). 
 
 
 ## Example code
 
-The example for this quickstart is stored in a Jupyter notebook. This notebook format allows you to not only see the code alongside detailed explanations, but also allows you to try out the code.
+The example for this quickstart is stored in a Jupyter Notebook. This notebook format allows you to not only see the code alongside detailed explanations, but also allows you to try out the code.
 
 
 
@@ -64,7 +64,7 @@ This quickstart notebook walks you through how to:
 
 You can try it yourself with the notebook. 
 
-### &#9658; [**Download the Jupyter notebook to try it out**](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/quickstarts/binary-classification/Binary%2BClassification%2BQuickstart.ipynb).
+### &#9658; [**Download the Jupyter Notebook to try it out**](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/quickstarts/binary-classification/Binary%2BClassification%2BQuickstart.ipynb).
 
 
 
