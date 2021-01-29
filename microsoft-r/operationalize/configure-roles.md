@@ -82,13 +82,13 @@ Here is an example of different LDAP group configurations and the resulting role
 
 |Example User <br>/ Persona|User's <br>LDAP Groups||Machine&nbsp;Learning&nbsp;Server<br>RBAC Configuration|User's<br>Role|
 |:-------------:|:------------:|:-:|------------|:------------:| 
-|![Checkbox](./media/configure-roles/p1.png)<br>Administrator|**admins**<br>engineering<br>FTE-north|+|"Owner":&nbsp;["**admins**",&nbsp;"managers"],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": ["stats"]|**Owner**|
-|![Checkbox](./media/configure-roles/p2.png)<br>Lead data scientist|**managers**<br>**stats**<br>FTE-north|+|"Owner": ["admins", "**managers**"],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": ["**stats**"],<br>"Reader": ["app-devs"]|**Owner**|
-|![Checkbox](./media/configure-roles/p2.png)<br>R programmer|**stats**<br>FTE-north|+|"Owner": ["admins", "managers"],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": ["**stats**"],<br>"Reader": ["app-devs"]|**Contributor**|
-|![Checkbox](./media/configure-roles/da-persona.png)<br>Python developer|stats<br>FTE-north|+|"Owner": ["admins", "managers"]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=|**Contributor**|
-|![Checkbox](./media/configure-roles/p3.png)<br>Application&nbsp;Developer|**app-devs**<br>FTE-north|+|"Owner": ["admins", "managers"],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": ["stats"],<br>"Reader": ["**app-devs**"]|**Reader**|
-|![Checkbox](./media/configure-roles/p3.png)<br>System Integrator|vendor2|+|"Owner": ["admins", "managers"],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": ["stats"]|**Reader**|
-|![Checkbox](./media/configure-roles/p4.png)<br>Sales|sales|+|"Owner": ["admins", "managers"],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": ["stats"]<br>"Reader": ["app-devs"]|no role or permissions|
+|![Icon for the administrator user.](./media/configure-roles/p1.png)<br>Administrator|**admins**<br>engineering<br>FTE-north|+|"Owner":&nbsp;["**admins**",&nbsp;"managers"],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": ["stats"]|**Owner**|
+|![Icon for the lead data scientist user.](./media/configure-roles/p2.png)<br>Lead data scientist|**managers**<br>**stats**<br>FTE-north|+|"Owner": ["admins", "**managers**"],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": ["**stats**"],<br>"Reader": ["app-devs"]|**Owner**|
+|![Icon for the R programmer user.](./media/configure-roles/p2.png)<br>R programmer|**stats**<br>FTE-north|+|"Owner": ["admins", "managers"],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": ["**stats**"],<br>"Reader": ["app-devs"]|**Contributor**|
+|![Icon for the Python developer user.](./media/configure-roles/da-persona.png)<br>Python developer|stats<br>FTE-north|+|"Owner": ["admins", "managers"]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=|**Contributor**|
+|![Icon for the application developer user.](./media/configure-roles/p3.png)<br>Application&nbsp;Developer|**app-devs**<br>FTE-north|+|"Owner": ["admins", "managers"],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": ["stats"],<br>"Reader": ["**app-devs**"]|**Reader**|
+|![Icon for the system integrator user.](./media/configure-roles/p3.png)<br>System Integrator|vendor2|+|"Owner": ["admins", "managers"],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": ["stats"]|**Reader**|
+|![Icon for the sales user.](./media/configure-roles/p4.png)<br>Sales|sales|+|"Owner": ["admins", "managers"],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": ["stats"]<br>"Reader": ["app-devs"]|no role or permissions|
 
 ## Role configuration states
 
