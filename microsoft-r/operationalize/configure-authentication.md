@@ -28,7 +28,7 @@ ms.prod: "mlserver"
 
 Machine Learning Server's offers seamless integration with authentication solutions when configured to operationalize analytics.
 
-![Security](./media/configure-authentication/security.png)
+![Screenshot that shows machine learning's seamless integration with authentication solutions.](./media/configure-authentication/security.png)
 
 To secure connections and communications, you have several options:
 
@@ -192,7 +192,7 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 **Step 1: Log in to the Azure portal**
 
-1. Sign in to the [Azure portal](http://portal.azure.com).
+1. Sign in to the [Azure portal](https://portal.azure.com).
 
 1. Select the upper-right hand corner and select the Active Directory account from the list. If the Azure Active Directory has not been set up yet, contact your system administrator. In our example, that directory is `MyMLServer`.
 

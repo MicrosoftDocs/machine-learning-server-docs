@@ -129,11 +129,11 @@ a model.
 
 
  ### `dictionary`
- A `termDictionary` of whitelisted terms which accepts the following options:  
+ A `termDictionary` of allowlisted terms which accepts the following options:  
 *   `terms`,   
 *   `dataFile`, and  
 *   `sort`.   
-The default value is `NULL`.  Note that the stopwords list takes precedence over the dictionary whitelist as the stopwords are removed before the dictionary terms are whitelisted. 
+The default value is `NULL`.  Note that the stopwords list takes precedence over the dictionary allowlist as the stopwords are removed before the dictionary terms are allowlisted. 
 
 
 
