@@ -45,7 +45,7 @@ ms.technology: ""
 + Sample data (AirlineSubsetCsv mentioned in the example) downloaded from our [sample data web site](https://packages.revolutionanalytics.com/datasets/) to your Spark cluster.
 
 > [!Note]                                                                                                                 
-> Jupyter Notebook users, update your notebook to include the MMLSPy kernel. Select this kernel in your Jupyter notebook to use the interoperability feature.
+> Jupyter Notebook users, update your notebook to include the MMLSPy kernel. Select this kernel in your Jupyter Notebook to use the interoperability feature.
 >
 
 ## Import the relevant packages
