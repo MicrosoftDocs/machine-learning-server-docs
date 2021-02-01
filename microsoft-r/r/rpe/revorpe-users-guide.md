@@ -354,7 +354,7 @@ To open the Object Browser, do either of the following:
 
 The Object Browser appears as follows:
 
-![Object Browser](./media/revorpe-users-guide/object_browser.jpg)
+![Screenshot that shows the Object Browser.](./media/revorpe-users-guide/object_browser.jpg)
 
 The Object Browser consists of three panes. The left pane is a tree showing your global environment, all loaded packages (that is, packages in your current R search path), and all installed packages. When you click on an environment or package in the left pane, the top right pane shows all the objects in that environment or package.  For example, if you click **.GlobalEnv**, you see all the objects in your current R workspace. When you are in debug mode, you can see the variables in the local environment by examining **_Browser_Call**.
 
@@ -681,7 +681,7 @@ Document windows contain scripts. By default, they are tabbed. To instead use mu
 
 2.	Under **Environment**, click **General**. The **Options** dialog appears as follows:
 
-	![Options Dialog](./media/revorpe-users-guide/options_dialog.jpg)
+	![Screenshot that shows the Options dialog box.](./media/revorpe-users-guide/options_dialog.jpg)
 
 3.	Under **Windows layout**, select **Multiple documents**.
 
@@ -728,7 +728,7 @@ To add line numbers to your scripts:
 
 2.	Click **General**. The **Options** dialog appears as follows:
 
-	![Options Dialog](./media/revorpe-users-guide/options_dialog_2.jpg)
+	![Screenshot that shows the options for showing line numbers.](./media/revorpe-users-guide/options_dialog_2.jpg)
 
 3.	Under **Display**, click twice in the **Line numbers** check box to select the option.
 
@@ -742,7 +742,7 @@ To modify the tab settings for the Script window:
 
 2.	Click **Tabs**. The **Options** dialog appears as follows:
 
-	![Options Dialog](./media/revorpe-users-guide/options_dialog_3.jpg)
+	![Screenshot that shows the options for configuring tabs.](./media/revorpe-users-guide/options_dialog_3.jpg)
 
 3.	Specify the desired indenting for new lines, as follows:
 
@@ -768,7 +768,7 @@ To change the font characteristics for a window:
 
 3.	Under **Environment**, click **Fonts and Colors**. The dialog appears as follows:
 
-	![Options Dialog](./media/revorpe-users-guide/options_dialog_4.jpg)
+	![Screenshot that shows the options for configuring fonts and colors.](./media/revorpe-users-guide/options_dialog_4.jpg)
 
 4.	Under **Show settings for**, choose the type of window. Choose **Text Editor** to change the settings for the Script window, **Output Window** to change the settings for the Output or R Console window.
 
@@ -859,7 +859,7 @@ If you type these lines into your script (or copy and paste them from this docum
 
 Next, click the **Run Script** button ![Run Script](./media/revorpe-users-guide/run_button.jpg). The script runs, and the objects myVar and regressYOnX are created in your global environment, as you can see by looking at the Object Browser:
 
-![Object Browser](./media/revorpe-users-guide/object_browser_2.jpg)
+![Screenshot that shows the myVar and regressYOnX objects.](./media/revorpe-users-guide/object_browser_2.jpg)
 
 To test myVar, which should be equivalent to the built-in R function var, we simply need to create a vector x and see if the output of myVar is equivalent to the output of var. So we add the following lines to the script and re-run the script:
 
@@ -881,11 +881,11 @@ The R Console window shows the following results, which indicates that our funct
 
 To see what the problem is, we set a breakpoint in our script at the line that calls myVar, by clicking in the gray left margin of the script window, as shown:
 
-![Visual Debugger](./media/revorpe-users-guide/visual_debugger_breakpoint.jpg)
+![Screenshot that shows the line that calls myVar.](./media/revorpe-users-guide/visual_debugger_breakpoint.jpg)
 
 Click ![Run Button](./media/revorpe-users-guide/run_button.jpg) to run the script again. When the line containing the breakpoint is reached, execution halts, and the breakpoint shows an arrow, as shown:
 
-![Visual Debugger](./media/revorpe-users-guide/visual_debugger_debugging.jpg)
+![Screenshot that shows the arrow by the breakpoint.](./media/revorpe-users-guide/visual_debugger_debugging.jpg)
 
 Click the Step Into button ![Step Into Button](./media/revorpe-users-guide/step_into_button.jpg) to step into the function. The cursor moves to the first line of our myVar function:
 

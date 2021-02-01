@@ -104,7 +104,7 @@ Next, run a regression looking at the relationship between age, sex, and wage in
 
 The resulting graph shows that, in this data set, wage income is higher for males than females at every age:
 
-![Wage Income by Age and Sex](./media/tutorial-revoscaler-large-data-census/wage_income_age_graph.png)
+![Graph that shows wage income is higher for males than females at every age.](./media/tutorial-revoscaler-large-data-census/wage_income_age_graph.png)
 
 ## Looking at Weeks Worked by Age and Sex
 

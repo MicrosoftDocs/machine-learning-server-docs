@@ -73,7 +73,7 @@ The second step is to create an Agent Group.
 
 6.  Click **OK**.
 
-    ![Create Agent Group](./media/deployr-admin-configure-ca-sso/002-createagentgroup.jpg)
+    ![Screenshot that shows the newly created Agent Group.](./media/deployr-admin-configure-ca-sso/002-createagentgroup.jpg)
 
 7.  In the **Name** field, enter the name `deployrGroup`.
 
@@ -101,7 +101,7 @@ The second step is to create an Agent Group.
 
 4.  Select `ApacheDefaultsSettings`.
 
-    ![Modify Agent Configuration](./media/deployr-admin-configure-ca-sso/005-modifyagentconfig.jpg)
+    ![Screenshot that shows the Name field where you type the name deployrApacheSettings.](./media/deployr-admin-configure-ca-sso/005-modifyagentconfig.jpg)
 
 5.  In the **Name** field, enter the name `deployrApacheSettings`.
 
@@ -123,7 +123,7 @@ The second step is to create an Agent Group.
 
 5.  Click **OK**.
 
-    ![Modify Agent Configuration](./media/deployr-admin-configure-ca-sso/007.jpg)
+    ![Screenshot that shows the list of agent configuration objects.](./media/deployr-admin-configure-ca-sso/007.jpg)
 
 6.  In the table, click on the pencil icon to the left of `BadUrlChars`.
 
@@ -161,7 +161,7 @@ A domain is a logical grouping of resources associated with one or more user dir
 
 5.  In the **User Directory** window, click **Create** and fill in the following info:
 
-    ![Create User Directory](./media/deployr-admin-configure-ca-sso/010.jpg)
+    ![Screenshot that shows the information you need to create a user directory.](./media/deployr-admin-configure-ca-sso/010.jpg)
 
 6.  Click **Submit**.
 
@@ -179,7 +179,7 @@ Conceptually, a realm is the door that protects the resources.
 
 3.  Enter the following information in the form.
 
-    ![Create User Directory](./media/deployr-admin-configure-ca-sso/011.jpg)
+    ![Screenshot that shows how to create a realm.](./media/deployr-admin-configure-ca-sso/011.jpg)
 
 4.  In the **Rules** section, click **Create**.
 
@@ -209,7 +209,7 @@ A response returns information to the web agent or redirects the user to another
 
 2.  Enter the following information in the form.
 
-    ![Create Response](./media/deployr-admin-configure-ca-sso/014.jpg)
+    ![Screenshot that shows how to create a response.](./media/deployr-admin-configure-ca-sso/014.jpg)
 
 3.  Click **Create Response Attribute**. The **Create Response Attribute** window appears.
 
@@ -229,7 +229,7 @@ A response returns information to the web agent or redirects the user to another
 
 3.  Enter the following information in the form.
 
-    ![Create Response](./media/deployr-admin-configure-ca-sso/016.jpg)
+    ![Screenshot that shows how to create a response group.](./media/deployr-admin-configure-ca-sso/016.jpg)
 
 4.  Click **Add/Remove** and add `deployrGroupResponse`.
 
@@ -255,11 +255,11 @@ Policies define how users can interact with resources. When a user creates polic
 
 4.  Click the **Users** tab.
 
-    ![Add Members](./media/deployr-admin-configure-ca-sso/019.jpg)
+    ![Screenshot that shows the Users tab.](./media/deployr-admin-configure-ca-sso/019.jpg)
 
 5.  Click **Add Members**.
 
-    ![Add Members](./media/deployr-admin-configure-ca-sso/020.jpg)
+    ![Screenshot that shows how to add members.](./media/deployr-admin-configure-ca-sso/020.jpg)
 
 6.  Select `CN=scriptGroup,OU=engineering,DC=revolution,DC=com`.
 
