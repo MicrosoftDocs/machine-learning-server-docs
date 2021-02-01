@@ -333,7 +333,7 @@ We can also easily extract a subsample of the data file into a data frame in mem
 		varsToKeep = c("ArrDelay", "DayOfWeek"))
 	rxHistogram(~ArrDelay, data = myData)
 
-![ArrDelay Histogram](./media/tutorial-revoscaler-data-import-transform/arrdelay_histogram_2.png)
+![Histogram that shows the data for the flights that were between 4 and 5 hours late.](./media/tutorial-revoscaler-data-import-transform/arrdelay_histogram_2.png)
 
 ## Load a data subset
 

@@ -46,12 +46,12 @@ Before you begin this QuickStart, have the following ready:
 > * The [connection details (host, username, password)](../../operationalize/python/how-to-authenticate-in-python.md)  to that server instance from your administrator.  <br/>&nbsp;
 > * The [Python client libraries for remote access to Machine Learning Server](https://docs.microsoft.com/machine-learning-server/install/python-libraries-interpreter) installed on your machine.
 > * Familiarity with Python. [Here's a video tutorial](https://mva.microsoft.com/en-us/training-courses/introduction-to-programming-with-python-8360?l=lqhuMxFz_8904984382).<br/>&nbsp;
-> * Familiarity with Jupyter notebooks. Learn [how to load sample Python notebooks](../../python/how-to-revoscalepy-jupyter-nb-config.md). 
+> * Familiarity with Jupyter Notebooks. Learn [how to load sample Python notebooks](../../python/how-to-revoscalepy-jupyter-nb-config.md). 
 
 
 ## Example code
 
-The example for this quickstart is stored in a Jupyter notebook. This notebook format allows you to not only see the code alongside detailed explanations, but also allows you to try out the code.
+The example for this quickstart is stored in a Jupyter Notebook. This notebook format allows you to not only see the code alongside detailed explanations, but also allows you to try out the code.
 
 This example walks through the deployment of a Python model as a web service hosted in Machine Learning Server. We will build a simple linear model using the [rx_lin_mod](../../python-reference/revoscalepy/rx-lin-mod.md) function from the [revoscalepy package](../../python-reference/revoscalepy/revoscalepy-package.md) installed with Machine Learning Server or [locally on Windows machine](../../install/python-libraries-interpreter.md). This package requires a connection to Machine Learning Server.  
 
@@ -68,13 +68,13 @@ The notebook example walks you through how to:
 
 You can try it yourself with the notebook. 
 
-### &#9658; [**Download the Jupyter notebook to try it out**](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/operationalize/Quickstart_Publish_Python_Web_Service.ipynb).
+### &#9658; [**Download the Jupyter Notebook to try it out**](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/operationalize/Quickstart_Publish_Python_Web_Service.ipynb).
 
 ## Next steps
 
 After it has been deployed, the web service can be: 
 
-+ [Consumed directly in Python by someone else](how-to-consume-web-services.md) for testing purposes See an example in [this Jupyter notebook](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/operationalize/Explore_Consume_Python_Web_Services.ipynb).
++ [Consumed directly in Python by someone else](how-to-consume-web-services.md) for testing purposes See an example in [this Jupyter Notebook](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/operationalize/Explore_Consume_Python_Web_Services.ipynb).
 
 + [Integrated into an application by an application developer](../how-to-build-api-clients-from-swagger-for-app-integration.md)  using the  Swagger-based .JSON file produced when the web service was published. 
 

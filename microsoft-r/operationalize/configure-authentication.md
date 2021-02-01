@@ -28,7 +28,7 @@ ms.prod: "mlserver"
 
 Machine Learning Server's offers seamless integration with authentication solutions when configured to operationalize analytics.
 
-![Security](./media/configure-authentication/security.png)
+![Screenshot that shows machine learning's seamless integration with authentication solutions.](./media/configure-authentication/security.png)
 
 To secure connections and communications, you have several options:
 
@@ -192,13 +192,13 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 
 **Step 1: Log in to the Azure portal**
 
-1. Sign in to the [Azure portal](http://portal.azure.com).
+1. Sign in to the [Azure portal](https://portal.azure.com).
 
 1. Select the upper-right hand corner and select the Active Directory account from the list. If the Azure Active Directory has not been set up yet, contact your system administrator. In our example, that directory is `MyMLServer`.
 
 1. Select **Azure Active Directory** from the left-hand side. 
 
-   ![Azure Active Directory icon](./media/configure-authentication/aad-icon.png)
+   ![Screenshot that highlights the Azure Active Directory menu option.](./media/configure-authentication/aad-icon.png)
 
 1. Select **App registrations** tab at the top.
    The application list appears. You may not have any applications yet. 
@@ -210,10 +210,10 @@ You can make LDAP traffic confidential and secure using Secure Sockets Layer (SS
 Now, create a web app that is tied to the Azure Active Directory as follows: 
 
 1. Select **New application registration** at the top.    
-   ![New app registrations](./media/configure-authentication/aad-new-app-registration.png)
+   ![Screenshot that highlights the New application registration button.](./media/configure-authentication/aad-new-app-registration.png)
 
 1. Enter a **Name** for your application, such as `Machine Learning Server Web app`.
-   ![New app registrations](./media/configure-authentication/aad-create-web-app-name.png)
+   ![Screenshot that shows where to enter the name for your application.](./media/configure-authentication/aad-create-web-app-name.png)
 
 1. For the **Application type**, select the **Web app / API**. 
 
@@ -221,7 +221,7 @@ Now, create a web app that is tied to the Azure Active Directory as follows:
 
 1. Select **Create** to create the new web application.
 
-   ![New app registrations](./media/configure-authentication/aad-create-web-app.png)
+   ![Screenshot that highlights the Create button for creating a new web application.](./media/configure-authentication/aad-create-web-app.png)
 
    The application is created and its details appear onscreen.
 
@@ -233,11 +233,11 @@ Now, create a web app that is tied to the Azure Active Directory as follows:
 
 1. Select **Keys** from the **Settings** pane. The **Keys** pane appears.
 
-   ![Keys](./media/configure-authentication/aad-settings-keys.png)
+   ![Screenshot that highlights the Keys menu option.](./media/configure-authentication/aad-settings-keys.png)
 
 1. In the **Password** area, add a client key. Provide a description of your choosing and select a key duration.
 
-   ![Keys](./media/configure-authentication/aad-settings-keys-2.png)
+   ![Screenshot that shows the Passwords screen.](./media/configure-authentication/aad-settings-keys-2.png)
 
 1. Select **Save** to save the key. 
 
@@ -263,7 +263,7 @@ Now, let's create a native application. This application links the web applicati
 
 1. Select **New application registration** at the top.    
 
-   ![New app registrations](./media/configure-authentication/aad-new-app-registration.png)
+   ![Screenshot that shows where to select New application registration.](./media/configure-authentication/aad-new-app-registration.png)
 
 1. Enter a **Name** for your application, such as `Machine Learning Server native app`.
 
@@ -271,7 +271,7 @@ Now, let's create a native application. This application links the web applicati
 
 1. For the **Application type**, select the **Native**. 
 
-   ![New app registrations](./media/configure-authentication/aad-create-native-app-type.png)
+   ![Screenshot that shows where to select the Native application type.](./media/configure-authentication/aad-create-native-app-type.png)
 
 1. In the **Redirect URI** field, enter:
    ```
@@ -284,23 +284,23 @@ Now, let's create a native application. This application links the web applicati
 
 1. Copy the **Application ID** for the web application. You use this ID later to enable AAD in Machine Learning Server.
 
-   ![Newly created web app](./media/configure-authentication/aad-create-native-app-done.png)
+   ![Screenshot that highlights the Application ID.](./media/configure-authentication/aad-create-native-app-done.png)
 
-1. Select **Settings** ![Azure Active Directory icon](./media/configure-authentication/aad-settings.png). The **Settings** pane appears on the right.
+1. Select **Settings** ![Settings icon where you find where to configure the required permissions.](./media/configure-authentication/aad-settings.png). The **Settings** pane appears on the right.
 
 1. Select **Required permissions**.
 
-   ![Required permissions](./media/configure-authentication/aad-settings-restricted.png)
+   ![Screenshot that highlights the Required permissions menu option.](./media/configure-authentication/aad-settings-restricted.png)
 
-1. Select **Add** at the top. ![Required permissions](./media/configure-authentication/aad-settings-perms-add.png)
+1. Select **Add** at the top. ![Screenshot that shows the +Add button.](./media/configure-authentication/aad-settings-perms-add.png)
 
 1. Select **Select an API**.
 
-   ![Required permissions](./media/configure-authentication/aad-settings-perms-add-api-1.png)
+   ![Screenshot that shows the Select an API option.](./media/configure-authentication/aad-settings-perms-add-api-1.png)
 
 1. In the search field at the top, type the name of the web application you created. In our example, we use the name `Machine Learning Server Web app`. 
 
-   ![Required permissions](./media/configure-authentication/aad-settings-perms-add-api.png)
+   ![Screenshot that shows the search field.](./media/configure-authentication/aad-settings-perms-add-api.png)
 
 1. Select the web application name.
 

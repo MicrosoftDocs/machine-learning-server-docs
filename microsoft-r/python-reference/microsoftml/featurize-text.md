@@ -168,7 +168,7 @@ numbers. The default value is `True`.
 
 ### dictionary
 
-A dictionary of whitelisted terms which accepts
+A dictionary of allowlisted terms which accepts
 the following options:
 
 * `term`: An optional character vector of terms or categories. 
@@ -184,8 +184,8 @@ the following options:
       * `"value"`: items are sorted according to their default comparison. For example, text sorting will be case sensitive (e.g., ‘A’ then ‘Z’ then ‘a’). 
 
 The default value is *None*.
-Note that the stopwords list takes precedence over the dictionary whitelist
-as the stopwords are removed before the dictionary terms are whitelisted.
+Note that the stopwords list takes precedence over the dictionary allowlist
+as the stopwords are removed before the dictionary terms are allowlisted.
 
 
 ### word_feature_extractor
