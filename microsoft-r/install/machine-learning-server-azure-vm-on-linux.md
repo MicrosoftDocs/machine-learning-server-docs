@@ -131,12 +131,9 @@ PS C:\\Users\\juser> Switch-AzureMode -Name AzureResourceManager
 PS C:\\Users\\juser> New-AzurePublicIpAddress -Name rservercloudvm -ResourceGroupName rservercloudrg -Location "South Central US" -DomainNameLabel rservercloud -AllocationMethod Dynamic
 ```
 
-After adding access to port TCP/8787 to the inbound security rules, RStudio Server can be accessed at <http://rservercloud.southcentralus.cloudapp.azure.com:8787/>
+After adding access to port TCP/8787 to the inbound security rules, RStudio Server can be accessed at `http://rservercloud.southcentralus.cloudapp.azure.com:8787/`.
 
-Some related articles are:
-
-+ [Azure Compute, Network, and Storage Providers for Windows applications under Azure Resource Manager deployment model](https://azure.microsoft.com/documentation/articles/virtual-machines-azurerm-versus-azuresm/)
-+ [Creating Azure VMs with Azure Resource Manager PowerShell cmdlets](http://blogs.msdn.com/b/cloud_solution_architect/archive/2015/05/05/creating-azure-vms-with-arm-powershell-cmdlets.aspx)
+See also, [Azure Compute, Network, and Storage Providers for Windows applications under Azure Resource Manager deployment model](https://azure.microsoft.com/documentation/articles/virtual-machines-azurerm-versus-azuresm/).
 
 <a name="o16n"></a>
 
