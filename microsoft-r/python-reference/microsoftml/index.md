@@ -24,13 +24,15 @@ ms.custom: ""
  
 ---
 
-# learners
+# microsoftml API
+
+## learners
 
 
 **Applies to: SQL Server 2017 RC2**
 
 
-## training functions
+### training functions
 
 * [*microsoftml.rx_fast_forest*: Random Forest](rx-fast-forest.md) 
 
@@ -73,17 +75,17 @@ ms.custom: ""
 * [*microsoftml.rx_oneclass_svm*: Anomaly Detection](rx-oneclass-svm.md) 
 
 
-# transforms
+## transforms
 
 
-## categorical variable handling
+### categorical variable handling
 
 * [*microsoftml.categorical*: Converts a text column into categories](categorical.md) 
 
 * [*microsoftml.categorical_hash*: Hashes and converts a text column into categories](categorical-hash.md) 
 
 
-## schema manipulation
+### schema manipulation
 
 * [*microsoftml.concat*: Concatenates multiple columns into a single vector](concat.md) 
 
@@ -92,14 +94,14 @@ ms.custom: ""
 * [*microsoftml.select_columns*: Retains columns of a dataset](select-columns.md) 
 
 
-## variable selection
+### variable selection
 
 * [*microsoftml.count_select*: Feature selection based on counts](count-select.md) 
 
 * [*microsoftml.mutualinformation_select*: Feature selection based on mutual information](mutualinformation-select.md) 
 
 
-## text analytics
+### text analytics
 
 * [*microsoftml.featurize_text*: Converts text columns into numerical features](featurize-text.md) 
 
@@ -118,7 +120,7 @@ ms.custom: ""
 * [*microsoftml.get_sentiment*: Sentiment analysis](get-sentiment.md) 
 
 
-## image analytics
+### image analytics
 
 * [*microsoftml.load_image*: Loads an image](load-image.md) 
 
@@ -129,11 +131,11 @@ ms.custom: ""
 * [*microsoftml.featurize_image*: Converts an image into features](featurize-image.md) 
 
 
-# scorers
+## scorers
 
 * [*microsoftml.rx_predict*: Scores using a Microsoft machine learning model](rx-predict.md) 
 
 
-# featurizers
+## featurizers
 
 * [*microsoftml.rx_featurize*: Data transformation for data sources](rx-featurize.md) 
