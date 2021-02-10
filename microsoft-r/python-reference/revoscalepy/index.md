@@ -1,8 +1,8 @@
 --- 
  
 # required metadata 
-title: ": " 
-description: "" 
+title: "revoscalepy API" 
+description: "revoscalepy API" 
 keywords: "" 
 author: "dphansen" 
 manager: "cgronlun" 
