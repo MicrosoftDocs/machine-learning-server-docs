@@ -94,7 +94,7 @@ Sample data is required when you intend to follow the steps. The tutorial uses t
 
 This tutorial also uses the AirlineDemoSmall.csv file from the RevoScaleR SampleData directory.
 
-You can obtain both data sets [online](http://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
+You can obtain both data sets [online](https://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409).
 
 ### Start Revo64
 

@@ -118,7 +118,7 @@ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/f
 
  ## References
 
-[`  Estimating the Support of a High-Dimensional Distribution`](http://research.microsoft.com/pubs/69731/tr-99-87.pdf)
+[`  Estimating the Support of a High-Dimensional Distribution`](https://research.microsoft.com/pubs/69731/tr-99-87.pdf)
 
 
 [`  New Support Vector Algorithms`](http://www.stat.purdue.edu/~yuzhu/stat598m3/Papers/NewSVM.pdf)
