@@ -9,7 +9,7 @@ ms.author: "davidph"
 ms.manager: "cgronlun"
 ms.date: "08/11/2016"
 ms.topic: "conceptual"
-ms.prod: "r-services"
+ms.prod: "mlserver"
 
 # optional metadata
 #ROBOTS: ""
