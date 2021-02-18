@@ -40,7 +40,7 @@ The encryption function available in the administration utility relies on the RS
    Ensure that your certificate is secured properly. On Windows, for example, you can use Bitlocker to encrypt the disk.  
 
 1. Open the administration tool to encrypt the secret:
-   + For Machine Learning Server 9.3 and later, use `admin` extension of the Azure Command Line Interface ([Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)) to encrypt your credentials.
+   + For Machine Learning Server 9.3 and later, use `admin` extension of the Azure Command Line Interface ([Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli)) to encrypt your credentials.
 
      You do not need an Azure subscription to use this CLI. It is installed as part of Machine Learning Server and runs locally.
 
