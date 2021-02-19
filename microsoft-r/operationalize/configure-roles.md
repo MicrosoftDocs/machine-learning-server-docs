@@ -55,7 +55,7 @@ You can use the AD groups you have already defined in your organization to assig
 
 In Machine Learning Server, the administrator can assign one or more Active Directory groups to one or more of the following roles: 'Owner', 'Contributor', and 'Reader'. Roles give specific permissions related to deploying and interacting with web services and other APIs. 
 
-|||
+|- |- |
 |-------------|------------| 
 |- Owner (highest permissions) <br>-&nbsp;Contributor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- Reader|![Checkbox](./media/configure-roles/role-hierarchy.png)|
 
