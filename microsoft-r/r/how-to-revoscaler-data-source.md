@@ -173,9 +173,8 @@ For .xdf file data sources, **dimnames** returns only column names. Row names ar
 
 In the local compute context, all of RevoScaleR’s supported data sources are available to you. In a distributed context, the data source object aligns to the compute context. Thus, **RxInSqlServer** only supports **RxSqlServerData** objects. Likewise for **RxInTeradata**, which supports only the **RxTeradata** data sources. For more information, see [Compute context](concept-what-is-compute-context.md).
 
-|                                |            |          | Compute Context |               |              |
-|--------------------------------|------------|----------|-----------------|---------------|--------------|
 | Data Source                    | RxLocalSeq | RxSpark  | RxHadoopMR      | RxInSqlServer | RxInTeradata |
+|--------------------------------|------------|----------|-----------------|---------------|--------------|
 | Delimited Text (RxTextData)    | x          | x        | x               |               |              |
 | Fixed-Format Text (RxTextData) | x          |          |                 |               |              |
 | .xdf data files (RxXdfData)    | x          | x        | x               |               |              |
