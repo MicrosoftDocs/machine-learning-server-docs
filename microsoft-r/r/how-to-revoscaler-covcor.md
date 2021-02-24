@@ -336,7 +336,7 @@ The default plot method for objects of class princomp is a *scree plot*, which i
 
 Yields the following plot:
 
-![](media/how-to-revoscaler-covcor/image23.png)
+![irisPca plot](media/how-to-revoscaler-covcor/image23.png)
 
 Another useful bit of output is given by the loadings function, which returns a set of columns showing the linear combinations for each principal component:
 
