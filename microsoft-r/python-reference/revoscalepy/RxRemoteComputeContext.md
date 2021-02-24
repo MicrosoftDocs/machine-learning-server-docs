@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "RxRemoteComputeContext:  (revoscalepy)" 
-description: "" 
+description: "RxRemoteComputeContext:  (revoscalepy)" 
 keywords: "" 
 author: "dphansen" 
 manager: "cgronlun" 
