@@ -425,7 +425,7 @@ Yields the following output:
 
 The scree plot is shown as follows:
 
-![](media/how-to-revoscaler-covcor/image24.png)
+![stockPca plot](media/how-to-revoscaler-covcor/image24.png)
 
 Between them, the first two principal components explain 99% of the variance; we can therefore replace the five original variables by these two principal components with no appreciable loss of information.
 
@@ -435,17 +435,17 @@ Another application of correlation matrices is to calculate ridge regression, a 
 
 Where the ordinary least squares regression minimizes the sum of squared residuals
 
-![](media/how-to-revoscaler-covcor/math1.png)
+![math 1](media/how-to-revoscaler-covcor/math1.png)
 
 ridge regression minimizes the slightly modified sum
 
-![](media/how-to-revoscaler-covcor/math2.png)
+![math 2](media/how-to-revoscaler-covcor/math2.png)
 
 The solution to the ridge regression is
 
-![](media/how-to-revoscaler-covcor/math3.png)
+![math 3](media/how-to-revoscaler-covcor/math3.png)
 
-where ![](media/how-to-revoscaler-covcor/math4.png) is the model matrix. This matrix is similar to the ordinary least squares regression solution with a “ridge” added along the diagonal.
+where ![X](media/how-to-revoscaler-covcor/math4.png) is the model matrix. This matrix is similar to the ordinary least squares regression solution with a “ridge” added along the diagonal.
 
 Since the model matrix is embedded in the correlation matrix, the following function allows us to compute the ridge regression solution:
 
