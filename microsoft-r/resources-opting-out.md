@@ -32,7 +32,9 @@ To turn data collection on or off, use [rxPrivacyControl](r-reference/revoscaler
 
 Privacy controls are in server version 9.x and later, and R Client 3.4.x and later. To get version informaton, open an R IDE, such the R Console (RGui.exe). The console app reports server version information for Microsoft R Open, R Client, and R Server. From the console, you can use the `print` command to return verbose version information:
 
-    > print(Revo.version)
+```
+> print(Revo.version)
+```
 
 ## Permission Requirements
 
@@ -75,9 +77,9 @@ The RevoScaleR package provides`rxPrivacyControl` is installed and loaded in bot
 The  `rxPrivacyControl` command sets the state to be opted-in or out for anonymous usage collection.
 
 **Command syntax**
-~~~~
-     rxPrivacyControl(optIn)
-~~~~
+```
+rxPrivacyControl(optIn)
+```
 
 This command takes one parameter, `optIn`, set to either ‘TRUE’ or ‘FALSE’ to opt out. Left unspecified, the current setting is returned.
 
