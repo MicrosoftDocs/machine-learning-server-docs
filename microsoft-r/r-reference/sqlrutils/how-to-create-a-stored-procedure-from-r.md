@@ -4,7 +4,7 @@ description: Use the sqlrutils R package in SQL Server to bundle R language code
 ms.prod: mlserver
 ms.technology: 
 
-ms.date: 10/06/2020  
+ms.date: 03/04/2021  
 ms.topic: how-to
 author: garyericson
 ms.author: garye
@@ -14,7 +14,7 @@ ms.custom:
 
 # Convert R code to a stored procedure using sqlrutils
 
-This article describes the steps for converting your R code to run as a T-SQL stored procedure. For best possible results, your code might need to be modified somewhat, to ensure that all inputs can be parameterized.
+This article describes the steps for using the **sqlrutils** package to convert your R code to run as a T-SQL stored procedure. For best possible results, your code might need to be modified somewhat to ensure that all inputs can be parameterized.
 
 ## <a name="bkmk_rewrite"></a>Step 1. Rewrite R Script
 
