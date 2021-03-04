@@ -1,7 +1,7 @@
 ---
-title: How to create a stored procedure from R code
+title: Use sqlrutils to convert R code to a stored procedure
 description: Use the sqlrutils R package in SQL Server to bundle R language code into a single function that can be passed as an argument to a stored procedure.
-ms.prod: ml-server
+ms.prod: mlserver
 ms.technology: 
 
 ms.date: 10/06/2020  
@@ -12,7 +12,7 @@ ms.reviewer: garye, davidph
 ms.custom: 
 ---
 
-# Create a stored procedure using sqlrutils
+# Convert R code to a stored procedure using sqlrutils
 
 This article describes the steps for converting your R code to run as a T-SQL stored procedure. For best possible results, your code might need to be modified somewhat, to ensure that all inputs can be parameterized.
 
@@ -227,4 +227,5 @@ myetl1function <- function() {
 
 ## See Also
 
-[sqlrutils (SQL)](ref-r-sqlrutils.md)
+[sqlrutils reference](sqlrutils.md)
+[sqlrutils package](/sql/machine-learning/r/ref-r-sqlrutils)
