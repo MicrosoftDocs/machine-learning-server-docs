@@ -449,51 +449,57 @@ where ![X](media/how-to-revoscaler-covcor/math4.png) is the model matrix. This m
 
 Since the model matrix is embedded in the correlation matrix, the following function allows us to compute the ridge regression solution:
 
-	#  Ridge regression
-	rxRidgeReg <- function(formula, data, lambda, ...) {
-	  myTerms <- all.vars(formula)
-	  newForm <- as.formula(paste("~", paste(myTerms, collapse = "+")))
-	  myCor <- rxCovCor(newForm, data = data, type = "Cor", ...)
-	  n <- myCor$valid.obs
-	  k <- nrow(myCor$CovCor) - 1
-	  bridgeprime <- do.call(rbind, lapply(lambda, 
-	        function(l) qr.solve(myCor$CovCor[-1,-1] + l*diag(k), 
-	                             myCor$CovCor[-1,1])))
-	  bridge <-  myCor$StdDevs[1] * sweep(bridgeprime, 2, 
-	        myCor$StdDevs[-1], "/")
-	  bridge <- cbind(t(myCor$Means[1] - 
-	        tcrossprod(myCor$Means[-1], bridge)), bridge)
-	  rownames(bridge) <- format(lambda)
-	  return(bridge)
-	}
+```
+#  Ridge regression
+rxRidgeReg <- function(formula, data, lambda, ...) {
+  myTerms <- all.vars(formula)
+  newForm <- as.formula(paste("~", paste(myTerms, collapse = "+")))
+  myCor <- rxCovCor(newForm, data = data, type = "Cor", ...)
+  n <- myCor$valid.obs
+  k <- nrow(myCor$CovCor) - 1
+  bridgeprime <- do.call(rbind, lapply(lambda, 
+        function(l) qr.solve(myCor$CovCor[-1,-1] + l*diag(k), 
+                             myCor$CovCor[-1,1])))
+  bridge <-  myCor$StdDevs[1] * sweep(bridgeprime, 2, 
+        myCor$StdDevs[-1], "/")
+  bridge <- cbind(t(myCor$Means[1] - 
+        tcrossprod(myCor$Means[-1], bridge)), bridge)
+  rownames(bridge) <- format(lambda)
+  return(bridge)
+}
+```
 
 The following example shows how ridge regression dramatically improves the solution in a regression involving heavy multicollinearity:
 
-	set.seed(14)
-	x <- rnorm(100)
-	y <- rnorm(100, mean=x, sd=.01)
-	z <- rnorm(100, mean=2 + x +y)
-	data <- data.frame(x=x, y=y, z=z)
-	lm(z ~ x + y)
+```
+set.seed(14)
+x <- rnorm(100)
+y <- rnorm(100, mean=x, sd=.01)
+z <- rnorm(100, mean=2 + x +y)
+data <- data.frame(x=x, y=y, z=z)
+lm(z ~ x + y)
 
-	 Call:
-	 lm(formula = z ~ x + y)
+ Call:
+ lm(formula = z ~ x + y)
 
-	 Coefficients:
-	 (Intercept)            x            y  
-		  1.827        4.359       -2.584  
-	rxRidgeReg(z ~ x + y, data=data, lambda=0.02)
-						  x         y
-	 0.02 1.827674 0.8917924 0.8723334
+ Coefficients:
+ (Intercept)            x            y  
+	  1.827        4.359       -2.584  
+rxRidgeReg(z ~ x + y, data=data, lambda=0.02)
+					  x         y
+ 0.02 1.827674 0.8917924 0.8723334
+```
 
 You can supply a vector of lambdas as a quick way to compare various choices:
 
-	rxRidgeReg(z ~ x + y, data=data, lambda=c(0, 0.02, 0.2, 2, 20))
-	                        x           y
-	  0.00 1.827112 4.35917238 -2.58387778
-	  0.02 1.827674 0.89179239  0.87233344
-	  0.20 1.833899 0.81020130  0.80959911
-	  2.00 1.865339 0.44512940  0.44575060
-	 20.00 1.896779 0.08092296  0.08105322
+```
+rxRidgeReg(z ~ x + y, data=data, lambda=c(0, 0.02, 0.2, 2, 20))
+                        x           y
+  0.00 1.827112 4.35917238 -2.58387778
+  0.02 1.827674 0.89179239  0.87233344
+  0.20 1.833899 0.81020130  0.80959911
+  2.00 1.865339 0.44512940  0.44575060
+ 20.00 1.896779 0.08092296  0.08105322
+```
 
 For λ = 0, the ridge regression is identical to ordinary least squares, while as λ → ∞, the coefficients of x and y approach 0.
