@@ -81,10 +81,10 @@ Supported types are:
 ```
 
 levels: List of strings containing the levels when type = “factor”. If
-    the levels property is not provided, factor levels will be determined
-    by the values in the source column. If levels are provided, any value
-    that does not match a provided level will be converted to a missing
-    value.
+the levels property is not provided, factor levels will be determined
+by the values in the source column. If levels are provided, any value
+that does not match a provided level will be converted to a missing
+value.
 
 
 ### save_as_temp_table
