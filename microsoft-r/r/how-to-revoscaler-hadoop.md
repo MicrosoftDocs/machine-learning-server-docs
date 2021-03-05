@@ -840,6 +840,7 @@ system('hive –e "select * from emp" > myFile.txt')
 
 ```
 system('beeline -u "jdbc:hive2://.." --outputformat=csv2 -e "select * from emp" > myFile.txt')
+```
 
 **Run the same query but dump the results to CSV in HDFS**
 
