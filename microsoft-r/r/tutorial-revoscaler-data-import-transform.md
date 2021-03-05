@@ -59,7 +59,9 @@ The command prompt for R is `>`. You can hand-type case-sensitive R commands, or
 
 2. Retrieve the list of [sample data files](sample-built-in-data.md) provided in RevoScaleR by entering the following command at the `>` command prompt:
 
-        list.files(rxGetOption("sampleDataDir"))
+    ```
+	list.files(rxGetOption("sampleDataDir"))
+    ```
 
 The open-source R `list.files` command returns a file list provided by the RevoScaleR **rxGetOption** function and the *sampleDataDir* argument. 
 
@@ -131,15 +133,17 @@ You should now have a `mysource` object and an `airXdfData` object representing 
 
 Notice how the output includes the precomputed metadata for each variable, plus a summary of observations, variables, blocks, and compression information. Variables are based on fields in the CSV file. In this case, there are 3 variables. 
 
-    File name: C:\Users\TEMP\airExample.xdf 
-    Number of observations: 6e+05 
-    Number of variables: 3 
-    Number of blocks: 2 
-    Compression type: zlib 
-    Variable information: 
-    Var 1: ArrDelay, Type: character
-    Var 2: CRSDepTime, Type: numeric, Storage: float32, Low/High: (0.0167, 23.9833)
-    Var 3: DayOfWeek, Type: character
+```
+File name: C:\Users\TEMP\airExample.xdf 
+Number of observations: 6e+05 
+Number of variables: 3 
+Number of blocks: 2 
+Compression type: zlib 
+Variable information: 
+Var 1: ArrDelay, Type: character
+Var 2: CRSDepTime, Type: numeric, Storage: float32, Low/High: (0.0167, 23.9833)
+Var 3: DayOfWeek, Type: character
+```
 
 From the output, we can determine whether the number of observations is large enough to warrant subdivision into smaller blocks. Additionally, we can see which variables exist, the data type, and for numeric data, the range of values. The presence of string variables is a consideration. To use this data in subsequent analysis, we might need to convert strings to numeric data for ArrDelay. Likewise, we might want to convert DayOfWeek to a factor variable so that we can group observations by day. We can do all of these things in a subsequent import.
 
@@ -162,13 +166,15 @@ The **rxImport** function takes multiple parameters that can be used to modify d
 
 Running this command refreshes the airXdfData data source object. Metadata for the new object reflects the allocation of rows among 3 blocks and conversion of string-to-numeric data for both ArrDelay and DayOfWeek. 
 
-    > rxGetInfo(airXdfData)
-    Variable information: 
-    Var 1: ArrDelay
-	       702 factor levels: 6 -8 -2 1 -14 ... 451 430 597 513 432
-    Var 2: CRSDepTime, Type: numeric, Storage: float32, Low/High: (0.0167, 23.9833)
-    Var 3: DayOfWeek
-           7 factor levels: Monday Tuesday Wednesday Thursday Friday Saturday Sunday
+```
+> rxGetInfo(airXdfData)
+Variable information: 
+Var 1: ArrDelay
+		702 factor levels: 6 -8 -2 1 -14 ... 451 430 597 513 432
+Var 2: CRSDepTime, Type: numeric, Storage: float32, Low/High: (0.0167, 23.9833)
+Var 3: DayOfWeek
+		7 factor levels: Monday Tuesday Wednesday Thursday Friday Saturday Sunday
+```
 
 ### Control string conversion and factor level ordering
 
@@ -197,7 +203,7 @@ To get a sense of data shape, use the **rxHistogram** function to show the distr
 ~~~~
 	rxHistogram(~ArrDelay|DayOfWeek,  data = airXdfData)
 ~~~~
-![](media/tutorial-revoscaler-data-import-transform/image2.png)
+![Histogram](media/tutorial-revoscaler-data-import-transform/image2.png)
 
 You can also compute descriptive statistics for the variable:
 ~~~~
@@ -227,98 +233,114 @@ The full RevoScaleR data step consists of the following steps:
 2.  For each block, pass the *ArrDelay* data to the R interpreter for processing the transformation to create *VeryLate*.
 3.  Write the data out to the dataset a block at a time. The argument *overwrite=TRUE* allows us to overwrite the data file.
 
-		airXdfData <- rxDataStep(inData = airXdfData, outFile = "c:/Users/Temp/airExample.xdf",
-		    transforms=list(VeryLate = (ArrDelay > 120 | is.na(ArrDelay))),
-		    overwrite = TRUE)
-            
-Output from this command reflects the creation of the new variable:
-
-        > rxGetInfo(airXdfData, getVarInfo = TRUE)
-        File name: C:\Users\TEMP\airExample.xdf 
-        Number of observations: 6e+05 
-        Number of variables: 4 
-        Number of blocks: 3 
-        Compression type: zlib 
-        Variable information: 
-        Var 1: ArrDelay, Type: integer, Low/High: (-86, 1490)
-        Var 2: CRSDepTime, Type: numeric, Storage: float32, Low/High: (0.0167, 23.9833)
-        Var 3: DayOfWeek
-            7 factor levels: Monday Tuesday Wednesday Thursday Friday Saturday Sunday
-        Var 4: VeryLate, Type: logical, Low/High: (0, 1)
-
+    ```
+    airXdfData <- rxDataStep(inData = airXdfData, outFile = "c:/Users/Temp/airExample.xdf",
+    	transforms=list(VeryLate = (ArrDelay > 120 | is.na(ArrDelay))),
+    	overwrite = TRUE)
+    ```
+                
+    Output from this command reflects the creation of the new variable:
+    
+    ```
+    > rxGetInfo(airXdfData, getVarInfo = TRUE)
+    File name: C:\Users\TEMP\airExample.xdf 
+    Number of observations: 6e+05 
+    Number of variables: 4 
+    Number of blocks: 3 
+    Compression type: zlib 
+    Variable information: 
+    Var 1: ArrDelay, Type: integer, Low/High: (-86, 1490)
+    Var 2: CRSDepTime, Type: numeric, Storage: float32, Low/High: (0.0167, 23.9833)
+    Var 3: DayOfWeek
+    	7 factor levels: Monday Tuesday Wednesday Thursday Friday Saturday Sunday
+    Var 4: VeryLate, Type: logical, Low/High: (0, 1)
+    ```
+    
 ## Summarize data
 
 We already used **rxSummary** to get an initial impression of data shape, but let's take a closer look at its arguments. The **rxSummary** function takes a formula as its first argument, and the name of the dataset as the second. To get summary statistics for all of the data in your data file, you can alternatively use the R *summary* method for the *airXdfData* object.
 
-	> rxSummary(~ArrDelay+CRSDepTime+DayOfWeek, data=airXdfData)
+```
+> rxSummary(~ArrDelay+CRSDepTime+DayOfWeek, data=airXdfData)
+```
 
 or
 
-	> summary(airXdfData)
+```
+> summary(airXdfData)
+```
 
 Summary statistics will be computed on the variables in the formula. By default, **rxSummary** computes data summaries term-by-term, and missing values are omitted on a term-by-term basis.
 
-	Call:
-	rxSummary(formula = ~ArrDelay + CRSDepTime + DayOfWeek, data = airDS)
+```
+Call:
+rxSummary(formula = ~ArrDelay + CRSDepTime + DayOfWeek, data = airDS)
 
-	Summary Statistics Results for: ~ArrDelay + CRSDepTime + DayOfWeek
-    Data: airXdfData (RxXdfData Data Source)
-    File name: C:\Users\TEMP\airExample.xdf
-	Number of valid observations: 6e+05
+Summary Statistics Results for: ~ArrDelay + CRSDepTime + DayOfWeek
+Data: airXdfData (RxXdfData Data Source)
+File name: C:\Users\TEMP\airExample.xdf
+Number of valid observations: 6e+05
 
-	 Name       Mean     StdDev    Min        Max        ValidObs MissingObs
-	 ArrDelay   11.31794 40.688536 -86.000000 1490.00000 582628   17372     
-	 CRSDepTime 13.48227  4.697566   0.016667   23.98333 600000       0     
+	Name       Mean     StdDev    Min        Max        ValidObs MissingObs
+	ArrDelay   11.31794 40.688536 -86.000000 1490.00000 582628   17372     
+	CRSDepTime 13.48227  4.697566   0.016667   23.98333 600000       0     
 
-	Category Counts for DayOfWeek
-	Number of categories: 7
-	Number of valid observations: 6e+05
-	Number of missing observations: 0
+Category Counts for DayOfWeek
+Number of categories: 7
+Number of valid observations: 6e+05
+Number of missing observations: 0
 
-	 DayOfWeek Counts
-	 Monday    97975
-	 Tuesday   77725
-	 Wednesday 78875
-	 Thursday  81304
-	 Friday    82987
-	 Saturday  86159
-	 Sunday    94975
+	DayOfWeek Counts
+	Monday    97975
+	Tuesday   77725
+	Wednesday 78875
+	Thursday  81304
+	Friday    82987
+	Saturday  86159
+	Sunday    94975
+```
 
 Notice that the summary information shows cell counts for categorical variables, and appropriately does not provide summary statistics such as *Mean* and *StdDev*. Also notice that the *Call:* line will show the actual call you entered or the call provided by *summary*, so will appear differently in different circumstances.
 
 You can also compute summary information by one or more categories by using interactions of a numeric variable with a factor variable. For example, to compute summary statistics on Arrival Delay by Day of Week:
 
-	> rxSummary(~ArrDelay:DayOfWeek, data=airXdfData)
+```
+> rxSummary(~ArrDelay:DayOfWeek, data=airXdfData)
+```
 
 The output shows the summary statistics for *ArrDelay* for each day of the week:
 
-	Call:
-	rxSummary(formula = ~ArrDelay:DayOfWeek, data=airXdfData)
+```
+Call:
+rxSummary(formula = ~ArrDelay:DayOfWeek, data=airXdfData)
 
-	Summary Statistics Results for: ~ArrDelay:DayOfWeek
-	File name: C:\Users\TEMP\airExample.xdf
-	Number of valid observations: 6e+05
+Summary Statistics Results for: ~ArrDelay:DayOfWeek
+File name: C:\Users\TEMP\airExample.xdf
+Number of valid observations: 6e+05
 
-	 Name               Mean     StdDev   Min Max  ValidObs MissingObs
-	 ArrDelay:DayOfWeek 11.31794 40.68854 -86 1490 582628   17372     
+	Name               Mean     StdDev   Min Max  ValidObs MissingObs
+	ArrDelay:DayOfWeek 11.31794 40.68854 -86 1490 582628   17372     
 
-	Statistics by category (7 categories):
+Statistics by category (7 categories):
 
-	 Category                         DayOfWeek Means    StdDev  Min Max ValidObs
-	 ArrDelay for DayOfWeek=Monday    Monday    12.025604 40.02463 -76 1017 95298   
-	 ArrDelay for DayOfWeek=Tuesday   Tuesday   11.293808 43.66269 -70 1143 74011   
-	 ArrDelay for DayOfWeek=Wednesday Wednesday 10.156539 39.58803 -81 1166 76786   
-	 ArrDelay for DayOfWeek=Thursday  Thursday   8.658007 36.74724 -58 1053 79145   
-	 ArrDelay for DayOfWeek=Friday    Friday    14.804335 41.79260 -78 1490 80142   
-	 ArrDelay for DayOfWeek=Saturday  Saturday  11.875326 45.24540 -73 1370 83851   
-	 ArrDelay for DayOfWeek=Sunday    Sunday    10.331806 37.33348 -86 1202 93395
+	Category                         DayOfWeek Means    StdDev  Min Max ValidObs
+	ArrDelay for DayOfWeek=Monday    Monday    12.025604 40.02463 -76 1017 95298   
+	ArrDelay for DayOfWeek=Tuesday   Tuesday   11.293808 43.66269 -70 1143 74011   
+	ArrDelay for DayOfWeek=Wednesday Wednesday 10.156539 39.58803 -81 1166 76786   
+	ArrDelay for DayOfWeek=Thursday  Thursday   8.658007 36.74724 -58 1053 79145   
+	ArrDelay for DayOfWeek=Friday    Friday    14.804335 41.79260 -78 1490 80142   
+	ArrDelay for DayOfWeek=Saturday  Saturday  11.875326 45.24540 -73 1370 83851   
+	ArrDelay for DayOfWeek=Sunday    Sunday    10.331806 37.33348 -86 1202 93395
+```
 
 To get a better feel for the data, you can draw histograms for each variable. Run each **rxHistogram** function one at a time. The histogram is rendered in the R Plot pane.
 
-	options("device.ask.default" = T)
-	rxHistogram(~ArrDelay, data=airXdfData)
-	rxHistogram(~CRSDepTime, data=airXdfData)
-	rxHistogram(~DayOfWeek, data=airXdfData)
+```
+options("device.ask.default" = T)
+rxHistogram(~ArrDelay, data=airXdfData)
+rxHistogram(~CRSDepTime, data=airXdfData)
+rxHistogram(~DayOfWeek, data=airXdfData)
+```
 
 ![ArrDelay Histogram](./media/tutorial-revoscaler-data-import-transform/arrdelay_histogram_1.png)
 
@@ -328,10 +350,12 @@ To get a better feel for the data, you can draw histograms for each variable. Ru
 
 We can also easily extract a subsample of the data file into a data frame in memory. For example, we can look at just the flights that were between 4 and 5 hours late:
 
-	myData <- rxDataStep(inData = airXdfData,
-	rowSelection = ArrDelay > 240 & ArrDelay <= 300,
-		varsToKeep = c("ArrDelay", "DayOfWeek"))
-	rxHistogram(~ArrDelay, data = myData)
+```
+myData <- rxDataStep(inData = airXdfData,
+rowSelection = ArrDelay > 240 & ArrDelay <= 300,
+	varsToKeep = c("ArrDelay", "DayOfWeek"))
+rxHistogram(~ArrDelay, data = myData)
+```
 
 ![Histogram that shows the data for the flights that were between 4 and 5 hours late.](./media/tutorial-revoscaler-data-import-transform/arrdelay_histogram_2.png)
 
@@ -339,41 +363,47 @@ We can also easily extract a subsample of the data file into a data frame in mem
 
 This exercise shows you how to use **rxDataStep** to read an arbitrary chunk of the dataset into a data frame for further examination. As a first step, lets get the number of rows, columns, and return the initial rows to better understand the available data. Standard R methods provide this information.
 
-	nrow(airXdfData)
-	ncol(airXdfData)
-	head(airXdfData)
+```
+nrow(airXdfData)
+ncol(airXdfData)
+head(airXdfData)
 
-	> nrow(airXdfData)
-	[1] 600000
-	> ncol(airXdfData)
-	[1] 3
-	> head(airXdfData)
-	  ArrDelay CRSDepTime DayOfWeek
-	1        6   9.666666    Monday
-	2       -8  19.916666    Monday
-	3       -2  13.750000    Monday
-	4        1  11.750000    Monday
-	5       -2   6.416667    Monday
-	6      -14  13.833333    Monday
+> nrow(airXdfData)
+[1] 600000
+> ncol(airXdfData)
+[1] 3
+> head(airXdfData)
+	ArrDelay CRSDepTime DayOfWeek
+1        6   9.666666    Monday
+2       -8  19.916666    Monday
+3       -2  13.750000    Monday
+4        1  11.750000    Monday
+5       -2   6.416667    Monday
+6      -14  13.833333    Monday
+```
 
 From *nrow* we see that the number of rows is 600,000. To read 10 rows into a data frame starting with the 100,000th row:
 
-	airXdfDataSmall <- rxDataStep(inData=airXdfData, numRows=10, startRow=100000)
-	airXdfDataSmall
+```
+airXdfDataSmall <- rxDataStep(inData=airXdfData, numRows=10, startRow=100000)
+airXdfDataSmall
+```
 
 This code should generate the following output:
 
-	   ArrDelay CRSDepTime DayOfWeek
-	1        -2  11.416667  Saturday
-	2        39   9.916667    Friday
-	3        NA  10.033334    Monday
-	4         1  17.000000    Friday
-	5       -17   9.983334 Wednesday
-	6         8  21.250000  Saturday
-	7        -9   6.250000    Friday
-	8       -11  15.000000    Friday
-	9         4  20.916666    Sunday
-	10       -8   6.500000  Thursday
+```
+	ArrDelay CRSDepTime DayOfWeek
+1        -2  11.416667  Saturday
+2        39   9.916667    Friday
+3        NA  10.033334    Monday
+4         1  17.000000    Friday
+5       -17   9.983334 Wednesday
+6         8  21.250000  Saturday
+7        -9   6.250000    Friday
+8       -11  15.000000    Friday
+9         4  20.916666    Sunday
+10       -8   6.500000  Thursday
+```
 
 You can now compute summary statistics on the reduced dataset
 
@@ -440,7 +470,7 @@ This tutorial demonstrated data import and exploration, but there are several mo
 
  Demo scripts are located in the *demoScripts* subdirectory of your Machine Learning Server installation. On Windows, this is typically:
 
- 	`C:\Program Files\Microsoft\R Client\R_SERVER\library\RevoScaleR\demoScripts`
+`C:\Program Files\Microsoft\R Client\R_SERVER\library\RevoScaleR\demoScripts`
 
 ### Watch this video
 
