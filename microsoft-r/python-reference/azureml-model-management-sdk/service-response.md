@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "ServiceResponse class for Microsoft Machine Learning Server"
-description: "This class is for Microsoft ML Server Python package for managing web services." 
+description: "This class is for Microsoft ML Server Python package for managing web services, ServiceResponse." 
 keywords: "" 
 author: "dphansen" 
 ms.author: "davidph"
@@ -149,7 +149,7 @@ output(output)
 
 
 
-    A convenience function to look up an output value by name.
+A convenience function to look up an output value by name.
 
 
 ### Arguments
