@@ -204,9 +204,7 @@ Please make sure that YARN run-as user has permission to read and write to this 
 ### interop
 
 None or string or list of strings. Current supported interoperation values are,
-‘pyspark’: active revoscalepy Spark compute context in existing pyspark application to support the usage of both
-
-    pyspark and revoscalepy functionalities. For jobs running in AzureML, interop value ‘pyspark’ must be used.
+‘pyspark’: active revoscalepy Spark compute context in existing pyspark application to support the usage of both pyspark and revoscalepy functionalities. For jobs running in AzureML, interop value ‘pyspark’ must be used.
 
 
 ### reset
