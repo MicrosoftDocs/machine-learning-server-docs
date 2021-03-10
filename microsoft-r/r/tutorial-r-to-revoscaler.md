@@ -234,7 +234,7 @@ plot(1:10)
 
 For numeric vectors such as ours, the default view is a scatter plot of the observations against their index, resulting in the following plots:
 
-![plot](media/tutorial-r-to-revoscaler/image5.jpeg)
+![plot(1:10)](media/tutorial-r-to-revoscaler/image5.jpeg)
 
 For an exploration of the shape of the data, the usual tools are `stem` (to create a stemplot) and `hist` (to create a histogram):
 
@@ -396,7 +396,7 @@ plot(attitude)
 
 The resulting plot is a pairwise scatter plot of the numeric variables in the data set.
 
-![plot](media/tutorial-r-to-revoscaler/image9.jpeg)
+![plot(attitude)](media/tutorial-r-to-revoscaler/image9.jpeg)
 
 The first two variables (*rating* and *complaints*) show a strong linear relationship. To model that relationship, we use the `lm` function:
 
@@ -444,7 +444,7 @@ par(mfrow=c(2,2))
 plot(attitudeLM1)
 ```
 
-![plot](media/tutorial-r-to-revoscaler/image10.jpeg)
+![plot(attitudeLM1)](media/tutorial-r-to-revoscaler/image10.jpeg)
 
 > [!Tip]
 > The rxLinMod function is a full-featured alternative to lm that can efficiently handle large data sets.  Also look at rxLogit and rxGlm as alternatives to `glm`, rxKmeans as an alternative to `kmeans`, and rxDTree as an alternative to `rpart`.
@@ -748,7 +748,7 @@ The rxHistogram function shows us the distribution of any of the variables in ou
 rxHistogram(~creditScore, data = mortDataNew )
 ```
 
-![rxHistogram](media/tutorial-r-to-revoscaler/image14.png)
+![rxHistogram(~creditScore, data = mortDataNew )](media/tutorial-r-to-revoscaler/image14.png)
 
 The rxCube function computes category counts, and can operate on the interaction of categorical variables. Using the *F()* notation to convert a variable into an on-the-fly categorical factor variable (with a level for each integer value), we can compute the counts for each credit score for the two groups who have low and high credit card debt:
 
@@ -762,7 +762,7 @@ The *rxLinePlot* function is a convenient way to plot output from *rxCube*. We u
 rxLinePlot(Counts~creditScore|catDebt, data=rxResultsDF(mortCube))
 ```
 
-![rxLinePlot](media/tutorial-r-to-revoscaler/image15.png)
+![rxLinePlot(Counts~creditScore|catDebt, data=rxResultsDF(mortCube))](media/tutorial-r-to-revoscaler/image15.png)
 
 ### Analyze with *rxLogit*
 
@@ -828,9 +828,11 @@ Rows Read: 500000, Total Rows Processed: 1000000, Total Chunk Time: 1.001 second
 
 Because we have specified an output file when importing the data, the returned *mortData* object is a small object in memory representing the .xdf data file, rather than a full data frame containing all of the data in memory. It can be used in **RevoScaleR** analysis functions in the same way as data frames.
 
-```
 # Some quick information about my data
+
+```
 rxGetInfo(mortData, getVarInfo = TRUE, numRows=5)
+```
 
 Output:
 
@@ -894,14 +896,14 @@ rxHistogram(~creditScore, data = mortDataNew )
 	Computation time: 0.678 seconds.
 ```
 
-![rxHistogram](media/tutorial-r-to-revoscaler/image16.png)
+![rxHistogram(~creditScore, data = mortDataNew )](media/tutorial-r-to-revoscaler/image16.png)
 
 ```
 myCube = rxCube(~F(creditScore):catDebt, data = mortDataNew)
 rxLinePlot(Counts~creditScore|catDebt, data=rxResultsDF(myCube))
 ```
 
-![rxLinePlot](media/tutorial-r-to-revoscaler/image17.png)
+![rxLinePlot(Counts~creditScore|catDebt, data=rxResultsDF(myCube))](media/tutorial-r-to-revoscaler/image17.png)
 
 ```
 # Compute a logistic regression
