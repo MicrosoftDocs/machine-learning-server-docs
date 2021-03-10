@@ -184,14 +184,14 @@ Additionally, factor levels are listed arbitrarily in the order in which they ar
 
 Rerun the import operation to use a fixed data type for ArrDelay and a fixed order for days of the week:
 
-    ~~~~
-	colInfo <- list(DayOfWeek = list(type = "factor",
-	    levels = c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")))
+```
+colInfo <- list(DayOfWeek = list(type = "factor",
+	levels = c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")))
 
-	airXdfData <- rxImport(inData=mysource, outFile="c:/Users/Temp/airExample.xdf", missingValueString="M", 
-	rowsPerRead=200000, colInfo  = colInfo, colClasses=c(ArrDelay="integer"),
-    overwrite=TRUE)
-    ~~~~
+airXdfData <- rxImport(inData=mysource, outFile="c:/Users/Temp/airExample.xdf", missingValueString="M", 
+rowsPerRead=200000, colInfo  = colInfo, colClasses=c(ArrDelay="integer"),
+overwrite=TRUE)
+```
 
 Notice that once you supply the *colInfo* argument, you no longer need to specify *stringsAsFactors* because *DayOfWeek* is the only factor variable.
 
