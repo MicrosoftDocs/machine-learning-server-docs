@@ -143,9 +143,7 @@ Specifies the method used to combine the models:
 
 * `"Average"`: to compute the average of the individual model outputs and 
 
-* `"Vote"`: to compute (pos-neg) / the total number of models, where ‘pos’
-
-      is the number of positive outputs and ‘neg’ is the number of negative outputs.
+* `"Vote"`: to compute (pos-neg) / the total number of models, where ‘pos’ is the number of positive outputs and ‘neg’ is the number of negative outputs.
 
 
 ### max_calibration

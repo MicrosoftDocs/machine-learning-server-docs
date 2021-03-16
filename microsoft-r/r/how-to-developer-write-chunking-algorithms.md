@@ -61,37 +61,39 @@ The *AggregateResults* function shown below combines the *UpdateResults* and *Pr
 
 To try this out, create a new script *chunkTable.R* with the following contents:
 
-	chunkTable <- function(inDataSource, iroDataSource, varsToKeep = NULL,
-	     blocksPerRead = 1 )
+```
+chunkTable <- function(inDataSource, iroDataSource, varsToKeep = NULL,
+		blocksPerRead = 1 )
+{
+	ProcessChunk <- function( dataList)
 	{
-		ProcessChunk <- function( dataList)
+		# Process Data
+		chunkTable <- table(as.data.frame(dataList))
+		# Convert table to data frame with single row
+		varNames <- names(chunkTable)
+			varValues <- as.vector(chunkTable)
+			dim(varValues) <- c(1, length(varNames))
+			chunkDF <- as.data.frame(varValues)
+			names(chunkDF) <- varNames
+			# Return the data frame
+		return( chunkDF )
+	}
+
+	rxDataStep( inData = inDataSource, outFile = iroDataSource,
+			varsToKeep = varsToKeep,
+		blocksPerRead = blocksPerRead,
+		transformFunc = ProcessChunk,
+		reportProgress = 0, overwrite = TRUE)
+
+		AggregateResults <- function()    
 		{
-		    # Process Data
-		    chunkTable <- table(as.data.frame(dataList))
-		    # Convert table to data frame with single row
-		    varNames <- names(chunkTable)
-	          varValues <- as.vector(chunkTable)
-	          dim(varValues) <- c(1, length(varNames))
-	          chunkDF <- as.data.frame(varValues)
-	          names(chunkDF) <- varNames
-	          # Return the data frame
-	   	    return( chunkDF )
+			iroResults <- rxDataStep(iroDataSource)
+			return(colSums(iroResults))
 		}
 
-		rxDataStep( inData = inDataSource, outFile = iroDataSource,
-	            varsToKeep = varsToKeep,
-			blocksPerRead = blocksPerRead,
-			transformFunc = ProcessChunk,
-			reportProgress = 0, overwrite = TRUE)
-
-	       AggregateResults <- function()    
-	       {
-		     iroResults <- rxDataStep(iroDataSource)
-	           return(colSums(iroResults))
-	       }
-
-		return(AggregateResults())
-	}
+	return(AggregateResults())
+}
+```
 
 Note that the `blocksPerRead` argument is ignored if this script runs locally using R Client. Since Microsoft R Client can only process datasets that fit into the available memory, chunking is not supported in R Client. When run locally with R Client, all data must be read into memory. You can work around this limitation when you push the compute context to a [Machine Learning Server instance](../what-is-machine-learning-server.md).
 

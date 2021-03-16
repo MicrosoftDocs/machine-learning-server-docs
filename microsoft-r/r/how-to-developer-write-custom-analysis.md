@@ -42,78 +42,88 @@ For illustrative purposes, suppose that we want to compute the average arrival d
 
 Most of the work takes place within a transformation function, which processes the data and updates the results for each chunk of data that is read in. We use the .rxGet and .rxSet functions to store information from one pass of the data to the next. Because we are processing data and not creating newly transformed variables, we return NULL from the function:
 
-		#  Writing Your Own Analyses for Large Data Sets
+```
+	#  Writing Your Own Analyses for Large Data Sets
 
-		ProcessAndUpdateData <- function( data )
-		{
-		    # Process Data
-		    notMissing <- !is.na(data$ArrDelay)
-		    morning <- data$CRSDepTime >= 6 & data$CRSDepTime < 12 & notMissing
-		    afternoon <- data$CRSDepTime >= 12 & data$CRSDepTime < 17 & notMissing
-		    evening <- data$CRSDepTime >= 17 & data$CRSDepTime < 23 & notMissing
-		    mornArr <- sum(data$ArrDelay[morning], na.rm = TRUE)      
-		    mornCounts <- sum(morning, na.rm = TRUE)
-		    afterArr <- sum(data$ArrDelay[afternoon], na.rm = TRUE)
-		    afterCounts <- sum(afternoon, na.rm = TRUE)
-		    evenArr <- sum(data$ArrDelay[evening], na.rm = TRUE)
-		    evenCounts <- sum(evening, na.rm = TRUE)
+	ProcessAndUpdateData <- function( data )
+	{
+		# Process Data
+		notMissing <- !is.na(data$ArrDelay)
+		morning <- data$CRSDepTime >= 6 & data$CRSDepTime < 12 & notMissing
+		afternoon <- data$CRSDepTime >= 12 & data$CRSDepTime < 17 & notMissing
+		evening <- data$CRSDepTime >= 17 & data$CRSDepTime < 23 & notMissing
+		mornArr <- sum(data$ArrDelay[morning], na.rm = TRUE)      
+		mornCounts <- sum(morning, na.rm = TRUE)
+		afterArr <- sum(data$ArrDelay[afternoon], na.rm = TRUE)
+		afterCounts <- sum(afternoon, na.rm = TRUE)
+		evenArr <- sum(data$ArrDelay[evening], na.rm = TRUE)
+		evenCounts <- sum(evening, na.rm = TRUE)
 
 
-		 # Update Results
-		   .rxSet("toMornArr", mornArr + .rxGet("toMornArr"))
-		   .rxSet("toMornCounts", mornCounts + .rxGet("toMornCounts"))
-		   .rxSet("toAfterArr", afterArr + .rxGet("toAfterArr"))
-		   .rxSet("toAfterCounts", afterCounts + .rxGet("toAfterCounts"))
-		   .rxSet("toEvenArr", evenArr + .rxGet("toEvenArr"))
-		   .rxSet("toEvenCounts", evenCounts + .rxGet("toEvenCounts"))
+		# Update Results
+		.rxSet("toMornArr", mornArr + .rxGet("toMornArr"))
+		.rxSet("toMornCounts", mornCounts + .rxGet("toMornCounts"))
+		.rxSet("toAfterArr", afterArr + .rxGet("toAfterArr"))
+		.rxSet("toAfterCounts", afterCounts + .rxGet("toAfterCounts"))
+		.rxSet("toEvenArr", evenArr + .rxGet("toEvenArr"))
+		.rxSet("toEvenCounts", evenCounts + .rxGet("toEvenCounts"))
 
-		    return( NULL )
-		}
+		return( NULL )
+	}
+```
 
 
 Our transformation object values are initialized in a list passed into rxDataStep. We also use the argument *returnTransformObjects* to indicate that we want updated values of the *transformObjects* returned rather than a transformed data set:
 
-	totalRes <- rxDataStep( inData = airData , returnTransformObjects = TRUE,
-	    transformObjects =
-	        list(toMornArr = 0, toAfterArr = 0, toEvenArr = 0,
-	        toMornCounts = 0, toAfterCounts = 0, toEvenCounts = 0),
-	    transformFunc = ProcessAndUpdateData,
-	    transformVars = c("ArrDelay", "CRSDepTime"))
+```
+totalRes <- rxDataStep( inData = airData , returnTransformObjects = TRUE,
+	transformObjects =
+		list(toMornArr = 0, toAfterArr = 0, toEvenArr = 0,
+		toMornCounts = 0, toAfterCounts = 0, toEvenCounts = 0),
+	transformFunc = ProcessAndUpdateData,
+	transformVars = c("ArrDelay", "CRSDepTime"))
+```
 
 
 The rxDataStep function will automatically chunk through the data for us. All we need to do is process the final results:
 
-	FinalizeResults <- function(totalRes)
-	{
-	    return(data.frame(
-	        AveMorningDelay = totalRes$toMornArr / totalRes$toMornCounts,
-	        AveAfternoonDelay = totalRes$toAfterArr / totalRes$toAfterCounts,
-	        AveEveningDelay = totalRes$toEvenArr / totalRes$toEvenCounts))
-	}
-	FinalizeResults(totalRes)
+```
+FinalizeResults <- function(totalRes)
+{
+	return(data.frame(
+		AveMorningDelay = totalRes$toMornArr / totalRes$toMornCounts,
+		AveAfternoonDelay = totalRes$toAfterArr / totalRes$toAfterCounts,
+		AveEveningDelay = totalRes$toEvenArr / totalRes$toEvenCounts))
+}
+FinalizeResults(totalRes)
+```
 
 
 The calculated results are:
 
+```
 	  AveMorningDelay AveAfternoonDelay AveEveningDelay
 	1        6.146039          13.66912        16.71271
+```
 
 
 In this case we can check our results by using the *rowSelection* argument in *rxSummary*:
 
-	rxSummary(~ArrDelay, data = "airExample.xdf",
-	rowSelection = CRSDepTime >= 6 & CRSDepTime < 12 & !is.na(ArrDelay))
-	Call:
-	rxSummary(formula = ~ArrDelay, data = "airExample.xdf",
-	rowSelection = CRSDepTime >= 6 & CRSDepTime < 12 & !is.na(ArrDelay))
+```
+rxSummary(~ArrDelay, data = "airExample.xdf",
+rowSelection = CRSDepTime >= 6 & CRSDepTime < 12 & !is.na(ArrDelay))
+Call:
+rxSummary(formula = ~ArrDelay, data = "airExample.xdf",
+rowSelection = CRSDepTime >= 6 & CRSDepTime < 12 & !is.na(ArrDelay))
 
-	Summary Statistics Results for: ~ArrDelay
-	File name:
-	    C:\YourOutputPath\airExample.xdf
-	Number of valid observations: 234403
+Summary Statistics Results for: ~ArrDelay
+File name:
+	C:\YourOutputPath\airExample.xdf
+Number of valid observations: 234403
 
-	 Name     Mean     StdDev  Min Max  ValidObs MissingObs
-	 ArrDelay 6.146039 35.4734 -85 1490 234403   0
+	Name     Mean     StdDev  Min Max  ValidObs MissingObs
+	ArrDelay 6.146039 35.4734 -85 1490 234403   0
+```
 
 
 ## See Also
