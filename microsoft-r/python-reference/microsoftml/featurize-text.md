@@ -175,9 +175,7 @@ the following options:
 
 * `dropUnknowns`: Drop items. 
 
-* `sort`: Specifies how to order items when vectorized. Two orderings are
-
-      supported:
+* `sort`: Specifies how to order items when vectorized. Two orderings are supported:
 
       * `"occurrence"`: items appear in the order encountered. 
 
