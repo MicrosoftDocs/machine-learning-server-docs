@@ -1161,13 +1161,17 @@ Now edit the script files. Any content you add to your project template is autom
 
 2.	Add the following line to the top of **functions.R**:
 
-		# Specify all function definitions in this file
+    ```
+	# Specify all function definitions in this file
+    ```
 
 3.	In the Solution Explorer, double-click **constants.R** to open the script in a Script window.
 
 4.	Add the following line to the top of **constants.R**:
 
-		# Define numeric constants here
+    ```
+	# Define numeric constants here
+    ```
 
 By default, when you click the Run/Continue button ![Run/Continue Button](./media/revorpe-users-guide/run_button.jpg), Revolution R Enterprise runs all the scripts in the current project folder in alphabetical order. Thus, your file **constants.R** is run before **functions.R**, and so you can safely use constants defined in that file in your function definitions.
 
