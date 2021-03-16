@@ -147,6 +147,7 @@ wageAgeSexStateLm  <- rxLinMod(incwage~F(age):sex:state, data=dataFile,
 wageAgeSexState <- rxResultsDF(wageAgeSexStateLm)
 colnames(wageAgeSexState) <-
 	c("Age","Sex","State", "WageIncome","Counts" )
+```
 
 Now draw the plot:
 
