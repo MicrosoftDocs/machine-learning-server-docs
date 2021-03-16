@@ -36,7 +36,9 @@ To store text data for analysis and visualization, you can load it into memory a
 
 Converting external data into a format understood by RevoScaleR is achieved using the **rxImport** function. Although the function takes several arguments, it's just loading data from a source file that you provide. In the simplest case, you can give it a file path. If the data is delimited by commas or tabs, this is all that is required loading the data. To illustrate, the following example creates a data object loaded with data from a local text-delimited file:
 
-		> mydataobject <-rxImport("C:/user/temp/mydatafile.csv")
+```
+> mydataobject <-rxImport("C:/user/temp/mydatafile.csv")
+```
 
 Depending on arguments, **rxImport** either loads data as a data frame, or outputs the data to a .xdf file saved to disk. This article covers a range of data access scenarios for text files and file-based data access of SPSS and SAS data. To learn more about other data sources, see related articles in the table of contents or in the link list at the end of this article.
 
