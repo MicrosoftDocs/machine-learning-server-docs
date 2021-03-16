@@ -146,32 +146,44 @@ When you first open the Revolution R Enterprise R Productivity Environment, the 
 
 To get started, type the following command at the “> “ prompt and press ENTER:
 
-	x <- 1:20
+```
+x <- 1:20
+```
 
 The combination “<” followed by “-“ is the main R assignment operator; the colon is the sequence operator. The command is read “x gets 1 to 20,” and its effect is to assign the variable “x” the value “1:20”, which is a vector (a one-dimensional array) consisting of the integers 1 through 20. When you assign a variable, as in the above command, R completes the assignment and returns its standard prompt. To see the contents of an assigned variable, type its name at the prompt and press ENTER (in what follows, we will show input preceded by the R prompt >; if you are following along at the keyboard, do not type the >):
 
-	> x
+```
+> x
+```
 
 R then returns the value of the variable:
 
-	[1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+```
+[1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+```
 
 Define another variable, y, using the following command:
 
-	> y <- 2 + .2 * x + rnorm(20)
+```
+> y <- 2 + .2 * x + rnorm(20)
+```
 
 To see the contents of y, type its name:
 
-	> y
-	 [1] 2.3358666 0.8279776 2.6617999 2.1925148 2.4903571 1.3205465 3.7753439
-	 [8] 3.1476628 3.0461752 4.7368984 4.0402702 4.7821859 4.5344639 5.1235209
-	[15] 4.9958019 5.7902878 4.2940041 7.3600556 5.6599444 7.5457394
+```
+> y
+[1] 2.3358666 0.8279776 2.6617999 2.1925148 2.4903571 1.3205465 3.7753439
+[8] 3.1476628 3.0461752 4.7368984 4.0402702 4.7821859 4.5344639 5.1235209
+[15] 4.9958019 5.7902878 4.2940041 7.3600556 5.6599444 7.5457394
+```
 
 (Because y is created using the random number generating function rnorm, your value will differ.)
 
 To create a plot of y versus x, use the plot command:
 
-	> plot(x, y)
+```
+> plot(x, y)
+```
 
 A scatter plot is created in separate graphics window.
 
@@ -197,11 +209,13 @@ Right-click on **Script.R** in the Solution Explorer, and rename it **MyRProject
 
 At the top of your script, add the following lines by selecting all the text in the R Console window from the first definition of x and then selecting **Copy Commands Only** from the **Edit** menu, then right-clicking in the Script window and clicking **Paste**:
 
-    x <- 1:20
-    x
-    y <- 2 + .2*x + rnorm(20)
-    y
-    plot(x, y)
+```
+x <- 1:20
+x
+y <- 2 + .2*x + rnorm(20)
+y
+plot(x, y)
+```
 
 When a line in a script is edited, a yellow highlight appears in the left margin of the Script window. When the change is saved (for example, by running the script) the highlight changes to green.
 
@@ -209,24 +223,28 @@ When a line in a script is edited, a yellow highlight appears in the left margin
 
 Now, run your script by clicking the Run button ![Run Button](./media/revorpe-users-guide/run_button.jpg) on the Revolution R Enterprise standard toolbar. The commands and the output are printed in the R Console window, as shown:
 
-    >  x <- 1:20
-    >  x
-     [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
-    >  y <- 2 + .2*x + rnorm(20)
-    >  y
-     [1] 2.636585 3.525021 3.485727 4.058024 1.778333 1.218661 5.201960 3.567151
-     [9] 3.327252 4.878279 6.317447 3.170078 4.804122 4.199217 5.831666 3.769799
-    [17] 4.957004 4.293823 4.878549 7.547997
+```
+>  x <- 1:20
+>  x
+[1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+>  y <- 2 + .2*x + rnorm(20)
+>  y
+[1] 2.636585 3.525021 3.485727 4.058024 1.778333 1.218661 5.201960 3.567151
+[9] 3.327252 4.878279 6.317447 3.170078 4.804122 4.199217 5.831666 3.769799
+[17] 4.957004 4.293823 4.878549 7.547997
+```
 
 (Notice that your y variable differs from the one you created earlier, as well as from the one shown here. This again is because of the call to rnorm. Also notice that the Script window now shows a green highlight in the left margin; this is because the script is saved to disk before it is run.)
 
 It is sometimes convenient to run only a portion of a script. To do this, select the portion of the script you want to run, for example, the lines that define and display the y variable, and then choose **Run Line or Selection** from the **Edit** menu (or, alternatively, click the **Run Line or Selection** button ![Selection Button](./media/revorpe-users-guide/run_line_selection_button.jpg) in the Revolution R Enterprise standard toolbar). Again, the output is sent to the R Console window:
 
-    >  y <- 2 + .2*x + rnorm(20)
-    >  y
-     [1] 0.9645519 3.3559849 3.2095384 1.8345245 3.4162445 1.9668614 4.0564819
-     [8] 2.4992445 3.1564125 3.6010072 4.3156243 5.2222722 5.3168272 5.5181892
-    [15] 4.7657572 3.2346259 4.8671942 5.5564427 4.7841998 6.7392932
+```
+>  y <- 2 + .2*x + rnorm(20)
+>  y
+[1] 0.9645519 3.3559849 3.2095384 1.8345245 3.4162445 1.9668614 4.0564819
+[8] 2.4992445 3.1564125 3.6010072 4.3156243 5.2222722 5.3168272 5.5181892
+[15] 4.7657572 3.2346259 4.8671942 5.5564427 4.7841998 6.7392932
+```
 
 ### Adding Code Snippets to Your Script
 
@@ -246,11 +264,15 @@ To create the data frame:
 
 4.	Replace the placeholder text by typing the following:
 
-		x = runif(20), y = rnorm(20)
+    ```
+	x = runif(20), y = rnorm(20)
+    ```
 
 	The snippet should now read as follows:
 
-		myDataFrame <- data.frame(x = runif(20), y = rnorm(20))
+    ```
+	myDataFrame <- data.frame(x = runif(20), y = rnorm(20))
+    ```
 
 5.	Press ENTER to accept your changes and exit the Code Snippet. (You may see an IntelliSense window appear with information about the arguments to the data.frame function. Close this window by pressing ESC before pressing ENTER.)
 
@@ -455,12 +477,16 @@ An R script is simply a text file containing R expressions. To create an R scrip
 
 7.	In your blank script, type the following:
 
-		print("Hello, World")
+    ```
+	print("Hello, World")
+    ```
 
 To run your script, click the **Run** button ![Run Button](./media/revorpe-users-guide/run_button.jpg). The command in your script is echoed to the R Console window, and the R output is shown:
 
-	> print("Hello, World")
-	[1] "Hello, World"
+```
+> print("Hello, World")
+[1] "Hello, World"
+```
 
 (In fact, the **HelloWorld** example can be made even simpler; if you remove the print( and the closing parenthesis, the R output remains the same. Try it.)
 
@@ -536,37 +562,39 @@ The plot of **ExpPerPupil** versus **AveSAT** seems counter-intuitive; it appear
 
 We will try to explore this using a *conditioning plot*, a feature of R available through the lattice package. In your script, define the following function:
 
-	conditionedRegressionPlot <- function(x, y, c, title="",  xlabel="", ylabel="")
-	{
-		breaks = quantile(c)
-	    cat = cut(c, breaks = breaks)
-		# Add the quartile to the label
-		levels(cat)[1] = paste("Bottom 25%:", levels(cat)[1])
-		levels(cat)[2] = paste("Second 25%:", levels(cat)[2])
-		levels(cat)[3] = paste("Third 25%:", levels(cat)[3])
-		levels(cat)[4] = paste("Top 25%:", levels(cat)[4])
-		library(lattice)  # Make sure lattice package is loaded
-		xyplot(y ~ x| cat,
-			type=c("r", "p", "g"),
-			main= title,
-			sub = "",
-			xlab = xlabel,
-			ylab = ylabel,
-			# Symbol type: 15 solid square, 16 solid circle, ,
-			# 17 solid up triangle
-			pch = 16,  
-			# Colors:  1 black, 2 red, 3 green, 4 blue, 5 cyan, 6 magenta,
-			#7 yellow, 8 gray
-			col = 4,
-			col.line = 2,
-			# Line style: 1 solid, 2 dash, 3 dots
-			lty = 1,
-			# Line weight
-			lwd = 2,
-			strip = strip.custom(bg = 8),
-			auto.key=FALSE,
-		)    
-	}
+```
+conditionedRegressionPlot <- function(x, y, c, title="",  xlabel="", ylabel="")
+{
+	breaks = quantile(c)
+	cat = cut(c, breaks = breaks)
+	# Add the quartile to the label
+	levels(cat)[1] = paste("Bottom 25%:", levels(cat)[1])
+	levels(cat)[2] = paste("Second 25%:", levels(cat)[2])
+	levels(cat)[3] = paste("Third 25%:", levels(cat)[3])
+	levels(cat)[4] = paste("Top 25%:", levels(cat)[4])
+	library(lattice)  # Make sure lattice package is loaded
+	xyplot(y ~ x| cat,
+		type=c("r", "p", "g"),
+		main= title,
+		sub = "",
+		xlab = xlabel,
+		ylab = ylabel,
+		# Symbol type: 15 solid square, 16 solid circle, ,
+		# 17 solid up triangle
+		pch = 16,  
+		# Colors:  1 black, 2 red, 3 green, 4 blue, 5 cyan, 6 magenta,
+		#7 yellow, 8 gray
+		col = 4,
+		col.line = 2,
+		# Line style: 1 solid, 2 dash, 3 dots
+		lty = 1,
+		# Line weight
+		lwd = 2,
+		strip = strip.custom(bg = 8),
+		auto.key=FALSE,
+	)    
+}
+```
 
 Notice that the Script window checks the syntax of your R expressions; comments appear green, character strings appear red, numbers and keywords appear blue. If you have syntactical errors in your code, these are underlined in red.
 
@@ -574,13 +602,15 @@ Run your script by clicking Run ![Run Button](./media/revorpe-users-guide/run_bu
 
 You can then call your function by adding the following lines to your script:
 
-	x <- SAT$ExpPerPupil
-	y <- SAT$AveSAT
-	c <- SAT$PctSAT
-	conditionedRegressionPlot(x, y, c,
-	      title="Conditioning on % Students Taking SATs",
-	      xlabel = "Educational Expenditures Per Pupil",
-	      ylabel= "Average SAT Scores By State")
+```
+x <- SAT$ExpPerPupil
+y <- SAT$AveSAT
+c <- SAT$PctSAT
+conditionedRegressionPlot(x, y, c,
+		title="Conditioning on % Students Taking SATs",
+		xlabel = "Educational Expenditures Per Pupil",
+		ylabel= "Average SAT Scores By State")
+```
 
 Select those seven lines, right-click, and then click Run Line or Selection. The conditioning plot is produced as follows:
 
@@ -834,22 +864,24 @@ Revolution R Enterprise for Windows incorporates a visual debugger, and if you h
 
 To explore debugging using the visual debugger, create a new project, basicstats, with a single R script, and put the following lines into the script:
 
-	myVar <- function(x){
-		n <- length(x)
-		var <- ( (x-mean(x))^2/(n-1))
-		var
-	}
-	regressYOnX <- function(x,y){
-		sumx  <- sum(x)
-		sumy  <- sum(y)
-		sumxx <- sum(x^2)
-		sumxy <- sum(x*y)
-		b <- (sumxy - sumx * sumy /n)/(sumxx - (sumx)^2/n)
-		a <- mean(y) - b*mean(x)
-		returnVal <- c(a,b)
-		names(returnVal) <- c("(Intercept)", "x")
-		returnVal
-	}
+```
+myVar <- function(x){
+	n <- length(x)
+	var <- ( (x-mean(x))^2/(n-1))
+	var
+}
+regressYOnX <- function(x,y){
+	sumx  <- sum(x)
+	sumy  <- sum(y)
+	sumxx <- sum(x^2)
+	sumxy <- sum(x*y)
+	b <- (sumxy - sumx * sumy /n)/(sumxx - (sumx)^2/n)
+	a <- mean(y) - b*mean(x)
+	returnVal <- c(a,b)
+	names(returnVal) <- c("(Intercept)", "x")
+	returnVal
+}
+```
 
 The first function, myVar, is a “from the definition” implementation of a variance function. The second, regressYOnX, calculates the coefficients a and b of the regression of y on x and returns them as a vector. Both of these functions have errors in them, and we will use the visual debugger to help find them.
 
@@ -863,21 +895,25 @@ Next, click the **Run Script** button ![Run Script](./media/revorpe-users-guide/
 
 To test myVar, which should be equivalent to the built-in R function var, we simply need to create a vector x and see if the output of myVar is equivalent to the output of var. So we add the following lines to the script and re-run the script:
 
-    x <- rnorm(25)
-    var(x)
-    myVar(x)
+```
+x <- rnorm(25)
+var(x)
+myVar(x)
+```
 
 The R Console window shows the following results, which indicates that our function is not equivalent to the built-in var function:
 
-	> x <- rnorm(25)
-	> var(x)
-	[1] 0.8883512
-	> myVar(x)
-	 [1] 1.151835e-02 2.837015e-02 5.715231e-02 1.776550e-03 2.308816e-03
-	 [6] 6.012832e-05 3.619039e-04 1.993373e-02 5.961041e-04 2.801520e-03
-	[11] 8.306429e-02 9.613675e-02 1.995132e-03 1.111981e-01 9.188450e-02
-	[16] 5.008679e-02 1.124161e-01 5.847513e-02 4.587514e-03 2.076363e-03
-	[21] 2.311226e-03 4.698980e-02 2.180058e-02 5.786210e-02 2.258723e-02
+```
+> x <- rnorm(25)
+> var(x)
+[1] 0.8883512
+> myVar(x)
+	[1] 1.151835e-02 2.837015e-02 5.715231e-02 1.776550e-03 2.308816e-03
+	[6] 6.012832e-05 3.619039e-04 1.993373e-02 5.961041e-04 2.801520e-03
+[11] 8.306429e-02 9.613675e-02 1.995132e-03 1.111981e-01 9.188450e-02
+[16] 5.008679e-02 1.124161e-01 5.847513e-02 4.587514e-03 2.076363e-03
+[21] 2.311226e-03 4.698980e-02 2.180058e-02 5.786210e-02 2.258723e-02
+```
 
 To see what the problem is, we set a breakpoint in our script at the line that calls myVar, by clicking in the gray left margin of the script window, as shown:
 
@@ -893,30 +929,38 @@ Click the Step Into button ![Step Into Button](./media/revorpe-users-guide/step_
 
 The line “n <- length(x)” seems OK, so click the Step Over button ![Step Over Button](./media/revorpe-users-guide/step_over_button.jpg) to step to the next line. The cursor (and the yellow arrow) moves to the next line. The error should stare us in the face—we forgot to sum the squares of the individual variations, so we were returning a vector instead of a scalar. Click ![Run Button](./media/revorpe-users-guide/run_button.jpg) to complete the debugging session, and then edit myVar to read as follows:
 
-	myVar <- function(x){
-		n <- length(x)
-		var <- sum((x-mean(x))^2/(n-1))
-		var
-	}
+```
+myVar <- function(x){
+	n <- length(x)
+	var <- sum((x-mean(x))^2/(n-1))
+	var
+}
+```
 
 Remove the breakpoint in your script by clicking it, and then click ![Run Button](./media/revorpe-users-guide/run_button.jpg) to run the corrected script. The results in the R Console window confirm the fix:
 
-    > x <- rnorm(25)
-    > var(x)
-    [1] 0.7647091
-    > myVar(x)
-    [1] 0.7647091
+```
+> x <- rnorm(25)
+> var(x)
+[1] 0.7647091
+> myVar(x)
+[1] 0.7647091
+```
 
 ### Looking at Local Variables
 
 Turning our attention to the regressYOnX function, the simplest test sets are those known to be lines. So, add the following line to your script:
 
-	regressYOnX(1:5, 1:5)
+```
+regressYOnX(1:5, 1:5)
+```
 
 This should result in the line with intercept 0 and slope 1. But after adding this line and clicking ![Run Button](./media/revorpe-users-guide/run_button.jpg) as usual, our results are disappointing:
 
-    > regressYOnX(1:5, 1:5)
-    Error in regressYOnX(1:5, 1:5) : object 'n' not found
+```
+> regressYOnX(1:5, 1:5)
+Error in regressYOnX(1:5, 1:5) : object 'n' not found
+```
 
 But, we now know what to do: set a breakpoint in the script at the newly added line, and then step into the function by clicking ![Step Into Button](./media/revorpe-users-guide/step_into_button.jpg) when processing stops at the breakpoint.
 
@@ -926,13 +970,17 @@ Click ![Step Over Button](./media/revorpe-users-guide/step_over_button.jpg) four
 
 All of the variables needed to produce our value b are there except one—there is no n. We copied the formula from the text, but neglected to tell our function what n was. We just need one more line before the line that defines b, and that is a line defining n:
 
-	n <- length(x)
+```
+n <- length(x)
+```
 
 Stop the current debugging session by typing SHIFT-F5, add the above line, then rerun the script. You see the expected output:
 
-	> regressYOnX(1:5, 1:5)
-	(Intercept)           x
-			  0			  1
+```
+> regressYOnX(1:5, 1:5)
+(Intercept)           x
+		0			  1
+```
 
 ### Sourcing Scripts for Debugging
 
@@ -966,29 +1014,33 @@ Note that sourcing a script under the debugger is different from sourcing a scri
 
 For example, suppose we put the two original functions we wanted to debug into a script called basicStatsFuns.R:
 
-	myVar <- function(x){
-		n <- length(x)
-		var <- ( (x-mean(x))^2/(n-1))
-		var
-	}
-	regressYOnX <- function(x,y){
-		sumx  <- sum(x)
-		sumy  <- sum(y)
-		sumxx <- sum(x^2)
-		sumxy <- sum(x*y)
-		b <- (sumxy - sumx * sumy /n)/(sumxx - (sumx)^2/n)
-		a <- mean(y) - b*mean(x)
-		returnVal <- c(a,b)
-		names(returnVal) <- c("(Intercept)", "x")
-		returnVal
-	}
+```
+myVar <- function(x){
+	n <- length(x)
+	var <- ( (x-mean(x))^2/(n-1))
+	var
+}
+regressYOnX <- function(x,y){
+	sumx  <- sum(x)
+	sumy  <- sum(y)
+	sumxx <- sum(x^2)
+	sumxy <- sum(x*y)
+	b <- (sumxy - sumx * sumy /n)/(sumxx - (sumx)^2/n)
+	a <- mean(y) - b*mean(x)
+	returnVal <- c(a,b)
+	names(returnVal) <- c("(Intercept)", "x")
+	returnVal
+}
+```
 
 We then create a script to test these functions, which we call basicStatsTests.R:
 revoSource("basicstats/basicStatsFuns.R")
 
-	x <- rnorm(25)
-	var(x)
-	myVar(x)
+```
+x <- rnorm(25)
+var(x)
+myVar(x)
+```
 
 If we set our breakpoint at myVar(x) as before and run this script in Debug mode, we can debug into the myVar function because the basicStatsFuns.R script is instrumented. If we use the source function instead of revoSource in basicStatsTests.R, we cannot debug into the myVar function because the basicStatsFuns.R script is not instrumented.
 
@@ -1019,7 +1071,9 @@ After you have opened the window, you can position it wherever you like. In addi
 
 The R Console normally runs in Release mode, even if the Solution Configurations dropdown is set to Debug. However, in certain cases it can be useful to run commands in the R Console under the debugger, and so Revolution R Enterprise provides this capability. For example, suppose we have set a breakpoint at the following line of our regressYOnX function:
 
-	b <- (sumxy - sumx * sumy /n)/(sumxx - (sumx)^2/n)
+```
+b <- (sumxy - sumx * sumy /n)/(sumxx - (sumx)^2/n)
+```
 
 and have run our complete script in Debug mode so that the regressYOnX function is instrumented for debugging. In this case, we can run the regressYOnX function in the R Console window under the debugger as follows:
 
@@ -1139,12 +1193,15 @@ Code Snippets provide a convenient way for new users to learn R coding by provid
 
 A Code Snippet is an XML file with a specific structure. The file **CodeSnippetTemplate.snippet** in the **IDE\doc\examples** folder of your Revolution R Enterprise installation directory can be used as a starting point for creating your own snippets. The first line of the Code Snippet identifies the file as XML. The second and third lines are (opening) tags identifying the snippet as a Visual Studio 2005 Code Snippet:
 
+```
 	<?xml version="1.0" encoding="utf-8" ?>
 	<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
 	  <CodeSnippet Format="1.0.0">
+```
 
 The next few lines are the Code Snippet header, where you provide a title, a shortcut, a description, your name (or your company name, if appropriate), and specify whether the snippet is an *Expansion*, that is, stand-alone, snippet, or a *SurroundsWith* snippet (which surrounds a bit of selected text).  A snippet can be both an Expansion and SurroundsWith snippet:
 
+```
     <Header>
       <Title>Snippet Template</Title>
       <Shortcut>SnipTemp</Shortcut>
@@ -1155,9 +1212,11 @@ The next few lines are the Code Snippet header, where you provide a title, a sho
         <SnippetType>Expansion</SnippetType>
       </SnippetTypes>
     </Header>
+```
 
 The next sections include the heart of the snippet—the declarations specify which pieces of the inserted code are to be filled in by the user, and allow you to specify tooltip text to inform the user how those pieces are to be filled in:
 
+```
     <Snippet>
       <Declarations>
         <Literal>
@@ -1181,9 +1240,11 @@ The next sections include the heart of the snippet—the declarations specify wh
           <Default> </Default>
         </Literal>
        </Declarations>
+```
 
 Finally, you specify the code. The IDs of the placeholders you defined in the declarations are used in the code surrounded by dollar sign characters ($):
 
+```
       <Code Language="R">
         <![CDATA[
 	$fnName$ <- function($arguments$)
@@ -1192,17 +1253,21 @@ Finally, you specify the code. The IDs of the placeholders you defined in the de
 	}
         ]]>
       </Code>
+```
 
 The last lines of the code snippet are closing tags:
 
+```
 	    </Snippet>
 	  </CodeSnippet>
 	</CodeSnippets>
+```
 
 When you create your own Code Snippets, Revolution R Enterprise looks for them in a particular location, by default the folder **Revolution\Code Snippets\R\My Code Snippets** under your personal documents directory.
 
 As an example of a Code Snippet created from this template, here is a Code Snippet for launching a NetWorkSpaces sleigh, that uses the package nws from the ParallelR component of Revolution R Enterprise:
 
+```
 	<?xml version="1.0" encoding="utf-8" ?>
 	<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
 	  <CodeSnippet Format="1.0.0">
@@ -1245,6 +1310,7 @@ As an example of a Code Snippet created from this template, here is a Code Snipp
 	    </Snippet>
 	  </CodeSnippet>
 	</CodeSnippets>
+```
 
 ## Managing Projects and Solutions
 
@@ -1288,7 +1354,9 @@ To grant a network drive full trust on Windows 7 or Windows Vista systems:
 
 4.	Type the following command:
 
-		caspol -machine -addgroup 1. –url \\unc\path\* FullTrust
+    ```
+	caspol -machine -addgroup 1. –url \\unc\path\* FullTrust
+    ```
 
 	where \\unc\path is the path to the network drive. If prompted, type yes to complete the action.
 
@@ -1303,7 +1371,9 @@ To grant a network drive full trust on Windows XP systems:
 
 4.	Type the following command:
 
-		caspol -machine -addgroup 1. –url \\unc\path\* FullTrust
+    ```
+	caspol -machine -addgroup 1. –url \\unc\path\* FullTrust
+    ```
 
 	where \\unc\path is the path to the network drive. If prompted, type **yes** to complete the action.
 
@@ -1445,6 +1515,8 @@ Normally, when you open a solution, the following events occur:
 
 You can use the file .Rprofile (or *solution*.Rprofile) to specify actions you want R to perform every time you open a given solution. For example, you might want to ensure that certain packages such as the ParallelR package nws are loaded, so you could include lines such as the following:
 
-	library(nws)
+```
+library(nws)
+```
 
 Any valid R expression can be executed from the .Rprofile file. See the Startup help file for more details.

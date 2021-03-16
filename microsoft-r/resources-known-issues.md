@@ -330,8 +330,10 @@ The workaround to bypass the timeout is to modify the web node appsetting.json f
 
 1. Add a new field "BatchExecutionCheckoutTimeSpan" at the base level of the json file. For example:
 
-        "MaxNumberOfThreadsPerBatchExecution": 100,
-        "BatchExecutionCheckoutTimeSpan": "03:00:00",
+    ```
+    "MaxNumberOfThreadsPerBatchExecution": 100,
+    "BatchExecutionCheckoutTimeSpan": "03:00:00",
+    ```
 
 The value of "BatchExecutionCheckoutTimeSpan" and "ConnectionTimeout" should be set to same value. If both web and compute nodes are on the same machine (a one-box configuration) or on the same virtual network, then the "ConnectionTimeout" can be shorter because there is minimal latency. 
 
