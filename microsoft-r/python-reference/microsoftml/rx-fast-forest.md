@@ -342,7 +342,7 @@ memory.
 [From Stumps to Trees to Forests](https://blogs.technet.microsoft.com/machinelearning/2014/09/10/from-stumps-to-trees-to-forests/)
 
 
-## Example
+## Binary classification example
 
 
 
@@ -416,7 +416,7 @@ Rows Read: 5, Total Rows Processed: 5, Total Chunk Time: Less than .001 seconds
 
 
 
-## Example
+## Regression example
 
 
 

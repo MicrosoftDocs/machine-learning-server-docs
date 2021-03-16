@@ -197,9 +197,7 @@ computing surrogate splits.
 
 An integer specifying how surrogates are to be used
 in the splitting process:
-0: Display-only; observations with a missing value for the primary
-
-    split variable are not sent further down the tree.
+0: Display-only; observations with a missing value for the primary split variable are not sent further down the tree.
 
 1: Use surrogates, in order, to split observations missing the primary
     split variable. If all surrogates are missing, the observation is not

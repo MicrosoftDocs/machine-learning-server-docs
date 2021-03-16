@@ -44,7 +44,7 @@ With this tool, you can:
 
 ## Machine Learning Server 9.3 and later: Administration with Azure CLI
 
-In this release, use the `admin` extension of the [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) to set up and manage your Machine Learning Server node configuration.
+In this release, use the `admin` extension of the [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) to set up and manage your Machine Learning Server node configuration.
 
   >[!Important]
   >- You do not need an Azure subscription to use this CLI. 
@@ -122,9 +122,9 @@ The following command-line switches are available for the administration utility
 
 |Switch|Description|Introduced in version|
 |----|-----|:---:|
-|-silentoneboxinstall password uris <br/><br/>-silentinstall  password uris|Sets up a [one-box configuration](configure-start-for-administrators.md#configure-server-for-operationalization) silently, sets an admin password, and in 9.2 allows you to [specify compute node URIs](configure-admin-cli-compute-uris.md) or IP ranges. A password is required. For example:<br/><br/>-silentinstall myPass123 http://1.1.1.1:12805,http://1.0.1.1-3:12805 |9.1, <br/>URIs in 9.2|
-|-silentwebnodeinstall password uris|Configures a [web node](configure-start-for-administrators.md#configure-server-for-operationalization) silently, sets an admin password, and in 9.2 allows you to [specify compute node URIs](configure-admin-cli-compute-uris.md) or IP ranges. A password is required. For example:<br/><br/>-silentwebnodeinstall myPass123 http://1.1.1.1:12805,http://1.0.1.1-3:12805 |9.1, <br/><br/>URIs in 9.2|
-|-silentcomputenodeinstall|Configures a [compute node](configure-start-for-administrators.md#configure-server-for-operationalization) silently.  For example:<br/><br/>-silentcomputenodeinstall|9.1|
-|-setpassword password|Sets the password. Cannot be used <br/> if LDAP or AAD was configured.  For example:<br/><br/>-setpassword myPass123|9.1|
-|-preparedbmigration filePath|Migrates the data from current database to a different database schema. Takes the [path to the web node’s appsetting.json file](../operationalize/configure-find-admin-configuration-file.md) as an argument. This is uncommonly needed as a step when upgrading. For example:<br/><br/>-preparedbmigration \<web-node-dir>/appsettings.json|9.1|
-|-encryptsecret Secret CertificateStoreName CertificateStoreLocation CertificateSubjectName|Silently [encrypts secrets](configure-admin-cli-encrypt-credentials.md).  For example:<br/><br/>-encryptsecret&nbsp;theSecret&nbsp;Store&nbsp;Location Subject|9.1|
+|-silentoneboxinstall password uris <br/><br/>-silentinstall  password uris|Sets up a [one-box configuration](configure-start-for-administrators.md#configure-server-for-operationalization) silently, sets an admin password, and in 9.2 allows you to [specify compute node URIs](configure-admin-cli-compute-uris.md) or IP ranges. A password is required. For example:<br/><br/`>-silentinstall myPass123 http://1.1.1.1:12805,http://1.0.1.1-3:12805` |9.1, <br/>URIs in 9.2|
+|-silentwebnodeinstall password uris|Configures a [web node](configure-start-for-administrators.md#configure-server-for-operationalization) silently, sets an admin password, and in 9.2 allows you to [specify compute node URIs](configure-admin-cli-compute-uris.md) or IP ranges. A password is required. For example:<br/><br/>`-silentwebnodeinstall myPass123 http://1.1.1.1:12805,http://1.0.1.1-3:12805` |9.1, <br/><br/>URIs in 9.2|
+|-silentcomputenodeinstall|Configures a [compute node](configure-start-for-administrators.md#configure-server-for-operationalization) silently.  For example:<br/><br/>`-silentcomputenodeinstall`|9.1|
+|-setpassword password|Sets the password. Cannot be used <br/> if LDAP or AAD was configured.  For example:<br/><br/>`-setpassword myPass123`|9.1|
+|-preparedbmigration filePath|Migrates the data from current database to a different database schema. Takes the [path to the web node’s appsetting.json file](../operationalize/configure-find-admin-configuration-file.md) as an argument. This is uncommonly needed as a step when upgrading. For example:<br/><br/>`-preparedbmigration <web-node-dir>/appsettings.json`|9.1|
+|-encryptsecret Secret CertificateStoreName CertificateStoreLocation CertificateSubjectName|Silently [encrypts secrets](configure-admin-cli-encrypt-credentials.md).  For example:<br/><br/>`-encryptsecret&nbsp;theSecret&nbsp;Store&nbsp;Location Subject`|9.1|

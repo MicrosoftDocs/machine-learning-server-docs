@@ -48,50 +48,54 @@ Before trying the examples, be sure that your [compute context](how-to-revoscale
 
 A familiar casino game consists of rolling a pair of dice. If you roll a 7 or 11 on your initial roll, you win. If you roll 2, 3, or 12, you lose. Roll a 4, 5, 6, 8, 9, or 10, NS that number becomes your *point* and you continue rolling until you either roll your point again (in which case you win) or roll a 7, in which case you lose. The game is easily simulated in R using the following function:
 
-	playDice <- function()
+```
+playDice <- function()
+{
+	result <- NULL
+	point <- NULL
+	count <- 1
+	while (is.null(result))
 	{
-		result <- NULL
-		point <- NULL
-		count <- 1
-		while (is.null(result))
-		{
-			roll <- sum(sample(6, 2, replace=TRUE))
+		roll <- sum(sample(6, 2, replace=TRUE))
 
-			if (is.null(point))
-			{
-				point <- roll
-			}
-			if (count == 1 && (roll == 7 || roll == 11))
-			{
-				result <- "Win"
-			}
-	 		else if (count == 1 && (roll == 2 || roll == 3 || roll == 12))
-			{
-				result <- "Loss"
-			}
-			else if (count > 1 && roll == 7 )
-			{
-				result <- "Loss"
-			}
-			else if (count > 1 && point == roll)
-			{
-				result <- "Win"
-			}
-			else
-			{
-				count <- count + 1
-			}
+		if (is.null(point))
+		{
+			point <- roll
 		}
-		result
+		if (count == 1 && (roll == 7 || roll == 11))
+		{
+			result <- "Win"
+		}
+		else if (count == 1 && (roll == 2 || roll == 3 || roll == 12))
+		{
+			result <- "Loss"
+		}
+		else if (count > 1 && roll == 7 )
+		{
+			result <- "Loss"
+		}
+		else if (count > 1 && point == roll)
+		{
+			result <- "Win"
+		}
+		else
+		{
+			count <- count + 1
+		}
 	}
+	result
+}
+```
 
 Using rxExec, you can invoke thousands of games to help determine the probability of a win. Using a Hadoop 5-node cluster, we play the game 10000 times, 2000 times on each node:
 
-	z <- rxExec(playDice, timesToRun=10000, taskChunkSize=2000)
-	table(unlist(z))
+```
+z <- rxExec(playDice, timesToRun=10000, taskChunkSize=2000)
+table(unlist(z))
 
-	Loss  Win
-	5087 4913
+Loss  Win
+5087 4913
+```
 
 We expect approximately 4929 wins in 10000 trials, and our result of 4913 wins is close.
 
@@ -101,50 +105,62 @@ The birthday problem is an old standby in introductory statistics classes becaus
 
 We can use the following function to estimate the probability of at least one birthday-sharing pair in groups of various sizes (the first line of the function is what allows us to obtain results for more than one value at a time; the remaining calculations are for a single n):
 
-	"pbirthday" <- function(n, ntests=5000)
-	{   
-		if (length(n) > 1L) return(sapply(n, pbirthday, ntests = ntests))
+```
+"pbirthday" <- function(n, ntests=5000)
+{   
+	if (length(n) > 1L) return(sapply(n, pbirthday, ntests = ntests))
 
-		daysInYear <- seq.int(365)
-		anydup <- function(i)
-		{
-			any(duplicated(sample(daysInYear, size = n, replace = TRUE)))
-		}
-
-		prob <- sum(sapply(seq.int(ntests), anydup)) / ntests
-		names(prob) <- n
-		prob
+	daysInYear <- seq.int(365)
+	anydup <- function(i)
+	{
+		any(duplicated(sample(daysInYear, size = n, replace = TRUE)))
 	}
+
+	prob <- sum(sapply(seq.int(ntests), anydup)) / ntests
+	names(prob) <- n
+	prob
+}
+```
 
 We can test that it works in a sequential setting, estimating the probability for group sizes 3, 25, and 50 as follows:
 
-	pbirthday(c(3,25,50))
+```
+pbirthday(c(3,25,50))
+```
 
 For each group size, 5000 random tests were performed. For this run, the following results were returned:
 
+```
 	     3     25     50
 	0.0078 0.5710 0.9726
+```
 
 Make sure your compute context is set to a “waiting” context. Then distribute this computation for groups of 2 to 100 using `rxExec` as follows, using *rxElemArg* to specify a different argument for each call to pbirthday, and then using the *taskChunkSize* argument to pass these arguments to the nodes in chunks of 20:
 
-	z <- rxExec(pbirthday, n=rxElemArg(2:100), taskChunkSize=20)
+```
+z <- rxExec(pbirthday, n=rxElemArg(2:100), taskChunkSize=20)
+```
 
 The results are returned in a list, with one element for each node. We can use *unlist* to convert the results into a single vector:
 
-	probSameBD <- unlist(z)
+```
+probSameBD <- unlist(z)
+```
 
 We can make a colorful plot of the results by constructing variables for the party sizes and the nodes where each computation was performed:
 
-	partySize <- 2:100
-	nodes <- as.factor( rep(1:5, each=20)[2:100])
-	levels(nodes) <- paste("Node", levels(nodes))
-	birthdayData <- data.frame(probSameBD, partySize, nodes)
+```
+partySize <- 2:100
+nodes <- as.factor( rep(1:5, each=20)[2:100])
+levels(nodes) <- paste("Node", levels(nodes))
+birthdayData <- data.frame(probSameBD, partySize, nodes)
 
-	rxLinePlot( probSameBD~partySize, groups = nodes, data=birthdayData,
-		type = "p",
-		xTitle = "Party Size",
-		yTitle = "Probability of Same Birthday",
-		title = "Our Rockin Soiree!")
+rxLinePlot( probSameBD~partySize, groups = nodes, data=birthdayData,
+	type = "p",
+	xTitle = "Party Size",
+	yTitle = "Probability of Same Birthday",
+	title = "Our Rockin Soiree!")
+```
 
 The resulting plot is shown as follows:
 
@@ -154,36 +170,42 @@ The resulting plot is shown as follows:
 
 Computing the Mandelbrot set is a popular parallel computing example because it involves a simple computation performed independently on an array of points in the complex plane. For any point *z=x+yi* in the complex plane, *z* belongs to the Mandelbrot set if and only if *z* remains bounded under the iteration *z_(n+1)=z_n^2+z_n*. If we are associating a point (*x_0,y_0*) in the plane with a pixel on a computer screen, the following R function returns the number of iterations before the point becomes unbounded, or the maximum number of iterations. If the maximum number of iterations is returned, the point is assumed to be in the set:
 
-	mandelbrot <- function(x0,y0,lim)
+```
+mandelbrot <- function(x0,y0,lim)
+{
+	x <- x0; y <- y0
+	iter <- 0
+	while (x^2 + y^2 < 4 && iter < lim)
 	{
-		x <- x0; y <- y0
-		iter <- 0
-		while (x^2 + y^2 < 4 && iter < lim)
-		{
-			xtemp <- x^2 - y^2 + x0
-			y <- 2 * x * y + y0
-			x <- xtemp
-			iter <- iter + 1
-		}
-		iter
+		xtemp <- x^2 - y^2 + x0
+		y <- 2 * x * y + y0
+		x <- xtemp
+		iter <- iter + 1
 	}
+	iter
+}
+```
 
 The following function retains the basic computation but returns a vector of results for a given y value:
 
-	vmandelbrot <- function(xvec, y0, lim)
-	{
-		unlist(lapply(xvec, mandelbrot, y0=y0, lim=lim))
-	}
+```
+vmandelbrot <- function(xvec, y0, lim)
+{
+	unlist(lapply(xvec, mandelbrot, y0=y0, lim=lim))
+}
+```
 
 We can then distribute this computation by computing several rows at a time on each compute resource. In the following, we create an input x vector of length 240, a y vector of length 240, and specify the iteration limit as 100. We then call `rxExec` with our *vmandelbrot* function, giving 1/5 of the y vector to each computational node in our five node HPC Server cluster. This should be done in a compute context with *wait=TRUE*. Finally, we put the results into a 240x240 matrix and create an image plot that shows the familiar Mandelbrot set:
 
-	x.in <- seq(-2.0, 0.6, length.out=240)
-	y.in <- seq(-1.3, 1.3, length.out=240)
-	m <- 100
-	z <- rxExec(vmandelbrot, x.in,y0=rxElemArg(y.in), m, taskChunkSize=48,
-			execObjects="mandelbrot")
-	z <- matrix(unlist(z), ncol=240)
-	image(x.in, y.in, z, col=c(rainbow(m), '#000000'), useRaster=TRUE)
+```
+x.in <- seq(-2.0, 0.6, length.out=240)
+y.in <- seq(-1.3, 1.3, length.out=240)
+m <- 100
+z <- rxExec(vmandelbrot, x.in,y0=rxElemArg(y.in), m, taskChunkSize=48,
+		execObjects="mandelbrot")
+z <- matrix(unlist(z), ncol=240)
+image(x.in, y.in, z, col=c(rainbow(m), '#000000'), useRaster=TRUE)
+```
 
 The resulting plot is shown as follows (not all graphics devices support the useRaster argument; if your plot is empty, try omitting that argument):
 
@@ -211,6 +233,7 @@ To parallelize this computation efficiently, we should do the following:
 
 In the case of *kmeans*, we can ask for the computations to be done by *cores*, rather than by *nodes*. Because we are distributing the computation, we can do fewer repetitions (*nstarts*) on each compute element. We can do all of this with the following function (again, this should be run with a compute context for which *wait=TRUE*):
 
+```
     kMeansRSR <- function(x, centers=5, iter.max=10, nstart=1)
     {
         numTimes <- 20
@@ -229,11 +252,15 @@ In the case of *kmeans*, we can ask for the computations to be done
         }
         results[[best]]
     }
+```
 
 Notice that in our *kMeansRSR* function we are letting the underlying *kmeans* function find nstart sets of centers per call and the choice of "best" is done in our function after we have called *kmeans numTimes*. No parallelization is done to *kmeans* itself.
 
 With our *kMeansRSR* function, we can then repeat the computation from before:
-    system.time(kMeansRSR(x, 10, 35, 20))
+
+```
+system.time(kMeansRSR(x, 10, 35, 20))
+```
 
 With our 5-node HPC Server cluster, this reduces the time from a minute and a half to about 15 seconds.
 
@@ -316,66 +343,78 @@ When generating random numbers in parallel computation, a frequent problem is th
 
 By default, a parallel version of the Mersenne-Twister random number generator is used that supports 6024 separate substreams. We can set it to work on our dice example by setting a non-null seed:
 
-	z <- rxExec(playDice, timesToRun=10000, taskChunkSize=2000, RNGseed=777)
-	table(unlist(z))
+```
+z <- rxExec(playDice, timesToRun=10000, taskChunkSize=2000, RNGseed=777)
+table(unlist(z))
+```
 
 This makes our simulation repeatable:
 
-	Loss  Win
-	5104 4896
+```
+Loss  Win
+5104 4896
 
-	z <- rxExec(playDice, timesToRun=10000, taskChunkSize=2000, RNGseed=777)
-	table(unlist(z))
+z <- rxExec(playDice, timesToRun=10000, taskChunkSize=2000, RNGseed=777)
+table(unlist(z))
 
-	Loss  Win
-	5104 4896
+Loss  Win
+5104 4896
+```
 
 This random number generator can be asked for explicitly by specifying RNGkind="MT2203":
 
-	z <- rxExec(playDice, timesToRun=10000, taskChunkSize=2000, RNGseed=777,
-	    RNGkind="MT2203")
-	table(unlist(z))
+```
+z <- rxExec(playDice, timesToRun=10000, taskChunkSize=2000, RNGseed=777,
+	RNGkind="MT2203")
+table(unlist(z))
 
-	Loss  Win
-	5104 4896
+Loss  Win
+5104 4896
+```
 
 We can build reproducibility into our naïve k-means example as follows:
 
-	kMeansRSR <- function(x, centers=5, iter.max=10, nstart=1, numTimes = 20, seed = NULL)
+```
+kMeansRSR <- function(x, centers=5, iter.max=10, nstart=1, numTimes = 20, seed = NULL)
+{
+	results <- rxExec(FUN = kmeans, x=x, centers=centers, iter.max=iter.max,
+		nstart=nstart, timesToRun=numTimes, RNGseed = seed)
+	best <- 1
+	bestSS <- sum(results[[1]]$withinss)
+	for (j in 1:numTimes)
 	{
-		results <- rxExec(FUN = kmeans, x=x, centers=centers, iter.max=iter.max,
-			nstart=nstart, timesToRun=numTimes, RNGseed = seed)
-		best <- 1
-		bestSS <- sum(results[[1]]$withinss)
-		for (j in 1:numTimes)
-		{
-		      jSS <- sum(results[[j]]$withinss)
-		      if (bestSS > jSS)
-		      {
-		              best <- j
-		             bestSS <- jSS
-			  }
-		}
-		results[[best]]
+			jSS <- sum(results[[j]]$withinss)
+			if (bestSS > jSS)
+			{
+					best <- j
+					bestSS <- jSS
+			}
 	}
-	km1 <- kMeansRSR(x, 10, 35, 20, seed=777)
-	km2 <- kMeansRSR(x, 10, 35, 20, seed=777)
-	all.equal(km1, km2)
+	results[[best]]
+}
+km1 <- kMeansRSR(x, 10, 35, 20, seed=777)
+km2 <- kMeansRSR(x, 10, 35, 20, seed=777)
+all.equal(km1, km2)
 
-	  [1] TRUE
+	[1] TRUE
+```
 
 To obtain the default random number generators without setting a seed, specify "auto" as the argument to either RNGseed or RNGkind:
 
-	x3 <- rxExec(runif, 500, timesToRun=5, RNGkind="auto")
-	x4 <- rxExec(runif, 500, timesToRun=5, RNGseed="auto")
+```
+x3 <- rxExec(runif, 500, timesToRun=5, RNGkind="auto")
+x4 <- rxExec(runif, 500, timesToRun=5, RNGseed="auto")
+```
 
 To verify that we are actually getting uncorrelated streams, we can use runif within rxExec to generate a list of vectors of random vectors, then use the cor function to measure the correlation between vectors:
 
-	x <- rxExec(runif, 500, timesToRun=5, RNGkind="MT2203")
-	x.df <- data.frame(x)
-	corx <- cor(x.df)
-	diag(corx) <- 0
-	any(abs(corx)> 0.3)
+```
+x <- rxExec(runif, 500, timesToRun=5, RNGkind="MT2203")
+x.df <- data.frame(x)
+corx <- cor(x.df)
+diag(corx) <- 0
+any(abs(corx)> 0.3)
+```
 
 Correlations are above 0.3; in repeated runs of the code, the maximum correlation seldom exceeded 0.1.
 
@@ -391,79 +430,93 @@ So far, all of our examples have required a blocking, or waiting, compute contex
 
 For example, let’s return to the birthday example, and see how to restructure our analysis to use a non-blocking job for the distributed computations. The pbirthday function itself requires no changes, and our variable specifying the number of ntests can be used as is:
 
-	"pbirthday" <- function(n, ntests=5000)
-	{   
-		if (length(n) > 1L) return(sapply(n, pbirthday, ntests = ntests))
+```
+"pbirthday" <- function(n, ntests=5000)
+{   
+	if (length(n) > 1L) return(sapply(n, pbirthday, ntests = ntests))
 
-		daysInYear <- seq.int(365)
-		anydup <- function(i)
-		{
-			any(duplicated(sample(daysInYear, size = n, replace = TRUE)))
-		}
-
-		prob <- sum(sapply(seq.int(ntests), anydup)) / ntests
-		names(prob) <- n
-		prob
+	daysInYear <- seq.int(365)
+	anydup <- function(i)
+	{
+		any(duplicated(sample(daysInYear, size = n, replace = TRUE)))
 	}
-	ntests <- 2000
+
+	prob <- sum(sapply(seq.int(ntests), anydup)) / ntests
+	names(prob) <- n
+	prob
+}
+ntests <- 2000
+```
 
 However, when we call rxExec, the return object will no longer be the results list, but a jobInfo object:
 
-	z <- rxExec(pbirthday, n=rxElemArg(2:100), ntests=ntests, taskChunkSize=20)
+```
+z <- rxExec(pbirthday, n=rxElemArg(2:100), ntests=ntests, taskChunkSize=20)
+```
 
 We check the job status:
 
-	rxGetJobStatus(z)
+```
+rxGetJobStatus(z)
 
-	  [1] "finished"
+	[1] "finished"
+```
 
 We can then proceed almost as before:
 
-	probSameBD <- unlist(rxGetJobResults(z))
-	partySize <- 2:100
-	nodes = as.factor( rep(1:5, each=20)[2:100])
-	levels(nodes) <- paste("Node", levels(nodes))
-	birthdayData <- data.frame(probSameBD, partySize, nodes)
+```
+probSameBD <- unlist(rxGetJobResults(z))
+partySize <- 2:100
+nodes = as.factor( rep(1:5, each=20)[2:100])
+levels(nodes) <- paste("Node", levels(nodes))
+birthdayData <- data.frame(probSameBD, partySize, nodes)
 
-	rxLinePlot( probSameBD~partySize, groups = nodes, data=birthdayData,
-		type = "p",
-		xTitle = "Party Size",
-		yTitle = "Probability of Same Birthday",
-		title = "Our Rockin Soiree!")
+rxLinePlot( probSameBD~partySize, groups = nodes, data=birthdayData,
+	type = "p",
+	xTitle = "Party Size",
+	yTitle = "Probability of Same Birthday",
+	title = "Our Rockin Soiree!")
+```
 
 The other examples are a bit trickier, in that the result of the calls to rxExec were embedded in functions. But again, dividing the computations into distributed and non-distributed components can help—the distributed computations can be non-blocking, and the non-distributed portions can then be applied to the results. Thus the kmeans example can be rewritten thus:
 
-	genKmeansClusters <- function(x, centers=5, iter.max=10, nstart=1)
-	{
-		numTimes <- 20
-		rxExec(FUN = kmeans, x=x, centers=centers, iter.max=iter.max,
-			nstart=nstart, timesToRun=numTimes)
-	}
+```
+genKmeansClusters <- function(x, centers=5, iter.max=10, nstart=1)
+{
+	numTimes <- 20
+	rxExec(FUN = kmeans, x=x, centers=centers, iter.max=iter.max,
+		nstart=nstart, timesToRun=numTimes)
+}
 
-	findKmeansBest <- function(results){
-		numTimes <- length(results)
-		best <- 1
-		bestSS <- sum(results[[1]]$withinss)
-		for (j in 1:numTimes)
-		{
-		      jSS <- sum(results[[j]]$withinss)
-		      if (bestSS > jSS)
-		      {
-		              best <- j
-		             bestSS <- jSS
-			  }
-		}
-		results[[best]]
+findKmeansBest <- function(results){
+	numTimes <- length(results)
+	best <- 1
+	bestSS <- sum(results[[1]]$withinss)
+	for (j in 1:numTimes)
+	{
+			jSS <- sum(results[[j]]$withinss)
+			if (bestSS > jSS)
+			{
+					best <- j
+					bestSS <- jSS
+			}
 	}
+	results[[best]]
+}
+```
 
 To run this in our non-blocking cluster context, we do the following:
 
-	x <- matrix(rnorm(250000), nrow = 5000, ncol = 50)
-	z <- genKmeansClusters(x, 10, 35, 20)
+```
+x <- matrix(rnorm(250000), nrow = 5000, ncol = 50)
+z <- genKmeansClusters(x, 10, 35, 20)
+```
 
 Once we see that z’s job status is “finished”, we can run findKmeansBest on the results:
 
-	findKmeansBest(rxGetJobResults(z))
+```
+findKmeansBest(rxGetJobResults(z))
+```
 
 ## Call RevoScaleR HPA functions with rxExec
 
@@ -473,35 +526,39 @@ However, there is no inherent reason why rxExec cannot be used with RevoScaleR�
 
 The following simulation simulates data from a Poisson distribution and then fits a generalized linear model to the simulated data:
 
-	"SimAndEstimatePoisson" <- function(nobs, trials)
+```
+"SimAndEstimatePoisson" <- function(nobs, trials)
+{
+	"SimulatePoissonData" <- function(nobs)
 	{
-	    "SimulatePoissonData" <- function(nobs)
-	    {
-		    x1 <- log(runif(nobs, min=.5, max=1.5))
-		    x2 <- log(runif(nobs, min=.5, max=1.5))
+		x1 <- log(runif(nobs, min=.5, max=1.5))
+		x2 <- log(runif(nobs, min=.5, max=1.5))
 
-		    b0 <- 0
-		    b1 <- 1
-		    b2 <- 2
-		    lambda <- exp(b0 + b1*x1 + b2*x2)
-	        count <- rpois(nobs,lambda)
-			pSim <- data.frame(count=count, x1=x1, x2=x2)
-	    }
-
-	    cf <- NULL
-	    rxOptions(reportProgress = 0)
-	    for (i in 1:trials)
-	    {
-			simData <- SimulatePoissonData(nobs)
-			result1 <- rxGlm(count~x1+x2,data=simData,family=poisson())
-		    cf <- rbind(cf,as.double(coefficients(result1)))
-	    }
-	    cf       
+		b0 <- 0
+		b1 <- 1
+		b2 <- 2
+		lambda <- exp(b0 + b1*x1 + b2*x2)
+		count <- rpois(nobs,lambda)
+		pSim <- data.frame(count=count, x1=x1, x2=x2)
 	}
+
+	cf <- NULL
+	rxOptions(reportProgress = 0)
+	for (i in 1:trials)
+	{
+		simData <- SimulatePoissonData(nobs)
+		result1 <- rxGlm(count~x1+x2,data=simData,family=poisson())
+		cf <- rbind(cf,as.double(coefficients(result1)))
+	}
+	cf       
+}
+```
 
 If we call the above function with rxExec on a five-node cluster compute context, we get five simulations running simultaneously, and can easily produce 1000 simulations as follows:
 
-	rxExec(SimAndEstimatePoisson, nobs=50000, trials=10, taskChunkSize=5, timesToRun=100)
+```
+rxExec(SimAndEstimatePoisson, nobs=50000, trials=10, taskChunkSize=5, timesToRun=100)
+```
 
 It is important to recognize the distinction between running an HPA function with a distributed compute context, and calling an HPA function using rxExec with a distributed compute context. In the former case, we are fitting just one model, using the distributed compute context to farm out portions of the computations, but ultimately returning just one model object. In the latter case, we are calculating one model per task, the tasks being farmed out to the various nodes or cores as desired, and a list of models is returned.
 
@@ -509,16 +566,20 @@ It is important to recognize the distinction between running an HPA function wit
 
 By default, if you call `rxExec` in the local compute context, your computation runS sequentially on your local machine. However, you can incorporate parallel computing on your local machine using the special compute context `RxLocalParallel` as follows:
 
-	rxSetComputeContext(RxLocalParallel())
+```
+rxSetComputeContext(RxLocalParallel())
+```
 
 This allows the ParallelR package doParallel to distribute the computation among the available cores of your computer.
 
 If you are using random numbers in the local parallel context, be aware that `rxExec` chooses a number of workers based on the number of tasks and the current value of `rxGetOption("numCoresToUse")`. to guarantee each task runS with a separate random number stream, set `rxOptions(numCoresToUse)` equal to the number of tasks, and explicitly set *timesToRun* to the number of tasks. For example, if we want a list consisting of five sets of uniform random numbers, we could do the following to obtain reproducible results:
 
-	rxOptions(numCoresToUse=5)
-	x1 <- rxExec(runif, 500, timesToRun=5, RNGkind="MT2203", RNGseed=14)
-	x2 <- rxExec(runif, 500, timesToRun=5, RNGkind="MT2203", RNGseed=14)
-	all.equal(x1, x2)
+```
+rxOptions(numCoresToUse=5)
+x1 <- rxExec(runif, 500, timesToRun=5, RNGkind="MT2203", RNGseed=14)
+x2 <- rxExec(runif, 500, timesToRun=5, RNGkind="MT2203", RNGseed=14)
+all.equal(x1, x2)
+```
 
 **numCoresToUse** is a scalar integer specifying the number of cores to use. If you set this parameter to either -1 or a value in excess of available cores, ScaleR uses however many cores are available. Increasing the number of cores also increases the amount of memory required for ScaleR analysis functions.
 
@@ -529,14 +590,18 @@ If you are using random numbers in the local parallel context, be aware that `rx
 
 If you do not have access to a Hadoop cluster or enterprise database, but do have access to a cluster via PVM, MPI, socket, or NetWorkSpaces connections or a multicore workstation, you can use `rxExec` with an arbitrary foreach backend (doParallel, doSNOW, doMPI, etc.) Register your parallel backend as usual and then set your RevoScaleR compute context using the special compute context `RxForeachDoPar`:
 
-	rxSetComputeContext(RxForeachDoPar())
+```
+rxSetComputeContext(RxForeachDoPar())
+```
 
 For example, here is how you might start a SNOW-like cluster connection with the doParallel back end:
 
-	library(doParallel)
-	cl <- makeCluster(4)
-	registerDoParallel(cl)
-	rxSetComputeContext(RxForeachDoPar())
+```
+library(doParallel)
+cl <- makeCluster(4)
+registerDoParallel(cl)
+rxSetComputeContext(RxForeachDoPar())
+```
 
 You then call `rxExec` as usual. The computations are automatically directed to the registered foreach back end.
 

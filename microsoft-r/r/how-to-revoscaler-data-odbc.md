@@ -111,80 +111,94 @@ Recall that **RxOdbcData** provides local compute context only, which means that
 
 This example uses a connection string to connect to a local SQL Server instance and the [RevoClaimsDB database](sample-built-in-data.md). For simplicity, the connection is further scoped to a single table, but you could write T-SQL to select a more interesting data set. 
 
-	sConnectStr <- "Driver={ODBC Driver 13 for SQL Server};Server=(local);Database=RevoClaimsDB;Trusted_Connection=Yes"
-	sQuery = "Select * from dbo.claims"
-	sDS <-RxOdbcData(sqlQuery=sQuery, connectionString=sConnectStr)
-	sXdf <- RxXdfData("c:/users/temp/claimsFromODBC.xdf")
-	rxImport(sDS, sXdf, overwrite=TRUE)
+```
+sConnectStr <- "Driver={ODBC Driver 13 for SQL Server};Server=(local);Database=RevoClaimsDB;Trusted_Connection=Yes"
+sQuery = "Select * from dbo.claims"
+sDS <-RxOdbcData(sqlQuery=sQuery, connectionString=sConnectStr)
+sXdf <- RxXdfData("c:/users/temp/claimsFromODBC.xdf")
+rxImport(sDS, sXdf, overwrite=TRUE)
+```
 
 This returns the following:
 
-	> rxGetInfo(sXdf, getVarInfo=TRUE)
-	File name: c:\Users\TEMP\claimsFromODBC.xdf 
-	Number of observations: 128 
-	Number of variables: 6 
-	Number of blocks: 1 
-	Compression type: zlib 
-	Variable information: 
-	Var 1: "RowNum", Type: character
-	Var 2: "age", Type: character
-	Var 3: "car age", Type: character
-	Var 4: "type", Type: character
-	Var 5: "cost", Type: character
-	Var 6: "number", Type: character
+```
+> rxGetInfo(sXdf, getVarInfo=TRUE)
+File name: c:\Users\TEMP\claimsFromODBC.xdf 
+Number of observations: 128 
+Number of variables: 6 
+Number of blocks: 1 
+Compression type: zlib 
+Variable information: 
+Var 1: "RowNum", Type: character
+Var 2: "age", Type: character
+Var 3: "car age", Type: character
+Var 4: "type", Type: character
+Var 5: "cost", Type: character
+Var 6: "number", Type: character
+```
 	
 > [!Tip]
 > If you are selecting an entire table or view, a simpler alternative for the query string is just the name of that object specified as an argument on **RxOdbcData**. For example: `sDS <-RxOdbcData(tabble=dbo.claims, connectionString=sConnectStr)`. With this shortcut, you can omit the sQuery object from your script.
 
 By amending the **RxOdbcData** object with additional arguments, you can use *colClasses* to recast numeric "character" data as integers or float, and use *stringsAsFactors* to convert all unspecified character variables to factors:
 
-	sDS <-RxOdbcData(sqlQuery=sQuery, connectionString=sConnectStr, colClasses=c(RowNum="integer", number="integer"), stringsAsFactors=TRUE)
-	sXdf <- RxXdfData("c:/users/temp/claimsFromODBC.xdf")
-	rxImport(sDS, sXdf, overwrite=TRUE)
+```
+sDS <-RxOdbcData(sqlQuery=sQuery, connectionString=sConnectStr, colClasses=c(RowNum="integer", number="integer"), stringsAsFactors=TRUE)
+sXdf <- RxXdfData("c:/users/temp/claimsFromODBC.xdf")
+rxImport(sDS, sXdf, overwrite=TRUE)
+```
 
 Data values for age and car.age are expressed as ranges in the original data, so those columns (as well as the type column) are appropriately converted to factors through the *stringsAsFactors* argument. Retaining the character data type for cost is also appropriate for the existing data. While cost has mostly numeric values, it also has multiple instances of "NA". 
 
 After re-import, variable metadata should be as follows:
 
-	> rxGetInfo(sXdf, getVarInfo=TRUE)
-	Variable information: 
-	Var 1: RowNum, Type: integer, Low/High: (1, 128)
-	Var 2: age
-		8 factor levels: 17-20 21-24 25-29 30-34 35-39 40-49 50-59 60+
-	Var 3: car age
-		4 factor levels: 0-3 4-7 8-9 10+
-	Var 4: type
-		4 factor levels: A B C D
-	Var 5: cost
-		100 factor levels: 289.00 282.00 133.00 160.00 372.00 ... 119.00 385.00 324.00 192.00 123.00
-	Var 6: number, Type: integer, Low/High: (0, 434)
+```
+> rxGetInfo(sXdf, getVarInfo=TRUE)
+Variable information: 
+Var 1: RowNum, Type: integer, Low/High: (1, 128)
+Var 2: age
+	8 factor levels: 17-20 21-24 25-29 30-34 35-39 40-49 50-59 60+
+Var 3: car age
+	4 factor levels: 0-3 4-7 8-9 10+
+Var 4: type
+	4 factor levels: A B C D
+Var 5: cost
+	100 factor levels: 289.00 282.00 133.00 160.00 372.00 ... 119.00 385.00 324.00 192.00 123.00
+Var 6: number, Type: integer, Low/High: (0, 434)
+```
 
 #### Using Oracle Express 
 
 Oracle Express is a free version of the popular Oracle database management system intended for evaluation and education. It uses the same ODBC drivers as the commercial offerings. The follow example demonstrates an Oracle SQL statement to show all the tables in a database (this differs from standard SQL implementations):
 
-	tablesDS <- RxOdbcData(sqlQuery="select * from user_tables", connectionString = "DSN=ORA10GDSN;Uid=system;Pwd=X8dzlkjWQ")
-	OracleTableDF <- rxImport(tablesDS, overwrite=TRUE)
-	OracleTableDF[,1]
+```
+tablesDS <- RxOdbcData(sqlQuery="select * from user_tables", connectionString = "DSN=ORA10GDSN;Uid=system;Pwd=X8dzlkjWQ")
+OracleTableDF <- rxImport(tablesDS, overwrite=TRUE)
+OracleTableDF[,1]
+```
 
 This yields a list of tables similar to the following (showing partial results for brevity, with the first 10 tables):
 
-	  [1] "MVIEW$_ADV_WORKLOAD"           "MVIEW$_ADV_BASETABLE"         
-	  [3] "MVIEW$_ADV_SQLDEPEND"          "MVIEW$_ADV_PRETTY"            
-	  [5] "MVIEW$_ADV_TEMP"               "MVIEW$_ADV_FILTER"            
-	  [7] "MVIEW$_ADV_LOG"                "MVIEW$_ADV_FILTERINSTANCE"    
-	  [9] "MVIEW$_ADV_LEVEL"              "MVIEW$_ADV_ROLLUP"            
+```
+	[1] "MVIEW$_ADV_WORKLOAD"           "MVIEW$_ADV_BASETABLE"         
+	[3] "MVIEW$_ADV_SQLDEPEND"          "MVIEW$_ADV_PRETTY"            
+	[5] "MVIEW$_ADV_TEMP"               "MVIEW$_ADV_FILTER"            
+	[7] "MVIEW$_ADV_LOG"                "MVIEW$_ADV_FILTERINSTANCE"    
+	[9] "MVIEW$_ADV_LEVEL"              "MVIEW$_ADV_ROLLUP"            
+```
 
 #### Using MySQL on Red Hat Enterprise Linux
 
 As a first step, specify the name of your DSN. On Linux, this is the same name specified for the ODBC configuration.
 
-	### Test of import from 'centos-database01' ###
-	sConnectionStr = "DSN=ScaleR-ODBC-test"
-	sUserSQL = "SELECT * FROM airline1987"
-	airlineXDFName <- file.path(getwd(), "airlineimported.xdf")
-	airlineODBCSource <- RxOdbcData(sqlQuery = sUserSQL, connectionString = sConnectionStr, useFastRead = TRUE)
-	rxImport(airlineODBCSource, airlineXDFName, overwrite = TRUE)
+```
+### Test of import from 'centos-database01' ###
+sConnectionStr = "DSN=ScaleR-ODBC-test"
+sUserSQL = "SELECT * FROM airline1987"
+airlineXDFName <- file.path(getwd(), "airlineimported.xdf")
+airlineODBCSource <- RxOdbcData(sqlQuery = sUserSQL, connectionString = sConnectionStr, useFastRead = TRUE)
+rxImport(airlineODBCSource, airlineXDFName, overwrite = TRUE)
+```
 
 ## Next Steps
 

@@ -33,6 +33,7 @@ Unlike individual decision trees, decision forests are not prone to overfitting,
 
 In [Logistic Regression Models](how-to-revoscaler-logistic-regression.md), we fit a simple classification tree model to rpart’s kyphosis data. That model is easily recast as a classification decision forest using *rxDForest* as follows (we set the *seed* argument to ensure reproducibility; in most cases you can omit):
   
+```
 	data("kyphosis", package="rpart")
 	kyphForest <- rxDForest(Kyphosis ~ Age + Start + Number, seed = 10,
 		data = kyphosis, cp=0.01, nTree=500, mTry=3)
@@ -53,27 +54,33 @@ In [Logistic Regression Models](how-to-revoscaler-logistic-regression.md), we fi
 	  Kyphosis  absent present class.error
 		absent      56       8   0.1250000
 		present      8       9   0.4705882
+```
 
 While decision forests do not produce a unified model, as logistic regression and decision trees do, they do produce reasonable predictions for each data point. In this case, we can obtain predictions using *rxPredict* as follows:
 
-	dfPreds <- rxPredict(kyphForest, data=kyphosis)
+```
+dfPreds <- rxPredict(kyphForest, data=kyphosis)
+```
 
 Compared to the Kyphosis variable in the original kyphosis data, we see that approximately 88 percent of cases are classified correctly:
 
-	sum(as.character(dfPreds[,1]) ==
-		as.character(kyphosis$Kyphosis))/81
+```
+sum(as.character(dfPreds[,1]) ==
+	as.character(kyphosis$Kyphosis))/81
 
-	  [1] 0.8765432
+	[1] 0.8765432
+```
 
 ### A Simple Regression Forest
 
 As a simple example of a regression forest, consider the classic *stackloss* data set, containing observations from a chemical plant producing nitric acid by the oxidation of ammonia, and let’s fit the stack loss (*stack.loss*) using air flow (*Air.Flow*), water temperature (*Water.Temp*), and acid concentration (*Acid.Conc.*) as predictors:
 
-	#  A Simple Regression Forest
-	  
-	stackForest <- rxDForest(stack.loss ~ Air.Flow + Water.Temp + Acid.Conc.,
-		data=stackloss, nTree=200, mTry=2)
-	stackForest
+```
+#  A Simple Regression Forest
+	
+stackForest <- rxDForest(stack.loss ~ Air.Flow + Water.Temp + Acid.Conc.,
+	data=stackloss, nTree=200, mTry=2)
+stackForest
 
 	  Call:
 	  rxDForest(formula = stack.loss ~ Air.Flow + Water.Temp + Acid.Conc., 
@@ -86,19 +93,21 @@ As a simple example of a regression forest, consider the classic *stackloss* dat
 	  
 				Mean of squared residuals: 44.54992
 						  % Var explained: 65
-	  
+```
+
 ### A Larger Regression Forest Model
 
 As a more complex example, we return to the censusWorkers data to which we earlier fit a decision tree. We create a regression forest predicting wage income from age, sex, and weeks worked, using the *perwt* variable as probability weights (note that we retain the *maxDepth* and *minBucket* parameters from our earlier decision tree example):
 
-	#  A Larger Regression Forest Model
-	  
-	censusWorkers <- file.path(rxGetOption("sampleDataDir"),
-		"CensusWorkers.xdf")
-	rxGetInfo(censusWorkers, getVarInfo=TRUE)
-	incForest <- rxDForest(incwage ~ age + sex + wkswork1, pweights = "perwt", 
-		maxDepth = 3, minBucket = 30000, mTry=2, nTree=200, data = censusWorkers)
-	incForest
+```
+#  A Larger Regression Forest Model
+	
+censusWorkers <- file.path(rxGetOption("sampleDataDir"),
+	"CensusWorkers.xdf")
+rxGetInfo(censusWorkers, getVarInfo=TRUE)
+incForest <- rxDForest(incwage ~ age + sex + wkswork1, pweights = "perwt", 
+	maxDepth = 3, minBucket = 30000, mTry=2, nTree=200, data = censusWorkers)
+incForest
 
 	  Call:
 	  rxDForest(formula = incwage ~ age + sex + wkswork1, data = censusData, 
@@ -111,6 +120,7 @@ As a more complex example, we return to the censusWorkers data to which we earli
 	  
 				Mean of squared residuals: 1458969472
 						  % Var explained: 11 
+```
 	  
 ### Large Data Decision Forest Models
 
@@ -120,16 +130,19 @@ As an example of a large data classification forest, consider the following simp
 
 >The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](tutorial-revoscaler-data-import-transform.md#chunking)
 	  
-	#  Large Data Tree Models
-	  
-	bigDataDir <- "C:/MRS/Data"
-	sampleAirData <- file.path(bigDataDir, "AirOnTime7Pct.xdf")	
-	airlineForest <- rxDForest(ArrDel15 ~ CRSDepTime + DayOfWeek, 
-		data = sampleAirData, blocksPerRead = 30, maxDepth = 5, 
-		nTree=20, mTry=2, method="class", seed = 8)
+```
+#  Large Data Tree Models
+	
+bigDataDir <- "C:/MRS/Data"
+sampleAirData <- file.path(bigDataDir, "AirOnTime7Pct.xdf")	
+airlineForest <- rxDForest(ArrDel15 ~ CRSDepTime + DayOfWeek, 
+	data = sampleAirData, blocksPerRead = 30, maxDepth = 5, 
+	nTree=20, mTry=2, method="class", seed = 8)
+```
 	
 Yields the following:
 
+```
 	airlineForest
 
 	  Call:
@@ -148,12 +161,14 @@ Yields the following:
 	  ArrDel15   FALSE TRUE class.error
 	     FALSE 8147274    0           0
 	     TRUE  2037941    0           1
+```
 
 One problem with this model is that it predicts all flights to be on time. As we iterate over this model, we'll remove this limitation.
 	
 Looking at the fitted object’s forest component, we see that a number of the fitted trees do not split at all:
 
-	airlineForest$forest
+```
+airlineForest$forest
 
 		[[1]]
 		Number of valid observations:  6440007 
@@ -206,13 +221,15 @@ Looking at the fitted object’s forest component, we see that a number of the f
 
 		1) root 10186499 2038260 FALSE (0.7999057 0.2000943) *
 		. . .
+```
 
 
 This may well be because our response is extremely unbalanced--that is, the percentage of flights that are late by 15 minutes or more is quite small. We can tune the fit by providing a *loss matrix*, which allows us to penalize certain predictions in favor of others. You specify the loss matrix using the parms argument, which takes a list with named components. The loss component is specified as either a matrix, or equivalently, a vector that can be coerced to a matrix. In the binary classification case, it can be useful to start with a loss matrix with a penalty roughly equivalent to the ratio of the two classes. So, in our case we know that the on-time flights outnumber the late flights approximately 4 to 1:
 
-	airlineForest2 <- rxDForest(ArrDel15 ~ CRSDepTime + DayOfWeek, 
-		data = sampleAirData, blocksPerRead = 30, maxDepth = 5, seed = 8,
-		nTree=20, mTry=2, method="class", parms=list(loss=c(0,4,1,0)))
+```
+airlineForest2 <- rxDForest(ArrDel15 ~ CRSDepTime + DayOfWeek, 
+	data = sampleAirData, blocksPerRead = 30, maxDepth = 5, seed = 8,
+	nTree=20, mTry=2, method="class", parms=list(loss=c(0,4,1,0)))
 
 		Call:
 	  rxDForest(formula = ArrDel15 ~ CRSDepTime + DayOfWeek, data = sampleAirData, 
@@ -230,14 +247,16 @@ This may well be because our response is extremely unbalanced--that is, the perc
 	  ArrDel15   FALSE    TRUE class.error
 		 FALSE 4719374 3427900    0.420742
 		 TRUE   877680 1160261    0.430670
+```
 	  
 This model no longer predicts all flights as on time, but now over-predicts late flights. Adjusting the loss matrix again, this time reducing the penalty, yields the following output:
 
-	Call:
-	rxDForest(formula = ArrDel15 ~ CRSDepTime + DayOfWeek, data = sampleAirData, 
-	    method = "class", parms = list(loss = c(0, 3, 1, 0)), maxDepth = 5, 
-	    nTree = 20, mTry = 2, seed = 8, blocksPerRead = 30)
-	
+```
+Call:
+rxDForest(formula = ArrDel15 ~ CRSDepTime + DayOfWeek, data = sampleAirData, 
+	method = "class", parms = list(loss = c(0, 3, 1, 0)), maxDepth = 5, 
+	nTree = 20, mTry = 2, seed = 8, blocksPerRead = 30)
+
 	
 	             Type of decision forest: class 
 	                     Number of trees: 20 
@@ -249,6 +268,7 @@ This model no longer predicts all flights as on time, but now over-predicts late
 	ArrDel15   FALSE    TRUE class.error
 	   FALSE 6465439 1681835   0.2064292
 	   TRUE  1389092  648849   0.6816154
+```
 
 ### Controlling the Model Fit
 

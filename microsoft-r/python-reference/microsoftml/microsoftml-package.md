@@ -28,7 +28,7 @@ ms.custom: ""
 
 The **microsoftml** module is a collection of Python functions used in machine learning solutions. It includes functions for training and transformations, scoring, text and image analysis, and feature extraction for deriving values from existing data.
 
-| Package details | |
+| Package details | Information |
 |--------|-|
 | Current version: |  9.4 |
 | Built on: | [Anaconda 4.2](https://www.continuum.io/why-anaconda) distribution of [Python 3.7.1](https://www.python.org/doc) |

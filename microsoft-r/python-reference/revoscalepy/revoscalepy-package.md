@@ -31,7 +31,7 @@ The **revoscalepy** module is a collection of portable, scalable and distributab
 
 Functions run on the **revoscalepy** interpreter, built on open-source Python, engineered to leverage the multithreaded and multinode architecture of the host platform.
 
-| Package details | |
+| Package details | Information |
 |--------|-|
 | Current version: |  9.4 |
 | Built on: | [Anaconda 4.2](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) |

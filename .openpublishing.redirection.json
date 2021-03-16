@@ -1987,377 +1987,377 @@
     {
       "source_path": "microsoft-r/install/r-server-install.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/whats-new-in-r-server.md",
       "redirect_url": "/previous-versions/machine-learning-server/whats-new-in-r-server",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/r-server-install-windows.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install-windows",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/r-server-install-windows-offline.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install-windows-offline",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/r-server-install-windows-command-line.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install-windows-command-line",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/r-server-install-linux-server.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install-linux-server",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/r-server-install-linux-offline.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install-linux-offline",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/r-server-install-linux-uninstall.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install-linux-uninstall",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/r-server-install-linux-server-901.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install-linux-server-901",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/r-server-install-linux-server-805.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install-linux-server-805",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/r-server-install-linux-manage-install.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install-linux-manage-install",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/r-server-install-hadoop.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install-hadoop",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/r-server-install-hadoop-command-line.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install-hadoop-command-line",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/r-server-install-hadoop-offline.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install-hadoop-offline",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/r-server-install-cloudera.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install-cloudera",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/r-server-install-uninstall-upgrade.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install-uninstall-upgrade",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/r-server-install-hadoop-901.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install-hadoop-901",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/r-server-install-cloudera-901.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install-cloudera-901",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/r-server-install-hadoop-805.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install-hadoop-805",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/r-server-install-linux-hadoop-packages.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install-linux-hadoop-packages",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/r-server-install-hadoop-manual-package.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install-hadoop-manual-package",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/r-server-install-hadoop-configuration-r-workloads.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install-hadoop-configuration-r-workloads",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/r-server-install-hadoop-troubleshoot.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install-hadoop-troubleshoot",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/r-server-install-teradata-server.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install-teradata-server",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/r-server-install-teradata-805.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install-teradata-805",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/r-server-install-teradata-client.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install-teradata-client",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/r/how-to-revoscaler-teradata.md",
       "redirect_url": "/previous-versions/machine-learning-server/r/how-to-revoscaler-teradata",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/operationalize-r-server-one-box-config.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/operationalize-r-server-one-box-config",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/install/operationalize-r-server-enterprise-config.md",
       "redirect_url": "/previous-versions/machine-learning-server/install/operationalize-r-server-enterprise-config",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-installation.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-installation",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-install-on-windows.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-install-on-windows",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-install-on-linux.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-install-on-linux",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-installing-configuring.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-installing-configuring",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-about.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-about",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-application-developer-getting-started.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-application-developer-getting-started",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-administrator-getting-started.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-administrator-getting-started",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-data-scientist-getting-started.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-data-scientist-getting-started",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-admin-console-about.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-admin-console-about",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-admin-console-user-accounts.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-admin-console-user-accounts",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-admin-console-permissions-with-roles.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-admin-console-permissions-with-roles",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-admin-console-managing-r-scripts.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-admin-console-managing-r-scripts",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-admin-managing-r-boundaries.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-admin-managing-r-boundaries",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-admin-managing-access-with-ip-filters.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-admin-managing-access-with-ip-filters",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-admin-managing-the-grid.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-admin-managing-the-grid",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-admin-managing-server-policies.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-admin-managing-server-policies",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-admin-console-database.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-admin-console-database",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-admin-monitoring-events.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-admin-monitoring-events",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-common-administration-tasks.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-common-administration-tasks",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-admin-diagnostics-troubleshooting.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-admin-diagnostics-troubleshooting",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-admin-scale-and-throughput.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-admin-scale-and-throughput",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-admin-install-in-cloud.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-admin-install-in-cloud",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-admin-configure-high-availability.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-admin-configure-high-availability",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-admin-manage-big-data.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-admin-manage-big-data",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-admin-hadoop-impersonation.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-admin-hadoop-impersonation",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-admin-r-package-management.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-admin-r-package-management",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-admin-java-version.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-admin-java-version",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-admin-configure-reinstall-r.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-admin-configure-reinstall-r",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-security.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-security",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-security-authentication.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-security-authentication",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-security-https.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-security-https",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-security-server-access.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-security-server-access",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-security-project-access.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-security-project-access",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-security-passwords.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-security-passwords",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-security-account-locking.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-security-account-locking",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-security-rserve-execution-context.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-security-rserve-execution-context",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-tools-and-samples.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-tools-and-samples",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-api-reference.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-api-reference",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-client-library.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-client-library",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-rbroker-framework.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-rbroker-framework",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-api-explorer-tool.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-api-explorer-tool",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-data-scientist-write-portable-r-code.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-data-scientist-write-portable-r-code",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-repository-manager-about.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-repository-manager-about",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-repository-manager-directories.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-repository-manager-directories",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-repository-manager-files.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-repository-manager-files",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/deployr/deployr-repository-manager-testing-debugging-scripts.md",
       "redirect_url": "/previous-versions/machine-learning-server/deployr/deployr-repository-manager-testing-debugging-scripts",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "microsoft-r/resources-glossary.md",

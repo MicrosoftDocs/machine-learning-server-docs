@@ -2,6 +2,7 @@
 
 # required metadata
 title: "Python Samples - Machine Learning Server "
+description: "Samples for Python on Machine Learning Server"
 keywords: ""
 author: "dphansen"
 ms.author: "davidph"

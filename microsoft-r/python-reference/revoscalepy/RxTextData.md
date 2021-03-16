@@ -101,27 +101,28 @@ Dictionary of column names to strings specifying the column types
 to use when converting the data. The element names for the vector are used to identify
 which column should be converted to which type.
 
-    Allowable column types are:
-        ”bool” (stored as uchar),
-        “integer” (stored as int32),
-        “float32” (the default for floating point data for ‘.xdf’ files),
-        “numeric” (stored as float64 as in R),
-        “character” (stored as string),
-        “factor” (stored as uint32),
-        “ordered” (ordered factor stored as uint32. Ordered factors are treated
+Allowable column types are:
 
-            the same as factors in RevoScaleR analysis functions.),
+```
+”bool” (stored as uchar),
+“integer” (stored as int32),
+“float32” (the default for floating point data for ‘.xdf’ files),
+“numeric” (stored as float64 as in R),
+“character” (stored as string),
+“factor” (stored as uint32),
+“ordered” (ordered factor stored as uint32. Ordered factors are treated
+    the same as factors in RevoScaleR analysis functions.),
 
-        ”int16” (alternative to integer for smaller storage space),
-        “uint16” (alternative to unsigned integer for smaller storage space),
-        “Date” (stored as Date, i.e. float64. Not supported if use_fast_read =
+”int16” (alternative to integer for smaller storage space),
+“uint16” (alternative to unsigned integer for smaller storage space),
+“Date” (stored as Date, i.e. float64. Not supported if use_fast_read =
+    True.)
 
-            True.)
+”POSIXct” (stored as POSIXct, i.e. float64. Not supported if
+    use_fast_read = True.)
+```
 
-        ”POSIXct” (stored as POSIXct, i.e. float64. Not supported if
-            use_fast_read = True.)
-
-    Note for “factor” and “ordered” types, the levels will be coded in the
+Note for “factor” and “ordered” types, the levels will be coded in the
     order encountered. Since this factor level ordering is row dependent, the
     preferred method for handling factor columns is to use column_info with
     specified “levels”.
@@ -136,53 +137,54 @@ should be supplied. For such fixed format data, only the variables specified
 will be imported. For all text types, the information supplied for column_info
 overrides that supplied for column_classes.
 
-    Currently available properties for a column information list are:
-        type: Character string specifying the data type for the column. See
-            column_classes argument description for the available types. If the
-            type is not specified for fixed format data, it will be read as
-            character data.
+Currently available properties for a column information list are:
 
-        newName: Character string specifying a new name for the variable.
-        description: Character string specifying a description for the variable.
-        levels: List of strings containing the levels when type = “factor”. If
+```
+type: Character string specifying the data type for the column. See
+    column_classes argument description for the available types. If the
+    type is not specified for fixed format data, it will be read as
+    character data.
 
-            the levels property is not provided, factor levels will be determined
-            by the values in the source column. If levels are provided, any value
-            that does not match a provided level will be converted to a missing
-            value.
+newName: Character string specifying a new name for the variable.
+description: Character string specifying a description for the variable.
+levels: List of strings containing the levels when type = “factor”. If
+    the levels property is not provided, factor levels will be determined
+    by the values in the source column. If levels are provided, any value
+    that does not match a provided level will be converted to a missing
+    value.
 
-        newLevels: New or replacement levels specified for a column of type
-            “factor”. It must be used in conjunction with the levels argument.
-            After reading in the original data, the labels for each level will be
-            replaced with the newLevels.
+newLevels: New or replacement levels specified for a column of type
+    “factor”. It must be used in conjunction with the levels argument.
+    After reading in the original data, the labels for each level will be
+    replaced with the newLevels.
 
-        low: The minimum data value in the variable (used in computations using
-            the F() function.
+low: The minimum data value in the variable (used in computations using
+    the F() function.
 
-        high: The maximum data value in the variable (used in computations
-            using the F() function.
+high: The maximum data value in the variable (used in computations
+    using the F() function.
 
-        start: The left-most position, in bytes, for the column of a fixed
-            format file respectively. When all elements of column_info have
-            “start”, the text file is designated as a fixed format file. When none
-            of the elements have it, the text file is designated as a delimited
-            file. Specification of start must always be accompanied by
-            specification of width.
+start: The left-most position, in bytes, for the column of a fixed
+    format file respectively. When all elements of column_info have
+    “start”, the text file is designated as a fixed format file. When none
+    of the elements have it, the text file is designated as a delimited
+    file. Specification of start must always be accompanied by
+    specification of width.
 
-        width: The number of characters in a fixed-width character column or
-            the column of a fixed format file. If width is specified for a
-            character column, it will be imported as a fixed-width character
-            variable. Any characters beyond the fixed width will be ignored.
-            Specification of width is required for all columns of a fixed format
-            file (if not provided in an ‘.sts’ file).
+width: The number of characters in a fixed-width character column or
+    the column of a fixed format file. If width is specified for a
+    character column, it will be imported as a fixed-width character
+    variable. Any characters beyond the fixed width will be ignored.
+    Specification of width is required for all columns of a fixed format
+    file (if not provided in an ‘.sts’ file).
 
-        decimalPlaces: The number of decimal places.
-        index: Column index in the original delimited text data file. It is
-
-            used as an alternative to naming the variable information list if the
-            original delimited text file does not contain column names. Ignored if
-            a name for the list is specified. Should not be used with fixed format
-            files.
+decimalPlaces: The number of decimal places.
+index: Column index in the original delimited text data file. It is
+    used as an alternative to naming the variable information list if the
+    original delimited text file does not contain column names. Ignored if
+    a name for the list is specified. Should not be used with fixed format
+    files.
+```
 
 
 ### vars_to_keep
@@ -249,19 +251,20 @@ Character string containing the time date format to
 use during read operations. Not supported when use_fast_read is set to True.
 Valid formats are:
 
-    %c Skip a single character (see also %w).
-    %Nc Skip N characters.
-    %$c Skip the rest of the input string.
-    %d Day of the month as integer (01-31).
-    %m Month as integer (01-12) or as character string.
-    %w Skip a whitespace delimited word (see also %c).
-    %y Year. If less than 100, century_cutoff is used to determine the actual
-    year.
-    %Y Year as found in the input string.
-    %%, %[, %] input the %, [, and ] characters from the input string.
-    […] square brackets within format specifications indicate optional
-    components; if present, they are used, but they need not be there.
-
+```
+%c Skip a single character (see also %w).
+%Nc Skip N characters.
+%$c Skip the rest of the input string.
+%d Day of the month as integer (01-31).
+%m Month as integer (01-12) or as character string.
+%w Skip a whitespace delimited word (see also %c).
+%y Year. If less than 100, century_cutoff is used to determine the actual
+year.
+%Y Year as found in the input string.
+%%, %[, %] input the %, [, and ] characters from the input string.
+[…] square brackets within format specifications indicate optional
+components; if present, they are used, but they need not be there.
+```
 
 ### read_posixct_format
 
@@ -269,25 +272,27 @@ Character string containing the time date format to
 use during read operations. Not supported when use_fast_read is set to True.
 Valid formats are:
 
-    %c Skip a single character (see also %w).
-    %Nc Skip N characters.
-    %$c Skip the rest of the input string.
-    %d Day of the month as integer (01-31).
-    %H Hour as integer (00-23).
-    %m Month as integer (01-12) or as character string.
-    %M Minute as integer (00-59).
-    %n Milliseconds as integer (00-999).
-    %N Milliseconds or tenths or hundredths of second.
-    %p Character string defining ‘am’/‘pm’.
-    %S Second as integer (00-59).
-    %w Skip a whitespace delimited word (see also %c).
-    %y Year. If less than 100, century_cutoff is used to determine the actual
-    year.
-    %Y Year as found in the input string.
-    %%, %[, %] input the %, [, and ] characters from the input string.
-    […] square brackets within format specifications indicate optional
-
+```
+%c Skip a single character (see also %w).
+%Nc Skip N characters.
+%$c Skip the rest of the input string.
+%d Day of the month as integer (01-31).
+%H Hour as integer (00-23).
+%m Month as integer (01-12) or as character string.
+%M Minute as integer (00-59).
+%n Milliseconds as integer (00-999).
+%N Milliseconds or tenths or hundredths of second.
+%p Character string defining ‘am’/‘pm’.
+%S Second as integer (00-59).
+%w Skip a whitespace delimited word (see also %c).
+%y Year. If less than 100, century_cutoff is used to determine the actual
+year.
+%Y Year as found in the input string.
+%%, %[, %] input the %, [, and ] characters from the input string.
+[…] square brackets within format specifications indicate optional
 components; if present, they are used, but they need not be there.
+```
+
 
 
 ### century_cutoff

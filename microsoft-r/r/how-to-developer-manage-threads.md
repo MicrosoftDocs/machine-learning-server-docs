@@ -2,7 +2,7 @@
 
 # required metadata
 title: "Manage threads in RevoScaleR (Machine Learning Server) "
-description: ""
+description: "RevoScaleR provides functions for managing the thread pool used for parallel execution."
 keywords: "How ScaleR establishes and manages thread pools for parallel processing."
 author: "dphansen"
 ms.author: "davidph"
@@ -31,19 +31,25 @@ On Windows, thread pool management is enabled and should not be turned off.
 
 On Linux, thread pool management is turned off by default to avoid interfering with how Unix systems fork processes. Process forking is only available on Unix-based systems. You can turn the thread pool on if you do not fork your R process. RevoScaleR provides an interface to activate the thread pool:
 
-	rxSetEnableThreadPool(TRUE)
+```
+rxSetEnableThreadPool(TRUE)
+```
 
 Similarly, the thread pool may be disabled as follows:
 
-	rxSetEnableThreadPool(FALSE)
+```
+rxSetEnableThreadPool(FALSE)
+```
 
 If you want to ensure that the RevoScaleR thread pool is always enabled on Linux, you can add the preceding command to a *.First* function defined in either your own Rprofile startup file, or the system Rprofile.site file. For example, you can add the following lines after the closing right parenthesis of the existing Rprofile.site file:
 
-	.First <- function()
-	{
-		.First.sys()
-		invisible(rxSetEnableThreadPool(TRUE))
-	}
+```
+.First <- function()
+{
+	.First.sys()
+	invisible(rxSetEnableThreadPool(TRUE))
+}
+```
 
 The *.First.sys* function is normally run after all other initialization is complete, including the evaluation of the *.First* function. We need the call to *rxSetEnableThreadPool* to occur after RevoScaleR is loaded. That is done by *.First.sys*, so we call *.First.sys* first.
 

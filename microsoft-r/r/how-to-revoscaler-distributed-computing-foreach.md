@@ -43,8 +43,10 @@ coin flips, which can be done by sampling with replacement from the
 vector `c(H, T)`. To run this simulation 10 times sequentially, use
 foreach with the `%do%` operator:
 
-    > library(foreach)
-    > foreach(i = 1:10) %do% sample(c("H", "T"), 10000, replace = TRUE)
+```
+> library(foreach)
+> foreach(i = 1:10) %do% sample(c("H", "T"), 10000, replace = TRUE)
+```
 
 Comparing the foreach output with that of a similar `for` loop shows
 one obvious difference: foreach returns a list containing the value
@@ -55,12 +57,16 @@ effects to do its work.
 We can parallelize the operation immediately by replacing `%do%` with
 `%dopar%`:
 
-    > foreach(i = 1:10) %dopar% sample(c("H", "T"), 10000, replace = TRUE)
+```
+> foreach(i = 1:10) %dopar% sample(c("H", "T"), 10000, replace = TRUE)
+```
 
 However, if we run this example, we see the following warning:
 
-    Warning message:
-    executing %dopar% sequentially: no parallel backend registered
+```
+Warning message:
+executing %dopar% sequentially: no parallel backend registered
+```
 
 To actually run in parallel, we need to have a “parallel backend” for
 foreach. Parallel backends are discussed in the next section.
@@ -106,32 +112,38 @@ doMC. You can register doParallel with a cluster, as with doSNOW, or
 with a number of cores, as with doMC. For example, here we create a
 cluster and register it:
 
-    > library(doParallel)
-    > cl <- makeCluster(4)
-    > registerDoParallel(cl)
+```
+> library(doParallel)
+> cl <- makeCluster(4)
+> registerDoParallel(cl)
+```
 
 Once you’ve registered the parallel backend, you’re ready to run
 foreach code in parallel. For example, to see how long it takes to run
 10,000 bootstrap iterations in parallel on all available cores, you can
 run the following code:
 
-    > x <- iris[which(iris[,5] != "setosa"), c(1, 5)]
-    > trials <- 10000
-    > ptime <- system.time({
-    +     r <- foreach(icount(trials), .combine = cbind) %dopar% {
-    +         ind <- sample(100, 100, replace = TRUE)
-    +         result1 <- glm(x[ind, 2] ~ x[ind, 1], family = binomial(logit))
-    +         coefficients(result1)
-    +    }
-    + })[3]
-    > ptime
+```
+> x <- iris[which(iris[,5] != "setosa"), c(1, 5)]
+> trials <- 10000
+> ptime <- system.time({
++     r <- foreach(icount(trials), .combine = cbind) %dopar% {
++         ind <- sample(100, 100, replace = TRUE)
++         result1 <- glm(x[ind, 2] ~ x[ind, 1], family = binomial(logit))
++         coefficients(result1)
++    }
++ })[3]
+> ptime
+```
 
 ### Getting information about the parallel backend
 
 To find out how many workers foreach is going to use, you can use the
 getDoParWorkers function:
 
-    > getDoParWorkers()
+```
+> getDoParWorkers()
+```
 
 This is a useful sanity check that you’re actually running in parallel.
 If you haven’t registered a parallel backend, or if your machine only
@@ -145,8 +157,10 @@ value to an iterator constructor, for example.
 You can also get the name and version of the currently registered
 backend:
 
-    > getDoParName()
-    > getDoParVersion()
+```
+> getDoParName()
+> getDoParVersion()
+```
 
 ## Nesting Calls to foreach
 
@@ -164,17 +178,19 @@ does that. For testing purposes, the `sim` function is defined to return
 $10 a + b$ (although an operation this trivial is not worth executing in
 parallel):
 
-    sim <- function(a, b) 10 * a + b
-    avec <- 1:2
-    bvec <- 1:4
+```
+sim <- function(a, b) 10 * a + b
+avec <- 1:2
+bvec <- 1:4
 
-    x <- matrix(0, length(avec), length(bvec))
-    for (j in 1:length(bvec)) {
-          for (i in 1:length(avec)) {
-                  x[i, j] <- sim(avec[i], bvec[j])
-                    }
-    }
-    x
+x <- matrix(0, length(avec), length(bvec))
+for (j in 1:length(bvec)) {
+        for (i in 1:length(avec)) {
+                x[i, j] <- sim(avec[i], bvec[j])
+                }
+}
+x
+```
 
 In this case, it makes sense to store the results in a matrix, so we
 create one of the proper size called `x`, and assign the return value of
@@ -186,12 +202,14 @@ it. Instead, the inner loop returns the columns of the result matrix as
 vectors, which are combined in the outer loop into a matrix. Here’s how
 to do that using the `%:%` operator:
 
-    x <-
-      foreach(b = bvec, .combine = 'cbind') %:%
-          foreach(a = avec, .combine = 'c') %do% {
-              sim(a, b)
-          }
-    x
+```
+x <-
+    foreach(b = bvec, .combine = 'cbind') %:%
+        foreach(a = avec, .combine = 'c') %do% {
+            sim(a, b)
+        }
+x
+```
 
 This is structured very much like the nested `for` loop. The outer
 foreach is iterating over the values in “bvec”, passing them to the
@@ -226,12 +244,14 @@ operator in the example above. And when we parallelize that nested
 **foreach** loop by changing the `%do%` into a `%dopar%`, we are creating
 a single stream of tasks that can all be executed in parallel:
 
-    x <-
-      foreach(b = bvec, .combine = 'cbind') %:%
-          foreach(a = avec, .combine = 'c') %dopar% {
-              sim(a, b)
-          }
-    x
+```
+x <-
+    foreach(b = bvec, .combine = 'cbind') %:%
+        foreach(a = avec, .combine = 'c') %dopar% {
+            sim(a, b)
+        }
+x
+```
 
 Of course, we’ll actually only run as many tasks in parallel as we have
 processors, but the parallel backend takes care of all that. The point
@@ -259,38 +279,46 @@ value of the iterator. For example, here we create an iterator object
 from the sequence 1 to 10, and then use `nextElem` to iterate through
 the values:
 
-    > i1 <- iter(1:10)
-    > nextElem(i1)
-    [1] 1
-    > nextElem(i1)
-    [2] 2
+```
+> i1 <- iter(1:10)
+> nextElem(i1)
+[1] 1
+> nextElem(i1)
+[2] 2
+```
 
 You can create iterators from matrices and data frames, using the `by`
 argument to specify whether to iterate by row or column:
 
-    > istate <- iter(state.x77, by = 'row')
-    > nextElem(istate)
+```
+> istate <- iter(state.x77, by = 'row')
+> nextElem(istate)
             Population Income Illiteracy Life Exp Murder HS Grad Frost  Area
     Alabama       3615   3624        2.1    69.05   15.1    41.3    20 50708
-    > nextElem(istate)
+> nextElem(istate)
            Population Income Illiteracy Life Exp Murder HS Grad Frost   Area
     Alaska        365   6315        1.5    69.31   11.3    66.7   152 566432
+```
 
 Iterators can also be created from functions, in which case the iterator
 can be an endless source of values:
 
-    > ifun <- iter(function() sample(0:9, 4, replace=TRUE))
-    > nextElem(ifun)
-    [1] 9 5 2 8
-    > nextElem(ifun)
-    [1] 3 4 2 2
+```
+> ifun <- iter(function() sample(0:9, 4, replace=TRUE))
+> nextElem(ifun)
+[1] 9 5 2 8
+> nextElem(ifun)
+[1] 3 4 2 2
+```
 
 For practical applications, iterators can be paired with **foreach** to
 obtain parallel results quite easily:
 
-    > x <- matrix(rnorm(1000000), ncol = 1000)
-    > itx <- iter(x, by = 'row')
-    > foreach(i = itx, .combine = c) %dopar% mean(i)
+```
+> x <- matrix(rnorm(1000000), ncol = 1000)
+> itx <- iter(x, by = 'row')
+> foreach(i = itx, .combine = c) %dopar% mean(i)
+```
 
 ### Some Special Iterators
 
@@ -300,12 +328,14 @@ of special functions that generate iterators for some common scenarios.
 For example, the `irnorm` function creates an iterator for which each
 value is drawn from a specified random normal distribution:
 
-    > library(iterators)
-    > itrn <- irnorm(1, count = 10)
-    > nextElem(itrn)
-    [1] 0.6300053
-    > nextElem(itrn)
-    [1] 1.242886
+```
+> library(iterators)
+> itrn <- irnorm(1, count = 10)
+> nextElem(itrn)
+[1] 0.6300053
+> nextElem(itrn)
+[1] 1.242886
+```
 
 Similarly, the `irunif`, `irbinom`, and `irpois` functions create
 iterators which draw their values from uniform, binomial, and Poisson
@@ -317,21 +347,25 @@ ensure independent random number streams on each worker.)
 
 We can then use these functions just as we used `irnorm`:
 
-    > itru <- irunif(1, count = 10)
-    > nextElem(itru)
-    [1] 0.4960539
-    > nextElem(itru)
-    [1] 0.4071111
+```
+> itru <- irunif(1, count = 10)
+> nextElem(itru)
+[1] 0.4960539
+> nextElem(itru)
+[1] 0.4071111
+```
 
 The `icount` function returns an iterator that counts starting from one:
 
-    > it <- icount(3)
-    > nextElem(it)
-    [1] 1
-    > nextElem(it)
-    [1] 2
-    > nextElem(it)
-    [1] 3
+```
+> it <- icount(3)
+> nextElem(it)
+[1] 1
+> nextElem(it)
+[1] 2
+> nextElem(it)
+[1] 3
+```
 
 ### Writing Iterators
 
@@ -377,28 +411,32 @@ In most cases, you don’t actually need to write the `iter` and
 `abstractiter`, you can use the following methods as the basis of your
 own iterators:
 
-    > iterators:::iter.iter
-    function (obj, ...)
-    {
-            obj
-    }
-    <environment: namespace:iterators>
-    > iterators:::nextElem.abstractiter
-    function (obj, ...)
-    {
-            obj$nextElem()
-    }
-    <environment: namespace:iterators>
+```
+> iterators:::iter.iter
+function (obj, ...)
+{
+        obj
+}
+<environment: namespace:iterators>
+> iterators:::nextElem.abstractiter
+function (obj, ...)
+{
+        obj$nextElem()
+}
+<environment: namespace:iterators>
+```
 
 The following function creates a simple iterator that uses these two
 methods:
 
-    iforever <- function(x) {
-        nextEl <- function() x
-        obj <- list(nextElem = nextEl)
-        class(obj) <- c('iforever', 'abstractiter', 'iter')
-        obj
-    }
+```
+iforever <- function(x) {
+    nextEl <- function() x
+    obj <- list(nextElem = nextEl)
+    class(obj) <- c('iforever', 'abstractiter', 'iter')
+    obj
+}
+```
 
 Note that we called the internal function `nextEl` rather than
 `nextElem` to avoid masking the standard `nextElem` generic function.
@@ -409,9 +447,11 @@ We create an instance of this iterator by calling the `iforever`
 function, and then use it by calling the `nextElem` method on the
 resulting object:
 
-    it <- iforever(42)
-    nextElem(it)
-    nextElem(it)
+```
+it <- iforever(42)
+nextElem(it)
+nextElem(it)
+```
 
 Notice that it doesn’t make sense to implement this iterator by defining
 a new `iter` method, since there is no natural iterable on which to
@@ -440,25 +480,29 @@ iterator to put a limit on the number of values that it returns. We’ll
 call the new function `irep`, and give it another argument called
 `times`:
 
-    irep <- function(x, times) {
-        nextEl <- function() {
-            if (times > 0) {
-                times <<- times - 1
-            }
-            else {
-                stop('StopIteration')
-            }
-            x
+```
+irep <- function(x, times) {
+    nextEl <- function() {
+        if (times > 0) {
+            times <<- times - 1
         }
-        obj <- list(nextElem = nextEl)
-        class(obj) <- c('irep', 'abstractiter', 'iter')
-        obj
+        else {
+            stop('StopIteration')
+        }
+        x
     }
+    obj <- list(nextElem = nextEl)
+    class(obj) <- c('irep', 'abstractiter', 'iter')
+    obj
+}
+```
 
 Now let’s try it out:
 
-    it <- irep(7, 6)
-    unlist(as.list(it))
+```
+it <- irep(7, 6)
+unlist(as.list(it))
+```
 
 The real difference between `iforever` and `irep` is in the function
 that gets called by the `nextElem` method. This function not only

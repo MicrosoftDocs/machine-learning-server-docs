@@ -39,22 +39,23 @@ Different model types are supported by specifying different loss functions, as f
 
 In [Logistic Regression](how-to-revoscaler-logistic-regression.md), we fit a simple classification tree model to rpart’s kyphosis data. That model is easily recast as a classification decision forest using *rxBTrees* as follows. We set the *seed* argument to ensure reproducibility; in most cases you can omit it:
 
-	#  A Simple Classification Forest
-	  
-	data("kyphosis", package="rpart")
-	kyphBTrees <- rxBTrees(Kyphosis ~ Age + Start + Number, seed = 10,
-		data = kyphosis, cp=0.01, nTree=500, mTry=3, lossFunction="bernoulli")
-	kyphBTrees
+```
+#  A Simple Classification Forest
+	
+data("kyphosis", package="rpart")
+kyphBTrees <- rxBTrees(Kyphosis ~ Age + Start + Number, seed = 10,
+	data = kyphosis, cp=0.01, nTree=500, mTry=3, lossFunction="bernoulli")
+kyphBTrees
 
-	  Call:
-	  rxBTrees(formula = Kyphosis ~ Age + Start + Number, data = kyphosis, 
-		  cp = 0.01, nTree = 500, mTry = 3, seed = 10, lossFunction = "bernoulli")
-	  
-	  
-			Loss function of boosted trees: bernoulli 
-					  Number of iterations: 500 
-				  OOB estimate of deviance: 0.1441952 
-	  
+	Call:
+	rxBTrees(formula = Kyphosis ~ Age + Start + Number, data = kyphosis, 
+		cp = 0.01, nTree = 500, mTry = 3, seed = 10, lossFunction = "bernoulli")
+	
+	
+		Loss function of boosted trees: bernoulli 
+					Number of iterations: 500 
+				OOB estimate of deviance: 0.1441952 
+```
 
 In this case, we don’t need to explicitly specify the loss function; *"bernoulli"* is the default.
 
@@ -62,45 +63,49 @@ In this case, we don’t need to explicitly specify the loss function; *"bernoul
 
 As a simple example of a regression forest, consider the classic *stackloss* data set, containing observations from a chemical plant producing nitric acid by the oxidation of ammonia, and let’s fit the stack loss (*stack.loss*) using air flow (*Air.Flow*), water temperature (*Water.Temp*), and acid concentration (*Acid.Conc.*) as predictors:
 
-	#  A Simple Regression Forest
-	  
-	stackBTrees <- rxDForest(stack.loss ~ Air.Flow + Water.Temp + Acid.Conc.,
-		data=stackloss, nTree=200, mTry=2, lossFunction="gaussian")
-	stackBTrees
+```
+#  A Simple Regression Forest
+	
+stackBTrees <- rxDForest(stack.loss ~ Air.Flow + Water.Temp + Acid.Conc.,
+	data=stackloss, nTree=200, mTry=2, lossFunction="gaussian")
+stackBTrees
 
-	  Call:
-	  rxDForest(formula = stack.loss ~ Air.Flow + Water.Temp + Acid.Conc., 
-		  data = stackloss, nTree = 200, mTry = 2, lossFunction = "gaussian")
-	  
-	  
-			Loss function of boosted trees: gaussian 
-					  Number of iterations: 200 
-				  OOB estimate of deviance: 1.46797
+	Call:
+	rxDForest(formula = stack.loss ~ Air.Flow + Water.Temp + Acid.Conc., 
+		data = stackloss, nTree = 200, mTry = 2, lossFunction = "gaussian")
+	
+	
+		Loss function of boosted trees: gaussian 
+					Number of iterations: 200 
+				OOB estimate of deviance: 1.46797
+```
 	  
 ### A Simple Multinomial Forest Model
 
 As a simple multinomial example, we fit an *rxBTrees* model to the iris data:
 
-	#  A Multinomial Forest Model
-	  
-	irisBTrees <- rxBTrees(Species ~ Sepal.Length + Sepal.Width + 
-		Petal.Length + Petal.Width, data=iris,
-		nTree=50, seed=0, maxDepth=3, lossFunction="multinomial")
-	irisBTrees
+```
+#  A Multinomial Forest Model
+	
+irisBTrees <- rxBTrees(Species ~ Sepal.Length + Sepal.Width + 
+	Petal.Length + Petal.Width, data=iris,
+	nTree=50, seed=0, maxDepth=3, lossFunction="multinomial")
+irisBTrees
 
 
-	  Call:
-	  rxBTrees(formula = Species ~ Sepal.Length + Sepal.Width + Petal.Length + 
-		  Petal.Width, data = iris, maxDepth = 3, nTree = 50, seed = 0, 
-		  lossFunction = "multinomial")
-	  
-	  
-			Loss function of boosted trees: multinomial 
-			 Number of boosting iterations: 50 
-	  No. of variables tried at each split: 1 
-	  
-				  OOB estimate of deviance: 0.02720805  
-	  
+	Call:
+	rxBTrees(formula = Species ~ Sepal.Length + Sepal.Width + Petal.Length + 
+		Petal.Width, data = iris, maxDepth = 3, nTree = 50, seed = 0, 
+		lossFunction = "multinomial")
+	
+	
+		Loss function of boosted trees: multinomial 
+			Number of boosting iterations: 50 
+	No. of variables tried at each split: 1 
+	
+				OOB estimate of deviance: 0.02720805  
+```
+
 ### Controlling the Model Fit
 
 The principal parameter controlling the boosting algorithm itself is the *learning rate*. The learning rate (or shrinkage) is used to scale the contribution of each tree when it is added to the ensemble. The default learning rate is 0.1.

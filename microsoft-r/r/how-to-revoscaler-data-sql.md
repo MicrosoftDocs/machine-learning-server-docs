@@ -41,12 +41,14 @@ This article shows you how to import relational data from SQL Server into a data
 
 The following script imports sample data from Azure SQL database into a local XDF. The script sets the connection string, SQL query, XDF file, and the **rxImport** command for loading data and saving the output:
 
-	sConnString <- "Driver={ODBC Driver 13 for SQL Server}; Server=tcp:<your-server-name>.database.windows.net,1433; Database=AdventureWorksLT; Uid=<your-user-name>; Pwd=<your-password>; Encrypt=yes; TrustServerCertificate=no; Connection Timeout=30;"
-	sQuery <- "select ProductDescriptionID, Description, ModifiedDate from SalesLT.ProductDescription"
-	sDataSet <- RxOdbcData(sqlQuery=sQuery, connectionString=sConnString)
-	sDataFile <- RxXdfData("c:/users/temp/mysqldata.xdf")
-	rxImport(sDataSet, sDataFile, overwrite=TRUE)
-	rxGetInfo(sDataFile, getVarInfo=TRUE, numRows=50)
+```
+sConnString <- "Driver={ODBC Driver 13 for SQL Server}; Server=tcp:<your-server-name>.database.windows.net,1433; Database=AdventureWorksLT; Uid=<your-user-name>; Pwd=<your-password>; Encrypt=yes; TrustServerCertificate=no; Connection Timeout=30;"
+sQuery <- "select ProductDescriptionID, Description, ModifiedDate from SalesLT.ProductDescription"
+sDataSet <- RxOdbcData(sqlQuery=sQuery, connectionString=sConnString)
+sDataFile <- RxXdfData("c:/users/temp/mysqldata.xdf")
+rxImport(sDataSet, sDataFile, overwrite=TRUE)
+rxGetInfo(sDataFile, getVarInfo=TRUE, numRows=50)
+```
 
 You can run this script in an R console application, but a few modifications are necessary before you can do it successfully. Before running the script, review it line by line to see what needs changing.
 
@@ -54,7 +56,9 @@ You can run this script in an R console application, but a few modifications are
 
 Create the connection object using information from the Azure portal and ODBC Data Source Administrator.
 
-	> sConnString <- "Driver={ODBC Driver 13 for SQL Server}; Server=tcp:<your-server-name>.database.windows.net,1433; Database=AdventureWorksLT; Uid=<your-user-name>; Pwd=<your-password>; Encrypt=yes; TrustServerCertificate=no; Connection Timeout=30;"
+```
+> sConnString <- "Driver={ODBC Driver 13 for SQL Server}; Server=tcp:<your-server-name>.database.windows.net,1433; Database=AdventureWorksLT; Uid=<your-user-name>; Pwd=<your-password>; Encrypt=yes; TrustServerCertificate=no; Connection Timeout=30;"
+```
 
 First, get the ODBC driver name. On Windows, search for and then use the **ODBC Data Source Administrator (64-bit)** app to view the drivers listed in the **Drivers** tab. On Linux, the ODBC driver manager and individual drivers must be installed manually. For second, see [How to import relational data using ODBC](how-to-revoscaler-data-odbc.md).
 
@@ -66,7 +70,9 @@ After `Driver`, all remaining connection properties from `Server` to `Connection
 
 3. On the **ODBC** tab, copy the connection information. It should look similar to the following string, except the server name and user name will be valid for your database. The password is always a placeholder, which you must replace with the actual password used for accessing your database.
 
-		Driver={ODBC Driver 13 for SQL Server}; Server=tcp:<your-server-name>.database.windows.net,1433; Database=AdventureWorksLT; Uid=<your-user-name>; Pwd=<your-password>; Encrypt=yes; TrustServerCertificate=no; Connection Timeout=30;
+    ```
+	Driver={ODBC Driver 13 for SQL Server}; Server=tcp:<your-server-name>.database.windows.net,1433; Database=AdventureWorksLT; Uid=<your-user-name>; Pwd=<your-password>; Encrypt=yes; TrustServerCertificate=no; Connection Timeout=30;
+    ```
 
 4. In the R console, provide the *sConnString* command based on the example syntax, but with valid values for server name, user name, and password.
 
@@ -92,15 +98,19 @@ Producing this error is easy. Just run the entire example script (assuming a val
 
 In the R console application, create the SQL query object. The example query consists of columns from a single table, but any valid T-SQL query providing a rowset is acceptable. This table was chosen because it includes numeric data.
 
-	> sQuery <-"SELECT SalesOrderID, SalesOrderDetailID, OrderQty, UnitPrice, UnitPriceDiscount, LineTotal FROM SalesLT.SalesOrderDetail"
+```
+> sQuery <-"SELECT SalesOrderID, SalesOrderDetailID, OrderQty, UnitPrice, UnitPriceDiscount, LineTotal FROM SalesLT.SalesOrderDetail"
+```
 
 Before attempting unqualified *SELECT * FROM* queries, review the columns in your database for unhandled data types in R. In AdventureWorksLT, the *rowguid(uniqueidentifier)* column is not handled. Other unsupported data types are [listed here](https://docs.microsoft.com/sql/advanced-analytics/r/r-libraries-and-data-types#data-types-not-supported-by-r).
 
 Queries with unsupported data types produce the error below. If you get this error and cannot immediately detect the unhandled data type, incrementally add fields to the query to isolate the problem.
   
-		Unhandled SQL data type!!!
-		Could not open data source.
-		Error in doTryCatch(return(expr), name, parentenv, handler)
+```
+Unhandled SQL data type!!!
+Could not open data source.
+Error in doTryCatch(return(expr), name, parentenv, handler)
+```
 
 Queries should be data extraction queries (SELECT and SHOW statements) for reading data into a data frame or .xdf file. INSERT queries are not supported. Because queries are used to populate a single data frame or .xdf file, multiple queries (that is, queries separated by a semicolon “;”) are not supported. Compound queries, however, producing a single extracted table (such as queries linked by AND or OR, or involving multiple FROM clauses) are supported.
 
@@ -108,7 +118,9 @@ Queries should be data extraction queries (SELECT and SHOW statements) for readi
 
 Create the **RxOdbcData** data object using the connection and query object specifying which data to retrieve. This exercise uses only a few arguments, but to learn more about data sources, see [Data sources in RevoScaleR](how-to-revoscaler-data-source.md).
 
-		> sDataSet <- RxOdbcData(sqlQuery=sQuery, connectionString=sConnString)
+```
+> sDataSet <- RxOdbcData(sqlQuery=sQuery, connectionString=sConnString)
+```
 
 You could substitute **RxSqlServerData** for **RxOdbcData** if you want the option of setting the compute context to a remote SQL Server instance (for example, if you want to run **rxMerge**, **rxImport**, or **rxSort** on a remote SQL Server that also has a Machine Learning Server installation on the same machine). Otherwise, **RxOdbcData** is local compute context only.
 
@@ -116,31 +128,41 @@ You could substitute **RxSqlServerData** for **RxOdbcData** if you want the opti
 
 Create the XDF file to save the data to disk. Check the folder permissions for write access. 
 
-		> sDataFile <- RxXdfData("c:/users/temp/mysqldata.xdf")
+```
+> sDataFile <- RxXdfData("c:/users/temp/mysqldata.xdf")
+```
 
 By default, Windows does not allow external writes by non-local users. You might want to create a single folder, such as C:/Users/Temp, and give *Everyone* write permissions. Once the XDF is created, you can move the file elsewhere and delete the folder, or revoke the write permissions you just granted.
 
 On Linux, you can use this alternative path:
 
-		> sDataFile <- RxXdfData(/tmp/mysqldata.xdf")
+```
+> sDataFile <- RxXdfData(/tmp/mysqldata.xdf")
+```
 
 ### 6 - Import the data
 
 Run **rxImport** with *inData* and *outFile* arguments. Include *overwrite* so that you can rerun the script with different queries without having to the delete the file each time.
 
-		> rxImport(sDataSet, sDataFile, overwrite=TRUE)
+```
+> rxImport(sDataSet, sDataFile, overwrite=TRUE)
+```
 
 ### 7 - Return object metadata
 
 Use **rxGetInfo** to return information about the XDF data source, plus the first 50 rows:
 
-		> rxGetInfo(sDataFile, getVarInfo=TRUE, numRows=50)
+```
+> rxGetInfo(sDataFile, getVarInfo=TRUE, numRows=50)
+```
 
 ### 8 - Return summary statistics
 
 Use **rxSummary** to produce summary statistics on the data. The `~.` is used to compute summary statistic on numeric fields.
 
-		> rxSummary(~., sDataFile)
+```
+> rxSummary(~., sDataFile)
+```
 
 Output shows the central tendencies of the data, including mean values, standard deviation, minimum and maximum values, and whether any observations are missing. From the output, you can tell that orders are typically of small quantities and prices.
 
@@ -148,12 +170,14 @@ Output shows the central tendencies of the data, including mean values, standard
 
 The following script demonstrates how to import data from a SQL Server relational database into a local XDF. This script is slightly different from the one for Azure SQL Database. This one uses the AdventureWorks data warehouse (AdventureWorksDW) for its normalized data. 
 
-	sConnString <- "Driver={SQL Server}; Server=(local); Database=AdventureWorksDW2016; Connection Timeout=30;"
-	squery <-"SELECT * FROM dbo.vDMPrep"
-	sDataSet <- RxOdbcData(sqlQuery=squery, connectionString=sConnString)
-	sDataFile <- RxXdfData("c:/users/temp/mysqldata.xdf")
-	rxImport(sDataSet, sDataFile, overwrite=TRUE)
-	rxGetInfo(sDataFile, getVarInfo=TRUE)
+```
+sConnString <- "Driver={SQL Server}; Server=(local); Database=AdventureWorksDW2016; Connection Timeout=30;"
+squery <-"SELECT * FROM dbo.vDMPrep"
+sDataSet <- RxOdbcData(sqlQuery=squery, connectionString=sConnString)
+sDataFile <- RxXdfData("c:/users/temp/mysqldata.xdf")
+rxImport(sDataSet, sDataFile, overwrite=TRUE)
+rxGetInfo(sDataFile, getVarInfo=TRUE)
+```
 
 As with the previous exercise, modifications are necessary before you can run this script successfully.
 
@@ -161,7 +185,9 @@ As with the previous exercise, modifications are necessary before you can run th
 
 Create the connection object using the SQL Server database driver a local server and the sample database.
 
-	> sConnString <- "Driver={SQL Server}; Server=(local); Database=AdventureWorksDW2016; Connection Timeout=30;"
+```
+> sConnString <- "Driver={SQL Server}; Server=(local); Database=AdventureWorksDW2016; Connection Timeout=30;"
+```
 
 The driver used on the connection is an ODBC driver that is installed by SQL Server. You could use the default database driver provided with operating system, but SQL Server Setup also installs drivers. 
 
@@ -173,7 +199,9 @@ The Server=(local) refers to a local default instance connected over TCP. A name
 
 In the R console application, create the SQL query object. The example query consists of columns from a single view, but any valid T-SQL query providing a rowset is acceptable. This unqualified query works because all columns in this view are supported data types.
 
-	> squery <-"SELECT * FROM dbo.vDMPrep"
+```
+> squery <-"SELECT * FROM dbo.vDMPrep"
+```
 
 > [!Tip]
 > You could skip this step and specify the query information through **RxOdbcData** via the *table* argument. Specifically, you could write `sDataSet <- RxOdbcData(table=dbo.vDMPrep, connectionString=sConnString)`.
@@ -182,80 +210,98 @@ In the R console application, create the SQL query object. The example query con
 
 Create an **RxOdbcData** data source object based on query results. The first example is the simple case.
 
-	> sDataSet <- RxOdbcData(sqlQuery=squery, connectionString=sConnString)
+```
+> sDataSet <- RxOdbcData(sqlQuery=squery, connectionString=sConnString)
+```
 
 The **RxOdbcData** data source takes arguments that can be used to [modify the data set](#drilldown-change-datatype). A revised object includes syntax that converts characters to factors via *stringsAsFactors*, specifies ranges for ages using *colInfo*, and *colClasses* sets the data type to convert to:
 
-	> colInfoList <- list("Age" = list(type = "factor", levels = c("20-40", "41-50", "51-60", "61+")))
-	> sDataSet <- RxOdbcData(sqlQuery=squery, connectionString=sConnString, colClasses=c(Model="character", OrderNumber="character"), colInfo=colInfoList, stringsAsFactors=TRUE)
+```
+> colInfoList <- list("Age" = list(type = "factor", levels = c("20-40", "41-50", "51-60", "61+")))
+> sDataSet <- RxOdbcData(sqlQuery=squery, connectionString=sConnString, colClasses=c(Model="character", OrderNumber="character"), colInfo=colInfoList, stringsAsFactors=TRUE)
+```
 
 Compare before-and-after variable information. On the original data set, the variable information is as follows:
 
-	Variable information: 
-	Var 1: EnglishProductCategoryName, Type: character
-	Var 2: Model, Type: character
-	Var 3: CustomerKey, Type: integer, Low/High: (11000, 29483)
-	Var 4: Region, Type: character
-	Var 5: Age, Type: integer, Low/High: (30, 101)
-	Var 6: IncomeGroup, Type: character
-	Var 7: CalendarYear, Type: integer, Storage: int16, Low/High: (2010, 2014)
-	Var 8: FiscalYear, Type: integer, Storage: int16, Low/High: (2010, 2013)
-	Var 9: Month, Type: integer, Storage: int16, Low/High: (1, 12)
-	Var 10: OrderNumber, Type: character
-	Var 11: LineNumber, Type: integer, Storage: int16, Low/High: (1, 8)
-	Var 12: Quantity, Type: integer, Storage: int16, Low/High: (1, 1)
-	Var 13: Amount, Type: numeric, Low/High: (2.2900, 3578.2700)
+```
+Variable information: 
+Var 1: EnglishProductCategoryName, Type: character
+Var 2: Model, Type: character
+Var 3: CustomerKey, Type: integer, Low/High: (11000, 29483)
+Var 4: Region, Type: character
+Var 5: Age, Type: integer, Low/High: (30, 101)
+Var 6: IncomeGroup, Type: character
+Var 7: CalendarYear, Type: integer, Storage: int16, Low/High: (2010, 2014)
+Var 8: FiscalYear, Type: integer, Storage: int16, Low/High: (2010, 2013)
+Var 9: Month, Type: integer, Storage: int16, Low/High: (1, 12)
+Var 10: OrderNumber, Type: character
+Var 11: LineNumber, Type: integer, Storage: int16, Low/High: (1, 8)
+Var 12: Quantity, Type: integer, Storage: int16, Low/High: (1, 1)
+Var 13: Amount, Type: numeric, Low/High: (2.2900, 3578.2700)
+```
 
 After the modifications, the variable information includes default and custom factor levels. Additionally, for Model and OrderNumber, we preserved the original "character" data type using the *colClasses* argument. We did this because *stringsAsFactors* globally converts character data to factors (levels), and for *OrderNumber* and *Model*, the number of levels was overkill.
 
-	Variable information: 
-	Var 1: EnglishProductCategoryName
-		3 factor levels: Bikes Accessories Clothing
-	Var 2: Model, Type: character
-	Var 3: CustomerKey, Type: integer, Low/High: (11000, 29483)
-	Var 4: Region
-		3 factor levels: North America Europe Pacific
-	Var 5: Age
-		4 factor levels: 20-40 41-50 51-60 61+
-	Var 6: IncomeGroup
-		3 factor levels: High Low Moderate
-	Var 7: CalendarYear, Type: integer, Storage: int16, Low/High: (2010, 2014)
-	Var 8: FiscalYear, Type: integer, Storage: int16, Low/High: (2010, 2013)
-	Var 9: Month, Type: integer, Storage: int16, Low/High: (1, 12)
-	Var 10: OrderNumber, Type: character
-	Var 11: LineNumber, Type: integer, Storage: int16, Low/High: (1, 8)
-	Var 12: Quantity, Type: integer, Storage: int16, Low/High: (1, 1)
-	Var 13: Amount, Type: numeric, Low/High: (2.2900, 3578.2700)
+```
+Variable information: 
+Var 1: EnglishProductCategoryName
+	3 factor levels: Bikes Accessories Clothing
+Var 2: Model, Type: character
+Var 3: CustomerKey, Type: integer, Low/High: (11000, 29483)
+Var 4: Region
+	3 factor levels: North America Europe Pacific
+Var 5: Age
+	4 factor levels: 20-40 41-50 51-60 61+
+Var 6: IncomeGroup
+	3 factor levels: High Low Moderate
+Var 7: CalendarYear, Type: integer, Storage: int16, Low/High: (2010, 2014)
+Var 8: FiscalYear, Type: integer, Storage: int16, Low/High: (2010, 2013)
+Var 9: Month, Type: integer, Storage: int16, Low/High: (1, 12)
+Var 10: OrderNumber, Type: character
+Var 11: LineNumber, Type: integer, Storage: int16, Low/High: (1, 8)
+Var 12: Quantity, Type: integer, Storage: int16, Low/High: (1, 1)
+Var 13: Amount, Type: numeric, Low/High: (2.2900, 3578.2700)
+```
 
 ### 4 - Set the output file
 
 Create the XDF file to save the data to disk. Check the folder permissions for write access. 
 
-		> sDataFile <- RxXdfData("c:/users/temp/mysqldata.xdf")
+```
+> sDataFile <- RxXdfData("c:/users/temp/mysqldata.xdf")
+```
 
 By default, Windows does not allow external writes by non-local users. You might want to create a single folder, such as C:/Users/Temp, and give *Everyone* write permissions. Once the XDF is created, you can move the file elsewhere and delete the folder, or revoke the write permissions you just granted.
 
 On Linux, you can use this alternative path:
 
-		> sDataFile <- RxXdfData(/tmp/mysqldata.xdf")
+```
+> sDataFile <- RxXdfData(/tmp/mysqldata.xdf")
+```
 
 ### 5 - Import the data
 
 Run **rxImport** with *inData* and *outFile* arguments. Include *overwrite* so that you can rerun the script with different queries without having to the delete the file each time.
 
-		> rxImport(sDataSet, sDataFile, overwrite=TRUE)
+```
+> rxImport(sDataSet, sDataFile, overwrite=TRUE)
+```
 
 ### 6 - Return object metadata
 
 Use **rxGetInfo** to return information about the XDF data source:
 
-		> rxGetInfo(sDataFile, getVarInfo=TRUE)
+```
+> rxGetInfo(sDataFile, getVarInfo=TRUE)
+```
 
 ### 7 - Return summary statistics
 
 Use **rxSummary** to produce summary statistics on the data. The `~.` is used to compute summary statistic on numeric fields.
 
-		> rxSummary(~., sDataFile)
+```
+> rxSummary(~., sDataFile)
+```
 
 Output shows the central tendencies of the data, including mean values, standard deviation, minimum and maximum values, and whether any observations are missing. From the output, you can see that Age was probably included in the view by mistake. There are no values for this variable in the observations retrieved from the data source.
 
@@ -273,8 +319,10 @@ Data stored in databases may be stored differently from how you want to store th
 
 The following example uses the SalelOrderHeader table because it provides more columns, and combines all three arguments to modify the data types of several variables in the claims data:
 
-	> colInfoList <- list("Age" = list(type = "factor", levels = c("20-40", "41-50", "51-60", "61+")))
-	> sDataSet <- RxOdbcData(sqlQuery=squery, connectionString=sConnString, colClasses=c(Model="character", OrderNumber="character"), colInfo=colInfoList, stringsAsFactors=TRUE)
+```
+> colInfoList <- list("Age" = list(type = "factor", levels = c("20-40", "41-50", "51-60", "61+")))
+> sDataSet <- RxOdbcData(sqlQuery=squery, connectionString=sConnString, colClasses=c(Model="character", OrderNumber="character"), colInfo=colInfoList, stringsAsFactors=TRUE)
+```
 
 ## Next Steps
 

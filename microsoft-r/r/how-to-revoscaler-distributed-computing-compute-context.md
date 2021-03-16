@@ -155,20 +155,22 @@ To list parameters and default values, use the `args` function with the name of 
 
 which gives the following output:
 
-	function (object, hdfsShareDir = paste("/user/RevoShare", Sys.info()[["user"]], 
-		sep = "/"), shareDir = paste("/var/RevoShare", Sys.info()[["user"]], 
-		sep = "/"), clientShareDir = rxGetDefaultTmpDirByOS(), sshUsername = Sys.info()[["user"]], 
-		sshHostname = NULL, sshSwitches = "", sshProfileScript = NULL, 
-		sshClientDir = "", nameNode = rxGetOption("hdfsHost"), jobTrackerURL = NULL, 
-		port = rxGetOption("hdfsPort"), onClusterNode = NULL, wait = TRUE, 
-		numExecutors = rxGetOption("spark.numExecutors"), executorCores = rxGetOption("spark.executorCores"), 
-		executorMem = rxGetOption("spark.executorMem"), driverMem = "4g", 
-		executorOverheadMem = rxGetOption("spark.executorOverheadMem"), 
-		extraSparkConfig = "", persistentRun = FALSE, sparkReduceMethod = "auto", 
-		idleTimeout = 3600, suppressWarning = TRUE, consoleOutput = FALSE, 
-		showOutputWhileWaiting = TRUE, autoCleanup = TRUE, workingDir = NULL, 
-		dataPath = NULL, outDataPath = NULL, fileSystem = NULL, packagesToLoad = NULL, 
-		resultsTimeout = 15, ...) 
+```
+function (object, hdfsShareDir = paste("/user/RevoShare", Sys.info()[["user"]], 
+	sep = "/"), shareDir = paste("/var/RevoShare", Sys.info()[["user"]], 
+	sep = "/"), clientShareDir = rxGetDefaultTmpDirByOS(), sshUsername = Sys.info()[["user"]], 
+	sshHostname = NULL, sshSwitches = "", sshProfileScript = NULL, 
+	sshClientDir = "", nameNode = rxGetOption("hdfsHost"), jobTrackerURL = NULL, 
+	port = rxGetOption("hdfsPort"), onClusterNode = NULL, wait = TRUE, 
+	numExecutors = rxGetOption("spark.numExecutors"), executorCores = rxGetOption("spark.executorCores"), 
+	executorMem = rxGetOption("spark.executorMem"), driverMem = "4g", 
+	executorOverheadMem = rxGetOption("spark.executorOverheadMem"), 
+	extraSparkConfig = "", persistentRun = FALSE, sparkReduceMethod = "auto", 
+	idleTimeout = 3600, suppressWarning = TRUE, consoleOutput = FALSE, 
+	showOutputWhileWaiting = TRUE, autoCleanup = TRUE, workingDir = NULL, 
+	dataPath = NULL, outDataPath = NULL, fileSystem = NULL, packagesToLoad = NULL, 
+	resultsTimeout = 15, ...) 
+```
 
 You can temporarily modify an existing compute context and set the modified context as the current compute context by calling `rxSetComputeContext`. For example, if you have defined *myHadoopCluster* to be a waiting cluster and want to set the current compute context to be non-waiting, you can call `rxSetComputeContext` as follows:
 

@@ -30,7 +30,7 @@ You can update the ports numbers for the web node, compute node, or [deployr-rse
 
 ## Machine Learning Server 9.3 and later
 
-In Machine Learning Server 9.3 and later, you can use `admin` extension of the Azure Command Line Interface ([Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)) to set up and manage your configuration, including updating the local 'admin' account password.
+In Machine Learning Server 9.3 and later, you can use `admin` extension of the Azure Command Line Interface ([Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli)) to set up and manage your configuration, including updating the local 'admin' account password.
 
 >[!Important]
 >- This password is set while you are first configuring your nodes.

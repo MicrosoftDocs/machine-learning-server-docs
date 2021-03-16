@@ -70,7 +70,9 @@ This quickstart walks you through the individual steps needed for the two tasks 
 
 To launch Python command window, open **File Explorer**, copy the full path to the executable: 
 
-    C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\python.exe
+```
+C:\Program Files\Microsoft\ML Server\PYTHON_SERVER\python.exe
+```
 
 Paste it into **Address Bar** of **File Explorer** and press **Enter**.
 
@@ -79,43 +81,50 @@ Paste it into **Address Bar** of **File Explorer** and press **Enter**.
 
 From your local machine, read in the data that you use to build the linear model. We use the attitude dataset.
 
-	#-- Import the dataset from the microsoftml package
-	from microsoftml.datasets.datasets import DataSetAttitude
-	attitude = DataSetAttitude()
-	
-	# -- Represent the dataset as a dataframe.
-	attitude = attitude.as_df().drop('Unnamed: 0', axis = 1).astype('double')
-	
-	# -- print top rows of data to inspect the data
-	attitude.head()
+```
+#-- Import the dataset from the microsoftml package
+from microsoftml.datasets.datasets import DataSetAttitude
+attitude = DataSetAttitude()
+
+# -- Represent the dataset as a dataframe.
+attitude = attitude.as_df().drop('Unnamed: 0', axis = 1).astype('double')
+
+# -- print top rows of data to inspect the data
+attitude.head()
+```
 
 **OUTPUT:**
 
-	   rating  complaints  privileges  learning  raises  critical  advance
-	0    43.0        51.0        30.0      39.0    61.0      92.0     45.0
-	1    63.0        64.0        51.0      54.0    63.0      73.0     47.0
-	2    71.0        70.0        68.0      69.0    76.0      86.0     48.0
-	3    61.0        63.0        45.0      47.0    54.0      84.0     35.0
-	4    81.0        78.0        56.0      66.0    71.0      83.0     47.0
-
+```
+	rating  complaints  privileges  learning  raises  critical  advance
+0    43.0        51.0        30.0      39.0    61.0      92.0     45.0
+1    63.0        64.0        51.0      54.0    63.0      73.0     47.0
+2    71.0        70.0        68.0      69.0    76.0      86.0     48.0
+3    61.0        63.0        45.0      47.0    54.0      84.0     35.0
+4    81.0        78.0        56.0      66.0    71.0      83.0     47.0
+```
 
 ### Authenticate and initiate the DeployClient
 
 This quickstart uses the local 'admin' account for authentication. The following code imports the [DeployClient](./../../python-reference/azureml-model-management-sdk/deploy-client.md) and [MLServer](./../../python-reference/azureml-model-management-sdk/mlserver.md) classes from the [azureml-model-management-sdk package](./../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) that are used to connect to Machine Learning Server.
 
-	# -- Import the DeployClient and MLServer classes --
-	# -- from the azureml-model-management-sdk package.
-	from azureml.deploy import DeployClient
-	from azureml.deploy.server import MLServer
+```
+# -- Import the DeployClient and MLServer classes --
+# -- from the azureml-model-management-sdk package.
+from azureml.deploy import DeployClient
+from azureml.deploy.server import MLServer
+```
 
 Then replace YOUR_ADMIN_PASSWORD with the administrator password that you used to create the server (but do not use the administrator name in place of admin in the `context` - it must use 'admin') in the following code and run it:
 	
-	# -- Define the location of the ML Server --
-	# -- for local onebox for Machine Learning Server: http://localhost:12800
-	# -- Replace with connection details to your instance of ML Server. 
-	HOST = 'http://localhost:12800'
-	context = ('admin', 'YOUR_ADMIN_PASSWORD')
-	client = DeployClient(HOST, use=MLServer, auth=context)
+```
+# -- Define the location of the ML Server --
+# -- for local onebox for Machine Learning Server: http://localhost:12800
+# -- Replace with connection details to your instance of ML Server. 
+HOST = 'http://localhost:12800'
+context = ('admin', 'YOUR_ADMIN_PASSWORD')
+client = DeployClient(HOST, use=MLServer, auth=context)
+```
 
 There are several ways to authenticate with Machine Learning Server on-premises or in the cloud. To learn more about connecting to Machine Learning Server in Python, see [Authenticate with Machine Learning Server in Python with azureml-model-management-sdk](./../../operationalize/python/how-to-authenticate-in-python.md).
 
@@ -123,108 +132,127 @@ There are several ways to authenticate with Machine Learning Server on-premises 
 
 Now that you are authenticated, you can use the [rx_lin_mod](./../../python-reference/revoscalepy/rx-lin-mod.md) function from the [revoscalepy package](./../../python-reference/revoscalepy/revoscalepy-package.md) to build the model. The following code creates a Generalized Linear Model (GLM) using the imported attitude dataset:
 
-	# -- Import the needed classes and functions
-	from revoscalepy import rx_lin_mod, rx_predict
-	
-	# -- Use rx_lin_mod from revoscalepy package
-	# -- Create glm model with `attitude` dataset
-	df = attitude
-	form = "rating ~ complaints + privileges + learning + raises + critical + advance"
-	model = rx_lin_mod(form, df, method = 'regression')
+```
+# -- Import the needed classes and functions
+from revoscalepy import rx_lin_mod, rx_predict
+
+# -- Use rx_lin_mod from revoscalepy package
+# -- Create glm model with `attitude` dataset
+df = attitude
+form = "rating ~ complaints + privileges + learning + raises + critical + advance"
+model = rx_lin_mod(form, df, method = 'regression')
+```
 
 **OUTPUT:**
 
-	Rows Read: 30, Total Rows Processed: 30, Total Chunk Time: 0.001 seconds
-	Computation time: 0.006 seconds.
+```
+Rows Read: 30, Total Rows Processed: 30, Total Chunk Time: 0.001 seconds
+Computation time: 0.006 seconds.
+```
 
 This model can now be used to estimate the ratings expected from the attitude dataset. The following code shows how to make some predictions locally to test the model:
 	
-	# -- Provide some sample inputs to test the model
-	myData = df.head(5)
-	
-	# -- Predict locally
-	print(rx_predict(model, myData))
+```
+# -- Provide some sample inputs to test the model
+myData = df.head(5)
+
+# -- Predict locally
+print(rx_predict(model, myData))
+```
 
 **OUTPUT:**
 
-	Rows Read: 1, Total Rows Processed: 1, Total Chunk Time: 0.001 seconds
-		rating_Pred
-	0    51.110295
-	1    61.352766
-	2    69.939441
-	3    61.226842
-	4    74.453799
+```
+Rows Read: 1, Total Rows Processed: 1, Total Chunk Time: 0.001 seconds
+	rating_Pred
+0    51.110295
+1    61.352766
+2    69.939441
+3    61.226842
+4    74.453799
+```
 
 ### Publish the model as a real-time web service
 
 To publish any model as a real-time service, you must first serialize the model object using the revoscalepy [rx_serialize_model](./../../python-reference/revoscalepy/rx-serialize-model.md) function.
 
-	# Import the needed classes and functions
-	from revoscalepy import rx_serialize_model
-	
-	# Serialize the model with rx_serialize_model
-	s_model = rx_serialize_model(model, realtime_scoring_only=True)
+```
+# Import the needed classes and functions
+from revoscalepy import rx_serialize_model
+
+# Serialize the model with rx_serialize_model
+s_model = rx_serialize_model(model, realtime_scoring_only=True)
+```
 
 Initiate a [realtimeDefinition](./../../python-reference/azureml-model-management-sdk/realtime-definition.md) object from the [azureml-model-management-sdk package](./../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) to publish the linear model as a real-time Python web service to Machine Learning Server.
 
-	service = client.realtime_service("LinModService") \
-		.version('1.0') \
-		.serialized_model(s_model) \
-		.description("This is a real-time model.") \
-		.deploy()
-
+```
+service = client.realtime_service("LinModService") \
+	.version('1.0') \
+	.serialized_model(s_model) \
+	.description("This is a real-time model.") \
+	.deploy()
+```
 
 Verify that the web service results match the results obtained when the model was run locally. To consume the real-time service, call `.consume` on the real-time [service](./../../python-reference/azureml-model-management-sdk/service.md) object. You can consume the model using the [Service](./../../python-reference/azureml-model-management-sdk/service.md) object returned from `.deploy()` because you are in the same session as the one you in which you deployed.
 
-	# -- To consume the service, pluck out the named output: outputData. --​
-	print(service.consume(df.head(5)).outputs['outputData'])
+```
+# -- To consume the service, pluck out the named output: outputData. --​
+print(service.consume(df.head(5)).outputs['outputData'])
+```
 
 **OUTPUT:**
 
-		rating_Pred
-	0    51.110295
-	1    61.352766
-	2    69.939441
-	3    61.226842
-	4    74.453799
-
+```
+	rating_Pred
+0    51.110295
+1    61.352766
+2    69.939441
+3    61.226842
+4    74.453799
+```
 
 To delete the service, use the following code:
 
-	client.delete_service('LinModService', version='1.0')
+```
+client.delete_service('LinModService', version='1.0')
+```
 
 **OUTPUT:**
 
-	True
+```
+True
+```
 
 ### Summary Python script
 
 This script can be run with Python.exe to create the model and deploy it as a web service. Replace YOUR_ADMIN_PASSWORD in the `context` with the administrator password that you used to create the server. Copy the entire script and paste it at the Python command prompt by right-clicking. 
 
-	from microsoftml.datasets.datasets import DataSetAttitude
-	attitude = DataSetAttitude()
-	attitude = attitude.as_df().drop('Unnamed: 0', axis = 1).astype('double')
-	attitude.head()
-	from azureml.deploy import DeployClient
-	from azureml.deploy.server import MLServer
-	HOST = 'http://localhost:12800'
-	context = ('admin', 'YOUR_ADMIN_PASSWORD')
-	client = DeployClient(HOST, use=MLServer, auth=context)
-	from revoscalepy import rx_lin_mod, rx_predict
-	df = attitude
-	form = "rating ~ complaints + privileges + learning + raises + critical + advance"
-	model = rx_lin_mod(form, df, method = 'regression')
-	myData = df.head(5)
-	print(rx_predict(model, myData))
-	from revoscalepy import rx_serialize_model
-	s_model = rx_serialize_model(model, realtime_scoring_only=True)
-	service = client.realtime_service("LinModService") \
-		.version('1.0') \
-		.serialized_model(s_model) \
-		.description("This is a real-time model.") \
-		.deploy()
-	print(service.consume(df.head(5)).outputs['outputData'])
-
+```
+from microsoftml.datasets.datasets import DataSetAttitude
+attitude = DataSetAttitude()
+attitude = attitude.as_df().drop('Unnamed: 0', axis = 1).astype('double')
+attitude.head()
+from azureml.deploy import DeployClient
+from azureml.deploy.server import MLServer
+HOST = 'http://localhost:12800'
+context = ('admin', 'YOUR_ADMIN_PASSWORD')
+client = DeployClient(HOST, use=MLServer, auth=context)
+from revoscalepy import rx_lin_mod, rx_predict
+df = attitude
+form = "rating ~ complaints + privileges + learning + raises + critical + advance"
+model = rx_lin_mod(form, df, method = 'regression')
+myData = df.head(5)
+print(rx_predict(model, myData))
+from revoscalepy import rx_serialize_model
+s_model = rx_serialize_model(model, realtime_scoring_only=True)
+service = client.realtime_service("LinModService") \
+	.version('1.0') \
+	.serialized_model(s_model) \
+	.description("This is a real-time model.") \
+	.deploy()
+print(service.consume(df.head(5)).outputs['outputData'])
+```
 
 ### Use a Jupyter Notebook
 
@@ -252,12 +280,14 @@ To run the Publish_Realtime_Web_Service_in_Python.ipynb Jupyter Notebook:
 
 1. To save to Swagger JSON file to a specified location (in the example C:\\Users\\\Public\\Downloads\\), run the following commands from the Python prompt in the VM:
 	
-		# Print and save the service swagger to a json file 
-		print(service.swagger())
-		with open("C:\\Users\\\Public\\Downloads\\linmodservice-swagger.json", "w") as swagger_file:
-    		swagger_file.write("%s" % service.swagger())
-		# This returns 16767
-
+    ```
+    # Print and save the service swagger to a json file 
+    print(service.swagger())
+    with open("C:\\Users\\\Public\\Downloads\\linmodservice-swagger.json", "w") as swagger_file:
+    	swagger_file.write("%s" % service.swagger())
+    # This returns 16767
+    ```
+    
 2. Open the linmodservice-swagger.json file and copy the contents.
 3. Go to [Swagger](https://swagger.io) homepage on your main machine.
 2. From the **Tools** menu on the homepage, choose **Swagger Tools** -> **Swagger Editor**.
@@ -283,66 +313,71 @@ To run the Publish_Realtime_Web_Service_in_Python.ipynb Jupyter Notebook:
 8. To add the three references needed by the **ConsoleApp1** client, right-click on **ConsoleApp1** and select **Add** -> **Reference...**. In the **Reference Manager** window, select the **Projects** tab on the left and check the box for the **IO.Swagger** project. Then select the **Browse** tab on the left and check the boxes for the versions of the **RestSharp** and **NewtonSoft.Json** dlls just installed. Click **OK**.
 9. To add references to the installed and click **OK**.
 10. Replace *YOUR_ADMIN_PASSWORD* in the Initialize O16N params section of the following C# code with the password that you used when creating the VM. Do not change the username, *admin*, regardless of the name you used to create the VM. Paste the resulting code into the Program.cs file of the ConsoleApp1, replacing the code that was there by default. Then build and run the solution.	
-		using IO.Swagger.Api;
-		using IO.Swagger.Client;
-		using IO.Swagger.Model;
-		using System;
-		using System.Collections.Generic;
-	
-		namespace ConsoleApp1
+    ```
+	using IO.Swagger.Api;
+	using IO.Swagger.Client;
+	using IO.Swagger.Model;
+	using System;
+	using System.Collections.Generic;
+
+	namespace ConsoleApp1
+	{
+		class Program
 		{
-	    	class Program
-	    	{
-	       	 static void Main(string[] args)
-	        	{
-	            	Console.WriteLine("Hello!");
-	
-	           	 	// Initialize O16N params
-	            	string webNodeUri = "http://mlserver1.westus.cloudapp.azure.com:12800";
-	            	string username = "admin";
-	            	string password = "YOUR_ADMIN_PASSWORD";
-	
-	            	// Login, Obtain access token and set header 
-	            	UserApi userInstance = new UserApi(webNodeUri);
-	            	var token = userInstance.Login(new LoginRequest(username, password));
-	            	Configuration config = new Configuration(new ApiClient(webNodeUri), new System.Collections.Generic.Dictionary<string, string>() { { "Authorization", $"Bearer {token.AccessToken}" } });
-	
-	            	// Call LinModServiceApi and log output to console window
-	            	LinModServiceApi instance = new LinModServiceApi(config);
-	            	var inputDataFrame = new Dictionary<string, object>
-	            	{
-	                	{ "rating", new object[] {43.0 } },
-	                	{ "complaints", new object[] { 51.0 } },
-	                	{ "privileges", new object[] { 30.0 } },
-	                	{ "learning", new object[] { 39.0 } },
-	                	{ "raises", new object[] { 61.0 } },
-	                	{ "critical", new object[] { 92.0 } },
-	                	{ "advance", new object[] { 45.0 } }
-	            	};
-	            	InputParameters webServiceParameters = new InputParameters(inputDataFrame);
-	            	WebServiceResult response = instance.ConsumeWebService(webServiceParameters);
-					var reportJson = response.OutputParameters.OutputData;
-					Console.WriteLine(reportJson);
-				}
+			static void Main(string[] args)
+			{
+				Console.WriteLine("Hello!");
+
+				// Initialize O16N params
+				string webNodeUri = "http://mlserver1.westus.cloudapp.azure.com:12800";
+				string username = "admin";
+				string password = "YOUR_ADMIN_PASSWORD";
+
+				// Login, Obtain access token and set header 
+				UserApi userInstance = new UserApi(webNodeUri);
+				var token = userInstance.Login(new LoginRequest(username, password));
+				Configuration config = new Configuration(new ApiClient(webNodeUri), new System.Collections.Generic.Dictionary<string, string>() { { "Authorization", $"Bearer {token.AccessToken}" } });
+
+				// Call LinModServiceApi and log output to console window
+				LinModServiceApi instance = new LinModServiceApi(config);
+				var inputDataFrame = new Dictionary<string, object>
+				{
+					{ "rating", new object[] {43.0 } },
+					{ "complaints", new object[] { 51.0 } },
+					{ "privileges", new object[] { 30.0 } },
+					{ "learning", new object[] { 39.0 } },
+					{ "raises", new object[] { 61.0 } },
+					{ "critical", new object[] { 92.0 } },
+					{ "advance", new object[] { 45.0 } }
+				};
+				InputParameters webServiceParameters = new InputParameters(inputDataFrame);
+				WebServiceResult response = instance.ConsumeWebService(webServiceParameters);
+				var reportJson = response.OutputParameters.OutputData;
+				Console.WriteLine(reportJson);
 			}
 		}
+	}
+    ```
 
 
 **OUTPUT:**
 
-	Hello! 
+```
+Hello! 
 
-	{"rating_Pred": [51.110295255533131]}
+{"rating_Pred": [51.110295255533131]}
 
-	Press any key to continue . . .
-
+Press any key to continue . . .
+```
 
 ## Clean up resources
 
 To delete the service created, run this code in the Python command window.
 
-	# To delete the service use the follow code:
-	client.delete_service('LinModService', version='1.0')
+```
+# To delete the service use the follow code:
+client.delete_service('LinModService', version='1.0')
+```
 
 To stop the VM, return to the Azure portal, locate the server in your resource group and select **Stop**. This option would allow you to restart the VM for use later and not pay for compute resources in the interim. 
 

@@ -1,8 +1,8 @@
 --- 
  
 # required metadata 
-title: ": " 
-description: "" 
+title: "revoscalepy API" 
+description: "revoscalepy API" 
 keywords: "" 
 author: "dphansen" 
 manager: "cgronlun" 
@@ -24,7 +24,9 @@ ms.custom: ""
  
 ---
 
-# context
+# revoscalepy API
+
+## context
 
 
  
@@ -46,7 +48,7 @@ ms.custom: ""
 * [rx_get_pyspark_connection](rx-get-pyspark-connection.md) 
 
 
-# datasource
+## datasource
 
 * [RxDataSource](RxDataSource.md) 
 
@@ -79,14 +81,14 @@ ms.custom: ""
 * [rx_spark_remove_data](rx-spark-remove-data.md) 
 
 
-# etl
+## etl
 
 * [rx_data_step](rx-data-step.md) 
 
 * [rx_import](rx-import.md) 
 
 
-# functions
+## functions
 
 * [rx_summary](rx-summary.md) 
 
@@ -107,7 +109,7 @@ ms.custom: ""
 * [rx_partition](rx-partition.md) 
 
 
-# jobs
+## jobs
 
 * [RxRemoteJob](RxRemoteJob.md) 
 
@@ -132,7 +134,7 @@ ms.custom: ""
 * [rx_wait_for_job](rx-wait-for-job.md) 
 
 
-# serialization
+## serialization
 
 * [rx_delete_object](rx-delete-object.md) 
 
@@ -147,7 +149,7 @@ ms.custom: ""
 * [rx_write_object](rx-write-object.md) 
 
 
-# utils
+## utils
 
 * [RxOptions](RxOptions.md) 
 

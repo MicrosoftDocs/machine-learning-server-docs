@@ -394,7 +394,7 @@ Training of L1-Regularized Log-Linear Models](https://research.microsoft.com/app
 and L2 Regularization for Machine Learning](https://msdn.microsoft.com/magazine/dn904675.aspx)
 
 
-## Example
+## Binary classification example
 
 
 
@@ -477,7 +477,7 @@ Rows Read: 5, Total Rows Processed: 5, Total Chunk Time: 0.001 seconds
 
 
 
-## Example
+## MultiClass classification example
 
 
 

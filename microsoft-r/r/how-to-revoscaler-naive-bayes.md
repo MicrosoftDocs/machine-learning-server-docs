@@ -35,55 +35,61 @@ The Naïves Bayes classification method is simple, effective, and robust. This m
 
 In [Logistic Regression Models](how-to-revoscaler-logistic-regression.md), we fit a simple logistic regression model to rpart’s kyphosis data and in [Decision Trees](how-to-revoscaler-decision-tree.md) and [Decision Forests](how-to-revoscaler-decision-forest.md) we used the kyphosis data again to create classification and regression trees. We can use the same data with our Naïve Bayes classifier to see which patients are more likely to acquire Kyphosis based on age, number, and start. We can train and test our classifier on the kyphosis data for the sake of illustration. We use the *rxNaiveBayes* function to construct a classifier for the kyphosis data:
 
-	#  A Simple Naïve Bayes Classifier
-	
-	data("kyphosis", package="rpart")
-	kyphNaiveBayes <- rxNaiveBayes(Kyphosis ~ Age + Start + Number, data = kyphosis)
-	kyphNaiveBayes
+```
+#  A Simple Naïve Bayes Classifier
 
-	  Call:
-	  rxNaiveBayes(formula = Kyphosis ~ Age + Start + Number, data = kyphosis)
-	  
-	  A priori probabilities:
-	  Kyphosis
-		 absent   present 
-	  0.7901235 0.2098765 
-	  
-	  Predictor types:
-		Variable    Type
-	  1      Age numeric
-	  2    Start numeric
-	  3   Number numeric
-	  
-	  Conditional probabilities:
-	  $Age
-				 Means   StdDev
-	  absent  79.89062 61.86111
-	  present 97.82353 39.27505
-	  
-	  $Start
-				  Means   StdDev
-	  absent  12.609375 4.427967
-	  present  7.294118 4.283175
-	  
-	  $Number
-				 Means   StdDev
-	  absent  3.750000 1.414214
-	  present 5.176471 1.878673
+data("kyphosis", package="rpart")
+kyphNaiveBayes <- rxNaiveBayes(Kyphosis ~ Age + Start + Number, data = kyphosis)
+kyphNaiveBayes
+
+	Call:
+	rxNaiveBayes(formula = Kyphosis ~ Age + Start + Number, data = kyphosis)
+	
+	A priori probabilities:
+	Kyphosis
+		absent   present 
+	0.7901235 0.2098765 
+	
+	Predictor types:
+	Variable    Type
+	1      Age numeric
+	2    Start numeric
+	3   Number numeric
+	
+	Conditional probabilities:
+	$Age
+				Means   StdDev
+	absent  79.89062 61.86111
+	present 97.82353 39.27505
+	
+	$Start
+				Means   StdDev
+	absent  12.609375 4.427967
+	present  7.294118 4.283175
+	
+	$Number
+				Means   StdDev
+	absent  3.750000 1.414214
+	present 5.176471 1.878673
+```
 	  
 The returned object *kyphNaiveBayes* is an object of class *rxNaiveBayes*. Objects of this class provide the following useful components: *apriori* and *tables*. The *apriori* component contains the conditional probabilities for the response variable, in this case the Kyphosis variable. The *tables* component contains a list of tables, one for each predictor variable. For a categorical variable, the table contains the conditional probabilities of the variable given the target level of the response variable. For a numeric variable, the table contains the mean and standard deviation of the variable given the target level of the response variable. These components are printed in the output above.
 
 We can use our Naïve Bayes object with *rxPredict* to re-classify the Kyphosis variable for each child in our original dataset:
 
-	kyphPred <- rxPredict(kyphNaiveBayes,kyphosis)
+```
+kyphPred <- rxPredict(kyphNaiveBayes,kyphosis)
+```
 
 When we table the results from the Naïve Bayes classifier with the original Kyphosis variable, it appears that 13 of 81 children are misclassified:
 
-	table(kyphPred[["Kyphosis_Pred"]], kyphosis[["Kyphosis"]])
+```
+table(kyphPred[["Kyphosis_Pred"]], kyphosis[["Kyphosis"]])
 
-	          absent present
-	  absent      59       8
-	  present      5       9
+			absent present
+	absent      59       8
+	present      5       9
+```
 
 
 ### A Larger Naïve Bayes Classifier
@@ -92,57 +98,63 @@ As a more complex example, consider the mortgage default example. For that examp
 
 The mortgage default data sets are available for download [online](https://go.microsoft.com/fwlink/?LinkID=698896&clcid=0x409). With the data downloaded we can create the training data set and test data set as follows (remember to modify the first line to match the location of the mortgage default text data files on your own system):
 
-	#  A Larger Naïve Bayes Classifier
-	
-	
-	bigDataDir <- "C:/MRS/Data"
-	mortCsvDataName <- file.path(bigDataDir, "mortDefault", "mortDefault")
-	trainingDataFileName <- "mortDefaultTraining"
-	mortCsv2009 <- paste(mortCsvDataName, "2009.csv", sep = "")
-	targetDataFileName <- "mortDefault2009.xdf"
-	defaultLevels <- as.character(c(0,1))
-	ageLevels <- as.character(c(0:40))
-	yearLevels <- as.character(c(2000:2009))
-	colInfo <- list(list(name  = "default", type = "factor",
-	    levels = defaultLevels), list(name = "houseAge", type = "factor",
-	    levels = ageLevels), list(name = "year", type = "factor",
-	    levels = yearLevels))
-	append= FALSE
-	for (i in 2000:2008)
-	{
-	    importFile <- paste(mortCsvDataName, i, ".csv", sep = "")
-	    rxImport(inData = importFile, outFile = trainingDataFileName,
-	    colInfo = colInfo, append = append, overwrite=TRUE)
-	    append = TRUE
-	}
-	
-	rxImport(inData = mortCsv2009, outFile = targetDataFileName, 
-	    colInfo = colInfo)
+```
+#  A Larger Naïve Bayes Classifier
+
+
+bigDataDir <- "C:/MRS/Data"
+mortCsvDataName <- file.path(bigDataDir, "mortDefault", "mortDefault")
+trainingDataFileName <- "mortDefaultTraining"
+mortCsv2009 <- paste(mortCsvDataName, "2009.csv", sep = "")
+targetDataFileName <- "mortDefault2009.xdf"
+defaultLevels <- as.character(c(0,1))
+ageLevels <- as.character(c(0:40))
+yearLevels <- as.character(c(2000:2009))
+colInfo <- list(list(name  = "default", type = "factor",
+	levels = defaultLevels), list(name = "houseAge", type = "factor",
+	levels = ageLevels), list(name = "year", type = "factor",
+	levels = yearLevels))
+append= FALSE
+for (i in 2000:2008)
+{
+	importFile <- paste(mortCsvDataName, i, ".csv", sep = "")
+	rxImport(inData = importFile, outFile = trainingDataFileName,
+	colInfo = colInfo, append = append, overwrite=TRUE)
+	append = TRUE
+}
+
+rxImport(inData = mortCsv2009, outFile = targetDataFileName, 
+	colInfo = colInfo)
+```
 	
 In the above code the response variable *default* is converted to a factor using the *colInfo* argument to *rxImport*. For the *rxNaiveBayes* function, the response variable must be a factor or you will get an error.
 
 Now that we have training and test data sets we can fit a Naïve Bayes classifier with our training data using *rxNaiveBayes* and assign values of the *default* variable for observations within the test data using *rxPredict*:
 
-	mortNB <- rxNaiveBayes(default ~ year + creditScore + yearsEmploy + ccDebt,
-		data = trainingDataFileName, smoothingFactor = 1)
-	mortNBPred <- rxPredict(mortNB, data = targetDataFileName)
+```
+mortNB <- rxNaiveBayes(default ~ year + creditScore + yearsEmploy + ccDebt,
+	data = trainingDataFileName, smoothingFactor = 1)
+mortNBPred <- rxPredict(mortNB, data = targetDataFileName)
+```
 
 Notice that we added an additional argument, *smoothingFactor*, to our rxNaiveBayes call. This is a useful argument when your data are missing levels of a certain variable that you expect to be in your test data. Based on our training data, the conditional probability for year 2009 will be 0, since it only includes data between the years of 2000 and 2008. If we try to use our classifier on the test data without specifying a smoothing factor in our call to *rxNaiveBayes* the function *rxPredict* produces no results since our test data only has data from 2009. In general, smoothing is used to avoid overfitting your model. It follows that to achieve the optimal classifier you may want to smooth the conditional probabilities even if every level of each variable is observed.
 
 We can compare the predicted values of the *default* variable from the Naïve Bayes classifier with the actual data in the test dataset:
 
-	results <- table(mortNBPred[["default_Pred"]], rxDataStep(targetDataFileName, 
-	    maxRowsByCols=6000000)[["default"]])
-	results
+```
+results <- table(mortNBPred[["default_Pred"]], rxDataStep(targetDataFileName, 
+	maxRowsByCols=6000000)[["default"]])
+results
 
-	         0      1
-	  0 877272   3792
-	  1  97987  20949
+			0      1
+	0 877272   3792
+	1  97987  20949
 
-	pctMisclassified <- sum(results[2:3])/sum(results)*100
-	pctMisclassified
+pctMisclassified <- sum(results[2:3])/sum(results)*100
+pctMisclassified
 
-	  [1] 10.1779
+	[1] 10.1779
+```
 
 These results demonstrate a 10.2% misclassification rate using our Naïve Bayes classifier.
 

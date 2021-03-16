@@ -51,9 +51,11 @@ RevoScaleR provides functions for retrieving information about sample data. Use 
 
 2. Retrieve the file list by entering the following command at the command prompt:
 
-        list.files(rxGetOption("sampleDataDir"))
+    ```
+    list.files(rxGetOption("sampleDataDir"))
+    ```
 
-   The open-source R `list.files` command returns a file list provided by the RevoScaleR **rxGetOption** function and the **sampleDataDir** argument. 
+    The open-source R `list.files` command returns a file list provided by the RevoScaleR **rxGetOption** function and the **sampleDataDir** argument. 
 
 > [!NOTE]
 > If you are a Windows user and new to R, be aware that R script is case-sensitive. If you mistype the **rxGetOption** function or its parameter, you will get an error instead of the file list.
@@ -62,6 +64,7 @@ RevoScaleR provides functions for retrieving information about sample data. Use 
 
 You should see the following files 
 
+```
     [1] "AirlineDemo1kNoMissing.csv" "AirlineDemoSmall.csv"      
     [3] "AirlineDemoSmall.xdf"       "AirlineDemoSmallComposite" 
     [5] "AirlineDemoSmallOrc"        "AirlineDemoSmallParquet"   
@@ -86,6 +89,7 @@ You should see the following files
     [43] "mortDefaultSmall2009.csv"   "mrsDebugParquet"           
     [45] "README"                     "testAvro4.bin"             
     [47] "Utf16leDb.sqlite"     
+```
 
 Sample data is provided in multiple formats so that you can step through various data import scenarios using different data formats and techniques. 
 
