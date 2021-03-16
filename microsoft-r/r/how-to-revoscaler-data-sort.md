@@ -187,6 +187,7 @@ Compression type: zlib
 
 By using the frequency weights argument, we can use many of the RevoScaleR analysis functions on this smaller data set and get same results as we would using the full data set. For example, a linear model for Arrival Delay can be specified as follows, using the *fweights* argument:
 
+```
 linModObj <- rxLinMod(ArrDelay~CRSDepTime + DayOfWeek, data = airDedup, 
 	fweights = "FreqWt")
 summary(linModObj)
