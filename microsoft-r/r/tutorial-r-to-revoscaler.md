@@ -762,7 +762,7 @@ The *rxLinePlot* function is a convenient way to plot output from *rxCube*. We u
 rxLinePlot(Counts~creditScore|catDebt, data=rxResultsDF(mortCube))
 ```
 
-![rxLinePlot(Counts~creditScore|catDebt, data=rxResultsDF(mortCube))](media/tutorial-r-to-revoscaler/image15.png)
+![rxLinePlot 1](media/tutorial-r-to-revoscaler/image15.png)
 
 ### Analyze with *rxLogit*
 
@@ -829,9 +829,8 @@ Rows Read: 500000, Total Rows Processed: 1000000, Total Chunk Time: 1.001 second
 
 Because we have specified an output file when importing the data, the returned *mortData* object is a small object in memory representing the .xdf data file, rather than a full data frame containing all of the data in memory. It can be used in **RevoScaleR** analysis functions in the same way as data frames.
 
-# Some quick information about my data
-
 ```
+# Some quick information about my data
 rxGetInfo(mortData, getVarInfo = TRUE, numRows=5)
 ```
 
