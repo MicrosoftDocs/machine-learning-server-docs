@@ -129,15 +129,17 @@ vector are used to identify which column should be converted to which type.
 
 Allowable column types are:
 
-    ”bool” (stored as uchar),
-    “integer” (stored as int32),
-    “float32” (the default for floating point data for ‘.xdf’ files),
-    “numeric” (stored as float64 as in R),
-    “character” (stored as string),
-    “factor” (stored as uint32),
-    “int16” (alternative to integer for smaller storage space),
-    “uint16” (alternative to unsigned integer for smaller storage space),
-    “Date” (stored as Date, i.e. float64)
+```
+”bool” (stored as uchar),
+“integer” (stored as int32),
+“float32” (the default for floating point data for ‘.xdf’ files),
+“numeric” (stored as float64 as in R),
+“character” (stored as string),
+“factor” (stored as uint32),
+“int16” (alternative to integer for smaller storage space),
+“uint16” (alternative to unsigned integer for smaller storage space),
+“Date” (stored as Date, i.e. float64)
+```
 
 Note for “factor” type, the levels will be coded in the order
 encountered. Since this factor level ordering is row dependent, the
@@ -160,30 +162,32 @@ column_classes.
 
 Currently available properties for a column information list are:
 
-    type: character string specifying the data type for the column. See
-        column_classes argument description for the available types. Specify
-        “factorIndex” as the type for 0-based factor indexes. levels must also
-        be specified.
+```
+type: character string specifying the data type for the column. See
+    column_classes argument description for the available types. Specify
+    “factorIndex” as the type for 0-based factor indexes. levels must also
+    be specified.
 
-    newName: character string specifying a new name for the variable.
-    description: character string specifying a description for the variable.
-    levels: list of strings containing the levels when type = “factor”. If
+newName: character string specifying a new name for the variable.
+description: character string specifying a description for the variable.
+levels: list of strings containing the levels when type = “factor”. If
 
-        the levels property is not provided, factor levels will be determined
-        by the values in the source column. If levels are provided, any value
-        that does not match a provided level will be converted to a missing
-        value.
+    the levels property is not provided, factor levels will be determined
+    by the values in the source column. If levels are provided, any value
+    that does not match a provided level will be converted to a missing
+    value.
 
-    newLevels: new or replacement levels specified for a column of type
-        “factor”. It must be used in conjunction with the levels argument.
-        After reading in the original data, the labels for each level will be
-        replaced with the newLevels.
+newLevels: new or replacement levels specified for a column of type
+    “factor”. It must be used in conjunction with the levels argument.
+    After reading in the original data, the labels for each level will be
+    replaced with the newLevels.
 
-    low: the minimum data value in the variable (used in computations using
-        the F() function.
+low: the minimum data value in the variable (used in computations using
+    the F() function.
 
-    high: the maximum data value in the variable (used in computations
-        using the F() function.
+high: the maximum data value in the variable (used in computations
+    using the F() function.
+```
 
 
 ### rows_per_read
