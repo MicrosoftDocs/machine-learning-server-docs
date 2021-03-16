@@ -39,7 +39,9 @@ You can use a smaller or larger data set with this tutorial. Datasets for this t
 
 When downloading these files, put them in a directory where you can easily access them. For example, create a directory "C:\MRS\BigData" and unpack the files there. When running examples using these files, you will want to specify this location as your *bigDataDir*. For example:
 
-	bigDataDir <- "C:\MRS\BigData"
+```
+bigDataDir <- "C:\MRS\BigData"
+```
 
 ### Origin of the sample datasets
 
