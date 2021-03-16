@@ -398,7 +398,6 @@ Of course, not all data source types are available on all compute contexts. For 
         <td>
             <center><img src="./media/revoscaler-hadoop-functions/award.png" alt="-"/></center>
         </td>
-
         <td>Creates an efficient XDF data source object.</td>
         <td>
             <center><small><a href="rxxdfdata.md" data-raw-source="[**View**](rxxdfdata.md)"><strong>View</strong></a></small></center>
