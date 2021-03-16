@@ -157,9 +157,7 @@ time is spent in computing surrogate splits.
 
 An integer specifying how surrogates are to be used
 in the splitting process:
-0: Display-only; observations with a missing value for the primary
-
-    split variable are not sent further down the tree.
+0: Display-only; observations with a missing value for the primary split variable are not sent further down the tree.
 
 1: Use surrogates, in order, to split observations missing the primary
     split variable. If all surrogates are missing, the observation is not
@@ -218,15 +216,9 @@ for stratified sampling.
 
 A scalar or a vector of positive values specifying the
 percentage(s) of observations to sample for each tree:
-for unstratified sampling: A scalar of positive value specifying the
+for unstratified sampling: A scalar of positive value specifying the percentage of observations to sample for each tree. The default is 1.0 for sampling with replacement (i.e., replace=True) and 0.632 for sampling without replacement (i.e., replace=False).
 
-    percentage of observations to sample for each tree. The default is 1.0
-    for sampling with replacement (i.e., replace=True) and 0.632 for
-    sampling without replacement (i.e., replace=False).
-
-for stratified sampling: A vector of positive values of length equal to
-    the number of strata specifying the percentages of observations to
-    sample from the strata for each tree.
+For stratified sampling: A vector of positive values of length equal tothe number of strata specifying the percentages of observations to sample from the strata for each tree.
 
 
 ### importance

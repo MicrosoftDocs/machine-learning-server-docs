@@ -91,7 +91,9 @@ In the Solution Explorer, double-click on **SATscores.R** to open the R script f
 
 The easiest way to edit a script is to simply type. At the top of **SATscores.R** add a comment:
 
-	# Analyzing SAT data
+```
+# Analyzing SAT data
+```
 
 Notice that the text is green, indicating that the text is a comment.
 
@@ -108,7 +110,7 @@ As an example, let's use snippets to create an R data frame.
 1.  Right-click on the first empty line of your script, click **Insert Snippet...**, and then double-click on the folder **data sets**.
 2.  Click **import data**. A tooltip appears describing what the snippet does.
 3.  Double-click **import data**. A snippet for the read.table() R function is inserted, with placeholders for you to insert information. You can move the mouse over the placeholders to view ToolTip descriptions of the fields.
-    ![](media/revorpe-getting-started/image3.png)
+    ![Analyzing SAT data](media/revorpe-getting-started/image3.png)
 4.  The first field is the name of the data frame to create. Type SAT to replace the default myDataFrame.
 5.  Move to the next placeholder name by pressing TAB. (You can use Shift+TAB to move to the previous placeholder.) The placeholder for the file to import is now highlighted in blue.
 6.  Replace the default file name myfile with sat.csv. Since you have copied the file into your current solution directory, you do not need to specify any path information.
@@ -118,7 +120,7 @@ As an example, let's use snippets to create an R data frame.
 
 #### Run the script
 
-To run the script, click the **Run** button ![](media/revorpe-getting-started/image4.png) on the standard toolbar. The commands and output are printed in the Console window. If you have the Output window open, you can also see your results there.
+To run the script, click the **Run** button ![Run](media/revorpe-getting-started/image4.png) on the standard toolbar. The commands and output are printed in the Console window. If you have the Output window open, you can also see your results there.
 
 Note that when a script is run, it is first automatically saved to disk. The yellow line in the left margin of your edited code turns green when the script has been saved.
 
@@ -158,13 +160,13 @@ In the script window, select the new lines at the end of your script beginning w
 To run the selected text, do one of the following:
 
 - Right-click and click **Run Line or Selection**
-- Press the **Run Line or Selection** button ![](media/revorpe-getting-started/image5.png) on the main toolbar
+- Press the **Run Line or Selection** button ![Run Line or Selection](media/revorpe-getting-started/image5.png) on the main toolbar
 - On the **Edit** menu, click **Run Line or Selection**.
 - Press **Alt-E-E** to access the menu shortcut keys.
 
 You should see a graphics window displaying your plot. The regression line suggests that as expenditure per pupil increases, SAT scores drop.
 
-![](media/revorpe-getting-started/image6.png)
+![SAT scores](media/revorpe-getting-started/image6.png)
 
 Close the graphics window.
 
@@ -174,6 +176,7 @@ Another variable in the data set, PctSAT, contains the percentage of eligible st
 
 First, let’s compute summary statistics for the data to see the characteristics of the variables. Right-click the object **SAT** in the Object Browser, and then click **Summary**. The following summary of the data appears:
 
+```
 	     AveSAT      ExpPerPupil        PctSAT          PupilTch    
 	 Min.   :1388   Min.   : 6629   Min.   :  3.00   Min.   :10.80  
 	 1st Qu.:1490   1st Qu.: 9359   1st Qu.:  8.00   1st Qu.:13.47  
@@ -181,6 +184,7 @@ First, let’s compute summary statistics for the data to see the characteristic
 	 Mean   :1599   Mean   :10544   Mean   : 38.56   Mean   :15.25  
 	 3rd Qu.:1700   3rd Qu.:11539   3rd Qu.: 67.75   3rd Qu.:16.55  
 	 Max.   :1807   Max.   :16587   Max.   :100.00   Max.   :22.10  
+```
 
 
 ### Create a Categorical Variable
@@ -189,8 +193,10 @@ Next, insert a snippet into your script to create a categorical variable. Choose
 
 Replace myNewCol with catPctSAT, and numericVar with PctSAT. We will use the quartiles shown in the summary statistics to determine the breakpoints for the categories. Your new expression should look like:
 
-	SAT <- transform(SAT, catPctSAT = cut(PctSAT, breaks =
- 		c(3, 8, 30, 67.8, 100)))
+```
+SAT <- transform(SAT, catPctSAT = cut(PctSAT, breaks =
+	c(3, 8, 30, 67.8, 100)))
+```
 
 Select the text and run the expression. The new variable is added to the SAT data frame.
 
@@ -198,20 +204,22 @@ Select the text and run the expression. The new variable is added to the SAT dat
 
 We can now create a new set of plots examining the relationship between average SATs and expenditures, this time conditioned on the category of the percentage of elgible students who take the SATs. To so do, insert the **graphics – lattice**, **XY plot with conditioning** code snippet, and set the following values:
 
-	library(lattice) \# Make sure lattice package is loaded
-	xyplot(AveSAT ~ ExpPerPupil | catPctSAT,
-		groups= ,
-		type = c("p","r","g"),
-		data=SAT,
-		main="Conditioned on Percent of Students Taking SAT",
-		sub=" ",
-		xlab="Expenditures Per Pupil",
-		ylab="Average SAT Score",
-		auto.key=FALSE,
-		#layout=c(1, 1),
-		#xlim=c(min(x), max(x)),
-		#ylim=c(min(y), max(y)),
-		)
+```
+library(lattice) \# Make sure lattice package is loaded
+xyplot(AveSAT ~ ExpPerPupil | catPctSAT,
+	groups= ,
+	type = c("p","r","g"),
+	data=SAT,
+	main="Conditioned on Percent of Students Taking SAT",
+	sub=" ",
+	xlab="Expenditures Per Pupil",
+	ylab="Average SAT Score",
+	auto.key=FALSE,
+	#layout=c(1, 1),
+	#xlim=c(min(x), max(x)),
+	#ylim=c(min(y), max(y)),
+	)
+```
 
 Run the new command to view your plot. You will see that within each category, as Expenditures Per Pupil increase, so do the Average SAT scores. Close the graphics window.
 
@@ -225,37 +233,47 @@ Select, copy and paste the code from your original script beginning with SAT &lt
 
 Now, in your new script, select all of the code and from the right-click context menu choose **Surround with**, then **function**. This will surround your code with a function definition. Let’s name the function makeConditionPlot. It will take six arguments: three numeric columns of data and three strings to use for labels in the plot:
 
-	makeConditionPlot <- function(x, y, c, title="", xlabel="", ylabel="")
+```
+makeConditionPlot <- function(x, y, c, title="", xlabel="", ylabel="")
+```
 
 Inside the function, use the quantile function on the first line to calculate the quartile breakpoints.
 
-	breaks <- quantile(c)
+```
+breaks <- quantile(c)
+```
 
 Now we replace the original SAT &lt;- transform… line in our function with the following, which creates a new categorical variable (not contained in a data frame):
 
-	catc <- cut(c, breaks = breaks)
+```
+catc <- cut(c, breaks = breaks)
+```
 
 We will keep the line that makes sure the lattice library is loaded, and then simplify our call to xyplot, so that our final function looks as follows:
 
-	makeConditionPlot <- function(x, y, c, title="", xlabel="", ylabel="")
-	{
-		breaks <- quantile(c)
-		catc <- cut(c, breaks=breaks)
-		library(lattice) # Make sure lattice package is loaded
-		xyplot(y ~ x | catc,
-			type = c("p","r","g"),
-			main=title,
-			xlab=xlabel,
-			ylab=ylabel
-			)
-	}
+```
+makeConditionPlot <- function(x, y, c, title="", xlabel="", ylabel="")
+{
+	breaks <- quantile(c)
+	catc <- cut(c, breaks=breaks)
+	library(lattice) # Make sure lattice package is loaded
+	xyplot(y ~ x | catc,
+		type = c("p","r","g"),
+		main=title,
+		xlab=xlabel,
+		ylab=ylabel
+		)
+}
+```
 
 Run the script. You will see your function appear in the Object Browser as a new object.
 
 To call this function from your script, add the following line:
 
-	makeConditionPlot(SAT$ExpPerPupil, SAT$AveSAT,
-		SAT$PupilTch, title="Pupil Teacher Ratio")
+```
+makeConditionPlot(SAT$ExpPerPupil, SAT$AveSAT,
+	SAT$PupilTch, title="Pupil Teacher Ratio")
+```
 
 ### Open and Run an Existing Script
 
@@ -266,7 +284,7 @@ To run an existing script:
 1.  On the **File** menu, point to **Open** and then click **File...**.
 2.  In the **Open File** dialog, navigate to the file containing the script you want to run, and click **Open**.
 3.  A dialog appears asking if you want to add the file to the current project. Click **Yes** to add the file to the project, click **No** to open the file without adding it to the current project. If you click **Yes**, the script will be copied into the current project directory before being opened in the Script window; any changes you make will be made to that copy.
-4.  The script opens in the Script window. Click ![](media/revorpe-getting-started/image4.png) to run the script.
+4.  The script opens in the Script window. Click ![Run script](media/revorpe-getting-started/image4.png) to run the script.
 
 ## Using the Debugger
 
@@ -291,17 +309,17 @@ Set a breakpoint on the line of your script that calls makeConditionPlot by doin
 
 The breakpoint appears as a circle in the grey strip, and the associated line is highlighted, as shown below:
 
-![](media/revorpe-getting-started/image7.png)
+![Breakpoint](media/revorpe-getting-started/image7.png)
 
-Now click ![](media/revorpe-getting-started/image4.png) to begin running the script. A yellow arrow appears on the breakpoint in your script window, and the script stops running before the function is run.
+Now click ![Run script](media/revorpe-getting-started/image4.png) to begin running the script. A yellow arrow appears on the breakpoint in your script window, and the script stops running before the function is run.
 
 ### Step In the Debugger
 
 When stopped at a breakpoint, you may choose to step through your code.  Three stepping commands are available for this and can be accessed from the **Debug** menu, the **Debug** toolbar, or using accelerator key combinations.
 
-- **Step Into** ![](./media/revorpe-getting-started/image8.png) **(F11):** Stops at the next breakable point.  If your point of execution (the yellow arrow) is on a call to a function defined in the current folder, then Step Into will stop in front of the first executable line inside that function.  Note that if you are not stopped before a function defined within the current project, 'Step Into' will function identically to 'Step Over'
-- **Step Over** ![](media/revorpe-getting-started/image9.png) **(F10)** Stops at the next breakable point within the currently executing function (or top-level script).  If you are at the last statement of a currently executing function, then 'Step Over' works just like 'Step Out'.
-- <strong>Step Out **![](media/revorpe-getting-started/image10.png) **(Shift-F11)</strong> Stops at the next breakable point after the currently executing function has completed. 
+- **Step Into** ![Step Into](./media/revorpe-getting-started/image8.png) **(F11):** Stops at the next breakable point.  If your point of execution (the yellow arrow) is on a call to a function defined in the current folder, then Step Into will stop in front of the first executable line inside that function.  Note that if you are not stopped before a function defined within the current project, 'Step Into' will function identically to 'Step Over'
+- **Step Over** ![Step Over](media/revorpe-getting-started/image9.png) **(F10)** Stops at the next breakable point within the currently executing function (or top-level script).  If you are at the last statement of a currently executing function, then 'Step Over' works just like 'Step Out'.
+- **Step Out** ![Step Out](media/revorpe-getting-started/image10.png) **(Shift-F11)** Stops at the next breakable point after the currently executing function has completed. 
 
 You should still hit any breakpoints encountered while stepping, and at any point, you should be able to choose Continue (F5) to end stepping and continue execution normally.
 
@@ -315,11 +333,11 @@ You should still hit any breakpoints encountered while stepping, and at any poin
 
 ### Examine Local Values
 
-Step into makeConditionPlot by choosing **Step Into** from the Debug menu, pressing **F11**, or clicking the **Step Into** button ![](./media/revorpe-getting-started/image8.png) on the debug toolbar. Then execute the first and second lines of the function by clicking the **Step Over** button ![](media/revorpe-getting-started/image9.png) twice.
+Step into makeConditionPlot by choosing **Step Into** from the Debug menu, pressing **F11**, or clicking the **Step Into** button ![Step Into button](./media/revorpe-getting-started/image8.png) on the debug toolbar. Then execute the first and second lines of the function by clicking the **Step Over** button ![Step Over button](media/revorpe-getting-started/image9.png) twice.
 
 When inside the function, you can see the values of variables by hovering over them in your script. For example, if you hover over breaks, you see a balloon pop up with the current value of the variable, as shown:
 
-![](media/revorpe-getting-started/image11.png)
+![inside the function](media/revorpe-getting-started/image11.png)
 
 You can also see local variables in the Object Browser by clicking **_Browser_Call**.
 
@@ -340,7 +358,9 @@ As you're typing in the script window, you can have syntax errors automatically 
 
 At the bottom of your script, type:
 
-	plot(x~y]
+```
+plot(x~y]
+```
 
 The argument list and closing bracket are underscored with a red squiggly line.
 
@@ -348,7 +368,9 @@ You can obtain additional information about the error by viewing the Error List.
 
 Edit your text to:
 
-	plot(x~y)
+```
+plot(x~y)
+```
 
 The errors are removed from the list. Close the Error List.
 
@@ -356,11 +378,15 @@ The errors are removed from the list. Close the Error List.
 
 IntelliSense is Microsoft’s implementation of auto-completion. If you can't remember the exact name of an object, or you have created long object names in order to make your code more readable, IntelliSense can speed up your programming. For example, type into your script:
 
-	SAT$
+```
+SAT$
+```
 
 A list pops up containing the column names in the data frame. Double-click ExpPerPupil to complete the column name specification:
 
-	SAT$ExpPerPupil
+```
+SAT$ExpPerPupil
+```
 
 When this line of code is run, the values in the ExpPerPupil column of the SAT data frame are printed.
 
@@ -370,11 +396,11 @@ As you type in the Script window, whenever you type a function name followed by 
 
 1.  On a blank line of your script, type rnorm(. A tooltip appears with the function arguments, as shown.
 
-	> ![](media/revorpe-getting-started/image12.png)
+	> ![rnorm tooltip](media/revorpe-getting-started/image12.png)
 
 2.  Type 20 followed by a comma. The highlighting within the tooltip changes to show you that you are now specifying the mean argument:
 
-	> ![](media/revorpe-getting-started/image13.png)
+	> ![20, tooltip](media/revorpe-getting-started/image13.png)
 
 3.  Type 2 to specify a mean of 2, and then type a closing parenthesis and press Enter.
 
@@ -414,36 +440,46 @@ To hide an arbitrary section of code, simply select the code you want to hide, t
 
 If you are repeating actions when writing a script, you can record a macro on the fly and rerun it to repeat the action. For example, suppose that you plan to write a number of functions which have no arguments. Begin your function by typing its name in the script editor:
 
-	myfun1
+```
+myfun1
+```
 
 Now begin recording your macro, by pressing **Ctrl+Shift+R** or by choosing **Macros**, then **Record Temporary Macro** from the **Tools** menu. You will see a small Recorder toolbar appear.
 
 Now in the script editor, type the following (omitting the myfun1 which is already in your script):
 
-	myfun1 <- function()
-	{
+```
+myfun1 <- function()
+{
 
-	}
+}
+```
 
 Then position your cursor on the line after the opening brace, indented four spaces.
 
 Now click on the **Stop** button on the Recorder toolbar. Now you can enter the contents of your function. For example:
 
-	myfun1 <- function()
-	{
-		"This is a test"
-	}
+```
+myfun1 <- function()
+{
+	"This is a test"
+}
+```
 
 For your next function, place the cursor below your completed function and type:
 
-	myfun2
+```
+myfun2
+```
 
 Now play the temporary macro by pressing CTRL+SHIFT+P or by choosing **Macros**, then **Run Temporary Macro** from the **Tools** menu. Your second function now looks like:
 
-	myfun2 <- function()
-	{
+```
+myfun2 <- function()
+{
 
-	}
+}
+```
 
 Your cursor is positioned to enter the contents of the function.
 
@@ -451,11 +487,13 @@ Your cursor is positioned to enter the contents of the function.
 
 R includes a simple cell-based data editor for editing tabular data such as data frames and matrices. For example, create a simple matrix by typing the following in the Console window:
 
-	myMat <- matrix(1:25, ncol=5)
+```
+myMat <- matrix(1:25, ncol=5)
+```
 
 To edit the matrix, choose **Edit Object....** from the **Data** menu, and type **myMat** in the dialog box that appears. The data editor appears as shown:
 
-![](media/revorpe-getting-started/image14.png)
+![Data editor](media/revorpe-getting-started/image14.png)
 
 Click in any cell to edit the value in the cell. Click on a column heading to bring up the **Variable Editor** dialog box, which allows you to specify the name of the variable and the type (character or numeric) of the variable.
 
@@ -573,11 +611,13 @@ If you would like to clear the Console window, right click in the window and cho
 
 For example, type the following lines pressing *Enter* after each one:
 
-	x <- 1:20
-	x
-	y <- 2 + .2*x + rnorm(20)
-	y
-	plot(y~x)
+```
+x <- 1:20
+x
+y <- 2 + .2*x + rnorm(20)
+y
+plot(y~x)
+```
 
 When you type the opening parenthesis after rnorm, you will see a tooltip appear with the arguments to rnorm and their default values. The arguments to plot appear when you type the left parenthesis after plot. When you need to make more complicated function calls, this can be of great assistance.
 

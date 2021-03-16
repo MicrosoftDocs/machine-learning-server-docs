@@ -42,13 +42,13 @@ It is always best to start with the easiest things first, and in some cases gett
 
 When working with small data sets, an extra copy is not a problem. With big data it can slow the analysis, or even bring it to a screeching halt. Be aware of the ‘automatic’ copying that occurs in R. For example, if a data frame is passed into a function, a copy is only made if the data frame is modified. But if a data frame is put into a list, a copy is automatically made. In many of the basic analysis algorithms, such as *lm* and *glm*, multiple copies of the data set are made as the computations progress, resulting in serious limitations in processing big data sets. The RevoScaleR analysis functions (for instance, *rxSummary*, *rxCube*, *rxLinMod*, *rxLogit,* *rxGlm*, *rxKmeans*) are all implemented with a focus on efficient use of memory; data is not copied unless absolutely necessary. The plot below shows an example of how reducing copies of data and tuning algorithms can dramatically increase speed and capacity.
 
-![](media/tutorial-large-data-tips/image11.jpeg)
+![Minimize copies of data](media/tutorial-large-data-tips/image11.jpeg)
 
 ## Process data in chunks
 
 Processing your data a chunk at a time is the key to being able to scale your computations without increasing memory requirements. External memory (or “out-of-core”) algorithms don’t require that all of your data be in RAM at one time. Data is processed a chunk at time, with intermediate results updated for each chunk. When all of the data is processed, final results are computed. The core functions provided with **RevoScaleR** all process data in chunks. So, if the number of rows of your data set doubles, you can still perform the same data analyses—it will just take longer, typically scaling linearly with the number of rows. Your analysis is not bound by memory constraints. The plot following shows how data chunking allows unlimited rows in limited RAM.
 
-![](media/tutorial-large-data-tips/image12.jpeg)
+![Process data in chunks](media/tutorial-large-data-tips/image12.jpeg)
 
 The *biglm* package, available on CRAN, also estimates linear and generalized linear models using external memory algorithms, although they are not parallelized.
 
@@ -58,7 +58,7 @@ Using more cores and more computers (nodes) is the key to scaling computations t
 
 The **RevoScaleR** analysis functions are written to automatically compute in parallel on available cores, and can also be used to automatically distribute computations across the nodes of a cluster. These functions combine the advantages of external memory algorithms (see [Process Data in Chunks](#process-data-in-chunks) preceding) with the advantages of High-Performance Computing. That is, these are Parallel External Memory Algorithm’s (PEMAs)—external memory algorithms that have been parallelized. Such algorithms process data a chunk at a time in parallel, storing intermediate results from each chunk and combining them at the end. Iterative algorithms repeat this process until convergence is determined. Any external memory algorithm that is not “inherently sequential” can be parallelized; results for one chunk of data cannot depend upon prior results. Dependence on data from a prior chunk is OK, but must be handled specially. The plot following shows an example of how using multiple computers can dramatically increase speed, in this case taking advantage of memory caching on the nodes to achieve super-linear speedups.
 
-![](media/tutorial-large-data-tips/image13.jpeg)
+![Compute in parallel](media/tutorial-large-data-tips/image13.jpeg)
 
 Microsofts’ *foreach* package, which is open source and available on CRAN, provides easy-to-use tools for executing R functions in parallel, both on a single computer and on multiple computers. This is useful for “embarrassingly parallel” types of computations such as simulations, which do not involve lots of data and do not involve communication among the parallel tasks.
 
@@ -66,9 +66,11 @@ Microsofts’ *foreach* package, which is open source and available on CRAN, pro
 
 In R the two choices for continuous data are *numeric*, which is an 8 byte (double) floating point number and *integer*, which is a 4-byte integer. If your data can be stored and processed as an integer, it's more efficient to do so. First, it only takes half of the memory. Second, in some cases integers can be processed much faster than doubles. For example, if you have a variable whose values are integral numbers in the range from 1 to 1000 and you want to find the median, it is much faster to count all the occurrences of the integers than it is to sort the variable. A tabulation of all the integers, in fact, can be thought of as a way to compress the data with no loss of information. The resulting tabulation can be converted into an exact empirical distribution of the data by dividing the counts by the sum of the counts, and all of the empirical quantiles including the median can be obtained from this. The R function *tabulate* can be used for this, and is very fast. The following code illustrates this:
 
-	nd = sample(as.numeric(1:1000),size = 1e+8, replace = TRUE)
-	system.time(nit <- tabulate(as.integer(nd)))
-	system.time(nds <- sort(nd))
+```
+nd = sample(as.numeric(1:1000),size = 1e+8, replace = TRUE)
+system.time(nit <- tabulate(as.integer(nd)))
+system.time(nds <- sort(nd))
+```
 
 A vector of 100 million doubles is created, with randomized integral values in the range from 1 to 1,000. Sorting this vector takes about 15 times longer than converting to integers and tabulating, and 25 times longer if the conversion to integers is not included in the timing (this is relevant if you convert to integers once and then operate multiple times on the resulting vector).
 
@@ -90,12 +92,14 @@ Even though a data set may have many thousands of variables, typically not all o
 
 It is well-known that processing data in loops in R can be very slow compared with vector operations. For example, if you compare the timings of adding two vectors, one with a loop and the other with a simple vector operation, you find the vector operation to be orders of magnitude faster:
 
-	n <- 1000000
-	x1 <- 1:n
-	x2 <- 1:n
-	y <- vector()
-	system.time( for(i in 1:n){ y[i] <- x1[i] + x2[i] })
-	system.time( y <- x1 + x2)
+```
+n <- 1000000
+x1 <- 1:n
+x2 <- 1:n
+y <- vector()
+system.time( for(i in 1:n){ y[i] <- x1[i] + x2[i] })
+system.time( y <- x1 + x2)
+```
 
 On a good laptop, the loop over the data was timed at about 430 seconds, while the vectorized add is barely timetable. In R the core operations on vectors are typically written in C, C++ or FORTRAN, and these compiled languages can provide much greater speed for this type of code than can the R interpreter.
 

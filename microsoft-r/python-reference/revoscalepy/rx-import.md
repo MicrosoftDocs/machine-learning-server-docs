@@ -167,23 +167,20 @@ Dictionary of column name to strings specifying the column types
 to use when converting the data. The element names for the vector are used to
 identify which column should be converted to which type.
 
-    Allowable column types are:
-        ”bool” (stored as uchar),
-        “integer” (stored as int32),
-        “float32” (the default for floating point data for ‘.xdf’ files),
-        “numeric” (stored as float64 as in R),
-        “character” (stored as string),
-        “factor” (stored as uint32),
-        “ordered” (ordered factor stored as uint32. Ordered factors are
-
+Allowable column types are:
+    ”bool” (stored as uchar),
+    “integer” (stored as int32),
+    “float32” (the default for floating point data for ‘.xdf’ files),
+    “numeric” (stored as float64 as in R),
+    “character” (stored as string),
+    “factor” (stored as uint32),
+    “ordered” (ordered factor stored as uint32. Ordered factors are
 treated the same as factors in RevoScaleR analysis functions.),
     ”int16” (alternative to integer for smaller storage space),
     “uint16” (alternative to unsigned integer for smaller storage space),
     “Date” (stored as Date, i.e. float64. Not supported for import
-
 types “textFast”, “fixedFast”, or “odbcFast”.)
     ”POSIXct” (stored as POSIXct, i.e. float64. Not supported for
-
 import types “textFast”, “fixedFast”, or “odbcFast”.)
     Note for “factor” and “ordered” types, the levels will be coded in the
 
@@ -191,13 +188,11 @@ order encountered. Since this factor level ordering is row dependent,
 the preferred method for handling factor columns is to use column_info with
 specified “levels”.
 
-    Note that equivalent types share the same bullet in the list above; for
-
+Note that equivalent types share the same bullet in the list above; for
 some types we allow both ‘R-friendly’ type names, as well as our own,
 more specific type names for ‘.xdf’ data.
 
-    Note also that specifying the column as a “factor” type is currently
-
+Note also that specifying the column as a “factor” type is currently
 equivalent to “string” - for the moment, if you wish to import a column
 as factor data you must use the column_info argument, documented below.
 
@@ -212,48 +207,49 @@ specified will be imported. For all text types, the information supplied
 for column_info overrides that supplied for column_classes.
 Currently available properties for a column information list are:
 
-    type: Character string specifying the data type for the column. See
-        column_classes argument description for the available types. If the
-        type is not specified for fixed format data, it will be read as
-        character data.
+```
+type: Character string specifying the data type for the column. See
+    column_classes argument description for the available types. If the
+    type is not specified for fixed format data, it will be read as
+    character data.
 
-    newName: Character string specifying a new name for the variable.
-        description: character string specifying a description for the
-        variable.
+newName: Character string specifying a new name for the variable.
+    description: character string specifying a description for the
+    variable.
 
-    levels: List of strings containing the levels when type =
-        ”factor”. If the levels property is not provided, factor levels
-        will be determined by the values in the source column. If levels
-        are provided, any value that does not match a provided level will
-        be converted to a missing value.
+levels: List of strings containing the levels when type =
+    ”factor”. If the levels property is not provided, factor levels
+    will be determined by the values in the source column. If levels
+    are provided, any value that does not match a provided level will
+    be converted to a missing value.
 
-    newLevels: New or replacement levels specified for a column of type
-        “factor”. It must be used in conjunction with the levels argument.
-        After reading in the original data, the labels for each level will
-        be replaced with the newLevels.
+newLevels: New or replacement levels specified for a column of type
+    “factor”. It must be used in conjunction with the levels argument.
+    After reading in the original data, the labels for each level will
+    be replaced with the newLevels.
 
-    low: The minimum data value in the variable (used in computations
-        using the F() function.)
+low: The minimum data value in the variable (used in computations
+    using the F() function.)
 
-    high: The maximum data value in the variable (used in computations
-        using the F() function.)
+high: The maximum data value in the variable (used in computations
+    using the F() function.)
 
-    start: The left-most position, in bytes, for the column of a fixed
-        format file respectively. When all elements of column_info have start,
-        the text file is designated as a fixed format file. When none of
-        the elements have it, the text file is designated as a delimited
-        file. Specification of start must always be accompanied by
-        specification of width.
+start: The left-most position, in bytes, for the column of a fixed
+    format file respectively. When all elements of column_info have start,
+    the text file is designated as a fixed format file. When none of
+    the elements have it, the text file is designated as a delimited
+    file. Specification of start must always be accompanied by
+    specification of width.
 
-    width: The number of characters in a fixed-width character column
-        or the column of a fixed format file. If width is specified for a
-        character column, it will be imported as a fixed-width character
-        variable. Any characters beyond the fixed width will be ignored.
-        Specification of width is required for all columns of a fixed
-        format file.
+width: The number of characters in a fixed-width character column
+    or the column of a fixed format file. If width is specified for a
+    character column, it will be imported as a fixed-width character
+    variable. Any characters beyond the fixed width will be ignored.
+    Specification of width is required for all columns of a fixed
+    format file.
 
-    decimalPlaces: The number of decimal places.
-
+decimalPlaces: The number of decimal places.
+```
 
 ### rows_per_read
 
@@ -264,9 +260,7 @@ Number of rows to read at a time.
 
 Character string set specifying file type of input_data. This is
 ignored if input_data is a data source. Possible values are:
-“auto”: File type is automatically detected by looking at file
-
-    extensions and argument values.
+“auto”: File type is automatically detected by looking at file extensions and argument values.
 
 ”textFast”: Delimited text import using faster, more limited import
     mode. By default variables containing the values True and False or T
@@ -289,7 +283,6 @@ ignored if input_data is a data source. Possible values are:
 
 ”odbcFast”: ODBC import using faster, more limited import mode.
 “odbc”: ODBC import using slower, enhanced import on Windows. (See
-
     RxOdbcData.)
 
 

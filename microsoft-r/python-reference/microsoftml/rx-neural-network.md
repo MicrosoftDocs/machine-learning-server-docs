@@ -368,7 +368,7 @@ memory.
 [Wikipedia: Artificial neural network](https://en.wikipedia.org/wiki/Artificial_neural_network)
 
 
-## Example
+## Binary classification example
 
 
 
@@ -569,7 +569,7 @@ Rows Read: 5, Total Rows Processed: 5, Total Chunk Time: 0.001 seconds
 
 
 
-## Example
+## MultiClass classification example
 
 
 
@@ -771,7 +771,7 @@ Rows Read: 5, Total Rows Processed: 5, Total Chunk Time: Less than .001 seconds
 
 
 
-## Example
+## Regression example
 
 
 

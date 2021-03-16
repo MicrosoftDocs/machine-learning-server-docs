@@ -56,27 +56,27 @@ can use to mark missing values in a sequence of data in ndarray.
 
 It provides missing value for following types:
 
-    * int8() for numpy.int8 with value of numpy.iinfo(np.int8).min 
+* int8() for numpy.int8 with value of numpy.iinfo(np.int8).min 
 
-    * uint8() for numpy.uint8 with value of numpy.iinfo(np.uint8).max 
+* uint8() for numpy.uint8 with value of numpy.iinfo(np.uint8).max 
 
-    * int16() for numpy.int16 with value of numpy.iinfo(np.int16).min 
+* int16() for numpy.int16 with value of numpy.iinfo(np.int16).min 
 
-    * uint16() for numpy.uint16 with value of numpy.iinfo(np.uint16).max 
+* uint16() for numpy.uint16 with value of numpy.iinfo(np.uint16).max 
 
-    * int32() for numpy.int32 with value of numpy.iinfo(np.int32).min 
+* int32() for numpy.int32 with value of numpy.iinfo(np.int32).min 
 
-    * uint32() for numpy.uint32 with value of numpy.iinfo(np.uint32).max 
+* uint32() for numpy.uint32 with value of numpy.iinfo(np.uint32).max 
 
-    * int64() for numpy.int64 with value of numpy.iinfo(np.int64).min 
+* int64() for numpy.int64 with value of numpy.iinfo(np.int64).min 
 
-    * uint64() for numpy.uint64 with value of numpy.iinfo(np.uint64).max 
+* uint64() for numpy.uint64 with value of numpy.iinfo(np.uint64).max 
 
-    * float16() for numpy.float16 with value of numpy.NaN 
+* float16() for numpy.float16 with value of numpy.NaN 
 
-    * float32() for numpy.float32 with value of numpy.NaN 
+* float32() for numpy.float32 with value of numpy.NaN 
 
-    * float64() for numpy.float64 with value of numpy.NaN 
+* float64() for numpy.float64 with value of numpy.NaN 
 
 
 ## Example

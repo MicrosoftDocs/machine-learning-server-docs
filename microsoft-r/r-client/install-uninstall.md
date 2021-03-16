@@ -43,15 +43,21 @@ As a first step, use your package manager to list the currently installed Machin
 
 If your package manager is **yum**:
 
-	yum list \*microsoft-r\*
+```
+yum list \*microsoft-r\*
+```
 
 If your package manager is **apt-get**:
 
-	apt list \*microsoft-r\*
+```
+apt list \*microsoft-r\*
+```
 
 If your package manager is **zypper**:
 
-	zypper search \*microsoft-r\*
+```
+zypper search \*microsoft-r\*
+```
 
 ## General instructions for all versions
 
@@ -63,20 +69,26 @@ Log in as root or a user with `sudo` privileges. If you are using `sudo`, preced
 
 1. Uninstall Microsoft R Open (MRO) and remove any dependent packages used only by MRO:
 
-        yum erase microsoft-r-server-mro-x.x 		#(CentOS/RHEL systems))
-		apt-get remove microsoft-r-server-mro-x.x	# (Ubuntu systems)
-		zypper remove microsoft-r-server-mro-x.x	# (SLES systems)
-
+    ```
+    yum erase microsoft-r-server-mro-x.x 		#(CentOS/RHEL systems))
+            apt-get remove microsoft-r-server-mro-x.x	# (Ubuntu systems)
+            zypper remove microsoft-r-server-mro-x.x	# (SLES systems)
+    ```
+    
    where x.x is the version number.
 
 2. On the root node, verify the location of other files that need to be removed: `
 
-        ls /usr/lib64/microsoft-r
-
+    ```
+    ls /usr/lib64/microsoft-r
+    ```
+    
 3. Remove the entire directory:
 
-        rm -fr /usr/lib64/microsoft-r
-
+    ```
+    rm -fr /usr/lib64/microsoft-r
+    ```
+    
 The **rm** command removes the folder. Parameter "f" is for force and "r" for recursive, deleting everything under microsoft-r. This command is destructive and irrevocable, so be sure you have the correct directory before you press Enter.
 
 

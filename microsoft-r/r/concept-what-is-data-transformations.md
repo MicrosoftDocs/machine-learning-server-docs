@@ -39,31 +39,33 @@ Embedded transformations provide instructions within a formula, through argument
 
 Externally defined functions provide data manipulation instructions in an outer *function*, which is then referenced by a RevoScaleR function. An external transformation function is one that takes as input a list of variables and returns a list of (possibly different) variables. Due to the external definition, the object can assume a complex structure and be repurposed across multiple functions supporting transformation.
 
-	# Load data
-	> censusWorkers <- file.path(rxGetOption("sampleDataDir"), "CensusWorkers.xdf")
+```
+# Load data
+> censusWorkers <- file.path(rxGetOption("sampleDataDir"), "CensusWorkers.xdf")
 
-	# Option 1: Construct a new variable using an embedded transformation argument
-	> NewDS <- rxDataStep (inData = censusWorkers, outFile = "c:/temp/newCensusWorkers.xdf",
-			transforms = list(ageFactor = cut(age, breaks=seq(from = 20, to = 70, by = 5), 
-			right = FALSE)), overwrite=TRUE)
+# Option 1: Construct a new variable using an embedded transformation argument
+> NewDS <- rxDataStep (inData = censusWorkers, outFile = "c:/temp/newCensusWorkers.xdf",
+		transforms = list(ageFactor = cut(age, breaks=seq(from = 20, to = 70, by = 5), 
+		right = FALSE)), overwrite=TRUE)
 
 
-	# Return variable metadata; ageFactor is a new variable
-	> rxGetVarInfo(NewDS)
+# Return variable metadata; ageFactor is a new variable
+> rxGetVarInfo(NewDS)
 
-	# Option 2: Construct a new variable using an external function and rxDataStep
-	> ageTransform <- function(dataList)
-			{
-				dataList$ageFactor <- cut(dataList$age, breaks=seq(from = 20, to = 70, 
-										by = 5), right = FALSE)
-				return(dataList)
-			}
+# Option 2: Construct a new variable using an external function and rxDataStep
+> ageTransform <- function(dataList)
+		{
+			dataList$ageFactor <- cut(dataList$age, breaks=seq(from = 20, to = 70, 
+									by = 5), right = FALSE)
+			return(dataList)
+		}
 
-	> NewDS <- rxDataStep(inData = censusWorkers, outFile = "c:/temp/newCensusWorkers.xdf",
-	    transformFunc = ageTransform, transformVars=c("age"), overwrite=TRUE)
+> NewDS <- rxDataStep(inData = censusWorkers, outFile = "c:/temp/newCensusWorkers.xdf",
+	transformFunc = ageTransform, transformVars=c("age"), overwrite=TRUE)
 
-	# Return variable metadata; it is identical to that of option 1
-	> rxGetVarInfo(NewDS)
+# Return variable metadata; it is identical to that of option 1
+> rxGetVarInfo(NewDS)
+```
 
 For more examples of both approaches, see [How to transform and subset data](how-to-revoscaler-data-transform.md).
 
@@ -129,9 +131,10 @@ If you change the length of one variable, you will get errors from subsequent an
 
 If you create a factor within a transformation function, you may get unexpected results because all of the data is not in memory at one time. When creating a factor within a transformation function, you should always explicitly set the values and labels. For example:
 
-	dataList$xfac <- as.factor(dataList$x, levels = c(1, 2,3), 
-		labels = c("One", "Two", "Three")) 
-
+```
+dataList$xfac <- as.factor(dataList$x, levels = c(1, 2,3), 
+	labels = c("One", "Two", "Three")) 
+```
 
 ## Next Steps
 

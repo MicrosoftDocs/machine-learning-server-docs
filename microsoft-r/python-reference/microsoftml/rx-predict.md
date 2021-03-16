@@ -189,7 +189,7 @@ of these output variable names.
 [revoscalepy.rx_import](../revoscalepy/rx-import.md).
 
 
-## Example
+## Binary classification example
 
 
 
@@ -269,7 +269,7 @@ Rows Read: 5, Total Rows Processed: 5, Total Chunk Time: 0.001 seconds
 
 
 
-## Example
+## Regression example
 
 
 

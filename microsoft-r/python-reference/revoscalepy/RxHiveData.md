@@ -67,22 +67,24 @@ information list contains one or more of the named elements given below.
 Currently available properties for a column information list are:
 type: Character string specifying the data type for the column.
 
-    Supported types are:
-        ”bool” (stored as uchar),
-        “integer” (stored as int32),
-        “int16” (alternative to integer for smaller storage space),
-        “float32” (stored as FloatType),
-        “numeric” (stored as float64),
-        “character” (stored as string),
-        “factor” (stored as uint32),
-        “Date” (stored as Date, i.e. float64.)
-        “POSIXct” (stored as POSIXct, i.e. float64.)
+Supported types are:
+```
+”bool” (stored as uchar),
+“integer” (stored as int32),
+“int16” (alternative to integer for smaller storage space),
+“float32” (stored as FloatType),
+“numeric” (stored as float64),
+“character” (stored as string),
+“factor” (stored as uint32),
+“Date” (stored as Date, i.e. float64.)
+“POSIXct” (stored as POSIXct, i.e. float64.)
+```
 
 levels: List of strings containing the levels when type = “factor”. If
-    the levels property is not provided, factor levels will be determined
-    by the values in the source column. If levels are provided, any value
-    that does not match a provided level will be converted to a missing
-    value.
+the levels property is not provided, factor levels will be determined
+by the values in the source column. If levels are provided, any value
+that does not match a provided level will be converted to a missing
+value.
 
 
 ### save_as_temp_table

@@ -37,16 +37,18 @@ The sample data used in this tutorial consists of simulated data on mortgage def
 
 Small versions of the data sets can be found in the sample data directory:
 
-		mortDefaultSmall2000.csv
-		mortDefaultSmall2001.csv
-		mortDefaultSmall2002.csv
-		mortDefaultSmall2003.csv
-		mortDefaultSmall2004.csv
-		mortDefaultSmall2005.csv
-		mortDefaultSmall2006.csv
-		mortDefaultSmall2007.csv
-		mortDefaultSmall2008.csv
-		mortDefaultSmall2009.csv
+```
+mortDefaultSmall2000.csv
+mortDefaultSmall2001.csv
+mortDefaultSmall2002.csv
+mortDefaultSmall2003.csv
+mortDefaultSmall2004.csv
+mortDefaultSmall2005.csv
+mortDefaultSmall2006.csv
+mortDefaultSmall2007.csv
+mortDefaultSmall2008.csv
+mortDefaultSmall2009.csv
+```
 
 Each file contains 10,000 rows, for a total of 100,000 observations.
 
@@ -56,20 +58,24 @@ To work with a larger dataset, you can download *mortDefault*, a set of ten comm
 
 When downloading these files, put them in a directory where you can easily access them. For example, create a directory "C:\MRS\BigData" and unpack the files there. When running examples using these files, you will want to specify this location as your *bigDataDir*. For example:
 
-	bigDataDir <- "C:\MRS\BigData"
+```
+bigDataDir <- "C:\MRS\BigData"
+```
 
 Each download contains ten files, each of which contains one million observations for a total of 10 million:
 
-		mortDefault2000.csv
-		mortDefault2001.csv
-		mortDefault2002.csv
-		mortDefault2003.csv
-		mortDefault2004.csv
-		mortDefault2005.csv
-		mortDefault2006.csv
-		mortDefault2007.csv
-		mortDefault2008.csv
-		mortDefault2009.csv
+```
+mortDefault2000.csv
+mortDefault2001.csv
+mortDefault2002.csv
+mortDefault2003.csv
+mortDefault2004.csv
+mortDefault2005.csv
+mortDefault2006.csv
+mortDefault2007.csv
+mortDefault2008.csv
+mortDefault2009.csv
+```
 
 ## About the data
 
@@ -90,35 +96,45 @@ The first step is to import the data into an XDF file format for analysis. First
 
 For the smaller data sets that exist in the sample data directory, enter:
 
-	sampleDataDir <- rxGetOption("sampleDataDir")
-	mortCsvDataName <- file.path(sampleDataDir, "mortDefaultSmall")
+```
+sampleDataDir <- rxGetOption("sampleDataDir")
+mortCsvDataName <- file.path(sampleDataDir, "mortDefaultSmall")
+```
 
 For the large files, enter the location of your downloaded data:
 
-	bigDataDir <- "C:/MRS/Data"
-	mortCsvDataName <- file.path(bigDataDir, "mortDefault", "mortDefault")
+```
+bigDataDir <- "C:/MRS/Data"
+mortCsvDataName <- file.path(bigDataDir, "mortDefault", "mortDefault")
+```
 
 Notice that the file path uses a forward slash / character. This is the correct syntax, even for file paths on Windows operating systems that would otherwise use the back slash character.
 
 Next, specify the name of the .xdf file you will create in your working directory (use "*mortDefault*" instead of "*mortDefaultSmall*" if you are using the large data sets):
 
-	mortXdfFileName <- "mortDefaultSmall.xdf"
+```
+mortXdfFileName <- "mortDefaultSmall.xdf"
+```
 
 or
 
-	mortXdfFileName <- "mortDefault.xdf"
+```
+mortXdfFileName <- "mortDefault.xdf"
+```
 
 ## Import a set of files in a loop using append
 
 Use the *rxImport* function to import the data. When the first data file is read, a new XDF file is created using the *dataFileName* specified above. Subsequent data files are appended to that XDF file.  Within the loop, the name of the imported data file is created.
 
-	append <- "none"
-	for (i in 2000:2009)
-	{
-	    importFile <- paste(mortCsvDataName, i, ".csv", sep="")
-	    mortDS <- rxImport(importFile, mortXdfFileName, append=append)
-	    append <- "rows"
-	}
+```
+append <- "none"
+for (i in 2000:2009)
+{
+	importFile <- paste(mortCsvDataName, i, ".csv", sep="")
+	mortDS <- rxImport(importFile, mortXdfFileName, append=append)
+	append <- "rows"
+}
+```
 
 Output will be a series of Rows Read notifications, one for each file.
 
@@ -126,37 +142,43 @@ If you have previously imported the data and created the .xdf data source, you c
 
 To get a basic summary of the data set and show the first 5 rows enter:
 
-	rxGetInfo(mortDS, numRows=5)
+```
+rxGetInfo(mortDS, numRows=5)
+```
 
 Output for the small data files should be as follows:
 
-	File name: C:\YourWorkingDir\mortDefaultSmall.xdf
-	Number of observations: 1e+05
-	Number of variables: 6
-	Number of blocks: 10
-	Compression type: zlib
-	Data (5 rows starting with row 1):
-	  creditScore houseAge yearsEmploy ccDebt year default
-	1         691       16           9   6725 2000       0
-	2         691        4           4   5077 2000       0
-	3         743       18           3   3080 2000       0
-	4         728       22           1   4345 2000       0
-	5         745       17           3   2969 2000       0
+```
+File name: C:\YourWorkingDir\mortDefaultSmall.xdf
+Number of observations: 1e+05
+Number of variables: 6
+Number of blocks: 10
+Compression type: zlib
+Data (5 rows starting with row 1):
+	creditScore houseAge yearsEmploy ccDebt year default
+1         691       16           9   6725 2000       0
+2         691        4           4   5077 2000       0
+3         743       18           3   3080 2000       0
+4         728       22           1   4345 2000       0
+5         745       17           3   2969 2000       0
+```
 
 Output for large data files:
 
-	File name: C:\YourWorkingDir\mortDefault.xdf
-	Number of observations: 1e+07
-	Number of variables: 6
-	Number of blocks: 20
-	Compression type: zlib
-	Data (5 rows starting with row 1):
-	  creditScore houseAge yearsEmploy ccDebt year default
-	1         615       10           5   2818 2000       0
-	2         780       34           5   3575 2000       0
-	3         735       12           1   3184 2000       0
-	4         713       15           5   6236 2000       0
-	5         689       10           5   6817 2000       0
+```
+File name: C:\YourWorkingDir\mortDefault.xdf
+Number of observations: 1e+07
+Number of variables: 6
+Number of blocks: 20
+Compression type: zlib
+Data (5 rows starting with row 1):
+	creditScore houseAge yearsEmploy ccDebt year default
+1         615       10           5   2818 2000       0
+2         780       34           5   3575 2000       0
+3         735       12           1   3184 2000       0
+4         713       15           5   6236 2000       0
+5         689       10           5   6817 2000       0
+```
 
 ## Computing Summary Statistics
 
@@ -164,25 +186,29 @@ Use the *rxSummary* function to compute summary statistics for the variables in 
 
 >The `blocksPerRead` argument is ignored if the script runs locally on R Client.
 
-	rxSummary(~., data = mortDS, blocksPerRead = 2)
+```
+rxSummary(~., data = mortDS, blocksPerRead = 2)
+```
 
 The following output is returned (for the large data set):
 
-	Call:
-	rxSummary(formula = ~., data = mortDS, blocksPerRead = 2)
+```
+Call:
+rxSummary(formula = ~., data = mortDS, blocksPerRead = 2)
 
-	Summary Statistics Results for: ~.
-	File name: C:\YourWorkingDir\mortDefault.xdf
-	Number of valid observations: 1e+07
-	Number of missing observations: 0
+Summary Statistics Results for: ~.
+File name: C:\YourWorkingDir\mortDefault.xdf
+Number of valid observations: 1e+07
+Number of missing observations: 0
 
-	 Name        Mean         StdDev       Min  Max   ValidObs MissingObs
-	 creditScore  700.0382475 5.000443e+01  432   955 1e+07    0         
-	 houseAge      20.0007868 7.646592e+00    0    40 1e+07    0         
-	 yearsEmploy    5.0042771 2.009815e+00    0    15 1e+07    0         
-	 ccDebt      5003.6681809 1.988664e+03    0 15566 1e+07    0         
-	 year        2004.5000000 2.872281e+00 2000  2009 1e+07    0         
-	 default        0.0049555 7.022068e-02    0     1 1e+07    0
+	Name        Mean         StdDev       Min  Max   ValidObs MissingObs
+	creditScore  700.0382475 5.000443e+01  432   955 1e+07    0         
+	houseAge      20.0007868 7.646592e+00    0    40 1e+07    0         
+	yearsEmploy    5.0042771 2.009815e+00    0    15 1e+07    0         
+	ccDebt      5003.6681809 1.988664e+03    0 15566 1e+07    0         
+	year        2004.5000000 2.872281e+00 2000  2009 1e+07    0         
+	default        0.0049555 7.022068e-02    0     1 1e+07    0
+```
 
 ## Computing a Logistic Regression
 
@@ -192,14 +218,17 @@ Alternatively, we can treat year as a categorical or factor variable by using th
 
 >The `blocksPerRead` argument is ignored if run locally using R Client. [Learn more...](tutorial-revoscaler-data-import-transform.md#chunking)
 
-	logitObj <- rxLogit(default~F(year) + creditScore +
-	       yearsEmploy + ccDebt,
-	    	data = mortDS, blocksPerRead = 2,
-	      reportProgress = 1)
-	summary(logitObj)
+```
+logitObj <- rxLogit(default~F(year) + creditScore +
+		yearsEmploy + ccDebt,
+		data = mortDS, blocksPerRead = 2,
+		reportProgress = 1)
+summary(logitObj)
+```
 
 You will see timings for each iteration and the final results printed. The results for the large data set are:
-~~~~
+
+```
 	Call:
 	rxLogit(formula = default ~ F(year) + creditScore + yearsEmploy +
 	    ccDebt, data = mortDS, blocksPerRead = 2, reportProgress = 1)
@@ -233,7 +262,8 @@ You will see timings for each iteration and the final results printed. The resul
 
 	Condition number of final variance-covariance matrix: 6.685
 	Number of iterations: 10
-~~~~
+```
+
 <a name="computecontext"></a>
 ## Computing a Logistic Regression with Many Parameters
 

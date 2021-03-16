@@ -98,27 +98,29 @@ RM removes the folder. Parameter "f" is for force and "r" for recursive, deletin
 
 Machine Learning Server for Linux adds the following packages at a minimum. When uninstalling software, refer to this list when searching for packages to remove.
 
-    dotnet-host-2.0.0
-    dotnet-hostfxr-2.0.0
-    dotnet-runtime-2.0.0 
-    
-    microsoft-mlserver-adminutil-9.4.7
-    microsoft-mlserver-all-9.4.7 
-    microsoft-mlserver-computenode-9.4.7
-    microsoft-mlserver-config-rserve-9.4.7 
-    microsoft-mlserver-hadoop-9.4.7
-    microsoft-mlserver-mlm-py-9.4.7 
-    microsoft-mlserver-mlm-r-9.4.7
-    microsoft-mlserver-mml-py-9.4.7
-    microsoft-mlserver-mml-r-9.4.7
-    microsoft-mlserver-packages-py-9.4.7
-    microsoft-mlserver-packages-r-9.4.7
-    microsoft-mlserver-python-9.4.7 
-    microsoft-mlserver-webnode-9.4.7
-    microsoft-r-open-foreachiterators-3.5.2 
-    microsoft-r-open-mkl-3.5.2
-    microsoft-r-open-mro-3.5.2 
-    azure-cli-2.0.25-1.el7.x86_64     
+```
+dotnet-host-2.0.0
+dotnet-hostfxr-2.0.0
+dotnet-runtime-2.0.0 
+
+microsoft-mlserver-adminutil-9.4.7
+microsoft-mlserver-all-9.4.7 
+microsoft-mlserver-computenode-9.4.7
+microsoft-mlserver-config-rserve-9.4.7 
+microsoft-mlserver-hadoop-9.4.7
+microsoft-mlserver-mlm-py-9.4.7 
+microsoft-mlserver-mlm-r-9.4.7
+microsoft-mlserver-mml-py-9.4.7
+microsoft-mlserver-mml-r-9.4.7
+microsoft-mlserver-packages-py-9.4.7
+microsoft-mlserver-packages-r-9.4.7
+microsoft-mlserver-python-9.4.7 
+microsoft-mlserver-webnode-9.4.7
+microsoft-r-open-foreachiterators-3.5.2 
+microsoft-r-open-mkl-3.5.2
+microsoft-r-open-mro-3.5.2 
+azure-cli-2.0.25-1.el7.x86_64     
+```
 
 
 ## See also

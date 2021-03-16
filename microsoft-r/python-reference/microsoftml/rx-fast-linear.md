@@ -363,7 +363,7 @@ This algorithm is multi-threaded and will not attempt to load the entire dataset
 [Stochastic Dual Coordinate Ascent Methods for Regularized Loss Minimization](http://www.jmlr.org/papers/volume14/shalev-shwartz13a/shalev-shwartz13a.pdf)
 
 
-## Example
+## Binary classification example
 
 
 
@@ -443,7 +443,7 @@ Rows Read: 5, Total Rows Processed: 5, Total Chunk Time: Less than .001 seconds
 
 
 
-## Example
+## Regression example
 
 
 

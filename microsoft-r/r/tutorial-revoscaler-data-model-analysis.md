@@ -463,7 +463,7 @@ This tutorial demonstrated how to use several important functions, but on a smal
 
  Demo scripts are located in the *demoScripts* subdirectory of your Machine Learning Server installation. On Windows, this is typically:
 
- 	`C:\Program Files\Microsoft\R Client\R_SERVER\library\RevoScaleR\demoScripts`
+`C:\Program Files\Microsoft\R Client\R_SERVER\library\RevoScaleR\demoScripts`
 
 ## See Also
 

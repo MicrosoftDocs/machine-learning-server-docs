@@ -68,7 +68,7 @@ a series of text files to xdf. It is also useful for repeated analysis on non-xd
 :param vars_to_keep : None to include all variables, or list of strings of variable names to include
 :param sort_levels : Bool value. If True, categorical (factor) levels will be sorted.
 
-    If categorical levels represent integers, they will be put in numeric order.
+If categorical levels represent integers, they will be put in numeric order.
 
 :param compute_info : Bool value. If True, a pass through the data will be taken for non-xdf data sources to compute
     categorical (factor) levels and low/high values.
@@ -79,6 +79,7 @@ a series of text files to xdf. It is also useful for repeated analysis on non-xd
     and in data sources such as RxTextData and RxSqlServerData
     Each variable information dict contains one or more of the named elements given below..
 
+```
         type: Character string specifying the data type for the column.
         levels: List of strings containing the levels when type = “factor”.
         low: The minimum data value in the variable (used in computations using the F() function).
@@ -87,6 +88,7 @@ a series of text files to xdf. It is also useful for repeated analysis on non-xd
 
         high: The maximum data value in the variable (used in computations using the F() function).
             For factors, it is the index of the highest level.
+```
 
 
 ## See also
