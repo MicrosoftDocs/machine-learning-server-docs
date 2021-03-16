@@ -55,7 +55,7 @@ You can use the AD groups you have already defined in your organization to assig
 
 In Machine Learning Server, the administrator can assign one or more Active Directory groups to one or more of the following roles: 'Owner', 'Contributor', and 'Reader'. Roles give specific permissions related to deploying and interacting with web services and other APIs. 
 
-|- |- |
+|Description |Illustration |
 |-------------|------------| 
 |- Owner (highest permissions) <br>-&nbsp;Contributor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>- Reader|![Checkbox](./media/configure-roles/role-hierarchy.png)|
 
@@ -80,7 +80,7 @@ If the user belongs to an AD/LDAP or AAD group assigned to a role, then that use
 
 Here is an example of different LDAP group configurations and the resulting roles assigned to the persona.
 
-|Example User <br>/ Persona|User's <br>LDAP Groups||Machine&nbsp;Learning&nbsp;Server<br>RBAC Configuration|User's<br>Role|
+|Example User <br>/ Persona|User's <br>LDAP Groups|+|Machine&nbsp;Learning&nbsp;Server<br>RBAC Configuration|User's<br>Role|
 |:-------------:|:------------:|:-:|------------|:------------:| 
 |![Icon for the administrator user.](./media/configure-roles/p1.png)<br>Administrator|**admins**<br>engineering<br>FTE-north|+|"Owner":&nbsp;["**admins**",&nbsp;"managers"],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": ["stats"]|**Owner**|
 |![Icon for the lead data scientist user.](./media/configure-roles/p2.png)<br>Lead data scientist|**managers**<br>**stats**<br>FTE-north|+|"Owner": ["admins", "**managers**"],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>"Contributor": ["**stats**"],<br>"Reader": ["app-devs"]|**Owner**|
