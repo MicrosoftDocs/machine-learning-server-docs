@@ -818,6 +818,7 @@ That’s it! Now you can reuse all of the importing, data step, plotting, and an
 ```
 # Import data
 mortData <- rxImport(inData = inDataFile, outFile = outFile)
+```
 
 Output:
 
