@@ -176,6 +176,7 @@ Another variable in the data set, PctSAT, contains the percentage of eligible st
 
 First, let’s compute summary statistics for the data to see the characteristics of the variables. Right-click the object **SAT** in the Object Browser, and then click **Summary**. The following summary of the data appears:
 
+```
 	     AveSAT      ExpPerPupil        PctSAT          PupilTch    
 	 Min.   :1388   Min.   : 6629   Min.   :  3.00   Min.   :10.80  
 	 1st Qu.:1490   1st Qu.: 9359   1st Qu.:  8.00   1st Qu.:13.47  
@@ -183,6 +184,7 @@ First, let’s compute summary statistics for the data to see the characteristic
 	 Mean   :1599   Mean   :10544   Mean   : 38.56   Mean   :15.25  
 	 3rd Qu.:1700   3rd Qu.:11539   3rd Qu.: 67.75   3rd Qu.:16.55  
 	 Max.   :1807   Max.   :16587   Max.   :100.00   Max.   :22.10  
+```
 
 
 ### Create a Categorical Variable
