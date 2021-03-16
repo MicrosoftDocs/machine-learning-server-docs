@@ -640,6 +640,7 @@ ymiss <- seq.int(from = 2, to = 100, by = 5)
 myData1$x[xmiss] <- NA
 myData1$y[ymiss] <- NA
 rxGetInfo(myData1, numRows = 5)
+```
 
 A call to **rxGetInfo** returns precomputed metadata showing missing values "NA" in both variables:
 
