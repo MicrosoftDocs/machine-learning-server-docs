@@ -896,7 +896,7 @@ rxHistogram(~creditScore, data = mortDataNew )
 	Computation time: 0.678 seconds.
 ```
 
-![rxHistogram(~creditScore, data = mortDataNew)](media/tutorial-r-to-revoscaler/image16.png)
+![rxHistogram 2](media/tutorial-r-to-revoscaler/image16.png)
 
 ```
 myCube = rxCube(~F(creditScore):catDebt, data = mortDataNew)
