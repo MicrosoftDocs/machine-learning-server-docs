@@ -182,20 +182,13 @@ time is spent in computing surrogate splits.
 
 An integer specifying how surrogates are to be used
 in the splitting process:
-0: Display-only; observations with a missing value for the primary
+0: Display-only; observations with a missing value for the primary split variable are not sent further down the tree.
 
-    split variable are not sent further down the tree.
+1: Use surrogates, in order, to split observations missing the primary split variable. If all surrogates are missing, the observation is not split.
 
-1: Use surrogates, in order, to split observations missing the primary
-    split variable. If all surrogates are missing, the observation is not
-    split.
+2: Use surrogates, in order, to split observations missing the primary split variable. If all surrogates are missing or max_surrogate=0, send the observation in the majority direction.
 
-2: Use surrogates, in order, to split observations missing the primary
-    split variable. If all surrogates are missing or max_surrogate=0, send
-    the observation in the majority direction.
-
-The 0 value corresponds to the behavior of the tree function, and 2
-    (the default) corresponds to the recommendations of Breiman et al.
+The 0 value corresponds to the behavior of the tree function, and 2 (the default) corresponds to the recommendations of Breiman et al.
 
 
 ### surrogate_style
@@ -243,11 +236,7 @@ for stratified sampling.
 
 A scalar or a vector of positive values specifying the
 percentage(s) of observations to sample for each tree:
-for unstratified sampling: A scalar of positive value specifying the
-
-    percentage of observations to sample for each tree. The default is 1.0
-    for sampling with replacement (i.e., replace=True) and 0.632 for
-    sampling without replacement (i.e., replace=False).
+for unstratified sampling: A scalar of positive value specifying the percentage of observations to sample for each tree. The default is 1.0 for sampling with replacement (i.e., replace=True) and 0.632 for sampling without replacement (i.e., replace=False).
 
 for stratified sampling: A vector of positive values of length equal to
     the number of strata specifying the percentages of observations to

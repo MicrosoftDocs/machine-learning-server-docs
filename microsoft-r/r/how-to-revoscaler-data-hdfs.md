@@ -31,13 +31,17 @@ This article explains how to load data from the Hadoop Distributed File System (
 
 By default, data is expected to be found on the native file system (Linux). If all your data is on HDFS, you can use **rxSetFileSystem** to specify this as a global option:
 
-	rxSetFileSystem(RxHdfsFileSystem())
+```
+rxSetFileSystem(RxHdfsFileSystem())
+```
 
 If only some files are on HDFS, keep the native file system default and use the *fileSystem* argument on **RxTextData** or **RxXdfData** data sources to specify which files are on HDFS. For example:
 
-	hdfsFS <- RxHdfsFileSystem() 
-	txtSource <- RxTextData("/test/HdfsData/AirlineCSV/CSVs/1987.csv", fileSystem=hdfsFS)
-	xdfSource <- RxXdfData("/test/HdfsData/AirlineData1987", fileSystem=hdfsFS)
+```
+hdfsFS <- RxHdfsFileSystem() 
+txtSource <- RxTextData("/test/HdfsData/AirlineCSV/CSVs/1987.csv", fileSystem=hdfsFS)
+xdfSource <- RxXdfData("/test/HdfsData/AirlineData1987", fileSystem=hdfsFS)
+```
 
 The **RxHdfsFileSystem** function creates a file system object for the HDFS file system. You can use **RxNativeFileSystem** function does the same thing for the native file system.
 
@@ -45,12 +49,14 @@ The **RxHdfsFileSystem** function creates a file system object for the HDFS file
 
 Assuming you already have an .xdf file on HDFS, you can load it by creating an **RxXdfData** object that takes the .xdf file as an input.
 
-	mortDS <- RxXdfData("/share/SampleData/mortDefaultSmall.xdf")
-	rxGetInfo(mortDS, numRows = 5)
-	rxSummary(~., data = mortDS, blocksPerRead = 2)
-	logitObj <- rxLogit(default~F(year) + creditScore + yearsEmploy + ccDebt,
-               data = mortDS, blocksPerRead = 2,  reportProgress = 1)
-	summary(logitObj)
+```
+mortDS <- RxXdfData("/share/SampleData/mortDefaultSmall.xdf")
+rxGetInfo(mortDS, numRows = 5)
+rxSummary(~., data = mortDS, blocksPerRead = 2)
+logitObj <- rxLogit(default~F(year) + creditScore + yearsEmploy + ccDebt,
+			data = mortDS, blocksPerRead = 2,  reportProgress = 1)
+summary(logitObj)
+```
 
 
 
@@ -62,34 +68,42 @@ The following example shows how to write a data frame as an .xdf file directly t
 
 1. Set the user name: 
 
-    	> username <- `<your-user-name-here>` 
+    ```
+	> username <- `<your-user-name-here>` 
+    ```
 
 2. Set folder paths:
 
-		hdfsDataDirRoot <- paste("/home/<user-dir>/<data-dir>/", username, sep="")
-		localfsDataDirRoot <- paste("/home/<user-dir>/<data-dir>/", username, sep="")
-		setwd(localfsDataDirRoot)
+	```
+	hdfsDataDirRoot <- paste("/home/<user-dir>/<data-dir>/", username, sep="")
+	localfsDataDirRoot <- paste("/home/<user-dir>/<data-dir>/", username, sep="")
+	setwd(localfsDataDirRoot)
+    ```
  
 3. Set compute context: 
 
-		port <- 8020 # KEEP IF USING THE DEFAULT
-		host <- system("hostname", intern=TRUE)
-		hdfsFS <- RxHdfsFileSystem(hostName=host, port=port)
+	```
+	port <- 8020 # KEEP IF USING THE DEFAULT
+	host <- system("hostname", intern=TRUE)
+	hdfsFS <- RxHdfsFileSystem(hostName=host, port=port)
 
-		myHadoopCluster <- RxHadoopMR(
+	myHadoopCluster <- RxHadoopMR(
 
-		nameNode= host, 
-		port=port, 
-		consoleOutput=TRUE)
-		
-		rxSetComputeContext(myHadoopCluster)
+	nameNode= host, 
+	port=port, 
+	consoleOutput=TRUE)
+	
+	rxSetComputeContext(myHadoopCluster)
+    ```
 
 4. Write the XDF to a text file on HDFS:
 
-		air7x <- RxXdfData(file='/user/RevoShare/revolution/AirOnTime7Pct', fileSystem = hdfsFS)
-		air7t <- RxTextData(file='/user/RevoShare/revolution/AirOnTime7PctText', fileSystem = hdfsFS, createFileSet=TRUE)
-		
-		rxDataStep(air7x,air7t)
+    ```
+	air7x <- RxXdfData(file='/user/RevoShare/revolution/AirOnTime7Pct', fileSystem = hdfsFS)
+	air7t <- RxTextData(file='/user/RevoShare/revolution/AirOnTime7PctText', fileSystem = hdfsFS, createFileSet=TRUE)
+	
+	rxDataStep(air7x,air7t)
+    ```
 
 ## Write a composite XDF
 
@@ -110,54 +124,62 @@ When the compute context is **RxHadoopMR**, a composite set of XDF is always cre
 
 The following example demonstrates creating a composite set of .xdf files within the native file system in a local compute context using a directory of .csv files as input. Prior to trying these examples yourself, copy the sample AirlineDemoSmallSplit folder from the sample data directory to /tmp. Create a second empty folder named testXdf under /tmp to hold the composite file set:
 
-	# Run this command to verify source path. Output should be the AirlineDemoSmallPart?.csv file list.
-	list.files("/tmp/AirlineDemoSmallSplit/")
+```
+# Run this command to verify source path. Output should be the AirlineDemoSmallPart?.csv file list.
+list.files("/tmp/AirlineDemoSmallSplit/")
 
-	# Set folders and source and output objects
-	AirDemoSrcDir <- "/tmp/AirlineDemoSmallSplit/"
-	AirDemoSrcObj <- RxTextData(AirDemoSrcDir)
-	AirDemoXdfDir <- "/tmp/testXdf/"
-	AirDemoXdfObj <- RxXdfData(AirDemoXdfDir, createCompositeSet=TRUE)
+# Set folders and source and output objects
+AirDemoSrcDir <- "/tmp/AirlineDemoSmallSplit/"
+AirDemoSrcObj <- RxTextData(AirDemoSrcDir)
+AirDemoXdfDir <- "/tmp/testXdf/"
+AirDemoXdfObj <- RxXdfData(AirDemoXdfDir, createCompositeSet=TRUE)
 
-	# Run rxImport to convert the data info XDF and save as a composite file
-	rxImport(AirDemoSrcObj, outFile=AirDemoXdfObj)
+# Run rxImport to convert the data info XDF and save as a composite file
+rxImport(AirDemoSrcObj, outFile=AirDemoXdfObj)
+```
 
 This creates a directory named testXdf, with the data and metadata subdirectories, containing the split .xdfd and .xdfm files.
 
-	list.files(AirDemoXdfDir, recursive=TRUE, full.names=TRUE)
+```
+list.files(AirDemoXdfDir, recursive=TRUE, full.names=TRUE)
+```
 
 Output should be as follows:
 
-		[1] "/tmp/testXdf/data/testXdf_1.xdfd"  
-		[2] "/tmp/testXdf/data/testXdf_2.xdfd" 
-		[3] "/tmp/testXdf/data/testXdf_3.xdfd"   
-		[4] "/tmp/testXdf/metadata/testXdf.xdfm"
+```
+[1] "/tmp/testXdf/data/testXdf_1.xdfd"  
+[2] "/tmp/testXdf/data/testXdf_2.xdfd" 
+[3] "/tmp/testXdf/data/testXdf_3.xdfd"   
+[4] "/tmp/testXdf/metadata/testXdf.xdfm"
+```
 
 Run **rxGetInfo** to return metadata, including the number of composite data files, and the first 10 rows.
 
-	rxGetInfo(AirDemoXdfObj, getVarInfo=TRUE, numRows=10)
-			File name: /tmp/testXdf 
-			Number of composite data files: 3 
-			Number of observations: 6e+05 
-			Number of variables: 3 
-			Number of blocks: 3 
-			Compression type: zlib 
-			Variable information: 
-			Var 1: ArrDelay, Type: character
-			Var 2: CRSDepTime, Type: numeric, Storage: float32, Low/High: (0.0167, 23.9833)
-			Var 3: DayOfWeek, Type: character
-			Data (10 rows starting with row 1): 
-			ArrDelay CRSDepTime DayOfWeek
-			1         6   9.666666    Monday
-			2        -8  19.916666    Monday
-			3        -2  13.750000    Monday
-			4         1  11.750000    Monday
-			5        -2   6.416667    Monday
-			6       -14  13.833333    Monday
-			7        20  16.416666    Monday
-			8        -2  19.250000    Monday
-			9        -2  20.833334    Monday
-			10      -15  11.833333    Monday
+```
+rxGetInfo(AirDemoXdfObj, getVarInfo=TRUE, numRows=10)
+		File name: /tmp/testXdf 
+		Number of composite data files: 3 
+		Number of observations: 6e+05 
+		Number of variables: 3 
+		Number of blocks: 3 
+		Compression type: zlib 
+		Variable information: 
+		Var 1: ArrDelay, Type: character
+		Var 2: CRSDepTime, Type: numeric, Storage: float32, Low/High: (0.0167, 23.9833)
+		Var 3: DayOfWeek, Type: character
+		Data (10 rows starting with row 1): 
+		ArrDelay CRSDepTime DayOfWeek
+		1         6   9.666666    Monday
+		2        -8  19.916666    Monday
+		3        -2  13.750000    Monday
+		4         1  11.750000    Monday
+		5        -2   6.416667    Monday
+		6       -14  13.833333    Monday
+		7        20  16.416666    Monday
+		8        -2  19.250000    Monday
+		9        -2  20.833334    Monday
+		10      -15  11.833333    Monday
+```
 
 ## Control generated file output
 
@@ -174,10 +196,12 @@ Rows per file are influenced by compute context:
 
 You can reference a composite XDF using the data source object used as the *outFile* for **rxImport**. To load a composite XDF residing on the HDFS file system, set **RxXdfData** to the parent folder having data and metadata subdirectories:
 
-	rxSetFileSystem(RxHdfsFileSystem())
-	TestXdfObj <- RxXdfData("/tmp/TestXdf/")
-	rxGetInfo(TestXdfObj, numRows = 5)
-	rxSummary(~., data = TestXdfObj)
+```
+rxSetFileSystem(RxHdfsFileSystem())
+TestXdfObj <- RxXdfData("/tmp/TestXdf/")
+rxGetInfo(TestXdfObj, numRows = 5)
+rxSummary(~., data = TestXdfObj)
+```
 
 Note that in this example we set the file system to HDFS globally so we did not need to specify the file system within the data source constructors.
 
@@ -189,7 +213,9 @@ To prevent this interaction, use the function rxHdfsConnect to establish a conne
 
 You can also call rxHdfsConnect interactively within a session, provided you have not yet attempted any other rJava or rhdfs commands. For example, the following call will fix a connection between the Hadoop host sandbox-01 and RevoScaleR; if you make a subsequent call to rhdfs, RevoScaleR can continue to use the previously established connection. Note that once rhdfs (or any other rJava call) has been invoked, you cannot change the host or port you use to connect to RevoScaleR:
 
-	rxHdfsConnect(hostName = "sandbox-01", port = 8020)
+```
+rxHdfsConnect(hostName = "sandbox-01", port = 8020)
+```
 
 ## Next steps
 
