@@ -139,15 +139,14 @@ additional summary information is printed for an “.xdf” file.
 
 List containing the following possible elements:
 
+```
 fileName: Character string containing the file name and path (if an
     ”.xdf” file).
 
 objName: Character string containing object name (if not an “.xdf” file).
 class: Class of the object.
 length: Length of the object if it is not an “.xdf” file or data frame.
-numCompositeFiles: Number of composite data files(if a composite “.xdf”
-
-    file).
+numCompositeFiles: Number of composite data files(if a composite “.xdf” file).
 
 numRows: Number of rows in the data set.
 numVars: Number of variables in the data set.
@@ -160,7 +159,7 @@ rowsPerBlock: Integer vector containing number of rows in each block
     (if get_block_sizes is set to True). Set to None if data is a data frame.
 
 data: Data frame containing the data (if num_rows > 0)
-
+```
 
 ## See also
 
