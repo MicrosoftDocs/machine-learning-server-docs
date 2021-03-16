@@ -852,7 +852,7 @@ Trying to glean patterns and information from a table can be difficult. So we’
 
 rxStepPlot(rxlm.step)
 
-![](media/how-to-revoscaler-linear-model/image8.jpeg)
+![rxStepPlot(rxlm.step)](media/how-to-revoscaler-linear-model/image8.jpeg)
 
 From this plot, we can tell when a variable enters the model by noting the step when it becomes non-zero. Lines are labeled with the numbers on the right axis to indicate the parameter. The numbers correspond to the order they appear in the data frame *stepCoef*. You’ll notice that the 7<sup>th</sup> and 10<sup>th</sup> parameters don’t show up in this plot because the *species3* parameter is the reference category for species.
 
