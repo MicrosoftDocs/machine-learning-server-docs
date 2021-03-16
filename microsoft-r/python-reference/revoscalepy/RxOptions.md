@@ -71,10 +71,12 @@ each read chunk.
 Default value to use for reportProgress argument for
 many revoscalepy functions. Options are:
 
-    0: no progress is reported.
-    1: the number of processed rows is printed and updated.
-    2: rows processed and timings are reported.
-    3: rows processed and all timings are reported.
+```
+0: no progress is reported.
+1: the number of processed rows is printed and updated.
+2: rows processed and timings are reported.
+3: rows processed and all timings are reported.
+```
 
 
 ### RowDisplayMax
@@ -191,19 +193,19 @@ parameter controls ML Server Logging features as well as Runtime Tracing of
 ScalePy functions. Levels are inclusive, (i.e. level 3:INFO includes levels
 2:WARN and 1:ERROR log messages). The options are:
 
-    0: DISABLED - Tracing/Logging disabled.
-    1: ERROR - ERROR coded trace points are logged to MRS log files
-    2: WARN - WARN and ERROR coded trace points are logged to MRS log files.
-    3: INFO - INFO, WARN, and ERROR coded trace points are logged to MRS
+```
+0: DISABLED - Tracing/Logging disabled.
+1: ERROR - ERROR coded trace points are logged to MRS log files
+2: WARN - WARN and ERROR coded trace points are logged to MRS log files.
+3: INFO - INFO, WARN, and ERROR coded trace points are logged to MRS
+    log files.
 
-        log files.
-
-    4: DEBUG - All trace points are logged to MRS log files.
-    5: RESERVED - If set, will log at DEBUG granularity
-    6: RESERVED - If set, will log at DEBUG granularity
-    7: TRACE - ScaleR functions Runtime Tracing is activated and MRS log
-
-        level is set to DEBUG granularity.
+4: DEBUG - All trace points are logged to MRS log files.
+5: RESERVED - If set, will log at DEBUG granularity
+6: RESERVED - If set, will log at DEBUG granularity
+7: TRACE - ScaleR functions Runtime Tracing is activated and MRS log
+    level is set to DEBUG granularity.
+```
 
 
 ## Returns
