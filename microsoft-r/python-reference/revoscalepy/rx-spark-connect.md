@@ -90,8 +90,8 @@ this must be an address that can be resolved by the data nodes and used by them 
 name node. Depending on your cluster, it may need to be set to a private network address
 such as “master.local”. If set to the empty string, “”, then the master process will set
 this to the name of the node on which it is running, as returned by platform.node().
-If you are running in Spark local mode, this parameter defaults to “[file:///](file:///.md)”; otherwise it
-defaults to RxOptions.get_option(“hdfsHost”).
+If you are running in Spark local mode, this parameter defaults to `file:///`; otherwise it
+defaults to `RxOptions.get_option(“hdfsHost”)`.
 
 
 ### master
