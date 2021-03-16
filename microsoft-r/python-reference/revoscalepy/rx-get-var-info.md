@@ -105,23 +105,23 @@ list with named elements corresponding to the variables in the data set.
 
 Each list element is also a list with following possible elements:
 
-    description: character string specifying the variable description
-    varType: character string specifying the variable type
-    storage: character string specifying the storage type
-    low: numeric giving the low values, possibly generated through a
+```
+description: character string specifying the variable description
+varType: character string specifying the variable type
+storage: character string specifying the storage type
+low: numeric giving the low values, possibly generated through a
+    temporary factor transformation F()
 
-        temporary factor transformation F()
+high: numeric giving the high values, possibly generated through a
+    temporary factor transformation F()
 
-    high: numeric giving the high values, possibly generated through a
-        temporary factor transformation F()
+levels: (factor only) a list of strings containing the factor levels
+valueInfoCodes: list of strings of value codes, for informational
+    purposes only
 
-    levels: (factor only) a list of strings containing the factor levels
-    valueInfoCodes: list of strings of value codes, for informational
-
-        purposes only
-
-    valueInfoLabels: list of strings of value labels that is the same
-        length as valueInfoCodes, used for informational purposes only
+valueInfoLabels: list of strings of value labels that is the same
+    length as valueInfoCodes, used for informational purposes only
+```
 
 
 ## See also
