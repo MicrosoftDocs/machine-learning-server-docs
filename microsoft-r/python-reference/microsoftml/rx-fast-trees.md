@@ -367,7 +367,7 @@ memory.
 [Greedy function approximation: A gradient boosting machine.](http://projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.aos/1013203451)
 
 
-## Example
+## Binary Classification example
 
 
 
@@ -441,7 +441,7 @@ Rows Read: 5, Total Rows Processed: 5, Total Chunk Time: 0.001 seconds
 
 
 
-## Example
+## Regression example
 
 
 
