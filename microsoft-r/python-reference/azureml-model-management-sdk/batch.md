@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "Batch class for Microsoft Machine Learning Server"
-description: "This class is for Microsoft ML Server Python package for managing web services, azureml-model-management-sdk" 
+description: "This Batch class is for Microsoft ML Server Python package for managing web services, azureml-model-management-sdk" 
 keywords: "" 
 author: "dphansen" 
 ms.author: "davidph"

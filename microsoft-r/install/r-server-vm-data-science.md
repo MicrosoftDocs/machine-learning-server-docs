@@ -2,7 +2,7 @@
 
 # required metadata
 title: "Machine Learning Server on the Data Science Virtual Machine "
-description: "Run Machine Learning Server on the Microsoft Data Science Virtual Machine"
+description: "Install Machine Learning Server on the Microsoft Data Science Virtual Machine"
 keywords: "Machine Learning Server, HDInsight"
 author: "dphansen"
 ms.author: "davidph"

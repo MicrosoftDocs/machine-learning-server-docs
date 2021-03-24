@@ -33,7 +33,7 @@ For information about the current release, see [What's new in R Client](what-is-
 
 ## System Requirements
 
-|   |   |
+| Type  | Requirement  |
 | - | - |
 |Operating&nbsp;Systems|64-bit versions of Microsoft Windows 7, 8.1, and 10|
 |Free disk space|600 MB recommended, after installation of all prerequisites<br>If pre-trained models are installed, 1.2 GB is recommended|

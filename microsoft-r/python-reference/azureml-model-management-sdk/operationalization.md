@@ -1,8 +1,8 @@
 --- 
  
 # required metadata 
-title: "Operationalization  class for Microsoft Machine Learning Server"
-description: "This class is for Microsoft ML Server Python package for managing web services." 
+title: "Operationalization class for Microsoft Machine Learning Server"
+description: "This Operationalization class is for Microsoft ML Server Python package for managing web services." 
 keywords: "" 
 author: "dphansen"
 ms.author: "davidph" 

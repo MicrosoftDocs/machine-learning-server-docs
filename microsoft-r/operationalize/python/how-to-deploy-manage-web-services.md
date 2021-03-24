@@ -74,7 +74,7 @@ For a full example, try out the [quickstart guide for deploying web services in 
 
 This table presents the supported data types for the input and output schemas of Python web services.  Write these as a reference `bool` or as a string `'bool'`.
 
-|I/O data types||
+|I/O data types| Description |
 |--------|-----|
 |Float &rarr; float|Array &rarr; numpy.array |
 |Integer &rarr; int|Matrix &rarr; numpy.matrix |

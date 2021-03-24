@@ -44,7 +44,7 @@ SQL Server provides an embedded machine learning feature that provides identical
 Features provided by [Machine Learning Server](what-is-microsoft-r-server.md), [Microsoft R Client](r-client/what-is-microsoft-r-client.md), and [Microsoft R Open](https://mran.microsoft.com/open/) can be categorized as shown in this table. This table slices key features by components. Additional capability provided in R Client and Machine Learning Server is delivered via proprietary packages.
 
 
-||Microsoft&nbsp;R&nbsp;Open|Microsoft&nbsp;R&nbsp;Client|Machine&nbsp;Learning&nbsp;Server|
+|Type|Microsoft&nbsp;R&nbsp;Open|Microsoft&nbsp;R&nbsp;Client|Machine&nbsp;Learning&nbsp;Server|
 |-----------|-----|------|---------|
 |<b>Memory & Storage</b>|Memory bound<sup>1</sup>|Memory bound<sup>1</sup> &amp; operates on large volumes when connected to R Server.|Memory across multiple nodes as well as data chunking across multiple disks.<br />Operates on bigger volumes &amp; factors.|
 |<b>Speed of Analysis</b>|Multithreaded via MKL<sup>2</sup> for non-RevoScaleR functions.|Multithreaded via MKL<sup>2</sup> for non-RevoScaleR functions, but only up to 2 threads for RevoScaleR functions with a local compute context.|Full parallel threading &amp; processing for revoscalepy and RevoScaleR functions as well as for non-proprietary functions (via MKL<sup>2</sup>) in both local and remote compute contexts.|
