@@ -1,5 +1,4 @@
 ---
-
 # required metadata
 title: "New in Machine Learning Server 9.4"
 description: "New features, improvements, and changes in release 9.4 of Machine Learning Server."
