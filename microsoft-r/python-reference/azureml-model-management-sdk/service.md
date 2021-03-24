@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "Service class class for Microsoft Machine Learning Server"
-description: "This class is for Microsoft ML Server Python package for managing web services." 
+description: "This Service class is for Microsoft ML Server Python package for managing web services." 
 keywords: "" 
 author: "dphansen" 
 manager: "cgronlun" 
