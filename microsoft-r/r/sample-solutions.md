@@ -2,6 +2,7 @@
 
 # required metadata
 title: "Solution templates for Machine Learning Server and R Server | Machine Learning Server "
+description: "These solution templates exist to help you accelerate time to value when using Machine Learning Server or Microsoft R Server"
 keywords: ""
 author: "dphansen"
 ms.author: "davidph"
