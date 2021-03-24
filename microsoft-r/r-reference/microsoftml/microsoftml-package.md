@@ -29,7 +29,7 @@ ms.assetid: ""
 
 The **MicrosoftML** library provides state-of-the-art fast, scalable machine learning algorithms and transforms for R. The package is used with the [**RevoScaleR** package](../revoscaler/revoscaler.md).
 
-| Package details | |
+| Package details | Description |
 |--------|-|
 | Current version: |  9.4.0 |
 | Built on: | R 3.5.2 |
