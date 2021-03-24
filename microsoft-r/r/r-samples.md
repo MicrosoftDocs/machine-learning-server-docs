@@ -2,6 +2,7 @@
 
 # required metadata
 title: "R Samples - Machine Learning Server "
+description: "Use these as examples to learn Machine Learning Server functions in R script or code."
 keywords: ""
 author: "dphansen"
 ms.author: "davidph"
