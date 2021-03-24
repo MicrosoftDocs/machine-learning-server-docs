@@ -2,6 +2,7 @@
 
 # required metadata
 title: "R samples for MicrosoftML"
+description: "MicrosoftML samples that use the R language are described and linked here to help you get started quickly with Microsoft Machine Learning Server. The sentiment analysis and image featurization quickstarts both use pre-trained models."
 keywords: ""
 author: "dphansen"
 ms.author: "davidph"

@@ -27,7 +27,7 @@ ms.prod: "mlserver"
 
 The **RevoUtils** package provides utility functions that return information about your installation, such as path and memory usage.
 
-| Package details | |
+| Package details | Description |
 |--------|-|
 | Current version: |  10.0.5 |
 | Built on: | R 3.4.3 |

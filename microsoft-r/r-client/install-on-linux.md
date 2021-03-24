@@ -33,7 +33,7 @@ For information about the current release, see [What's new in R Client](what-is-
 
 ## System Requirements
 
-|   |   |
+| Type  | Requirement  |
 | - | - |
 |Operating Systems|Supported versions include:<br>- Red Hat Enterprise Linux (RHEL) and CentOS 6.x and 7.x<br>- Ubuntu 14.04 and 16.04<br>- SUSE Linux Enterprise Server 11 (SLES11)<br><br>Must be a supported version of Linux on a 64-bit with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 chips). Itanium-architecture chips (also known as IA-64) are not supported. Multiple-core chips are recommended.|
 |Available RAM|2 GB of RAM is required; 8 GB or more are recommended|

@@ -2,7 +2,7 @@
 
 # required metadata
 title: "Quickstart: Deploy R models as web services with mrsdeploy - Machine Learning Server "
-description: "How to deploy an R model as a service"
+description: "How to deploy an R model as a web service with mrsdeploy"
 keywords: "quickstart, Machine Learning Server, Microsoft R Server, deploy r models"
 author: "dphansen"
 ms.author: "davidph"

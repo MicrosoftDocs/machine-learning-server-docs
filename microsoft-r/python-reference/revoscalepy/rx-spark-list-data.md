@@ -2,7 +2,7 @@
  
 # required metadata 
 title: "rx_spark_list_data: Functions for object management in Spark (revoscalepy)" 
-description: "Use these functions to manage the objects cached in the Spark memory system. These functions are only applicable  when using RxSpark compute context." 
+description: "Use these rx_spark_list_data functions to manage the objects cached in the Spark memory system. These functions are only applicable  when using RxSpark compute context." 
 keywords: "spark, data" 
 author: "dphansen" 
 manager: "cgronlun" 

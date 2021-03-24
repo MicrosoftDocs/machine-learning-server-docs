@@ -67,8 +67,8 @@ deserialize_job(job_id: str) -> revoscalepy.computecontext.RxRemoteJob.RxRemoteJ
 
 Deserializes a RxRemoteJob given the job ID
 
-
-## Returns
+ 
+## Returns deserialize_jobs
 
 The job that was deserialized
 
@@ -84,14 +84,14 @@ deserialize_jobs() -> list
 Deserializes the existing jobs that have not been cleaned up by calling close().
 
 
-## Returns
+## Returns resolve_context
 
 The deserialized jobs
 
 
 
 ```
-resolve_context() -> revoscalepy.computecontext.RxComputeContext.RxComputeContext
+() -> revoscalepy.computecontext.RxComputeContext.RxComputeContext
 ```
 
 
@@ -100,6 +100,6 @@ resolve_context() -> revoscalepy.computecontext.RxComputeContext.RxComputeContex
 Resolves the `RxComputeContext` that is associated with the job
 
 
-## Returns
+## Returns RxComputeContext
 
 The `RxComputeContext` that is associated with the job or `None` if the compute context isn’t valid

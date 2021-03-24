@@ -31,7 +31,7 @@ This section contains the Python reference documentation for three proprietary p
 
 You can use these libraries and functions in combination with other open source or third-party packages, but to use the proprietary packages, your Python code must run against a service or on a computer that provides the interpreters.
 
-| Library details | |
+| Library details | Description |
 |--------|-|
 | [Supported platforms](../install/r-server-install-supported-platforms.md) | [Machine Learning Server 9.2.1, 9.3 and 9.4](../what-is-machine-learning-server.md) </br>[SQL Server 2017  (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services) |
 | Built on: | [Anaconda 4.2](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you [add Python support](#how-to-install) during installation). |

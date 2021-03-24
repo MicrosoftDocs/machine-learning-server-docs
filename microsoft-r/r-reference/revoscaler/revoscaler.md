@@ -29,7 +29,7 @@ The **RevoScaleR** library is a collection of portable, scalable, and distributa
 
 Functions run on the **RevoScaleR** interpreter, built on open-source R, engineered to leverage the multithreaded and multinode architecture of the host platform.
 
-| Package details | |
+| Package details | Description |
 |--------|-|
 | Current version: |  9.4 |
 | Built on: | R 3.5.2 |
