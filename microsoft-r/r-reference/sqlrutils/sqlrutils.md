@@ -27,7 +27,7 @@ ms.prod: "mlserver"
 
 The **sqlrutils** package provides a mechanism for R users to put their R scripts into a T-SQL stored procedure, register that stored procedure with a database, and run the stored procedure from an R development environment.
 
-| Package details | |
+| Package details | Description |
 |--------|-|
 | Current version: |  1.0.0 |
 | Built on: | R 3.4.3 |
