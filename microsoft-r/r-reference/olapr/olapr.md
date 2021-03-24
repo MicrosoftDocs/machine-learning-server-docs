@@ -29,7 +29,7 @@ ms.assetid: ""
 
 The **olapR** library provides R functions for importing data from OLAP cubes stored in SQL Server Analysis Services into a data frame. This package is available on premises, on Windows only.
 
-| Package details | |
+| Package details | Description |
 |--------|-|
 | Current version: |  1.0.0 |
 | Built on: | R 3.4.3 |

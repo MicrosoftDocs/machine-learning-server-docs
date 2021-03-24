@@ -29,7 +29,7 @@ ms.custom: ""
 
  The **RevoIOQ** package provides a function for testing installation and operational qualification of R packages provided in Machine Learning Server, Microsoft R Server, and R Client.
  
-| Package details | |
+| Package details | Description |
 |--------|-|
 | Current version: |  8.0.8 |
 | Built on: | R 3.3.2 |

@@ -2,7 +2,7 @@
 
 # required metadata 
 title: "rxGetVarInfo function (revoAnalytics) | Microsoft Docs" 
-description: " Get variable information for a RevoScaleR data source or data frame, including variable names, descriptions, and value labels " 
+description: "Get variable information for a RevoScaleR data source or data frame, including variable names, descriptions, and value labels." 
 keywords: "(revoAnalytics), rxGetVarInfo, attribute" 
 author: "dphansen" 
 manager: "cgronlun" 
@@ -25,7 +25,7 @@ ms.custom: ""
 --- 
 
 
- # rxGetVarInfo: Get Variable Information for a Data Source 
+ # rxGetVarInfo: Get Variable Information for a Data Source.
  ## Description
 
 Get variable information for a RevoScaleR data source or data frame, including variable
