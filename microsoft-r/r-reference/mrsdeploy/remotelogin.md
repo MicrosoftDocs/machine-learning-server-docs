@@ -2,7 +2,7 @@
 
 # required metadata 
 title: "remoteLogin function (mrsdeploy) | Microsoft Docs" 
-description: " Authenticates the user and creates a remote R session. " 
+description: "remoteLogin: Authenticates the user and creates a remote R session. " 
 keywords: "(mrsdeploy), remoteLogin" 
 author: "dphansen" 
 manager: "cgronlun" 
