@@ -8,7 +8,7 @@ author: "dphansen"
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver"  
 ms.service: "" 
 ms.assetid: "" 
 
