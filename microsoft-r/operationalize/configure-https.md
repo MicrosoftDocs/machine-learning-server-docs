@@ -1,25 +1,21 @@
 ---
-
-# required metadata
-title: "HTTPS SSL / TLS 1.2 for Machine Learning Server "
-description: "Learn how to add enterprise-grade security (HTTPS SSL / TLS 1.2) for Machine Learning Server"
-keywords: ""
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
-ms.date: "2/16/2018"
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: ""
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-#ms.technology: ""
-#ms.custom: ""
+title: HTTPS SSL / TLS 1.2 for Machine Learning Server 
+description: Learn how to add enterprise-grade security (HTTPS SSL / TLS 1.2) for Machine Learning Server
+keywords: 
+author: dphansen
+ms.author: davidph
+manager: cgronlun
+ms.date: 2/16/2018
+ms.topic: how-to
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+#ms.technology: 
+#ms.custom: 
 ---
 
 # Enable SSL or TLS for Connection Security in Machine Learning Server

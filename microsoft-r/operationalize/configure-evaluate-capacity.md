@@ -1,25 +1,21 @@
 ---
-
-# required metadata
-title: "Evaluate the load balancing of your configuration - Machine Learning Server "
-description: "Load Balancing Capacity and simulation tests for latency and thread counts"
-keywords: ""
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
-ms.date: "2/16/2018"
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: ""
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-#ms.technology: ""
-#ms.custom: ""
+title: Evaluate the load balancing of your configuration - Machine Learning Server 
+description: Load Balancing Capacity and simulation tests for latency and thread counts
+keywords: 
+author: dphansen
+ms.author: davidph
+manager: cgronlun
+ms.date: 2/16/2018
+ms.topic: how-to
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+#ms.technology: 
+#ms.custom: 
 ---
 
 # Evaluate the load-balancing capacity of your configuration
