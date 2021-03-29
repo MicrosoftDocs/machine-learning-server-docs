@@ -3,12 +3,12 @@
 # required metadata
 title: "Uninstall Microsoft R Client to upgrade to a newer version - Machine Learning Server "
 description: "Explains how to uninstall Microsoft R Client. You do not have to uninstall R Client before installing a more recent version."
-keywords: "R Client, Microsoft R Client, remove, uninstall, uninstallation"
+keywords: R Client, Microsoft R Client, remove, uninstall, uninstallation
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "02/16/2018"
-ms.topic: "conceptual"
+ms.date: 02/16/2018
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata
@@ -20,7 +20,6 @@ ms.prod: "mlserver"
 #ms.tgt_pltfrm: ""
 #ms.technology: ""
 #ms.custom: ""
-
 ---
 
 # Uninstall Microsoft R Client 

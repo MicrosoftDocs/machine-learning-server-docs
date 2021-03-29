@@ -3,12 +3,12 @@
 # required metadata
 title: "Generalized Linear Models (RevoScaleR) in Machine Learning Server "
 description: "Generalized linear models with RevoScaleR."
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "03/17/2016"
-ms.topic: "tutorial"
+ms.date: 03/17/2016
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata
@@ -20,7 +20,6 @@ ms.prod: "mlserver"
 #ms.tgt_pltfrm: ""
 #ms.technology: ""
 #ms.custom: ""
-
 ---
 
 # Generalized Linear Models using RevoScaleR

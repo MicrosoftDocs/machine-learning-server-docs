@@ -3,12 +3,12 @@
 # required metadata
 title: "Managing access tokens, bearer tokens, access_token, refresh_token - Machine Learning Server "
 description: "Token Management for API Requests with Machine Learning Server"
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "9/25/2017"
-ms.topic: "conceptual"
+ms.date: 9/25/2017
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata

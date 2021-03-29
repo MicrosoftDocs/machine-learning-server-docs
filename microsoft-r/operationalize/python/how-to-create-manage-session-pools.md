@@ -3,12 +3,12 @@
 # required metadata
 title: "Create and manage session pools for fast web service connections in Python (Machine Learning Server)"
 description: "Allocate resources for pre-loading web service connections and dependencies in Python solutions (Machine Learning Server ). "
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "2/16/2018"
-ms.topic: "conceptual"
+ms.date: 2/16/2018
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata

@@ -3,12 +3,12 @@
 # required metadata
 title: "How-to deep dives into data analysis and visualization in Machine Learning Server "
 description: "Documentation for data science, statistics, analysis and visualization using Machine Learning Server R and Python libraries and tools."
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "02/16/2018"
-ms.topic: "conceptual"
+ms.date: 02/16/2018
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata
@@ -18,9 +18,8 @@ ms.prod: "mlserver"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: 
 #ms.custom: ""
-
 ---
 
 # How-to guides for data analysis and operationalization

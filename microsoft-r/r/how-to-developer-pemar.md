@@ -3,12 +3,12 @@
 # required metadata
 title: "RevoPemaR functions in Machine Learning Server "
 description: "How to use the RevoPemaR package in Machine Learning Server."
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "01/03/2018"
-ms.topic: "conceptual"
+ms.date: 01/03/2018
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata
@@ -20,7 +20,6 @@ ms.prod: "mlserver"
 #ms.tgt_pltfrm: ""
 #ms.technology: ""
 #ms.custom: ""
-
 ---
 
 # How to use the RevoPemaR library in Machine Learning Server

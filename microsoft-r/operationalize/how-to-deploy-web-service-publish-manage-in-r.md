@@ -3,12 +3,12 @@
 # required metadata
 title: "Deploy & manage web services in R with mrsdeploy - Machine Learning Server "
 description: "Web service deployment functions in the mrsdeploy package in Microsoft R can be used for any arbitrary R code block."
-keywords: "mrsdeploy package"
+keywords: mrsdeploy package
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "2/16/2018"
-ms.topic: "conceptual"
+ms.date: 2/16/2018
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata
@@ -20,7 +20,6 @@ ms.prod: "mlserver"
 #ms.tgt_pltfrm: ""
 #ms.technology: ""
 #ms.custom: ""
-
 ---
 
 # How to publish and manage R web services in Machine Learning Server with mrsdeploy

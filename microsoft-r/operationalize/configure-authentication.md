@@ -3,12 +3,12 @@
 # required metadata
 title: "LDAP AD and Azure Active Directory authentication for Machine Learning Server "
 description: "Authenticate Machine Learning Server users against LDAP AD or Azure Active Directory"
-keywords: "Machine Learning Server LDAP-S, LDAP, AD, Azure Active Directory, AAD, Azure AD, Authentication, Microsoft R Server"
+keywords: Machine Learning Server LDAP-S, LDAP, AD, Azure Active Directory, AAD, Azure AD, Authentication, Microsoft R Server
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "2/16/2018"
-ms.topic: "conceptual"
+ms.date: 2/16/2018
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata

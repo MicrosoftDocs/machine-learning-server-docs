@@ -3,12 +3,12 @@
 # required metadata
 title: "Use RevoScaleR with SQL Server (Machine Learning Server) "
 description: "Overview and tutorial to using RevoScaleR in SQL Server databases."
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
-ms.manager: "cgronlun"
-ms.date: "08/11/2016"
-ms.topic: "conceptual"
+ms.manager: cgronlun
+ms.date: 08/11/2016
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata
@@ -20,7 +20,6 @@ ms.prod: "mlserver"
 #ms.tgt_pltfrm: ""
 #ms.technology: ""
 #ms.custom: ""
-
 ---
 
 # Using RevoScaleR with SQL Server

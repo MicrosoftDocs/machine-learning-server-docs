@@ -3,12 +3,12 @@
 # required metadata
 title: "APIs for operationalizing your models and analytics - Machine Learning Server "
 description: "Operationalization APIs for authenticating, publishing, managing, and consuming web services with Machine Learning Server  or Microsoft R Server."
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "2/16/2018"
-ms.topic: "conceptual"
+ms.date: 2/16/2018
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata
