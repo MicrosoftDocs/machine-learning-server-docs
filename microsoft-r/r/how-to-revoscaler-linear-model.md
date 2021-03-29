@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Fitting Linear Models (RevoScaleR) in Machine Learning Server "
 description: "Linear Models with RevoScaleR."
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 03/17/2016
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

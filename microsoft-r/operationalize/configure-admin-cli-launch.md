@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Launch the Administration CLI - Machine Learning Server "
 description: "Launch the Admin CLI and utility used to manage the operationalization configuration for Machine Learning Server"
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 2/16/2018
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

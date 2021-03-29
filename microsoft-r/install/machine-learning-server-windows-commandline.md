@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Windows command line installation for Machine Learning Server"
 description: "How to install Machine Learning Server for Windows on the command line."
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 07/15/2019
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

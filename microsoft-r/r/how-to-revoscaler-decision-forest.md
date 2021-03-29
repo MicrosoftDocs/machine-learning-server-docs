@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "RevoScaleR User's Guide--Estimating Decision Forest Models (Machine Learning Server) "
 description: "Decision forests with RevoScaleR."
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 03/17/2016
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

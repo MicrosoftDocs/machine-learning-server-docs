@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "R function library reference - Machine Learning Server "
 description: "Function reference for R packages in Machine Learning Server, including MicrosoftML, mrsdeploy, RevoScaleR, RevoPemaR, and others."
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 07/15/2019
 ms.topic: "reference"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

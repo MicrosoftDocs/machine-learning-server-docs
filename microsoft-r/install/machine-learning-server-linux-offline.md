@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Linux offline installation for Machine Learning Server 9.4 "
 description: "How to install Machine Learning Server for Linux with no internet connection."
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 12/17/2018
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

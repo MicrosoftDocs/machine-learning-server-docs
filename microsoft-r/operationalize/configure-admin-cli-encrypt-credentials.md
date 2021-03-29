@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Encrypt credentials and secrets - Machine Learning Server "
 description: "You should encrypt strings in the appsettings.json configuration file."
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 2/16/2018
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

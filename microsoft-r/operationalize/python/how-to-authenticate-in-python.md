@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Connect to Machine Learning Server in Python using azureml-model-management-sdk"
 description: "Publish and consume Python web services with Microsoft R Server"
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 2/16/2018
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Remote Execution with mrsdeploy - Machine Learning Server "
 description: "Execute on a remote server using the mrsdeploy package on Machine Learning Server"
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 2/16/2018
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

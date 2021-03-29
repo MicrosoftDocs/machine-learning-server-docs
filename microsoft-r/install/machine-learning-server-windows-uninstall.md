@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Uninstall Machine Learning Server for Windows"
 description: "How to uninstall Machine Learning Server for Windows."
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 02/16/2018
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

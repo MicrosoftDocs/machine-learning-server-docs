@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "sqlrutils Functions R Package for Machine Learning Server and R Server"
 description: "A package used for executing stored procedures on SQL Server from R script."
 keywords: sqlrutils package reference
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 02/02/2018
 ms.topic: "conceptual"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

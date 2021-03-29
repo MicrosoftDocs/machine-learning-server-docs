@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Import SQL data from Azure SQL Database and SQL Server (Machine Learning Server) "
 description: "How to import relational data from Azure SQL and SQL Server databases in RevoScaleR"
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 06/02/2017
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

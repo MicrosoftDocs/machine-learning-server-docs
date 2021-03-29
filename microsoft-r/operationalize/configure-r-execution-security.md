@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "R Execution Security Considerations and user isolation - Machine Learning Server "
 description: "Learn about security considerations with `deployr-rserve` which is a forked version of RServe maintained by Microsoft. This tool is used when operationalizing analytics with Machine Learning Server"
 keywords: RServe; deployr-rserve; user isolation
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 2/16/2018
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Merge data in RevoScaleR using rxSort (Machine Learning Server) "
 description: "How to merge data in a data frame or XDF file with the RevoScaleR rxMerge function."
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 06/06/2017
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

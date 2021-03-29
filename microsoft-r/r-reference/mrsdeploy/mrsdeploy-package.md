@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "mrsdeploy package for R - Machine Learning Server "
 description: "Function help reference for the mrsdeploy R package of Machine Learning Server."
 keywords: mrsdeploy package reference
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 07/15/2019
 ms.topic: "reference"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "RevoScaleR with Sparklyr example (Machine Learning Server) "
 description: "Sparklyr interoperability with RevoScaleR on Machine Learning Server"
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 07/05/2017
 ms.topic: "tutorial"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

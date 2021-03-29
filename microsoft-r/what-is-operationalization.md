@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Operationalize models, analytics, & web services in Machine Learning Server"
 description: "You can deploy and consume R and Python models in Machine Learning Server to operationalize them."
 keywords: 
@@ -8,6 +10,10 @@ manager: "cgronlun"
 ms.date: 07/15/2019
 ms.topic: "overview"
 ms.prod: "mlserver"
+
+# optional metadata
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

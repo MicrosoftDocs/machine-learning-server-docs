@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Link to Machine Learning Server from Python tools"
 description: "Link Python tools like PyCharm, Jupyter notebooks, and Visual Studio to Machine Learning Server Python executable and libraries"
 keywords: Machine Learning Server, python tools
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 03/12/2018
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: r

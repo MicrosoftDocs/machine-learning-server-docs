@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "How to set and manage compute context in Machine Learning Server "
 description: "Push a compute context to Machine Learning Server on a different computer or platform for remote execution."
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 01/16/2018
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

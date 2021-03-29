@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "How to use revoscalepy with Apache Spark - Machine Learning Server   "
 description: "Learn what you can do with revoscalepy in a Spark compute context in Machine learning Server."
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 09/19/2017
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

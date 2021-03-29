@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Import relational data using ODBC (Machine Learning Server) "
 description: "How to import relational data using ODBC and rxImport in RevoScaleR in Machine Learning Server"
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 05/25/2017
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

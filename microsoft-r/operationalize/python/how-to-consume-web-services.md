@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Consume web services in Python - Machine Learning Server "
 description: "Publish and consume Python web services with Machine Learning Server"
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 2/16/2018
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

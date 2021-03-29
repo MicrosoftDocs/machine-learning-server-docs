@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Deploy & manage Machine Learning Server web services in Python"
 description: "Manage your ML models in Python with the Machine Learning Server package, azureml-model-management-sdk"
 author: "dphansen"
@@ -7,6 +9,8 @@ manager: "cgronlun"
 ms.date: 2/16/2018
 ms.topic: "reference"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

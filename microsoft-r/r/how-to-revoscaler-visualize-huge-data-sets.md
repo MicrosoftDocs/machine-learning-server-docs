@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Visualizing Huge Data Sets using RevoScaleR (Machine Learning Server) "
 description: "Visualizing huge data sets with an example from the U.S. Census."
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 03/17/2016
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

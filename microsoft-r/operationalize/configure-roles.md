@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Control web services permissions with roles RBAC - Machine Learning Server "
 description: "Role based access control in Machine Learning Server using roles like owner, contributor, reader"
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 2/16/2018
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "How to transform and subset data in RevoScaleR (Machine Learning Server) "
 description: "How to manipulate and transform data in RevoScaleR."
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 06/04/2017
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

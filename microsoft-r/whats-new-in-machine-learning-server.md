@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "New in Machine Learning Server 9.4"
 description: "New features, improvements, and changes in release 9.4 of Machine Learning Server."
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 07/15/2019
 ms.topic: "overview"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Install Machine Learning Server for Linux"
 description: "How to install, connect to, and use Machine Learning Server on computers running a Linux operating system."
 keywords: ""
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: "12/17/2018"
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 
 # optional metadata
 #ROBOTS: ""

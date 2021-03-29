@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Use sqlrutils to convert R code to a stored procedure"
 description: "Use the sqlrutils R package in SQL Server to bundle R language code into a single function that can be passed as an argument to a stored procedure."
 ms.prod: "mlserver"

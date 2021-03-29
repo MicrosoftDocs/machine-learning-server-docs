@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Running jobs in parallel using rxExec"
 description: "Run jobs in parallele using the rxExec function in the RevoScaleR library."
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 01/16/2018
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Parallel execution using foreach and doRSR for script containing RevoScaleR and foreach constructs"
 description: "Parallel execution using the doRSR package for script containing RevoScaleR and foreach constructs."
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 01/03/2018
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

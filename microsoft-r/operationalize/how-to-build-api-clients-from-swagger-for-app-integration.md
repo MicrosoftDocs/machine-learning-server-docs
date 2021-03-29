@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Integrate web services & authentication into applications - Machine Learning Server "
 description: "Use Swagger to help integrate your R and Python analytics into your applications."
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 2/16/2018
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

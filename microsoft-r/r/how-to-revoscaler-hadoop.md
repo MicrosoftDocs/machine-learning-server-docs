@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "How to use RevoScaleR with Hadoop MapReduce "
 description: "Machine Learning Server with Apache Hadoop MapReduce, RevoScaleR features and components overview."
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 01/29/2018
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

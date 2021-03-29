@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Use RevoScaleR with SQL Server (Machine Learning Server) "
 description: "Overview and tutorial to using RevoScaleR in SQL Server databases."
 keywords: 
@@ -8,6 +10,8 @@ ms.manager: cgronlun
 ms.date: 08/11/2016
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

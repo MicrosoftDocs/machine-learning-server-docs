@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Get started with Machine Learning Server tutorials "
 description: "Learn Machine Learning Server step by step using tutorial exercises and sample data."
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 05/16/2017
 ms.topic: "tutorial"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

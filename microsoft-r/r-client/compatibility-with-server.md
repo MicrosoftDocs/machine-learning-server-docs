@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Microsoft R Client compatibility with Machine Learning Server and R Server "
 description: "Table of Microsoft R Client compatibility with various offerings of Machine Learning Server and Microsoft R Server."
 keywords: R Client compatibility, Microsoft R Client
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 2/16/2018
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

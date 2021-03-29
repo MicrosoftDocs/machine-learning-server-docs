@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Using foreach and iterators (Machine Learning Server) "
 description: "High level guide to using foreach and iterators packages."
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 01/03/2018
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

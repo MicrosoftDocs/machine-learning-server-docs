@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Data transformations in RevoScaleR - Machine Learning Server "
 description: "RevoScaleR transform functions."
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 02/16/2018
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Split data into multiple files using rxSplit (Machine Learning Server) "
 description: "Split data to train and test a model, or subdivide a large dataset into smaller files."
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 12/19/2017
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

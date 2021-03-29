@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Diagnostics & troubleshooting the Machine Learning Server configuration"
 description: "Troubleshooting and test your Machine Learning Server and R Server configuration or trace code executions"
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 5/08/2018
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Import text, SAS, and SPSS data into Machine Learning Server using rxImport "
 description: "Load data in Machine Learning Server using the RevoScaleR rxImport function."
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 05/22/2017
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

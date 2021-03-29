@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Cheat sheet: How to choose a MicrosoftML algorithm - Machine Learning Server "
 description: "A printable cheat sheet helps you choose a MicrosoftML package algorithm for a predictive model when using Machine Learning Server."
 keywords: MicrosoftML
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 09/25/2017
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

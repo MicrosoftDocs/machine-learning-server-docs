@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Configure Machine Learning Server 9.2.1 to operationalize analytics (one-box)"
 description: "Configure Operationalization for Machine Learning Server 9.2.1"
 keywords: setup machine learning server for deployment; install machine learning server for deploying
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 2/16/2018
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""

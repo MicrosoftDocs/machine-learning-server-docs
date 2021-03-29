@@ -1,4 +1,6 @@
 ---
+
+# required metadata
 title: "Create an XDF file (Machine Learning Server) "
 description: "How to import CSV and other files to create an XDF file on Machine Learning Server"
 keywords: 
@@ -8,6 +10,8 @@ manager: "cgronlun"
 ms.date: 02/16/2018
 ms.topic: "how-to"
 ms.prod: "mlserver"
+
+# optional metadata
 #ROBOTS: ""
 #audience: ""
 #ms.devlang: ""
