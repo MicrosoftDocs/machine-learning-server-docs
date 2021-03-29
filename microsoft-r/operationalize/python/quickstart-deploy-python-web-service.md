@@ -1,26 +1,21 @@
 ---
-
-# required metadata
-title: "How to deploy Python models as web services - Machine Learning Server "
-description: "How to deploy an python model as a service"
-keywords: "quickstart, Machine Learning Server, deploy python models"
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
-ms.date: "2/16/2018"
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: ""
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-#ms.technology: ""
-#ms.custom: ""
-
+title: How to deploy Python models as web services - Machine Learning Server 
+description: How to deploy an python model as a service
+keywords: quickstart, Machine Learning Server, deploy python models
+author: dphansen
+ms.author: davidph
+manager: cgronlun
+ms.date: 2/16/2018
+ms.topic: quickstart
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+#ms.technology: 
+#ms.custom: 
 ---
 # Quickstart: Deploy a Python model as a web service with azureml-model-management-sdk
 

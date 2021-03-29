@@ -1,26 +1,21 @@
 ---
-
-# required metadata
-title: "Configure Jupyter Notebooks in Machine Learning Server "
-description: "How to configure a Jupyter Notebook to call Python functions from revoscalepay and microsofml modules in Machine learning Server."
-keywords: ""
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
-ms.date: "12/17/2018"
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: ""
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-ms.technology: ""
-#ms.custom: ""
-
+title: Configure Jupyter Notebooks in Machine Learning Server 
+description: How to configure a Jupyter Notebook to call Python functions from revoscalepay and microsofml modules in Machine learning Server.
+keywords: 
+author: dphansen
+ms.author: davidph
+manager: cgronlun
+ms.date: 12/17/2018
+ms.topic: how-to
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+ms.technology: 
+#ms.custom: 
 ---
 
 # How to add Machine Learning Server modules to multi-user Jupyter Notebook instances
