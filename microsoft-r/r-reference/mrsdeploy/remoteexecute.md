@@ -4,7 +4,8 @@
 title: "remoteExecute function (mrsdeploy) | Microsoft Docs" 
 description: " Base function for executing a block of R code or an R script in the remote R session " 
 keywords: "(mrsdeploy), remoteExecute" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

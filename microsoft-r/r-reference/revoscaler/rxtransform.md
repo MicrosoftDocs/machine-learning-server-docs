@@ -4,7 +4,8 @@
 title: "rxTransform function (revoAnalytics) | Microsoft Docs" 
 description: " Description of the recommended method for creating *on the fly* variables. " 
 keywords: "(revoAnalytics), rxTransform, transformFunc, transformVars, models" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

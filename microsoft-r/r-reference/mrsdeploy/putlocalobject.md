@@ -4,7 +4,8 @@
 title: "putLocalObject function (mrsdeploy) | Microsoft Docs" 
 description: " Copy an object from the workspace of the local R session to the workspace  of the remote R session. " 
 keywords: "(mrsdeploy), putLocalObject" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

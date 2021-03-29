@@ -5,6 +5,7 @@ title: "Revolution R Information Functions"
 description: "Functions giving information about Revolution R. " 
 keywords: "RevoUtils, RevoInfo, RevoLicense, readme, revo, utilities, documentation" 
 author: "dphansen"
+ms.author: "davidph"
 ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019

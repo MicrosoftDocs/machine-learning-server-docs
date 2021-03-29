@@ -4,7 +4,8 @@
 title: "rxCreateColInfo function (revoAnalytics) | Microsoft Docs" 
 description: " Generates a colInfo list from a data source that can be used in rxImport or an RxDataSource constructor. " 
 keywords: "(revoAnalytics), rxCreateColInfo, file, connection" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

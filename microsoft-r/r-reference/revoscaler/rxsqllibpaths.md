@@ -4,7 +4,8 @@
 title: "rxSqlLibPaths function (revoAnalytics) | Microsoft Docs" 
 description: " Gets the search path for the library trees for packages while executing inside the SQL Server, using [RxInSqlServer](RxInSqlServer.md) compute context or using T-SQL script with sp_execute_external_script stored procedure with embedded R script. " 
 keywords: "(revoAnalytics), rxSqlLibPaths, use, packages, sql, install, uninstall, remove" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

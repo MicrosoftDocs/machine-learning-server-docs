@@ -4,7 +4,8 @@
 title: "rx_hadoop_command: Execute Hadoop commands (revoscalepy)" 
 description: "Executes arbitrary Hadoop commands and performs standard file operations in Hadoop." 
 keywords: "Hadoop Command" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

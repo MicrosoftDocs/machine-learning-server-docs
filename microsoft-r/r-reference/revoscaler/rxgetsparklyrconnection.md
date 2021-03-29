@@ -4,7 +4,8 @@
 title: "rxGetSparklyrConnection function (revoAnalytics) | Microsoft Docs" 
 description: " Get a Spark compute context with sparklyr interop.  rxGetSparklyrConnection get sparklyr spark connection from created Spark compute context. " 
 keywords: "(revoAnalytics), rxGetSparklyrConnection" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

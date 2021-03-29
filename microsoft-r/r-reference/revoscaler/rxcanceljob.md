@@ -4,7 +4,8 @@
 title: "rxCancelJob function (revoAnalytics) | Microsoft Docs" 
 description: " Causes R to cancel an existing distributed computing job. " 
 keywords: "(revoAnalytics), rxCancelJob, rxCancelJob,list-method, rxCancelJob,RxDistributedJob-method, rxCancelJob,RxDistributedHadoopMRJob-method, rxCancelJob,RxDistributedSqlServerJob-method, rxCancelJob,RxDistributedTeradataJob-method, rxCancelJob,ANY-method, IO" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

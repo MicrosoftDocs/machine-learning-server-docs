@@ -4,7 +4,8 @@
 title: "remoteLogin function (mrsdeploy) | Microsoft Docs" 
 description: "remoteLogin: Authenticates the user and creates a remote R session. " 
 keywords: "(mrsdeploy), remoteLogin" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

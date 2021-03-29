@@ -4,7 +4,8 @@
 title: "rx_get_pyspark_connection: Get pyspark spark_context connection from Spark compute context (revoscalepy)" 
 description: "Gets a PySpark connection from the current Spark compute context." 
 keywords: "" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

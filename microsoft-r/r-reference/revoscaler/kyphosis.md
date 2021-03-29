@@ -4,7 +4,8 @@
 title: "Kyphosis data (revoAnalytics) | Microsoft Docs" 
 description: " The kyphosis data in .xdf format. " 
 keywords: "(revoAnalytics), Kyphosis, kyphosis.xdf, datasets" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

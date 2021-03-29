@@ -4,7 +4,8 @@
 title: "getService function (mrsdeploy) | Microsoft Docs" 
 description: " Get a web service for consumption on running on R Server. " 
 keywords: "(mrsdeploy), getService" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

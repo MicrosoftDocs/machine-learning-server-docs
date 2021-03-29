@@ -4,7 +4,8 @@
 title: "rxTlcBridge function (revoAnalytics) | Microsoft Docs" 
 description: " Bridge code for additional packages " 
 keywords: "(revoAnalytics), rxTlcBridge" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

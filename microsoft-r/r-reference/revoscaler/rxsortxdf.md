@@ -4,7 +4,8 @@
 title: "rxSort function (revoAnalytics) | Microsoft Docs" 
 description: " Efficient multi-key sorting of the variables in an .xdf file or data frame in a local compute context. " 
 keywords: "(revoAnalytics), rxSort, file" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

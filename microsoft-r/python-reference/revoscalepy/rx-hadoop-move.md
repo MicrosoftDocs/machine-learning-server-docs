@@ -4,7 +4,8 @@
 title: "rx_hadoop_move: Execute Hadoop move commands (revoscalepy)" 
 description: "Wraps the Hadoop fs -mv command." 
 keywords: "Hadoop Command" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

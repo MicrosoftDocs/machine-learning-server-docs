@@ -4,7 +4,8 @@
 title: "as.lm function (revoAnalytics) | Microsoft Docs" 
 description: " Converts objects containing linear model results to an lm object. " 
 keywords: "(revoAnalytics), as.lm, as.lm.rxLinMod, category, models" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

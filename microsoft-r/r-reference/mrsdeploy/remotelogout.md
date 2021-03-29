@@ -4,7 +4,8 @@
 title: "remoteLogout function (mrsdeploy) | Microsoft Docs" 
 description: " Logout of the remote session on the R Server. " 
 keywords: "(mrsdeploy), remoteLogout" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

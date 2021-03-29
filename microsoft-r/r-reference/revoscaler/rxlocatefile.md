@@ -4,7 +4,8 @@
 title: "rxLocateFile function (revoAnalytics) | Microsoft Docs" 
 description: " Obtain the normalized absolute path to the first occurrence of the specified input file  in the specified set of paths. " 
 keywords: "(revoAnalytics), rxLocateFile, IO" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

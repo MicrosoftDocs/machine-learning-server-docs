@@ -4,7 +4,8 @@
 title: "rx_get_job_results: Obtain Distributed Computing Job Status and Results (revoscalepy)" 
 description: "Obtain distributed computing results and processing status." 
 keywords: "" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

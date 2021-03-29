@@ -4,7 +4,8 @@
 title: "RxSpssData function (revoAnalytics) | Microsoft Docs" 
 description: " Generate an RxSpssData object that contains information about an SPSS data set to be imported or analyzed. RxSpssData is an S4 class, which extends  RxDataSource." 
 keywords: "(revoAnalytics), RxSpssData, head.RxSpssData, tail.RxSpssData, file, connection" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019 
 ms.topic: "reference" 

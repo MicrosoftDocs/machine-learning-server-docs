@@ -4,7 +4,8 @@
 title: "deleteService function (mrsdeploy) | Microsoft Docs" 
 description: " Delete a web service on an R Server instance. " 
 keywords: "(mrsdeploy), deleteService" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

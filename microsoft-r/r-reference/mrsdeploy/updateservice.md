@@ -4,7 +4,8 @@
 title: "updateService function (mrsdeploy) | Microsoft Docs" 
 description: " Updates an existing web service on an R Server instance. " 
 keywords: "(mrsdeploy), updateService" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

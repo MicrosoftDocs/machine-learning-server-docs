@@ -4,7 +4,8 @@
 title: "featurizeImage function (MicrosoftML) " 
 description: " Featurizes an image using a pre-trained deep neural network model. " 
 keywords: "(MicrosoftML), featurizeImage, alexnet, cnn, dnn, featurize, image, resnet, transform" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

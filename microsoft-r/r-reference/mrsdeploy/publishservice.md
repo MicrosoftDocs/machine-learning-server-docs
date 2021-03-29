@@ -4,7 +4,8 @@
 title: "publishService function (mrsdeploy) | Microsoft Docs" 
 description: " Publishes an R code block or a real-time model as a new web service running on R Server." 
 keywords: "(mrsdeploy), publishService" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

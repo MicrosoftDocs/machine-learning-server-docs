@@ -4,7 +4,8 @@
 title: "loss functions function (MicrosoftML) " 
 description: " The loss functions for classification and regression. " 
 keywords: "(MicrosoftML), loss functions, expLoss, hingeLoss, logLoss, poissonLoss, smoothHingeLoss, squaredLoss, loss" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

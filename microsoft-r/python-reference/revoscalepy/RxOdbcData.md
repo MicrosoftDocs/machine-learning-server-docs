@@ -4,7 +4,8 @@
 title: "RxOdbcData: Class generator for ODBC data source objects (revoscalepy)" 
 description: "Main generator for class RxOdbcData, which extends RxDataSource." 
 keywords: "odbc, datasource" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

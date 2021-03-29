@@ -4,7 +4,8 @@
 title: "getRemoteWorkspace function (mrsdeploy) | Microsoft Docs" 
 description: " Copy all objects from the remote R session and load them into the local R session. " 
 keywords: "(mrsdeploy), getRemoteWorkspace" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

@@ -4,7 +4,8 @@
 title: "configureServicePool function (mrsdeploy) | Microsoft Docs" 
 description: " Create or Update a dedicated pool for a published web service running on Machine Learning Server. " 
 keywords: "(mrsdeploy), configureServicePool" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

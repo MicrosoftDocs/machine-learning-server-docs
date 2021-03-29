@@ -5,6 +5,7 @@ title: "MicrosoftML package for R (Microsoft Machine Learning Server and SQL Ser
 description: "Function help reference for the MicrosoftML R package of Microsoft R." 
 keywords: "MicrosoftML-package, package" 
 author: "dphansen"
+ms.author: "davidph"
 ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019

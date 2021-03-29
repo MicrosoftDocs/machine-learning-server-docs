@@ -4,7 +4,8 @@
 title: "getInputParameters function (sqlrutils) | Microsoft Docs" 
 description: " getInputParameters: returns a list of SQL Server parameter objects                     that describe the input parameters associated                     with a stored procedure " 
 keywords: "(sqlrutils), getInputParameters" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

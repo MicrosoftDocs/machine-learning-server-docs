@@ -4,7 +4,8 @@
 title: "oneClassSvm function (MicrosoftML) " 
 description: " Creates a list containing the function name and arguments to train a  OneClassSvm model with [rxEnsemble](rxEnsemble.md). " 
 keywords: "(MicrosoftML), oneClassSvm" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

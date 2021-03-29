@@ -4,7 +4,8 @@
 title: "rxResultsDF function (revoAnalytics) | Microsoft Docs" 
 description: " Obtain a counts, sums, or means data frame from an analysis object. " 
 keywords: "(revoAnalytics), rxResultsDF, rxResultsDF.rxCrossTabs, rxResultsDF.rxCube, rxResultsDF.rxLinMod, rxResultsDF.rxLogit, rxResultsDF.rxSummary, category, models" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

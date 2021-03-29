@@ -4,7 +4,8 @@
 title: "rxInstallPackages function (revoAnalytics) | Microsoft Docs" 
 description: " Install R packages from repositories or install local files for the current session.  " 
 keywords: "(revoAnalytics), rxInstallPackages, install, use, packages, sql" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 
