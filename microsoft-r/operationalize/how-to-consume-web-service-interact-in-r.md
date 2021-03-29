@@ -1,26 +1,21 @@
 ---
-
-# required metadata
-title: "Get & consume web services in R with mrsdeploy - Machine Learning Server "
-description: "Web service interaction and consumption functions in the mrsdeploy package."
-keywords: "mrsdeploy package"
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
-ms.date: "2/16/2018"
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: ""
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-#ms.technology: ""
-#ms.custom: ""
-
+title: Get & consume web services in R with mrsdeploy - Machine Learning Server 
+description: Web service interaction and consumption functions in the mrsdeploy package.
+keywords: mrsdeploy package
+author: dphansen
+ms.author: davidph
+manager: cgronlun
+ms.date: 2/16/2018
+ms.topic: how-to
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+#ms.technology: 
+#ms.custom: 
 ---
 
 # How to interact with and consume web services in R with mrsdeploy 

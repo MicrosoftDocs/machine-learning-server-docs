@@ -1,26 +1,21 @@
 ---
-
-# required metadata
-title: "Connect remotely using mrsdeploy - Machine Learning Server "
-description: "Logging into Machine Learning Server and connecting with mrsdeploy"
-keywords: "Machine Learning Server, remote login to r server, connect to r server, mrsdeploy connection, log into r server"
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
-ms.date: "2/16/2018"
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: ""
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-#ms.technology: ""
-#ms.custom: ""
-
+title: Connect remotely using mrsdeploy - Machine Learning Server 
+description: Logging into Machine Learning Server and connecting with mrsdeploy
+keywords: Machine Learning Server, remote login to r server, connect to r server, mrsdeploy connection, log into r server
+author: dphansen
+ms.author: davidph
+manager: cgronlun
+ms.date: 2/16/2018
+ms.topic: how-to
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+#ms.technology: 
+#ms.custom: 
 ---
 
 # Log in to Machine Learning Server or R Server with mrsdeploy and open a remote session

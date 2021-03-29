@@ -1,25 +1,21 @@
 ---
-
-# required metadata
-title: "Control web services permissions with roles RBAC - Machine Learning Server "
-description: "Role based access control in Machine Learning Server using roles like owner, contributor, reader"
-keywords: ""
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
-ms.date: "2/16/2018"
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: ""
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-#ms.technology: ""
-#ms.custom: ""
+title: Control web services permissions with roles RBAC - Machine Learning Server 
+description: Role based access control in Machine Learning Server using roles like owner, contributor, reader
+keywords: 
+author: dphansen
+ms.author: davidph
+manager: cgronlun
+ms.date: 2/16/2018
+ms.topic: how-to
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+#ms.technology: 
+#ms.custom: 
 ---
 
 # Roles and permissions (RBAC)

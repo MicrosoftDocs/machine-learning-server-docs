@@ -1,25 +1,21 @@
 ---
-
-# required metadata
-title: "R Execution Security Considerations and user isolation - Machine Learning Server "
-description: "Learn about security considerations with `deployr-rserve` which is a forked version of RServe maintained by Microsoft. This tool is used when operationalizing analytics with Machine Learning Server"
-keywords: "RServe; deployr-rserve; user isolation"
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
-ms.date: "2/16/2018"
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: ""
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-#ms.technology: ""
-#ms.custom: ""
+title: R Execution Security Considerations and user isolation - Machine Learning Server 
+description: Learn about security considerations with `deployr-rserve` which is a forked version of RServe maintained by Microsoft. This tool is used when operationalizing analytics with Machine Learning Server
+keywords: RServe; deployr-rserve; user isolation
+author: dphansen
+ms.author: davidph
+manager: cgronlun
+ms.date: 2/16/2018
+ms.topic: how-to
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+#ms.technology: 
+#ms.custom: 
 ---
 
 # R Execution Security Considerations
