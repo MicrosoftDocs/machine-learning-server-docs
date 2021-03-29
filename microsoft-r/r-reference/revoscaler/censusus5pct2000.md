@@ -4,7 +4,8 @@
 title: "CensusUS5Pct2000 data (revoAnalytics) | Microsoft Docs" 
 description: " The IPUMS 5% sample of the 2000 U.S. Census data in .xdf format. " 
 keywords: "(revoAnalytics), CensusUS5Pct2000, CensusUS5Pct2000.xdf, datasets" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

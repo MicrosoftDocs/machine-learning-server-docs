@@ -4,7 +4,8 @@
 title: "StoredProcedure function (sqlrutils) | Microsoft Docs" 
 description: " StoredProcedure: generates a SQLServer Stored Procedure Object   and optionally a .sql file containing a query to create a stored   procedure. StoredProcedure$registrationVec contains strings   representing the queries needed for creation of the stored procedure " 
 keywords: "(sqlrutils), StoredProcedure" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

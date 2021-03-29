@@ -4,7 +4,8 @@
 title: "rxMakeRNodeNames function (revoAnalytics) | Microsoft Docs" 
 description: " Converts valid computer names into valid R variable names.  Should only be used when you want to guarantee that host  names are usable as variable names. " 
 keywords: "(revoAnalytics), rxMakeRNodeNames, IO" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

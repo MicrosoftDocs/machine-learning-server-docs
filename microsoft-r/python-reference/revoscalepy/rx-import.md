@@ -4,7 +4,8 @@
 title: "rx_import: Import Data to .xdf or data frame (revoscalepy)" 
 description: "Import data and store as an .xdf file on disk or in-memory as a data.frame object." 
 keywords: "import, datasource" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

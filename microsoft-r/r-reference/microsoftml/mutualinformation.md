@@ -4,7 +4,8 @@
 title: "mutualInformation function (MicrosoftML) " 
 description: " Mutual information mode of feature selection used in the feature selection transform [selectFeatures](selectFeatures.md). " 
 keywords: "(MicrosoftML), mutualInformation, feature, information, mutual, selection" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

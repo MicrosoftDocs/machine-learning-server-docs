@@ -4,7 +4,8 @@
 title: "rx_hadoop_remove_dir: Execute Hadoop remove directory commands (revoscalepy)" 
 description: "Wraps the Hadoop fs -rm -r  or fs -rm -r -skipTrash command." 
 keywords: "Hadoop Command" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

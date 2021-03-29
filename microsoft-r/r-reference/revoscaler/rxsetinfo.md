@@ -4,7 +4,8 @@
 title: "rxSetInfo function (revoAnalytics) | Microsoft Docs" 
 description: " Set .xdf file or data frame information, such as a description " 
 keywords: "(revoAnalytics), rxSetInfo,  attribute " 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

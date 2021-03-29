@@ -4,7 +4,8 @@
 title: "rxStepControl function (revoAnalytics) | Microsoft Docs" 
 description: "     Various parameters that control aspects of stepwise regression. " 
 keywords: "(revoAnalytics), rxStepControl, models, classification, regression" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

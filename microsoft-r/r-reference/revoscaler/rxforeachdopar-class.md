@@ -4,7 +4,8 @@
 title: "RxForeachDoPar-class class (revoAnalytics) | Microsoft Docs" 
 description: "   Class for the RevoScaleR Compute Context using one of the foreach dopar back ends.   " 
 keywords: "(revoAnalytics), RxForeachDoPar-class, show,RxForeachDoPar-method, classes" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

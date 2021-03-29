@@ -4,7 +4,8 @@
 title: "RxNativeFileSystem: Class generator for the native file system (revoscalepy)" 
 description: "Main generator class for objects repreresenting the native file system." 
 keywords: "filesystem native" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

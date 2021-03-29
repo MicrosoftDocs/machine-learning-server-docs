@@ -4,7 +4,8 @@
 title: "rx_btrees: Fits stochastic gradient boosted decision trees (revoscalepy)" 
 description: "Fit stochastic gradient boosted decision trees on an .xdf file or data frame for small or large data using parallel external memory algorithm." 
 keywords: "learner, tree" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

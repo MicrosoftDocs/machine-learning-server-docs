@@ -4,7 +4,8 @@
 title: "RxDataSource-class class (revoAnalytics) | Microsoft Docs" 
 description: "   Base class for all Microsoft R Services Compute Engine data sources.   " 
 keywords: "(revoAnalytics), RxDataSource-class, names,RxDataSource-method, show,RxDataSource-method, classes" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

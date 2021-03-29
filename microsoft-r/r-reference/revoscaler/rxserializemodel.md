@@ -4,7 +4,8 @@
 title: "rxSerializeModel function (revoAnalytics) | Microsoft Docs" 
 description: "   Serialize a **RevoScaleR**/**MicrosoftML** model in raw format to enable saving the model. This allows model to be loaded into SQL Server for real-time scoring. " 
 keywords: "(revoAnalytics), rxSerializeModel, rxUnserializeModel" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

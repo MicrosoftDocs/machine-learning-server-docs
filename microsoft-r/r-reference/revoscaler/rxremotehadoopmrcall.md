@@ -4,7 +4,8 @@
 title: "rxRemoteHadoopMRCall function (revoAnalytics) | Microsoft Docs" 
 description: "Function that is executed by a master process in a Hadoop MapReduce cluster. This function should **not** be called directly by the user. It serves as an internal mechanism for performing remote and distributed R calls on  a Hadoop MapReduce cluster." 
 keywords: "(revoAnalytics), rxRemoteHadoopMRCall, datasets" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

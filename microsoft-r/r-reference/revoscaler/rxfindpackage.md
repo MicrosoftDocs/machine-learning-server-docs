@@ -4,7 +4,8 @@
 title: "rxFindPackage function (revoAnalytics) | Microsoft Docs" 
 description: " Find the path for one or more packages for a compute context. " 
 keywords: "(revoAnalytics), rxFindPackage, packages, sql, install, uninstall, remove, use" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

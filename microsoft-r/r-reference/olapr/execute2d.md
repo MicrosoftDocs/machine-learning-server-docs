@@ -4,7 +4,8 @@
 title: "execute2D function (olapR) | Microsoft Docs" 
 description: "   Takes a Query object or an MDX string, and returns the result as a data frame. " 
 keywords: "(olapR), execute2D" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

@@ -4,7 +4,8 @@
 title: "rxGetNodeInfo function (revoAnalytics) | Microsoft Docs" 
 description: " Provides information about the capabilities of the nodes on a cluster. " 
 keywords: "(revoAnalytics), rxGetNodeInfo, IO" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019 
 ms.topic: "reference" 

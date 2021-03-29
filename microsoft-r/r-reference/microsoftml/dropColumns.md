@@ -4,7 +4,8 @@
 title: "dropColumns function (MicrosoftML) " 
 description: " Specified columns to drop from the dataset. " 
 keywords: "(MicrosoftML), dropColumns, transform" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

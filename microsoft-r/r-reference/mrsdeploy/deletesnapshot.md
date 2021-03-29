@@ -4,11 +4,12 @@
 title: "deleteSnapshot function (mrsdeploy) | Microsoft Docs" 
 description: " Deletes the specified snapshot from the repository on the R Server. " 
 keywords: "(mrsdeploy), deleteSnapshot" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver"  
 ms.service: "" 
 ms.assetid: "" 
 
@@ -19,7 +20,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+ms.technology: "" 
 ms.custom: "" 
 
 --- 

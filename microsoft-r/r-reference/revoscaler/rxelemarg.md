@@ -4,7 +4,8 @@
 title: "rxElemArg function (revoAnalytics) | Microsoft Docs" 
 description: " Allows different argument values to be passed to different (named and unnamed) nodes or cores through the elipsis argument for rxExec. A vector or list of the argument values is used. " 
 keywords: "(revoAnalytics), rxElemArg, IO" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

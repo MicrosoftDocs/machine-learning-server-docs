@@ -4,12 +4,12 @@
 title: "MLServer class for Microsoft Machine Learning Server"
 description: "This MLServer class is for Microsoft ML Server Python package for managing web services, azureml-model-management-sdk" 
 keywords: "" 
-author: "dphansen" 
-ms.author: "davidph"
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver"  
 ms.service: "" 
 ms.assetid: "" 
  
@@ -20,7 +20,7 @@ ms.devlang: "Python"
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+ms.technology: "" 
 ms.custom: "" 
  
 ---

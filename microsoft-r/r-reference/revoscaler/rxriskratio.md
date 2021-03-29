@@ -4,7 +4,8 @@
 title: "rxRiskRatio function (revoAnalytics) | Microsoft Docs" 
 description: " Calculate the relative risk and odds ratio on a two-by-two table. " 
 keywords: "(revoAnalytics), rxRiskRatio, rxOddsRatio, htest" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

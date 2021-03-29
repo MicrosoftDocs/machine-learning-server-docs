@@ -4,7 +4,8 @@
 title: "as.gbm function (revoAnalytics) | Microsoft Docs" 
 description: " Converts objects containing decision tree results to an gbm object. " 
 keywords: "(revoAnalytics), as.gbm, as.gbm.rxBTrees, as.gbm.rxDTree, as.gbm.rpart, category, models" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 
