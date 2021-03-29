@@ -1,21 +1,21 @@
 ---
-title: R Package Management when operationalizing - Machine Learning Server 
-description: R Package Management with Machine Learning Server
+title: "R Package Management when operationalizing - Machine Learning Server "
+description: "R Package Management with Machine Learning Server"
 keywords: 
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 2/16/2018
-ms.topic: how-to
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
-#ms.technology: 
-#ms.custom: 
+ms.topic: "how-to"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
+#ms.technology: ""
+#ms.custom: ""
 ---
 
 # R package management when operationalizing analytics with Machine Learning Server

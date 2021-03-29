@@ -1,21 +1,21 @@
 ---
-title: sqlrutils Functions R Package for Machine Learning Server and R Server
-description: A package used for executing stored procedures on SQL Server from R script.
+title: "sqlrutils Functions R Package for Machine Learning Server and R Server"
+description: "A package used for executing stored procedures on SQL Server from R script."
 keywords: sqlrutils package reference
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 02/02/2018
-ms.topic: conceptual
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
-#ms.technology: 
-#ms.custom: 
+ms.topic: "conceptual"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
+#ms.technology: ""
+#ms.custom: ""
 ---
 
 # sqlrutils package

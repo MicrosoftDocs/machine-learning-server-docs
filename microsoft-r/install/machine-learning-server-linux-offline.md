@@ -1,21 +1,21 @@
 ---
-title: Linux offline installation for Machine Learning Server 9.4 
-description: How to install Machine Learning Server for Linux with no internet connection.
+title: "Linux offline installation for Machine Learning Server 9.4 "
+description: "How to install Machine Learning Server for Linux with no internet connection."
 keywords: 
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 12/17/2018
-ms.topic: how-to
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
-#ms.technology: 
-#ms.custom: 
+ms.topic: "how-to"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
+#ms.technology: ""
+#ms.custom: ""
 ---
 
 # Offline installation Machine Learning Server for Linux 

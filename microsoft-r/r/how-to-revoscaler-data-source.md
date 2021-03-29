@@ -1,21 +1,21 @@
 ---
-title: Data source objects in RevoScaleR (Machine Learning Server) 
-description: Learn when and how to create data source objects in R code leveraging the RevoScaleR function libraries.
+title: "Data source objects in RevoScaleR (Machine Learning Server) "
+description: "Learn when and how to create data source objects in R code leveraging the RevoScaleR function libraries."
 keywords: 
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 06/04/2017
-ms.topic: how-to
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
-#ms.technology: 
-#ms.custom: 
+ms.topic: "how-to"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
+#ms.technology: ""
+#ms.custom: ""
 ---
 
 # Data Sources in RevoScaleR

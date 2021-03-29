@@ -1,21 +1,21 @@
 ---
-title: APIs for operationalizing your models and analytics - Machine Learning Server 
-description: Operationalization APIs for authenticating, publishing, managing, and consuming web services with Machine Learning Server  or Microsoft R Server.
+title: "APIs for operationalizing your models and analytics - Machine Learning Server "
+description: "Operationalization APIs for authenticating, publishing, managing, and consuming web services with Machine Learning Server  or Microsoft R Server."
 keywords: 
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 2/16/2018
-ms.topic: how-to
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
-#ms.technology: 
-#ms.custom: 
+ms.topic: "how-to"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
+#ms.technology: ""
+#ms.custom: ""
 ---
 
 # APIs for operationalizing your models and analytics with Machine Learning Server  

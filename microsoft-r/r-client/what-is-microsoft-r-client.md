@@ -1,21 +1,21 @@
 ---
-title: What is Microsoft R Client? - Machine Learning Server 
-description: Microsoft R Client is a free data science tool for high performance analytics. With it, you can use any open-source R package.
+title: "What is Microsoft R Client? - Machine Learning Server "
+description: "Microsoft R Client is a free data science tool for high performance analytics. With it, you can use any open-source R package."
 keywords: R Client, Microsoft R Client, Introduction, Get Started with R Client
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 02/16/2018
-ms.topic: conceptual
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
-#ms.technology: 
-#ms.custom: 
+ms.topic: "conceptual"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
+#ms.technology: ""
+#ms.custom: ""
 ---
 
 # About Microsoft R Client

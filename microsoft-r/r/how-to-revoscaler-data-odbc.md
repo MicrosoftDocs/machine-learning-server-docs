@@ -1,21 +1,21 @@
 ---
-title: Import relational data using ODBC (Machine Learning Server) 
-description: How to import relational data using ODBC and rxImport in RevoScaleR in Machine Learning Server
+title: "Import relational data using ODBC (Machine Learning Server) "
+description: "How to import relational data using ODBC and rxImport in RevoScaleR in Machine Learning Server"
 keywords: 
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 05/25/2017
-ms.topic: how-to
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
-#ms.technology: 
-#ms.custom: 
+ms.topic: "how-to"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
+#ms.technology: ""
+#ms.custom: ""
 ---
 
 # Import relational data using ODBC 

@@ -1,21 +1,21 @@
 ---
-title: Encrypt credentials and secrets - Machine Learning Server 
-description: You should encrypt strings in the appsettings.json configuration file.
+title: "Encrypt credentials and secrets - Machine Learning Server "
+description: "You should encrypt strings in the appsettings.json configuration file."
 keywords: 
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 2/16/2018
-ms.topic: how-to
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
-#ms.technology: 
-#ms.custom: 
+ms.topic: "how-to"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
+#ms.technology: ""
+#ms.custom: ""
 ---
 
 # Encrypt credentials and secrets

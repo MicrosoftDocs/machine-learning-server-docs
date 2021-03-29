@@ -1,21 +1,21 @@
 ---
-title: Diagnostics & troubleshooting the Machine Learning Server configuration
-description: Troubleshooting and test your Machine Learning Server and R Server configuration or trace code executions
+title: "Diagnostics & troubleshooting the Machine Learning Server configuration"
+description: "Troubleshooting and test your Machine Learning Server and R Server configuration or trace code executions"
 keywords: 
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 5/08/2018
-ms.topic: how-to
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
-#ms.technology: 
-#ms.custom: 
+ms.topic: "how-to"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
+#ms.technology: ""
+#ms.custom: ""
 ---
 
 # Troubleshooting & diagnostics for Machine Learning Server

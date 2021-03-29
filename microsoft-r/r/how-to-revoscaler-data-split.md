@@ -1,21 +1,21 @@
 ---
-title: Split data into multiple files using rxSplit (Machine Learning Server) 
-description: Split data to train and test a model, or subdivide a large dataset into smaller files.
+title: "Split data into multiple files using rxSplit (Machine Learning Server) "
+description: "Split data to train and test a model, or subdivide a large dataset into smaller files."
 keywords: 
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 12/19/2017
-ms.topic: how-to
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
-#ms.technology: 
-#ms.custom: 
+ms.topic: "how-to"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
+#ms.technology: ""
+#ms.custom: ""
 ---
 
 # How to split datasets for model training and testing

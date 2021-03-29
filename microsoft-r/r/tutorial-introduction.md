@@ -1,21 +1,21 @@
 ---
-title: Get started with Machine Learning Server tutorials 
-description: Learn Machine Learning Server step by step using tutorial exercises and sample data.
+title: "Get started with Machine Learning Server tutorials "
+description: "Learn Machine Learning Server step by step using tutorial exercises and sample data."
 keywords: 
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 05/16/2017
-ms.topic: tutorial
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
+ms.topic: "tutorial"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 m.technology:  
-#ms.custom: 
+#ms.custom: ""
 ---
 
 # Tutorials and sample data for Machine Learning Server

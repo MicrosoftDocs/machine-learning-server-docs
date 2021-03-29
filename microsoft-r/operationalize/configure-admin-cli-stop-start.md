@@ -1,21 +1,21 @@
 ---
-title: Stop or start web and compute nodes on Machine Learning Server 
-description: Monitor, stop or start the services for web or compute nodes for Machine Learning Server operationalization
+title: "Stop or start web and compute nodes on Machine Learning Server "
+description: "Monitor, stop or start the services for web or compute nodes for Machine Learning Server operationalization"
 keywords: 
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 2/16/2018
-ms.topic: how-to
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
-#ms.technology: 
-#ms.custom: 
+ms.topic: "how-to"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
+#ms.technology: ""
+#ms.custom: ""
 ---
 
 # Monitor, stop, and start web & compute nodes

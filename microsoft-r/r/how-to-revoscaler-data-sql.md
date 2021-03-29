@@ -1,21 +1,21 @@
 ---
-title: Import SQL data from Azure SQL Database and SQL Server (Machine Learning Server) 
-description: How to import relational data from Azure SQL and SQL Server databases in RevoScaleR
+title: "Import SQL data from Azure SQL Database and SQL Server (Machine Learning Server) "
+description: "How to import relational data from Azure SQL and SQL Server databases in RevoScaleR"
 keywords: 
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 06/02/2017
-ms.topic: how-to
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
-#ms.technology: 
-#ms.custom: 
+ms.topic: "how-to"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
+#ms.technology: ""
+#ms.custom: ""
 ---
 
 # Import SQL Server relational data

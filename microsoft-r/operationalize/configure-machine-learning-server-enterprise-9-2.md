@@ -1,21 +1,21 @@
 ---
-title: Configure Machine Learning Server 9.2.1 to operationalize analytics (Enterprise)
-description: Configure Machine Learning Server 9.2.1 to operationalize analytics (Enterprise setup) with load balancing
+title: "Configure Machine Learning Server 9.2.1 to operationalize analytics (Enterprise)"
+description: "Configure Machine Learning Server 9.2.1 to operationalize analytics (Enterprise setup) with load balancing"
 keywords: setup machine learning server for deployment; install machine learning server for deploying
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 2/16/2018
-ms.topic: how-to
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
-#ms.technology: 
-#ms.custom: 
+ms.topic: "how-to"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
+#ms.technology: ""
+#ms.custom: ""
 ---
 
 # Configure Machine Learning Server 9.2.1 to operationalize analytics (Enterprise)

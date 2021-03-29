@@ -1,21 +1,21 @@
 ---
-title: Writing custom analyses for large data sets using RevoScaleR (Machine Learning Server) 
-description: Get started with custom analysis of big data using RevoScaleR functions in Machine Learning Server.
+title: "Writing custom analyses for large data sets using RevoScaleR (Machine Learning Server) "
+description: "Get started with custom analysis of big data using RevoScaleR functions in Machine Learning Server."
 keywords: 
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 01/03/2018
-ms.topic: how-to
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
-#ms.technology: 
-#ms.custom: 
+ms.topic: "how-to"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
+#ms.technology: ""
+#ms.custom: ""
 ---
 
 # Writing custom analyses for large data sets in RevoScaleR

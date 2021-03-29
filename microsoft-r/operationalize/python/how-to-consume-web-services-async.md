@@ -1,21 +1,21 @@
 ---
-title: Consume web services asynchronously with batch scoring in Python  - Machine Learning Server 
-description: Asynchronous web service consumption via batch processing in Python - Machine Learning Server
+title: "Consume web services asynchronously with batch scoring in Python  - Machine Learning Server "
+description: "Asynchronous web service consumption via batch processing in Python - Machine Learning Server"
 keywords: batch processing of web services
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 2/16/2018
-ms.topic: how-to
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
-#ms.technology: 
-#ms.custom: 
+ms.topic: "how-to"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
+#ms.technology: ""
+#ms.custom: ""
 ---
 
 # Asynchronous web service consumption via batch processing in Python 

@@ -1,13 +1,13 @@
 ---
-title: Use sqlrutils to convert R code to a stored procedure
-description: Use the sqlrutils R package in SQL Server to bundle R language code into a single function that can be passed as an argument to a stored procedure.
-ms.prod: mlserver
+title: "Use sqlrutils to convert R code to a stored procedure"
+description: "Use the sqlrutils R package in SQL Server to bundle R language code into a single function that can be passed as an argument to a stored procedure."
+ms.prod: "mlserver"
 ms.technology: 
 
 ms.date: 03/04/2021  
-ms.topic: how-to
-author: garyericson
-ms.author: garye
+ms.topic: "how-to"
+author: "garyericson"
+ms.author: "garye"
 ms.reviewer: garye, davidph
 ms.custom: 
 ---

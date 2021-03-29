@@ -1,21 +1,21 @@
 ---
-title: How to use revoscalepy with Apache Spark - Machine Learning Server   
-description: Learn what you can do with revoscalepy in a Spark compute context in Machine learning Server.
+title: "How to use revoscalepy with Apache Spark - Machine Learning Server   "
+description: "Learn what you can do with revoscalepy in a Spark compute context in Machine learning Server."
 keywords: 
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 09/19/2017
-ms.topic: how-to
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
+ms.topic: "how-to"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology: 
-#ms.custom: 
+#ms.custom: ""
 ---
 
 # How to use revoscalepy in a Spark compute context

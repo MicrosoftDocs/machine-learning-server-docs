@@ -1,21 +1,21 @@
 ---
-title: Enforcing YARN Queue Usage (Microsoft R Server for Hadoop)
-description: Enforce YARN queue usage for a  Microsoft R Server installation on a Hadoop cluster.
+title: "Enforcing YARN Queue Usage (Microsoft R Server for Hadoop)"
+description: "Enforce YARN queue usage for a  Microsoft R Server installation on a Hadoop cluster."
 keywords: 
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 01/19/2017
-ms.topic: how-to
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
-#ms.technology: 
-#ms.custom: 
+ms.topic: "how-to"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
+#ms.technology: ""
+#ms.custom: ""
 ---
 # Enforcing YARN queue usage
 

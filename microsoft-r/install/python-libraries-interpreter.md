@@ -1,21 +1,21 @@
 ---
-title: Install Python client libraries for remote access to Machine Learning Server 
-description: Installing python interpreter and packages locally to interact with a remote Machine Learning Server
+title: "Install Python client libraries for remote access to Machine Learning Server "
+description: "Installing python interpreter and packages locally to interact with a remote Machine Learning Server"
 keywords: 
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 06/01/2018
-ms.topic: how-to
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
-#ms.technology: 
-#ms.custom: 
+ms.topic: "how-to"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
+#ms.technology: ""
+#ms.custom: ""
 ---
 
 # How to install Python client libraries for remote access to a Machine Learning Server

@@ -1,21 +1,21 @@
 ---
-title: Write custom chunking algorithms in ScaleR (Machine Learning Server)
-description: Learn how to use rxDataStep to apply arbitrary R functions on chunked data.
+title: "Write custom chunking algorithms in ScaleR (Machine Learning Server)"
+description: "Learn how to use rxDataStep to apply arbitrary R functions on chunked data."
 keywords: 
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 10/18/2016
-ms.topic: how-to
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
-#ms.technology: 
-#ms.custom: 
+ms.topic: "how-to"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
+#ms.technology: ""
+#ms.custom: ""
 ---
 
 # Write custom chunking algorithms using rxDataStep in RevoScaleR

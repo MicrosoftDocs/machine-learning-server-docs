@@ -1,21 +1,21 @@
 ---
 title: "Python tutorial: Linear regression model using revoscalepy on Machine Learning Server "
-description: Learn how to build and deploy a model using revoscalepy Python functions. Predict outcomes. Summarize  data.
+description: "Learn how to build and deploy a model using revoscalepy Python functions. Predict outcomes. Summarize  data."
 keywords: 
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 02/16/2018
-ms.topic: quickstart
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
+ms.topic: "quickstart"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
 ms.technology: 
-#ms.custom: 
+#ms.custom: ""
 ---
 
 # Quickstart: Create a linear regression model using revoscalepy in Python

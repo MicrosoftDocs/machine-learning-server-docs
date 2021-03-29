@@ -1,21 +1,21 @@
 ---
-title: Parallel execution using foreach and doRSR for script containing RevoScaleR and foreach constructs
-description: Parallel execution using the doRSR package for script containing RevoScaleR and foreach constructs.
+title: "Parallel execution using foreach and doRSR for script containing RevoScaleR and foreach constructs"
+description: "Parallel execution using the doRSR package for script containing RevoScaleR and foreach constructs."
 keywords: 
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 01/03/2018
-ms.topic: how-to
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
-#ms.technology: 
-#ms.custom: 
+ms.topic: "how-to"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
+#ms.technology: ""
+#ms.custom: ""
 ---
 
 # Parallel execution using doRSR for script containing RevoScaleR and foreach constructs

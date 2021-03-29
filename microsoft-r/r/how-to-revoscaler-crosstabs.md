@@ -1,21 +1,21 @@
 ---
-title: Crosstabs using RevoScaleR (Machine Learning Server) 
-description: Cross-tabulations (contingency tables) with RevoScaleR.
+title: "Crosstabs using RevoScaleR (Machine Learning Server) "
+description: "Cross-tabulations (contingency tables) with RevoScaleR."
 keywords: 
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 03/17/2016
-ms.topic: how-to
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
-#ms.technology: 
-#ms.custom: 
+ms.topic: "how-to"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
+#ms.technology: ""
+#ms.custom: ""
 ---
 
 # Crosstabs using RevoScaleR

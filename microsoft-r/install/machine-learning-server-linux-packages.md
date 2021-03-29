@@ -1,21 +1,21 @@
 ---
-title: Add or remove R and Python on Machine Learning Server for Linux
-description: How to install or uninstall R and Python packages on Machine Learning Server forLinux.
+title: "Add or remove R and Python on Machine Learning Server for Linux"
+description: "How to install or uninstall R and Python packages on Machine Learning Server forLinux."
 keywords: 
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 07/31/2018
-ms.topic: how-to
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
-#ms.technology: 
-#ms.custom: 
+ms.topic: "how-to"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
+#ms.technology: ""
+#ms.custom: ""
 ---
 
 # How to add or remove R and Python packages on Machine Learning Server for Linux

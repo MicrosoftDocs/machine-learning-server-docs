@@ -1,21 +1,21 @@
 ---
-title: Sort data in RevoScaleR using rxSort (Machine Learning Server) 
-description: How to sort data in a data frame or XDF file with the RevoScaleR rxSort function.
+title: "Sort data in RevoScaleR using rxSort (Machine Learning Server) "
+description: "How to sort data in a data frame or XDF file with the RevoScaleR rxSort function."
 keywords: 
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 06/06/2017
-ms.topic: how-to
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
-#ms.technology: 
-#ms.custom: 
+ms.topic: "how-to"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
+#ms.technology: ""
+#ms.custom: ""
 ---
 
 # How to sort data using rxSort in RevoScaleR

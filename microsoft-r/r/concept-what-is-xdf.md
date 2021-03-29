@@ -1,21 +1,21 @@
 ---
-title: Create an XDF file (Machine Learning Server) 
-description: How to import CSV and other files to create an XDF file on Machine Learning Server
+title: "Create an XDF file (Machine Learning Server) "
+description: "How to import CSV and other files to create an XDF file on Machine Learning Server"
 keywords: 
-author: dphansen
-ms.author: davidph
-manager: cgronlun
+author: "dphansen"
+ms.author: "davidph"
+manager: "cgronlun"
 ms.date: 02/16/2018
-ms.topic: how-to
-ms.prod: mlserver
-#ROBOTS: 
-#audience: 
-#ms.devlang: 
-#ms.reviewer: 
-#ms.suite: 
-#ms.tgt_pltfrm: 
-#ms.technology: 
-#ms.custom: 
+ms.topic: "how-to"
+ms.prod: "mlserver"
+#ROBOTS: ""
+#audience: ""
+#ms.devlang: ""
+#ms.reviewer: ""
+#ms.suite: ""
+#ms.tgt_pltfrm: ""
+#ms.technology: ""
+#ms.custom: ""
 ---
 
 # Create an XDF file in Machine Learning Server
