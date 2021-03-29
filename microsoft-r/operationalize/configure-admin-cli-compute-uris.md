@@ -1,25 +1,21 @@
 ---
-
-# required metadata
-title: "Manage and declare compute node URIs - Machine Learning Server "
-description: "Declare the compute node URIs so that Machine Learning Server web nodes know to which compute nodes they can send requests."
-keywords: ""
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
-ms.date: "2/16/2018"
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: ""
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-#ms.technology: ""
-#ms.custom: ""
+title: Manage and declare compute node URIs - Machine Learning Server 
+description: Declare the compute node URIs so that Machine Learning Server web nodes know to which compute nodes they can send requests.
+keywords: 
+author: dphansen
+ms.author: davidph
+manager: cgronlun
+ms.date: 2/16/2018
+ms.topic: how-to
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+#ms.technology: 
+#ms.custom: 
 ---
 
 # Manage and declare compute nodes
