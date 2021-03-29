@@ -1,25 +1,21 @@
 ---
-# required metadata
-title: "Windows command line installation for Machine Learning Server"
-description: "How to install Machine Learning Server for Windows on the command line."
-keywords: ""
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
+title: Windows command line installation for Machine Learning Server
+description: How to install Machine Learning Server for Windows on the command line.
+keywords: 
+author: dphansen
+ms.author: davidph
+manager: cgronlun
 ms.date: 07/15/2019
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: ""
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-#ms.technology: ""
-#ms.custom: ""
-
+ms.topic: how-to
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+#ms.technology: 
+#ms.custom: 
 ---
 
 # Command-line install for Machine Learning Server for Windows

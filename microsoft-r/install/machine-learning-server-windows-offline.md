@@ -1,25 +1,21 @@
 ---
-# required metadata
-title: "Windows offline installation for Machine Learning Server"
-description: "How to install Machine Learning Server for Windows with no internet connection."
-keywords: ""
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
+title: Windows offline installation for Machine Learning Server
+description: How to install Machine Learning Server for Windows with no internet connection.
+keywords: 
+author: dphansen
+ms.author: davidph
+manager: cgronlun
 ms.date: 07/15/2019
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: ""
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-#ms.technology: ""
-#ms.custom: ""
-
+ms.topic: how-to
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+#ms.technology: 
+#ms.custom: 
 ---
 
 # Offline installation for Machine Learning Server for Windows

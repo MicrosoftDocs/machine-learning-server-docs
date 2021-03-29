@@ -1,25 +1,21 @@
 ---
-# required metadata
-title: "Add or remove R and Python on Machine Learning Server for Windows"
-description: "How to install or uninstall R and Python packages on Machine Learning Server for Windows."
-keywords: ""
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
+title: Add or remove R and Python on Machine Learning Server for Windows
+description: How to install or uninstall R and Python packages on Machine Learning Server for Windows.
+keywords: 
+author: dphansen
+ms.author: davidph
+manager: cgronlun
 ms.date: 07/15/2019
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: ""
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-#ms.technology: ""
-#ms.custom: ""
-
+ms.topic: how-to
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+#ms.technology: 
+#ms.custom: 
 ---
 
 # How to add or remove R and Python packages on Machine Learning Server for Windows
