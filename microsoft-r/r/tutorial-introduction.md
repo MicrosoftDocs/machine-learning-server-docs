@@ -18,7 +18,7 @@ ms.prod: "mlserver"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-m.technology:  
+ms.technology: ""  
 #ms.custom: ""
 ---
 

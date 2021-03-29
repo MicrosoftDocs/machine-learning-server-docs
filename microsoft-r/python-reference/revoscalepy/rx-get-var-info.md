@@ -107,7 +107,7 @@ list with named elements corresponding to the variables in the data set.
 Each list element is also a list with following possible elements:
 
 ```
-description: "character string specifying the variable description"
+description: character string specifying the variable description
 varType: character string specifying the variable type
 storage: character string specifying the storage type
 low: numeric giving the low values, possibly generated through a

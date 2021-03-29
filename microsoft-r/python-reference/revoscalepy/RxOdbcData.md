@@ -170,7 +170,7 @@ type: character string specifying the data type for the column. See
     be specified.
 
 newName: character string specifying a new name for the variable.
-description: "character string specifying a description for the variable."
+description: character string specifying a description for the variable.
 levels: list of strings containing the levels when type = “factor”. If
 
     the levels property is not provided, factor levels will be determined

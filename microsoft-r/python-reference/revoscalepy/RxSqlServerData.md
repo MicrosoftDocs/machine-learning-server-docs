@@ -140,7 +140,7 @@ type: Character string specifying the data type for the column. See
 column_classes argument description for the available types. Specify “factorIndex” as the type for 0-based factor indexes. levels must also be specified.
 
 newName: Character string specifying a new name for the variable.
-description: "character string specifying a description for the variable."
+description: character string specifying a description for the variable.
 levels: List of strings containing the levels when type = “factor”. If the levels property is not provided, factor levels will be determined by the values in the source column. If levels are provided, any value that does not match a provided level will be converted to a missing value.
 
 newLevels: New or replacement levels specified for a column of type
