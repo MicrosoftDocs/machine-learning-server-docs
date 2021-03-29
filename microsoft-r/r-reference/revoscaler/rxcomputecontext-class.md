@@ -4,7 +4,8 @@
 title: "RxComputeContext-class class (revoAnalytics) | Microsoft Docs" 
 description: "   Base class for all RevoScaleR Compute Contexts.   " 
 keywords: "(revoAnalytics), RxComputeContext-class, show,RxComputeContext-method, classes" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

@@ -4,7 +4,8 @@
 title: "rx_predict: Scores using a Microsoft ML Machine Learning model" 
 description: "Reports per-instance scoring results in a data frame or revoscalepy data source using a trained Microsoft ML Machine Learning model with arevoscalepydata source." 
 keywords: "models, prediction" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019 
 ms.topic: "reference" 

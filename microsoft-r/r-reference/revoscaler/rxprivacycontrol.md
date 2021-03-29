@@ -4,7 +4,8 @@
 title: "rxPrivacyControl function (revoAnalytics) | Microsoft Docs" 
 description: "     Sets the state to be opted-in or out for anonymous usage collection. " 
 keywords: "(revoAnalytics), rxPrivacyControl, privacy, optin" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

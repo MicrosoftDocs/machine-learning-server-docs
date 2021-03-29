@@ -4,7 +4,8 @@
 title: "rxNaiveBayes function (revoAnalytics) | Microsoft Docs" 
 description: "     Fit Naive Bayes Classifiers on an .xdf file or data frame     for small or large data using parallel external memory algorithm. " 
 keywords: "(revoAnalytics), rxNaiveBayes, print.rxNaiveBayes, models, tree, classif, classification" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

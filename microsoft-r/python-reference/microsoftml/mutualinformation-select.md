@@ -4,7 +4,8 @@
 title: "mutualinformation_select: Machine Learning Mutual Information Mode Feature Selection Transform" 
 description: "Selects the top k features across all specified columns ordered by their mutual information with the label column." 
 keywords: "feature, selection, mutual, information" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

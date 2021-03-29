@@ -4,7 +4,8 @@
 title: "rxOAuthParameters function (revoAnalytics) | Microsoft Docs" 
 description: " Method to create parameter list to be used for getting an OAuth2 token. " 
 keywords: "(revoAnalytics), rxOAuthParameters, file, connection" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019 
 ms.topic: "reference" 

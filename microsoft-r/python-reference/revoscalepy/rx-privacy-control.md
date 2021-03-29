@@ -4,7 +4,8 @@
 title: "rx_privacy_control: Changes the opt-in state for anonymous usage collection (revoscalepy)" 
 description: "Used for opting out of telemetry data collection, which is enabled by default." 
 keywords: "privacy, telemetry" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

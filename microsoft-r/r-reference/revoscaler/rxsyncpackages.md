@@ -4,7 +4,8 @@
 title: "rxSyncPackages function (revoAnalytics) | Microsoft Docs" 
 description: "  Synchronizes all R packages installed in a database with the packages on the files system. The packages contained in the database are also installed on the file system so they can be loaded by R.  You might need to use rxSyncPackages if you rebuilt a server instance or restored SQL Server databases on a new machine, or if you think an R package on the file system is corrupted.  " 
 keywords: "(revoAnalytics), rxSyncPackages, sync, synchronize, use, packages, sql" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

@@ -4,7 +4,8 @@
 title: "Query function (olapR) | Microsoft Docs" 
 description: "   Query constructs a Query object. Set functions are used to build and modify the Query axes and cube name. " 
 keywords: "(olapR), Query" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

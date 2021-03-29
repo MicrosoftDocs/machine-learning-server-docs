@@ -4,7 +4,8 @@
 title: "rxPingNodes function (revoAnalytics) | Microsoft Docs" 
 description: " This function provides a simple test of the compute context's ability to perform a round trip through one or more  computation nodes. " 
 keywords: "(revoAnalytics), rxPingNodes, IO" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

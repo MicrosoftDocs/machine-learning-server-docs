@@ -4,7 +4,8 @@
 title: "rxDataStep function (revoAnalytics) | Microsoft Docs" 
 description: "    Transform data from an input data set to an output data set. The rxDataStep function is multi-threaded. " 
 keywords: "(revoAnalytics), rxDataStep, manip, file" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

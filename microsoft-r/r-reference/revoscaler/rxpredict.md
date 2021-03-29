@@ -4,7 +4,8 @@
 title: "rxPredict function (revoAnalytics) | Microsoft Docs" 
 description: "Predicted values and residuals for model objects built using RevoScaleR" 
 keywords: "(revoAnalytics), rxPredict, rxPredict.default, methods, models, regression" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

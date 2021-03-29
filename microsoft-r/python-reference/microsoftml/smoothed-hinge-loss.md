@@ -4,7 +4,8 @@
 title: "smoothed_hinge_loss: smoothed_hinge_loss" 
 description: "Smoothed Hinge loss." 
 keywords: "loss, smooth, hinge" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

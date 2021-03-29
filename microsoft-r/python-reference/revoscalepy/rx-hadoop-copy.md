@@ -4,7 +4,8 @@
 title: "rx_hadoop_copy: Execute Hadoop copy commands (revoscalepy)" 
 description: "Wraps the Hadoop fs -cp command." 
 keywords: "Hadoop Command" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

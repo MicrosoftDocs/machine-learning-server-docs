@@ -4,7 +4,8 @@
 title: "RxTextData-class class (revoAnalytics) | Microsoft Docs" 
 description: " Text data source connection class. " 
 keywords: "(revoAnalytics), RxTextData-class, show,RxTextData-method, classes" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

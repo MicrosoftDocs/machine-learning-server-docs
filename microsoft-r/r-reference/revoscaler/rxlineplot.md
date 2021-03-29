@@ -4,7 +4,8 @@
 title: "rxLinePlot function (revoAnalytics) | Microsoft Docs" 
 description: " Line or scatter plot using data from an .xdf file or data frame - a wrapper function for xyplot. " 
 keywords: "(revoAnalytics), rxLinePlot, hplot" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

@@ -4,8 +4,8 @@
 title: "RealtimeDefinition  class for Microsoft Machine Learning Server"
 description: "This RealtimeDefinition class is for Microsoft ML Server Python package for managing web services." 
 keywords: "" 
-author: "dphansen" 
-ms.author: "davidph"
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019 
 ms.topic: "reference" 

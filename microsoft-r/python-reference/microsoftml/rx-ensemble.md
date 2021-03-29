@@ -4,7 +4,8 @@
 title: "rx_ensemble: Ensembles" 
 description: "Train an ensemble of models" 
 keywords: "ensemble" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019 
 ms.topic: "reference" 

@@ -4,7 +4,8 @@
 title: "RxDataSource function (revoAnalytics) | Microsoft Docs" 
 description: " A generator for RxDataSource S4 classes. " 
 keywords: "(revoAnalytics), RxDataSource, file, connection" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

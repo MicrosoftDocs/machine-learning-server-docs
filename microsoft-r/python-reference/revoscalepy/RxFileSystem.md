@@ -4,7 +4,8 @@
 title: "RxFileSystem: Class generator for file data source objects (revoscalepy)" 
 description: "Creates a data source connection to a file on the native file system." 
 keywords: "file, datasource" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

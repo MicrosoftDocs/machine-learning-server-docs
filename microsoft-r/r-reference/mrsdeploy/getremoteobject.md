@@ -4,11 +4,12 @@
 title: "getRemoteObject function (mrsdeploy) | Microsoft Docs" 
 description: " Get an object from the workspace of the remote R session and load it into the workspace  of the local R session. " 
 keywords: "(mrsdeploy), getRemoteObject" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 
-ms.prod: "microsoft-r" 
+ms.prod: "mlserver"  
 ms.service: "" 
 ms.assetid: "" 
 
@@ -19,7 +20,7 @@ ms.devlang: ""
 ms.reviewer: "" 
 ms.suite: "" 
 ms.tgt_pltfrm: "" 
-ms.technology: "r-server" 
+ms.technology: "" 
 ms.custom: "" 
 
 --- 

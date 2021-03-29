@@ -4,7 +4,8 @@
 title: "rxRemovePackages function (revoAnalytics) | Microsoft Docs" 
 description: " Removes installed packages from a compute context. " 
 keywords: "(revoAnalytics), rxRemovePackages, remove, uninstall, packages, sql" 
-author: "dphansen" 
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

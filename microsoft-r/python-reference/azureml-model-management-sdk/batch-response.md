@@ -4,8 +4,8 @@
 title: "BatchResponse in Machine Learning Server azureml-model-management-sdk" 
 description: "This class is for Microsoft ML Server" 
 keywords: "" 
-author: "dphansen" 
-ms.author: "davidph"
+author: "dphansen"
+ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019 
 ms.topic: "reference" 
