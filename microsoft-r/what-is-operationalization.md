@@ -1,26 +1,21 @@
 ---
-
-# required metadata
-title: "Operationalize models, analytics, & web services in Machine Learning Server"
-description: "You can deploy and consume R and Python models in Machine Learning Server to operationalize them."
-keywords: ""
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
+title: Operationalize models, analytics, & web services in Machine Learning Server
+description: You can deploy and consume R and Python models in Machine Learning Server to operationalize them.
+keywords: 
+author: dphansen
+ms.author: davidph
+manager: cgronlun
 ms.date: 07/15/2019
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: ""
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-#ms.technology: ""
-#ms.custom: ""
-
+ms.topic: overview
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+#ms.technology: 
+#ms.custom: 
 ---
 
 # Operationalize analytics with Machine Learning Server
