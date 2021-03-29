@@ -1,26 +1,21 @@
 ---
-
-# required metadata
-title: "Use RevoScaleR with SQL Server (Machine Learning Server) "
-description: "Overview and tutorial to using RevoScaleR in SQL Server databases."
-keywords: ""
-author: "dphansen"
-ms.author: "davidph"
-ms.manager: "cgronlun"
-ms.date: "08/11/2016"
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: ""
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-#ms.technology: ""
-#ms.custom: ""
-
+title: Use RevoScaleR with SQL Server (Machine Learning Server) 
+description: Overview and tutorial to using RevoScaleR in SQL Server databases.
+keywords: 
+author: dphansen
+ms.author: davidph
+ms.manager: cgronlun
+ms.date: 08/11/2016
+ms.topic: how-to
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+#ms.technology: 
+#ms.custom: 
 ---
 
 # Using RevoScaleR with SQL Server

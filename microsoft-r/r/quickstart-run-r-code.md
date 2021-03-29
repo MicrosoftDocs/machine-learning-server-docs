@@ -1,26 +1,21 @@
 ---
-
-# required metadata
-title: "Quick Start for Microsoft R Client & Machine Learning Server"
-description: "Microsoft R Client quickstart"
-keywords: "R Client, quickstart, Microsoft R Client, Introduction, Get Started with R Client"
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
-ms.date: "02/16/2018"
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: ""
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-#ms.technology: ""
-#ms.custom: ""
-
+title: Quick Start for Microsoft R Client & Machine Learning Server
+description: Microsoft R Client quickstart
+keywords: R Client, quickstart, Microsoft R Client, Introduction, Get Started with R Client
+author: dphansen
+ms.author: davidph
+manager: cgronlun
+ms.date: 02/16/2018
+ms.topic: quickstart
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+#ms.technology: 
+#ms.custom: 
 ---
 # Quickstart: Run R code in R Client and Machine Learning Server
 

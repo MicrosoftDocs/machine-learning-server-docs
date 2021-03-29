@@ -1,26 +1,21 @@
 ---
-
-# required metadata
-title: "Distributed analysis (RevoScaleR in Machine Learning Server) "
-description: "Distribute an analysis over multiple nodes using RevoScaleR functions."
-keywords: ""
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
-ms.date: "01/16/2018"
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: ""
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-#ms.technology: ""
-#ms.custom: ""
-
+title: Distributed analysis (RevoScaleR in Machine Learning Server) 
+description: Distribute an analysis over multiple nodes using RevoScaleR functions.
+keywords: 
+author: dphansen
+ms.author: davidph
+manager: cgronlun
+ms.date: 01/16/2018
+ms.topic: how-to
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+#ms.technology: 
+#ms.custom: 
 ---
 
 # Running distributed analyses using RevoScaleR

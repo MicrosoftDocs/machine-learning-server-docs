@@ -1,26 +1,21 @@
 ---
-
-# required metadata
-title: "How to use RevoScaleR with Apache Spark (Machine Learning Server)"
-description: "Get started with RevoScaleR and Spark on Machine Learning Server."
-keywords: ""
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
-ms.date: "12/19/2017"
-ms.topic: "tutorial"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: ""
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-#ms.technology: ""
-#ms.custom: ""
-
+title: How to use RevoScaleR with Apache Spark (Machine Learning Server)
+description: Get started with RevoScaleR and Spark on Machine Learning Server.
+keywords: 
+author: dphansen
+ms.author: davidph
+manager: cgronlun
+ms.date: 12/19/2017
+ms.topic: how-to
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+#ms.technology: 
+#ms.custom: 
 ---
 
 # How to use RevoScaleR in a Spark compute context

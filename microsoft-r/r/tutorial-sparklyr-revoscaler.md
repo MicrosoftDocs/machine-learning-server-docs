@@ -1,28 +1,22 @@
 ---
-
-# required metadata
-title: "RevoScaleR with Sparklyr example (Machine Learning Server) "
-description: "Sparklyr interoperability with RevoScaleR on Machine Learning Server"
-keywords: ""
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
-ms.date: "07/05/2017"
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: ""
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-ms.technology:
-  
-
-#ms.custom: ""
-
+title: RevoScaleR with Sparklyr example (Machine Learning Server) 
+description: Sparklyr interoperability with RevoScaleR on Machine Learning Server
+keywords: 
+author: dphansen
+ms.author: davidph
+manager: cgronlun
+ms.date: 07/05/2017
+ms.topic: tutorial
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+ms.technology: 
+  - 
+#ms.custom: 
 ---
 
 # RevoScaleR with sparklyr step-by-step examples

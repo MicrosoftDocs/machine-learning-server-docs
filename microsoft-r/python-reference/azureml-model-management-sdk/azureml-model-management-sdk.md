@@ -1,25 +1,20 @@
 ---
-
-# required metadata
-title: "Deploy & manage Machine Learning Server web services in Python"
-description: "Manage your ML models in Python with the Machine Learning Server package, azureml-model-management-sdk"
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
-ms.date: "2/16/2018"
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: ""
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-#ms.technology: ""
-#ms.custom: ""
-
+title: Deploy & manage Machine Learning Server web services in Python
+description: Manage your ML models in Python with the Machine Learning Server package, azureml-model-management-sdk
+author: dphansen
+ms.author: davidph
+manager: cgronlun
+ms.date: 2/16/2018
+ms.topic: reference
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+#ms.technology: 
+#ms.custom: 
 ---
 
 # Machine Learning Server: manage web services with azureml-model-management-sdk

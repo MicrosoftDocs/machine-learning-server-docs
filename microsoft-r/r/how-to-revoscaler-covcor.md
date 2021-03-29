@@ -1,26 +1,21 @@
 ---
-
-# required metadata
-title: "Estimate Correlation and Variance/Covariance Matrices in RevoScaleR (Machine Learning Server) "
-description: "Correlation and variance/covariance matrices in RevoScaleR in Machine Learning Server."
-keywords: ""
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
-ms.date: "03/17/2016"
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: ""
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-#ms.technology: ""
-#ms.custom: ""
-
+title: Estimate Correlation and Variance/Covariance Matrices in RevoScaleR (Machine Learning Server) 
+description: Correlation and variance/covariance matrices in RevoScaleR in Machine Learning Server.
+keywords: 
+author: dphansen
+ms.author: davidph
+manager: cgronlun
+ms.date: 03/17/2016
+ms.topic: how-to
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+#ms.technology: 
+#ms.custom: 
 ---
 
 # Estimating Correlation and Variance/Covariance Matrices

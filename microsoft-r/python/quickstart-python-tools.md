@@ -1,25 +1,20 @@
 ---
-
-# required metadata
-title: "Link to Machine Learning Server from Python tools"
-description: "Link Python tools like PyCharm, Jupyter notebooks, and Visual Studio to Machine Learning Server Python executable and libraries"
-keywords: "Machine Learning Server, python tools"
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
-ms.date: "03/12/2018"
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: "r"
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-#ms.custom: ""
-
+title: Link to Machine Learning Server from Python tools
+description: Link Python tools like PyCharm, Jupyter notebooks, and Visual Studio to Machine Learning Server Python executable and libraries
+keywords: Machine Learning Server, python tools
+author: dphansen
+ms.author: davidph
+manager: cgronlun
+ms.date: 03/12/2018
+ms.topic: how-to
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: r
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+#ms.custom: 
 ---
 # Link Python tools and IDEs to the Python interpreter installed with Machine Learning Server
 

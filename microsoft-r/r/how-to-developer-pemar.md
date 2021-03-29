@@ -1,26 +1,21 @@
 ---
-
-# required metadata
-title: "RevoPemaR functions in Machine Learning Server "
-description: "How to use the RevoPemaR package in Machine Learning Server."
-keywords: ""
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
-ms.date: "01/03/2018"
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: ""
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-#ms.technology: ""
-#ms.custom: ""
-
+title: RevoPemaR functions in Machine Learning Server 
+description: How to use the RevoPemaR package in Machine Learning Server.
+keywords: 
+author: dphansen
+ms.author: davidph
+manager: cgronlun
+ms.date: 01/03/2018
+ms.topic: how-to
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+#ms.technology: 
+#ms.custom: 
 ---
 
 # How to use the RevoPemaR library in Machine Learning Server

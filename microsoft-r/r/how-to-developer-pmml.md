@@ -1,26 +1,21 @@
 ---
-
-# required metadata
-title: "Convert RevoScaleR Model Objects for Use in PMML (Machine Learning Server) "
-description: "Using PMML with RevoScaleR model objects in Machine Learning Server."
-keywords: ""
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
-ms.date: "11/10/2017"
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: ""
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-#ms.technology: ""
-#ms.custom: ""
-
+title: Convert RevoScaleR Model Objects for Use in PMML (Machine Learning Server) 
+description: Using PMML with RevoScaleR model objects in Machine Learning Server.
+keywords: 
+author: dphansen
+ms.author: davidph
+manager: cgronlun
+ms.date: 11/10/2017
+ms.topic: how-to
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+#ms.technology: 
+#ms.custom: 
 ---
 
 # Converting RevoScaleR Model Objects for Use in PMML

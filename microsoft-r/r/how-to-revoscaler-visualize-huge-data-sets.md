@@ -1,26 +1,21 @@
 ---
-
-# required metadata
-title: "Visualizing Huge Data Sets using RevoScaleR (Machine Learning Server) "
-description: "Visualizing huge data sets with an example from the U.S. Census."
-keywords: ""
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
-ms.date: "03/17/2016"
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: ""
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-#ms.technology: ""
-#ms.custom: ""
-
+title: Visualizing Huge Data Sets using RevoScaleR (Machine Learning Server) 
+description: Visualizing huge data sets with an example from the U.S. Census.
+keywords: 
+author: dphansen
+ms.author: davidph
+manager: cgronlun
+ms.date: 03/17/2016
+ms.topic: how-to
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+#ms.technology: 
+#ms.custom: 
 ---
 
 # Visualizing Huge Data Sets: An Example from the U.S. Census

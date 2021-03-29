@@ -1,26 +1,21 @@
 ---
-
-# required metadata
-title: "Microsoft R Client compatibility with Machine Learning Server and R Server "
-description: "Table of Microsoft R Client compatibility with various offerings of Machine Learning Server and Microsoft R Server."
-keywords: "R Client compatibility, Microsoft R Client"
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
-ms.date: "2/16/2018"
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: ""
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-#ms.technology: ""
-#ms.custom: ""
-
+title: Microsoft R Client compatibility with Machine Learning Server and R Server 
+description: Table of Microsoft R Client compatibility with various offerings of Machine Learning Server and Microsoft R Server.
+keywords: R Client compatibility, Microsoft R Client
+author: dphansen
+ms.author: davidph
+manager: cgronlun
+ms.date: 2/16/2018
+ms.topic: how-to
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+#ms.technology: 
+#ms.custom: 
 ---
 # R Client compatibility with Machine Learning Server or R Server
 

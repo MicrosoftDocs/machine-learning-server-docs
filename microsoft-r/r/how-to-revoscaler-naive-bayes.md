@@ -1,26 +1,21 @@
 ---
-
-# required metadata
-title: "Naive Bayes Classifier using RevoScaleR on Machine Learning Server "
-description: "Naive Bayes Classifier in RevoScaleR."
-keywords: ""
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
-ms.date: "03/17/2016"
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: ""
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-#ms.technology: ""
-#ms.custom: ""
-
+title: Naive Bayes Classifier using RevoScaleR on Machine Learning Server 
+description: Naive Bayes Classifier in RevoScaleR.
+keywords: 
+author: dphansen
+ms.author: davidph
+manager: cgronlun
+ms.date: 03/17/2016
+ms.topic: how-to
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: 
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+#ms.technology: 
+#ms.custom: 
 ---
 
 # Naïve Bayes Classifier using RevoScaleR

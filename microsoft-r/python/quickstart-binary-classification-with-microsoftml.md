@@ -1,25 +1,20 @@
 ---
-
-# required metadata
 title: "Quickstart: Binary classification with microsoftml - Machine Learning Server "
-description: "How to deploy an R model as a service"
-keywords: "quickstart, Machine Learning Server, deploy python models"
-author: "dphansen"
-ms.author: "davidph"
-manager: "cgronlun"
-ms.date: "02/16/2018"
-ms.topic: "conceptual"
-ms.prod: "mlserver"
-
-# optional metadata
-#ROBOTS: ""
-#audience: ""
-#ms.devlang: "r"
-#ms.reviewer: ""
-#ms.suite: ""
-#ms.tgt_pltfrm: ""
-#ms.custom: ""
-
+description: How to deploy an R model as a service
+keywords: quickstart, Machine Learning Server, deploy python models
+author: dphansen
+ms.author: davidph
+manager: cgronlun
+ms.date: 02/16/2018
+ms.topic: quickstart
+ms.prod: mlserver
+#ROBOTS: 
+#audience: 
+#ms.devlang: r
+#ms.reviewer: 
+#ms.suite: 
+#ms.tgt_pltfrm: 
+#ms.custom: 
 ---
 # Quickstart: An example of binary classification with the microsoftml Python package
 
