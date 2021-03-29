@@ -5,7 +5,6 @@ title: "OlapR package for R (Microsoft R Server) "
 description: "Function help reference for the olapR R package of Microsoft R Server, used to import data from OLAP cubes stored in SQL Server Analysis Services into R." 
 keywords: "olapR" 
 author: "dphansen"
-ms.author: "davidph"
 ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: 07/15/2019

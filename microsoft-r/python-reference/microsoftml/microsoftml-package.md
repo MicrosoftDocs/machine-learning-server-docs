@@ -5,7 +5,7 @@ title: "microsoftml package for Python (Microsoft Machine Learning Server and SQ
 description: "Function help reference for the microsoftml python package of SQL Server Machine Learning Server." 
 keywords: "microsoftml API, API" 
 author: "dphansen"
-ms.author: "davidph" 
+ms.author: "davidph"
 manager: "cgronlun" 
 ms.date: "09/25/2017" 
 ms.topic: "reference" 

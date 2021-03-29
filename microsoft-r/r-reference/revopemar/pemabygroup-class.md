@@ -6,7 +6,6 @@ description: " Example PEMA reference class to compute arbitrary by-group statis
 keywords: "RevoPemaR, PemaByGroup-class, classes" 
 author: "dphansen"
 ms.author: "davidph"
-ms.author: "davidph" 
 manager: "cgronlun" 
 ms.date: "03/23/2017" 
 ms.topic: "reference" 
