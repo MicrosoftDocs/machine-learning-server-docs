@@ -46,6 +46,9 @@ The encryption function available in the administration utility relies on the RS
 
      1. On the machine hosting the node, launch a command-line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
 
+>[!NOTE]
+> For Machine Learning Server 9.4, use "**az mlserver admin**" instead of "**az ml admin**"
+
      1. Run the command to encrypt:
         ```azurecli
         # With elevated privileges, run the following commands.
@@ -62,7 +65,7 @@ The encryption function available in the administration utility relies on the RS
         
         
         # Encrypt a secret
-        az ml admin credentials set ---cert-store-name <CERT_STORE_NAME> --cert-store-location <CERT_STORE_LOCATION> --cert-subject_name <CERT_SUBJECT_NAME> --secret <secret>
+        az ml admin credentials set --cert-store-name <CERT_STORE_NAME> --cert-store-location <CERT_STORE_LOCATION> --cert-subject_name <CERT_SUBJECT_NAME> --secret <secret>
         ```
         
         |CLI&nbsp;options|Description|
