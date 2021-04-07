@@ -46,7 +46,6 @@ The encryption function available in the administration utility relies on the RS
 
      1. On the machine hosting the node, launch a command-line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.
 
-> For Machine Learning Server 9.4, use "**az mlserver admin**" instead of "**az ml admin**"
 
      1. Run the command to encrypt:
         
