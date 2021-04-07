@@ -3,12 +3,12 @@
 # required metadata
 title: "Manage threads in RevoScaleR (Machine Learning Server) "
 description: "RevoScaleR provides functions for managing the thread pool used for parallel execution."
-keywords: "How ScaleR establishes and manages thread pools for parallel processing."
+keywords: How ScaleR establishes and manages thread pools for parallel processing.
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "01/03/2018"
-ms.topic: "conceptual"
+ms.date: 01/03/2018
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata
@@ -20,7 +20,6 @@ ms.prod: "mlserver"
 #ms.tgt_pltfrm: ""
 #ms.technology: ""
 #ms.custom: ""
-
 ---
 
 # Managing threads in RevoScaleR

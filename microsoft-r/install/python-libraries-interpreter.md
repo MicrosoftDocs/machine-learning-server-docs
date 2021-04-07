@@ -3,12 +3,12 @@
 # required metadata
 title: "Install Python client libraries for remote access to Machine Learning Server "
 description: "Installing python interpreter and packages locally to interact with a remote Machine Learning Server"
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "06/01/2018"
-ms.topic: "conceptual"
+ms.date: 06/01/2018
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata
@@ -20,7 +20,6 @@ ms.prod: "mlserver"
 #ms.tgt_pltfrm: ""
 #ms.technology: ""
 #ms.custom: ""
-
 ---
 
 # How to install Python client libraries for remote access to a Machine Learning Server

@@ -3,12 +3,12 @@
 # required metadata
 title: "Update the port values - Machine Learning Server"
 description: "You can update the ports numbers for the web node, compute node, or deployr-rserve."
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "2/16/2018"
-ms.topic: "conceptual"
+ms.date: 2/16/2018
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata

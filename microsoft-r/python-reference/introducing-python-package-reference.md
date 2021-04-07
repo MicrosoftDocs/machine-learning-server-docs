@@ -3,26 +3,23 @@
 # required metadata
 title: "Python function library reference - Machine Learning Server "
 description: "Function reference for Python packages: microsoftml, revoscalepy, azureml-model-mananagement-sdk in Machine Learning Server."
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
 ms.date: 07/15/2019
-ms.topic: "conceptual"
+ms.topic: "reference"
 ms.prod: "mlserver"
-ms.service: ""
-ms.assetid: ""
-
-# optional metadata
-ROBOTS: ""
-audience: ""
-ms.devlang: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.technology:
-ms.custom: ""
-
+ms.service: 
+ms.assetid: 
+ROBOTS: 
+audience: 
+ms.devlang: 
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.technology: 
+ms.custom: 
 ---
 
 # Python Function Library Reference

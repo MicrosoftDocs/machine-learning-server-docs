@@ -3,12 +3,12 @@
 # required metadata
 title: "Deploy, update, & delete Python web services - Machine Learning Server "
 description: "Publish, update, and delete Python web services with Machine Learning Server and Microsoft R Server"
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "2/16/2018"
-ms.topic: "conceptual"
+ms.date: 2/16/2018
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata

@@ -3,12 +3,12 @@
 # required metadata
 title: "Quick Start for Microsoft R Client & Machine Learning Server"
 description: "Microsoft R Client quickstart"
-keywords: "R Client, quickstart, Microsoft R Client, Introduction, Get Started with R Client"
+keywords: R Client, quickstart, Microsoft R Client, Introduction, Get Started with R Client
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "02/16/2018"
-ms.topic: "conceptual"
+ms.date: 02/16/2018
+ms.topic: "quickstart"
 ms.prod: "mlserver"
 
 # optional metadata
@@ -20,7 +20,6 @@ ms.prod: "mlserver"
 #ms.tgt_pltfrm: ""
 #ms.technology: ""
 #ms.custom: ""
-
 ---
 # Quickstart: Run R code in R Client and Machine Learning Server
 

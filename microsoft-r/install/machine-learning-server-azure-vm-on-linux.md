@@ -8,7 +8,7 @@ author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
 ms.date: "3/01/2018"
-ms.topic: "conceptual"
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata

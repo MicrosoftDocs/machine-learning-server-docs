@@ -3,12 +3,12 @@
 # required metadata
 title: "Crosstabs using RevoScaleR (Machine Learning Server) "
 description: "Cross-tabulations (contingency tables) with RevoScaleR."
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "03/17/2016"
-ms.topic: "conceptual"
+ms.date: 03/17/2016
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata
@@ -20,7 +20,6 @@ ms.prod: "mlserver"
 #ms.tgt_pltfrm: ""
 #ms.technology: ""
 #ms.custom: ""
-
 ---
 
 # Crosstabs using RevoScaleR

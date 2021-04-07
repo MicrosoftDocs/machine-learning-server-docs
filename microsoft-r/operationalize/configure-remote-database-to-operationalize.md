@@ -3,12 +3,12 @@
 # required metadata
 title: "Configure a database for operationalization - Machine Learning Server "
 description: "Configure a SQL Server or PostgreSQL Database database for Machine Learning Server"
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "2/16/2018"
-ms.topic: "conceptual"
+ms.date: 2/16/2018
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata

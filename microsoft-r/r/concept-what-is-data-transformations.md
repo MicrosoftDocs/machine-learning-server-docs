@@ -3,12 +3,12 @@
 # required metadata
 title: "Data transformations in RevoScaleR - Machine Learning Server "
 description: "RevoScaleR transform functions."
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "02/16/2018"
-ms.topic: "conceptual"
+ms.date: 02/16/2018
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata
@@ -20,7 +20,6 @@ ms.prod: "mlserver"
 #ms.tgt_pltfrm: ""
 #ms.technology: ""
 #ms.custom: ""
-
 ---
 # Data transformations using RevoScaleR functions (Machine Learning Server)
 

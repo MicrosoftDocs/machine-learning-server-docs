@@ -1,4 +1,5 @@
 ---
+
 # required metadata
 title: "Install Machine Learning Server for Hadoop"
 description: "How to install, connect to, and use Machine Learning Server on a Hadoop cluster with Spark or MapReduce"
@@ -7,7 +8,7 @@ author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
 ms.date: "02/16/2018"
-ms.topic: "conceptual"
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata
