@@ -50,6 +50,10 @@ The encryption function available in the administration utility relies on the RS
 > For Machine Learning Server 9.4, use "**az mlserver admin**" instead of "**az ml admin**"
 
      1. Run the command to encrypt:
+        
+        >[!NOTE]
+        > For Machine Learning Server 9.4, use "**az mlserver admin**" instead of "**az ml admin**"
+        
         ```azurecli
         # With elevated privileges, run the following commands.
         # Get help on the commands
