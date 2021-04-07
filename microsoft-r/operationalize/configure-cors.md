@@ -3,12 +3,12 @@
 # required metadata
 title: "Cross-Origin Resource Sharing CORS in Machine Learning Server "
 description: "Enterprise-Grade Security: CORS with Machine Learning Server"
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "2/16/2018"
-ms.topic: "conceptual"
+ms.date: 2/16/2018
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata

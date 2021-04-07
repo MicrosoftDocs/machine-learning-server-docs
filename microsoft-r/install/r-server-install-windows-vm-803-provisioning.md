@@ -3,12 +3,12 @@
 # required metadata
 title: "Provision version 8.0.3 R Server (standalone) SQL Server 2016 Enterprise feature"
 description: "Provision the R Server 8.0.3 Only SQL Server 2016 Enterprise VM on Azure"
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "12/20/2016"
-ms.topic: "conceptual"
+ms.date: 12/20/2016
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata
@@ -19,10 +19,7 @@ ms.prod: "mlserver"
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
 ms.technology:
-  
-
 #ms.custom: ""
-
 ---
 
 # Provision version 8.0.3 R Server (standalone) SQL Server 2016 Enterprise feature

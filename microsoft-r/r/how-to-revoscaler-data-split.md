@@ -3,12 +3,12 @@
 # required metadata
 title: "Split data into multiple files using rxSplit (Machine Learning Server) "
 description: "Split data to train and test a model, or subdivide a large dataset into smaller files."
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "12/19/2017"
-ms.topic: "conceptual"
+ms.date: 12/19/2017
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata
@@ -20,7 +20,6 @@ ms.prod: "mlserver"
 #ms.tgt_pltfrm: ""
 #ms.technology: ""
 #ms.custom: ""
-
 ---
 
 # How to split datasets for model training and testing

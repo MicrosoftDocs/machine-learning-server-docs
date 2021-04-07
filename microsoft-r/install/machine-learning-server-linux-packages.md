@@ -1,13 +1,14 @@
 ---
+
 # required metadata
 title: "Add or remove R and Python on Machine Learning Server for Linux"
 description: "How to install or uninstall R and Python packages on Machine Learning Server forLinux."
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "07/31/2018"
-ms.topic: "conceptual"
+ms.date: 07/31/2018
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata
@@ -19,7 +20,6 @@ ms.prod: "mlserver"
 #ms.tgt_pltfrm: ""
 #ms.technology: ""
 #ms.custom: ""
-
 ---
 
 # How to add or remove R and Python packages on Machine Learning Server for Linux

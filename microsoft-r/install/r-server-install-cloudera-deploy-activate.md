@@ -3,12 +3,12 @@
 # required metadata
 title: "Deploy and activate MRS parcels and CSDs on CDH"
 description: "Deploy and activate Microsoft R Server parcels and CSDs on the Cloudera distribution of Apache Hadoop (CDH)."
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "04/11/2017"
-ms.topic: "conceptual"
+ms.date: 04/11/2017
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata

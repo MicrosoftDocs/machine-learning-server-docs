@@ -3,12 +3,12 @@
 # required metadata
 title: "Create an XDF file (Machine Learning Server) "
 description: "How to import CSV and other files to create an XDF file on Machine Learning Server"
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "02/16/2018"
-ms.topic: "conceptual"
+ms.date: 02/16/2018
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata
@@ -20,7 +20,6 @@ ms.prod: "mlserver"
 #ms.tgt_pltfrm: ""
 #ms.technology: ""
 #ms.custom: ""
-
 ---
 
 # Create an XDF file in Machine Learning Server

@@ -3,12 +3,12 @@
 # required metadata
 title: "HTTPS SSL / TLS 1.2 for Machine Learning Server "
 description: "Learn how to add enterprise-grade security (HTTPS SSL / TLS 1.2) for Machine Learning Server"
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "2/16/2018"
-ms.topic: "conceptual"
+ms.date: 2/16/2018
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata

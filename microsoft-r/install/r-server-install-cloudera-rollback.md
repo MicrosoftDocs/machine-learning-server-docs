@@ -3,12 +3,12 @@
 # required metadata
 title: "R Server installation on Cloudera CDH"
 description: "Install Microsoft R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)."
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "03/29/2017"
-ms.topic: "conceptual"
+ms.date: 03/29/2017
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata

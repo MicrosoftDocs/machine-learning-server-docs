@@ -3,12 +3,12 @@
 # required metadata
 title: "Writing custom analyses for large data sets using RevoScaleR (Machine Learning Server) "
 description: "Get started with custom analysis of big data using RevoScaleR functions in Machine Learning Server."
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "01/03/2018"
-ms.topic: "conceptual"
+ms.date: 01/03/2018
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata
@@ -20,7 +20,6 @@ ms.prod: "mlserver"
 #ms.tgt_pltfrm: ""
 #ms.technology: ""
 #ms.custom: ""
-
 ---
 
 # Writing custom analyses for large data sets in RevoScaleR

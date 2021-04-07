@@ -3,12 +3,12 @@
 # required metadata
 title: "How to use RevoScaleR with Apache Spark (Machine Learning Server)"
 description: "Get started with RevoScaleR and Spark on Machine Learning Server."
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "12/19/2017"
-ms.topic: "tutorial"
+ms.date: 12/19/2017
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata
@@ -20,7 +20,6 @@ ms.prod: "mlserver"
 #ms.tgt_pltfrm: ""
 #ms.technology: ""
 #ms.custom: ""
-
 ---
 
 # How to use RevoScaleR in a Spark compute context

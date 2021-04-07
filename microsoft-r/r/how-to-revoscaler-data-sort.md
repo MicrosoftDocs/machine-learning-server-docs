@@ -3,12 +3,12 @@
 # required metadata
 title: "Sort data in RevoScaleR using rxSort (Machine Learning Server) "
 description: "How to sort data in a data frame or XDF file with the RevoScaleR rxSort function."
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "06/06/2017"
-ms.topic: "conceptual"
+ms.date: 06/06/2017
+ms.topic: "how-to"
 ms.prod: "mlserver"
 
 # optional metadata
@@ -20,7 +20,6 @@ ms.prod: "mlserver"
 #ms.tgt_pltfrm: ""
 #ms.technology: ""
 #ms.custom: ""
-
 ---
 
 # How to sort data using rxSort in RevoScaleR

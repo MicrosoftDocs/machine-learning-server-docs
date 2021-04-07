@@ -3,12 +3,12 @@
 # required metadata
 title: "Tutorial: PySpark and revoscalepy interoperabilty in Machine Learning Server  "
 description: "Learn how to use PySpark and revoscalepy Python functions in Spark applications in Hadoop clusters having Machine Learning Server."
-keywords: ""
+keywords: 
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "02/16/2018"
-ms.topic: "conceptual"
+ms.date: 02/16/2018
+ms.topic: "tutorial"
 ms.prod: "mlserver"
 
 # optional metadata
@@ -18,9 +18,8 @@ ms.prod: "mlserver"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology: ""
+ms.technology: 
 #ms.custom: ""
-
 ---
 
 # Tutorial: PySpark and revoscalepy interoperability in Machine Learning Server
