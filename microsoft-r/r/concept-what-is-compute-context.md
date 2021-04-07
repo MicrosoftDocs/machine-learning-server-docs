@@ -53,7 +53,7 @@ Context name | Alias | Usage |
 -----------|--------------------|-----------------------|
 [`RxLocalSeq`](../r-reference/revoscaler/rxlocalseq.md)      | local     | All server and client configurations support a local compute context. |
 [`RxSpark`](../r-reference/revoscaler/rxspark.md)         | spark     | Remote compute context. Target is a Spark cluster on Hadoop. |
-[`RxInSqlServer`](../r-reference/revoscaler/rxinsqlserver.md)   | sqlserver | Remote compute context. Target server is a single database node (SQL Server 2016 R Services or SQL Server 2017 Machine Learning Services). Computation is parallel, but not distributed. |
+[`RxInSqlServer`](../r-reference/revoscaler/rxinsqlserver.md)   | sqlserver | Remote compute context. Target server is a single database node (SQL Server 2016 R Services or SQL Server 2017 or later Machine Learning Services). Computation is parallel, but not distributed. |
 [`RxLocalParallel`](../r-reference/revoscaler/rxlocalparallel.md) |localpar | Compute context is often used to enable controlled, distributed computations relying on instructions you provide rather than a built-in scheduler on Hadoop. You can use compute context for manual distributed computing. | 
 [`RxForeachDoPar`](../r-reference/revoscaler/rxforeachdopar.md) | dopar | Use for manual distributed computing. |
 
