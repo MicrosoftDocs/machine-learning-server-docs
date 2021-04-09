@@ -645,12 +645,14 @@ items:
       - name: getSentiment
         href: r-reference/microsoftml/getsentiment.md
       - name: kernel
+        displayName: linearKernel,polynomialKernel,rbfKernel,sigmoidKernel
         href: r-reference/microsoftml/kernel.md
       - name: loadImage
         href: r-reference/microsoftml/loadimage.md
       - name: logisticRegression
         href: r-reference/microsoftml/logisticregression.md
       - name: loss
+        displayName: expLoss,hingeLoss,logLoss,poissonLoss,smoothHingeLoss,squaredLoss
         href: r-reference/microsoftml/loss.md
       - name: minCount
         href: r-reference/microsoftml/mincount.md
