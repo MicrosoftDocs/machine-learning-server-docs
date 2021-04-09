@@ -400,8 +400,6 @@ items:
         href: python-reference/microsoftml/custom.md
       - name: drop_columns
         href: python-reference/microsoftml/drop-columns.md
-      - name: EnsembleControl
-        href: python-reference/microsoftml/EnsembleControl.md
       - name: extract_pixels
         href: python-reference/microsoftml/extract-pixels.md
       - name: featurize_image
