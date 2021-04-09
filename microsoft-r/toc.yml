@@ -382,15 +382,15 @@ items:
       items:
       - name: Package overview
         href: python-reference/microsoftml/microsoftml-package.md
-      - name: adadelta-optimizer
+      - name: adadelta_optimizer
         href: python-reference/microsoftml/adadelta-optimizer.md
-      - name: avx-math
+      - name: avx_math
         href: python-reference/microsoftml/avx-math.md
       - name: categorical
         href: python-reference/microsoftml/categorical.md
       - name: categorical_hash
         href: python-reference/microsoftml/categorical-hash.md
-      - name: clr-math
+      - name: clr_math
         href: python-reference/microsoftml/clr-math.md
       - name: concat
         href: python-reference/microsoftml/concat.md
@@ -408,21 +408,21 @@ items:
         href: python-reference/microsoftml/featurize-text.md
       - name: get_sentiment
         href: python-reference/microsoftml/get-sentiment.md
-      - name: gpu-math
+      - name: gpu_math
         href: python-reference/microsoftml/gpu-math.md
-      - name: hinge-loss
+      - name: hinge_loss
         href: python-reference/microsoftml/hinge-loss.md
       - name: load_image
         href: python-reference/microsoftml/load-image.md
-      - name: log-loss
+      - name: log_loss
         href: python-reference/microsoftml/log-loss.md
-      - name: mkl-math
+      - name: mkl_math
         href: python-reference/microsoftml/mkl-math.md
       - name: mutualinformation_select
         href: python-reference/microsoftml/mutualinformation-select.md
-      - name: n-gram
+      - name: n_gram
         href: python-reference/microsoftml/n-gram.md
-      - name: n-gram-hash
+      - name: n_gram_hash
         href: python-reference/microsoftml/n-gram-hash.md
       - name: predefined
         href: python-reference/microsoftml/predefined.md
@@ -448,13 +448,13 @@ items:
         href: python-reference/microsoftml/rx-predict.md
       - name: select_columns
         href: python-reference/microsoftml/select-columns.md
-      - name: sgd-optimizer
+      - name: sgd_optimizer
         href: python-reference/microsoftml/sgd-optimizer.md
-      - name: smoothed-hinge-loss
+      - name: smoothed_hinge_loss
         href: python-reference/microsoftml/smoothed-hinge-loss.md
-      - name: squared-loss
+      - name: squared_loss
         href: python-reference/microsoftml/squared-loss.md
-      - name: sse-math
+      - name: sse_math
         href: python-reference/microsoftml/sse-math.md
     - name: revoscalepy
       items:
