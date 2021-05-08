@@ -382,14 +382,22 @@ items:
       items:
       - name: Package overview
         href: python-reference/microsoftml/microsoftml-package.md
+      - name: adadelta_optimizer
+        href: python-reference/microsoftml/adadelta-optimizer.md
+      - name: avx_math
+        href: python-reference/microsoftml/avx-math.md
       - name: categorical
         href: python-reference/microsoftml/categorical.md
       - name: categorical_hash
         href: python-reference/microsoftml/categorical-hash.md
+      - name: clr_math
+        href: python-reference/microsoftml/clr-math.md
       - name: concat
         href: python-reference/microsoftml/concat.md
       - name: 'count_select '
         href: python-reference/microsoftml/count-select.md
+      - name: custom
+        href: python-reference/microsoftml/custom.md
       - name: drop_columns
         href: python-reference/microsoftml/drop-columns.md
       - name: extract_pixels
@@ -400,10 +408,24 @@ items:
         href: python-reference/microsoftml/featurize-text.md
       - name: get_sentiment
         href: python-reference/microsoftml/get-sentiment.md
+      - name: gpu_math
+        href: python-reference/microsoftml/gpu-math.md
+      - name: hinge_loss
+        href: python-reference/microsoftml/hinge-loss.md
       - name: load_image
         href: python-reference/microsoftml/load-image.md
+      - name: log_loss
+        href: python-reference/microsoftml/log-loss.md
+      - name: mkl_math
+        href: python-reference/microsoftml/mkl-math.md
       - name: mutualinformation_select
         href: python-reference/microsoftml/mutualinformation-select.md
+      - name: n_gram
+        href: python-reference/microsoftml/n-gram.md
+      - name: n_gram_hash
+        href: python-reference/microsoftml/n-gram-hash.md
+      - name: predefined
+        href: python-reference/microsoftml/predefined.md
       - name: resize_image
         href: python-reference/microsoftml/resize-image.md
       - name: rx_ensemble
@@ -426,6 +448,14 @@ items:
         href: python-reference/microsoftml/rx-predict.md
       - name: select_columns
         href: python-reference/microsoftml/select-columns.md
+      - name: sgd_optimizer
+        href: python-reference/microsoftml/sgd-optimizer.md
+      - name: smoothed_hinge_loss
+        href: python-reference/microsoftml/smoothed-hinge-loss.md
+      - name: squared_loss
+        href: python-reference/microsoftml/squared-loss.md
+      - name: sse_math
+        href: python-reference/microsoftml/sse-math.md
     - name: revoscalepy
       items:
       - name: Package overview
@@ -436,6 +466,8 @@ items:
         href: python-reference/revoscalepy/rx-cancel-job.md
       - name: rx_cleanup_jobs
         href: python-reference/revoscalepy/rx-cleanup-jobs.md
+      - name: rx_create_col_info
+        href: python-reference/revoscalepy/rx-create-col-info.md
       - name: RxDataSource
         href: python-reference/revoscalepy/RxDataSource.md
       - name: rx_data_step
@@ -536,6 +568,8 @@ items:
         href: python-reference/revoscalepy/rx-read-object.md
       - name: rx_read_xdf
         href: python-reference/revoscalepy/rx-read-xdf.md
+      - name: RxRemoteComputeContext
+        href: python-reference/revoscalepy/RxRemoteComputeContext.md
       - name: RxRemoteJob
         href: python-reference/revoscalepy/RxRemoteJob.md
       - name: RxRemoteJobStatus
@@ -588,6 +622,10 @@ items:
         href: r-reference/microsoftml/categoricalhash.md
       - name: concat
         href: r-reference/microsoftml/concat.md
+      - name: dropColumns
+        href: r-reference/microsoftml/dropColumns.md
+      - name: ensembleControl
+        href: r-reference/microsoftml/ensembleControl.md
       - name: extractPixels
         href: r-reference/microsoftml/extractpixels.md
       - name: fastForest
@@ -600,13 +638,21 @@ items:
         href: r-reference/microsoftml/featurizeimage.md
       - name: featurizeText
         href: r-reference/microsoftml/featurizetext.md
+      - name: getNetDefinition
+        href: r-reference/microsoftml/getNetDefinition.md
+      - name: getSampleDataDir
+        href: r-reference/microsoftml/getSampleDataDir.md
       - name: getSentiment
         href: r-reference/microsoftml/getsentiment.md
+      - name: kernel
+        displayName: linearKernel,polynomialKernel,rbfKernel,sigmoidKernel
+        href: r-reference/microsoftml/kernel.md
       - name: loadImage
         href: r-reference/microsoftml/loadimage.md
       - name: logisticRegression
         href: r-reference/microsoftml/logisticregression.md
       - name: loss
+        displayName: expLoss,hingeLoss,logLoss,poissonLoss,smoothHingeLoss,squaredLoss
         href: r-reference/microsoftml/loss.md
       - name: minCount
         href: r-reference/microsoftml/mincount.md
@@ -780,6 +826,8 @@ items:
           href: r-reference/revoscaler/claims.md
         - name: DJIAdaily
           href: r-reference/revoscaler/djiadaily.md
+        - name: getValidatedServiceType
+          href: r-reference/mrsdeploy/getValidatedServiceType.md
         - name: Kyphosis
           href: r-reference/revoscaler/kyphosis.md
         - name: mortDefaultSmall
@@ -904,6 +952,8 @@ items:
           href: r-reference/revoscaler/rxgetsparklyrconnection.md
         - name: rxGetVarInfo
           href: r-reference/revoscaler/rxgetvarinfo.md
+        - name: rxGetVarInfoXdf
+          href: r-reference/revoscaler/rxGetVarInfoXdf.md
         - name: rxGetVarNames
           href: r-reference/revoscaler/rxgetvarnames.md
         - name: rxGLM
