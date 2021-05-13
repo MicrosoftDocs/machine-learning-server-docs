@@ -382,10 +382,8 @@ The following packages comprise a full Machine Learning Server installation:
  microsoft-mlserver-packages-r-9.4.7        ** core
  microsoft-mlserver-python-9.4.7            ** core
  microsoft-mlserver-packages-py-9.4.7       ** core
- microsoft-mlserver-mml-r-9.4.7             ** microsoftml for R (optional)
- microsoft-mlserver-mml-py-9.4.7            ** microsoftml for Python (optional)
- microsoft-mlserver-mlm-r-9.4.7             ** pre-trained models (requires mml)
- microsoft-mlserver-mlm-py-9.4.7            ** pre-trained models (requires mml)
+ microsoft-mlserver-mlm-r-9.4.7             ** pre-trained models
+ microsoft-mlserver-mlm-py-9.4.7            ** pre-trained models
  microsoft-mlserver-hadoop-9.4.7            ** hadoop (required for hadoop)
  microsoft-mlserver-adminutil-9.4.7         ** operationalization (optional)
  microsoft-mlserver-computenode-9.4.7       ** operationalization (optional)
