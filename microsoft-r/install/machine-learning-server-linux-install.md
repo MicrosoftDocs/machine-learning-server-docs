@@ -79,7 +79,7 @@ Setup is through package managers that retrieve distributions from Microsoft web
 |[zypper](https://www.suse.com/documentation/opensuse111/opensuse111_reference/data/sec_zypper.html) | SUSE |
 |[rpm](https://en.wikipedia.org/wiki/Rpm_(software)) | RHEL, CentOS, SUSE |
 
-The package manager downloads packages from the [packages.microsoft.com](https://packages.microsoft.com) repo, determines dependencies, retrieves additional packages, sets the installation order, and installs the software. For example syntax on linking to the repo, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
+The package manager downloads packages from the [packages.microsoft.com](https://packages.microsoft.com) repo, determines dependencies, retrieves additional packages, sets the installation order, and installs the software. For example syntax on linking to the repo, see [Linux Software Repository for Microsoft Products](/windows-server/administration/linux-package-repository-for-microsoft-software).
 
 Machine Learning Server activation is a separate step *not* performed by the package manager. If you forget to activate, the server works, but the following error appears when you call an API: "Express Edition will continue to be enforced."
 
@@ -103,7 +103,7 @@ After installation completes, software can be found at the following paths:
 
 ## <a name="redhat">Install on Red Hat or CentOS</a>
 
-Run the following commands to install Machine Learning Server for Linux on Red Hat Enterprise (RHEL) and CentOS (6.x - 7.x). If you run into problems, try [manual configuration](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software#manual-configuration) instead.
+Run the following commands to install Machine Learning Server for Linux on Red Hat Enterprise (RHEL) and CentOS (6.x - 7.x). If you run into problems, try [manual configuration](/windows-server/administration/linux-package-repository-for-microsoft-software#manual-configuration) instead.
 
   ```bash
   # Install as root
@@ -332,8 +332,7 @@ To quit the program, type `quit()` at the command line with no arguments.
 
 1. Open an Administrator command prompt.
 
-2. Enter the following command to check availability of the CLI: `az mlserver admin --help` (use `az ml admin --help` for 9.3 or older). If you receive the following error: `az: error argument _command_package: invalid choice: ml`, follow the [instructions to re-add the extension to the CLI](https://docs.microsoft.com/machine-learning-server/resources-known-issues#1-missing-azure-ml-admin-cli-extension-on-dsvm-environments
-).
+2. Enter the following command to check availability of the CLI: `az mlserver admin --help` (use `az ml admin --help` for 9.3 or older). If you receive the following error: `az: error argument _command_package: invalid choice: ml`, follow the [instructions to re-add the extension to the CLI](../resources-known-issues.md#1-missing-azure-ml-admin-cli-extension-on-dsvm-environments).
 
 ## Enable web service deployment and remote connections
 

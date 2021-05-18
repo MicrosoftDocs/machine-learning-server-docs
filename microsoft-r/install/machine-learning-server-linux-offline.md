@@ -128,7 +128,7 @@ Additional open-source packages must be installed if a package is required but n
 
 If your system provides a graphical user interface, you can click a file to download it. Otherwise, use `wget`. We recommend downloading all packages to a single directory so that you can install all of them in a single command. By default, `wget` uses the working directory, but you can specify an alternative path using the `-outfile` parameter.
 
-The following example is for the first package. Each command references the version number of the platform. Remember to change the number if your version is different. For more information, see [Linux Software Repository for Microsoft Products](https://docs.microsoft.com/windows-server/administration/linux-package-repository-for-microsoft-software).
+The following example is for the first package. Each command references the version number of the platform. Remember to change the number if your version is different. For more information, see [Linux Software Repository for Microsoft Products](/windows-server/administration/linux-package-repository-for-microsoft-software).
 
 + Download to CentOS or RHEL: `wget https://packages.microsoft.com/rhel/7/prod/microsoft-mlserver-packages-r-9.4.7.rpm` 
 + Download to Ubuntu 16.04: `wget https://packages.microsoft.com/ubuntu/16.04/prod/pool/main/m/microsoft-mlserver-packages-r-9.4.7/microsoft-mlserver-packages-r-9.4.0.deb`
@@ -281,7 +281,7 @@ To quit the program, type `quit()` at the command line with no arguments.
 
 1. Open an Administrator command prompt.
 
-2. Enter the following command to check availability of the CLI: `az ml admin --help`. If you receive the following error: `az: error argument _command_package: invalid choice: ml`, follow the [instructions to re-add the extension to the CLI](https://docs.microsoft.com/machine-learning-server/resources-known-issues#1-missing-azure-ml-admin-cli-extension-on-dsvm-environments
+2. Enter the following command to check availability of the CLI: `az ml admin --help`. If you receive the following error: `az: error argument _command_package: invalid choice: ml`, follow the [instructions to re-add the extension to the CLI](../resources-known-issues.md#1-missing-azure-ml-admin-cli-extension-on-dsvm-environments
 ).
 
 ## Next steps
