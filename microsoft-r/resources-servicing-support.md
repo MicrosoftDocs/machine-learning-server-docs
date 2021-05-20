@@ -24,7 +24,7 @@ ms.prod: "mlserver"
 ---
 # Support Timeline for Microsoft R Server & Machine Learning Server
 
-Machine Learning Server ([previously called Microsoft R Server](rebranding-microsoft-r-server.md)) is supported for two (2) years from its general availability (GA) release date. Customers receive critical updates for the first year from general availability (GA) of each release as shown in the diagram.
+Machine Learning Server ([previously called Microsoft R Server](rebranding-microsoft-r-server.md)) is supported for three (3) years from its general availability (GA) release date. Customers receive critical updates for the first year from general availability (GA) of each release as shown in the diagram.
 
 At the end of a version’s life cycle, the software is removed from the Microsoft download sites and obsolete feature documentation is archived.
 
