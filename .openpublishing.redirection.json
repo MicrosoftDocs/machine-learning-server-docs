@@ -2363,6 +2363,28 @@
       "source_path": "microsoft-r/resources-glossary.md",
       "redirect_url": "https://docs.microsoft.com/machine-learning-server/index",
       "redirect_document_id": false
+    },
+
+
+
+    {
+      "source_path": "microsoft-r/what-is-r-client-r-server.md",
+      "redirect_url": "/machine-learning-server/r-client/what-is-microsoft-r-client",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r/concept-what-is-sql-server-r-services.md",
+      "redirect_url": "https://docs.microsoft.com/sql/machine-learning/sql-server-machine-learning-services",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-client/install-uninstall.md",
+      "redirect_url": "/machine-learning-server/r-client/what-is-microsoft-r-client",
+      "redirect_document_id": false
     }
+
+
+
+
   ]
 }
