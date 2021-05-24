@@ -24,6 +24,8 @@ ms.technology: ""
 
 # RevoScaleR with sparklyr step-by-step examples
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 Machine Learning Server supports the [sparklyr package from RStudio](https://cran.r-project.org/package=sparklyr). Machine Learning Server packages such as RevoScaleR and sparklyr can be used together within a single Spark session. This walkthrough shows you two approaches for using these technologies together:
 
 + [Example 1: sparklyr data and MRS analytics](#example1)

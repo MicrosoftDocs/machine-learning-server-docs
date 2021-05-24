@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Monitor, stop, and start web & compute nodes
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server, Microsoft R Server**
 
 You can monitor, start, or stop all operationalization-related web and compute nodes on the Machine Learning Server machine at once.

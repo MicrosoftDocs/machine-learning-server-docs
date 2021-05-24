@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # Machine Learning Server in the Cloud
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 [Machine Learning Server](../what-is-microsoft-r-server.md), formerly known as Microsoft R Server, is a broadly deployed enterprise-class analytics platform for R and Python on-premises computing. 
 
 It's also available in the cloud on Azure virtual machines (VM), and through Azure services that have integrated the R and Python libraries. This article explains your options for accessing Machine Learning Server functionality in Azure.

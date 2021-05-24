@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Cheat sheet: How to choose a MicrosoftML algorithm
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 The **MicrosoftML: Algorithm Cheat Sheet** helps you choose the right machine learning algorithm for a predictive analytics model when using Machine Learning Server. The algorithms are available in R or Python.
 
 MicrosoftML provides a library of algorithms from the  ***regression***, ***classification (two-class and multi-class)***, and ***anomaly detection*** families. Each is designed to address a different type of machine learning problem.

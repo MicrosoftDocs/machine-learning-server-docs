@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Cross-Origin Resource Sharing 
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server, Microsoft R Server 9.x**
 
 Cross-Origin Resource Sharing (CORS) enables your client application to freely communicate and make cross-site HTTP requests for resources from a domain other than where the web node is hosted. You can enable or disable CORS in the external configuration file, appsettings.json. Support for CORS is disabled by default.  

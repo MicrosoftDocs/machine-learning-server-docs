@@ -23,6 +23,8 @@ ms.prod: "mlserver"
 
 # How to create and manage session pools for fast web service connections in R
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to: Machine Learning Server 9.3 (R) | Machine Learning Server 9.4 (R)**
 
 Fast connections to a web service are possible when you create sessions and load dependencies in advance. Sessions are available in a pool dedicated to a specific web service, where each session includes an instance of the R interpreter and a copy of dependencies required by the web service. For example, if you create ten sessions in advance for a web service that uses Matplotlib, dplyr, cluster, RevoScaleR, MicrosoftML, and mrsdeploy, each session would have its own instance of the R interpreter plus a copy of each library loaded in memory. 

@@ -21,8 +21,10 @@ ms.prod: "mlserver"
 #ms.technology: ""
 #ms.custom: ""
 ---
-    
+
 # Manage access tokens for API requests
+
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
 
 **Applies to:  Machine Learning Server, Microsoft R Server 9.x**
 

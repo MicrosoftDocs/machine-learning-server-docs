@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # How to use the RevoPemaR library in Machine Learning Server
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 The **RevoPemaR** package provides a framework for writing custom parallel external memory algorithms in R, making use of the R reference classes introduced by John Chambers in R 2.12.
 
 Parallel External Memory Algorithms (PEMA) are algorithms that eliminate in-memory data storage requirements, allowing data to be processed in chunks, in parallel, possibly on different nodes of a cluster. The results are then combined and processed at the end (or at the end of each iteration). The **RevoPemaR** package is used for writing custom PEMA algorithms in R. 

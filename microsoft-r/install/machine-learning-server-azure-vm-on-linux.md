@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # Machine Learning Server on Azure Virtual Machines
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 Machine Learning Server, formerly known as R Server, is pre-installed on Azure virtual machines (VM) images running either a Windows or Linux operating system. 
 
 An excellent alternative to selecting an existing VM image is to provision a VM yourself using a resource template. The template includes extra configuration steps for both the VM and Machine Learning Server itself, resulting in a VM that is ready-to-use with no additional work on your part.

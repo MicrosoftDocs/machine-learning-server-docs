@@ -27,6 +27,8 @@ ms.technology:
 
 # Tips on Computing with Big Data in R
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 Working with very large data sets yields richer insights. You can relax assumptions required with smaller data sets and let the data speak for itself. But big data also presents problems, especially when it overwhelms hardware resources.
 
 The **RevoScaleR** package that is included with Machine Learning Server provides functions that process in parallel. Analysis functions are threaded to use multiple cores, and computations can be distributed across multiple computers (nodes) on a cluster or in the cloud.

@@ -27,6 +27,8 @@ ms.prod: "mlserver"
 
 # Install Machine Learning Server for Linux
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server 9.2.1 | 9.3 | 9.4**
 
 Machine Learning Server for Linux runs machine learning and data mining solutions written in R or Python in standalone and clustered topologies. 

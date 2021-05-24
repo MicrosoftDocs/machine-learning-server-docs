@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # What are web services in Machine Learning Server?
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to: Machine Learning Server**
 
 In Machine Learning Server, a web service is an R or Python code execution on the [operationalization compute node](configure-start-for-administrators.md#configure-server-for-operationalization). 

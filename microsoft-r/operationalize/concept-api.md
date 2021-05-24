@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # APIs for operationalizing your models and analytics with Machine Learning Server  
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to: Machine Learning Server, Microsoft R Server 9.x**
 
 The Machine Learning Server (and Microsoft R Server) <a href="https://microsoft.github.io/deployr-api-docs/" target="_blank">REST APIs</a> are exposed by the operationalization server, a standards-based server technology [capable of scaling to meet the needs of enterprise-grade deployments](configure-machine-learning-server-enterprise.md). With the Machine Learning Server configured to operationalize, the full statistics, analytics, and visualization capabilities of R and Python can now be directly leveraged inside Web, desktop and mobile applications.

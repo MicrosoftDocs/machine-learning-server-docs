@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Generalized Linear Models using RevoScaleR
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 Generalized linear models (GLM) are a framework for a wide range of analyses. They relax the assumptions for a standard linear model in two ways. First, a functional form can be specified for the conditional mean of the predictor, referred to as the “link” function. Second, you can specify a distribution for the response variable. The rxGlm function in RevoScaleR provides the ability to estimate generalized linear models on large data sets.
 
 The following family/link combinations are implemented in C++ for performance enhancements: binomial/logit, gamma/log, poisson/log, and Tweedie. Other family/link combinations use a combination of C++ and R code. Any valid R family object that can be used with glm() can be used with rxGlm(), including user-defined. The following table shows all of the supported family/link combinations (in addition to user-defined):

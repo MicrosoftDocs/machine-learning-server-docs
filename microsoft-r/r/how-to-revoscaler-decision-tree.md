@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Estimating Decision Tree Models
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 The *rxDTree* function in RevoScaleR fits tree-based models using a binning-based recursive partitioning algorithm. The resulting model is similar to that produced by the recommended R package *rpart*. Both classification-type trees and regression-type trees are supported; as with *rpart*, the difference is determined by the nature of the response variable: a factor response generates a classification tree; a numeric response generates a regression tree.
 
 ### The rxDTree Algorithm

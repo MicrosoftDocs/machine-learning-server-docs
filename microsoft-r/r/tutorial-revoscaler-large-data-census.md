@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # Tutorial: Analyzing US census data with RevoScaleR
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 This example builds on what you learned in an [earlier tutorial](tutorial-revoscaler-data-import-transform.md) by exploring the import and statistical RevoScaleR functions typically used with larger data sets. As before, you'll work with sample data to complete the steps.
 
 ## Download the census dataset

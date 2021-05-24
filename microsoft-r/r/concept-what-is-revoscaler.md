@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # What is RevoScaleR?
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 RevoScaleR is a collection of proprietary functions in Machine Learning Server used for practicing data science at scale. For data scientists, RevoScaleR gives you data-related functions for import, transformation and manipulation, summarization, visualization, and analysis. *At scale* refers to the core engine's ability to perform these tasks against very large datasets, in parallel and on distributed file systems, chunking and reconstituting data when it cannot fit in memory.
 
 RevoScaleR functions are provided through the **RevoScaleR** package installed for free in [Microsoft R Client](../r-client/what-is-microsoft-r-client.md) or commercially in [Machine Learning Server](../what-is-machine-learning-server.md) on supported platforms. RevoScaleR is also embedded in Azure HDInsight, Azure Data Science virtual machines, and SQL Server.

@@ -21,7 +21,10 @@ ms.prod: "mlserver"
 #ms.technology: ""
 #ms.custom: ""
 ---
+
 # Data transformations using RevoScaleR functions (Machine Learning Server)
+
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
 
 Loading an initial dataset is typically just the first step in a continuum of data manipulation tasks that persist until your project is completed. Common examples of data manipulation include isolating a subset, slicing a dataset by variables or rows, and converting or merging variables into new forms, often resulting in new data structures along the way.
 

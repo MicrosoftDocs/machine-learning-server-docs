@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # R Samples for Machine Learning Server
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 The following samples are available for R developers. Use these as examples to learn Machine Learning Server functions in R script or code.
 
 |Example|Description                                                     |

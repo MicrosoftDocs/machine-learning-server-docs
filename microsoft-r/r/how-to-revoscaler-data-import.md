@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Importing text data in Machine Learning Server
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 RevoScaleR can use data from a wide range of external data sources, including text files, database files on disk (SPSS and SAS), and relational data sources. This article puts the focus on text files: delimited (.csv) and fixed-format, plus database files accessed through simple file reads.
 
 To store text data for analysis and visualization, you can load it into memory as a *data frame* for the duration of your session, or save it to disk as a .xdf file. For either approach, the RevoScaleR **rxImport** function loads the data.

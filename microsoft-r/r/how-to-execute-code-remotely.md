@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Execute on a remote server using the mrsdeploy package
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server, Microsoft R Server 9.x, Microsoft R Client 3.x**
 
 Remote execution is the ability to issue R commands from either Machine Learning Server (or R Server) or R Client to a remote session running on another Machine Learning Server instance. You can use remote execution to offload heavy processing on server and test your work.  It is especially useful while developing and testing your analytics.

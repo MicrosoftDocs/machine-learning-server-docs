@@ -22,7 +22,10 @@ ms.prod: "mlserver"
 #ms.custom: ""
 
 ---
+
 # Opting out of usage data collection (Machine Learning Server)
+
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
 
 By default, telemetry data is collected during your usage of Machine Learning Server and R Client for the purpose of improving products and services. Anonymous usage data includes device information, operating system version, regional and language settings, and errors reports. You can review the [Microsoft privacy statement](https://privacy.microsoft.com/privacystatement) for a detailed explanation.
 

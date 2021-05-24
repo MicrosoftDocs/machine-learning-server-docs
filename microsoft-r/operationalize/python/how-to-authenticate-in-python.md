@@ -23,6 +23,8 @@ ms.prod: "mlserver"
 
 # Authenticate with Machine Learning Server in Python with azureml-model-management-sdk
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to: Machine Learning Server**
 
 The [azureml-model-management-sdk](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) package, delivered with Machine Learning Server, provides functions for publishing and managing a Python web service that is backed by the Python code block or script you provided.  

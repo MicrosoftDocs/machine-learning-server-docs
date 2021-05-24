@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Configuring an SQL Server or PostgreSQL database for Machine Learning Server
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to: Machine Learning Server, Microsoft R Server 9.x**
 
 The operationalization feature for Machine Learning Server (and R Server) installs and uses a local SQLite database by default to store internal information. Later, you can update the configuration to use another database locally or remotely. This is useful when you want to use a remote database or when you have multiple web nodes. 

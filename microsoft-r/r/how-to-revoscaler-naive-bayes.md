@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Naïve Bayes Classifier using RevoScaleR
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 In this article, we describe one simple and effective family of classification methods known as Naïve Bayes. In RevoScaleR, Naïve Bayes classifiers can be implemented using the *rxNaiveBayes* function. Classification, simply put, is the act of dividing observations into classes or categories. Some examples of this are the classification of product reviews into positive or negative categories or the detection of email spam. These classification examples can be achieved manually using a set of rules. However, this is not efficient or scalable. In Naïve Bayes and other machine learning based classification algorithms, the decision criteria for assigning class are learned from a training data set, which has classes assigned manually to each observation.
 
 ### The rxNaiveBayes Algorithm

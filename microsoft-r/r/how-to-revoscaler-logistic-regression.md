@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Fitting Logistic Regression Models using Machine Learning Server
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 Logistic regression is a standard tool for modeling data with a binary response variable. In R, you fit a logistic regression using the *glm* function, specifying a binomial family and the logit link function. In RevoScaleR, you can use *rxGlm* in the same way (see [Fitting Generalized Linear Models](how-to-revoscaler-generalized-linear-model.md)) or you can fit a logistic regression using the optimized *rxLogit* function; because this function is specific to logistic regression, you need not specify a family or link function.
 
 ### A Simple Logistic Regression Example

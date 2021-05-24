@@ -20,7 +20,10 @@ ms.prod: "mlserver"
 #ms.tgt_pltfrm: ""
 #ms.custom: ""
 ---
+
 # Quickstart: An example of binary classification with the microsoftml Python package
+
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
 
 **Applies to: Machine Learning Server 9.x**
 

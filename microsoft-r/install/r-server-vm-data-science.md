@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # ML Server on the Data Science Virtual Machine
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 The Microsoft Data Science Virtual Machine is an Azure virtual machine (VM) image pre-configured with several popular tools, including Machine Learning Server on the Linux VM and both Machine Learning Server and SQL Server Machine Learning  Services on the Windows. Machine Learning Server (Developer Edition) includes the complete R distribution from CRAN and a Python interpreter, Python distribution from Anaconda,  plus additional data-analysis functions with big-data capabilities, and the operationalization framework for integrating R and Python into applications as web services. The developer edition is identical to the Enterprise Machine Learning Server edition, but licensed for development/test use.
 
 Through Azure’s worldwide cloud infrastructure, you now have on-demand access to a data science development environment in which you can rapidly derive insights from your data, build predictive models and advanced analytics solutions for deployment to the cloud, on-premises or in a hybrid environment. 

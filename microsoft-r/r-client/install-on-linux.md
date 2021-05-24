@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Install Microsoft R Client on Linux
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 Microsoft R Client is a free data science tool for high-performance analytics that you can install on popular Linux operating systems, including CentOS, Red Hat, and Ubuntu. R Client is built on top of [Microsoft R Open](https://mran.microsoft.com/open) so you can use any open-source R packages to build your analytics, and includes the [R function libraries from Microsoft](../r-reference/introducing-r-server-r-package-reference.md#r-function-libraries) that execute locally on R Client or remotely on a more powerful [Machine Learning Server](../what-is-machine-learning-server.md). 
 
 R Client allows you to work with production data locally using the full set of RevoScaleR functions, with these constraints: data must fit in local memory, and processing is capped at two threads for RevoScaleR functions. 
