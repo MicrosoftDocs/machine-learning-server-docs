@@ -26,6 +26,10 @@ ms.prod: "mlserver"
 
 [!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
 
+## Retirement banners from other products
+
+[!INCLUDE [retirement banners](~/includes/sample-retirement-banners.md)]
+
 ## See Also
 
 [Support Timeline for Microsoft R Server & Machine Learning Server](resources-servicing-support.md)
