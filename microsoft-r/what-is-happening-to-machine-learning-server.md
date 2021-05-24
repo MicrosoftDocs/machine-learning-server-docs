@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # What's happening to Machine Learning Server?
 
+[!INCLUDE [retirement banner](/mlserver/includes/machine-learning-server-retirement.md)]
+
 ## See Also
 
 [Support Timeline for Microsoft R Server & Machine Learning Server](resources-servicing-support.md)
