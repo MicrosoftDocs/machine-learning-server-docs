@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # Microsoft R Server is now Microsoft Machine Learning Server
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 In September 2017, Microsoft R Server was released under the name of **Microsoft Machine Learning Server**. The product was renamed from R Server to Machine Learning Server to reflect the addition of Python-based analytics.
 
 In subsequent releases, including the current version of 9.4, the R components that originated in R Server continue to be  distributed under the Machine Learning Server product name. Specifically, the R components in Machine Learning Server include packages such as RevoScaleR, olapR, and mrsdeploy to name a few.

@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Asynchronous web service consumption via batch processing with mrsdeploy 
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server, Microsoft R Server 9.1**
 
 In this article, you can learn how to consume  a web service asynchronously, which is especially useful with large input data sets and long-running computations. The typical approach to consuming web services, ["Request Response" consumption](how-to-consume-web-service-interact-in-r.md#consume-service), involves a single API call to execute the code in that web service once.  The "Asynchronous Batch" approach involves the execution of code without manual intervention using multiple asynchronous API calls on a specific web service sent as a single request to Machine Learning Server. Then, Machine Learning Server immediately executes those operations once for every row of data provided. 

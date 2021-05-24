@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # How to add web services and authentication to applications
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server, Microsoft R Server 9.x**
 
 Learn how to build and use API Client libraries from Swagger to integrate into your applications. Swagger is a machine-readable representation of a RESTful API that enables support for interactive documentation, client SDK generation, and discoverability.

@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Estimate Models Using Stochastic Gradient Boosting 
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 The *rxBTrees* function in RevoScaleR, like *rxDForest*, fits a decision forest to your data, but the forest is generated using a stochastic gradient boosting algorithm. This is similar to the decision forest algorithm in that each tree is fitted to a subsample of the training set (sampling without replacement) and predictions are made by aggregating over the predictions of all trees. Unlike the *rxDForest* algorithm, the boosted trees are added one at a time, and at each iteration, a regression tree is fitted to the current pseudo-residuals, that is, the gradient of the loss functional being minimized.
 
 Like the *rxDForest* function, *rxBTrees* uses the same basic tree-fitting algorithm as *rxDTree* (see ["The *rxDTree* Algorithm"](how-to-revoscaler-decision-tree.md#the-rxdtree-algorithm)). To create the forest, you specify the number of trees using the *nTree* argument and the number of variables to consider for splitting at each tree node using the *mTry* argument. In most cases, you specify the maximum depth to grow the individual trees: shallow trees seem to be sufficient in many applications, but as with *rxDTree* and *rxDForest*, greater depth typically results in longer fitting times.

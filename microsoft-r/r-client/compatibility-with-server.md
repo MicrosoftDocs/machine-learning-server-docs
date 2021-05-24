@@ -21,7 +21,10 @@ ms.prod: "mlserver"
 #ms.technology: ""
 #ms.custom: ""
 ---
+
 # R Client compatibility with Machine Learning Server or R Server
+
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
 
 Microsoft R Client is backwards compatible with the following versions of Machine Learning Server and Microsoft R Server:
 

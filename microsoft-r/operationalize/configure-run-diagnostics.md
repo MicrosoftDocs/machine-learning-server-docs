@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Troubleshooting & diagnostics for Machine Learning Server
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server, Microsoft R Server 9.1**
 
 You can assess the health of your web and compute node environment using the diagnostic tests in the Administration Utility. This utility is installed by default with Machine Learning Server (and R Server).

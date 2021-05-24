@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Data Sources in RevoScaleR
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 A *data source* in RevoScaleR is an R object representing a data set. It is the return object of **rxImport** for read operations and **rxDataStep** for write operations. Although the data itself may be on disk, a data source is an in-memory object that allows you to treat data from disparate sources in a consistent manner within RevoScaleR. 
 
 Behind the scenes, **rxImport** often creates data sources implicitly to facilitate data import. You can explicitly create data sources for more control over how data is imported, such as setting arguments to control how many rows are read into the object. This article explains how to create a variety of data sources and use them in an analytical context.  

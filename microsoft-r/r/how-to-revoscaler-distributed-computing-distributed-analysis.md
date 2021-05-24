@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Running distributed analyses using RevoScaleR
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 Many RevoScaleR functions support parallelization. On a standalone multi-core server, functions that are multithreaded run on all available cores. In an rxSparkConnect or RxHadoop remote compute context, multithreaded analyses run on all data nodes having the RevoScaleR engine. 
 
 RevoScaleR can structure an analysis for parallel execution with no additional configuration on your part, assuming you set the [compute context](how-to-revoscaler-distributed-computing-compute-context.md). Setting the compute context to rxSparkConnect or RxHadoopMR tells RevoScaleR to look for data nodes. In contrast, using the default local compute context tells the engine to look for available processors on the local machine.

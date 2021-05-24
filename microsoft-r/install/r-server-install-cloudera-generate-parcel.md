@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Generate a parcel
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:** R Server 9.1 on the Cloudera distribution of Apache Hadoop (CDH)
 
 When performing a parcel installation in CDH, you use the **generate_mrs_parcel.sh** instead of **install.sh**. You will also use support files provided in the R Server 9.1 distribution, followed by Cloudera Manager to complete the deployment. The instructions in this article walk you through steps performed at the console, prior to using Cloudera Manager.

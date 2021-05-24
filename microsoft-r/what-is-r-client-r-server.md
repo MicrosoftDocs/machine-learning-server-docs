@@ -23,8 +23,9 @@ ms.prod: "mlserver"
 
 ---
 
-
 # R Server vs. R Client: Scale
+
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
 
 [Microsoft R Server](what-is-microsoft-r-server.md) and [Microsoft R Client](r-client/what-is-microsoft-r-client.md) offer virtually identical packages, but each one targets different scenarios. R Client is intended for data scientists who create solutions that run locally. R Server is commercial software that runs on a range of platforms, at much greater scale, with infrastructure for handling major workloads, on client-server topologies that support remote access over authenticated connections. You can learn and develop on R Client, and then migrate your work to R Server or execute it remotely on an R Server whenever you need the scale, support, and infrastructure of an operationalized server.
 

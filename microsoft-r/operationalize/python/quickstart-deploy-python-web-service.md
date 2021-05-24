@@ -21,7 +21,10 @@ ms.prod: "mlserver"
 #ms.technology: ""
 #ms.custom: ""
 ---
+
 # Quickstart: Deploy a Python model as a web service with azureml-model-management-sdk
+
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
 
 **Applies to: Machine Learning Server 9.x**
 

@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Uninstall Microsoft R Client 
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 This article explains how to uninstall Microsoft R Client. **You do not have to uninstall R Client before installing a more recent version.**
 
 ## Uninstall on Windows

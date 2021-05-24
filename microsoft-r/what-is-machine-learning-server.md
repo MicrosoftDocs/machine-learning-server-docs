@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # What is Machine Learning Server
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 Microsoft Machine Learning Server 9.4.7 is enterprise software for data science, providing R and Python interpreters, base distributions of R and Python, additional high-performance libraries from Microsoft, and an [operationalization capability](what-is-operationalization.md) for advanced deployment scenarios. Solutions that you develop in R or Python can be deployed as a web service for direct access or as an upstream component to other solutions. 
 
 R support is built on a legacy of Microsoft R Server 9.x and Revolution R Enterprise products. Python support was added in the 9.2.1 release. 

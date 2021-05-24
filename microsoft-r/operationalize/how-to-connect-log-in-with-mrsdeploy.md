@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Log in to Machine Learning Server or R Server with mrsdeploy and open a remote session
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server, Microsoft R Server 9.x**
 
 The mrsdeploy package, delivered with Microsoft R Client and Machine Learning Server (formerly known as R Server), provides functions for:
