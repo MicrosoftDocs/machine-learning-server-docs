@@ -5,7 +5,7 @@ keywords: ""
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: 07/15/2019
+ms.date: 06/01/2021
 ms.topic: "overview"
 ms.prod: "mlserver"
 
@@ -13,13 +13,13 @@ ms.prod: "mlserver"
 
 # What's happening to Machine Learning Server?
 
-This is the initial ML Server retirement banner:
+This is the current placeholder ML Server retirement banner for all non-reference articles:
 
 [!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
 
 ## Retirement banners from other products
 
-These are sample banners currently being used in other products. All of these are for Azure services.
+The following are sample banners currently being used in other products. All of these are for Azure services.
 
 ### Azure Data Lake Storage Gen1
 
