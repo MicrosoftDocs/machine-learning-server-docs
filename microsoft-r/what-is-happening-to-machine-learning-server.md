@@ -24,7 +24,7 @@ ms.prod: "mlserver"
 
 # What's happening to Machine Learning Server?
 
-[!INCLUDE [retirement banner](includes/machine-learning-server-retirement.md)]
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
 
 ## See Also
 
