@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # Python Samples for Machine Learning Server
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 The following samples are available for Python users. Use these as examples of how to Machine Learning Server works.
 
 |Example|Description                                                     |

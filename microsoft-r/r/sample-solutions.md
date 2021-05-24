@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # Solution templates for Machine Learning Server and Microsoft R Server 9.1/9.2
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 Several solution templates exist to help you accelerate time to value when using Machine Learning Server or Microsoft R Server 9.1/9.2. We offer solutions tailored to specific industries and problem sets: [marketing](#marketing), [healthcare](#healthcare), [financial and retail](#financial).
 
 

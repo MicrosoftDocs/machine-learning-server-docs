@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # How to set and manage compute context in Machine Learning Server
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 In Machine Learning Server, every session that loads a function library has a [compute context](concept-what-is-compute-context.md). The default is **local**, available on all platforms. No action is required to use a local compute context.
 
 This article explains how to shift script execution to a **remote** Hadoop or Spark cluster, for the purpose of bring calculations to the data itself and eliminating data transfer over your network. For SQL Server compute contexts, see [Define and use a compute context](https://docs.microsoft.com/sql/advanced-analytics/tutorials/deepdive-define-and-use-compute-contexts) in the SQL Server documentation.

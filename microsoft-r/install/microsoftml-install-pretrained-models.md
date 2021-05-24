@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # Pre-trained machine learning models for sentiment analysis and image detection
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 For sentiment analysis of text and image classification, Machine Learning Server offers two approaches for training the models: you can train the models yourself using your data, or install pre-trained models that come with training data obtained and developed by Microsoft. The advantage of pre-trained models is that you can score and classify new content right away. 
 
 + Sentiment analysis scores raw unstructured text in positive-negative terms, returning a score between 0 (negative) and 1 (positive), indicating relative sentiment.

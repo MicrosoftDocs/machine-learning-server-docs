@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # How to split datasets for model training and testing
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 This article explains how to split a dataset in two for training and testing a model, but the same technique applies for any use case where subdividing data is required. For example, to manually partition data across multiple nodes in a cluster, you could use the functions and workflow described in this article for that purpose.
 
 ## Functions for splitting datasets

@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # Python samples for MicrosoftML
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 MicrosoftML samples that use the Python language are described and linked here to help you get started quickly with Microsoft Machine Learning Server. We provide samples for tasks that are quick to run.  We also provide some more advanced samples that are described in sections following the simpler task-based samples. 
 
 ## Samples for tasks

@@ -24,6 +24,8 @@ ms.technology:
 
 # Quickstart: Create a linear regression model using revoscalepy in Python
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to: Machine Learning Server 9.x**
 
 This Python quickstart demonstrates a linear regression model on a local Machine Learning Server, using functions from the [revoscalepy library](../python-reference/revoscalepy/revoscalepy-package.md) and built-in sample data. 

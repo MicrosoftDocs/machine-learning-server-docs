@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # Introducing Machine Learning with SQL Server
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 SQL Server provides a platform for developing intelligent applications that uncover new insights. You can use the rich and powerful R language and the many open-source packages to create models and generate predictions using your SQL Server data. 
 
 In SQL Server 2016, Microsoft introduced SQL Server R Services, a feature that supports enterprise-scale data science by integrating the R language with SQL Server database engine.

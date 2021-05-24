@@ -23,7 +23,10 @@ ms.custom: "mvc"
 
 
 ---
+
 # Quickstart: Integrate a real-time web service into an application using Swagger
+
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
 
 **Applies to: Microsoft Learning Server 9.x**
 

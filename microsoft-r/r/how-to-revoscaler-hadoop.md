@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # How to use RevoScaleR with Hadoop
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 This guide is an introduction to using the [RevoScaleR functions](../r-reference/revoscaler/revoscaler.md) in an Apache Hadoop distributed computing environment. RevoScaleR functions offer scalable and extremely high-performance data management, analysis, and visualization. Hadoop provides a distributed file system and a MapReduce framework for distributed computation. This guide focuses on using ScaleR’s big data capabilities with MapReduce.
 
 While this guide is not a Hadoop tutorial, no prior experience in Hadoop is required to complete the tutorial. If you can connect to your Hadoop cluster, this guide walks you through the rest.

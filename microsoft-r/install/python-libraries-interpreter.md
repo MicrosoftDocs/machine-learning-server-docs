@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # How to install Python client libraries for remote access to a Machine Learning Server
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 Machine Learning Server includes open-source and Microsoft-specific Python packages for modeling, training, and scoring data for statistical and predictive analytics. For classic client-server configurations, where multiple clients connect to and use a remote Machine Learning Server, installing the same Python client libraries on a local workstation enables you to write and run script locally and then push execution to the remote server where data resides. This is referred to as a [remote compute context](../r/concept-what-is-compute-context.md), operant when you call Python functions from libraries that exist on both client and server environments.
 
 A remote server can be either of the following server products:

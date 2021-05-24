@@ -21,7 +21,10 @@ ms.prod: "mlserver"
 #ms.technology: ""
 #ms.custom: ""
 ---
+
 # Quickstart: Deploy an R Model as a web service with mrsdeploy
+
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
 
 **Applies to: R Client 3.x, R Server 9.x, Machine Learning Server 9.x**
 

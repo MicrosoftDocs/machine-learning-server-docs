@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Microsoft R Server: operationalizing your code
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 This page provides links to the MSDN documentation for the versions of DeployR Enterprise shipped with Microsoft R Server and SQL Server.
 
 ## Looking for v9 documentation?

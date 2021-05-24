@@ -20,7 +20,10 @@ ms.prod: "mlserver"
 #ms.tgt_pltfrm: ""
 #ms.custom: ""
 ---
+
 # Link Python tools and IDEs to the Python interpreter installed with Machine Learning Server
+
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
 
 **Applies to: Machine Learning Server 9.x**
 

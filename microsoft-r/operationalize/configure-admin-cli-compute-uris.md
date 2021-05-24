@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Manage and declare compute nodes
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server, Microsoft R Server**
 
 In order for the Machine Learning Server web nodes to know to which compute nodes it can send requests, you must maintain a complete list of compute node URIs. This list of compute node URIs is shared across all web nodes automatically and is managed through the Admin CLI (v9.3) or, for earlier versions, in the Administration Utility.

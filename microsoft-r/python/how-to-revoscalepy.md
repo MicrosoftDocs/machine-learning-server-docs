@@ -24,6 +24,8 @@ ms.technology:
 
 # How to use revoscalepy in a Spark compute context
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 This article introduces Python functions in a [revoscalepy](../python-reference/revoscalepy/revoscalepy-package.md) package with Apache Spark (Spark) running on a Hadoop cluster. Within a Spark cluster, Machine Learning Server leverages these components:
 
 + Hadoop distributed file system for finding and accessing data.
