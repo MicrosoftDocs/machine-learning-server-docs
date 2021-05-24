@@ -3,6 +3,8 @@ items:
   href: index.yml
 - name: Overview
   items:
+  - name: What's happening to Machine Learning Server?
+    href: what-is-happening-to-machine-learning-server.md
   - name: About Machine Learning Server
     href: what-is-machine-learning-server.md
   - name: What's new
