@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # List, get, and consume web services in Python
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server**
 
 This article is for data scientists who wants to learn how to find, examine, and consume the [analytic web services](../concept-what-are-web-services.md) hosted in Machine Learning Server using Python. Web services offer fast execution and scoring of arbitrary Python or R code and models. [Learn more about web services](../concept-what-are-web-services.md). This article assumes that you are proficient in Python.

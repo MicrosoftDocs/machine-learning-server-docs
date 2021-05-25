@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Import relational data using ODBC 
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 RevoScaleR allows you to read or write data from virtually any database for which you can obtain an ODBC driver, a standard software interface for accessing relational data. ODBC connections are enabled through drivers and a driver manager. Drivers handle the translation of requests from an application to the database. The ODBC Driver Manager sets up and manages the connection between them.
 
 Both drivers and an ODBC Driver Manager must be installed on the computer running Microsoft R. On Windows, the driver manager is built in. On Linux systems, RevoScaleR supports [unixODBC](http://www.unixodbc.org/), which you will need to install. Once the manager is installed, you can proceed to install individual database drivers for all of the data sources you need to support.

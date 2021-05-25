@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Default install paths to key log and configuration files on compute and web nodes
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server, Microsoft R Server 9.x**
 
 ## Machine Learning Server 9.4

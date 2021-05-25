@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # Install Machine Learning Server using Cloudera Manager
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server 9.2.1 | 9.3 | 9.4**
 
 This article explains how to generate, deploy, and activate an installation parcel for Machine Learning Server on a Cloudera distribution of Apache Hadoop (CDH). 

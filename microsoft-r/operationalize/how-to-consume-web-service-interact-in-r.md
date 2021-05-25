@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # How to interact with and consume web services in R with mrsdeploy 
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server, Microsoft R Server 9.x**
 
 After a web service has been published or updated, any authenticated user can list, examine, and consume that web service. You can do so directly in R using the functions in the [mrsdeploy R package](../r-reference/mrsdeploy/mrsdeploy-package.md). The mrsdeploy R package is installed with both Machine Learning Server and Microsoft R Client.  Also note that application developers can also consume a web service in the [language of their choice via Swagger](how-to-build-api-clients-from-swagger-for-app-integration.md).

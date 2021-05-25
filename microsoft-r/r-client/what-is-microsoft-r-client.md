@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # About Microsoft R Client
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 Microsoft R Client is a free, [community-supported](https://social.msdn.microsoft.com/Forums/en-US/home?forum=MicrosoftR), data science tool for high performance analytics.  R Client is built on top of [Microsoft R Open](https://mran.microsoft.com/open/) so you can use any open-source R package to build your analytics. Additionally, R Client includes the [powerful RevoScaleR technology](../r/tutorial-revoscaler-data-import-transform.md) and its proprietary functions to benefit from parallelization and remote computing. 
 
 R Client allows you to work with production data locally using the full set of RevoScaleR functions, but there are some constraints. Data must fit in local memory, and processing is limited to two threads for RevoScaleR functions. To work with larger data sets or offload heavy processing, you can access a remote production instance of [Machine Learning Server](../what-is-machine-learning-server.md) from the command line or push the [compute context](../r/concept-what-is-compute-context.md) to the remote server. [Learn more about its compatibility](compatibility-with-server.md). 

@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Estimating Correlation and Variance/Covariance Matrices
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 The *rxCovCor* function in RevoScaleR calculates the covariance, correlation, or sum of squares/cross-product matrix for a set of variables in a .xdf file or data frame. The size of these matrices is determined by the number of variables rather than the number of observations, so typically the results can easily fit into memory in R. A broad category of analyses can be computed from some form of a cross-product matrix, for example, factor analysis and principal components.
 
 A cross-product matrix is a matrix of the form X'X, where X represents an arbitrary set of raw or standardized variables. More generally, this matrix is of the form X'WX, where W is a diagonal weighting matrix.

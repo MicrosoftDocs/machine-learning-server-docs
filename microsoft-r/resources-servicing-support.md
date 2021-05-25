@@ -7,7 +7,7 @@ keywords: ""
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "07/15/2019"
+ms.date: "06/01/2021"
 ms.topic: "conceptual"
 ms.prod: "mlserver"
 
@@ -22,9 +22,12 @@ ms.prod: "mlserver"
 #ms.custom: ""
 
 ---
+
 # Support Timeline for Microsoft R Server & Machine Learning Server
 
-Machine Learning Server ([previously called Microsoft R Server](rebranding-microsoft-r-server.md)) is supported for two (2) years from its general availability (GA) release date. Customers receive critical updates for the first year from general availability (GA) of each release as shown in the diagram.
+Machine Learning Server 9.4.7 is supported until June 1, 2022. All other versions are no longer supported. 
+
+For more information, see [What's happening to Machine Learning Server?](what-is-happening-to-machine-learning-server.md)
 
 At the end of a version’s life cycle, the software is removed from the Microsoft download sites and obsolete feature documentation is archived.
 
@@ -33,14 +36,14 @@ At the end of a version’s life cycle, the software is removed from the Microso
 
 <br>
 
-|Version History|Availability                       |Support End Date                  |
-|:-------------------:|:---------------------------------:|:--------------------------------:|
-|Machine Learning Server 9.4.7|7/2019|7/2021|
-|Machine Learning Server 9.3.0|3/1/2018|3/1/2020|
-|Machine Learning Server 9.2.1|10/1/2017|10/1/2019|
-|Microsoft R Server 9.1.0|5/1/2017|5/1/2019|
-|Microsoft R Server 9.0.1|1/1/2017|1/1/2019|
-|Microsoft R Server 8.0.5|7/1/2016|7/1/2018|
-|Microsoft R Server 8.0.0                |1/1/2016                           |1/1/2018                          |
+| Version History               | Availability | Support End Date |
+|:-----------------------------:|:------------:|:----------------:|
+| Machine Learning Server 9.4.7 | 7/30/2019    | 6/1/2022         |
+| Machine Learning Server 9.3.0 | 3/1/2018     | 3/1/2020         |
+| Machine Learning Server 9.2.1 | 10/1/2017    | 10/1/2019        |
+| Microsoft R Server 9.1.0      | 5/1/2017     | 5/1/2019         |
+| Microsoft R Server 9.0.1      | 1/1/2017     | 1/1/2019         |
+| Microsoft R Server 8.0.5      | 7/1/2016     | 7/1/2018         |
+| Microsoft R Server 8.0.0      | 1/1/2016     | 1/1/2018         |
 
 

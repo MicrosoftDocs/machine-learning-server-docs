@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Set or update the local administrator password
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server, Microsoft R Server**
 
 When no other form of [authentication](configure-authentication.md) is used for Machine Learning Server, you must define a password for the local administrator account called 'admin'. If you enable another form of authentication, the local administrator account is automatically disabled.

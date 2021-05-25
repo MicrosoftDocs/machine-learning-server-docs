@@ -21,7 +21,10 @@ ms.prod: "mlserver"
 #ms.technology: ""
 #ms.custom: ""
 ---
+
 # Enforcing YARN queue usage
+
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
 
 R Server tasks running on Spark or MapReduce can be managed through use of YARN job queues. To direct a job to a specific queue, the end user must include the queue name in the MapReduce or Spark Compute Context.
 

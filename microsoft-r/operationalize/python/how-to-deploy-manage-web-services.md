@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Deploy and manage web services in Python 
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to: Machine Learning Server**
 
 This article is for data scientists who wants to learn how to deploy and manage Python code/models as [analytic web services](../concept-what-are-web-services.md) hosted in Machine Learning Server. This article assumes you are proficient in Python.

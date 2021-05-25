@@ -27,6 +27,8 @@ ms.technology:
 
 # Basic R commands and RevoScaleR functions: 25 common examples
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to: Microsoft R Client, Machine Learning Server**
 
 If you are new to both R and Machine Learning Server, this tutorial introduces you to 25 (or so) commonly used R functions. In this tutorial, you learn how to load small data sets into R and perform simple computations. A key point to take away from this tutorial is that you can combine basic R commands and RevoScaleR functions in the same R script.

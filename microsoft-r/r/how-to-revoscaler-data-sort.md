@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # How to sort data using rxSort in RevoScaleR
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 Many analysis and plotting algorithms require as a first step that the
 data be sorted. Sorting a massive data set is both memory-intensive and
 time-consuming, but the **rxSort** function provides an efficient

@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # How to use RevoScaleR in a Spark compute context
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 This article provides a step-by-step introduction to using the [RevoScaleR functions](../r-reference/revoscaler/revoscaler.md) in Apache Spark running on a Hadoop cluster. You can use a small built-in sample dataset to complete the walkthrough, and then step through tasks again using a larger dataset.
 
 > [!div class="checklist"]

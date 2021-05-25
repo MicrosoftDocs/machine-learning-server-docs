@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Running jobs in parallel using rxExec
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 [RevoScaleR](../r-reference/revoscaler/revoscaler.md) functions are engineered to execute in parallel automatically. However, if you require a custom implementation, you can use [rxExec](~/r-reference/revoscaler/rxexec.md) to manually construct and manage a distributed workload. With rxExec, you can take an arbitrary function and run it in parallel on your distributed computing resources in Hadoop. This in turn allows you to tackle a wide variety of parallel computing problems. 
 
 This article provides comprehensive steps on how to use rxExec, starting with examples showcasing rxExec in a variety of use cases. 

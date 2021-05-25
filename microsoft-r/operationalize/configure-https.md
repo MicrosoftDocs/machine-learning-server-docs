@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Enable SSL or TLS for Connection Security in Machine Learning Server
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to: Machine Learning Server, Microsoft R Server 9.x**
 
 >For security reasons, we strongly recommend that SSL/TLS 1.2 be enabled in **all production environments.**  Since we cannot ship certificates for you, these protocols are disabled by default.

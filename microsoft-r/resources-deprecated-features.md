@@ -22,7 +22,10 @@ ms.prod: "mlserver"
 #ms.custom: ""
 
 ---
+
 # Deprecated, discontinued, or changed features in Machine Learning Server
+
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
 
 This article notifies you about pending status changes to features and function libraries, such as deprecated and discontinued functions in the custom packages and libraries installed with the product.
 

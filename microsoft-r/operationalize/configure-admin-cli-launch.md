@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Launch the administration tool/CLI to manage the operationalization configuration 
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server, Microsoft R Server**
 
 This article describes how to launch the tool used to manage the web and compute nodes for Machine Learning Server. These nodes enable you to operationalize your analytics with Machine Learning Server.

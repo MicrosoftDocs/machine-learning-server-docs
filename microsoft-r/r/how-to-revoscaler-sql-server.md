@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Using RevoScaleR with SQL Server
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 By using the **RevoScaleR** functions in your R solutions, you can create high-performance big data analytics that use SQL Server data, or that run in the context of a SQL Server database server.
 
 This introduction provides general knowledge that you need to get started with analyzing SQL Server data, or moving your models into production in SQL Server 2016. It is primarily intended for users who are already have a basic familiarity with the R language and would like to understand more about how to use the **RevoScaleR** package with SQL Server. 

@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Writing custom analyses for large data sets in RevoScaleR
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 This article explains how to use RevoScaleR to get data one chunk at a time, and then perform a custom analysis. There are four basic steps in the analysis:
 
 1.  Initialize results

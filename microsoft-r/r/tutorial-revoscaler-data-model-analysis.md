@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # Tutorial: Visualize and analyze data using RevoScaleR
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to: Microsoft R Client, Machine Learning Server** 
 
 This tutorial builds on what you learned in the previous [data import and exploration tutorial](tutorial-revoscaler-data-import-transform.md) by adding more steps and functions that broaden your experience with RevoScaleR functions. As before, you'll work with airline sample data to complete the steps.
