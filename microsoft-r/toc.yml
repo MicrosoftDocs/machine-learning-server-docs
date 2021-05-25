@@ -102,16 +102,6 @@ items:
       href: operationalize/configure-manage-r-packages.md
     - name: Default file paths
       href: operationalize/configure-find-admin-configuration-file.md
-  - name: Azure cloud
-    items:
-    - name: Cloud installation choices
-      href: install/machine-learning-server-in-the-cloud.md
-    - name: Overview
-      href: install/machine-learning-server-in-the-cloud.md
-    - name: Data Science VM
-      href: install/r-server-vm-data-science.md
-    - name: Azure VMs
-      href: install/machine-learning-server-azure-vm-on-linux.md
   - name: Client-side
     items:
     - name: Microsoft R Client
