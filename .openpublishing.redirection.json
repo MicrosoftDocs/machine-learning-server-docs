@@ -2381,9 +2381,23 @@
       "source_path": "microsoft-r/r-client/install-uninstall.md",
       "redirect_url": "/machine-learning-server/r-client/what-is-microsoft-r-client",
       "redirect_document_id": false
-    }
-
-
+    },
+    {
+      "source_path": "microsoft-r/install/machine-learning-server-in-the-cloud.md",
+      "redirect_url": "/machine-learning-server/what-is-machine-learning-server",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/install/r-server-vm-data-science.md",
+      "redirect_url": "/machine-learning-server/what-is-machine-learning-server",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/install/machine-learning-server-azure-vm-on-linux.md",
+      "redirect_url": "/machine-learning-server/what-is-machine-learning-server",
+      "redirect_document_id": false
+    } 
+    
 
 
   ]
