@@ -59,12 +59,12 @@ The following are sample banners currently being used in other products. All of 
 ### Azure Data Lake Storage Gen1
 
 > [!NOTE]
-> On **Feb 29, 2024** Azure Data Lake Storage Gen1 will be retired. For more information, see the [official announcement](https://azure.microsoft.com/updates/action-required-switch-to-azure-data-lake-storage-gen2-by-29-february-2024/). If you use Azure Data Lake Storage Gen1, make sure to migrate to Azure Data Lake Storage Gen2 prior to that date. To learn how, see [Migrate Azure Data Lake Storage from Gen1 to Gen2](../articles/storage/blobs/data-lake-storage-migrate-gen1-to-gen2.md) 
+> On **Feb 29, 2024** Azure Data Lake Storage Gen1 will be retired. For more information, see the [official announcement](https://azure.microsoft.com/updates/action-required-switch-to-azure-data-lake-storage-gen2-by-29-february-2024/). If you use Azure Data Lake Storage Gen1, make sure to migrate to Azure Data Lake Storage Gen2 prior to that date. To learn how, see [Migrate Azure Data Lake Storage from Gen1 to Gen2](#) 
 
 ### Azure Dev Spaces
 
 > [!IMPORTANT]
-> Azure Dev Spaces is being retired and will stop working on October 31, 2023. Consider migrating to [Bridge to Kubernetes](../articles/dev-spaces/migrate-to-bridge-to-kubernetes.md).
+> Azure Dev Spaces is being retired and will stop working on October 31, 2023. Consider migrating to [Bridge to Kubernetes](#).
 
 ### Azure Notebooks public preview site
 
@@ -78,7 +78,7 @@ The following are sample banners currently being used in other products. All of 
 >
 > If you use IaaS resources from ASM, please complete your migration by March 1, 2023. We encourage you to make the switch sooner to take advantage of the many feature enhancements in Azure Resource Manager.
 >
-> For more information, see [Migrate your IaaS resources to Azure Resource Manager by March 1, 2023](../articles/virtual-machines/classic-vm-deprecation.md).
+> For more information, see [Migrate your IaaS resources to Azure Resource Manager by March 1, 2023](#).
 
 ### Azure Container Service
 
@@ -93,16 +93,16 @@ The following are sample banners currently being used in other products. All of 
 >   * [Enterprise](https://azuremarketplace.microsoft.com/marketplace/apps/mesosphere.enterprise-dcos?tab=Overview)
 >   * [Open Source edition](https://azuremarketplace.microsoft.com/marketplace/apps/mesosphere.dcos?tab=overview)
 >
-> If you want to use Kubernetes, see [Azure Kubernetes Service](../articles/aks/index.yml).
+> If you want to use Kubernetes, see [Azure Kubernetes Service](#).
 
 ### Developer portal
 
 > [!NOTE]
 > This documentation content is about the deprecated developer portal. You can continue to use it, as per usual, until its retirement in October 2023, when it will be removed from all API Management services. The deprecated portal will only receive critical security updates. Refer to the following articles for more details:
 > 
-> * [Learn how to migrate to the new developer portal](../articles/api-management/developer-portal-deprecated-migration.md)
-> * [Azure API Management new developer portal overview](../articles/api-management/api-management-howto-developer-portal.md)
-> * [Access and customize the new developer portal](../articles/api-management/api-management-howto-developer-portal-customize.md)
+> * [Learn how to migrate to the new developer portal](#)
+> * [Azure API Management new developer portal overview](#)
+> * [Access and customize the new developer portal](#)
 
 ## See Also
 
