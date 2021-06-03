@@ -21,11 +21,11 @@ The support for Machine Learning Server ends on June 30, 2022. This article expl
 
 The first decision point for these options is the locations of compute and data storage for analysis.  
 
-## On-premises deployment options 
+## On-premises deployment options
 
 Microsoft Machine Learning Server environments are available completely independent of connecting to the Internet or Intranets. These are normally high-security environments where large-scale data analysis is critical, but the data is extremely sensitive. 
 
-### Microsoft SQL Server Big Data Clusters 
+### SQL Server Big Data Clusters
 
 Microsoft SQL Server Big Data Clusters allow you to deploy scalable clusters of SQL Server, Spark, and HDFS containers running on Kubernetes. These components are running side by side to enable you to read, write, and process big data from Transact-SQL or Spark, allowing you to easily combine and analyze your high-value relational data with high-volume big data.  
 
@@ -47,8 +47,28 @@ Use SQL Server Big Data Clusters as a replacement for Microsoft Machine Learning
 
 For more information on SQL Server Big Data Clusters, see [What are SQL Server Big Data Clusters?](/sql/big-data-cluster/big-data-cluster-overview).
 
+## In-cloud deployment options 
+
+Many workloads from Microsoft Machine Learning Server can also be uploaded to the Microsoft Azure platform. Data “born in the cloud” (originated in Cloud-based applications) are prime candidates for these technologies, and data movement services can migrate large-scale data securely and quickly. More on data movement options is located at this reference: https://docs.microsoft.com/en-us/azure/storage/common/storage-choose-data-transfer-solution  
+
+Microsoft Azure has systems and certifications allowing secure data and data processing in a variety of tools. More information on these certifications is located at the Microsoft Trust Center resource. (https://www.microsoft.com/en-us/trust-center)  
+
+### Azure HDInsight
+
+Azure HDInsight is a cloud distribution of Hadoop components. Azure HDInsight is a managed, full-spectrum, open-source analytics service in the cloud for enterprises. HDInsight allows you to use open-source frameworks such as Hadoop, Apache Spark, Apache Hive, LLAP, Apache Kafka, Apache Storm, R, and more. 
+
+HDInsight includes specific cluster types and cluster customization capabilities, such as the capability to add components, utilities, and languages. HDInsight offers the following cluster types: 
 
 
+| Cluster Type | Description |
+|-|-|
+| Apache Hadoop | A framework that uses HDFS, YARN resource management, and a simple MapReduce programming model to process and analyze batch data in parallel. |
+| Apache Spark | An open-source, parallel-processing framework that supports in-memory processing to boost the performance of big-data analysis applications. |
+| Apache HBase | A NoSQL database built on Hadoop that provides random access and strong consistency for large amounts of unstructured and semi-structured data--potentially billions of rows times millions of columns. |
+| ML Services | A server for hosting and managing parallel, distributed R processes. It provides data scientists, statisticians, and R programmers with on-demand access to scalable, distributed methods of analytics on HDInsight. |
+| Apache Storm | A distributed, real-time computation system for processing large streams of data fast. Storm is offered as a managed cluster in HDInsight.  |
+| Apache Interactive Query | In-memory caching for interactive and faster Hive queries. |
+| Apache Kafka | An open-source platform that's used for building streaming data pipelines and applications. Kafka also provides message-queue functionality that allows you to publish and subscribe to data streams. |
 
 
 
