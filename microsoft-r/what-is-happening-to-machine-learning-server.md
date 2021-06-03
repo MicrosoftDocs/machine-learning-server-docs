@@ -51,9 +51,9 @@ For more information on SQL Server Big Data Clusters, see [What are SQL Server B
 
 ## In-cloud deployment options
 
-Many workloads from Microsoft Machine Learning Server can also be uploaded to the Microsoft Azure platform. Data “born in the cloud” (originated in Cloud-based applications) are prime candidates for these technologies, and data movement services can migrate large-scale data securely and quickly. More on data movement options is located at this reference: https://docs.microsoft.com/en-us/azure/storage/common/storage-choose-data-transfer-solution  
+Many workloads from Microsoft Machine Learning Server can also be uploaded to the Microsoft Azure platform. Data “born in the cloud” (originated in Cloud-based applications) are prime candidates for these technologies, and data movement services can migrate large-scale data securely and quickly. For more on data movement options, see [Choose an Azure solution for data transfer](/azure/storage/common/storage-choose-data-transfer-solution).
 
-Microsoft Azure has systems and certifications allowing secure data and data processing in a variety of tools. More information on these certifications is located at the Microsoft Trust Center resource. (https://www.microsoft.com/en-us/trust-center)  
+Microsoft Azure has systems and certifications allowing secure data and data processing in a variety of tools. More information on these certifications is located at the [Microsoft Trust Center resource](https://www.microsoft.com/en-us/trust-center).
 
 ### Azure HDInsight
 
@@ -71,7 +71,7 @@ HDInsight includes specific cluster types and cluster customization capabilities
 | Apache Interactive Query | In-memory caching for interactive and faster Hive queries. |
 | Apache Kafka | An open-source platform that's used for building streaming data pipelines and applications. Kafka also provides message-queue functionality that allows you to publish and subscribe to data streams. |
 
-Use Azure HDInsight as a replacement for Microsoft Machine Learning Server when you need to: 
+Use Azure HDInsight as a replacement for Machine Learning Server when you need to: 
 
 - Create optimized clusters for Hadoop, Spark, Interactive query (LLAP), Kafka, Storm, HBase, and ML Services on Azure.  
 - Use an end-to-end SLA on all your production workloads. 
