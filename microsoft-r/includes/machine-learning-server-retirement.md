@@ -7,4 +7,4 @@ ms.date: 06/01/2021
 ---
 
 > [!WARNING]
-> This content is being retired and may not be updated in the future. The support for Machine Learning Server will end on June 1, 2022. For more information, see [What's happening to Machine Learning Server?](../what-is-happening-to-machine-learning-server.md)
+> This content is being retired and may not be updated in the future. The support for Machine Learning Server will end on June 30, 2022. For more information, see [What's happening to Machine Learning Server?](../what-is-happening-to-machine-learning-server.md)
