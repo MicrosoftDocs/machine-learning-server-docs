@@ -43,11 +43,13 @@ Use SQL Server Big Data Clusters as a replacement for Microsoft Machine Learning
 - Deploy and run applications in the cluster, accessible from anywhere you determine. 
 - Provide high availability for the SQL Server master instance and all databases by using Always On availability group technology.  
 
-![SQL Server Big Data Clusters archivtecture](media/what-is-happening-to-machine-learning-server/sql-bdc-architecture-diagram-overview.png) 
+The architecture of a SQL Server Big Data Cluster is as follows:
+
+![SQL Server Big Data Clusters architecture](media/what-is-happening-to-machine-learning-server/sql-bdc-architecture-diagram-overview.png) 
 
 For more information on SQL Server Big Data Clusters, see [What are SQL Server Big Data Clusters?](/sql/big-data-cluster/big-data-cluster-overview).
 
-## In-cloud deployment options 
+## In-cloud deployment options
 
 Many workloads from Microsoft Machine Learning Server can also be uploaded to the Microsoft Azure platform. Data “born in the cloud” (originated in Cloud-based applications) are prime candidates for these technologies, and data movement services can migrate large-scale data securely and quickly. More on data movement options is located at this reference: https://docs.microsoft.com/en-us/azure/storage/common/storage-choose-data-transfer-solution  
 
@@ -57,8 +59,7 @@ Microsoft Azure has systems and certifications allowing secure data and data pro
 
 Azure HDInsight is a cloud distribution of Hadoop components. Azure HDInsight is a managed, full-spectrum, open-source analytics service in the cloud for enterprises. HDInsight allows you to use open-source frameworks such as Hadoop, Apache Spark, Apache Hive, LLAP, Apache Kafka, Apache Storm, R, and more. 
 
-HDInsight includes specific cluster types and cluster customization capabilities, such as the capability to add components, utilities, and languages. HDInsight offers the following cluster types: 
-
+HDInsight includes specific cluster types and cluster customization capabilities, such as the capability to add components, utilities, and languages. HDInsight offers the following cluster types:
 
 | Cluster Type | Description |
 |-|-|
@@ -70,7 +71,27 @@ HDInsight includes specific cluster types and cluster customization capabilities
 | Apache Interactive Query | In-memory caching for interactive and faster Hive queries. |
 | Apache Kafka | An open-source platform that's used for building streaming data pipelines and applications. Kafka also provides message-queue functionality that allows you to publish and subscribe to data streams. |
 
+Use Azure HDInsight as a replacement for Microsoft Machine Learning Server when you need to: 
 
+- Create optimized clusters for Hadoop, Spark, Interactive query (LLAP), Kafka, Storm, HBase, and ML Services on Azure.  
+- Use an end-to-end SLA on all your production workloads. 
+- Scale workloads up or down.  
+- Build data pipelines to operationalize your jobs.  
+- Decouple compute and storage for better performance and flexibility. 
+- Protect your enterprise data assets with Azure Virtual Network, encryption, and integration with Azure Active Directory. HDInsight also meets the most popular industry and government compliance standards. 
+- Integrate with Azure Monitor logs to provide a single interface.  
+- Leverage more regions than any other big data analytics offering. Azure HDInsight is also available in Azure Government, China, and Germany, which allows you to meet your enterprise needs in key sovereign areas. 
+- Use rich productive tools for Hadoop and Spark with your preferred development environments. These development environments include Visual Studio, VSCode, Eclipse, and IntelliJ for Scala, Python, R, Java, and .NET support. Data scientists can also collaborate using popular notebooks such as Jupyter and Zeppelin. 
+- Extend clusters with installed components (Hue, Presto, and so on) by using script actions, by adding edge nodes, or by integrating with other big data certified applications.  
+- Create clusters with open-source frameworks such as Hadoop, Spark, Hive, LLAP, Kafka, Storm, HBase, and R. These clusters, by default, come with other open-source components that are included on the cluster such as Apache Ambari5, Avro5, Apache Hive3, HCatalog2, Apache Mahout2, Apache Hadoop MapReduce3, Apache Hadoop YARN2, Apache Phoenix3, Apache Pig3, Apache Sqoop3, Apache Tez3, Apache Oozie2, and Apache ZooKeeper5. 
+- Use Default programming language support, such as Java, Python, .NET, Go, Java virtual machine (JVM) languages (The following JVM-based languages are supported on HDInsight clusters: Clojure, Jython, and Scala) 
+- Use Hadoop-specific languages such as Pig Latin for Pig jobs, HiveQL for Hive jobs and SparkSQL) 
+
+The architecture of a Microsoft Azure HDInsight deployment is as follows:
+
+![HDInsight architecture](media/what-is-happening-to-machine-learning-server/hdinsight-architecture-data-warehouse.png) 
+
+For more information, see [What is Azure HDInsight?](/azure/hdinsight/hdinsight-overview).
 
 ## Example retirement banners from other products
 
