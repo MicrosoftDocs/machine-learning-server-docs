@@ -87,7 +87,7 @@ Use Azure HDInsight as a replacement for Microsoft Machine Learning Server when 
 - Use Default programming language support, such as Java, Python, .NET, Go, Java virtual machine (JVM) languages (The following JVM-based languages are supported on HDInsight clusters: Clojure, Jython, and Scala) 
 - Use Hadoop-specific languages such as Pig Latin for Pig jobs, HiveQL for Hive jobs and SparkSQL) 
 
-The architecture of a Microsoft Azure HDInsight deployment is as follows:
+The architecture of a Azure HDInsight deployment is as follows:
 
 ![HDInsight architecture](media/what-is-happening-to-machine-learning-server/hdinsight-architecture-data-warehouse.png) 
 
