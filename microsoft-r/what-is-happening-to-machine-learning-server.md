@@ -130,9 +130,9 @@ The architecture of a Microsoft Azure Databricks deployment is as follows:
 
 ![Azure Databricks architecture](media/what-is-happening-to-machine-learning-server/azure-databricks-overview.png) 
 
+For more information, see [What is Azure Databricks?](/azure/databricks/scenarios/what-is-azure-databricks).
 
-
-
+## Azure Synapse Analytics
 
 
 
