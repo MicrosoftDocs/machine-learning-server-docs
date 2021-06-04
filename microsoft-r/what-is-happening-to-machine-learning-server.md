@@ -130,13 +130,41 @@ The architecture of a Microsoft Azure Databricks deployment is as follows:
 
 ![Azure Databricks architecture](media/what-is-happening-to-machine-learning-server/azure-databricks-overview.png) 
 
-For more information, see [What is Azure Databricks?](/azure/databricks/scenarios/what-is-azure-databricks).
+For more information, see [What is Azure Databricks?](/azure/databricks/scenarios/what-is-azure-databricks)
 
 ## Azure Synapse Analytics
 
+Azure Synapse Analytics is an enterprise analytics service that accelerates time to insight across data warehouses and big data systems, using distributed processing and data constructs. Azure Synapse brings together SQL technologies used in enterprise data warehousing, Spark technologies used for big data, Pipelines for data integration and ETL/ELT, and deep integration with other Azure services such as Power BI, CosmosDB, and AzureML. 
 
+Use Microsoft Azure Synapse as a replacement for Microsoft Machine Learning Server when you need to: 
 
+- Leverage both serverless and dedicated resource models. For predictable performance and cost, create dedicated SQL pools to reserve processing power for data stored in SQL tables.  
+- Process unplanned or “burst” workloads, access an always-available, serverless SQL endpoint. 
+- Use built-in streaming capabilities to land data from cloud data sources into SQL tables. 
+- Integrate AI with SQL by using machine learning models to score data using the T-SQL PREDICT function. 
+- Leverage ML models with SparkML algorithms and AzureML integration for Apache Spark 2.4 supported for Linux Foundation Delta Lake. 
+- Use a simplified resource model that frees you from having to worry about managing clusters. 
+- Process data that requires fast Spark start-up and aggressive autoscaling. 
+- Process data using.NET for Spark allowing you to reuse your C# expertise and existing .NET code within a Spark application. 
+- Work with tables defined on files in the data lake are seamlessly consumed by either Spark or Hive. 
+- Use SQL with Spark to directly explore and analyze Parquet, CSV, TSV, and JSON files stored in a data lake. 
+- Enable fast, scalable data loading between SQL and Spark databases. 
+- Ingest data from 90+ data sources. 
+- Enable “Code-Free” ETL with Data flow activities. 
+- Orchestrate notebooks, Spark jobs, stored procedures, SQL scripts, and more. 
+- Monitor resources, usage, and users across SQL and Spark. 
+- Use Role-based access control to simplify access to analytics resources. 
+- Write SQL or Spark code and integrate with enterprise CI/CD processes. 
 
+The architecture of Microsoft Azure Synapse is as follows: 
+
+![Azure Synapse Analytics architecture](media/what-is-happening-to-machine-learning-server/synapse-architecture.png) 
+
+For more information, see [What is Azure Synapse Analytics?](/azure/synapse-analytics/overview-what-is)
+
+## Azure Machine Learning
+
+Azure Machine Learning is a cloud-based service that can be used for any kind of machine learning, from classical ML to deep learning, supervised, and unsupervised learning. Whether you prefer to write Python or R code with the SDK or work with no-code/low-code options in the studio, you can build, train, and track machine learning and deep-learning models in an Azure Machine Learning Workspace. With Azure Machine Learning you can start training on your local machine and then scale out to the cloud. The service also interoperates with popular deep learning and reinforcement open-source tools such as PyTorch, TensorFlow, scikit-learn, and Ray RLlib. 
 
 
 
