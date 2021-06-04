@@ -93,6 +93,55 @@ The architecture of a Azure HDInsight deployment is as follows:
 
 For more information, see [What is Azure HDInsight?](/azure/hdinsight/hdinsight-overview).
 
+## Azure Databricks
+
+Azure Databricks is a data analytics platform optimized for the Microsoft Azure cloud services platform. Azure Databricks offers two environments for developing data intensive applications: Azure Databricks SQL Analytics and Azure Databricks Workspace. 
+
+Azure Databricks SQL Analytics provides an easy-to-use platform for analysts who want to run SQL queries on their data lake, create multiple visualization types to explore query results from different perspectives, and build and share dashboards. 
+
+Azure Databricks Workspace provides an interactive workspace that enables collaboration between data engineers, data scientists, and machine learning engineers. For a big data pipeline, the data (raw or structured) is ingested into Azure through Azure Data Factory in batches, or streamed near real-time using Apache Kafka, Event Hub, or IoT Hub. This data lands in a data lake for long term persisted storage, in Azure Blob Storage or Azure Data Lake Storage. As part of your analytics workflow, use Azure Databricks to read data from multiple data sources and turn it into breakthrough insights using Spark.  
+
+Use Microsoft Azure Databricks as a replacement for Microsoft Machine Learning Server when you need: 
+
+- Fully managed Spark clusters with Spark SQL and DataFrames. 
+- Streaming for real-time data processing and analysis for analytical and interactive applications, Integrating with HDFS, Flume, and Kafka. 
+- Access to the MLlib library consisting of common learning algorithms and utilities, including classification, regression, clustering, collaborative filtering, dimensionality reduction, as well as underlying optimization primitives. 
+- Documentation of your progress in notebooks in R, Python, Scala, or SQL. 
+- Visualization of data in a few clicks, and use familiar tools like Matplotlib, ggplot, or d3. 
+- Interactive dashboards to create dynamic reports. 
+- GraphX, for Graphs and graph computation for a broad scope of use cases from cognitive analytics to data exploration. 
+- Cluster creation in seconds, with dynamic autoscaling clusters, sharing them across teams. 
+- Programmatic cluster access using REST APIs. 
+- Instant access to the latest Apache Spark features with each release. 
+- A Spark Core API: Includes support for R, SQL, Python, Scala, and Java. 
+- An interactive workspace for exploration and visualization 
+- Fully managed SQL endpoints in the cloud 
+- SQL queries that run on fully managed SQL endpoints sized according to query latency and number of concurrent users. 
+- Integration with Azure Active Directory. 
+- Role-based access for  fine-grained user permissions for notebooks, clusters, jobs, and data. 
+- Enterprise-grade SLAs. 
+- Dashboards for sharing insights, combining visualizations and text to share insights drawn from your queries. 
+- Alerts help you monitor and integrate, and notification when a field returned by a query meets a threshold. Use alerts to monitor your business or integrate them with tools to start workflows such as user onboarding or support tickets. 
+- Enterprise security, including Azure Active Directory integration, role-based controls, and SLAs that protect your data and your business. 
+- Integration with Azure services and Azure databases and stores including Synapse Analytics, Cosmos DB, Data Lake Store, and Blob storage. 
+- Integration with Power BI and other BI tools, such as Tableau Software. 
+
+The architecture of a Microsoft Azure Databricks deployment is as follows:
+
+![Azure Databricks architecture](media/what-is-happening-to-machine-learning-server/azure-databricks-overview.png) 
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Example retirement banners from other products
 
 The following are sample banners currently being used in other products. All of these are for Azure services.
