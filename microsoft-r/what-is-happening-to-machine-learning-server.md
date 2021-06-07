@@ -156,7 +156,7 @@ Use Microsoft Azure Synapse as a replacement for Microsoft Machine Learning Serv
 - Use Role-based access control to simplify access to analytics resources. 
 - Write SQL or Spark code and integrate with enterprise CI/CD processes. 
 
-The architecture of Microsoft Azure Synapse is as follows: 
+The architecture of Azure Synapse Analytics is as follows: 
 
 ![Azure Synapse Analytics architecture](media/what-is-happening-to-machine-learning-server/synapse-architecture.png) 
 
@@ -166,9 +166,55 @@ For more information, see [What is Azure Synapse Analytics?](/azure/synapse-anal
 
 Azure Machine Learning is a cloud-based service that can be used for any kind of machine learning, from classical ML to deep learning, supervised, and unsupervised learning. Whether you prefer to write Python or R code with the SDK or work with no-code/low-code options in the studio, you can build, train, and track machine learning and deep-learning models in an Azure Machine Learning Workspace. With Azure Machine Learning you can start training on your local machine and then scale out to the cloud. The service also interoperates with popular deep learning and reinforcement open-source tools such as PyTorch, TensorFlow, scikit-learn, and Ray RLlib. 
 
+Use Microsoft Azure Machine Learning as a replacement for Microsoft Machine Learning Server when you need: 
+
+- A designer-based web environment for Machine Learning: drag-n-drop modules to build your experiments and then deploy pipelines in a low-code environment. 
+- Jupyter notebooks: use our example notebooks or create your own notebooks to leverage our SDK for Python samples for your machine learning. 
+- R scripts or notebooks in which you use the SDK for R to write your own code or use the R modules in the designer. 
+- The “Many Models Solution Accelerator” which builds on Azure Machine Learning and enables you to train, operate, and manage hundreds or even thousands of machine learning models. 
+- Machine learning extensions for Visual Studio Code (preview) provides you with a full-featured development environment for building and managing your machine learning projects. 
+- A Machine learning Command-Line Interface (CLI), Azure Machine Learning includes an Azure CLI extension that provides commands for managing with Azure Machine Learning resources from the command line. 
+- Integration with open-source frameworks such as PyTorch, TensorFlow, and scikit-learn and many more for training, deploying, and managing the end-to-end machine learning process. 
+- Reinforcement learning with Ray RLlib 
+- MLflow to track metrics and deploy models or Kubeflow to build end-to-end workflow pipelines. 
+
+The architecture of a Azure Machine Learning deployment is as follows: 
+
+![Azure Machine Learning architecture](media/what-is-happening-to-machine-learning-server/azureml-architecture.svg) 
+
+For more information, see [What is Azure Machine Learning?](/azure/machine-learning/overview-what-is-azure-ml)
+
+## Azure Cosmos DB
+
+Azure Cosmos DB is a fully managed NoSQL database for modern app development. Single-digit millisecond response times, and automatic and instant scalability, guarantee speed at any scale. Business continuity is assured with SLA-backed availability and enterprise-grade security. App development is faster and more productive thanks to turnkey multi region data distribution anywhere in the world, open-source APIs and SDKs for popular languages.  
+
+As a fully managed service, Azure Cosmos DB handles database administration with automatic management, updates and patching. It also handles capacity management with serverless and automatic scaling options that respond to application needs to match capacity with demand.  
+
+Use Microsoft Azure CosmosDB as a replacement for Microsoft Machine Learning Server when you need to: 
+
+- Create web, mobile, gaming, and IoT applications that need to handle massive amounts of data, reads, and writes at a global scale with near-real response times for a variety of data types, leveraging guaranteed high availability, high throughput, low latency, and tunable consistency. 
+- Deeply integrate with key Azure services used in modern (cloud-native) app development including Azure Functions, IoT Hub, AKS (Azure Kubernetes Service), App Service, and more. 
+- Choose from multiple database APIs including the native Core (SQL) API, API for MongoDB, Cassandra API, Gremlin API, and Table API. 
+- Build apps on Core (SQL) API using the languages of your choice with SDKs for .NET, Java, Node.js and Python, or your choice of drivers for any of the other database APIs. 
+- Run no-ETL analytics over the near-real time operational data stored in Azure Cosmos DB with Azure Synapse Analytics. 
+- Enable change feed to track and manage changes to database containers and create triggered events with Azure Functions. 
+- Leverage a schema-less service which automatically indexes all your data, regardless of the data model, to deliver faster queries. 
+- Access a comprehensive suite of SLAs including industry-leading availability worldwide. 
+- Easily distribute data to any Azure region with automatic data replication with zero downtime with multi-region writes or RPO 0 when using Strong consistency. 
+- Implement enterprise-grade encryption-at-rest with self-managed keys. 
+- Use Microsoft Azure role-based access control keeps to keep data safe  with fine-tuned control. 
+- Implement a fully-managed database service with no touch maintenance, patching, and updates. 
+- Leverage a serverless model for workloads and an automatic and responsive service to manage traffic bursts on demand. 
+- Leverage auto-scale systems and provisioned throughput automatically and instantly scale capacity for unpredictable workloads, while maintaining SLAs. 
+
+The architecture of a Microsoft Azure CosmosDB deployment is as follows: 
+
+![Azure Cosmos DB and Azure Synapse Analytics architecture](media/what-is-happening-to-machine-learning-server/synapse-analytics-cosmos-db-architecture.png) 
 
 
+For more information on using Notebooks with Python or C# in CosmosDB Deployments, see [Built-in Jupyter Notebooks support in Azure Cosmos DB](/azure/cosmos-db/cosmosdb-jupyter-notebooks).
 
+For more information, see the [Azure Cosmos DB documentation](/azure/cosmos-db/introduction).
 
 ## Example retirement banners from other products
 
