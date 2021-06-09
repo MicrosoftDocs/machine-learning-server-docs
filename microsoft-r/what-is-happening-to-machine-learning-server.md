@@ -129,72 +129,21 @@ Other options include [Azure HDInsight](/azure/hdinsight/), [Azure Databricks](/
 
 [Azure HDInsight](/azure/hdinsight/) is a cloud distribution of Hadoop components. Azure HDInsight is a managed, full-spectrum, open-source analytics service in the cloud for enterprises. HDInsight allows you to use open-source frameworks such as Hadoop, Apache Spark, Apache Hive, LLAP, Apache Kafka, Apache Storm, R, and more. 
 
-HDInsight includes specific cluster types and cluster customization capabilities, such as the capability to add components, utilities, and languages. HDInsight offers the following cluster types:
-
-| Cluster Type | Description |
-|-|-|
-| Apache Hadoop | A framework that uses HDFS, YARN resource management, and a simple MapReduce programming model to process and analyze batch data in parallel. |
-| Apache Spark | An open-source, parallel-processing framework that supports in-memory processing to boost the performance of big-data analysis applications. |
-| Apache HBase | A NoSQL database built on Hadoop that provides random access and strong consistency for large amounts of unstructured and semi-structured data--potentially billions of rows times millions of columns. |
-| ML Services | A server for hosting and managing parallel, distributed R processes. It provides data scientists, statisticians, and R programmers with on-demand access to scalable, distributed methods of analytics on HDInsight. |
-| Apache Storm | A distributed, real-time computation system for processing large streams of data fast. Storm is offered as a managed cluster in HDInsight.  |
-| Apache Interactive Query | In-memory caching for interactive and faster Hive queries. |
-| Apache Kafka | An open-source platform that's used for building streaming data pipelines and applications. Kafka also provides message-queue functionality that allows you to publish and subscribe to data streams. |
-
-Use Azure HDInsight as a replacement for Machine Learning Server when you need to: 
-
-- Create optimized clusters for Hadoop, Spark, Interactive query (LLAP), Kafka, Storm, HBase, and ML Services on Azure.  
-- Use an end-to-end SLA on all your production workloads. 
-- Scale workloads up or down.  
-- Build data pipelines to operationalize your jobs.  
-- Decouple compute and storage for better performance and flexibility. 
-- Protect your enterprise data assets with Azure Virtual Network, encryption, and integration with Azure Active Directory. HDInsight also meets the most popular industry and government compliance standards. 
-- Integrate with Azure Monitor logs to provide a single interface.  
-- Leverage more regions than any other big data analytics offering. Azure HDInsight is also available in Azure Government, China, and Germany, which allows you to meet your enterprise needs in key sovereign areas. 
-- Use rich productive tools for Hadoop and Spark with your preferred development environments. These development environments include Visual Studio, VSCode, Eclipse, and IntelliJ for Scala, Python, R, Java, and .NET support. Data scientists can also collaborate using popular notebooks such as Jupyter and Zeppelin. 
-- Extend clusters with installed components (Hue, Presto, and so on) by using script actions, by adding edge nodes, or by integrating with other big data certified applications.  
-- Create clusters with open-source frameworks such as Hadoop, Spark, Hive, LLAP, Kafka, Storm, HBase, and R. These clusters, by default, come with other open-source components that are included on the cluster such as Apache Ambari5, Avro5, Apache Hive3, HCatalog2, Apache Mahout2, Apache Hadoop MapReduce3, Apache Hadoop YARN2, Apache Phoenix3, Apache Pig3, Apache Sqoop3, Apache Tez3, Apache Oozie2, and Apache ZooKeeper5. 
-- Use Default programming language support, such as Java, Python, .NET, Go, Java virtual machine (JVM) languages (The following JVM-based languages are supported on HDInsight clusters: Clojure, Jython, and Scala) 
-- Use Hadoop-specific languages such as Pig Latin for Pig jobs, HiveQL for Hive jobs and SparkSQL) 
+HDInsight includes specific cluster types and cluster customization capabilities, such as the capability to add components, utilities, and languages. For more information, see [Cluster types in HDInsight](/azure/hdinsight/hdinsight-overview#cluster-types-in-hdinsight).
 
 The architecture of a Azure HDInsight deployment is as follows:
 
-![HDInsight architecture](media/what-is-happening-to-machine-learning-server/hdinsight-architecture-data-warehouse.png) 
+![HDInsight architecture](media/what-is-happening-to-machine-learning-server/hdinsight-architecture-data-warehouse.png)
 
 For more information, see [What is Azure HDInsight?](/azure/hdinsight/hdinsight-overview).
 
 ### Azure Databricks
 
-Azure Databricks is a data analytics platform optimized for the Microsoft Azure cloud services platform. Azure Databricks offers two environments for developing data intensive applications: Azure Databricks SQL Analytics and Azure Databricks Workspace. 
+[Azure Databricks](/azure/databricks/) is a data analytics platform optimized for the Azure cloud services platform. Azure Databricks offers two environments for developing data intensive applications: Azure Databricks SQL Analytics and Azure Databricks Workspace. 
 
 Azure Databricks SQL Analytics provides an easy-to-use platform for analysts who want to run SQL queries on their data lake, create multiple visualization types to explore query results from different perspectives, and build and share dashboards. 
 
 Azure Databricks Workspace provides an interactive workspace that enables collaboration between data engineers, data scientists, and machine learning engineers. For a big data pipeline, the data (raw or structured) is ingested into Azure through Azure Data Factory in batches, or streamed near real-time using Apache Kafka, Event Hub, or IoT Hub. This data lands in a data lake for long term persisted storage, in Azure Blob Storage or Azure Data Lake Storage. As part of your analytics workflow, use Azure Databricks to read data from multiple data sources and turn it into breakthrough insights using Spark.  
-
-Use Microsoft Azure Databricks as a replacement for Microsoft Machine Learning Server when you need: 
-
-- Fully managed Spark clusters with Spark SQL and DataFrames. 
-- Streaming for real-time data processing and analysis for analytical and interactive applications, Integrating with HDFS, Flume, and Kafka. 
-- Access to the MLlib library consisting of common learning algorithms and utilities, including classification, regression, clustering, collaborative filtering, dimensionality reduction, as well as underlying optimization primitives. 
-- Documentation of your progress in notebooks in R, Python, Scala, or SQL. 
-- Visualization of data in a few clicks, and use familiar tools like Matplotlib, ggplot, or d3. 
-- Interactive dashboards to create dynamic reports. 
-- GraphX, for Graphs and graph computation for a broad scope of use cases from cognitive analytics to data exploration. 
-- Cluster creation in seconds, with dynamic autoscaling clusters, sharing them across teams. 
-- Programmatic cluster access using REST APIs. 
-- Instant access to the latest Apache Spark features with each release. 
-- A Spark Core API: Includes support for R, SQL, Python, Scala, and Java. 
-- An interactive workspace for exploration and visualization 
-- Fully managed SQL endpoints in the cloud 
-- SQL queries that run on fully managed SQL endpoints sized according to query latency and number of concurrent users. 
-- Integration with Azure Active Directory. 
-- Role-based access for  fine-grained user permissions for notebooks, clusters, jobs, and data. 
-- Enterprise-grade SLAs. 
-- Dashboards for sharing insights, combining visualizations and text to share insights drawn from your queries. 
-- Alerts help you monitor and integrate, and notification when a field returned by a query meets a threshold. Use alerts to monitor your business or integrate them with tools to start workflows such as user onboarding or support tickets. 
-- Enterprise security, including Azure Active Directory integration, role-based controls, and SLAs that protect your data and your business. 
-- Integration with Azure services and Azure databases and stores including Synapse Analytics, Cosmos DB, Data Lake Store, and Blob storage. 
-- Integration with Power BI and other BI tools, such as Tableau Software. 
 
 The architecture of a Microsoft Azure Databricks deployment is as follows:
 
@@ -202,36 +151,15 @@ The architecture of a Microsoft Azure Databricks deployment is as follows:
 
 For more information, see [What is Azure Databricks?](/azure/databricks/scenarios/what-is-azure-databricks)
 
-
-
-
 ### Azure Cosmos DB
 
-Azure Cosmos DB is a fully managed NoSQL database for modern app development. Single-digit millisecond response times, and automatic and instant scalability, guarantee speed at any scale. Business continuity is assured with SLA-backed availability and enterprise-grade security. App development is faster and more productive thanks to turnkey multi region data distribution anywhere in the world, open-source APIs and SDKs for popular languages.  
+[Azure Cosmos DB](/azure/cosmos-db/) is a fully managed NoSQL database for modern app development. Single-digit millisecond response times, and automatic and instant scalability, guarantee speed at any scale. Business continuity is assured with SLA-backed availability and enterprise-grade security. App development is faster and more productive thanks to turnkey multi region data distribution anywhere in the world, open-source APIs and SDKs for popular languages.  
 
 As a fully managed service, Azure Cosmos DB handles database administration with automatic management, updates and patching. It also handles capacity management with serverless and automatic scaling options that respond to application needs to match capacity with demand.  
-
-Use Microsoft Azure CosmosDB as a replacement for Microsoft Machine Learning Server when you need to: 
-
-- Create web, mobile, gaming, and IoT applications that need to handle massive amounts of data, reads, and writes at a global scale with near-real response times for a variety of data types, leveraging guaranteed high availability, high throughput, low latency, and tunable consistency. 
-- Deeply integrate with key Azure services used in modern (cloud-native) app development including Azure Functions, IoT Hub, AKS (Azure Kubernetes Service), App Service, and more. 
-- Choose from multiple database APIs including the native Core (SQL) API, API for MongoDB, Cassandra API, Gremlin API, and Table API. 
-- Build apps on Core (SQL) API using the languages of your choice with SDKs for .NET, Java, Node.js and Python, or your choice of drivers for any of the other database APIs. 
-- Run no-ETL analytics over the near-real time operational data stored in Azure Cosmos DB with Azure Synapse Analytics. 
-- Enable change feed to track and manage changes to database containers and create triggered events with Azure Functions. 
-- Leverage a schema-less service which automatically indexes all your data, regardless of the data model, to deliver faster queries. 
-- Access a comprehensive suite of SLAs including industry-leading availability worldwide. 
-- Easily distribute data to any Azure region with automatic data replication with zero downtime with multi-region writes or RPO 0 when using Strong consistency. 
-- Implement enterprise-grade encryption-at-rest with self-managed keys. 
-- Use Microsoft Azure role-based access control keeps to keep data safe  with fine-tuned control. 
-- Implement a fully-managed database service with no touch maintenance, patching, and updates. 
-- Leverage a serverless model for workloads and an automatic and responsive service to manage traffic bursts on demand. 
-- Leverage auto-scale systems and provisioned throughput automatically and instantly scale capacity for unpredictable workloads, while maintaining SLAs. 
 
 The architecture of a Microsoft Azure CosmosDB deployment is as follows: 
 
 ![Azure Cosmos DB and Azure Synapse Analytics architecture](media/what-is-happening-to-machine-learning-server/synapse-analytics-cosmos-db-architecture.png) 
-
 
 For more information on using Notebooks with Python or C# in CosmosDB Deployments, see [Built-in Jupyter Notebooks support in Azure Cosmos DB](/azure/cosmos-db/cosmosdb-jupyter-notebooks).
 
