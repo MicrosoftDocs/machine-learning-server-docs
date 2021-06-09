@@ -13,22 +13,24 @@ ms.prod: "mlserver"
 
 # What's happening to Machine Learning Server?
 
-> [!WARNING] 
-> The support for Machine Learning Server will end on June 30, 2022. This content is being retired and may not be updated in the future. 
+> [!WARNING]
+> The support for Machine Learning Server will end on June 30, 2022. This content is being retired and may not be updated in the future.
 
-[Microsoft Machine Learning Server 9.4.7](what-is-machine-learning-server.md) is enterprise software for data science, providing R and Python interpreters, base distributions of R and Python, additional high-performance libraries from Microsoft, and an operationalization capability for advanced deployment scenarios.
+This article explains options for replacing the functionality of [Microsoft Machine Learning Server 9.4.7](what-is-machine-learning-server.md) and migration strategies for code and data to other platforms.
 
-This article explains options for replacing the functionality of Machine Learning Server and migration strategies for code and data implemented on Machine Learning Server.
+Machine Learning Server is enterprise software for data science, providing R and Python interpreters, base distributions of R and Python, additional libraries from Microsoft, and operationalization capability.
 
 The first decision point for these options is the locations of compute and data storage for analysis, either on-premises or in the cloud.
 
 ## On-premises deployment options
 
-Machine Learning Server environments are available completely independent of connecting to the Internet or intranets. These are normally high-security environments where large-scale data analysis is critical, but the data is extremely sensitive.
+Machine Learning Server environments are available independent of connecting to the Internet or intranets. These are normally high-security environments where large-scale data analysis is critical, but the data is extremely sensitive.
+
+If you want to use an on-premises solution, SQL Server Big Data Clusters is an option.
 
 ### SQL Server Big Data Clusters
 
-Microsoft SQL Server Big Data Clusters allow you to deploy scalable clusters of SQL Server, Spark, and HDFS containers running on Kubernetes. These components are running side by side to enable you to read, write, and process big data from Transact-SQL or Spark, allowing you to easily combine and analyze your high-value relational data with high-volume big data.  
+SQL Server Big Data Clusters allow you to deploy scalable clusters of SQL Server, Spark, and HDFS containers running on Kubernetes. These components are running side by side to enable you to read, write, and process big data from Transact-SQL or Spark, allowing you to easily combine and analyze your high-value relational data with high-volume big data.  
 
 Microsoft SQL Server Big Data Clusters includes SQL Server Machine Learning Services, which runs Python, R and Java languages from inside SQL Server Stored Procedures. Other languages such as Go are also possible via an extensible framework. The Spark subsystem within the cluster is a standard Apache Spark distribution, and can run Scala, R, Python and other supported languages and constructs.  
 
