@@ -5,7 +5,7 @@ keywords: ""
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: 06/01/2021
+ms.date: 06/08/2021
 ms.topic: "overview"
 ms.prod: "mlserver"
 
@@ -15,15 +15,15 @@ ms.prod: "mlserver"
 
 [!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
 
-Microsoft Machine Learning Server 9.4.7 is enterprise software for data science, providing R and Python interpreters, base distributions of R and Python, additional high-performance libraries from Microsoft, and an operationalization capability for advanced deployment scenarios. Machine Learning Server runs on-premises and in the cloud, on a variety of operating systems, and can run in a distributed mode. Web services are hosted on a server grid on-premises or in the cloud and can be integrated with line-of-business applications. Additionally, Machine Learning Server integrates with Active Directory and Azure Active Directory and includes role-based access control to satisfy security and compliance needs of your enterprise. The ability to deploy to an elastic grid lets you scale seamlessly with the needs of your business, both for batch and real-time scoring. 
+[Microsoft Machine Learning Server 9.4.7](what-is-machine-learning-server.md) is the last version and the **support will end on June 30, 2020**. Machine Learning Server is enterprise software for data science, providing R and Python interpreters, base distributions of R and Python, additional high-performance libraries from Microsoft, and an operationalization capability for advanced deployment scenarios.
 
-The support for Machine Learning Server ends on June 30, 2022. This article explains options for replacing the functionality of Microsoft Machine Learning Server and migration strategies for code and data implemented on Microsoft Machine Learning Server. 
+This article explains options for replacing the functionality of Machine Learning Server and migration strategies for code and data implemented on Machine Learning Server.
 
-The first decision point for these options is the locations of compute and data storage for analysis.  
+The first decision point for these options is the locations of compute and data storage for analysis, either on-premises or in the cloud.
 
 ## On-premises deployment options
 
-Microsoft Machine Learning Server environments are available completely independent of connecting to the Internet or Intranets. These are normally high-security environments where large-scale data analysis is critical, but the data is extremely sensitive. 
+Machine Learning Server environments are available completely independent of connecting to the Internet or intranets. These are normally high-security environments where large-scale data analysis is critical, but the data is extremely sensitive.
 
 ### SQL Server Big Data Clusters
 
@@ -93,7 +93,7 @@ The architecture of a Azure HDInsight deployment is as follows:
 
 For more information, see [What is Azure HDInsight?](/azure/hdinsight/hdinsight-overview).
 
-## Azure Databricks
+### Azure Databricks
 
 Azure Databricks is a data analytics platform optimized for the Microsoft Azure cloud services platform. Azure Databricks offers two environments for developing data intensive applications: Azure Databricks SQL Analytics and Azure Databricks Workspace. 
 
@@ -132,7 +132,7 @@ The architecture of a Microsoft Azure Databricks deployment is as follows:
 
 For more information, see [What is Azure Databricks?](/azure/databricks/scenarios/what-is-azure-databricks)
 
-## Azure Synapse Analytics
+### Azure Synapse Analytics
 
 Azure Synapse Analytics is an enterprise analytics service that accelerates time to insight across data warehouses and big data systems, using distributed processing and data constructs. Azure Synapse brings together SQL technologies used in enterprise data warehousing, Spark technologies used for big data, Pipelines for data integration and ETL/ELT, and deep integration with other Azure services such as Power BI, CosmosDB, and AzureML. 
 
@@ -162,7 +162,7 @@ The architecture of Azure Synapse Analytics is as follows:
 
 For more information, see [What is Azure Synapse Analytics?](/azure/synapse-analytics/overview-what-is)
 
-## Azure Machine Learning
+### Azure Machine Learning
 
 Azure Machine Learning is a cloud-based service that can be used for any kind of machine learning, from classical ML to deep learning, supervised, and unsupervised learning. Whether you prefer to write Python or R code with the SDK or work with no-code/low-code options in the studio, you can build, train, and track machine learning and deep-learning models in an Azure Machine Learning Workspace. With Azure Machine Learning you can start training on your local machine and then scale out to the cloud. The service also interoperates with popular deep learning and reinforcement open-source tools such as PyTorch, TensorFlow, scikit-learn, and Ray RLlib. 
 
@@ -184,7 +184,7 @@ The architecture of a Azure Machine Learning deployment is as follows:
 
 For more information, see [What is Azure Machine Learning?](/azure/machine-learning/overview-what-is-azure-ml)
 
-## Azure Cosmos DB
+### Azure Cosmos DB
 
 Azure Cosmos DB is a fully managed NoSQL database for modern app development. Single-digit millisecond response times, and automatic and instant scalability, guarantee speed at any scale. Business continuity is assured with SLA-backed availability and enterprise-grade security. App development is faster and more productive thanks to turnkey multi region data distribution anywhere in the world, open-source APIs and SDKs for popular languages.  
 
