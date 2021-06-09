@@ -13,11 +13,11 @@ ms.prod: "mlserver"
 
 # What's happening to Machine Learning Server?
 
-The support for [Microsoft Machine Learning Server 9.4.7](what-is-machine-learning-server.md) will **end on June 30, 2022**. This article explains options for replacing the functionality of  and migration strategies for code and data to other platforms.
+The support for [Microsoft Machine Learning Server 9.4.7](what-is-machine-learning-server.md) will **end on June 30, 2022**. 
+
+This article explains options for replacing the functionality of  and migration strategies for code and data to other platforms. The first decision point for these options is the locations of compute and data storage for analysis, either on-premises or in the cloud.
 
 Machine Learning Server is enterprise software for data science, providing R and Python interpreters, base distributions of R and Python, additional libraries from Microsoft, and operationalization capability.
-
-The first decision point for these options is the locations of compute and data storage for analysis, either on-premises or in the cloud.
 
 ## On-premises deployment options
 
