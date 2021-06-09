@@ -5,7 +5,7 @@ keywords: ""
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: 06/08/2021
+ms.date: 06/30/2021
 ms.topic: "overview"
 ms.prod: "mlserver"
 
