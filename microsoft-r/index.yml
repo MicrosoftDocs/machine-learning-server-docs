@@ -18,7 +18,7 @@ landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
   # Card (optional)
-  - title: END OF SUPPORT
+  - title: End of Support
     linkLists:
       - linkListType: whats-new
         links:
