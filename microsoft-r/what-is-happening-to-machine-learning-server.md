@@ -112,7 +112,7 @@ Use Azure Machine Learning as a replacement for Machine Learning Server when you
 - Machine learning extensions for Visual Studio Code (preview) provides you with a full-featured development environment for building and managing your machine learning projects. 
 - A Machine learning Command-Line Interface (CLI), Azure Machine Learning includes an Azure CLI extension that provides commands for managing with Azure Machine Learning resources from the command line. 
 - Integration with open-source frameworks such as PyTorch, TensorFlow, and scikit-learn and many more for training, deploying, and managing the end-to-end machine learning process. 
-- Reinforcement learning with Ray RLlib 
+- Reinforcement learning with Ray RLlib.
 - MLflow to track metrics and deploy models or Kubeflow to build end-to-end workflow pipelines. 
 
 The architecture of a Azure Machine Learning deployment is as follows: 
