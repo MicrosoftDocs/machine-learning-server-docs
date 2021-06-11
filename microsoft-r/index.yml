@@ -18,6 +18,16 @@ landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
   # Card (optional)
+  - title: Support information
+    linkLists:
+      - linkListType: whats-new
+        links:
+          - text: What's happening to Machine Learning Server?
+            url: what-is-happening-to-machine-learning-server.md
+          - text: Servicing support policy
+            url: resources-servicing-support.md
+
+  # Card (optional)
   - title: 5-Minute Quickstarts
     linkLists:
       - linkListType: quickstart
