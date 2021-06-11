@@ -7,7 +7,7 @@ keywords: ""
 author: "dphansen"
 ms.author: "davidph"
 manager: "cgronlun"
-ms.date: "06/01/2021"
+ms.date: "06/30/2021"
 ms.topic: "conceptual"
 ms.prod: "mlserver"
 
@@ -23,7 +23,9 @@ ms.prod: "mlserver"
 
 ---
 
-# Support Timeline for Microsoft R Server & Machine Learning Server
+# Support Timeline for Machine Learning Server & Microsoft R Server
+
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
 
 Machine Learning Server 9.4.7 is supported until June 1, 2022. All other versions are no longer supported. 
 
