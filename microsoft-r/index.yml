@@ -1,7 +1,10 @@
 ### YamlMime:Landing
 
 title: Machine Learning Server documentation # < 60 chars
-summary: "IMPORTANT: This content is being retired and may not be updated in the future. The support for Machine Learning Server will end on June 30, 2022. \n\nLearn how to use Machine Learning Server to analyze data at scale, build intelligent apps, and discover valuable insights across your business."
+summary: |
+    <strong>IMPORTANT:</strong> This content is being retired and may not be updated in the future. The support for Machine Learning Server will end on June 30, 2022.
+    <p>
+    <p>Learn how to use Machine Learning Server to analyze data at scale, build intelligent apps, and discover valuable insights across your business.
 
 metadata:
   title: Machine Learning Server documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
