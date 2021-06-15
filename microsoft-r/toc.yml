@@ -1198,10 +1198,10 @@ items:
         href: r-reference/sqlrutils/storedprocedure.md
 - name: Resources
   items:
+  - name: Support timeline
+    href: resources-servicing-support.md
   - name: Product comparison
     href: what-is-r-server-interoperability.md
-  - name: Servicing support policy
-    href: resources-servicing-support.md
   - name: Known issues
     href: resources-known-issues.md
   - name: Deprecated & discontinued features
