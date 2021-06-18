@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Microsoft R Server is renamed - Machine Learning Server "
-description: "Microsoft R Server was rebranded as Machine Learning Server in Sept. 2017."
+title: "Microsoft Machine Learning Server branding history"
+description: "A history of the name change from Microsoft Machine Learning Server to R Server."
 keywords: ""
 author: "dphansen"
 ms.author: "davidph"
@@ -23,7 +23,7 @@ ms.prod: "mlserver"
 
 ---
 
-# Microsoft R Server is now Microsoft Machine Learning Server
+# Microsoft Machine Learning Server branding history
 
 [!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
 

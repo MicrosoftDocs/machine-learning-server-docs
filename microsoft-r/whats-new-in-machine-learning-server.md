@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "New in Machine Learning Server 9.4"
-description: "New features, improvements, and changes in release 9.4 of Machine Learning Server."
+title: "Machine Learning Server 9.4 Release Notes"
+description: "Features, improvements, and changes in release 9.4 of Machine Learning Server."
 keywords: 
 author: "dphansen"
 ms.author: "davidph"
@@ -22,7 +22,7 @@ ms.prod: "mlserver"
 #ms.custom: ""
 ---
 
-# What's new in Machine Learning Server 9.4
+# Machine Learning Server 9.4 Release Notes
 
 [!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
 
@@ -30,7 +30,7 @@ Machine Learning Server provides powerful R and Python function libraries for da
 
 Functionality is delivered through proprietary R and Python packages, internal computational engines built on open-source R and Python, tools, solutions, and samples.
 
-In this article, learn about the new capabilities introduced in the latest packages and tools. If you develop in R, you might also want to review feature announcements from recent past releases. 
+In this article, learn about the capabilities introduced in the latest packages and tools. If you develop in R, you might also want to review feature announcements from recent past releases. 
 
 > [!Note]
 > For updates to R Client, see [What's New for Microsoft R Client](r-client/what-is-microsoft-r-client.md#r-client-whats-new). For known issues and workarounds, see [Known issues in 9.4](resources-known-issues.md).
