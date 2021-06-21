@@ -7,9 +7,9 @@ items:
     href: what-is-happening-to-machine-learning-server.md
   - name: About Machine Learning Server
     href: what-is-machine-learning-server.md
-  - name: What's new
+  - name: Release notes
     href: whats-new-in-machine-learning-server.md
-  - name: R Server's new name
+  - name: Brand history
     href: rebranding-microsoft-r-server.md
   expanded: true
 - name: Install & configure
