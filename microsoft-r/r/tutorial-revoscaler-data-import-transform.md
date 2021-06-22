@@ -479,7 +479,11 @@ This 30-minute video is the second in a 4-part video series. It demonstrates Rev
 > [!Tip]
 > This video shows you how to create a source object for a list of files by using the R `list.files` function and patterns for selecting specific file names. It uses the multiple mortDefaultSmall<em>.csv files to show the approach. To create an XDF comprised of all the files, use the following syntax: `mySourceFiles <- list.files(rxGetOption("sampleDataDir"), pattern = "mortDefaultSmall\\d</em>.csv", full.names=TRUE)`.
 
+<!--  
  &lt;div align=center&gt;<iframe src="https://channel9.msdn.com/Series/Microsoft-R-Server-Series/Introduction-to-Microsoft-R-Server-Session-2--Data-Ingestion/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe></div>
+-->
+
+> [!VIDEO https://channel9.msdn.com/Series/Microsoft-R-Server-Series/Introduction-to-Microsoft-R-Server-Session-2--Data-Ingestion/player?format=ny]
 
  <a name="chunking"></a>
 ### Overcome R Client data chunking limitations by pushing compute context or migrating to Machine Learning Server
