@@ -77,7 +77,7 @@ There is no support for side-by-side installations of older and newer versions, 
 
 ## Download Machine Learning Server installer
 
-You can get the zipped installation file from one of the following download sites.
+You can get the zipped installation file from the following download site.
 
 | Site | Edition | Details |
 |------|---------|---------|
