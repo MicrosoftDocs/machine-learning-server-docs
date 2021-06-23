@@ -119,7 +119,7 @@ Use Azure Machine Learning as a replacement for Machine Learning Server when you
 
 The architecture of a Azure Machine Learning deployment is as follows: 
 
-![Azure Machine Learning architecture](media/what-is-happening-to-machine-learning-server/Azure Machine Learning-architecture.svg) 
+![Azure Machine Learning architecture](media/what-is-happening-to-machine-learning-server/azureml-architecture.svg) 
 
 For more information, see [What is Azure Machine Learning?](/azure/machine-learning/overview-what-is-azure-ml)
 
