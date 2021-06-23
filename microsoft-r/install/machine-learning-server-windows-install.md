@@ -77,22 +77,11 @@ There is no support for side-by-side installations of older and newer versions, 
 
 ## Download Machine Learning Server installer
 
-You can get the zipped installation file from one of the following download sites.
+You can get the zipped installation file from the following download site.
 
 | Site | Edition | Details |
 |------|---------|---------|
 | [Volume Licensing Service Center (VLSC)](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for "SQL Server 2017", and then choose a per-core licensing option. A selection for **Machine Learning Server 9.4** is provided on this site. |
-| [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios. |
-
-  For downloads from [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/):
-
-1. Click **Join or access now** to sign up for download benefits. The Visual Studio page title should include "My Benefits". The URL should be changed to *https://my.visualstudio.com/*.
-
-2. Click **Downloads** and search for *Machine Learning Server*.
-
-3. Find the version and click **Download** to get the Machine Learning Server installer for Windows.
-
-   ![Download page on Visual Studio benefits page](./media/machine-learning-server-windows-install/search-downloads.png)
 
 <a name="howtoinstall"></a>
 
