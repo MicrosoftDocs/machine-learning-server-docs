@@ -40,7 +40,7 @@ Machine Learning Server is engineered for the following architecture:
 We recommend Spark for the processing framework.
 
 > [!Note]
-> These instructions use package managers to connect to Microsoft sites, download the distributions, and install the server. If you know and prefer working with gzip files on a local machine, you can download **en_machine_learning_server_9.2.1_for_hadoop_x64_100353069.gz** from [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/).
+> These instructions use package managers to connect to Microsoft sites, download the distributions, and install the server.
 
 ## System and setup requirements
 
