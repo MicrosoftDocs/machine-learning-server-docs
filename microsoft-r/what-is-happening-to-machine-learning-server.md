@@ -13,7 +13,8 @@ ms.prod: "mlserver"
 
 # What's happening to Machine Learning Server?
 
-The support for [Microsoft Machine Learning Server 9.4.7](what-is-machine-learning-server.md) will **end on July 1, 2022**. For more information, see [Support timeline for Microsoft R Server & Machine Learning Server](resources-servicing-support.md)
+> [!IMPORTANT]
+> The support for [Microsoft Machine Learning Server 9.4.7](what-is-machine-learning-server.md) will **end on July 1, 2022**. For more information, see [Support timeline for Microsoft R Server & Machine Learning Server](resources-servicing-support.md).
 
 This article explains options for replacing the functionality of Machine Learning Server and migration strategies for code and data to other platforms.
 
