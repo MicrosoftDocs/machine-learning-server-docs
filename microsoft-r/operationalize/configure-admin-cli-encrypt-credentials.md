@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Encrypt credentials and secrets
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server, Microsoft R Server**
 
 For security purposes, we strongly recommend that you encrypt strings in the appsettings.json configuration file. For example, you should encrypt any remote database connection strings and/or LDAP/LDAP-S passwords rather than store strings in plain text. 

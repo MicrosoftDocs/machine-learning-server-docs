@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Parallel execution using doRSR for script containing RevoScaleR and foreach constructs
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 Machine Learning Server includes the open-source [foreach package](https://CRAN.R-project.org/package=foreach) in case you need to substitute the built-in parallel execution methodology of RevoScaleR with a custom implementation. 
 
 To execute code that leverages foreach, you will need a parallel backend engine, similar to **NetWorkSpaces**, **snow**, and **rmpi**. For integration with script leveraging RevoScaleR, you can use the **doRSR** package. The **doRSR** package is a parallel backend for RevoScaleR, built on top of [rxExec](../r-reference/revoscaler/rxexec.md), and included with all RevoScaleR distributions.

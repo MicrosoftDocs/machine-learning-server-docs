@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # Install Machine Learning Server using Cloudera Manager
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server 9.2.1 | 9.3 | 9.4**
 
 This article explains how to generate, deploy, and activate an installation parcel for Machine Learning Server on a Cloudera distribution of Apache Hadoop (CDH). 
@@ -45,16 +47,7 @@ This section explains how to obtain the parcel generation script and simulate pa
 
 ### Download a Machine Learning Server distribution
 
-A package manager installation used for Linux or Hadoop won't provide the parcel generation scripts. To get the scripts, obtain a gzipped distribution of Machine Learning Server from [Visual Studio Dev Essentials](https://msdn.microsoft.com/subscriptions/downloads/hh442898.aspx) or [Volume licensing](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409).
-
-1. Go to [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/).
-2. Click **Join or Access Now** and enter your [Microsoft account](https://account.microsoft.com/account) (such as a Live ID, Hotmail, or Outlook account).
-3. Make sure you're in the right place: *https://my.visualstudio.com/Benefits*.
-4. Click **Downloads**.
-5. Search for *Machine Learning Server*.
-6. Download **Machine Learning Server 9.4.7 for Hadoop** to a writable directory, such as **/tmp/**, on one of the nodes.
-
-![Download page on Visual Studio benefits page](./media/machine-learning-server-windows-install/search-downloads.png)
+A package manager installation used for Linux or Hadoop won't provide the parcel generation scripts. To get the scripts, obtain a gzipped distribution of Machine Learning Server from [Volume licensing](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409).
 
 ### Unpack the distribution
 

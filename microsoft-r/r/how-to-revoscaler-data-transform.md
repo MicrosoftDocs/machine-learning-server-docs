@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # How to transform and subset data using RevoScaleR
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 A crucial step in many analyses is transforming the data into a form best suited for the chosen analysis. For example, to reduce variations in scale between variables, you might take a log or a power of the original variable before fitting the dataset to a linear model. Additionally, transforming data minimizes passes through the data, which is more efficient.
 
 In RevoScaleR, you can perform data transformations in virtually all of its functions, from **rxImport** to **rxDataStep**, as well as the analysis functions **rxSummary**, **rxLinMod**, **rxLogit**, **rxGlm**, **rxCrossTabs**, **rxCube**, **rxCovCor**, and **rxKmeans**.

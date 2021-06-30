@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Running background jobs using RevoScaleR
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 In Machine Learning Server, you can run jobs interactively, waiting for results before continuing on to the next operation, or you can run them asynchronously in the background if a job is long-running.
 
 <a name="non-waiting-jobs"></a>

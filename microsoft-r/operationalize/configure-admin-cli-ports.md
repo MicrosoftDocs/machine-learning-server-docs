@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Update port values
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server, Microsoft R Server**
 
 You can update the ports numbers for the web node, compute node, or [deployr-rserve](https://github.com/Microsoft/deployr-rserve) (a forked version of RServe).

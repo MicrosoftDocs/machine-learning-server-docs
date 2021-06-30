@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Create an XDF file in Machine Learning Server
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 XDF is the native file format for persisted data in Machine Learning Server and it offers the following benefits:
 
 + Compression, applied when the file is written to disk. 

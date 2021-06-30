@@ -24,6 +24,8 @@ ms.technology:
 
 # How-to guides for data analysis and operationalization
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 This section of the Machine Learning Server documentation is for data scientists, analysts, and statisticians. The focus of this content area is on data acquisition, transformation and manipulation, visualization, and analysis in R and Python, as well as the deployment and consumption of models and code. It provides step-by-step guidance for common tasks leveraging the libraries and packages in Machine Learning Server.
 
 If you are new to R, be sure to also use the R Core Team manuals that are part of every R distribution, including *An Introduction to R*, *The R Language Definition*, *Writing R Extensions* and so on. Beyond the standard R manuals, there are many other resources. [Learn about them here](../resources-more.md).

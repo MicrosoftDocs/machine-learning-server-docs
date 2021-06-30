@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # Known issues in Machine Learning Server
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 The following issues are known in the 9.4 release.
 
 <a name="revo-rxserializemodel"></a>

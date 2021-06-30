@@ -21,7 +21,10 @@ ms.prod: "mlserver"
 #ms.technology: ""
 #ms.custom: ""
 ---
+
 # Quickstart: Run R code in R Client and Machine Learning Server
+
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
 
 **Applies to: R Client 3.x, R Server 9.x, Machine Learning Server 9.x**
 

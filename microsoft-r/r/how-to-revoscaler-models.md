@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Models in RevoScaleR
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 Specifying a model with RevoScaleR is similar to specifying a model with the standard R statistical modeling functions, but there are some significant differences. Understanding these differences can help you make better use of RevoScaleR. The purpose of this article is to explain these differences at a high level so that when we begin fitting models in script, the terminology does not seem too foreign.
 
 ### External Memory Algorithms

@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Manage and configure Machine Learning Server for operationalization
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server, Microsoft R Server 9.x**
 
 >You can configure Machine Learning Server after installation to act as a deployment server and host analytic web services as well as to execute code remotely. For a general introduction to  operationalization, read the [About](../what-is-operationalization.md) topic.

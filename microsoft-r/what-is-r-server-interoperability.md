@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # Compare Machine Learning Server and related tools
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 The following table broadly compares members of the Machine Learning Server and client apps. All products with R support are built on Microsoft R Open and install the package automatically. All products with Python support are built on Anaconda.
 
 There is no Python client or workstation version for Machine Learning Server that is equilvalent to R Client. You can [install the Python client libraries](https://docs.microsoft.com/machine-learning-server/install/python-libraries-interpreter), or a developer edition or an evaluation edition of Machine Learning Server if you require a free-of-charge copy for study and development.

@@ -1,8 +1,8 @@
 ---
 
 # required metadata
-title: "Microsoft R Server is renamed - Machine Learning Server "
-description: "Microsoft R Server was rebranded as Machine Learning Server in Sept. 2017."
+title: "Microsoft Machine Learning Server branding history"
+description: "A history of the name change from Microsoft Machine Learning Server to R Server."
 keywords: ""
 author: "dphansen"
 ms.author: "davidph"
@@ -23,7 +23,9 @@ ms.prod: "mlserver"
 
 ---
 
-# Microsoft R Server is now Microsoft Machine Learning Server
+# Microsoft Machine Learning Server branding history
+
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
 
 In September 2017, Microsoft R Server was released under the name of **Microsoft Machine Learning Server**. The product was renamed from R Server to Machine Learning Server to reflect the addition of Python-based analytics.
 
@@ -33,7 +35,8 @@ As related to R components, some highlights from previous versions include impro
 
 ## Building on our commitment to R
 
-Microsoft continues its commitment and development in R, not only in the latest Machine Learning Server release, but also in the newest [Microsoft R Client](r-client/what-is-microsoft-r-client.md) and [Microsoft R Open](https://mran.microsoft.com) releases. You can also find R and Python support in [SQL Server Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/sql-server-machine-learning-services) on Windows and Linux, and R support in [Azure SQL Database](https://docs.microsoft.com/azure/sql-database/sql-database-machine-learning-services-overview).
+Microsoft continues its commitment and development in R, not only in the latest Machine Learning Server release, but also in the newest [Microsoft R Client](r-client/what-is-microsoft-r-client.md) and [Microsoft R Open](https://mran.microsoft.com) releases. You can also find R and Python support in [SQL Server Machine Learning Services](/sql/advanced-analytics/sql-server-machine-learning-services.md
+) on Windows and Linux, and R support in [Azure SQL Database](/azure/sql-database/sql-database-machine-learning-services-overview.md).
 
 ## Upgrade to Machine Learning Server
 

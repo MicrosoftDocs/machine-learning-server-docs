@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # Configuring CA Single Sign-On for DeployR
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to: DeployR 8.x** (See [comparison between 8.x and 9.x](../whats-new-in-r-server.md#8vs9))
 
 >Looking to deploy with Machine Learning Server? [Start here](../what-is-operationalization.md).

@@ -24,6 +24,8 @@ ms.technology: ""
 
 # Tutorials and sample data for Machine Learning Server
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 New to the R language or Machine Learning Server products and libraries? These tutorials will help you get started.
 
 + [Expore R and RevoScaleR in 25 functions or less](tutorial-r-to-revoscaler.md)

@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # Tutorial: Load and analyze a large airline data set with RevoScaleR
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 This tutorial builds on what you learned in the [first RevoScaleR tutorial](tutorial-revoscaler-data-import-transform.md) by exploring the functions, techniques, and issues arising when working with larger data sets. As before, you'll work with sample data to complete the steps, except this time you will use a much larger data set.
 
 ## Download the airline dataset

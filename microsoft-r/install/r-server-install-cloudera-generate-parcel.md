@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Generate a parcel
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:** R Server 9.1 on the Cloudera distribution of Apache Hadoop (CDH)
 
 When performing a parcel installation in CDH, you use the **generate_mrs_parcel.sh** instead of **install.sh**. You will also use support files provided in the R Server 9.1 distribution, followed by Cloudera Manager to complete the deployment. The instructions in this article walk you through steps performed at the console, prior to using Cloudera Manager.
@@ -43,21 +45,11 @@ A workaround is to install the packages manually. For instructions, see [Manual 
 
 ## Step 1: Download 
 
-The first step is to download a gzipped tar file of the R Server 9.1 distribution to the master node from one of the following download sites.
+The first step is to download a gzipped tar file of the R Server 9.1 distribution to the master node from the following download site.
 
 | Site | Edition | Details |
 |------|---------|---------|
-| [Visual Studio Dev Essentials](https://go.microsoft.com/fwlink/?LinkId=717968&clcid=0x409) | Developer (free) | This option provides a zipped file, free when you sign up for Visual Studio Dev Essentials. Developer edition has the same features as Enterprise, except it is licensed for development scenarios.|
 |[Volume Licensing Service Center (VLSC)](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | Enterprise | Sign in, search for R Server for Hadoop. A selection for **R Server 9.1.0 for Hadoop** is provided on this site. |
-
-For downloads from [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/):
-
-1. Click **Join or access now** to sign up for download benefits.
-2. Check the URL to verify it changed to *https://my.visualstudio.com/*.
-3. Click **Downloads** to search for R Server.
-4. Click **Downloads** for a specific version to select the platform.
-
-![Download page on Visual Studio benefits page](./media/mlserver-install-older-versions.png)
 
 ## Step 2: Unpack 
 
