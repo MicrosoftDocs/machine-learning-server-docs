@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Import SQL Server relational data
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 This article shows you how to import relational data from SQL Server into a data frame or .xdf file in Machine Learning Server. Source data can originate from Azure SQL Database, or SQL Server on premises or on [an Azure virtual machine](https://docs.microsoft.com/sql/linux/sql-server-linux-azure-virtual-machine#a-idconnecta-connect-to-the-linux-vm).
 
 ## Prerequisites

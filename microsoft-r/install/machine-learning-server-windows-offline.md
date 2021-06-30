@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Offline installation for Machine Learning Server for Windows
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server 9.2.1 | 9.3 | 9.4**
 
 By default, installers connect to Microsoft download sites to get required and updated components for Machine Learning Server for Windows. If firewall constraints prevent the installer from reaching these sites, you can use an internet-connected device to download files, transfer files to an offline server, and then run setup.
@@ -38,7 +40,7 @@ On an internet-connected computer, download all of the following files.
 
 | Component | Download | Used for | 
 |-----------|----------|----------|
-|Machine Learning Server setup | Get *Machine Learning Server for Windows* (en_machine_learning_server_for_windows_x64_<build-number>.zip) from one of these sites:<br/><br/>[Visual Studio Dev Essentials](https://my.visualstudio.com/Downloads?q=machine%20learning%20server%209.4.7)<br/>[Volume Licensing Service Center (VLSC)](https://www.microsoft.com/Licensing/servicecenter/default.aspx) | ML Server |
+|Machine Learning Server setup | Get *Machine Learning Server for Windows* (en_machine_learning_server_for_windows_x64_<build-number>.zip) from [Volume Licensing Service Center (VLSC)](https://www.microsoft.com/Licensing/servicecenter/default.aspx) | ML Server |
 |MLM|[MLM_9.4.7.0_1033.cab](https://download.microsoft.com/download/a/4/1/a41cbeb3-7933-4a57-848e-60f5cb40f2e2/MLM_9.4.7.0_1033.cab)|Pre-trained models, R or Python|
 |Microsoft R Open|[SRO_3.5.2.0_1033.cab](https://download.microsoft.com/download/4/a/3/4a34263a-069b-42bf-946f-69f3b708ab11/SRO_3.5.2.0_1033.cab)|R|
 |Microsoft Python Open|[SPO_4.5.12.0_1033.cab](https://download.microsoft.com/download/7/d/2/7d2aecbc-3495-4496-9dee-ca38fd7f55f0/SPO_4.5.12.0_1033.cab) *(see note below)*|Python|
@@ -56,7 +58,7 @@ On an internet-connected computer, download all of the following files.
 
 | Component | Download | Used for | 
 |-----------|----------|----------|
-|Machine Learning Server setup | Get *Machine Learning Server for Windows* (en_machine_learning_server_for_windows_x64_<build-number>.zip) from one of these sites:<br/><br/>[Visual Studio Dev Essentials](https://my.visualstudio.com/Downloads?q=machine%20learning%20server&pgroup=) <br/>[Volume Licensing Service Center (VLSC)](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | R Server |
+|Machine Learning Server setup | Get *Machine Learning Server for Windows* (en_machine_learning_server_for_windows_x64_<build-number>.zip) from [Volume Licensing Service Center (VLSC)](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | R Server |
 |Pre-trained Models |[MLM_9.3.0.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=859053) | Pre-trained models, R or Python |
 |Microsoft R Open 3.4.3.0|[SRO_3.4.3.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=867186) | R |
 |Microsoft Python Open |[SPO_9.3.0.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=859054) | Python |
@@ -71,7 +73,7 @@ If you require the previous version, use these links instead.
 
 | Component | Download | Used for | 
 |-----------|----------|----------|
-|Machine Learning Server setup | Get *Machine Learning Server for Windows* (en_machine_learning_server_for_windows_x64_<build-number>.zip) from one of these sites:<br/><br/>[Visual Studio Dev Essentials](https://my.visualstudio.com/Downloads?q=machine%20learning%20server&pgroup=) <br/>[Volume Licensing Service Center (VLSC)](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | R Server |
+|Machine Learning Server setup | Get *Machine Learning Server for Windows* (en_machine_learning_server_for_windows_x64_<build-number>.zip) from [Volume Licensing Service Center (VLSC)](https://go.microsoft.com/fwlink/?LinkId=717966&clcid=0x409) | R Server |
 |Pre-trained Models |[MLM_9.2.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852727) | Pre-trained models, R or Python |
 |Microsoft R Open 3.4.3.0|[SRO_3.4.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkID=852724) | R |
 |Microsoft Python Open |[SPO_9.2.1.0_1033.cab](https://go.microsoft.com/fwlink/?LinkId=852723) | Python |

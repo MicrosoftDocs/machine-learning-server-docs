@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # R Execution Security Considerations
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to: Machine Learning Server, Microsoft R Server 9.x**
 
 [`deployr-rserve`](https://github.com/Microsoft/deployr-rserve) is a forked version of RServe maintained by Microsoft. In this forked version, parallel R sessions are supported for both Windows and Linux thereby overcoming this limitation in the original rserve package.

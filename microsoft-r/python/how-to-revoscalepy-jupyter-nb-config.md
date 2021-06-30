@@ -24,6 +24,8 @@ ms.technology:
 
 # How to add Machine Learning Server modules to multi-user Jupyter Notebook instances
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 This article explains how to add our libraries to a remote Jupyter server acting as central hub for multi-user notebooks on your network.
 
 Jupyter Notebooks is distributed with Anaconda, which is the Python distribution used by Machine Learning Server. If you installed Machine Learning Server, you have the components necessary for running notebooks as a single user on localhost.

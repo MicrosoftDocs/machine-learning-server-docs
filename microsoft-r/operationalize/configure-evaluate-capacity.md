@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Evaluate the load-balancing capacity of your configuration
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to: Machine Learning Server, Microsoft R Server 9.x**
 
 The Evaluate Capacity tool allows you to test your own R and Python code deployed as a web service in your own setup. The tool outputs an accurate evaluation of the latency/thread count for the simulation parameters you define and a break-down graph.

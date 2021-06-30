@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # Install and configure Machine Learning Server
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 Machine Learning Server is available on a number of [platforms](r-server-install-supported-platforms.md). Looking for earlier versions? See [Installation guides for earlier releases](r-server-install.md) for links.
 
 ## Choose a configuration

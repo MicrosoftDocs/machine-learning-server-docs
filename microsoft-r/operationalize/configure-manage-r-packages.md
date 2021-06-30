@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # R package management when operationalizing analytics with Machine Learning Server
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server, Microsoft R Server 9.x**
 
 One of the strengths of the R language is the thousands of third-party packages that have been made publicly available via CRAN, the Comprehensive R Archive Network. R includes various functions that make it easy to download and install these packages. Whenever you deploy an R script, the packages (and their dependencies) needed by that R code must be available at runtime, or else the execution fails. 

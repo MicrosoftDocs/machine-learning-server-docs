@@ -3,11 +3,13 @@ items:
   href: index.yml
 - name: Overview
   items:
+  - name: What's happening to Machine Learning Server?
+    href: what-is-happening-to-machine-learning-server.md
   - name: About Machine Learning Server
     href: what-is-machine-learning-server.md
-  - name: What's new
+  - name: Release notes
     href: whats-new-in-machine-learning-server.md
-  - name: R Server's new name
+  - name: Brand history
     href: rebranding-microsoft-r-server.md
   expanded: true
 - name: Install & configure
@@ -1196,10 +1198,10 @@ items:
         href: r-reference/sqlrutils/storedprocedure.md
 - name: Resources
   items:
+  - name: Support timeline
+    href: resources-servicing-support.md
   - name: Product comparison
     href: what-is-r-server-interoperability.md
-  - name: Servicing support policy
-    href: resources-servicing-support.md
   - name: Known issues
     href: resources-known-issues.md
   - name: Deprecated & discontinued features

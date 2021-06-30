@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Roles and permissions (RBAC)
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server, Microsoft R Server 9.1**
 
 In Machine Learning Server (and R Server), Role-Based Access Control (RBAC) enables fine-grained access management for the operationalization APIs. Using RBAC, you can grant only the level of access that users need to perform their jobs. This article helps you get up and running with RBAC. 

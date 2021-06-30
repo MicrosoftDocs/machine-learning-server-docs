@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Import and consume HDFS data files using RevoScaleR
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 This article explains how to load data from the Hadoop Distributed File System (HDFS) into an R data frame or an .xdf file. Example script shows several use cases for using RevoScaleR functions with HDFS data.
 
 ## Set the file system

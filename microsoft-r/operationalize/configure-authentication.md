@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Authenticate Machine Learning Server users against LDAP AD or Azure Active Directory
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server, Microsoft R Server 9.x**
 
 Machine Learning Server's offers seamless integration with authentication solutions when configured to operationalize analytics.

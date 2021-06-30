@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Uninstall Machine Learning Server for Linux
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server 9.2.1 | 9.3 | 9.4**
 
 This article explains how to uninstall Machine Learning Server for Linux. 

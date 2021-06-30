@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # Additional Resources for Machine Learning Server and Microsoft R
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 Use the links in this article for recommended resources about R and Python.
 
 ## Blogs and resources

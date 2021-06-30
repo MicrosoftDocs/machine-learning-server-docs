@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # Sample data for RevoScaleR and revoscalepy
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 Sample data is available both within the RevoScaleR and revoscalepy packages, and online.
 
 ## Downloads

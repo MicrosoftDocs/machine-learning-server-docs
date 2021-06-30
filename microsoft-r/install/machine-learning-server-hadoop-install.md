@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # Install Machine Learning Server for Hadoop
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server 9.4**
 
 On a Spark cluster, Machine Learning Server must be installed on the edge node and all data nodes on a commercial distribution of Hadoop: Cloudera, HortonWorks, MapR. Optionally, you can install [operationalization features](../what-is-operationalization.md) on edge nodes only.
@@ -38,7 +40,7 @@ Machine Learning Server is engineered for the following architecture:
 We recommend Spark for the processing framework.
 
 > [!Note]
-> These instructions use package managers to connect to Microsoft sites, download the distributions, and install the server. If you know and prefer working with gzip files on a local machine, you can download **en_machine_learning_server_9.2.1_for_hadoop_x64_100353069.gz** from [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/).
+> These instructions use package managers to connect to Microsoft sites, download the distributions, and install the server.
 
 ## System and setup requirements
 

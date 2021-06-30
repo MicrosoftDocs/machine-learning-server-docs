@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # Tutorial: Data import and exploration using RevoScaleR
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to: Microsoft R Client, Machine Learning Server**
 
 In data-driven projects, one action item guaranteed to be on the list is data acquisition and exploration. In this tutorial, you will learn how to import a text-delimited .csv file into an R session and use functions from [RevoScaleR](../r-reference/revoscaler/revoscaler.md) to ascertain the shape of the data. 

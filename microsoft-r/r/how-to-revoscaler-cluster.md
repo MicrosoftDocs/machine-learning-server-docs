@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Cluster classification in RevoScaleR
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 *Clustering* is the general name for any of a large number of classification techniques that involve assigning observations to membership in one of two or more clusters on the basis of some distance metric.
 
 ### K-means Clustering

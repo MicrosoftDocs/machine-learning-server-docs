@@ -25,6 +25,8 @@ ms.prod: "mlserver"
 
 # Tutorial: Analyzing loan data with RevoScaleR
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 This example builds on what you learned in an [earlier tutorial](tutorial-revoscaler-data-import-transform.md) by showing you how to import .csv files to create an .xdf file, and use statistical RevoScaleR functions to summarize the data. As before, you'll work with sample data to complete the steps.
 
 ## Get the mortgage default data set

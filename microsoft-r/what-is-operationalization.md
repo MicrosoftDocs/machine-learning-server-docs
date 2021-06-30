@@ -26,6 +26,8 @@ ms.prod: "mlserver"
 
 # Operationalize analytics with Machine Learning Server
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to: Machine Learning Server, Microsoft R Server 9.x**  
 
 **Operationalization** refers to the process of deploying R and Python models and code to Machine Learning Server in the form of [web services](operationalize/concept-what-are-web-services.md) and the subsequent consumption of these services within client applications to affect business results.

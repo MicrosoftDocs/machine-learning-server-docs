@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # How to publish and manage R web services in Machine Learning Server with mrsdeploy
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:  Machine Learning Server, Microsoft R Server 9.x** 
 
 This article details how you can publish and manage your [analytic web services](concept-what-are-web-services.md) directly in R. You can deploy your R models, scripts, and code as web services using the functions in the [mrsdeploy R package](../r-reference/mrsdeploy/mrsdeploy-package.md).  The mrsdeploy R package containing these functions is installed with both Machine Learning Server (and Microsoft R Server) and Microsoft R Client.

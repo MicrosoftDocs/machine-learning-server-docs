@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Rollback to previous version
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 **Applies to:** R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)
 
 If you deployed and activated Microsoft R Server using a parcel and Custom Service Descriptor (CSD), you have the option of rolling back the active deployment in Cloudera Manager. You might do this if there is an older version of R Server in your cluster that you want to use instead.

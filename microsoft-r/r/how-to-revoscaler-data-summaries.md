@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # How to summarize data using RevoScaleR
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 Summary statistics can help you understand the characteristics and shape of an unfamiliar data set. In [RevoScaleR](../r-reference/revoscaler/revoscaler.md), you can use the [rxGetVarInfo](../r-reference/revoscaler/rxgetvarinfo.md) function to learn more about variables in the data set, and [rxSummary](../r-reference/revoscaler/rxsummary.md) for statistical measures. The rxSummary function also provides a count of observations, and the number of missing values (if any).
 
 This article teaches by example, using built-in sample data sets so that you can practice each skill. It covers the following tasks:

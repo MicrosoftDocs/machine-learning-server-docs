@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Visualizing Huge Data Sets: An Example from the U.S. Census
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 By combining the power and flexibility of the open-source R language with the fast computations and rapid access to huge datasets provided by RevoScaleR, it is easy and efficient to not only do fine-grained calculations “on the fly” for plotting, but to visually drill down into these patterns.
 
 This example focuses on a basic demographic pattern: in general, more boys than girls are born and the death rate is higher for males at every age. So, typically we observe a decline in the ratio of males to females as age increases.

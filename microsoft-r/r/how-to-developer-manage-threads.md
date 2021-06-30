@@ -24,6 +24,8 @@ ms.prod: "mlserver"
 
 # Managing threads in RevoScaleR
 
+[!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
+
 RevoScaleR provides functions for managing the thread pool used for parallel execution.
 
 On Windows, thread pool management is enabled and should not be turned off. 
