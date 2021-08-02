@@ -42,10 +42,10 @@ landingContent:
     linkLists:
       - linkListType: learn
         links:
-          - text: Azure Synapse Analytics machine learning
-            url: /azure/synapse-analytics/machine-learning/what-is-machine-learning
           - text: Azure SQL Managed Instance Machine Learning Services
             url: /azure/azure-sql/managed-instance/machine-learning-services-overview
+          - text: Azure Synapse Analytics machine learning
+            url: /azure/synapse-analytics/machine-learning/what-is-machine-learning
           - text: Azure Machine Learning
             url: /azure/machine-learning/overview-what-is-azure-ml
 
