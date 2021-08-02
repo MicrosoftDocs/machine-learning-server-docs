@@ -34,7 +34,7 @@ landingContent:
         links:
           - text: SQL Server Machine Learning Services
             url: /sql/machine-learning/sql-server-machine-learning-services?view=sql-server-ver15&preserve-view=true
-          - text: SQL Server Big Data Clusters
+          - text: SQL Server Big Data Clusters Machine Learning Services
             url: /sql/big-data-cluster/machine-learning-services?view=sql-server-ver15&preserve-view=true
 
   # Card (optional)
@@ -42,7 +42,7 @@ landingContent:
     linkLists:
       - linkListType: learn
         links:
-          - text: Azure Synapse Analytics
+          - text: Azure Synapse Analytics machine learning
             url: /azure/synapse-analytics/machine-learning/what-is-machine-learning
           - text: Azure SQL Managed Instance Machine Learning Services
             url: /azure/azure-sql/managed-instance/machine-learning-services-overview
