@@ -28,22 +28,22 @@ landingContent:
             url: resources-servicing-support.md
 
   # Card (optional)
-  - title: On-premises analytics options
+  - title: On-premises machine learning options
     linkLists:
-      - linkListType: overview
+      - linkListType: learn
         links:
           - text: SQL Server Machine Learning Services
             url: /sql/machine-learning/sql-server-machine-learning-services?view=sql-server-ver15&preserve-view=true
           - text: SQL Server Big Data Clusters
-            url: /sql/big-data-cluster/big-data-cluster-overview?view=sql-server-ver15&preserve-view=true
+            url: /sql/big-data-cluster/machine-learning-services?view=sql-server-ver15&preserve-view=true
 
   # Card (optional)
-  - title: Cloud analytics options
+  - title: Cloud machine learning options
     linkLists:
       - linkListType: learn
         links:
           - text: Azure Synapse Analytics
-            url: /azure/synapse-analytics/overview-what-is
+            url: /azure/synapse-analytics/machine-learning/what-is-machine-learning
           - text: Azure SQL Managed Instance Machine Learning Services
             url: /azure/azure-sql/managed-instance/machine-learning-services-overview
           - text: Azure Machine Learning
