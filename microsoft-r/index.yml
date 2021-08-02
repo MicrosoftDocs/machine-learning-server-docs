@@ -10,7 +10,7 @@ metadata:
   ms.topic: landing-page # Required
   author: dphansen #Required; your GitHub user alias, with correct capitalization.
   ms.author: "davidph" #Required; microsoft alias of author; optional team alias.
-  ms.date: 11/19/2019 #Required; mm/dd/yyyy format.
+  ms.date: 08/02/2021 #Required; mm/dd/yyyy format.
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -28,65 +28,27 @@ landingContent:
             url: resources-servicing-support.md
 
   # Card (optional)
-  - title: 5-Minute Quickstarts
+  - title: On-premises machine learning options
     linkLists:
-      - linkListType: quickstart
+      - linkListType: learn
         links:
-          - text: Run R code in Machine Learning Server & R Client
-            url: /machine-learning-server/r/quickstart-run-r-code
-          - text: Create a Python model with revoscalepy
-            url: /machine-learning-server/python/quickstart-revoscalepy-linear-regression-model
-          - text: Run a binary classification using microsoftml (Python)
-            url: /machine-learning-server/python/quickstart-binary-classification-with-microsoftml
-          - text: Deploy a model as a web service (R)
-            url: /machine-learning-server/operationalize/quickstart-publish-r-web-service
-          - text: Deploy a model as a web service (Python)
-            url: /machine-learning-server/operationalize/python/quickstart-deploy-python-web-service
+          - text: SQL Server Machine Learning Services
+            url: /sql/machine-learning/sql-server-machine-learning-services?view=sql-server-ver15&preserve-view=true
+          - text: SQL Server Big Data Clusters Machine Learning Services
+            url: /sql/big-data-cluster/machine-learning-services?view=sql-server-ver15&preserve-view=true
 
   # Card (optional)
-  - title: R Tutorials
+  - title: Cloud machine learning options
     linkLists:
-      - linkListType: tutorial
+      - linkListType: learn
         links:
-          - text: Explore R-to-RevoScaleR
-            url: /machine-learning-server/r/tutorial-r-to-revoscaler
-          - text: Data import and exploration
-            url: /machine-learning-server/r/tutorial-revoscaler-data-import-transform
-          - text: Visualize and analyze data
-            url: /machine-learning-server/r/tutorial-revoscaler-data-model-analysis
+          - text: Azure SQL Managed Instance Machine Learning Services
+            url: /azure/azure-sql/managed-instance/machine-learning-services-overview
+          - text: Azure Synapse Analytics
+            url: /azure/synapse-analytics/machine-learning/what-is-machine-learning
+          - text: Azure Machine Learning
+            url: /azure/machine-learning/overview-what-is-azure-ml
 
-  # Card (optional)
-  - title: Python Tutorials
-    linkLists:
-      - linkListType: tutorial
-        links:
-          - text: Use PySpark and revoscalepy together
-            url: /machine-learning-server/python/tutorial-revoscalepy-pyspark
-  
-  # Card (optional)
-  - title: Samples
-    linkLists:
-      - linkListType: sample
-        links:
-          - text: R samples
-            url: /machine-learning-server/r/r-samples
-          - text: Python samples
-            url: /machine-learning-server/python/python-samples
-          - text: Solution templates
-            url: /machine-learning-server/r/sample-solutions
-
-  # Card (optional)
-  - title: Tools
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: Microsoft R Client
-            url: /machine-learning-server/r-client/what-is-microsoft-r-client  
-      - linkListType: how-to-guide
-        links:    
-          - text: Install Python client libraries
-            url: /machine-learning-server/install/python-libraries-interpreter
-  
   # Card (optional)
   - title: R Packages
     linkLists:
