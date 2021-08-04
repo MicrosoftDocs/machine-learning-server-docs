@@ -124,5 +124,5 @@ You can also review [linear modeling for RevoScaleR](../r/how-to-revoscaler-line
 
 + [How to use revoscalepy in local and remote compute contexts](how-to-revoscalepy.md)
 + [Python Function Reference](../python-reference/introducing-python-package-reference.md)
-+ [microsoftml function reference](../python-reference/microsoftml/microsoftml-package.md)
++ [microsoftml function reference](..//sql/machine-learning/python/ref-py-microsoftml)
 + [revoscalepy function reference](../python-reference/revoscalepy/revoscalepy-package.md)

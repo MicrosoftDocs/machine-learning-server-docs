@@ -38,7 +38,7 @@ You can use these libraries and functions in combination with other open source 
 |Module | Version | Description |
 |--------|---------|-------------|
 |[azureml-model-management-sdk](azureml-model-management-sdk/azureml-model-management-sdk.md) | 1.0.1 | Classes and functions to authenticate, deploy, manage, and consume analytic web services in Python.  |
-|[microsoftml](microsoftml/microsoftml-package.md)| 9.4 | A collection of Python functions used for machine learning operations, including training and transformations, scoring, text and image analysis, and feature extraction for deriving values from existing data. |
+|[microsoftml](/sql/machine-learning/python/ref-py-microsoftml)| 9.4 | A collection of Python functions used for machine learning operations, including training and transformations, scoring, text and image analysis, and feature extraction for deriving values from existing data. |
 |[revoscalepy](revoscalepy/revoscalepy-package.md) | 9.4 | Data access, manipulation and transformations, visualization, and statistical analysis. The revoscalepy functions support a broad spectrum of statistical and analytical tasks that operate at scale, bringing analytical operations to local data or remote on a Spark cluster or data residing in SQL Server. |
 
 > [!Note]
@@ -90,7 +90,7 @@ To view the embedded help for each class, use the `help()` command, specifying t
 First, read the introduction to each package to learn about common use case scenarios:
 
 + [azureml-model-management-sdk package for Python](azureml-model-management-sdk/azureml-model-management-sdk.md)  
-+ [microsoftmlpackage for Python](microsoftml/microsoftml-package.md) 
++ [microsoftmlpackage for Python](/sql/machine-learning/python/ref-py-microsoftml) 
 + [revoscalepy package for Python](revoscalepy/revoscalepy-package.md)  
 
 Next, follow these tutorials for hands-on experience:

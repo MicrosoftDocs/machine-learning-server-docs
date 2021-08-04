@@ -105,7 +105,7 @@ decision trees. Each tree in a decision forest outputs a Gaussian distribution.
 
 The formula as described in revoscalepy.rx_formula.
 Interaction terms and `F()` are not currently supported in
-[microsoftml](microsoftml-package.md).
+[microsoftml](/sql/machine-learning/python/ref-py-microsoftml).
 
 
 ### data

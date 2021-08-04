@@ -27,10 +27,10 @@ ms.prod: "mlserver"
 
 **Applies to: Machine Learning Server 9.x**
 
-Learn how to use binary classification using the functions in the [microsoftml package](../python-reference/microsoftml/microsoftml-package.md) that ships with Machine Learning Server.
+Learn how to use binary classification using the functions in the [microsoftml package](..//sql/machine-learning/python/ref-py-microsoftml) that ships with Machine Learning Server.
  Data scientists work [locally in their preferred Python IDE](../install/python-libraries-interpreter.md) and favorite version control tools to build scripts and models.  
 
-This example uses the well known breast cancer dataset. The dataset contains characteristics of cell nuclei and has a target label to indicate whether the tumor was benign (0) or malignant (1). The example builds a linear model with the [rx_fast_linear](../python-reference/microsoftml/rx-fast-linear.md) function from the [microsoftml package](../python-reference/microsoftml/microsoftml-package.md). 
+This example uses the well known breast cancer dataset. The dataset contains characteristics of cell nuclei and has a target label to indicate whether the tumor was benign (0) or malignant (1). The example builds a linear model with the [rx_fast_linear](/sql/machine-learning/python/reference/microsoftml/rx-fast-linear) function from the [microsoftml package](..//sql/machine-learning/python/ref-py-microsoftml). 
 
 
 ## Time estimate
@@ -75,7 +75,7 @@ You can try it yourself with the notebook.
 Now that you've tried this example, you can start developing your own solutions using the MicrosoftML packages and APIs for R and Python:
 
 - [MicrosoftML R package functions](../r-reference/microsoftml/microsoftml-package.md)
-- [microsoftml Python package functions](../python-reference/microsoftml/microsoftml-package.md)
+- [microsoftml Python package functions](..//sql/machine-learning/python/ref-py-microsoftml)
 
 
 ## See also

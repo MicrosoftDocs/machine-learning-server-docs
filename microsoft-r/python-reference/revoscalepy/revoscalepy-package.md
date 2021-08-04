@@ -86,7 +86,7 @@ This section lists the functions by category to give you an idea of how each one
 
 ## 2-Data source functions
 
-Data sources are used by [microsoftml functions](../microsoftml/microsoftml-package.md) as well as **revoscalepy**.
+Data sources are used by [microsoftml functions](/sql/machine-learning/python/ref-py-microsoftml) as well as **revoscalepy**.
 
 | Function | Compute Context | Description | 
 |----------|-----------------|-------------|

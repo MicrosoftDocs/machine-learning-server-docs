@@ -91,7 +91,7 @@ reproducible results, it is recommended that one sets `shuffle` to
 
 The formula described in revoscalepy.rx_formula.
 Interaction terms and `F()` are not currently supported in
-[microsoftml](microsoftml-package.md).
+[microsoftml](/sql/machine-learning/python/ref-py-microsoftml).
 
 
 ### data

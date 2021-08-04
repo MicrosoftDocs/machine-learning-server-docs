@@ -121,7 +121,7 @@ performance of the logistic regression model.
 
 The formula as described in revoscalepy.rx_formula
 Interaction terms and `F()` are not currently supported in
-[microsoftml](microsoftml-package.md).
+[microsoftml](/sql/machine-learning/python/ref-py-microsoftml).
 
 
 ### data

@@ -33,7 +33,7 @@ For sentiment analysis of text and image classification, Machine Learning Server
 
 + Image detection identifies features of the image. There are several use cases for this model: image recognition, image classification. For image recognition, the model returns n-grams that possibly describe the image. For image classification, the model evaluates images and returns a classification based on possible classes you provided (for example, is the image a fish or a dog).
 
-Pre-trained models are available for both R and Python development, through the [MicrosoftML R package](../r-reference/microsoftml/microsoftml-package.md) and the [microsoftml Python package](../python-reference/microsoftml/microsoftml-package.md). 
+Pre-trained models are available for both R and Python development, through the [MicrosoftML R package](../r-reference/microsoftml/microsoftml-package.md) and the [microsoftml Python package](..//sql/machine-learning/python/ref-py-microsoftml). 
 
 ## Benefits of using pre-trained models
 
@@ -74,7 +74,7 @@ Install the models by running the setup program or installation script for the t
 
 Review the associated function reference help:
 
-+ [featurize_image (microsoftml Python)](../python-reference/microsoftml/featurize-image.md)
-+ [featurize_text (microsoftml Python)](../python-reference/microsoftml/featurize-text.md)
++ [featurize_image (microsoftml Python)](/sql/machine-learning/python/reference/microsoftml/featurize-image)
++ [featurize_text (microsoftml Python)](/sql/machine-learning/python/reference/microsoftml/featurize-text)
 + [featurizeImage (MicrosoftML R)](../r-reference/microsoftml/featurizeimage.md)
 + [featurizeText (MicrosoftML R)](../r-reference/microsoftml/featurizetext.md)

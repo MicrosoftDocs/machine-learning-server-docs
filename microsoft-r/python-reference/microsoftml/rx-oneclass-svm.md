@@ -86,7 +86,7 @@ intrusion, fraud, or other types of anomalous behavior.
 
 The formula as described in revoscalepy.rx_formula.
 Interaction terms and `F()` are not currently supported in
-[microsoftml](microsoftml-package.md).
+[microsoftml](/sql/machine-learning/python/ref-py-microsoftml).
 
 
 ### data
