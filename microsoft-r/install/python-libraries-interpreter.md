@@ -30,7 +30,7 @@ Machine Learning Server includes open-source and Microsoft-specific Python packa
 
 A remote server can be either of the following server products:
 
-+ [SQL Server 2017 Machine Learning Services (In-Database)](https://docs.microsoft.com/sql/advanced-analytics/install/sql-machine-learning-services-windows-install)
++ [SQL Server 2017 Machine Learning Services (In-Database)](/sql/machine-learning/install/sql-machine-learning-services-windows-install)
 + [Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md)
 
 Client workstations can be Windows or Linux. 
@@ -48,7 +48,7 @@ This article describes how to install a Python interpreter (Anaconda) and Micros
 
 While not required, it's a good idea to cross-check package versions so that you can match versions on the server with those on the client. On a server with restricted access, you might need an administrator to get this information for you.
 
-+ [Package information on SQL Server](https://docs.microsoft.com/sql/advanced-analytics/r/determine-which-packages-are-installed-on-sql-server)
++ [Package information on SQL Server](/sql/machine-learning/package-management/r-package-information)
 + [Package information on Machine Learning Server for Hadoop](machine-learning-server-hadoop-install.md#package-list)
 
 ## Install Python libraries on Windows
@@ -186,6 +186,6 @@ Now that you have installed local client libraries and verified function calls, 
 
 + [Quickstart: Create a linear regression model in a local compute context](../python/quickstart-revoscalepy-linear-regression-model.md)
 + [How to use revoscalepy in a Spark compute context](../python/how-to-revoscalepy.md)
-+ [How to use revoscalepy in a SQL Server compute context](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model)
++ [How to use revoscalepy in a SQL Server compute context](/sql/machine-learning/tutorials/use-python-revoscalepy-to-create-model)
 
 Remote access to a SQL Server is enabled by an administrator who has configured ports and protocols, enabled remote connections, and assigned user logins. Check with your administrator to get a valid connection string when using a remote compute context to SQL Server.

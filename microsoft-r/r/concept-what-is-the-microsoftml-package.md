@@ -29,7 +29,7 @@ ms.prod: "mlserver"
 
 MicrosoftML adds state-of-the-art data transforms, machine learning algorithms, and pre-trained models to R and Python functionality. The *data transforms* provided by MicrosoftML allow you to compose a custom set of transforms in a pipeline that are applied to your data before training or testing. The primary purpose of these transforms is to allow you to format your data. 
 
-The MicrosoftML functions are provided through the **MicrosoftML** package installed with [Machine Learning Server](../what-is-machine-learning-server.md), Microsoft R Client, and [SQL Server Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services).
+The MicrosoftML functions are provided through the **MicrosoftML** package installed with [Machine Learning Server](../what-is-machine-learning-server.md), Microsoft R Client, and [SQL Server Machine Learning Services](/sql/machine-learning/sql-server-machine-learning-services).
 
 Functions provide fast and scalable *machine learning algorithms* that enable you to tackle common machine learning tasks such as classification, regression, and anomaly detection. These high-performance algorithms are multi-threaded, some of which execute off disk, so that they can scale up to 100s of GBs on a single-node. They are especially suitable for handling a large corpus of text data or high-dimensional categorical data. It enables you to run these functions locally on Windows or Linux machines or on Azure HDInsight (Hadoop/Spark) clusters.
 

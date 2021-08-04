@@ -35,7 +35,7 @@ This topic is a high-level description of package functionality. These classes a
 |--------|-|
 | Current version: |  1.0.1b7 |
 | Built on: | [Anaconda](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) |
-| Package distribution: | [Machine Learning Server 9.x](../../what-is-machine-learning-server.md) </br>[SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) |
+| Package distribution: | [Machine Learning Server 9.x](../../what-is-machine-learning-server.md) </br>[SQL Server 2017 Machine Learning Server (Standalone)](/sql/machine-learning/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) |
 
 
 
@@ -82,7 +82,7 @@ There are three primary use cases for this release:
 
 Add both Python modules to your computer by running setup: 
 
-+ Set up [Machine Learning Server](../../install/machine-learning-server-install.md) for Python or [Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
++ Set up [Machine Learning Server](../../install/machine-learning-server-install.md) for Python or [Python Machine Learning Services](/sql/machine-learning/install/sql-machine-learning-services-windows-install).
 
 Next, follow this quickstart to try it yourself:
 

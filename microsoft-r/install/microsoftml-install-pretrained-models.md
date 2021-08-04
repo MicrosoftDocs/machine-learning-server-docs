@@ -53,7 +53,7 @@ For more information about deep residual networks and their implementation using
 
 ## How to install the models
 
-Pre-trained models are installed through setup as an optional component of Machine Learning Server or [SQL Server Machine Learning](https://docs.microsoft.com/sql/advanced-analytics/r/install-pretrained-models-sql-server). You can also get the R version of the models through [Microsoft R Client](../r-client/what-is-microsoft-r-client.md).
+Pre-trained models are installed through setup as an optional component of Machine Learning Server or [SQL Server Machine Learning](/sql/machine-learning/install/sql-pretrained-models-install). You can also get the R version of the models through [Microsoft R Client](../r-client/what-is-microsoft-r-client.md).
 
 1. Run a Machine Learning Server setup program for your target platform: [Install Machine Learning Server](r-server-install.md).
 

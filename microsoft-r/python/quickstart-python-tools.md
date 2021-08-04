@@ -61,7 +61,7 @@ print(summary)
 
 The setup program for Machine Learning Server 9.4 adds Python distribution information to the registry, which makes loading Python modules more straightforward than in previous releases. 
 
-However, when using an earlier release or to confirm settings, follow these steps to add Machine Learning Server's Python distribution information to an environment. For more information, see [Python environments (Visual Studio docs)](https://docs.microsoft.com/visualstudio/python/managing-python-environments-in-visual-studio).
+However, when using an earlier release or to confirm settings, follow these steps to add Machine Learning Server's Python distribution information to an environment. For more information, see [Python environments (Visual Studio docs)](/visualstudio/python/managing-python-environments-in-visual-studio?view=vs-2019).
 
 1. In **Tools** > **Python** > **Python environments**, click **+ Custom** to create a new environment.
 

@@ -33,7 +33,7 @@ The **microsoftml** module is a collection of Python functions used in machine l
 |--------|-|
 | Current version: |  9.4 |
 | Built on: | [Anaconda 4.2](https://www.continuum.io/why-anaconda) distribution of [Python 3.7.1](https://www.python.org/doc) |
-| Package distribution: | [Machine Learning Server 9.x](../../what-is-machine-learning-server.md) </br>[SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) </br>[SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone) |
+| Package distribution: | [Machine Learning Server 9.x](../../what-is-machine-learning-server.md) </br>[SQL Server 2017 Machine Learning Services](/sql/machine-learning/sql-server-machine-learning-services) </br>[SQL Server 2017 Machine Learning Server (Standalone)](/sql/machine-learning/r/r-server-standalone) |
 
 
 ## How to use microsoftml
@@ -122,7 +122,7 @@ This section lists the functions by category to give you an idea of how each one
 
 For SQL Server, add both Python modules to your computer by running setup: 
 
-+ [Set up Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
++ [Set up Python Machine Learning Services](/sql/machine-learning/install/sql-machine-learning-services-windows-install).
 
 Follow this SQL Server tutorial for hands-on experience: 
 
@@ -131,5 +131,5 @@ Follow this SQL Server tutorial for hands-on experience:
 ## See also
 
   [Machine Learning Server](../../what-is-machine-learning-server.md)  
-  [SQL Server Machine Learning Services with Python](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services)  
-  [SQL Server Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone) 
+  [SQL Server Machine Learning Services with Python](/sql/machine-learning/sql-server-machine-learning-services)  
+  [SQL Server Machine Learning Server (Standalone)](/sql/machine-learning/r/r-server-standalone) 
