@@ -37,7 +37,7 @@ Both Machine Learning Server and Jupyter Notebooks must be on the same computer.
 
 This procedure applies to Linux or Spark edge node upon which you are hosting a JupyterHub or multi-user server. It does not apply to single-user localhost servers. 
 
-For a multi-user server, add our custom kernel **MLSPython** to the data directory of your server. Machine Learning Server provides this kernel for notebooks and scripts that make calls to [revoscalepy](../python-reference/revoscalepy/revoscalepy-package.md), [microsoftml](..//sql/machine-learning/python/ref-py-microsoftml), and [azureml](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md).
+For a multi-user server, add our custom kernel **MLSPython** to the data directory of your server. Machine Learning Server provides this kernel for notebooks and scripts that make calls to [revoscalepy](../python-reference/revoscalepy/revoscalepy-package.md), [microsoftml](/sql/machine-learning/python/ref-py-microsoftml), and [azureml](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md).
 
 Run the following command to install the kernel:
 
@@ -68,6 +68,6 @@ In Jupyter dashboard, click **New** to create a new notebook. You should see the
 
 ## See also
 
-+ [microsoftml function reference](..//sql/machine-learning/python/ref-py-microsoftml)
++ [microsoftml function reference](/sql/machine-learning/python/ref-py-microsoftml)
 + [revoscalepy function reference](../python-reference/revoscalepy/revoscalepy-package.md)
 + [Jupyter/IPython Notebook Quick Start Guide](https://jupyter-notebook-beginner-guide.readthedocs.io)

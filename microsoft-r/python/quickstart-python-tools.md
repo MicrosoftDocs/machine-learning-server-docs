@@ -138,7 +138,7 @@ You can also choose **Tools** > **Python Console** to open an interactive window
 Now that you know how to load the Python libraries, you might want to explore them in-depth:
 
 - [revoscalepy Python package functions](../python-reference/revoscalepy/revoscalepy-package.md)
-- [microsoftml Python package functions](..//sql/machine-learning/python/ref-py-microsoftml)
+- [microsoftml Python package functions](/sql/machine-learning/python/ref-py-microsoftml)
 - [azureml-model-management-sdk](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)
 
 

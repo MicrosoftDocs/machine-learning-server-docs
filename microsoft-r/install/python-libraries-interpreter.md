@@ -38,7 +38,7 @@ Client workstations can be Windows or Linux.
 [Microsoft Python packages](../python-reference/introducing-python-package-reference.md) common to both client and server systems include the following:
 
 + [revoscalepy](../python-reference/revoscalepy/revoscalepy-package.md)
-+ [microsoftml](..//sql/machine-learning/python/ref-py-microsoftml)
++ [microsoftml](/sql/machine-learning/python/ref-py-microsoftml)
 + [azureml-model-management-sdk](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)
 + [pre-trained models](microsoftml-install-pretrained-models.md)
  

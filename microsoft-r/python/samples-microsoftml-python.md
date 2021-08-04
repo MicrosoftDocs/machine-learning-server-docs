@@ -69,6 +69,6 @@ Text featurization is a machine learning technique that converts text into numer
 Now that you've tried some of these examples, you can start developing your own solutions using the MicrosoftML packages and APIs for R and Python:
 
 - [`MicrosoftML` R package functions](../r-reference/microsoftml/microsoftml-package.md)
-- [`MicrosoftML` Python package functions](..//sql/machine-learning/python/ref-py-microsoftml)
+- [`MicrosoftML` Python package functions](/sql/machine-learning/python/ref-py-microsoftml)
 
 

@@ -155,5 +155,5 @@ print(pred.head())
 ## See Also
 
 + [Python function reference](../python-reference/introducing-python-package-reference.md)
-+ [microsoftml function reference](..//sql/machine-learning/python/ref-py-microsoftml)
++ [microsoftml function reference](/sql/machine-learning/python/ref-py-microsoftml)
 + [revoscalepy function reference](../python-reference/revoscalepy/revoscalepy-package.md)

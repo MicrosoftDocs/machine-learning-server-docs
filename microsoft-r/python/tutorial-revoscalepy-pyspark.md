@@ -159,5 +159,5 @@ This tutorial provides an introduction to a basic workflow using PySpark for dat
 
 ## See also
 
-+ [microsoftml function reference](..//sql/machine-learning/python/ref-py-microsoftml)
++ [microsoftml function reference](/sql/machine-learning/python/ref-py-microsoftml)
 + [revoscalepy function reference](../python-reference/revoscalepy/revoscalepy-package.md)
