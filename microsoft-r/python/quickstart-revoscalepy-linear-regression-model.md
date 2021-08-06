@@ -35,7 +35,7 @@ Steps are executed on a Python command line using Machine Learning Server in the
 The revoscalepy library for Python contains objects, transformations, and algorithms similar to what's included in the [RevoScaleR package](../r-reference/revoscaler/revoscaler.md) for the R language. With revoscalepy, you can write a Python script that creates a compute context, moves data between compute contexts, transforms data, and trains predictive models using popular algorithms such as logistic and linear regression, decision trees, and more.
 
 > [!Note]
-> For the SQL Server version of this tutorial, see [Use Python with revoscalepy to create a model (SQL Server)](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model).
+> For the SQL Server version of this tutorial, see [Use Python with revoscalepy to create a model (SQL Server)](/sql/machine-learning/tutorials/use-python-revoscalepy-to-create-model).
 
 ## Start Python
 
@@ -115,7 +115,7 @@ Number of missing observations: 0.0
 
 ## Next steps
 
-The ability to switch compute context to a different machine or platform is a powerful capability. To see how this works, continue with the SQL Server version of this tutorial: [Use Python with revoscalepy to create a model (SQL Server)](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model).
+The ability to switch compute context to a different machine or platform is a powerful capability. To see how this works, continue with the SQL Server version of this tutorial: [Use Python with revoscalepy to create a model (SQL Server)](/sql/machine-learning/tutorials/use-python-revoscalepy-to-create-model).
 
 You can also review [linear modeling for RevoScaleR](../r/how-to-revoscaler-linear-model.md). For linear models, the Python implementation in revoscalepy is similar to the R implementation in RevoScaleR.
 
@@ -124,5 +124,5 @@ You can also review [linear modeling for RevoScaleR](../r/how-to-revoscaler-line
 
 + [How to use revoscalepy in local and remote compute contexts](how-to-revoscalepy.md)
 + [Python Function Reference](../python-reference/introducing-python-package-reference.md)
-+ [microsoftml function reference](../python-reference/microsoftml/microsoftml-package.md)
++ [microsoftml function reference](/sql/machine-learning/python/ref-py-microsoftml)
 + [revoscalepy function reference](../python-reference/revoscalepy/revoscalepy-package.md)

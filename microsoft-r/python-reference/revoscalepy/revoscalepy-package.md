@@ -35,7 +35,7 @@ Functions run on the **revoscalepy** interpreter, built on open-source Python, e
 |--------|-|
 | Current version: |  9.4 |
 | Built on: | [Anaconda 4.2](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) |
-| Package distribution: | [Machine Learning Server 9.x](../../what-is-machine-learning-server.md) </br>[SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) </br>[SQL Server 2017 Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) |
+| Package distribution: | [Machine Learning Server 9.x](../../what-is-machine-learning-server.md) </br>[SQL Server 2017 Machine Learning Services](/sql/machine-learning/sql-server-machine-learning-services) </br>[SQL Server 2017 Machine Learning Server (Standalone)](/sql/machine-learning/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server) |
 
 
 ## How to use revoscalepy
@@ -86,7 +86,7 @@ This section lists the functions by category to give you an idea of how each one
 
 ## 2-Data source functions
 
-Data sources are used by [microsoftml functions](../microsoftml/microsoftml-package.md) as well as **revoscalepy**.
+Data sources are used by [microsoftml functions](/sql/machine-learning/python/ref-py-microsoftml) as well as **revoscalepy**.
 
 | Function | Compute Context | Description | 
 |----------|-----------------|-------------|
@@ -191,15 +191,15 @@ For Machine Learning Server, try a quickstart as an introduction to **revoscalep
 
 For SQL Server, add both Python modules to your computer by running setup: 
 
-+ [Set up Python Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services).
++ [Set up Python Machine Learning Services](/sql/machine-learning/install/sql-machine-learning-services-windows-install).
 
 Follow these SQL Server tutorials for hands-on experience:
 
-+ [Use revoscalepy to create a model](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model) 
-+ [Run Python in T-SQL](https://docs.microsoft.com/sql/advanced-analytics/tutorials/run-python-using-t-sql) 
++ [Use revoscalepy to create a model](/sql/machine-learning/tutorials/use-python-revoscalepy-to-create-model) 
++ [Run Python in T-SQL](/sql/machine-learning/tutorials/quickstart-python-create-script) 
 
 ## See also
 
   [Machine Learning Server](../../what-is-machine-learning-server.md)  
-  [SQL Server Machine Learning Services with Python](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services)  
-  [SQL Server Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)
+  [SQL Server Machine Learning Services with Python](/sql/machine-learning/sql-server-machine-learning-services)  
+  [SQL Server Machine Learning Server (Standalone)](/sql/machine-learning/r/r-server-standalone)

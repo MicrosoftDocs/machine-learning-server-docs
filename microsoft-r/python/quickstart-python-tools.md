@@ -61,7 +61,7 @@ print(summary)
 
 The setup program for Machine Learning Server 9.4 adds Python distribution information to the registry, which makes loading Python modules more straightforward than in previous releases. 
 
-However, when using an earlier release or to confirm settings, follow these steps to add Machine Learning Server's Python distribution information to an environment. For more information, see [Python environments (Visual Studio docs)](https://docs.microsoft.com/visualstudio/python/managing-python-environments-in-visual-studio).
+However, when using an earlier release or to confirm settings, follow these steps to add Machine Learning Server's Python distribution information to an environment. For more information, see [Python environments (Visual Studio docs)](/visualstudio/python/managing-python-environments-in-visual-studio?view=vs-2019).
 
 1. In **Tools** > **Python** > **Python environments**, click **+ Custom** to create a new environment.
 
@@ -138,7 +138,7 @@ You can also choose **Tools** > **Python Console** to open an interactive window
 Now that you know how to load the Python libraries, you might want to explore them in-depth:
 
 - [revoscalepy Python package functions](../python-reference/revoscalepy/revoscalepy-package.md)
-- [microsoftml Python package functions](../python-reference/microsoftml/microsoftml-package.md)
+- [microsoftml Python package functions](/sql/machine-learning/python/ref-py-microsoftml)
 - [azureml-model-management-sdk](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)
 
 
