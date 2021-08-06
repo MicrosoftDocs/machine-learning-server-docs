@@ -27,7 +27,7 @@ ms.prod: "mlserver"
 
 [!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
 
-Machine Learning Server runs *on-premises* on Windows, Linux, Hadoop Spark, and SQL Server. It is also in [multiple cloud offerings](machine-learning-server-in-the-cloud.md), such as Azure Machine Learning Server VMs, SQL Server VMs, Data Science VMs, and on Azure HDInsight for Hadoop and Spark. In Public Preview, you can get Machine Learning Server on Azure SQL DB, Azure Machine Learning, and Azure Data Lake Analytics.
+Machine Learning Server runs *on-premises* on Windows, Linux, Hadoop Spark, and SQL Server. It is also in multiple cloud offerings, such as Azure Machine Learning Server VMs, SQL Server VMs, Data Science VMs, and on Azure HDInsight for Hadoop and Spark. In Public Preview, you can get Machine Learning Server on Azure SQL DB, Azure Machine Learning, and Azure Data Lake Analytics.
 
 This article specifies the operating systems and platforms for on-premises installations of Machine Learning Server and Microsoft R Server.
 

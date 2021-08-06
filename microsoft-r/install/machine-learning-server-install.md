@@ -70,7 +70,6 @@ The following links provide installation and configuration instructions.
 + [Install on Hadoop](machine-learning-server-hadoop-install.md)    
 + [Configure server to operationalize (deploy/consume) analytics](../operationalize/configure-start-for-administrators.md)    
 + [Add pre-trained models](microsoftml-install-pretrained-models.md)    
-+ [Provision on the cloud](machine-learning-server-in-the-cloud.md)    
 
 ## Local Tools
 
