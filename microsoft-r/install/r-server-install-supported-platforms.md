@@ -27,7 +27,7 @@ ms.prod: "mlserver"
 
 [!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
 
-Machine Learning Server runs *on-premises* on Windows, Linux, Hadoop Spark, and SQL Server. It is also in multiple cloud offerings, such as Azure Machine Learning Server VMs, SQL Server VMs, Data Science VMs, and on Azure HDInsight for Hadoop and Spark. In Public Preview, you can get Machine Learning Server on Azure SQL DB, Azure Machine Learning, and Azure Data Lake Analytics.
+Machine Learning Server runs *on-premises* on Windows, Linux, Hadoop Spark, and SQL Server. It is also in [multiple cloud offerings](machine-learning-server-in-the-cloud.md), such as Azure Machine Learning Server VMs, SQL Server VMs, Data Science VMs, and on Azure HDInsight for Hadoop and Spark. In Public Preview, you can get Machine Learning Server on Azure SQL DB, Azure Machine Learning, and Azure Data Lake Analytics.
 
 This article specifies the operating systems and platforms for on-premises installations of Machine Learning Server and Microsoft R Server.
 
@@ -76,9 +76,9 @@ R support includes [Microsoft R Open 3.4.1](https://mran.microsoft.com/open/), w
 
 | SKU | Platforms |
 |-----|-----------|
-| [Machine Learning <br/>Server for Hadoop](machine-learning-server-hadoop-install.md) | Hadoop Distributions: [Cloudera CDH 5.7-5.11](machine-learning-server-cloudera-install.md), Hortonworks HDP 2.4-2.6, MapR 5.0-5.2 <br/>You can install Machine Learning Server on open-source Apache Hadoop from [http://hadoop.apache.org](http://hadoop.apache.org) but we can only offer support for commercial distributions.<br/><br/>Operating Systems: Red Hat Enterprise Linux 6.x and 7.x, SUSE Linux Enterprise Server 11 **<sup><big>1</big></sup>**, Ubuntu 14.04 and 16.04 <br/><br/>Spark 2.0 through 2.2 on Hadoop distributions CDH, HDP, or MapR. <br/><br/>Machine Learning Server can be configured on CentOS/RHEL 7.x or Ubuntu to operationalize on edge nodes only.|
-| [Machine Learning <br/>Server for Linux](machine-learning-server-linux-install.md) | Red Hat Enterprise Linux  and CentOS 6.x **<sup><big>1</big></sup>** and 7.x<br/>SUSE Linux Enterprise Server 11 **<sup><big>1</big></sup>**<br/>Ubuntu 14.04 and 16.04|
-| [Machine Learning <br/>Server&nbsp;for&nbsp;Windows](machine-learning-server-windows-install.md) | Windows 7 SP1 **<sup><big>1,2</big></sup>**, Windows 8.1 **<sup><big>1,2</big></sup>**, Windows 10 **<sup><big>1,2</big></sup>** <br/>Windows Server 2012 R2, Windows Server 2016 
+| [Machine Learning <br/>Server for Hadoop](machine-learning-server-hadoop-install.md) | Hadoop Distributions: [Cloudera CDH 5.7-5.11](machine-learning-server-cloudera-install.md), Hortonworks HDP 2.4-2.6, MapR 5.0-5.2 <br/>You can install Machine Learning Server on open-source Apache Hadoop from [http://hadoop.apache.org](http://hadoop.apache.org) but we can only offer support for commercial distributions.<br/><br/>Operating Systems: Red Hat Enterprise Linux 6.x and 7.x, SUSE Linux Enterprise Server 11 **<sup>1</sup>**, Ubuntu 14.04 and 16.04 <br/><br/>Spark 2.0 through 2.2 on Hadoop distributions CDH, HDP, or MapR. <br/><br/>Machine Learning Server can be configured on CentOS/RHEL 7.x or Ubuntu to operationalize on edge nodes only.|
+| [Machine Learning <br/>Server for Linux](machine-learning-server-linux-install.md) | Red Hat Enterprise Linux  and CentOS 6.x **<sup>1</sup>** and 7.x<br/>SUSE Linux Enterprise Server 11 **<sup>1</sup>**<br/>Ubuntu 14.04 and 16.04|
+| [Machine Learning <br/>Server&nbsp;for&nbsp;Windows](machine-learning-server-windows-install.md) | Windows 7 SP1 **<sup>1,2</sup>**, Windows 8.1 **<sup>1,2</sup>**, Windows 10 **<sup>1,2</sup>** <br/>Windows Server 2012 R2, Windows Server 2016 
 
 <sup>1</sup> **.NET Core 1.1 platform dependency**: Certain features like the machine learning algorithms in the [MicrosoftML R package](../r-reference/microsoftml/microsoftml-package.md) and configuring to [operationalize your analytics](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) are NOT supported on the marked (1) platforms since they require .NET Core.
 
