@@ -33,7 +33,7 @@ For sentiment analysis of text and image classification, Machine Learning Server
 
 + Image detection identifies features of the image. There are several use cases for this model: image recognition, image classification. For image recognition, the model returns n-grams that possibly describe the image. For image classification, the model evaluates images and returns a classification based on possible classes you provided (for example, is the image a fish or a dog).
 
-Pre-trained models are available for both R and Python development, through the [MicrosoftML R package](../r-reference/microsoftml/microsoftml-package.md) and the [microsoftml Python package](../python-reference/microsoftml/microsoftml-package.md). 
+Pre-trained models are available for both R and Python development, through the [MicrosoftML R package](../r-reference/microsoftml/microsoftml-package.md) and the [microsoftml Python package](/sql/machine-learning/python/ref-py-microsoftml). 
 
 ## Benefits of using pre-trained models
 
@@ -53,7 +53,7 @@ For more information about deep residual networks and their implementation using
 
 ## How to install the models
 
-Pre-trained models are installed through setup as an optional component of Machine Learning Server or [SQL Server Machine Learning](https://docs.microsoft.com/sql/advanced-analytics/r/install-pretrained-models-sql-server). You can also get the R version of the models through [Microsoft R Client](../r-client/what-is-microsoft-r-client.md).
+Pre-trained models are installed through setup as an optional component of Machine Learning Server or [SQL Server Machine Learning](/sql/machine-learning/install/sql-pretrained-models-install). You can also get the R version of the models through [Microsoft R Client](../r-client/what-is-microsoft-r-client.md).
 
 1. Run a Machine Learning Server setup program for your target platform: [Install Machine Learning Server](r-server-install.md).
 
@@ -74,7 +74,7 @@ Install the models by running the setup program or installation script for the t
 
 Review the associated function reference help:
 
-+ [featurize_image (microsoftml Python)](../python-reference/microsoftml/featurize-image.md)
-+ [featurize_text (microsoftml Python)](../python-reference/microsoftml/featurize-text.md)
++ [featurize_image (microsoftml Python)](/sql/machine-learning/python/reference/microsoftml/featurize-image)
++ [featurize_text (microsoftml Python)](/sql/machine-learning/python/reference/microsoftml/featurize-text)
 + [featurizeImage (MicrosoftML R)](../r-reference/microsoftml/featurizeimage.md)
 + [featurizeText (MicrosoftML R)](../r-reference/microsoftml/featurizetext.md)

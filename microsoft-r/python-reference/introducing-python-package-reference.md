@@ -30,7 +30,7 @@ You can use these libraries and functions in combination with other open source 
 
 | Library details | Description |
 |--------|-|
-| [Supported platforms](../install/r-server-install-supported-platforms.md) | [Machine Learning Server 9.2.1, 9.3 and 9.4](../what-is-machine-learning-server.md) </br>[SQL Server 2017  (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services) |
+| [Supported platforms](../install/r-server-install-supported-platforms.md) | [Machine Learning Server 9.2.1, 9.3 and 9.4](../what-is-machine-learning-server.md) </br>[SQL Server 2017  (Windows only)](/sql/machine-learning/sql-server-machine-learning-services) |
 | Built on: | [Anaconda 4.2](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you [add Python support](#how-to-install) during installation). |
 
 ## Python modules
@@ -38,7 +38,7 @@ You can use these libraries and functions in combination with other open source 
 |Module | Version | Description |
 |--------|---------|-------------|
 |[azureml-model-management-sdk](azureml-model-management-sdk/azureml-model-management-sdk.md) | 1.0.1 | Classes and functions to authenticate, deploy, manage, and consume analytic web services in Python.  |
-|[microsoftml](microsoftml/microsoftml-package.md)| 9.4 | A collection of Python functions used for machine learning operations, including training and transformations, scoring, text and image analysis, and feature extraction for deriving values from existing data. |
+|[microsoftml](/sql/machine-learning/python/ref-py-microsoftml)| 9.4 | A collection of Python functions used for machine learning operations, including training and transformations, scoring, text and image analysis, and feature extraction for deriving values from existing data. |
 |[revoscalepy](revoscalepy/revoscalepy-package.md) | 9.4 | Data access, manipulation and transformations, visualization, and statistical analysis. The revoscalepy functions support a broad spectrum of statistical and analytical tasks that operate at scale, bringing analytical operations to local data or remote on a Spark cluster or data residing in SQL Server. |
 
 > [!Note]
@@ -54,8 +54,8 @@ For SQL Server, packages are installed by default in the \Program files\Microsof
 
 Ships in:
 + [Machine Learning Server](../what-is-machine-learning-server.md) 
-+ [SQL Server 2017 Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) 
-+ [SQL Server Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
++ [SQL Server 2017 Machine Learning Services](/sql/machine-learning/sql-server-machine-learning-services) 
++ [SQL Server Machine Learning Server (Standalone)](/sql/machine-learning/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
 
 ## How to list modules and versions
 
@@ -90,19 +90,19 @@ To view the embedded help for each class, use the `help()` command, specifying t
 First, read the introduction to each package to learn about common use case scenarios:
 
 + [azureml-model-management-sdk package for Python](azureml-model-management-sdk/azureml-model-management-sdk.md)  
-+ [microsoftmlpackage for Python](microsoftml/microsoftml-package.md) 
++ [microsoftml package for Python](/sql/machine-learning/python/ref-py-microsoftml) 
 + [revoscalepy package for Python](revoscalepy/revoscalepy-package.md)  
 
 Next, follow these tutorials for hands-on experience:
 
-+ [Use revoscalepy to create a model (in SQL Server)](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model) 
-+ [Run Python in T-SQL](https://docs.microsoft.com/sql/advanced-analytics/tutorials/run-python-using-t-sql) 
++ [Use revoscalepy to create a model (in SQL Server)](/sql/machine-learning/tutorials/use-python-revoscalepy-to-create-model) 
++ [Run Python in T-SQL](/sql/machine-learning/tutorials/quickstart-python-create-script) 
 + [Deploy a model as a web service in Python](../operationalize/python/quickstart-deploy-python-web-service.md)
 
 ## See also
 
   [How-to guides in Machine Learning Server](../r/how-to-introduction.md)     
   [Machine Learning Server](../what-is-machine-learning-server.md)   
-  [SQL Server Machine Learning Services with Python](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services)  
-  [SQL Server Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)    
+  [SQL Server Machine Learning Services with Python](/sql/machine-learning/sql-server-machine-learning-services)  
+  [SQL Server Machine Learning Server (Standalone)](/sql/machine-learning/r/r-server-standalone)    
   [Additional learning resources and sample datasets](../resources-more.md)  

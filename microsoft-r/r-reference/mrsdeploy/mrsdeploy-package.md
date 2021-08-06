@@ -30,7 +30,7 @@ The **mrsdeploy** library provides functions for establishing a remote session i
 |--------|-|
 | Current version: |  1.1.3 |
 | Built on: | R 3.4.3 |
-| Package distribution: | [Machine Learning Server 9.2.1](../../what-is-machine-learning-server.md) <br/>[Microsoft R Server 9.1 and earlier](../../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
+| Package distribution: | [Machine Learning Server 9.2.1](../../what-is-machine-learning-server.md) <br/>[Microsoft R Server 9.1 and earlier](../../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](/sql/machine-learning/sql-server-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
 
 
 <a name="use-mrsdeploy"></a>

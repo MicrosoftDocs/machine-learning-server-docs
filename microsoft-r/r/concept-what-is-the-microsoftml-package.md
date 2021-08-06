@@ -29,7 +29,7 @@ ms.prod: "mlserver"
 
 MicrosoftML adds state-of-the-art data transforms, machine learning algorithms, and pre-trained models to R and Python functionality. The *data transforms* provided by MicrosoftML allow you to compose a custom set of transforms in a pipeline that are applied to your data before training or testing. The primary purpose of these transforms is to allow you to format your data. 
 
-The MicrosoftML functions are provided through the **MicrosoftML** package installed with [Machine Learning Server](../what-is-machine-learning-server.md), Microsoft R Client, and [SQL Server Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services).
+The MicrosoftML functions are provided through the **MicrosoftML** package installed with [Machine Learning Server](../what-is-machine-learning-server.md), Microsoft R Client, and [SQL Server Machine Learning Services](/sql/machine-learning/sql-server-machine-learning-services).
 
 Functions provide fast and scalable *machine learning algorithms* that enable you to tackle common machine learning tasks such as classification, regression, and anomaly detection. These high-performance algorithms are multi-threaded, some of which execute off disk, so that they can scale up to 100s of GBs on a single-node. They are especially suitable for handling a large corpus of text data or high-dimensional categorical data. It enables you to run these functions locally on Windows or Linux machines or on Azure HDInsight (Hadoop/Spark) clusters.
 
@@ -63,14 +63,14 @@ Algorithm (R/Python) | ML task supported | Scalability | Application Examples
 
 ## Data transforms
 
-**MicrosoftML** also provides transforms to help tailor your data for machine learning. They are used to clean, wrangle, train, and score your data. For a description of the transforms, see [Machine learning R transforms](~/r-reference/microsoftml/microsoftml-package.md#ml-transforms) and [Machine learning Python transforms](~/python-reference/microsoftml/microsoftml-package.md#ml-transforms) reference documentation.
+**MicrosoftML** also provides transforms to help tailor your data for machine learning. They are used to clean, wrangle, train, and score your data. For a description of the transforms, see [Machine learning R transforms](~/r-reference/microsoftml/microsoftml-package.md#ml-transforms) and [Machine learning Python transforms](/sql/machine-learning/python/reference/microsoftml/microsoftml-package#ml-transforms) reference documentation.
 
 
 ## Next steps
 
 For reference documentation on the R individual transforms and functions in the product help, see [MicrosoftML: machine learning algorithms](../r-reference/microsoftml/microsoftml-package.md).
 
-For reference documentation on the Python individual transforms and functions in the product help, see [MicrosoftML: machine learning algorithms](../python-reference/microsoftml/microsoftml-package.md).
+For reference documentation on the Python individual transforms and functions in the product help, see [MicrosoftML: machine learning algorithms](/sql/machine-learning/python/ref-py-microsoftml).
 
 For guidance when choosing the appropriate machine learning algorithm from the MicrosoftML package, see the [Cheat Sheet: How to choose a MicrosoftML algorithm](how-to-choose-microsoftml-algorithms-cheatsheet.md).
 
