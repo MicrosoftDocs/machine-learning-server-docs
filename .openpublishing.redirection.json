@@ -2396,8 +2396,214 @@
       "source_path": "microsoft-r/install/machine-learning-server-azure-vm-on-linux.md",
       "redirect_url": "/machine-learning-server/what-is-machine-learning-server",
       "redirect_document_id": false
-    } 
+    },
     
+
+    {
+      "source_path": "microsoft-r/python-reference/introducing-python-package-reference.md",
+      "redirect_url": "/sql/machine-learning/python/ref-py-microsoftml",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/adadelta-optimizer.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/adadelta-optimizer",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/avx-math.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/avx-math",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/categorical.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/categorical",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/categorical-hash.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/categorical-hash",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/clr-math.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/clr-math",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/concat.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/concat",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/count-select.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/count-select",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/custom.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/custom",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/drop-columns.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/drop-columns",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/extract-pixels.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/extract-pixels",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/featurize-image.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/featurize-image",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/featurize-text.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/featurize-text",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/get-sentiment.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/get-sentiment",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/gpu-math.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/gpu-math",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/hinge-loss.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/hinge-loss",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/index.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/learners-object.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/learners-object",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/load-image.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/load-image",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/log-loss.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/log-loss",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/microsoftml-package.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/microsoftml-package",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/mkl-math.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/mkl-math",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/mutualinformation-select.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/mutualinformation-select",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/n-gram.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/n-gram",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/n-gram-hash.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/n-gram-hash",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/predefined.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/predefined",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/resize-image.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/resize-image",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/rx-ensemble.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/rx-ensemble",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/rx-fast-forest.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/rx-fast-forest",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/rx-fast-linear.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/rx-fast-linear",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/rx-fast-trees.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/rx-fast-trees",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/rx-featurize.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/rx-featurize",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/rx-logistic-regression.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/rx-logistic-regression",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/rx-neural-network.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/rx-neural-network",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/rx-oneclass-svm.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/rx-oneclass-svm",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/rx-predict.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/rx-predict",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/select-columns.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/select-columns",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/sgd-optimizer.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/sgd-optimizer",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/smoothed-hinge-loss.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/smoothed-hinge-loss",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/squared-loss.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/squared-loss",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/sse-math.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/sse-math",
+      "redirect_document_id": false
+    }
 
 
   ]
