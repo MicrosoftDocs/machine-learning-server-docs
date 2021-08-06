@@ -2368,39 +2368,7 @@
 
 
     {
-      "source_path": "microsoft-r/what-is-r-client-r-server.md",
-      "redirect_url": "/machine-learning-server/r-client/what-is-microsoft-r-client",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "microsoft-r/r/concept-what-is-sql-server-r-services.md",
-      "redirect_url": "https://docs.microsoft.com/sql/machine-learning/sql-server-machine-learning-services",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "microsoft-r/r-client/install-uninstall.md",
-      "redirect_url": "/machine-learning-server/r-client/what-is-microsoft-r-client",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "microsoft-r/install/machine-learning-server-in-the-cloud.md",
-      "redirect_url": "/machine-learning-server/what-is-machine-learning-server",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "microsoft-r/install/r-server-vm-data-science.md",
-      "redirect_url": "/machine-learning-server/what-is-machine-learning-server",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "microsoft-r/install/machine-learning-server-azure-vm-on-linux.md",
-      "redirect_url": "/machine-learning-server/what-is-machine-learning-server",
-      "redirect_document_id": false
-    },
-    
-
-    {
-      "source_path": "microsoft-r/python-reference/introducing-python-package-reference.md",
+      "source_path": "microsoft-r/python-reference/microsoftml/microsoftml-package.md",
       "redirect_url": "/sql/machine-learning/python/ref-py-microsoftml",
       "redirect_document_id": false
     },
@@ -2497,11 +2465,6 @@
     {
       "source_path": "microsoft-r/python-reference/microsoftml/log-loss.md",
       "redirect_url": "/sql/machine-learning/python/reference/microsoftml/log-loss",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "microsoft-r/python-reference/microsoftml/microsoftml-package.md",
-      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/microsoftml-package",
       "redirect_document_id": false
     },
     {
@@ -2603,7 +2566,7 @@
       "source_path": "microsoft-r/python-reference/microsoftml/sse-math.md",
       "redirect_url": "/sql/machine-learning/python/reference/microsoftml/sse-math",
       "redirect_document_id": false
-    }
+    },
 
 
   ]
