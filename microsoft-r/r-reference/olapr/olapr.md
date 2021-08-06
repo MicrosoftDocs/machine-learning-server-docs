@@ -33,7 +33,7 @@ The **olapR** library provides R functions for importing data from OLAP cubes st
 |--------|-|
 | Current version: |  1.0.0 |
 | Built on: | R 3.4.3 |
-| Package distribution: | [Machine Learning Server for Windows](../../what-is-machine-learning-server.md) </br>[R Client (Windows)](../../r-client/what-is-microsoft-r-client.md) <br/>[R Server 9.1](../../what-is-microsoft-r-server.md)   <br/>[SQL Server 2017 Machine Learning Services (Windows only) and SQL Server 2016 R Services](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services) |
+| Package distribution: | [Machine Learning Server for Windows](../../what-is-machine-learning-server.md) </br>[R Client (Windows)](../../r-client/what-is-microsoft-r-client.md) <br/>[R Server 9.1](../../what-is-microsoft-r-server.md)   <br/>[SQL Server 2017 Machine Learning Services (Windows only) and SQL Server 2016 R Services](/sql/machine-learning/sql-server-machine-learning-services) |
 
 
 ## How to use olapR

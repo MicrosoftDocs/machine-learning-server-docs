@@ -46,9 +46,9 @@ MicrosoftML samples that use the Python language are described and linked here t
 
 ## Sentiment analysis with a pre-trained model
 
-The [Sentiment analysis](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/202/plot_sentiment_analysis.py) sample is a text analytics sample that shows how to use the [`featurize_text`](../python-reference/microsoftml/featurize-text.md) transform to featurize text data. The featurized text data is then used to train a model to predict if a sentence expresses positive or negative sentiments. The type of machine learning task exhibited in this sample is a supervised binary classification problem.
+The [Sentiment analysis](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/microsoftml/202/plot_sentiment_analysis.py) sample is a text analytics sample that shows how to use the [`featurize_text`](/sql/machine-learning/python/reference/microsoftml/featurize-text) transform to featurize text data. The featurized text data is then used to train a model to predict if a sentence expresses positive or negative sentiments. The type of machine learning task exhibited in this sample is a supervised binary classification problem.
 
-More specifically, the example provided shows how to use the [`featurize_text`](../python-reference/microsoftml/featurize-text.md) transform in the MicrosoftML package to produce a bag of counts of n-grams (sequences of consecutive words) from the text for classification. The sample uses the [Sentiment Labelled Sentences Data Set](https://archive.ics.uci.edu/ml/datasets/Sentiment+Labelled+Sentences) from the UCI repository, which contains sentences that are labeled as positive or negative sentiment.
+More specifically, the example provided shows how to use the [`featurize_text`](/sql/machine-learning/python/reference/microsoftml/featurize-text) transform in the MicrosoftML package to produce a bag of counts of n-grams (sequences of consecutive words) from the text for classification. The sample uses the [Sentiment Labelled Sentences Data Set](https://archive.ics.uci.edu/ml/datasets/Sentiment+Labelled+Sentences) from the UCI repository, which contains sentences that are labeled as positive or negative sentiment.
 
 The sentiment analysis quickstart uses a pre-trained model. Pre-trained models are installed through setup as an optional component of the **Machine Learning Server** or **SQL Server Machine Learning**. To install them, you must check the **ML Models** checkbox on the **Configure the installation** page. For more information on pre-trained models, see [Pre-trained machine learning models](../install/microsoftml-install-pretrained-models.md).
 
@@ -69,6 +69,6 @@ Text featurization is a machine learning technique that converts text into numer
 Now that you've tried some of these examples, you can start developing your own solutions using the MicrosoftML packages and APIs for R and Python:
 
 - [`MicrosoftML` R package functions](../r-reference/microsoftml/microsoftml-package.md)
-- [`MicrosoftML` Python package functions](../python-reference/microsoftml/microsoftml-package.md)
+- [`MicrosoftML` Python package functions](/sql/machine-learning/python/ref-py-microsoftml)
 
 

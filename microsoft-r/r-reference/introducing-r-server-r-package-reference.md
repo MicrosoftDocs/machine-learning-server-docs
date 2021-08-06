@@ -30,7 +30,7 @@ You can use these libraries and functions in combination with other open-source 
 
 | Library details | Description |
 |--------|-|
-| [Supported platforms](../install/r-server-install-supported-platforms.md) | [Machine Learning Server 9.x](../what-is-machine-learning-server.md) </br>[Microsoft R Client (Windows and Linux)](../r-client/what-is-microsoft-r-client.md) <br/>[Microsoft R Server 9.1 and earlier](../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/getting-started-with-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
+| [Supported platforms](../install/r-server-install-supported-platforms.md) | [Machine Learning Server 9.x](../what-is-machine-learning-server.md) </br>[Microsoft R Client (Windows and Linux)](../r-client/what-is-microsoft-r-client.md) <br/>[Microsoft R Server 9.1 and earlier](../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](/sql/machine-learning/sql-server-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
 | Built on: | R 3.5.2 (included when you [install a product](#how-to-install) that provides this package). |
 
 ## R function libraries
@@ -59,8 +59,8 @@ By default, packages are installed in the \Program Files\Microsoft\ML Server\R_S
 
 Ships in:
 +  [Machine Learning Server](../what-is-machine-learning-server.md) 
-+  [SQL Server 2017 Machine Learning Services (Windows only)](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services) 
-+ [SQL Server Machine Learning Server (Standalone)](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
++  [SQL Server 2017 Machine Learning Services (Windows only)](/sql/machine-learning/sql-server-machine-learning-services) 
++ [SQL Server Machine Learning Server (Standalone)](/sql/machine-learning/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)
 + [Microsoft R Client (Windows and Linux)](../r-client/what-is-microsoft-r-client.md) 
 + [Microsoft R Server 9.1 and earlier](../what-is-microsoft-r-server.md)   
 + [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started)  
