@@ -1,4 +1,3 @@
-items:
 - name: Machine Learning Server Documentation
   href: index.yml
 - name: Overview
@@ -10,22 +9,6 @@ items:
   - name: Release notes
     href: whats-new-in-machine-learning-server.md
   expanded: true
-- name: Install & configure
-  items:
-  - name: Windows
-  - name: Linux
-  - name: Hadoop
-  - name: Configure to operationalize
-    items:
-    - name: 'Configure: One-box'
-    - name: 'Configure: Enterprise'
-  - name: Client-side
-    items:
-    - name: Microsoft R Client
-- name: Quickstarts
-  items:
-  - name: Python
-  - name: R
 - name: Tutorials
   items:
   - name: Python
@@ -36,11 +19,6 @@ items:
     items:
     - name: Explore R-to-RevoScaleR
       href: r/tutorial-r-to-revoscaler.md
-    - name: Work with larger datasets
-- name: Samples & solutions
-  items:
-  - name: Python
-  - name: R
 - name: Concepts
   items:
   - name: Compute context
@@ -463,7 +441,6 @@ items:
         href: r-reference/microsoftml/selectColumns.md
       - name: selectFeatures
         href: r-reference/microsoftml/selectfeatures.md
-    - name: mrsdeploy
     - name: olapR
       items:
       - name: Package overview
@@ -478,7 +455,6 @@ items:
         href: r-reference/olapr/olapconnection.md
       - name: Query
         href: r-reference/olapr/query.md
-    - name: RevoPemaR
     - name: RevoScaleR
       items:
       - name: Package overview
