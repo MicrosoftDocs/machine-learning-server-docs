@@ -171,4 +171,4 @@ For more information, see the [Azure Cosmos DB documentation](/azure/cosmos-db/i
 ## See Also
 
 - [Support Timeline for Microsoft R Server & Machine Learning Server](resources-servicing-support.md)
-- [Archived articles](/machine-learning-server/overview-machine-learning-server-archive)
+- [Archived articles](/previous-versions/machine-learning-server/overview-machine-learning-server-archive)
