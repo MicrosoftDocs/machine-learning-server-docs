@@ -1,3 +1,4 @@
+items:
 - name: Machine Learning Server Documentation
   href: index.yml
 - name: Overview
@@ -11,14 +12,10 @@
   expanded: true
 - name: Tutorials
   items:
-  - name: Python
-    items:
-    - name: PySpark and revoscalepy interoperability
-      href: python/tutorial-revoscalepy-pyspark.md
-  - name: R
-    items:
-    - name: Explore R-to-RevoScaleR
-      href: r/tutorial-r-to-revoscaler.md
+  - name: PySpark and revoscalepy interoperability
+    href: python/tutorial-revoscalepy-pyspark.md
+  - name: Explore R-to-RevoScaleR
+    href: r/tutorial-r-to-revoscaler.md
 - name: Concepts
   items:
   - name: Compute context
