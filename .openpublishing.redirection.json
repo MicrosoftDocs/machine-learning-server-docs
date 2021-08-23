@@ -1,6 +1,581 @@
 {
   "redirections": [
     {
+      "source_path": "microsoft-r/rebranding-microsoft-r-server.md",
+      "redirect_url": "/previous-versions/machine-learning-server/rebranding-microsoft-r-server",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/resources-deprecated-features.md",
+      "redirect_url": "/previous-versions/machine-learning-server/resources-deprecated-features",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/what-is-operationalization.md",
+      "redirect_url": "/previous-versions/machine-learning-server/what-is-operationalization",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/what-is-r-server-interoperability.md",
+      "redirect_url": "/previous-versions/machine-learning-server/what-is-r-server-interoperability",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/install/machine-learning-server-cloudera-install.md",
+      "redirect_url": "/previous-versions/machine-learning-server/install/machine-learning-server-cloudera-install",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/install/machine-learning-server-hadoop-install.md",
+      "redirect_url": "/previous-versions/machine-learning-server/install/machine-learning-server-hadoop-install",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/install/machine-learning-server-hadoop-uninstall.md",
+      "redirect_url": "/previous-versions/machine-learning-server/install/machine-learning-server-hadoop-uninstall",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/install/machine-learning-server-install.md",
+      "redirect_url": "/previous-versions/machine-learning-server/install/machine-learning-server-install",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/install/machine-learning-server-linux-install.md",
+      "redirect_url": "/previous-versions/machine-learning-server/install/machine-learning-server-linux-install",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/install/machine-learning-server-linux-offline.md",
+      "redirect_url": "/previous-versions/machine-learning-server/install/machine-learning-server-linux-offline",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/install/machine-learning-server-linux-packages.md",
+      "redirect_url": "/previous-versions/machine-learning-server/install/machine-learning-server-linux-packages",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/install/machine-learning-server-linux-uninstall.md",
+      "redirect_url": "/previous-versions/machine-learning-server/install/machine-learning-server-linux-uninstall",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/install/machine-learning-server-windows-commandline.md",
+      "redirect_url": "/previous-versions/machine-learning-server/install/machine-learning-server-windows-commandline",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/install/machine-learning-server-windows-install.md",
+      "redirect_url": "/previous-versions/machine-learning-server/install/machine-learning-server-windows-install",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/install/machine-learning-server-windows-offline.md",
+      "redirect_url": "/previous-versions/machine-learning-server/install/machine-learning-server-windows-offline",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/install/machine-learning-server-windows-packages.md",
+      "redirect_url": "/previous-versions/machine-learning-server/install/machine-learning-server-windows-packages",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/install/machine-learning-server-windows-uninstall.md",
+      "redirect_url": "/previous-versions/machine-learning-server/install/machine-learning-server-windows-uninstall",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/install/python-libraries-interpreter.md",
+      "redirect_url": "/previous-versions/machine-learning-server/install/python-libraries-interpreter",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/install/r-server-install-supported-platforms.md",
+      "redirect_url": "/previous-versions/machine-learning-server/install/r-server-install-supported-platforms",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/operationalize/configure-admin-cli-compute-uris.md",
+      "redirect_url": "/previous-versions/machine-learning-server/operationalize/configure-admin-cli-compute-uris",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/operationalize/configure-admin-cli-encrypt-credentials.md",
+      "redirect_url": "/previous-versions/machine-learning-server/operationalize/configure-admin-cli-encrypt-credentials",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/operationalize/configure-admin-cli-launch.md",
+      "redirect_url": "/previous-versions/machine-learning-server/operationalize/configure-admin-cli-launch",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/operationalize/configure-admin-cli-local-password.md",
+      "redirect_url": "/previous-versions/machine-learning-server/operationalize/configure-admin-cli-local-password",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/operationalize/configure-admin-cli-ports.md",
+      "redirect_url": "/previous-versions/machine-learning-server/operationalize/configure-admin-cli-ports",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/operationalize/configure-admin-cli-stop-start.md",
+      "redirect_url": "/previous-versions/machine-learning-server/operationalize/configure-admin-cli-stop-start",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/operationalize/configure-authentication.md",
+      "redirect_url": "/previous-versions/machine-learning-server/operationalize/configure-authentication",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/operationalize/configure-cors.md",
+      "redirect_url": "/previous-versions/machine-learning-server/operationalize/configure-cors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/operationalize/configure-evaluate-capacity.md",
+      "redirect_url": "/previous-versions/machine-learning-server/operationalize/configure-evaluate-capacity",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/operationalize/configure-find-admin-configuration-file.md",
+      "redirect_url": "/previous-versions/machine-learning-server/operationalize/configure-find-admin-configuration-file",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/operationalize/configure-https.md",
+      "redirect_url": "/previous-versions/machine-learning-server/operationalize/configure-https",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/operationalize/configure-machine-learning-server-enterprise-9-2.md",
+      "redirect_url": "/previous-versions/machine-learning-server/operationalize/configure-machine-learning-server-enterprise-9-2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/operationalize/configure-machine-learning-server-enterprise.md",
+      "redirect_url": "/previous-versions/machine-learning-server/operationalize/configure-machine-learning-server-enterprise",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/operationalize/configure-machine-learning-server-one-box-9-2.md",
+      "redirect_url": "/previous-versions/machine-learning-server/operationalize/configure-machine-learning-server-one-box-9-2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/operationalize/configure-machine-learning-server-one-box-9-3.md",
+      "redirect_url": "/previous-versions/machine-learning-server/operationalize/configure-machine-learning-server-one-box-9-3",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/operationalize/configure-machine-learning-server-one-box.md",
+      "redirect_url": "/previous-versions/machine-learning-server/operationalize/configure-machine-learning-server-one-box",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/operationalize/configure-manage-r-packages.md",
+      "redirect_url": "/previous-versions/machine-learning-server/operationalize/configure-manage-r-packages",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/operationalize/configure-r-execution-security.md",
+      "redirect_url": "/previous-versions/machine-learning-server/operationalize/configure-r-execution-security",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/operationalize/configure-remote-database-to-operationalize.md",
+      "redirect_url": "/previous-versions/machine-learning-server/operationalize/configure-remote-database-to-operationalize",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/operationalize/configure-roles.md",
+      "redirect_url": "/previous-versions/machine-learning-server/operationalize/configure-roles",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/operationalize/configure-run-diagnostics.md",
+      "redirect_url": "/previous-versions/machine-learning-server/operationalize/configure-run-diagnostics",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/operationalize/configure-start-for-administrators.md",
+      "redirect_url": "/previous-versions/machine-learning-server/operationalize/configure-start-for-administrators",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/operationalize/quickstart-publish-r-web-service.md",
+      "redirect_url": "/previous-versions/machine-learning-server/operationalize/quickstart-publish-r-web-service",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/operationalize/python/quickstart-application-integration-with-swagger.md",
+      "redirect_url": "/previous-versions/machine-learning-server/operationalize/python/quickstart-application-integration-with-swagger",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/operationalize/python/quickstart-deploy-python-web-service.md",
+      "redirect_url": "/previous-versions/machine-learning-server/operationalize/python/quickstart-deploy-python-web-service",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python/how-to-revoscalepy-jupyter-nb-config.md",
+      "redirect_url": "/previous-versions/machine-learning-server/python/how-to-revoscalepy-jupyter-nb-config",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python/python-samples.md",
+      "redirect_url": "/previous-versions/machine-learning-server/python/python-samples",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python/quickstart-binary-classification-with-microsoftml.md",
+      "redirect_url": "/previous-versions/machine-learning-server/python/quickstart-binary-classification-with-microsoftml",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python/quickstart-python-tools.md",
+      "redirect_url": "/previous-versions/machine-learning-server/python/quickstart-python-tools",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python/quickstart-revoscalepy-linear-regression-model.md",
+      "redirect_url": "/previous-versions/machine-learning-server/python/quickstart-revoscalepy-linear-regression-model",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python/samples-microsoftml-python.md",
+      "redirect_url": "/previous-versions/machine-learning-server/python/samples-microsoftml-python",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r/quickstart-run-r-code.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r/quickstart-run-r-code",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r/r-samples.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r/r-samples",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r/sample-built-in-data.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r/sample-built-in-data",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r/sample-microsoftml.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r/sample-microsoftml",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r/sample-solutions.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r/sample-solutions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r/tutorial-introduction.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r/tutorial-introduction",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r/tutorial-large-data-tips.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r/tutorial-large-data-tips",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r/tutorial-revoscaler-data-import-transform.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r/tutorial-revoscaler-data-import-transform",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r/tutorial-revoscaler-data-model-analysis.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r/tutorial-revoscaler-data-model-analysis",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r/tutorial-revoscaler-large-data-airline.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r/tutorial-revoscaler-large-data-airline",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r/tutorial-revoscaler-large-data-census.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r/tutorial-revoscaler-large-data-census",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r/tutorial-revoscaler-large-data-loan.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r/tutorial-revoscaler-large-data-loan",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r/tutorial-rxexecby.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r/tutorial-rxexecby",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r/tutorial-sparklyr-revoscaler.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r/tutorial-sparklyr-revoscaler",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-client/compatibility-with-server.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-client/compatibility-with-server",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-client/install-on-linux.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-client/install-on-linux",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-client/install-on-windows.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-client/install-on-windows",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-client/what-is-microsoft-r-client.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-client/what-is-microsoft-r-client",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/revoioq.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/revoioq",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/ConfigureServicePool.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/ConfigureServicePool",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/DeleteServicePool.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/DeleteServicePool",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/GetPoolStatus.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/GetPoolStatus",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/createsnapshot.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/createsnapshot",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/deleteremotefile.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/deleteremotefile",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/deleteservice.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/deleteservice",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/deletesnapshot.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/deletesnapshot",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/difflocalremote.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/difflocalremote",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/downloadsnapshot.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/downloadsnapshot",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/getremotefile.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/getremotefile",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/getremoteobject.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/getremoteobject",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/getremoteworkspace.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/getremoteworkspace",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/getservice.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/getservice",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/listremotefiles.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/listremotefiles",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/listservices.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/listservices",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/listsnapshots.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/listsnapshots",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/loadsnapshot.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/loadsnapshot",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/mrsdeploy-package.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/mrsdeploy-package",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/print.serviceDetails.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/print.serviceDetails",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/print.snapshotDetails.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/print.snapshotDetails",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/publishservice.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/publishservice",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/putlocalfile.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/putlocalfile",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/putlocalobject.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/putlocalobject",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/putlocalworkspace.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/putlocalworkspace",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/remotecommandline.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/remotecommandline",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/remoteexecute.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/remoteexecute",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/remotelogin.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/remotelogin",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/remoteloginaad.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/remoteloginaad",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/remotelogout.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/remotelogout",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/remotescript.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/remotescript",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/request.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/request",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/resume.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/resume",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/serviceOption.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/serviceOption",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/serviceTypes.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/serviceTypes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/summary.serviceDetails.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/summary.serviceDetails",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/summary.snapshotDetails.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/summary.snapshotDetails",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/updateservice.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/updateservice",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/revopemar/pemabaseclass-class.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/revopemar/pemabaseclass-class",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/revopemar/pemabaseclass.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/revopemar/pemabaseclass",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/revopemar/pemabygroup-class.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/revopemar/pemabygroup-class",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/revopemar/pemabygroup.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/revopemar/pemabygroup",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/revopemar/pemacompute.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/revopemar/pemacompute",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/revopemar/pemamean-class.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/revopemar/pemamean-class",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/revopemar/pemamean.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/revopemar/pemamean",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/revopemar/pemar.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/revopemar/pemar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/revopemar/setpemaclass.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/revopemar/setpemaclass",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "microsoft-r/install/r-server-vm-azure-linux.md",
       "redirect_url": "https://docs.microsoft.com/machine-learning-server/install/machine-learning-server-azure-vm-on-linux"
     },
@@ -2396,8 +2971,209 @@
       "source_path": "microsoft-r/install/machine-learning-server-azure-vm-on-linux.md",
       "redirect_url": "/machine-learning-server/what-is-machine-learning-server",
       "redirect_document_id": false
-    } 
+    },
+
     
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/microsoftml-package.md",
+      "redirect_url": "/sql/machine-learning/python/ref-py-microsoftml",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/adadelta-optimizer.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/adadelta-optimizer",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/avx-math.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/avx-math",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/categorical.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/categorical",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/categorical-hash.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/categorical-hash",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/clr-math.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/clr-math",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/concat.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/concat",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/count-select.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/count-select",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/custom.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/custom",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/drop-columns.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/drop-columns",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/extract-pixels.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/extract-pixels",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/featurize-image.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/featurize-image",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/featurize-text.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/featurize-text",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/get-sentiment.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/get-sentiment",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/gpu-math.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/gpu-math",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/hinge-loss.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/hinge-loss",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/index.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/learners-object.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/learners-object",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/load-image.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/load-image",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/log-loss.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/log-loss",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/mkl-math.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/mkl-math",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/mutualinformation-select.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/mutualinformation-select",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/n-gram.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/n-gram",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/n-gram-hash.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/n-gram-hash",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/predefined.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/predefined",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/resize-image.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/resize-image",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/rx-ensemble.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/rx-ensemble",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/rx-fast-forest.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/rx-fast-forest",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/rx-fast-linear.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/rx-fast-linear",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/rx-fast-trees.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/rx-fast-trees",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/rx-featurize.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/rx-featurize",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/rx-logistic-regression.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/rx-logistic-regression",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/rx-neural-network.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/rx-neural-network",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/rx-oneclass-svm.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/rx-oneclass-svm",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/rx-predict.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/rx-predict",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/select-columns.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/select-columns",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/sgd-optimizer.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/sgd-optimizer",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/smoothed-hinge-loss.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/smoothed-hinge-loss",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/squared-loss.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/squared-loss",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/python-reference/microsoftml/sse-math.md",
+      "redirect_url": "/sql/machine-learning/python/reference/microsoftml/sse-math",
+      "redirect_document_id": false
+    }
 
 
   ]
