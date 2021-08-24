@@ -3173,8 +3173,64 @@
       "source_path": "microsoft-r/python-reference/microsoftml/sse-math.md",
       "redirect_url": "/sql/machine-learning/python/reference/microsoftml/sse-math",
       "redirect_document_id": false
-    }
+    },
 
+    {
+      "source_path": "/machine-learning-server/python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md ",
+      "redirect_url": "/sql/machine-learning/python/reference/azureml-model-management-sdk/azureml-model-management-sdk ",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "/machine-learning-server/python-reference/azureml-model-management-sdk/batch-response.md               ",
+      "redirect_url": "/sql/machine-learning/python/reference/azureml-model-management-sdk/batch-response               ",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "/machine-learning-server/python-reference/azureml-model-management-sdk/batch.md                        ",
+      "redirect_url": "/sql/machine-learning/python/reference/azureml-model-management-sdk/batch                        ",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "/machine-learning-server/python-reference/azureml-model-management-sdk/deploy-client.md                ",
+      "redirect_url": "/sql/machine-learning/python/reference/azureml-model-management-sdk/deploy-client                ",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "/machine-learning-server/python-reference/azureml-model-management-sdk/mlserver.md                     ",
+      "redirect_url": "/sql/machine-learning/python/reference/azureml-model-management-sdk/mlserver                     ",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "/machine-learning-server/python-reference/azureml-model-management-sdk/operationalization-definition.md",
+      "redirect_url": "/sql/machine-learning/python/reference/azureml-model-management-sdk/operationalization-definition",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "/machine-learning-server/python-reference/azureml-model-management-sdk/operationalization.md           ",
+      "redirect_url": "/sql/machine-learning/python/reference/azureml-model-management-sdk/operationalization           ",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "/machine-learning-server/python-reference/azureml-model-management-sdk/realtime-definition.md          ",
+      "redirect_url": "/sql/machine-learning/python/reference/azureml-model-management-sdk/realtime-definition          ",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "/machine-learning-server/python-reference/azureml-model-management-sdk/service-definition.md           ",
+      "redirect_url": "/sql/machine-learning/python/reference/azureml-model-management-sdk/service-definition           ",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "/machine-learning-server/python-reference/azureml-model-management-sdk/service-response.md             ",
+      "redirect_url": "/sql/machine-learning/python/reference/azureml-model-management-sdk/service-response             ",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "/machine-learning-server/python-reference/azureml-model-management-sdk/service.md    ",
+      "redirect_url": "/sql/machine-learning/python/reference/azureml-model-management-sdk/service    ",
+      "redirect_document_id": true
+    }
+    
 
   ]
 }
