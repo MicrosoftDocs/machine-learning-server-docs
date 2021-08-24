@@ -329,7 +329,7 @@ batch.download(1, "answer.csv")
 ## See also
 
  + [What are web services](../concept-what-are-web-services.md) 
- + [Functions in azureml-model-management-sdk package](/sql/machine-learning/python/reference/azureml-model-management-sdk/azureml-model-management-sdk.md)    
+ + [Functions in azureml-model-management-sdk package](/sql/machine-learning/python/reference/azureml-model-management-sdk/azureml-model-management-sdk)    
  + [Connecting to Machine Learning Server in Python](how-to-authenticate-in-python.md)    
  + [Working with web services in Python](how-to-deploy-manage-web-services.md)    
  + [How to consume web services in Python synchronously (request/response)](how-to-consume-web-services.md)    
