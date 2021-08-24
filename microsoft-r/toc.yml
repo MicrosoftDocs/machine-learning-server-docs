@@ -174,30 +174,8 @@ items:
     items:
     - name: Python package overview
       href: python-reference/introducing-python-package-reference.md
-    - name: azureml-model-management-sdk
-      items:
-      - name: Package overview
-        href: python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md
-      - name: DeployClient
-        href: python-reference/azureml-model-management-sdk/deploy-client.md
-      - name: MLServer
-        href: python-reference/azureml-model-management-sdk/mlserver.md
-      - name: Operationalization
-        href: python-reference/azureml-model-management-sdk/operationalization.md
-      - name: OperationalizationDefinition
-        href: python-reference/azureml-model-management-sdk/operationalization-definition.md
-      - name: ServiceDefinition
-        href: python-reference/azureml-model-management-sdk/service-definition.md
-      - name: RealtimeDefinition
-        href: python-reference/azureml-model-management-sdk/realtime-definition.md
-      - name: Service
-        href: python-reference/azureml-model-management-sdk/service.md
-      - name: ServiceResponse
-        href: python-reference/azureml-model-management-sdk/service-response.md
-      - name: Batch
-        href: python-reference/azureml-model-management-sdk/batch.md
-      - name: BatchResponse
-        href: python-reference/azureml-model-management-sdk/batch-response.md
+    - name: azureml-model-management-sdk >
+      href: /sql/machine-learning/python/reference/azureml-model-management-sdk/azureml-model-management-sdk
     - name: microsoftml >
       href: /sql/machine-learning/python/ref-py-microsoftml
     - name: revoscalepy
