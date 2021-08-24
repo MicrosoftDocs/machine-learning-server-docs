@@ -174,7 +174,7 @@ items:
     items:
     - name: Python package overview
       href: python-reference/introducing-python-package-reference.md
-    - name: azureml-model-management-sdk
+    - name: azureml-model-management-sdk >
       href: /sql/machine-learning/python/reference/azureml-model-management-sdk/azureml-model-management-sdk
     - name: microsoftml >
       href: /sql/machine-learning/python/ref-py-microsoftml
