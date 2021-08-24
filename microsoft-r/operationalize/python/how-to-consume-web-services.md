@@ -30,7 +30,7 @@ ms.prod: "mlserver"
 
 This article is for data scientists who wants to learn how to find, examine, and consume the [analytic web services](../concept-what-are-web-services.md) hosted in Machine Learning Server using Python. Web services offer fast execution and scoring of arbitrary Python or R code and models. [Learn more about web services](../concept-what-are-web-services.md). This article assumes that you are proficient in Python.
 
-After a web service has been published, any authenticated user can list, examine, and consume that web service. You can do so directly in Python using the functions in the [azureml-model-management-sdk package](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md). The azureml-model-management-sdk package is installed with Machine Learning Server.  To list, examine, or consume the web service _outside_ of Python, use the [RESTful APIs](../concept-api.md) that provide direct programmatic access to a service's lifecycle or in a [preferred language via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md).
+After a web service has been published, any authenticated user can list, examine, and consume that web service. You can do so directly in Python using the functions in the [azureml-model-management-sdk package](/sql/machine-learning/python/reference/azureml-model-management-sdk/azureml-model-management-sdk.md). The azureml-model-management-sdk package is installed with Machine Learning Server.  To list, examine, or consume the web service _outside_ of Python, use the [RESTful APIs](../concept-api.md) that provide direct programmatic access to a service's lifecycle or in a [preferred language via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md).
 
 By default, web service operations are available to authenticated users. However, your administrator can also assign [roles](../configure-roles.md)  (RBAC) to further control the permissions around web services. 
 
@@ -41,7 +41,7 @@ By default, web service operations are available to authenticated users. However
 
 ## Requirements
 
-Before you can use the web service management functions in the [azureml-model-management-sdk](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) Python package, you must:
+Before you can use the web service management functions in the [azureml-model-management-sdk](/sql/machine-learning/python/reference/azureml-model-management-sdk/azureml-model-management-sdk.md) Python package, you must:
 + Have access to a Python-enabled instance of Machine Learning Server that was  [properly configured](../../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) to host web services. 
 
 + Authenticate with Machine Learning Server in Python as described in "[Connecting to Machine Learning Server in Python](how-to-authenticate-in-python.md)."
@@ -69,13 +69,13 @@ Once you find the service you want, use the [get_service](#get_service)  functio
 
 ## Retrieve and examine service objects
 
-Authenticated users can retrieve the [web service object](../../python-reference/azureml-model-management-sdk/service.md) in order to get the client stub for consuming that service. Use the `get_service` function from the azureml-model-management-sdk package to retrieve the object. 
+Authenticated users can retrieve the [web service object](/sql/machine-learning/python/reference/azureml-model-management-sdk/service.md) in order to get the client stub for consuming that service. Use the `get_service` function from the azureml-model-management-sdk package to retrieve the object. 
 
 After the object is returned, you can use a help function to explore the published service, such as `print(help(myServiceObject))`. You can call the help function on any azureml-model-management-sdk functions, even those that are dynamically generated to learn more about them. 
 
-You can also print the capabilities that define the service holdings to see what the service can do and how it should be consumed. Service holdings include the service name, version, descriptions, inputs, outputs, and the name of the function to be consumed. [Learn more about capabilities...](../../python-reference/azureml-model-management-sdk/service.md#capabilities)
+You can also print the capabilities that define the service holdings to see what the service can do and how it should be consumed. Service holdings include the service name, version, descriptions, inputs, outputs, and the name of the function to be consumed. [Learn more about capabilities...](/sql/machine-learning/python/reference/azureml-model-management-sdk/service.md#capabilities)
 
-You can use [supported public functions to interact with service object](../../python-reference/azureml-model-management-sdk/service.md).
+You can use [supported public functions to interact with service object](/sql/machine-learning/python/reference/azureml-model-management-sdk/service.md).
 
 Example code:
 
@@ -108,7 +108,7 @@ Users can consume the service directly using a single consumption call, which is
 
 ### Consuming in Python
 
-[After authenticating with Machine Learning Server](how-to-authenticate-in-python.md), users can also interact with and consume services using other functions in the [azureml-model-management-sdk](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) Python package.
+[After authenticating with Machine Learning Server](how-to-authenticate-in-python.md), users can also interact with and consume services using other functions in the [azureml-model-management-sdk](/sql/machine-learning/python/reference/azureml-model-management-sdk/azureml-model-management-sdk.md) Python package.
 
 **[For a full example of a request-response consume, see this Jupyter notebook](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/operationalize/Explore_Consume_Python_Web_Services.ipynb)**
 
@@ -144,7 +144,7 @@ GET /api/{{service-name}}/{{service-version}}/swagger.json
 
 + [Jupyter notebook: how explore and consume a web service](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/operationalize/Explore_Consume_Python_Web_Services.ipynb)
 
-+ [Package overview: azureml-model-management-sdk](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)
++ [Package overview: azureml-model-management-sdk](/sql/machine-learning/python/reference/azureml-model-management-sdk/azureml-model-management-sdk.md)
 
 + [Quickstart: Deploying an Python model as a web service](quickstart-deploy-python-web-service.md)
 

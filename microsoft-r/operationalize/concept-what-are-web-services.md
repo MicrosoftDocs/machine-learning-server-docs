@@ -36,7 +36,7 @@ Web services can be consumed directly in R or Python, programmatically using [RE
 
 Web services facilitate the consumption and integration of the operationalized models and code they contain.  Once you've built a predictive model, in many cases the next step is to operationalize the model. That is to generate predictions from the pre-trained model on demand. In this scenario, where new data often become available one row at a time, latency becomes the critical metric. It is important to respond with the single prediction (or score) as quickly as possible.
 
-Each web service is uniquely defined by its name and version. You can use the functions in the [mrsdeploy R package](../r-reference/mrsdeploy/mrsdeploy-package.md) or the [azureml-model-management-sdk Python package](../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) to gain access a service's lifecycle from an R or Python script. 
+Each web service is uniquely defined by its name and version. You can use the functions in the [mrsdeploy R package](../r-reference/mrsdeploy/mrsdeploy-package.md) or the [azureml-model-management-sdk Python package](/sql/machine-learning/python/reference/azureml-model-management-sdk/azureml-model-management-sdk.md) to gain access a service's lifecycle from an R or Python script. 
 
 **Requirement!** Before you can deploy and work with web services, you must have access to a Machine Learning Server instance [configured to host web services](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization). 
 
