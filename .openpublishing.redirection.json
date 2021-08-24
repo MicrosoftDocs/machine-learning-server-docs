@@ -411,6 +411,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/getValidatedServiceType.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/getValidatedServiceType",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "microsoft-r/r-reference/mrsdeploy/listremotefiles.md",
       "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/listremotefiles",
       "redirect_document_id": false
