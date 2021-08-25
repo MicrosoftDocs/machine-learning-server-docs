@@ -808,7 +808,6 @@ items:
         href: r-reference/revoscaler/revoscaler-sql-server-functions.md
       - name: Teradata functions
         href: r-reference/revoscaler/revoscaler-teradata-functions.md
-    - name: RevoUtils
     - name: sqlrutils
       items:
       - name: Package overview
