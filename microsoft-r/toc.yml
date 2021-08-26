@@ -808,20 +808,6 @@ items:
         href: r-reference/revoscaler/revoscaler-sql-server-functions.md
       - name: Teradata functions
         href: r-reference/revoscaler/revoscaler-teradata-functions.md
-    - name: RevoUtils
-      items:
-      - name: Package overview
-        href: r-reference/revoutils/revoutils.md
-      - name: getRevoRepos
-        href: r-reference/revoutils/getrevorepos.md
-      - name: readNews
-        href: r-reference/revoutils/readnews.md
-      - name: Revo.home
-        href: r-reference/revoutils/revo-home.md
-      - name: RevoInfo
-        href: r-reference/revoutils/revoinfo.md
-      - name: totalSystemMemory
-        href: r-reference/revoutils/totalsystemmemory.md
     - name: sqlrutils
       items:
       - name: Package overview
