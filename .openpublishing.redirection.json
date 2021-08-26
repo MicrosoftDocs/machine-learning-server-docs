@@ -1,6 +1,36 @@
 {
   "redirections": [
     {
+      "source_path": "microsoft-r/r-reference/revoutils/getrevorepos.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/revoutils/getrevorepos",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/revoutils/readnews.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/revoutils/readnews",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/revoutils/revo-home.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/revoutils/revo-home",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/revoutils/revoinfo.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/revoutils/revoinfo",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/revoutils/revoutils.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/revoutils/revoutils",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/revoutils/totalsystemmemory.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/revoutils/totalsystemmemory",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "microsoft-r/rebranding-microsoft-r-server.md",
       "redirect_url": "/previous-versions/machine-learning-server/rebranding-microsoft-r-server",
       "redirect_document_id": false
@@ -408,6 +438,11 @@
     {
       "source_path": "microsoft-r/r-reference/mrsdeploy/getservice.md",
       "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/getservice",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/mrsdeploy/getValidatedServiceType.md",
+      "redirect_url": "/previous-versions/machine-learning-server/r-reference/mrsdeploy/getValidatedServiceType",
       "redirect_document_id": false
     },
     {
