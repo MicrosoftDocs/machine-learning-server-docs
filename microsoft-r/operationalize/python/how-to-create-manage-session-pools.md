@@ -33,11 +33,11 @@ For example, if you create ten sessions in advance for a web service that uses n
 
 A web service having a dedicated session pool never requests connections from the [generic session pool](../configure-evaluate-capacity.md#pool) shared resource, not even when maximum sessions are reached. The generic session pool services only those web services that do not have dedicated resources.
 
-For Python script, the [MLServer](../../python-reference/azureml-model-management-sdk/mlserver.md) class in the [azureml-model-management-sdk](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) function library provides three functions for creating and managing sessions:
+For Python script, the [MLServer](/sql/machine-learning/python/reference/azureml-model-management-sdk/mlserver) class in the [azureml-model-management-sdk](/sql/machine-learning/python/reference/azureml-model-management-sdk/azureml-model-management-sdk) function library provides three functions for creating and managing sessions:
 
-+ [create_or_update_service_pool](../../python-reference/azureml-model-management-sdk/mlserver.md#create_or_update_service_pool)
-+ [get_service_pool_status](../../python-reference/azureml-model-management-sdk/mlserver.md#get_service_pool_status)
-+ [delete_service_pool](../../python-reference/azureml-model-management-sdk/mlserver.md#delete_service_pool)
++ [create_or_update_service_pool](/sql/machine-learning/python/reference/azureml-model-management-sdk/mlserver#create_or_update_service_pool)
++ [get_service_pool_status](/sql/machine-learning/python/reference/azureml-model-management-sdk/mlserver#get_service_pool_status)
++ [delete_service_pool](/sql/machine-learning/python/reference/azureml-model-management-sdk/mlserver#delete_service_pool)
 
 ## Create or modify a dedicated session pool
 
@@ -86,7 +86,7 @@ On the compute node, run the following command to delete the session pool for a 
  svc = client.delete_service_pool(name = "myWebService1234", version = "v1.0.0")
 ```
 
-This feature is still under development. In rare cases, the [delete_service_pool](../../python-reference/azureml-model-management-sdk/mlserver.md#delete_service_pool) command may fail to actually delete the pool on the computeNode. If you encounter this situation, issue a new [delete_service_pool](../../python-reference/azureml-model-management-sdk/mlserver.md#delete_service_pool) request. Use the [get_service_pool_status](../../python-reference/azureml-model-management-sdk/mlserver.md#delete_service_pool) command to monitor the status of dedicated pools on the computeNode.
+This feature is still under development. In rare cases, the [delete_service_pool](/sql/machine-learning/python/reference/azureml-model-management-sdk/mlserver#delete_service_pool) command may fail to actually delete the pool on the computeNode. If you encounter this situation, issue a new [delete_service_pool](/sql/machine-learning/python/reference/azureml-model-management-sdk/mlserver#delete_service_pool) request. Use the [get_service_pool_status](/sql/machine-learning/python/reference/azureml-model-management-sdk/mlserver#delete_service_pool) command to monitor the status of dedicated pools on the computeNode.
  ```python
  # Deletes the dedicated session pool and releases resources
  client.delete_service_ool(name = "myWebService1234", version = "v1.0.0")
