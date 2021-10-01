@@ -37,7 +37,7 @@ You can use these libraries and functions in combination with other open source 
 
 |Module | Version | Description |
 |--------|---------|-------------|
-|[azureml-model-management-sdk](azureml-model-management-sdk/azureml-model-management-sdk.md) | 1.0.1 | Classes and functions to authenticate, deploy, manage, and consume analytic web services in Python.  |
+|[azureml-model-management-sdk](/sql/machine-learning/python/reference/azureml-model-management-sdk/azureml-model-management-sdk) | 1.0.1 | Classes and functions to authenticate, deploy, manage, and consume analytic web services in Python.  |
 |[microsoftml](/sql/machine-learning/python/ref-py-microsoftml)| 9.4 | A collection of Python functions used for machine learning operations, including training and transformations, scoring, text and image analysis, and feature extraction for deriving values from existing data. |
 |[revoscalepy](revoscalepy/revoscalepy-package.md) | 9.4 | Data access, manipulation and transformations, visualization, and statistical analysis. The revoscalepy functions support a broad spectrum of statistical and analytical tasks that operate at scale, bringing analytical operations to local data or remote on a Spark cluster or data residing in SQL Server. |
 
@@ -75,7 +75,7 @@ To view the embedded help for each class, use the `help()` command, specifying t
 2. Open interactive help: `help()`
 3. Type the fully-qualified class name within the brackets. 
 
-   + For azureml-azureml-model-management-sdk, include the class in the path. For example, for [MLServer](azureml-model-management-sdk/mlserver.md) help, type `help(azureml.deploy.server.MLServer)`. 
+   + For azureml-azureml-model-management-sdk, include the class in the path. For example, for [MLServer](/sql/machine-learning/python/reference/azureml-model-management-sdk/mlserver) help, type `help(azureml.deploy.server.MLServer)`. 
    + For revoscalepy, type `help(revoscalepy)` to get package contents, and then include one of the packages on the next iteration. For example, `help(revoscalepy.computecontext)` returns all the functions related to compute context.
 
 ## Note to R Users: Python naming conventions
@@ -89,7 +89,7 @@ To view the embedded help for each class, use the `help()` command, specifying t
 
 First, read the introduction to each package to learn about common use case scenarios:
 
-+ [azureml-model-management-sdk package for Python](azureml-model-management-sdk/azureml-model-management-sdk.md)  
++ [azureml-model-management-sdk package for Python](/sql/machine-learning/python/reference/azureml-model-management-sdk/azureml-model-management-sdk)  
 + [microsoftml package for Python](/sql/machine-learning/python/ref-py-microsoftml) 
 + [revoscalepy package for Python](revoscalepy/revoscalepy-package.md)  
 

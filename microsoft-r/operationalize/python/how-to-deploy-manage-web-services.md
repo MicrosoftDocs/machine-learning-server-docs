@@ -30,7 +30,7 @@ ms.prod: "mlserver"
 
 This article is for data scientists who wants to learn how to deploy and manage Python code/models as [analytic web services](../concept-what-are-web-services.md) hosted in Machine Learning Server. This article assumes you are proficient in Python.
 
-Using the [azureml-model-management-sdk](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)  Python package, which ships with Machine Learning Server, you can develop, test, and [deploy these Python analytics](#publishService) as web services in your production environment. This package can also be [installed locally on a Windows machine](../../install/python-libraries-interpreter.md), but requires a connection to a Machine Learning Server instance at runtime. [RESTful APIs](../concept-api.md) are also available to provide direct programmatic access to a service's lifecycle.
+Using the [azureml-model-management-sdk](/sql/machine-learning/python/reference/azureml-model-management-sdk/azureml-model-management-sdk)  Python package, which ships with Machine Learning Server, you can develop, test, and [deploy these Python analytics](#publishService) as web services in your production environment. This package can also be [installed locally on a Windows machine](../../install/python-libraries-interpreter.md), but requires a connection to a Machine Learning Server instance at runtime. [RESTful APIs](../concept-api.md) are also available to provide direct programmatic access to a service's lifecycle.
 
 By default, web service operations are available to authenticated users. However, your administrator can also [assign role-based authorization (RBAC)](../configure-roles.md) to further control the permissions around web services. 
 
@@ -41,7 +41,7 @@ By default, web service operations are available to authenticated users. However
 
 To deploy your analytics, you must publish them as web services in Machine Learning Server. Web services offer fast execution and scoring of arbitrary Python or R code and models. [Learn more about web services](../concept-what-are-web-services.md). 
 
-When you deploy Python code or a model as a web service, a [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service is returned.
+When you deploy Python code or a model as a web service, a [service object](/sql/machine-learning/python/reference/azureml-model-management-sdk/service) containing the client stub for consuming that service is returned.
 
 Once hosted on Machine Learning Server, you can update and manage them.  Authenticated users can  [consume web services in Python](how-to-consume-web-services.md) or in a [preferred language via Swagger](../how-to-build-api-clients-from-swagger-for-app-integration.md).
 
@@ -49,7 +49,7 @@ Once hosted on Machine Learning Server, you can update and manage them.  Authent
 
 ## Requirements
 
-Before you can use the web service management functions in the [azureml-model-management-sdk](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md) Python package, you must:
+Before you can use the web service management functions in the [azureml-model-management-sdk](/sql/machine-learning/python/reference/azureml-model-management-sdk/azureml-model-management-sdk) Python package, you must:
 + Have access to a Python-enabled instance of Machine Learning Server that was  [properly configured](../../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization) to host web services. 
 
 + Authenticate with Machine Learning Server in Python as described in "[Connecting to Machine Learning Server](how-to-authenticate-in-python.md)."
@@ -131,7 +131,7 @@ For a full example of real-time web services in Python, try out [this Jupyter no
 
 ### Update an existing service version
 
-To update an existing web service, specify the name and version of that service and the parameters that need changed. When you use '.redeploy', the service version is overwritten and a new [service object](../../python-reference/azureml-model-management-sdk/service.md) containing the client stub for consuming that service is returned.
+To update an existing web service, specify the name and version of that service and the parameters that need changed. When you use '.redeploy', the service version is overwritten and a new [service object](/sql/machine-learning/python/reference/azureml-model-management-sdk/service) containing the client stub for consuming that service is returned.
 
 Update the service with a '.redeploy' such as:
 ```Python
