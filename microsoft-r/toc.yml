@@ -330,106 +330,15 @@ items:
         href: python-reference/revoscalepy/rx-write-object.md
       - name: RxXdfData
         href: python-reference/revoscalepy/RxXdfData.md
+
   - name: R packages
     items:
     - name: R package overview
       href: r-reference/introducing-r-server-r-package-reference.md
-    - name: MicrosoftML
-      items:
-      - name: Package overview
-        href: r-reference/microsoftml/microsoftml-package.md
-      - name: categorical
-        href: r-reference/microsoftml/categorical.md
-      - name: categoricalHash
-        href: r-reference/microsoftml/categoricalhash.md
-      - name: concat
-        href: r-reference/microsoftml/concat.md
-      - name: dropColumns
-        href: r-reference/microsoftml/dropColumns.md
-      - name: ensembleControl
-        href: r-reference/microsoftml/ensembleControl.md
-      - name: extractPixels
-        href: r-reference/microsoftml/extractpixels.md
-      - name: fastForest
-        href: r-reference/microsoftml/fastforest.md
-      - name: fastLinear
-        href: r-reference/microsoftml/fastlinear.md
-      - name: fastTrees
-        href: r-reference/microsoftml/fasttrees.md
-      - name: featurizeImage
-        href: r-reference/microsoftml/featurizeimage.md
-      - name: featurizeText
-        href: r-reference/microsoftml/featurizetext.md
-      - name: getNetDefinition
-        href: r-reference/microsoftml/getNetDefinition.md
-      - name: getSampleDataDir
-        href: r-reference/microsoftml/getSampleDataDir.md
-      - name: getSentiment
-        href: r-reference/microsoftml/getsentiment.md
-      - name: kernel
-        displayName: linearKernel,polynomialKernel,rbfKernel,sigmoidKernel
-        href: r-reference/microsoftml/kernel.md
-      - name: loadImage
-        href: r-reference/microsoftml/loadimage.md
-      - name: logisticRegression
-        href: r-reference/microsoftml/logisticregression.md
-      - name: loss
-        displayName: expLoss,hingeLoss,logLoss,poissonLoss,smoothHingeLoss,squaredLoss
-        href: r-reference/microsoftml/loss.md
-      - name: minCount
-        href: r-reference/microsoftml/mincount.md
-      - name: mlModel
-        href: r-reference/microsoftml/mlmodel.md
-      - name: mutualInformation
-        href: r-reference/microsoftml/mutualinformation.md
-      - name: NeuralNet
-        href: r-reference/microsoftml/neuralnet.md
-      - name: ngram
-        href: r-reference/microsoftml/ngram.md
-      - name: OneClassSvm
-        href: r-reference/microsoftml/oneclasssvm.md
-      - name: optimizer
-        href: r-reference/microsoftml/optimizer.md
-      - name: resizeImage
-        href: r-reference/microsoftml/resizeimage.md
-      - name: rxEnsemble
-        href: r-reference/microsoftml/rxensemble.md
-      - name: rxFastForest
-        href: r-reference/microsoftml/rxfastforest.md
-      - name: rxFastLinear
-        href: r-reference/microsoftml/rxfastlinear.md
-      - name: rxFastTrees
-        href: r-reference/microsoftml/rxfasttrees.md
-      - name: rxFeaturize
-        href: r-reference/microsoftml/rxfeaturize.md
-      - name: rxHashEnv
-        href: r-reference/microsoftml/rxhashenv.md
-      - name: rxLogisticRegression
-        href: r-reference/microsoftml/rxlogisticregression.md
-      - name: rxNeuralNet
-        href: r-reference/microsoftml/rxneuralnet.md
-      - name: rxOneClassSvm
-        href: r-reference/microsoftml/rxoneclasssvm.md
-      - name: rxPredict
-        href: r-reference/microsoftml/rxpredict.md
-      - name: selectColumns
-        href: r-reference/microsoftml/selectColumns.md
-      - name: selectFeatures
-        href: r-reference/microsoftml/selectfeatures.md
-    - name: olapR
-      items:
-      - name: Package overview
-        href: r-reference/olapr/olapr.md
-      - name: Execute2D
-        href: r-reference/olapr/execute2d.md
-      - name: ExecuteMD
-        href: r-reference/olapr/executemd.md
-      - name: Explore
-        href: r-reference/olapr/explore.md
-      - name: OlapConnection
-        href: r-reference/olapr/olapconnection.md
-      - name: Query
-        href: r-reference/olapr/query.md
+    - name: MicrosoftML >
+      href: https://docs.microsoft.com/sql/machine-learning/r/ref-r-microsoftml
+    - name: olapR >
+      href: https://docs.microsoft.com/sql/machine-learning/r/ref-r-olapr
     - name: RevoScaleR
       items:
       - name: Package overview
@@ -786,32 +695,8 @@ items:
         href: r-reference/revoscaler/revoscaler-sql-server-functions.md
       - name: Teradata functions
         href: r-reference/revoscaler/revoscaler-teradata-functions.md
-    - name: sqlrutils
-      items:
-      - name: Package overview
-        href: r-reference/sqlrutils/sqlrutils.md
-      - name: Create a stored procedure from R code
-        href: r-reference/sqlrutils/how-to-create-a-stored-procedure-from-r.md
-      - name: executeStoredProcedure
-        href: r-reference/sqlrutils/executestoredprocedure.md
-      - name: getInputParameters
-        href: r-reference/sqlrutils/getinputparameters.md
-      - name: InputData
-        href: r-reference/sqlrutils/inputdata.md
-      - name: InputParameter
-        href: r-reference/sqlrutils/inputparameter.md
-      - name: OutputData
-        href: r-reference/sqlrutils/outputdata.md
-      - name: OutputParameter
-        href: r-reference/sqlrutils/outputparameter.md
-      - name: registerStoredProcedure
-        href: r-reference/sqlrutils/registerstoredprocedure.md
-      - name: setInputDataQuery
-        href: r-reference/sqlrutils/setinputdataquery.md
-      - name: setInputParameterValue
-        href: r-reference/sqlrutils/setinputparametervalue.md
-      - name: StoredProcedure
-        href: r-reference/sqlrutils/storedprocedure.md
+    - name: sqlrutils >
+      href: https://docs.microsoft.com/sql/machine-learning/r/ref-r-sqlrutils
 - name: Resources
   items:
   - name: Support timeline

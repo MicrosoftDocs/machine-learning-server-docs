@@ -3265,8 +3265,294 @@
       "source_path": "microsoft-r/python-reference/azureml-model-management-sdk/service.md    ",
       "redirect_url": "/sql/machine-learning/python/reference/azureml-model-management-sdk/service    ",
       "redirect_document_id": false
-    }
+    },
  
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/categorical.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/categorical",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/categoricalhash.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/categoricalhash",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/concat.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/concat",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/dropColumns.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/dropColumns",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/ensembleControl.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/ensembleControl",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/extractpixels.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/extractpixels",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/fastforest.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/fastforest",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/fastlinear.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/fastlinear",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/fasttrees.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/fasttrees",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/featurizeimage.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/featurizeimage",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/featurizetext.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/featurizetext",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/getNetDefinition.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/getNetDefinition",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/getSampleDataDir.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/getSampleDataDir",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/getsentiment.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/getsentiment",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/kernel.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/kernel",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/loadimage.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/loadimage",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/logisticregression.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/logisticregression",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/loss.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/loss",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/microsoftml-package.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/microsoftml-package",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/mincount.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/mincount",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/mlmodel.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/mlmodel",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/mutualinformation.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/mutualinformation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/neuralnet.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/neuralnet",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/ngram.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/ngram",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/oneclasssvm.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/oneclasssvm",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/optimizer.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/optimizer",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/resizeimage.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/resizeimage",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/rxensemble.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/rxensemble",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/rxfastforest.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/rxfastforest",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/rxfastlinear.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/rxfastlinear",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/rxfasttrees.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/rxfasttrees",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/rxfeaturize.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/rxfeaturize",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/rxHashEnv.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/rxHashEnv",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/rxlogisticregression.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/rxlogisticregression",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/rxneuralnet.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/rxneuralnet",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/rxoneclasssvm.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/rxoneclasssvm",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/rxpredict.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/rxpredict",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/selectColumns.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/selectColumns",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/microsoftml/selectfeatures.md",
+      "redirect_url": "/sql/machine-learning/r/reference/microsoftml/selectfeatures",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/olapr/execute2d.md",
+      "redirect_url": "/sql/machine-learning/r/reference/olapr/execute2d",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/olapr/executemd.md",
+      "redirect_url": "/sql/machine-learning/r/reference/olapr/executemd",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/olapr/explore.md",
+      "redirect_url": "/sql/machine-learning/r/reference/olapr/explore",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/olapr/olapconnection.md",
+      "redirect_url": "/sql/machine-learning/r/reference/olapr/olapconnection",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/olapr/olapr.md",
+      "redirect_url": "/sql/machine-learning/r/reference/olapr/olapr",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/olapr/query.md",
+      "redirect_url": "/sql/machine-learning/r/reference/olapr/query",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/sqlrutils/executestoredprocedure.md",
+      "redirect_url": "/sql/machine-learning/r/reference/sqlrutils/executestoredprocedure",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/sqlrutils/getinputparameters.md",
+      "redirect_url": "/sql/machine-learning/r/reference/sqlrutils/getinputparameters",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/sqlrutils/how-to-create-a-stored-procedure-from-r.md",
+      "redirect_url": "/sql/machine-learning/r/reference/sqlrutils/how-to-create-a-stored-procedure-from-r",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/sqlrutils/inputdata.md",
+      "redirect_url": "/sql/machine-learning/r/reference/sqlrutils/inputdata",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/sqlrutils/inputparameter.md",
+      "redirect_url": "/sql/machine-learning/r/reference/sqlrutils/inputparameter",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/sqlrutils/outputdata.md",
+      "redirect_url": "/sql/machine-learning/r/reference/sqlrutils/outputdata",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/sqlrutils/outputparameter.md",
+      "redirect_url": "/sql/machine-learning/r/reference/sqlrutils/outputparameter",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/sqlrutils/registerstoredprocedure.md",
+      "redirect_url": "/sql/machine-learning/r/reference/sqlrutils/registerstoredprocedure",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/sqlrutils/setinputdataquery.md",
+      "redirect_url": "/sql/machine-learning/r/reference/sqlrutils/setinputdataquery",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/sqlrutils/setinputparametervalue.md",
+      "redirect_url": "/sql/machine-learning/r/reference/sqlrutils/setinputparametervalue",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/sqlrutils/sqlrutils.md",
+      "redirect_url": "/sql/machine-learning/r/reference/sqlrutils/sqlrutils",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/sqlrutils/storedprocedure.md",
+      "redirect_url": "/sql/machine-learning/r/reference/sqlrutils/storedprocedure",
+      "redirect_document_id": false
+    }
+
 
   ]
 }
