@@ -337,8 +337,14 @@ items:
       href: r-reference/introducing-r-server-r-package-reference.md
     - name: MicrosoftML >
       href: https://docs.microsoft.com/sql/machine-learning/r/ref-r-microsoftml
+    - name: mrsdeploy >
+      href: https://docs.microsoft.com/previous-versions/machine-learning-server/r-reference/mrsdeploy/mrsdeploy-package
     - name: olapR >
       href: https://docs.microsoft.com/sql/machine-learning/r/ref-r-olapr
+    - name: RevoIOQ >
+      href: https://docs.microsoft.com/previous-versions/machine-learning-server/r-reference/revoioq
+    - name: RevoPemaR >
+      href: https://docs.microsoft.com/previous-versions/machine-learning-server/r-reference/revopemar/pemar
     - name: RevoScaleR
       items:
       - name: Package overview
@@ -695,6 +701,8 @@ items:
         href: r-reference/revoscaler/revoscaler-sql-server-functions.md
       - name: Teradata functions
         href: r-reference/revoscaler/revoscaler-teradata-functions.md
+    - name: RevoUtils >
+      href: https://docs.microsoft.com/previous-versions/machine-learning-server/r-reference/revoutils/revoutils
     - name: sqlrutils >
       href: https://docs.microsoft.com/sql/machine-learning/r/ref-r-sqlrutils
 - name: Resources
