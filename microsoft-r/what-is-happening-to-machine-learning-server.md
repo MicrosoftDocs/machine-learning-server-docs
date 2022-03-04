@@ -20,38 +20,6 @@ This article explains options for replacing the functionality of Machine Learnin
 
 Machine Learning Server is enterprise software for data science, providing R and Python interpreters, base distributions of R and Python, additional libraries from Microsoft, and operationalization capability.
 
-The first decision point for the replacement options is the locations of compute and data storage for analysis, either on-premises or in the cloud.
-
-## On-premises analytics options
-
-Machine Learning Server environments are available independent of connecting to the Internet or intranets. These are normally high-security environments where large-scale data analysis is critical, but the data is sensitive.
-
-If you want to use an on-premises solution, SQL Server Big Data Clusters is an option.
-
-### SQL Server Big Data Clusters
-
-[SQL Server Big Data Clusters](/sql/big-data-cluster/big-data-cluster-overview) allow you to deploy scalable clusters of [SQL Server](/sql/sql-server), Spark, and HDFS containers running on Kubernetes. These components are running side by side to enable you to read, write, and process big data from Transact-SQL or Spark, allowing you to easily combine and analyze your high-value relational data with high-volume big data.  
-
-It includes [Machine Learning Services](/sql/machine-learning/sql-server-machine-learning-services) and [Language Extensions](/sql/language-extensions/language-extensions-overview), which runs Python, R, and Java languages from inside SQL Server stored procedures. The Spark subsystem within the cluster is a standard Apache Spark distribution, and can run Scala, R, Python and other supported languages and constructs.  
-
-SQL Server Big Data Clusters has relational data stores (SQL Server databases), HDFS data stores, and a relational large-scale store within the architecture.  
-
-Use SQL Server Big Data Clusters as a replacement for Machine Learning Server when you need to:
-
-- [Deploy scalable clusters](/sql/big-data-cluster/deploy-get-started) of SQL Server, Spark, and HDFS containers running on Kubernetes, on-premises or in the cloud.
-- Read, write, and process big data from Transact-SQL or Spark.
-- Easily combine and analyze high-value relational data with high-volume big data, storing data in HDFS that is also accessible by SQL Server.
-- Query virtualized data from external SQL Server, Oracle, Teradata, MongoDB, and ODBC data sources with external tables using PolyBase.
-- Use data for AI, machine learning, and other analysis tasks.
-- [Deploy and run applications in the cluster](/sql/big-data-cluster/concept-application-deployment), accessible from anywhere you determine.
-- Provide high availability for the SQL Server master instance and all databases by using Always On availability group technology.  
-
-The architecture of a SQL Server Big Data Cluster is as follows:
-
-![SQL Server Big Data Clusters architecture](media/what-is-happening-to-machine-learning-server/sql-bdc-architecture-diagram-overview.png) 
-
-For more information on SQL Server Big Data Clusters, see [What are SQL Server Big Data Clusters?](/sql/big-data-cluster/big-data-cluster-overview).
-
 ## Cloud analytics options
 
 Many workloads from Machine Learning Server can also be uploaded to the Azure platform. Data *born in the cloud* (originated in cloud-based applications) are prime candidates for these technologies, and data movement services can migrate large-scale data securely and quickly. For more on data movement options, see [Choose an Azure solution for data transfer](/azure/storage/common/storage-choose-data-transfer-solution).
