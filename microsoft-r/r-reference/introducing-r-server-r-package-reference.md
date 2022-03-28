@@ -30,16 +30,16 @@ You can use these libraries and functions in combination with other open-source 
 
 | Library details | Description |
 |--------|-|
-| [Supported platforms](../install/r-server-install-supported-platforms.md) | [Machine Learning Server 9.x](../what-is-machine-learning-server.md) </br>[Microsoft R Client (Windows and Linux)](../r-client/what-is-microsoft-r-client.md) <br/>[Microsoft R Server 9.1 and earlier](../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](/sql/machine-learning/sql-server-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
+| [Supported platforms](../install/r-server-install-supported-platforms.md) | [Machine Learning Server 9.x](../what-is-machine-learning-server.md) </br>[Microsoft R Client (Windows and Linux)](../r-client/what-is-microsoft-r-client.md) <br/>[Microsoft R Server 9.1 and earlier](../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](/sql/machine-learning/sql-server-machine-learning-services)   <br/> [Azure HDInsight](/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](/azure/machine-learning/machine-learning-data-science-provision-vm) |
 | Built on: | R 3.5.2 (included when you [install a product](#how-to-install) that provides this package). |
 
 ## R function libraries
 
 |Package | Version | Description |
 |--------|---------|-------------|
-|[MicrosoftML](microsoftml/microsoftml-package.md) | 1.5.0  | A collection of functions in Microsoft R used for machine learning operations, including training and transformations, scoring, text and image analysis, and feature extraction for deriving values from existing data.|
+|[MicrosoftML](/sql/machine-learning/r/ref-r-microsoftml?view=sql-server-ver15) | 1.5.0  | A collection of functions in Microsoft R used for machine learning operations, including training and transformations, scoring, text and image analysis, and feature extraction for deriving values from existing data.|
 |[mrsdeploy](mrsdeploy/mrsdeploy-package.md) | 1.1.2 | Deployment functions for interactive remote execution at the command line, plus web service functions for bundling R code blocks as discrete web services that can be deployed and managed on an R Server instance. Formally known as DeployR. |
-|[olapR](olapr/olapr.md) | 1.0.0 | A collection of functions for constructing MDX queries against an OLAP cube. Runs only on the Windows platform.|
+|[olapR](/sql/machine-learning/r/ref-r-olapr?view=sql-server-ver15) | 1.0.0 | A collection of functions for constructing MDX queries against an OLAP cube. Runs only on the Windows platform.|
 |[RevoIOQ](revoioq.md) | 8.0.7 | Installation and Operational Qualification test functions, used in conjunction with the RUnit package to run a set of unit tests. It has only one user-facing function, also called **RevoIOQ**.|
 |RevoMods | 11.0.0 | Microsoft modifications and extensions to standard R functions. Reference documentation is [online only](#view-online-help).  |
 |[RevoPemaR](revopemar/pemar.md) | 10.0.0 | Developer functions for coding custom parallel external memory algorithms. |
@@ -47,7 +47,7 @@ You can use these libraries and functions in combination with other open-source 
 |RevoTreeView | 10.0.0 | Decision tree functions, including the **rxDTree** function. Reference documentation is [online only](#view-online-help). |
 |[RevoUtils](revoutils/revoutils.md) | 10.0.4 | Utility functions useful when programming and developing R packages.|
 |RevoUtilsMath | 10.0.0 | Microsoft's distribution of the Intel Math Kernel Library (MKL). Reference documentation is [online only](#view-online-help). |
-|[sqlrutils](sqlrutils/sqlrutils.md) | 1.0.0 | A collection of functions for executing stored procedures against SQL Server.|
+|[sqlrutils](/sql/machine-learning/r/ref-r-sqlrutils?view=sql-server-ver15) | 1.0.0 | A collection of functions for executing stored procedures against SQL Server.|
 
 <a name="how-to-install"></a>
 
@@ -111,13 +111,13 @@ For a list of deprecated or discontinued functions within an existing package, s
 
 First, read the introduction to each package to learn about common use case scenarios:
 
-+ [MicrosoftML](microsoftml/microsoftml-package.md) 
++ [MicrosoftML](/sql/machine-learning/r/ref-r-microsoftml?view=sql-server-ver15) 
 + [mrsdeploy](mrsdeploy/mrsdeploy-package.md)   
-+ [olapR](olapr/olapr.md)   
++ [olapR](/sql/machine-learning/r/ref-r-olapr?view=sql-server-ver15)   
 + [RevoPemaR](revopemar/pemar.md)   
 + [RevoScaleR](revoscaler/revoscaler.md)  
 + [RevoUtils](revoutils/revoutils.md)   
-+ [sqlrutils](sqlrutils/sqlrutils.md)   
++ [sqlrutils](/sql/machine-learning/r/ref-r-sqlrutils?view=sql-server-ver15)   
 
 Next, add these packages by installing [R Client](../r-client/what-is-microsoft-r-client.md) or [Machine Learning Server](../what-is-machine-learning-server.md). R Client is free. Machine Learning Server developer edition is also free.
 
