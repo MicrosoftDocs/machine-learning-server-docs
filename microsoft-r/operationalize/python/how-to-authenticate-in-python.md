@@ -4,8 +4,8 @@
 title: "Connect to Machine Learning Server in Python using azureml-model-management-sdk"
 description: "Publish and consume Python web services with Microsoft R Server"
 keywords: 
-author: "dphansen"
-ms.author: "davidph"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 2/16/2018
 ms.topic: "how-to"

@@ -4,8 +4,8 @@
 title: "rx_predict: Predicted Values and Residuals for rx_lin_mod, rx_logit, rx_dtree, (revoscalepy)" 
 description: "Generic function to compute predicted values and residuals using rx_lin_mod, rx_logit, rx_dtree, rx_dforest and rx_btrees objects." 
 keywords: "predict" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

@@ -4,8 +4,8 @@
 title: "Deploy & manage web services in R with mrsdeploy - Machine Learning Server "
 description: "Web service deployment functions in the mrsdeploy package in Microsoft R can be used for any arbitrary R code block."
 keywords: mrsdeploy package
-author: "dphansen"
-ms.author: "davidph"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 2/16/2018
 ms.topic: "how-to"

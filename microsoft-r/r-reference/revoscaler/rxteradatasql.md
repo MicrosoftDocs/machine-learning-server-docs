@@ -4,8 +4,8 @@
 title: "rxTeradataSql function (revoAnalytics) | Microsoft Docs" 
 description: " Execute an arbitrary SQL statement that does not return data in a Teradata data base. " 
 keywords: "(revoAnalytics), rxTeradataSql, rxTeradataTableExists, rxTeradataDropTable, file" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

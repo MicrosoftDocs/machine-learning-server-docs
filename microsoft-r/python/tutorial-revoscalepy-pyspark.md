@@ -4,8 +4,8 @@
 title: "Tutorial: PySpark and revoscalepy interoperabilty in Machine Learning Server  "
 description: "Learn how to use PySpark and revoscalepy Python functions in Spark applications in Hadoop clusters having Machine Learning Server."
 keywords: 
-author: "dphansen"
-ms.author: "davidph"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 02/16/2018
 ms.topic: "tutorial"

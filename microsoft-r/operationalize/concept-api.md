@@ -4,8 +4,8 @@
 title: "APIs for operationalizing your models and analytics - Machine Learning Server "
 description: "Operationalization APIs for authenticating, publishing, managing, and consuming web services with Machine Learning Server  or Microsoft R Server."
 keywords: 
-author: "dphansen"
-ms.author: "davidph"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 2/16/2018
 ms.topic: "how-to"

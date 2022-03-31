@@ -4,8 +4,8 @@
 title: "RxLocalParallel function (revoAnalytics) | Microsoft Docs" 
 description: " Creates a local compute context object that uses the doParallel back-end for HPC computations  performed using rxExec.  This compute context can be used only to distribute computations via the [rxExec](rxExec.md) function; it is ignored by Revolution HPA functions. This is the main generator for S4 class RxLocalParallel. " 
 keywords: "(revoAnalytics), RxLocalParallel, IO" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

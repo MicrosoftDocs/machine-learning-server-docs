@@ -4,8 +4,8 @@
 title: "as.rpart function (revoAnalytics) | Microsoft Docs" 
 description: " Converts objects containing decision tree results to an rpart object. " 
 keywords: "(revoAnalytics), as.rpart, as.rpart.rxDTree, category, models" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

@@ -4,8 +4,8 @@
 title: "Data Summaries using RevoScaleR (Machine Learning Server) "
 description: "Summarizing data in RevoScaleR using rxGetVarInfo, rxSummary, and rxLorenz functions."
 keywords: 
-author: "dphansen"
-ms.author: "davidph"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 01/02/2018
 ms.topic: "how-to"

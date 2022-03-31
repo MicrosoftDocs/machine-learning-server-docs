@@ -4,8 +4,8 @@
 title: "rxDForest function (revoAnalytics) | Microsoft Docs" 
 description: "     Fit classification and regression decision forests on an .xdf file or data frame     for small or large data using parallel external memory algorithm. " 
 keywords: "(revoAnalytics), rxDForest, plot.rxDForest, print.rxDForest, models, tree, classif, regression, classification" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

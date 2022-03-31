@@ -4,8 +4,8 @@
 title: "Machine Learning Server 9.4 Release Notes"
 description: "Features, improvements, and changes in release 9.4 of Machine Learning Server."
 keywords: 
-author: "dphansen"
-ms.author: "davidph"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 07/15/2019
 ms.topic: "overview"

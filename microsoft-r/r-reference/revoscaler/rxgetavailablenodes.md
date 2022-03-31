@@ -4,8 +4,8 @@
 title: "rxGetAvailableNodes function (revoAnalytics) | Microsoft Docs" 
 description: " Gets a list of operational nodes on a cluster. Note that this function will attempt to connect to the cluster when executed. " 
 keywords: "(revoAnalytics), rxGetAvailableNodes, IO" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

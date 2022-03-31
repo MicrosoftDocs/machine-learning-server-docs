@@ -4,8 +4,8 @@
 title: "rxCube function (revoAnalytics) | Microsoft Docs" 
 description: " Use rxCube to create efficiently represented contingency tables from cross-classifying factors using a formula interface. It performs equivalent calculations to the rxCrossTabs function, but returns its results in a different way. " 
 keywords: "(revoAnalytics), rxCube, print.rxCube, summary.rxCube, as.data.frame.rxCube, subset.rxCube, [.rxCube, category, models" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

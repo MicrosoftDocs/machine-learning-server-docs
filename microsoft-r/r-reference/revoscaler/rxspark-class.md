@@ -4,8 +4,8 @@
 title: "RxSpark-class class (revoAnalytics) | Microsoft Docs" 
 description: " Spark compute context class. " 
 keywords: "(revoAnalytics), RxSpark-class, show,RxSpark-method, classes" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

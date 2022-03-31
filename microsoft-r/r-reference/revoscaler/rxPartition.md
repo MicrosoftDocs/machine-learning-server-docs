@@ -4,8 +4,8 @@
 title: "rxPartition function (revoAnalytics) | Microsoft Docs" 
 description: " Partition input data sources by key values and save the results to a partitioned Xdf on disk. " 
 keywords: "(revoAnalytics), rxPartition, Partition" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

@@ -4,8 +4,8 @@
 title: "RxTextData: Class generator for text data source objects (revoscalepy)" 
 description: "Main generator for class RxTextData, which extends RxDataSource." 
 keywords: "datasource, text file" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

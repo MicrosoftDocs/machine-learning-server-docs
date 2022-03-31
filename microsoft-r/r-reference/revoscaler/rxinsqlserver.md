@@ -4,8 +4,8 @@
 title: "RxInSqlServer function (revoAnalytics) | Microsoft Docs" 
 description: "Creates a compute context for running RevoScaleR analyses inside Microsoft SQL Server.  Currently only supported in Windows." 
 keywords: "(revoAnalytics), RxInSqlServer, IO" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

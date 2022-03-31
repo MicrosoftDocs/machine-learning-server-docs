@@ -4,8 +4,8 @@
 title: "RxSpark: Generate spark compute context (revoscalepy)" 
 description: "Creates the compute context for running revoscalepy analysis on Spark. Note that the use of rx_spark_connect() is recommended over RxSpark() as rx_spark_connect() supports persistent mode with in-memory caching. Run help(revoscalepy.rx_spark_connect) for more information." 
 keywords: "" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 
