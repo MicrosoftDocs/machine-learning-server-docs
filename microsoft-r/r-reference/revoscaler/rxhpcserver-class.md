@@ -4,8 +4,8 @@
 title: "RxHpcServer-class class (revoAnalytics) | Microsoft Docs" 
 description: " DEPRECATED: HPC Server compute context class. " 
 keywords: "(revoAnalytics), RxHpcServer-class, show,RxHpcServer-method, classes" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

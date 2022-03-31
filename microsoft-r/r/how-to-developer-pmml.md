@@ -4,8 +4,8 @@
 title: "Convert RevoScaleR Model Objects for Use in PMML (Machine Learning Server) "
 description: "Using PMML with RevoScaleR model objects in Machine Learning Server."
 keywords: 
-author: "DaniBunny"
-ms.author: "dacoelho"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 11/10/2017
 ms.topic: "how-to"

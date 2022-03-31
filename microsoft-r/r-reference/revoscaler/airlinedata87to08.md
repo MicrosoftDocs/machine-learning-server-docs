@@ -4,8 +4,8 @@
 title: "AirlineData87to08 data (revoAnalytics) | Microsoft Docs" 
 description: " Airline on-time performance data from 1987 to 2008. " 
 keywords: "(revoAnalytics), AirlineData87to08, AirlineData87to08.xdf, datasets" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

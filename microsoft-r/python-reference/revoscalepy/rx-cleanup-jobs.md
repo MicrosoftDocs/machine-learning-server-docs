@@ -4,8 +4,8 @@
 title: "rx_cleanup_jobs:  (revoscalepy)" 
 description: "Removes the artifacts for the specified jobs.If job_info_list is a RxRemoteJob object, rx_cleanup_jobs attempts to remove the artifacts. However, if the job has successfully completed and force is False, rx_cleanup_jobs issues a warning saying to either set force=True or use rx_get_job_results to get the results and delete the artifacts.If job_info_list is a list of jobs, rx_cleanup_jobs attempts to apply the cleanup rules for a single job to each element in the list." 
 keywords: "cleanup, job" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

@@ -4,8 +4,8 @@
 title: "prune.rxDTree function (revoAnalytics) | Microsoft Docs" 
 description: "  Prune a decision tree created by rxDTree and return the smaller tree. " 
 keywords: "(revoAnalytics), prune.rxDTree, models, tree, classif, regression" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

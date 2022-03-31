@@ -4,8 +4,8 @@
 title: "rx_exec: Executes arbitary R functions in parallel (revoscalepy)" 
 description: "Allows the distributed execution of an arbitrary R function in parallel, across nodes (computers) or cores of a “compute context”, such as a cluster. For example, you could use the function to execute multiple instances of a model concurrently. When used with base R functions, rxexec does not lift the memory constraints of the underlying functions, or make a single-threaded process a multi-threaded one. The fundamentals of the function still apply; what changes is the execution framework of those functions." 
 keywords: "parallel execution, multiple executions, remote execution, sql" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

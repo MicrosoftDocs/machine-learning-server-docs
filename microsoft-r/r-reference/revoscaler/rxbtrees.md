@@ -4,8 +4,8 @@
 title: "rxBTrees function (revoAnalytics) | Microsoft Docs" 
 description: "     Fit stochastic gradient boosted decision trees on an .xdf file or data frame     for small or large data using parallel external memory algorithm. " 
 keywords: "(revoAnalytics), rxBTrees, plot.rxBTrees, print.rxBTrees, models, tree, classif, regression, classification" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

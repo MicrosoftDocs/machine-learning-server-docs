@@ -3,8 +3,8 @@
 title: "rxSplitXdf function (revoAnalytics) | Microsoft Docs" 
 description: "    Split an input .xdf file or data frame into multiple .xdf files or a list of data frames. " 
 keywords: "(revoAnalytics), rxSplitXdf, rxSplit, manip, file" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

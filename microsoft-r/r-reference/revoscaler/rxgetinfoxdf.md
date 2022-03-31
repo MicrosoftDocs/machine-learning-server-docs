@@ -4,8 +4,8 @@
 title: "rxGetInfo function (revoAnalytics) | Microsoft Docs" 
 description: " Get basic information about an RevoScaleR data source or data frame  " 
 keywords: "(revoAnalytics), rxGetInfo, attribute" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

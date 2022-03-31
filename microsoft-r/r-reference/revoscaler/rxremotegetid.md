@@ -4,8 +4,8 @@
 title: "rxRemoteGetId function (revoAnalytics) | Microsoft Docs" 
 description: " Provides a unique identifier for the process in the range [1:N] where N is the number of processes. " 
 keywords: "(revoAnalytics), rxRemoteGetId, IO" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

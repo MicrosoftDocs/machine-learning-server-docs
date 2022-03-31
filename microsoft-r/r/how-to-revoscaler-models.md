@@ -4,8 +4,8 @@
 title: "Models in RevoScaleR on Machine Learning Server "
 description: "Models in RevoScaleR on Machine Learning Server."
 keywords: 
-author: "DaniBunny"
-ms.author: "dacoelho"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 03/17/2016
 ms.topic: "how-to"

@@ -4,8 +4,8 @@
 title: "Merge data in RevoScaleR using rxSort (Machine Learning Server) "
 description: "How to merge data in a data frame or XDF file with the RevoScaleR rxMerge function."
 keywords: 
-author: "DaniBunny"
-ms.author: "dacoelho"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 06/06/2017
 ms.topic: "how-to"

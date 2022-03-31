@@ -4,8 +4,8 @@
 title: "RxInSqlServer: Generate SQL Server in-database compute context (revoscalepy)" 
 description: "Creates a compute context for running revoscalepy analyses inside Microsoft SQL Server. Currently only supported in Windows." 
 keywords: "sql" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

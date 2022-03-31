@@ -4,8 +4,8 @@
 title: "How to use RevoScaleR with Hadoop MapReduce "
 description: "Machine Learning Server with Apache Hadoop MapReduce, RevoScaleR features and components overview."
 keywords: 
-author: "DaniBunny"
-ms.author: "dacoelho"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 01/29/2018
 ms.topic: "how-to"

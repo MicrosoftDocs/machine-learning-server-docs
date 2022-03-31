@@ -4,8 +4,8 @@
 title: "rx_hadoop_copy_from_local: Execute Hadoop copyFromLocal commands (revoscalepy)" 
 description: "Wraps the Hadoop fs -copyFromLocal command." 
 keywords: "Hadoop Command" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

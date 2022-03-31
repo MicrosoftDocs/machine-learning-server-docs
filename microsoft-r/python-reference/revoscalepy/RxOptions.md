@@ -4,8 +4,8 @@
 title: "RxOptions: Global options for revoscalepy (revoscalepy)" 
 description: "Functions to specify and retrieve options needed for revoscalepy computations. These need to be set only once to carry out multiple computations." 
 keywords: "options" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

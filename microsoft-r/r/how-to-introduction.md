@@ -4,8 +4,8 @@
 title: "How-to deep dives into data analysis and visualization in Machine Learning Server "
 description: "Documentation for data science, statistics, analysis and visualization using Machine Learning Server R and Python libraries and tools."
 keywords: 
-author: "DaniBunny"
-ms.author: "dacoelho"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 02/16/2018
 ms.topic: "how-to"

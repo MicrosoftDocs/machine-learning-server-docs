@@ -4,8 +4,8 @@
 title: "Use RevoScaleR with SQL Server (Machine Learning Server) "
 description: "Overview and tutorial to using RevoScaleR in SQL Server databases."
 keywords: 
-author: "DaniBunny"
-ms.author: "dacoelho"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 ms.manager: cgronlun
 ms.date: 08/11/2016
 ms.topic: "how-to"

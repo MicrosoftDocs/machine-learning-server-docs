@@ -4,8 +4,8 @@
 title: "Python function library reference - Machine Learning Server "
 description: "Function reference for Python packages: microsoftml, revoscalepy, azureml-model-mananagement-sdk in Machine Learning Server."
 keywords: 
-author: "DaniBunny"
-ms.author: "dacoelho"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 07/15/2019
 ms.topic: "reference"

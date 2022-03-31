@@ -4,8 +4,8 @@
 title: "RxRemoteJob,close,deserialize_job,deserialize_jobs,resolve_context: Closes a remote job (revoscalepy)" 
 description: "Closes the remote job, purging all associated job-related data. You can reference a job by its ID, or call close() to purge jobs in a given compute context." 
 keywords: "" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

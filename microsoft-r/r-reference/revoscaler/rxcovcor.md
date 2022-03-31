@@ -4,8 +4,8 @@
 title: "rxCovCor function (revoAnalytics) | Microsoft Docs" 
 description: " Calculate the covariance, correlation, or sum of squares / cross-product matrix for a set of variables. " 
 keywords: "(revoAnalytics), rxCovCor, rxCov, rxCor, rxSSCP, print.rxCovCor, univar, multivariate" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

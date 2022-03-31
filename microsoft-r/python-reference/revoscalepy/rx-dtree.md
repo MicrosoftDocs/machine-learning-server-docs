@@ -4,8 +4,8 @@
 title: "rx_dtree: Fits classification and regression trees (revoscalepy)" 
 description: "Fit classification and regression trees on an .xdf file or data frame for small or large data using parallel external memory algorithm." 
 keywords: "learner, tree" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

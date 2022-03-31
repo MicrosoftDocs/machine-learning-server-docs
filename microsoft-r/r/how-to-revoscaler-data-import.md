@@ -4,8 +4,8 @@
 title: "Import text, SAS, and SPSS data into Machine Learning Server using rxImport "
 description: "Load data in Machine Learning Server using the RevoScaleR rxImport function."
 keywords: 
-author: "DaniBunny"
-ms.author: "dacoelho"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 05/22/2017
 ms.topic: "how-to"

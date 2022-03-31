@@ -4,8 +4,8 @@
 title: "as.xtabs function (revoAnalytics) | Microsoft Docs" 
 description: " Converts objects containing cross tabulation results to an xtabs object. " 
 keywords: "(revoAnalytics), as.xtabs, as.xtabs.rxCrossTabs, as.xtabs.rxCube, category, models" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

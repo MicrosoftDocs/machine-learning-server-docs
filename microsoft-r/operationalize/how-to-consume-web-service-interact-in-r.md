@@ -4,8 +4,8 @@
 title: "Get & consume web services in R with mrsdeploy - Machine Learning Server "
 description: "Web service interaction and consumption functions in the mrsdeploy package."
 keywords: mrsdeploy package
-author: "DaniBunny"
-ms.author: "dacoelho"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 2/16/2018
 ms.topic: "how-to"

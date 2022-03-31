@@ -4,8 +4,8 @@
 title: "rxReadXdf function (revoAnalytics) | Microsoft Docs" 
 description: " Read data from an .xdf file into a data frame. " 
 keywords: "(revoAnalytics), rxReadXdf, file, connection" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

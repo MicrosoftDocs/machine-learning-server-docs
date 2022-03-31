@@ -4,8 +4,8 @@
 title: "rxRemoteCall function (revoAnalytics) | Microsoft Docs" 
 description: "Function that is executed on the master node in a distributed computing environment. This function should **not** be called directly by the user and, rather, serves as a necessary and convenient mechanism for performing remote R calls on the master node in a distributed computing environment." 
 keywords: "(revoAnalytics), rxRemoteCall, datasets" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

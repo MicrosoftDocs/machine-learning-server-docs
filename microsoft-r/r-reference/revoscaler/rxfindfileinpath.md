@@ -4,8 +4,8 @@
 title: "rxFindFileInPath function (revoAnalytics) | Microsoft Docs" 
 description: " Sequentially checks the entries in a delimited path string for a provided file name. " 
 keywords: "(revoAnalytics), rxFindFileInPath, IO" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

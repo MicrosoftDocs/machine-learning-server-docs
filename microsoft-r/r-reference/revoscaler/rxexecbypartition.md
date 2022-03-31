@@ -4,8 +4,8 @@
 title: "rxExecByPartition function (revoAnalytics) | Microsoft Docs" 
 description: " This feature allows users to run analytics computation in parallel on individual data partitions split from an input data source based on the specified variables. In **RevoScaleR** version 9.1.0, we provide the necessary rx functions to be executed for funtionalities of By-group parallelism. This document will describe different scenarios of By-group parallelism, running in a number of supported compute contexts. " 
 keywords: "(revoAnalytics), rxExecByPartition, partition, exec, group, execby, groupby" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

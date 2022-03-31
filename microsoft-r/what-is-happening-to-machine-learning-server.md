@@ -2,8 +2,8 @@
 title: "What's happening to Machine Learning Server?"
 description: "The support for Microsoft Machine Learning Server 9.4.7 will end on June 30, 2022. This article explains options for replacing the functionality of Machine Learning Server and migration strategies for code and data to other platforms."
 keywords: ""
-author: "DaniBunny"
-ms.author: "dacoelho"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 06/30/2021
 ms.topic: "overview"

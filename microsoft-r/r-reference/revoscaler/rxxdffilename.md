@@ -4,8 +4,8 @@
 title: "rxXdfFileName-methods methods (revoAnalytics) | Microsoft Docs" 
 description: " Get the .xdf file path from a character string or RxXdfData object. " 
 keywords: "(revoAnalytics), rxXdfFileName-methods, rxXdfFileName, rxXdfFileName,RxXdfData-method, rxXdfFileName,character-method, rxXdfFileName,ANY-method, methods, file, connection" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

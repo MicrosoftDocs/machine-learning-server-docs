@@ -4,8 +4,8 @@
 title: "Create and manage session pools for fast web service connections in R (Machine Learning Server)"
 description: "Allocate resources for pre-loading web service connections and dependencies in R solutions (Machine Learning Server ). "
 keywords: 
-author: "DaniBunny"
-ms.author: "dacoelho"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 2/16/2018
 ms.topic: "how-to"

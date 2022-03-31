@@ -4,8 +4,8 @@
 title: "rxCrossTabs function (revoAnalytics) | Microsoft Docs" 
 description: " Use rxCrossTabs to create contingency tables from cross- classifying factors using a formula interface. It performs equivalent computations to the [rxCube](rxCube.md) function, but returns its results in a different way. " 
 keywords: "(revoAnalytics), rxCrossTabs, print.rxCrossTabs, summary.rxCrossTabs, mean.rxCrossTabs, as.list.rxCrossTabs, category, models" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

@@ -4,8 +4,8 @@
 title: "Estimate Decision Tree Models using RevoScaleR (Machine Learning Server) "
 description: "Decision Trees with RevoScaleR in Machine Learning Server."
 keywords: 
-author: "DaniBunny"
-ms.author: "dacoelho"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 03/17/2016
 ms.topic: "how-to"

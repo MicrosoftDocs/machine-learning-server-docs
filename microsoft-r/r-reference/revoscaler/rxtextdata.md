@@ -4,8 +4,8 @@
 title: "RxTextData function (revoAnalytics) | Microsoft Docs" 
 description: " This is the main generator for S4 class RxTextData, which extends RxDataSource. " 
 keywords: "(revoAnalytics), RxTextData, file, connection" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

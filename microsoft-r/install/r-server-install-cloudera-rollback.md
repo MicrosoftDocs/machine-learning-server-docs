@@ -4,8 +4,8 @@
 title: "R Server installation on Cloudera CDH"
 description: "Install Microsoft R Server 9.1.0 on the Cloudera distribution of Apache Hadoop (CDH)."
 keywords: 
-author: "DaniBunny"
-ms.author: "dacoelho"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 03/29/2017
 ms.topic: "how-to"

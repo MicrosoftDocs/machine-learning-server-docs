@@ -4,8 +4,8 @@
 title: "Deploy and activate MRS parcels and CSDs on CDH"
 description: "Deploy and activate Microsoft R Server parcels and CSDs on the Cloudera distribution of Apache Hadoop (CDH)."
 keywords: 
-author: "DaniBunny"
-ms.author: "dacoelho"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 04/11/2017
 ms.topic: "how-to"

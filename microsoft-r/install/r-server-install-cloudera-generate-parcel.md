@@ -4,8 +4,8 @@
 title: "Generate a parcel for R Server 9.1 on CDH"
 description: "Generate a parcel to install Microsoft R Server 9.1 on the Cloudera distribution of Apache Hadoop (CDH)."
 keywords: 
-author: "DaniBunny"
-ms.author: "dacoelho"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 04/19/2017
 ms.topic: "how-to"

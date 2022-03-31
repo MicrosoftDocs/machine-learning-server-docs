@@ -4,8 +4,8 @@
 title: "rxExec function (revoAnalytics) | Microsoft Docs" 
 description: " Allows distributed execution of a function in parallel across nodes (computers) or cores  of a compute context such as a cluster. " 
 keywords: "(revoAnalytics), rxExec, IO" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

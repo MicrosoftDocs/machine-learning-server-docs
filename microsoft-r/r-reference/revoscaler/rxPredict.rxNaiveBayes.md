@@ -4,8 +4,8 @@
 title: "rxPredict.rxNaiveBayes function (revoAnalytics) | Microsoft Docs" 
 description: "     Calculate predicted or fitted values for a data set from an rxNaiveBayes object. " 
 keywords: "(revoAnalytics), rxPredict.rxNaiveBayes, models, tree, classif, classification" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

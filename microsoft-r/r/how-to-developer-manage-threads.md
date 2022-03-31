@@ -4,8 +4,8 @@
 title: "Manage threads in RevoScaleR (Machine Learning Server) "
 description: "RevoScaleR provides functions for managing the thread pool used for parallel execution."
 keywords: How ScaleR establishes and manages thread pools for parallel processing.
-author: "DaniBunny"
-ms.author: "dacoelho"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 01/03/2018
 ms.topic: "how-to"

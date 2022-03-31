@@ -4,8 +4,8 @@
 title: "Naive Bayes Classifier using RevoScaleR on Machine Learning Server "
 description: "Naive Bayes Classifier in RevoScaleR."
 keywords: 
-author: "DaniBunny"
-ms.author: "dacoelho"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 03/17/2016
 ms.topic: "how-to"

@@ -4,8 +4,8 @@
 title: "rxGetFuzzyKeys function (revoAnalytics) | Microsoft Docs" 
 description: " EXPERIMENTAL: Get fuzzy keys for a character vector " 
 keywords: "(revoAnalytics), rxGetFuzzyKeys, manip" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

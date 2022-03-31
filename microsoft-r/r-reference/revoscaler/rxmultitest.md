@@ -4,8 +4,8 @@
 title: "rxMultiTest function (revoAnalytics) | Microsoft Docs" 
 description: " Collects a list of tests for variable independence into a table. " 
 keywords: "(revoAnalytics), rxMultiTest, print.rxMultiTest, htest" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

@@ -4,8 +4,8 @@
 title: "RxSparkDataFrame: Class generator for Spark data frame objects (revoscalepy)" 
 description: "Main generator for class RxSparkDataFrame, which extends RxSparkData." 
 keywords: "datasource" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

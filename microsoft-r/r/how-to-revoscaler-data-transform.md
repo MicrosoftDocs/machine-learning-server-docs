@@ -4,8 +4,8 @@
 title: "How to transform and subset data in RevoScaleR (Machine Learning Server) "
 description: "How to manipulate and transform data in RevoScaleR."
 keywords: 
-author: "DaniBunny"
-ms.author: "dacoelho"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 06/04/2017
 ms.topic: "how-to"

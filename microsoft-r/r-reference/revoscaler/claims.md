@@ -4,8 +4,8 @@
 title: "claims data (revoAnalytics) | Microsoft Docs" 
 description: " Observations on automobile insurance claims. " 
 keywords: "(revoAnalytics), claims, claims.xdf, claims.txt, claimsExtra.txt, datasets" 
-author: "DaniBunny"
-ms.author: "dacoelho" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 
