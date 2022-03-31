@@ -4,8 +4,8 @@
 title: "RxTeradata-class class (revoAnalytics) | Microsoft Docs" 
 description: " Teradata data source connection class. " 
 keywords: "(revoAnalytics), RxTeradata-class, show,RxTeradata-method, classes" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "DaniBunny"
+ms.author: "dacoelho" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

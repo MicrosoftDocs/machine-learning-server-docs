@@ -4,8 +4,8 @@
 title: "rx_predict_default: Predicted Values and Residuals for rx_lin_mod and rx_logit (revoscalepy)" 
 description: "Compute predicted values and residuals using rx_lin_mod and rx_logit objects." 
 keywords: "predict" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "DaniBunny"
+ms.author: "dacoelho" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

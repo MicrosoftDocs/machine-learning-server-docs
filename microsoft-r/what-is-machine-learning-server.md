@@ -4,8 +4,8 @@
 title: "Welcome to Machine Learning Server"
 description: "Develop machine learning models and scripts in Python and R for on-premises deployment behind the firewall. R Server, Python server, packages, and interpreters are included."
 keywords: ""
-author: "dphansen"
-ms.author: "davidph"
+author: "DaniBunny"
+ms.author: "dacoelho"
 manager: "cgronlun"
 ms.date: 07/15/2019
 ms.topic: "overview"

@@ -4,8 +4,8 @@
 title: "rxGetVarNames function (revoAnalytics) | Microsoft Docs" 
 description: " Read the variable names for data source or data frame " 
 keywords: "(revoAnalytics), rxGetVarNames, attribute" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "DaniBunny"
+ms.author: "dacoelho" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

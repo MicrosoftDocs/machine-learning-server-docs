@@ -4,8 +4,8 @@
 title: "rxXdfToText function (revoAnalytics) | Microsoft Docs" 
 description: " Write .xdf file content to a delimited text file. rxDataStep recommended. " 
 keywords: "(revoAnalytics), rxXdfToText, file, connection" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "DaniBunny"
+ms.author: "dacoelho" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

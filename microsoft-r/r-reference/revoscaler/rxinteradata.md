@@ -4,8 +4,8 @@
 title: "Generate Teradata In-Database Compute Context" 
 description: "Creates a compute context for running RevoScaleR analyses inside a Teradata database." 
 keywords: ", RxInTeradata, IO" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "DaniBunny"
+ms.author: "dacoelho" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

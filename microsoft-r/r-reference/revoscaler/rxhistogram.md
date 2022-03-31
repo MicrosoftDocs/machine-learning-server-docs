@@ -4,8 +4,8 @@
 title: "rxHistogram function (revoAnalytics) | Microsoft Docs" 
 description: " Histogram plot for a variable in an .xdf file or data frame " 
 keywords: "(revoAnalytics), rxHistogram, hplot" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "DaniBunny"
+ms.author: "dacoelho" 
 manager: "cgronlun" 
 ms.date: 07/15/2019 
 ms.topic: "reference" 

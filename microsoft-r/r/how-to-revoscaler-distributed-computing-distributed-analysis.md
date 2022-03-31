@@ -4,8 +4,8 @@
 title: "Distributed analysis (RevoScaleR in Machine Learning Server) "
 description: "Distribute an analysis over multiple nodes using RevoScaleR functions."
 keywords: 
-author: "dphansen"
-ms.author: "davidph"
+author: "DaniBunny"
+ms.author: "dacoelho"
 manager: "cgronlun"
 ms.date: 01/16/2018
 ms.topic: "how-to"

@@ -4,8 +4,8 @@
 title: "RxSqlServerData function (revoAnalytics) | Microsoft Docs" 
 description: " This is the main generator for S4 class RxSqlServerData, which extends RxDataSource. " 
 keywords: "(revoAnalytics), RxSqlServerData, head.RxSqlServerData, tail.RxSqlServerData, database, connection" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "DaniBunny"
+ms.author: "dacoelho" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

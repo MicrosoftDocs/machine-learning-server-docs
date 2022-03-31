@@ -4,8 +4,8 @@
 title: "Running background jobs using RevoScaleR (Machine Learning Server) "
 description: "Machine Learning Server in-database and cluster computing using the RevoScaleR engine and RevoScaleR package."
 keywords: 
-author: "dphansen"
-ms.author: "davidph"
+author: "DaniBunny"
+ms.author: "dacoelho"
 manager: "cgronlun"
 ms.date: 03/23/2017
 ms.topic: "how-to"

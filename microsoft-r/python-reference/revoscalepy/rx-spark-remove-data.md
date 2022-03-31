@@ -4,8 +4,8 @@
 title: "rx_spark_remove_data: Manage cached data in Spark (revoscalepy)" 
 description: "Use these rx_spark_remove_data functions to manage the objects cached in the Spark memory system. These functions are only applicable  when using RxSpark compute context." 
 keywords: "spark, data" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "DaniBunny"
+ms.author: "dacoelho" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

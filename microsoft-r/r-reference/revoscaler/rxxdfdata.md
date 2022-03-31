@@ -4,8 +4,8 @@
 title: "RxXdfData function (revoAnalytics) | Microsoft Docs" 
 description: " This is the main generator for S4 class RxXdfData, which extends RxDataSource. " 
 keywords: "(revoAnalytics), RxXdfData, XdfData, head.RxXdfData, summary.RxXdfData, tail.RxXdfData, file, connection" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "DaniBunny"
+ms.author: "dacoelho" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

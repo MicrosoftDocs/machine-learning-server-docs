@@ -4,8 +4,8 @@
 title: "RxFileData-class class (revoAnalytics) | Microsoft Docs" 
 description: " File-based data source connection class. " 
 keywords: "(revoAnalytics), RxFileData-class, show,RxFileData-method, classes" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "DaniBunny"
+ms.author: "dacoelho" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

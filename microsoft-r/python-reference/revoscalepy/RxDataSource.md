@@ -4,8 +4,8 @@
 title: "RxDataSource: Base class generator for data source objects (revoscalepy)" 
 description: "Base class for all revoscalepy data sources. Can be used with head() and tail() to display the first and last rows of the data set." 
 keywords: "head, tail" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "DaniBunny"
+ms.author: "dacoelho" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

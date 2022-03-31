@@ -4,8 +4,8 @@
 title: "rxChiSquaredTest function (revoAnalytics) | Microsoft Docs" 
 description: " Chi-squared Test, Fisher's Exact Test, and Kendall's  Tau Rank Correlation Coefficient " 
 keywords: "(revoAnalytics), rxChiSquaredTest, rxFisherTest, rxKendallCor, htest" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "DaniBunny"
+ms.author: "dacoelho" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

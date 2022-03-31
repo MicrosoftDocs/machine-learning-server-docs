@@ -4,8 +4,8 @@
 title: "rx_partition: Partition by key value and save to a partitioned .xdf (revoscalepy)" 
 description: "Partition input data sources by key values and save the results to a partitioned .xdf file on disk." 
 keywords: "partition" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "DaniBunny"
+ms.author: "dacoelho" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

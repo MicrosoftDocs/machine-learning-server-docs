@@ -4,8 +4,8 @@
 title: "Class RxInTeradata" 
 description: " Creates a compute context for running Microsoft R Server analyses inside a Teradata database cluster. " 
 keywords: ", RxInTeradata-class, doPreJobValidation,RxInTeradata-method, initialize,RxInTeradata-method, show,RxInTeradata-method, classes" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "DaniBunny"
+ms.author: "dacoelho" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

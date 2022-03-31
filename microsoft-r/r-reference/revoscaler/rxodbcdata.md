@@ -4,8 +4,8 @@
 title: "RxOdbcData function (revoAnalytics) | Microsoft Docs" 
 description: " This is the main generator for S4 class RxOdbcData, which extends RxDataSource. " 
 keywords: "(revoAnalytics), RxOdbcData, head.RxOdbcData, tail.RxOdbcData, database, connection" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "DaniBunny"
+ms.author: "dacoelho" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

@@ -4,8 +4,8 @@
 title: "rxWriteObject function (revoAnalytics) | Microsoft Docs" 
 description: " Store/Retrieve R objects to/from ODBC data sources. The APIs are modelled after a simple key value store. These are generic APIs and if the ODBC data source isn't specified in the argument, the function does serialization or deserialization of the R object with the specified compression if any. " 
 keywords: "(revoAnalytics), rxWriteObject, rxReadObject, rxDeleteObject, rxListKeys" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "DaniBunny"
+ms.author: "dacoelho" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

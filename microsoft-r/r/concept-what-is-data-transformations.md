@@ -4,8 +4,8 @@
 title: "Data transformations in RevoScaleR - Machine Learning Server "
 description: "RevoScaleR transform functions."
 keywords: 
-author: "dphansen"
-ms.author: "davidph"
+author: "DaniBunny"
+ms.author: "dacoelho"
 manager: "cgronlun"
 ms.date: 02/16/2018
 ms.topic: "how-to"

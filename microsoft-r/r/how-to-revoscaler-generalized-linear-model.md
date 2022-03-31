@@ -4,8 +4,8 @@
 title: "Generalized Linear Models (RevoScaleR) in Machine Learning Server "
 description: "Generalized linear models with RevoScaleR."
 keywords: 
-author: "dphansen"
-ms.author: "davidph"
+author: "DaniBunny"
+ms.author: "dacoelho"
 manager: "cgronlun"
 ms.date: 03/17/2016
 ms.topic: "how-to"

@@ -4,8 +4,8 @@
 title: "RxSpark function (revoAnalytics) | Microsoft Docs" 
 description: " RxSpark creates a Spark compute context. rxSparkConnect creates the compute context object with RxSpark and then immediately starts the remote Spark application.  rxSparkDisconnect shuts down the remote Spark application with rxStopEngine and switches to a local compute context. All rx* function calls after this will run in a local compute context. " 
 keywords: "(revoAnalytics), RxSpark, rxSparkConnect, rxSparkDisconnect, IO" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "DaniBunny"
+ms.author: "dacoelho" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

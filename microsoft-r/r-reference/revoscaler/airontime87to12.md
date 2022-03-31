@@ -4,8 +4,8 @@
 title: "AirOnTime87to12 data (revoAnalytics) | Microsoft Docs" 
 description: " Airline on-time performance data from 1987 to 2012. " 
 keywords: "(revoAnalytics), AirOnTime87to12, AirOnTime87to12.xdf, AirOnTime7Pct, AirOnTime7Pct.xdf, datasets" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "DaniBunny"
+ms.author: "dacoelho" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

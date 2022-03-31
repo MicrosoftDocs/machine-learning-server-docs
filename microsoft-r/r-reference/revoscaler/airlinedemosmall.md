@@ -4,8 +4,8 @@
 title: "AirlineDemoSmall data (revoAnalytics) | Microsoft Docs" 
 description: " A small sample of airline on-time performance data. " 
 keywords: "(revoAnalytics), AirlineDemoSmall, AirlineDemoSmall.xdf, AirlineDemoSmallUC.xdf, AirlineDemoSmall.csv, AirlineDemo1kNoMissing.csv, datasets" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "DaniBunny"
+ms.author: "dacoelho" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

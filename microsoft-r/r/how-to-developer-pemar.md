@@ -4,8 +4,8 @@
 title: "RevoPemaR functions in Machine Learning Server "
 description: "How to use the RevoPemaR package in Machine Learning Server."
 keywords: 
-author: "dphansen"
-ms.author: "davidph"
+author: "DaniBunny"
+ms.author: "dacoelho"
 manager: "cgronlun"
 ms.date: 01/03/2018
 ms.topic: "how-to"

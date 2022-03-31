@@ -4,8 +4,8 @@
 title: "Remote Execution with mrsdeploy - Machine Learning Server "
 description: "Execute on a remote server using the mrsdeploy package on Machine Learning Server"
 keywords: 
-author: "dphansen"
-ms.author: "davidph"
+author: "DaniBunny"
+ms.author: "dacoelho"
 manager: "cgronlun"
 ms.date: 2/16/2018
 ms.topic: "how-to"

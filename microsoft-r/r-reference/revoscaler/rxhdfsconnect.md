@@ -4,8 +4,8 @@
 title: "rxHdfsConnect function (revoAnalytics) | Microsoft Docs" 
 description: " Establishes a connection from RevoScaleR to the Hadoop Distributed File System (HDFS).  " 
 keywords: "(revoAnalytics), rxHdfsConnect, file, connection" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "DaniBunny"
+ms.author: "dacoelho" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

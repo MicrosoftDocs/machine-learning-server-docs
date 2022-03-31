@@ -4,8 +4,8 @@
 title: "Using foreach and iterators (Machine Learning Server) "
 description: "High level guide to using foreach and iterators packages."
 keywords: 
-author: "dphansen"
-ms.author: "davidph"
+author: "DaniBunny"
+ms.author: "dacoelho"
 manager: "cgronlun"
 ms.date: 01/03/2018
 ms.topic: "how-to"

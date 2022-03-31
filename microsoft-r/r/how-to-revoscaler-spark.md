@@ -4,8 +4,8 @@
 title: "How to use RevoScaleR with Apache Spark (Machine Learning Server)"
 description: "Get started with RevoScaleR and Spark on Machine Learning Server."
 keywords: 
-author: "dphansen"
-ms.author: "davidph"
+author: "DaniBunny"
+ms.author: "dacoelho"
 manager: "cgronlun"
 ms.date: 12/19/2017
 ms.topic: "how-to"

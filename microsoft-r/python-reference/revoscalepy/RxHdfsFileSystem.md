@@ -4,8 +4,8 @@
 title: "RxHdfsFileSystem: Class generator for an HDFS file system object (revoscalepy)" 
 description: "Main generator class for RxHdfsFileSystem." 
 keywords: "filesystem hdfs" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "DaniBunny"
+ms.author: "dacoelho" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

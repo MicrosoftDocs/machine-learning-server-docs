@@ -4,8 +4,8 @@
 title: "rxDTreeBestCp function (revoAnalytics) | Microsoft Docs" 
 description: " Attempts to find the cp for optimal model pruning, where optimal is defined by default in terms of the 1 Standard Error criterion of Breiman, et al. " 
 keywords: "(revoAnalytics), rxDTreeBestCp, models, tree, classif, regression" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "DaniBunny"
+ms.author: "dacoelho" 
 manager: "cgronlun" 
 ms.date: 07/15/2019 
 ms.topic: "reference" 

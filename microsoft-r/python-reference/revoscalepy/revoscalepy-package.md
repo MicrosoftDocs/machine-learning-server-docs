@@ -4,8 +4,8 @@
 title: "revoscalepy package for Python (Machine Learning Server) " 
 description: "Function help reference for the revoscalepy Python package of Machine Learning Server." 
 keywords: "" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "DaniBunny"
+ms.author: "dacoelho" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

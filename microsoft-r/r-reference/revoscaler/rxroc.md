@@ -4,8 +4,8 @@
 title: "rxRoc function (revoAnalytics) | Microsoft Docs" 
 description: " Compute and plot an ROC curve using actual and predicted values from binary classifier system " 
 keywords: "(revoAnalytics), rxRoc, rxRocCurve, rxAuc, as.data.frame.rxRoc, plot.rxRoc, rxAuc.rxRoc, hplot" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "DaniBunny"
+ms.author: "dacoelho" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 
