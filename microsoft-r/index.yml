@@ -55,7 +55,7 @@ landingContent:
       - linkListType: reference
         links:
           - text: MicrosoftML
-            url: /machine-learning-server/r-reference/microsoftml/microsoftml-package
+            url: /sql/machine-learning/r/ref-r-microsoftml?view=sql-server-ver15
           - text: mrsdeploy
             url: /machine-learning-server/r-reference/mrsdeploy/mrsdeploy-package
           - text: RevoScaleR
