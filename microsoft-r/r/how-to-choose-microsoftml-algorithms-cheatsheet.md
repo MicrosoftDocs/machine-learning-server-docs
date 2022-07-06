@@ -82,7 +82,7 @@ The **`rxEnsemble() / rx_emsemble()`** algorithm uses a combination of learning 
 
 For a list by category of all the machine learning algorithms available in the MicrosoftML package, see:
 
-- [MicrosoftML R functions](../r-reference/microsoftml/microsoftml-package.md)
+- [MicrosoftML R functions](/sql/machine-learning/r/ref-r-microsoftml)
 - [MicrosoftML Python functions](/sql/machine-learning/python/ref-py-microsoftml)
 
 ## Notes and terminology definitions for the machine learning algorithm cheat sheet

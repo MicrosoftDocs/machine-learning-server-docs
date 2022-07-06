@@ -31,7 +31,7 @@ This article shows you how to import relational data from SQL Server into a data
 ## Prerequisites
 
 + [Azure subscription, Azure SQL Database, AdventureWorksLT	sample database](https://docs.microsoft.com/azure/sql-database/sql-database-get-started-portal)
-+ [SQL Server](https://www.microsoft.com/sql-server/sql-server-downloads) (any supported version and edition) with the [AdventureWorksDW sample database](https://www.microsoft.com/download/details.aspx?id=49502)	
++ [SQL Server](https://www.microsoft.com/sql-server/sql-server-downloads) (any supported version and edition) with the [AdventureWorksDW sample database](/sql/samples/adventureworks-install-configure)	
 + Machine Learning Server for Windows or Linux	
 + R console application (RGui.exe on Windows or Revo64 on Linux)
 

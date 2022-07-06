@@ -63,12 +63,12 @@ Algorithm (R/Python) | ML task supported | Scalability | Application Examples
 
 ## Data transforms
 
-**MicrosoftML** also provides transforms to help tailor your data for machine learning. They are used to clean, wrangle, train, and score your data. For a description of the transforms, see [Machine learning R transforms](/sql/machine-learning/r/ref-r-microsoftml) and [Machine learning Python transforms](/sql/machine-learning/python/reference/microsoftml/microsoftml-package#ml-transforms) reference documentation.
+**MicrosoftML** also provides transforms to help tailor your data for machine learning. They are used to clean, wrangle, train, and score your data. For a description of the transforms, see [Machine learning R transforms](/sql/machine-learning/r/ref-r-microsoftml#ml-transforms) and [Machine learning Python transforms](/sql/machine-learning/python/ref-py-microsoftml#ml-transforms) reference documentation.
 
 
 ## Next steps
 
-For reference documentation on the R individual transforms and functions in the product help, see [MicrosoftML: machine learning algorithms](../r-reference/microsoftml/microsoftml-package.md).
+For reference documentation on the R individual transforms and functions in the product help, see [MicrosoftML: machine learning algorithms](/sql/machine-learning/r/ref-r-microsoftml).
 
 For reference documentation on the Python individual transforms and functions in the product help, see [MicrosoftML: machine learning algorithms](/sql/machine-learning/python/ref-py-microsoftml).
 

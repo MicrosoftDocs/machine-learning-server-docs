@@ -36,13 +36,13 @@ A newer version (9.0.1) is the current VM image on Azure. You can no longer obta
 
 Version 8.0.3 includes DeployR Enterprise, for deploying R analytics inside applications and backend systems. For more information, see [About Deploy R](../deployr/deployr-about.md).
 
-As a prerequisite, review this article for more information about using the portal and configuring a virtual machine. [Virtual Machines - Getting started](https://azure.microsoft.com/documentation/learning-paths/virtual-machines/)
+As a prerequisite, review this article for more information about using the portal and configuring a virtual machine. [Virtual Machines - Getting started](/azure/virtual-machines)
 
 To create the R Server VM from the Microsoft Azure Marketplace
 
 1. Click **Virtual machines**, and in the search box, type *R Server*.
 2. Select **R Server Only SQL Server 2016 Enterprise**
-3. Continue to provision the virtual machine as described in this article: https://azure.microsoft.com/documentation/articles/virtual-machines-windows-hero-tutorial/
+3. Continue to provision the virtual machine as described in this article: [Create your first Windows virtual machine in the Azure portal](https://github.com/rgl/azure-content/blob/master/articles/virtual-machines/virtual-machines-windows-hero-tutorial.md)
 4. After the VM has been created and is running, click the **Connect** button to open a connection and log into the new machine.
 5. When you connect, **Server Manager** is opened by default, but no additional server configuration is required. Close **Server Manager** to get to the desktop, and proceed with the next steps: 
 6. Installing additional R tools or development tools

@@ -31,7 +31,7 @@ You can use these libraries and functions in combination with other open source 
 | Library details | Description |
 |--------|-|
 | [Supported platforms](../install/r-server-install-supported-platforms.md) | [Machine Learning Server 9.2.1, 9.3 and 9.4](../what-is-machine-learning-server.md) </br>[SQL Server 2017  (Windows only)](/sql/machine-learning/sql-server-machine-learning-services) |
-| Built on: | [Anaconda 4.2](https://www.continuum.io/why-anaconda) distribution of [Python 3.5](https://www.python.org/doc) (included when you [add Python support](#how-to-install) during installation). |
+| Built on: | [Anaconda 4.2](https://www.anaconda.com) distribution of [Python 3.5](https://www.python.org/doc) (included when you [add Python support](#how-to-install) during installation). |
 
 ## Python modules
 
@@ -80,7 +80,7 @@ To view the embedded help for each class, use the `help()` command, specifying t
 
 ## Note to R Users: Python naming conventions
 
-**revoscalepy**, **microsoftml**, and **azureml-model-management-sdk** correspond to the Microsoft R packages, [RevoScaleR](../r-reference/revoscaler/revoscaler.md), [MicrosoftML](../r-reference/microsoftml/microsoftml-package.md), and [mrsdeploy](../r-reference/mrsdeploy/mrsdeploy-package.md). If you have a background in these libraries, you might notice similarities in function names and operations, with Python versions adhering to the naming conventions of that language:
+**revoscalepy**, **microsoftml**, and **azureml-model-management-sdk** correspond to the Microsoft R packages, [RevoScaleR](../r-reference/revoscaler/revoscaler.md), [MicrosoftML](/sql/machine-learning/r/ref-r-microsoftml), and [mrsdeploy](../r-reference/mrsdeploy/mrsdeploy-package.md). If you have a background in these libraries, you might notice similarities in function names and operations, with Python versions adhering to the naming conventions of that language:
 
 * lowercase package names (**microsoftml** contrasted with **MicrosoftML**) and most function names
 * underscore in function names (rx_import in **revoscalepy** contrasted with rxImport in **RevoScaleR**)
