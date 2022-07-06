@@ -37,7 +37,7 @@ We encourage you to try the Microsoft Data Science Virtual Machine to jumpstart 
 
 ## Start using Machine Learning Server/ Machine Learning Services in the Cloud
 
-You need to create your own Microsoft Data Science Virtual Machine (VM). To create this VM, you must have an Azure subscription and an Azure storage account. Learn more about creating a Data Science VM see [here.](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm)
+You need to create your own Microsoft Data Science Virtual Machine (VM). To create this VM, you must have an Azure subscription and an Azure storage account. Learn more about creating a Data Science VM see [here.](/azure/machine-learning/machine-learning-data-science-provision-vm)
 
 After you provision your virtual machine from the image, you can start exploring your data and modeling right away. The data on the virtual machine is stored on the cloud and highly available. 
 
@@ -46,10 +46,10 @@ After you provision your virtual machine from the image, you can start exploring
 
 ## Learn More
 
-+ [Overview of Data Science Virtual Machine](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-virtual-machine-overview)
++ [Overview of Data Science Virtual Machine](/azure/machine-learning/machine-learning-data-science-virtual-machine-overview)
 
-+ Provision the Data Science Virtual Machine - [Windows](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) | [Linux](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-dsvm-ubuntu-intro)
++ Provision the Data Science Virtual Machine - [Windows](/azure/machine-learning/machine-learning-data-science-provision-vm) | [Linux](/azure/machine-learning/machine-learning-data-science-dsvm-ubuntu-intro)
 
-+ Use the Data Science Virtual Machine - [Windows](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-vm-do-ten-things) | [Linux](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-linux-dsvm-walkthrough)
++ Use the Data Science Virtual Machine - [Windows](/azure/machine-learning/machine-learning-data-science-vm-do-ten-things) | [Linux](/azure/machine-learning/machine-learning-data-science-linux-dsvm-walkthrough)
 
 + Try the virtual machine for free via a [30-day Azure free trial](https://azure.microsoft.com/free/)
