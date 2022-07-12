@@ -102,7 +102,7 @@ the Dow Jones Industrial Average.
 
  ## Source
 
-[Dow Jones Industrial Average (^DJI)](https://finance.yahoo.com/quote/%5EDJI/)
+http://ichart.finance.yahoo.com/table.csv?s=^DJI
 
 
  ## Author(s)
