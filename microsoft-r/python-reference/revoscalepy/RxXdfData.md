@@ -4,8 +4,8 @@
 title: "RxXdfData: Class generator for XDF data source objects (revoscalepy)" 
 description: "Main generator for class RxXdfData, which extends RxDataSource." 
 keywords: "datasource, xdf" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

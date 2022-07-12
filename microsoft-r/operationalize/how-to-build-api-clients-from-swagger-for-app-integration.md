@@ -4,8 +4,8 @@
 title: "Integrate web services & authentication into applications - Machine Learning Server "
 description: "Use Swagger to help integrate your R and Python analytics into your applications."
 keywords: 
-author: "dphansen"
-ms.author: "davidph"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 2/16/2018
 ms.topic: "how-to"
@@ -64,7 +64,7 @@ AutoRest.exe -CodeGenerator CSharp -Modeler Swagger -Input mlserver-swagger-<ver
 ```
 where `<version>` is the 3-digit product version number.
 
-You can now provide some custom headers and make other changes before using the generated client library stub. See the <a href="https://github.com/Azure/autorest/blob/master/docs/user/cli.md" target="_blank">Command Line Interface</a> documentation for details regarding different configuration options and preferences.
+You can now provide some custom headers and make other changes before using the generated client library stub. See the <a href="https://github.com/Azure/autorest/blob/main/docs/user/command-line-interface.md" target="_blank">Command Line Interface</a> documentation for details regarding different configuration options and preferences.
 
 ### Option 2. Build using an online Swagger editor
 You are not required to install a Swagger code generator on your machine. Instead, you can  build the client library in your preferred language using an online Swagger editor. 

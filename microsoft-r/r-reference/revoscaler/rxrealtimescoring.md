@@ -4,8 +4,8 @@
 title: "rxRealTimeScoring function (revoAnalytics) | Microsoft Docs" 
 description: " Real-time scoring brings the rxPredict functionality available in **RevoScaleR/revoscalepy** and **MicrosoftML** packages to  Microsoft ML Server and SQL Server platforms with near real-time performance.  This functionality is available on SQL Server 2017+. On SQL Server 2016, you can take advantage of this functionality by upgrading your in-database R Services to the latest Microsoft ML Server using the information in the following [link](https://docs.microsoft.com/sql/advanced-analytics/r-services/use-sqlbindr-exe-to-upgrade-an-instance-of-r-services) .  **NOTE:** This document contains information regarding **Real-time scoring in SQL Server ML Services**. For information regarding **Real-time scoring in ML Server**, please refer to the [publishService](https://msdn.microsoft.com/microsoft-r/operationalize/data-scientist-manage-services#publishservice)  documentation. " 
 keywords: "(revoAnalytics), rxRealTimeScoring, rxRTS, realtime, realtimescoring, rts, rxPredict" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

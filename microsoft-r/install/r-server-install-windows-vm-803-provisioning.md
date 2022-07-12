@@ -4,8 +4,8 @@
 title: "Provision version 8.0.3 R Server (standalone) SQL Server 2016 Enterprise feature"
 description: "Provision the R Server 8.0.3 Only SQL Server 2016 Enterprise VM on Azure"
 keywords: 
-author: "dphansen"
-ms.author: "davidph"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 12/20/2016
 ms.topic: "how-to"
@@ -30,19 +30,19 @@ Applies To: Azure Virtual Machines, provisioned as the 8.0.3 version of "R Serve
 
 If you already have an existing 8.0.3 version of "R Server Only SQL Server 2016 Enterprise" Virtual Machine on Azure, these instructions apply to your VM. 
 
-A newer version (9.0.1) is the current VM image on Azure. You can no longer obtain the previous version (8.0.3). If installation and provisioning is still ahead of you, we recommend that you get the newest version. For instructions, see [Provision the R Server Only SQL Server 2016 Enterprise VM on Azure](https://docs.microsoft.com/azure/machine-learning/data-science-virtual-machine/provision-vm).
+A newer version (9.0.1) is the current VM image on Azure. You can no longer obtain the previous version (8.0.3). If installation and provisioning is still ahead of you, we recommend that you get the newest version. For instructions, see [Provision the R Server Only SQL Server 2016 Enterprise VM on Azure](/azure/machine-learning/data-science-virtual-machine/provision-vm).
 
 ## Provision the R Server 8.0.3 Virtual Machine
 
 Version 8.0.3 includes DeployR Enterprise, for deploying R analytics inside applications and backend systems. For more information, see [About Deploy R](../deployr/deployr-about.md).
 
-As a prerequisite, review this article for more information about using the portal and configuring a virtual machine. [Virtual Machines - Getting started](https://azure.microsoft.com/documentation/learning-paths/virtual-machines/)
+As a prerequisite, review this article for more information about using the portal and configuring a virtual machine. [Virtual Machines - Getting started](/azure/virtual-machines)
 
 To create the R Server VM from the Microsoft Azure Marketplace
 
 1. Click **Virtual machines**, and in the search box, type *R Server*.
 2. Select **R Server Only SQL Server 2016 Enterprise**
-3. Continue to provision the virtual machine as described in this article: https://azure.microsoft.com/documentation/articles/virtual-machines-windows-hero-tutorial/
+3. Continue to provision the virtual machine as described in this article: [Create your first Windows virtual machine in the Azure portal](https://github.com/rgl/azure-content/blob/master/articles/virtual-machines/virtual-machines-windows-hero-tutorial.md)
 4. After the VM has been created and is running, click the **Connect** button to open a connection and log into the new machine.
 5. When you connect, **Server Manager** is opened by default, but no additional server configuration is required. Close **Server Manager** to get to the desktop, and proceed with the next steps: 
 6. Installing additional R tools or development tools
@@ -81,8 +81,8 @@ Update the Windows Firewall as described here: [Updating the firewall](../deploy
 
 When you need to use data from your Azure storage account, there are several options for accessing or moving the data:
 
-+ Copy the data from your storage account to the local file system using a utility, such as [AzCopy](https://docs.microsoft.com/azure/storage/storage-use-azcopy#copy-files-in-azure-file-storage-with-azcopy-preview-version-only).
-+ Add the files to a file share on your storage account and then mount the file share as a network drive on your VM. For more information, see [Mounting Azure files](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-files).
++ Copy the data from your storage account to the local file system using a utility, such as [AzCopy](/azure/storage/storage-use-azcopy#copy-files-in-azure-file-storage-with-azcopy-preview-version-only).
++ Add the files to a file share on your storage account and then mount the file share as a network drive on your VM. For more information, see [Mounting Azure files](/azure/storage/storage-dotnet-how-to-use-files).
 
   ## Resources
 
@@ -96,4 +96,4 @@ See these additional resources to learn about R in general:
 
 ## See Also
 
-[SQL Server Machine Learning Services](https://docs.microsoft.com/sql/advanced-analytics/r/sql-server-r-services)
+[SQL Server Machine Learning Services](/sql/advanced-analytics/r/sql-server-r-services)

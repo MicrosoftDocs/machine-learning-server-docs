@@ -4,8 +4,8 @@
 title: "Import SQL data from Azure SQL Database and SQL Server (Machine Learning Server) "
 description: "How to import relational data from Azure SQL and SQL Server databases in RevoScaleR"
 keywords: 
-author: "dphansen"
-ms.author: "davidph"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 06/02/2017
 ms.topic: "how-to"
@@ -26,12 +26,12 @@ ms.prod: "mlserver"
 
 [!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
 
-This article shows you how to import relational data from SQL Server into a data frame or .xdf file in Machine Learning Server. Source data can originate from Azure SQL Database, or SQL Server on premises or on [an Azure virtual machine](https://docs.microsoft.com/sql/linux/sql-server-linux-azure-virtual-machine#a-idconnecta-connect-to-the-linux-vm).
+This article shows you how to import relational data from SQL Server into a data frame or .xdf file in Machine Learning Server. Source data can originate from Azure SQL Database, or SQL Server on premises or on [an Azure virtual machine](/sql/linux/sql-server-linux-azure-virtual-machine#a-idconnecta-connect-to-the-linux-vm).
 
 ## Prerequisites
 
-+ [Azure subscription, Azure SQL Database, AdventureWorksLT	sample database](https://docs.microsoft.com/azure/sql-database/sql-database-get-started-portal)
-+ [SQL Server](https://www.microsoft.com/sql-server/sql-server-downloads) (any supported version and edition) with the [AdventureWorksDW sample database](https://www.microsoft.com/download/details.aspx?id=49502)	
++ [Azure subscription, Azure SQL Database, AdventureWorksLT	sample database](/azure/sql-database/sql-database-get-started-portal)
++ [SQL Server](https://www.microsoft.com/sql-server/sql-server-downloads) (any supported version and edition) with the [AdventureWorksDW sample database](/sql/samples/adventureworks-install-configure)	
 + Machine Learning Server for Windows or Linux	
 + R console application (RGui.exe on Windows or Revo64 on Linux)
 
@@ -89,7 +89,7 @@ On Azure SQL Database, access is controlled through firewall rules created for s
 
 On a small private network, IP addresses are most likely static, and the IP address detected by the portal is probably correct. To confirm, you can use **IPConfig** on Windows or **hostname -I** on Linux to get your IP address. 
 
-On corporate networks, IP addresses can change on computer restarts, through network address translations, or other reasons described in [this article](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure). It can be hard to get the right IP address, even through **IPConfig** and **hostname -I**.
+On corporate networks, IP addresses can change on computer restarts, through network address translations, or other reasons described in [this article](/azure/sql-database/sql-database-firewall-configure). It can be hard to get the right IP address, even through **IPConfig** and **hostname -I**.
   
 One way to get the right IP address is from the error message reported on a connection failure. If you get the "ODBC Error in SQLDisconnect" error message, it will include this text: "Client with IP address *<ip-address>* is not allowed to access the server". The IP address reported in the message is that one actually used on the connection, and it should be specified as the start and ending IP range in your firewall rule in the Azure portal. 
 
@@ -103,7 +103,7 @@ In the R console application, create the SQL query object. The example query con
 > sQuery <-"SELECT SalesOrderID, SalesOrderDetailID, OrderQty, UnitPrice, UnitPriceDiscount, LineTotal FROM SalesLT.SalesOrderDetail"
 ```
 
-Before attempting unqualified *SELECT * FROM* queries, review the columns in your database for unhandled data types in R. In AdventureWorksLT, the *rowguid(uniqueidentifier)* column is not handled. Other unsupported data types are [listed here](https://docs.microsoft.com/sql/advanced-analytics/r/r-libraries-and-data-types#data-types-not-supported-by-r).
+Before attempting unqualified *SELECT * FROM* queries, review the columns in your database for unhandled data types in R. In AdventureWorksLT, the *rowguid(uniqueidentifier)* column is not handled. Other unsupported data types are [listed here](/sql/advanced-analytics/r/r-libraries-and-data-types#data-types-not-supported-by-r).
 
 Queries with unsupported data types produce the error below. If you get this error and cannot immediately detect the unhandled data type, incrementally add fields to the query to isolate the problem.
   
@@ -329,7 +329,7 @@ The following example uses the SalelOrderHeader table because it provides more c
 
 Continue on to the following data import articles to learn more about XDF, data source objects, and other data formats:
 
-+ [SQL Server tutorial for R](https://docs.microsoft.com/sql/advanced-analytics/tutorials/deepdive-create-sql-server-data-objects-using-rxsqlserverdata)	
++ [SQL Server tutorial for R](/sql/advanced-analytics/tutorials/deepdive-create-sql-server-data-objects-using-rxsqlserverdata)	
 + [XDF files](concept-what-is-xdf.md)	
 + [Data Sources](how-to-revoscaler-data-source.md)	
 + [Import text data](how-to-revoscaler-data-import.md)

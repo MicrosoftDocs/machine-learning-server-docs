@@ -4,8 +4,8 @@
 title: "rx_write_object: Writes to an ODBC data source object (revoscalepy)" 
 description: "Stores objects in an ODBC data source. The APIs are modelled after a simple key value store." 
 keywords: "odbc" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

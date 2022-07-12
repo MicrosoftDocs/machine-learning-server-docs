@@ -4,8 +4,8 @@
 title: "RxHiveData: Class generator for Hive data source objects (revoscalepy)" 
 description: "Main generator for class RxHiveData, which extends RxSparkData." 
 keywords: "datasource, hive" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

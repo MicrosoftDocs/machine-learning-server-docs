@@ -4,8 +4,8 @@
 title: "How to set and manage compute context in Machine Learning Server "
 description: "Push a compute context to Machine Learning Server on a different computer or platform for remote execution."
 keywords: 
-author: "dphansen"
-ms.author: "davidph"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 01/16/2018
 ms.topic: "how-to"

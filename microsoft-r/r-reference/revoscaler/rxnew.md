@@ -4,8 +4,8 @@
 title: "rxNewDataSource function (revoAnalytics) | Microsoft Docs" 
 description: " This is the main generator for RxDataSource S4 classes. " 
 keywords: "(revoAnalytics), rxNewDataSource, rxNewDataSource,character-method, file, connection" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

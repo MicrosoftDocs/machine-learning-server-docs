@@ -4,8 +4,8 @@
 title: "Machine Learning Server 9.4 Release Notes"
 description: "Features, improvements, and changes in release 9.4 of Machine Learning Server."
 keywords: 
-author: "dphansen"
-ms.author: "davidph"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 07/15/2019
 ms.topic: "overview"
@@ -61,7 +61,7 @@ The following table summarizes the Python and R features that were introduced in
 | Feature | Language | Details |
 |---------|----------|---------|
 | [revoscalepy](python-reference/revoscalepy/revoscalepy-package.md) | Python | The first release of this library, used for distributed computing, local compute context, remote compute context for SQL Server and Spark 2.0-2.1 over the Hadoop Distributed File System (HDFS), and high-performance algorithms for Python. This library is similar to [RevoScaleR](r-reference/revoscaler/revoscaler.md) for R. |
-| [microsoftml](/sql/machine-learning/python/ref-py-microsoftml) | Python | The first release of this library, used for machine learning algorithms and data mining. This library is similar to [MicrosoftML](r-reference/microsoftml/microsoftml-package.md) for R.) |
+| [microsoftml](/sql/machine-learning/python/ref-py-microsoftml) | Python | The first release of this library, used for machine learning algorithms and data mining. This library is similar to [MicrosoftML](/sql/machine-learning/r/ref-r-microsoftml) for R.) |
 | [Pre-trained models](install/microsoftml-install-pretrained-models.md) | Python | Ready-to-use machine learning models for image classification and sentiment detection articulated in Python. |
 | [azureml-model-management-sdk library](/sql/machine-learning/python/reference/azureml-model-management-sdk/azureml-model-management-sdk) | Python | The first release of this library, used to programmatically build web services encapsulating your Python script. |
 | [Standard web service support](operationalize/concept-what-are-web-services.md#standard-web-services) | Python | Contains Python code, models, and model assets. Accepts specific inputs and provides specific outputs for integration with other services and applications. |

@@ -4,8 +4,8 @@
 title: "What is a web service - Machine Learning Server "
 description: "In Machine Learning Server, a web service is an R or Python code execution on the operationalization compute node"
 keywords: ""
-author: "dphansen"
-ms.author: "davidph"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: "2/16/2018"
 ms.topic: "conceptual"
@@ -76,7 +76,7 @@ A model object created with these supported functions:
 |                            R package                             |                                                                                                                                                                                                                       Supported functions                                                                                                                                                                                                                       |
 |------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |      [RevoScaleR](../r-reference/revoscaler/revoscaler.md)       |                                                                                                                                                                                                         rxBTrees, rxDTree, rxDForest, rxLogit, rxLinMod                                                                                                                                                                                                         |
-| [MicrosoftML](../r-reference/microsoftml/microsoftml-package.md) | Machine learning and transform tasks:<br/>rxFastTrees, rxFastForest, rxLogisticRegression, rxOneClassSvm, rxNeuralNet, rxFastLinear, featurizeText, concat, categorical, categoricalHash, selectFeatures, featurizeImage, getSentiment, loadimage, resizeImage, extractPixels, selectColumns, and dropColumns<br><br>While mlTransform featurization is supported in real-time scoring, R transforms are not supported. Instead, use sp_execute_external_script. |
+| [MicrosoftML](/sql/machine-learning/r/ref-r-microsoftml) | Machine learning and transform tasks:<br/>rxFastTrees, rxFastForest, rxLogisticRegression, rxOneClassSvm, rxNeuralNet, rxFastLinear, featurizeText, concat, categorical, categoricalHash, selectFeatures, featurizeImage, getSentiment, loadimage, resizeImage, extractPixels, selectColumns, and dropColumns<br><br>While mlTransform featurization is supported in real-time scoring, R transforms are not supported. Instead, use sp_execute_external_script. |
 
 <a name="inputdf"></a>
 There are additional restrictions on the input dataframe format for microsoftml models:

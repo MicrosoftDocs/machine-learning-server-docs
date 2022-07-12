@@ -4,8 +4,8 @@
 title: "rxRngNewStream function (revoAnalytics) | Microsoft Docs" 
 description: " R interface to Parallel Random Number Generators (RNGs) in MKL. " 
 keywords: "(revoAnalytics), rxRngNewStream, rxRngGetStream, rxRngSetStream, rxRngDelStream, distribution, sysdata" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

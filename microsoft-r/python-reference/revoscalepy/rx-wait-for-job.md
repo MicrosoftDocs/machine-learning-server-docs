@@ -4,8 +4,8 @@
 title: "rx_wait_for_job: Wait for Distributed Job to Complete (revoscalepy)" 
 description: "Causes Python to block on an existing distributed job until completion.  This effectively turns a non-blocking job into a blocking job." 
 keywords: "wait, job" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

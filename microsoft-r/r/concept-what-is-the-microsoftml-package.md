@@ -4,8 +4,8 @@
 title: "Get started with MicrosoftML - Machine Learning Server "
 description: "MicrosoftML adds state-of-the-art data transforms, machine learning algorithms, and pre-trained models to R and Python functionality. The data transforms provided by MicrosoftML allow you to compose a custom set of transforms in a pipeline that are applied to your data before training or testing. The primary purpose of these transforms is to allow you to format your data. "
 keywords: ""
-author: "dphansen"
-ms.author: "davidph"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: "09/22/2017"
 ms.topic: "conceptual"
@@ -63,12 +63,12 @@ Algorithm (R/Python) | ML task supported | Scalability | Application Examples
 
 ## Data transforms
 
-**MicrosoftML** also provides transforms to help tailor your data for machine learning. They are used to clean, wrangle, train, and score your data. For a description of the transforms, see [Machine learning R transforms](~/r-reference/microsoftml/microsoftml-package.md#ml-transforms) and [Machine learning Python transforms](/sql/machine-learning/python/reference/microsoftml/microsoftml-package#ml-transforms) reference documentation.
+**MicrosoftML** also provides transforms to help tailor your data for machine learning. They are used to clean, wrangle, train, and score your data. For a description of the transforms, see [Machine learning R transforms](/sql/machine-learning/r/ref-r-microsoftml#ml-transforms) and [Machine learning Python transforms](/sql/machine-learning/python/ref-py-microsoftml#ml-transforms) reference documentation.
 
 
 ## Next steps
 
-For reference documentation on the R individual transforms and functions in the product help, see [MicrosoftML: machine learning algorithms](../r-reference/microsoftml/microsoftml-package.md).
+For reference documentation on the R individual transforms and functions in the product help, see [MicrosoftML: machine learning algorithms](/sql/machine-learning/r/ref-r-microsoftml).
 
 For reference documentation on the Python individual transforms and functions in the product help, see [MicrosoftML: machine learning algorithms](/sql/machine-learning/python/ref-py-microsoftml).
 
