@@ -198,8 +198,7 @@ Wadsworth.
 
 Therneau, T. M. and Atkinson, E. J. (2011)
 *An Introduction to Recursive Partitioning Using the RPART Routines*.
-[`http://r.789695.n4.nabble.com/attachment/3209029/0/zed.pdf`](http://r.789695.n4.nabble.com/attachment/3209029/0/zed.pdf)
-.
+
 
 Yael Ben-Haim and Elad Tom-Tov (2010)
 A streaming parallel decision tree algorithm.
