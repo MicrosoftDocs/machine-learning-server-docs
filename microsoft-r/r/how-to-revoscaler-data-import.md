@@ -413,7 +413,7 @@ Compression type: zlib
 
 *Fixed-format* data is text data in which each variable occupies a fixed-width column in the input data file. Column width, rather than a delimiter, gives the data its structure. You can import fixed-format data using the *rxImport* function.
 
-Optionally, fixed-format data might be associated with a *schema file* having a .sts extension. The schema describes the width and type of each column. For complete details on creating a schema file, see page 93 of the Stat/Transfer PDF Manual (<https://stattransfer.com/downloads/StatTransferManual.pdf>). If you have a schema file, you can create the input data source simply by specifying the schema file name as the input data file. 
+Optionally, fixed-format data might be associated with a *schema file* having a .sts extension. The schema describes the width and type of each column. For complete details on creating a schema file, see page 93 of the [Stat/Transfer PDF Manual](https://stattransfer.com/downloads/StatTransferManual.pdf). If you have a schema file, you can create the input data source simply by specifying the schema file name as the input data file. 
 
 The [built-in samples](sample-built-in-data.md) include a fixed-format version of the claims data as the file claims.dat and a schema file named claims.sts. To import the data using this schema file, we use *RxImport* as follows:
 
