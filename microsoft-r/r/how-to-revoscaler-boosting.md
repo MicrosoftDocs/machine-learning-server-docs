@@ -4,8 +4,8 @@
 title: "Estimate Models using Stochastic Gradient Boosting (Machine Learning Server) "
 description: "Boosted trees with RevoScaleR in Machine Learning Server."
 keywords: 
-author: "dphansen"
-ms.author: "davidph"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 03/17/2016
 ms.topic: "how-to"

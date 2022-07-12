@@ -4,8 +4,8 @@
 title: "rx_spark_cache_data: Set the Cache Flag in Spark compute context (revoscalepy)" 
 description: "Use this function to set the cache flag to control whether data objects should be cached in Spark  memory system, applicable for RxXdfData, RxHiveData, RxParquetData, RxOrcData and RxSparkDataFrame." 
 keywords: "spark, data, cache" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

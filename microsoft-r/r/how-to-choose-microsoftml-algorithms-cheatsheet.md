@@ -4,8 +4,8 @@
 title: "Cheat sheet: How to choose a MicrosoftML algorithm - Machine Learning Server "
 description: "A printable cheat sheet helps you choose a MicrosoftML package algorithm for a predictive model when using Machine Learning Server."
 keywords: MicrosoftML
-author: "dphansen"
-ms.author: "davidph"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 09/25/2017
 ms.topic: "how-to"
@@ -82,7 +82,7 @@ The **`rxEnsemble() / rx_emsemble()`** algorithm uses a combination of learning 
 
 For a list by category of all the machine learning algorithms available in the MicrosoftML package, see:
 
-- [MicrosoftML R functions](../r-reference/microsoftml/microsoftml-package.md)
+- [MicrosoftML R functions](/sql/machine-learning/r/ref-r-microsoftml)
 - [MicrosoftML Python functions](/sql/machine-learning/python/ref-py-microsoftml)
 
 ## Notes and terminology definitions for the machine learning algorithm cheat sheet

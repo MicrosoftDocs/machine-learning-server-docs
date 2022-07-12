@@ -4,8 +4,8 @@
 title: "rxExecuteSQLDDL function (revoAnalytics) | Microsoft Docs" 
 description: " Execute a command to define, manipulate, or control SQL data (but not  return data). " 
 keywords: "(revoAnalytics), rxExecuteSQLDDL, rxExecuteSQLDDL,RxDataSource-method,  ~kwd1 ,  ~kwd2 " 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

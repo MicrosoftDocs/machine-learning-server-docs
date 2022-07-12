@@ -4,8 +4,8 @@
 title: "rxCompressXdf function (revoAnalytics) | Microsoft Docs" 
 description: " Compress one or more .xdf files " 
 keywords: "(revoAnalytics), rxCompressXdf, manip, file" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

@@ -4,8 +4,8 @@
 title: "Estimate Correlation and Variance/Covariance Matrices in RevoScaleR (Machine Learning Server) "
 description: "Correlation and variance/covariance matrices in RevoScaleR in Machine Learning Server."
 keywords: 
-author: "dphansen"
-ms.author: "davidph"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 03/17/2016
 ms.topic: "how-to"

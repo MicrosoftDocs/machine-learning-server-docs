@@ -4,8 +4,8 @@
 title: "Import HDFS data (Machine Learning Server) "
 description: "Load data from Hadoop Distributed File System (HDFS) into a RevoScaleR session in Machine Learning Server."
 keywords: 
-author: "dphansen"
-ms.author: "davidph"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 06/02/2017
 ms.topic: "how-to"

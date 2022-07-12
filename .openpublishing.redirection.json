@@ -3551,7 +3551,14 @@
       "source_path": "microsoft-r/r-reference/sqlrutils/storedprocedure.md",
       "redirect_url": "/sql/machine-learning/r/reference/sqlrutils/storedprocedure",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "microsoft-r/r-reference/revoscaler/djiadaily.md",
+      "redirect_url": "/sql/machine-learning/r/r-reference/revoscaler/revoscaler",
+      "redirect_document_id": false
     }
+    
+
 
 
   ]

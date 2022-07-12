@@ -4,8 +4,8 @@
 title: "rxCompareContexts function (revoAnalytics) | Microsoft Docs" 
 description: " Determines if two compute contexts are equivalent. " 
 keywords: "(revoAnalytics), rxCompareContexts, IO" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

@@ -4,8 +4,8 @@
 title: "rxSetVarInfo function (revoAnalytics) | Microsoft Docs" 
 description: " Set the variable information for an .xdf file, including variable names, descriptions, and value labels, or set attributes for variables in a data frame  " 
 keywords: "(revoAnalytics), rxSetVarInfo, rxSetVarInfoXdf, attribute" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

@@ -4,8 +4,8 @@
 title: "Fitting Logistic Regression Models (RevoScaleR) in Machine Learning Server "
 description: "Logistic regression with RevoScaleR."
 keywords: 
-author: "dphansen"
-ms.author: "davidph"
+author: "chuckheinzelman"
+ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 03/17/2016
 ms.topic: "how-to"

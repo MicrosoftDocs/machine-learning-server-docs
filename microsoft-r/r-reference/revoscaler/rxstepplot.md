@@ -4,8 +4,8 @@
 title: "rxStepPlot function (revoAnalytics) | Microsoft Docs" 
 description: " Plot stepwise coefficients for rxLinMod, rxLogit and rxGlm objects. " 
 keywords: "(revoAnalytics), rxStepPlot, hplot" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

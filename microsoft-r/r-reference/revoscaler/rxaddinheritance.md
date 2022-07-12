@@ -4,8 +4,8 @@
 title: "rxAddInheritance function (revoAnalytics) | Microsoft Docs" 
 description: "  Add a specific S3 class to the class of a compatible object. " 
 keywords: "(revoAnalytics), rxAddInheritance, rxAddInheritance.default, rxAddInheritance.rxDTree, models, tree, classif, regression" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

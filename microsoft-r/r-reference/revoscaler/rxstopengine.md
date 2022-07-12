@@ -4,8 +4,8 @@
 title: "rxStopEngine function (revoAnalytics) | Microsoft Docs" 
 description: " rxStopEngine stops the remote Spark application. " 
 keywords: "(revoAnalytics), rxStopEngine, rxStopEngine,RxSpark-method, rxStopEngine,RxDistributedHpa-method, rxStopEngine,RxHadoopMR-method, rxStopEngine,RxInSqlServer-method, rxStopEngine,RxLsfCluster-method, computecontext" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 

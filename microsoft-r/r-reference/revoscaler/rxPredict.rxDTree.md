@@ -4,8 +4,8 @@
 title: "rxPredict.rxDTree function (revoAnalytics) | Microsoft Docs" 
 description: "     Calculate predicted or fitted values for a data set from an rxDTree object. " 
 keywords: "(revoAnalytics), rxPredict.rxDTree, models, tree, classif, regression, classification" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 
@@ -168,8 +168,6 @@ Wadsworth.
 
 Therneau, T. M. and Atkinson, E. J. (2011)
 *An Introduction to Recursive Partitioning Using the RPART Routines*.
-[`http://r.789695.n4.nabble.com/attachment/3209029/0/zed.pdf`](http://r.789695.n4.nabble.com/attachment/3209029/0/zed.pdf)
-.
 
 Yael Ben-Haim and Elad Tom-Tov (2010)
 A streaming parallel decision tree algorithm.

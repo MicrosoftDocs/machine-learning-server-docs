@@ -4,8 +4,8 @@
 title: "rxTextToXdf function (revoAnalytics) | Microsoft Docs" 
 description: " Import text data into to an .xdf file using fastText mode. Can also use rxImport. " 
 keywords: "(revoAnalytics), rxTextToXdf, file, connection" 
-author: "dphansen"
-ms.author: "davidph" 
+author: "chuckheinzelman"
+ms.author: "charlhe" 
 manager: "cgronlun" 
 ms.date: 07/15/2019
 ms.topic: "reference" 
