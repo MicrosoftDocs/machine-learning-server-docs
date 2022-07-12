@@ -363,8 +363,6 @@ items:
           href: r-reference/revoscaler/censusworkers.md
         - name: claims
           href: r-reference/revoscaler/claims.md
-        - name: DJIAdaily
-          href: r-reference/revoscaler/djiadaily.md
         - name: Kyphosis
           href: r-reference/revoscaler/kyphosis.md
         - name: mortDefaultSmall
