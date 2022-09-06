@@ -26,7 +26,7 @@ ms.technology:
 
 [!INCLUDE [retirement banner](~/includes/machine-learning-server-retirement.md)]
 
-**Applies to: Microsoft Learning Server 9.x**
+**Applies to: Microsoft Machine Learning Server 9.x**
 
 [PySpark](https://spark.apache.org/downloads.html) is Apache Spark's programmable interface for Python. The [revoscalepy](../python-reference/revoscalepy/revoscalepy-package.md) module is Machine Learning Server's Python library for predictive analytics at scale. In this tutorial, you learn how to create a logistic regression model using functions from both libraries.
 

@@ -1,10 +1,10 @@
 # Microsoft Machine Learning Server Documentation
 
-This is the GitHub repository for the technical product documentation for **Machine Learning Server**. This documentation is published to  [https://docs.microsoft.com/machine-learning-server](https://docs.microsoft.com/machine-learning-server).
+This is the GitHub repository for the technical product documentation for **Machine Learning Server**. This documentation is published to [Machine Learning Server documentation](https://docs.microsoft.com/machine-learning-server).
 
 ## How to contribute
 
-Thanks for your interest in contributing to [Docs.microsoft.com](https://docs.microsoft.com/), home of technical content for Microsoft products and services.
+Thanks for your interest in [contributing](https://docs.microsoft.com/), home of technical content for Microsoft products and services.
 
 To learn how to make contributions to the content in this repository, start with our [Docs contributor guide](https://docs.microsoft.com/contribute). If you are a Microsoft employee, please visit the [internal version](https://aka.ms/docsguidescontribute) of this guide.
 

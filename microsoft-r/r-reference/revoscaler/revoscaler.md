@@ -33,7 +33,7 @@ Functions run on the **RevoScaleR** interpreter, built on open-source R, enginee
 |--------|-|
 | Current version: |  9.4 |
 | Built on: | R 3.5.2 |
-| Package distribution: | [Machine Learning Server](../../what-is-machine-learning-server.md) <br/>[R Client (Windows and Linux)](../../r-client/what-is-microsoft-r-client.md) <br/>[R Server 9.1 and earlier](../../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](/sql/machine-learning/sql-server-machine-learning-services)   <br/> [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) |
+| Package distribution: | [Machine Learning Server](../../what-is-machine-learning-server.md) <br/>[R Client (Windows and Linux)](../../r-client/what-is-microsoft-r-client.md) <br/>[R Server 9.1 and earlier](../../what-is-microsoft-r-server.md)   <br/>[SQL Server 2016 and later (Windows only)](/sql/machine-learning/sql-server-machine-learning-services)   <br/> [Azure HDInsight](/azure/hdinsight/hdinsight-hadoop-r-server-get-started) <br/>[Azure Data Science Virtual Machines](/azure/machine-learning/machine-learning-data-science-provision-vm) |
 
 
 ## How to use RevoScaleR
@@ -60,7 +60,7 @@ On SQL Server, set the compute context to [RxInSQLServer](RxInSqlServer.md). The
 
 Some functions in **RevoScaleR** are specific to particular compute contexts. A filtered list of functions includes the following:
 + [Computing on a Hadoop Cluster](revoscaler-hadoop-functions.md)
-+ [Computing on SQL Server](https://docs.microsoft.com/sql/advanced-analytics/r/scaler-functions-for-working-with-sql-server-data)
++ [Computing on SQL Server](/sql/advanced-analytics/r/scaler-functions-for-working-with-sql-server-data)
 
 ## Typical workflow
 <!--<br />
