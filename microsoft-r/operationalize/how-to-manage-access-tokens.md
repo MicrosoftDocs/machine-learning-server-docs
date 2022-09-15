@@ -52,7 +52,7 @@ The API bearer token's properties include an access_token / refresh_token pair a
 Tokens can be generated in one of two ways:
 + If Active Directory LDAP or a local administrator account is enabled, then send a 'POST /login HTTP/1.1' API request to retrieve the bearer token.
 
-+ If Azure Active Directory (AAD) is enabled, then [the token comes from AAD](https://docs.microsoft.com/azure/active-directory/active-directory-authentication-scenarios). 
++ If Azure Active Directory (AAD) is enabled, then the [token comes from AAD](/azure/active-directory/active-directory-authentication-scenarios).
 
 [Learn more about these authentication methods.](configure-authentication.md)
 
