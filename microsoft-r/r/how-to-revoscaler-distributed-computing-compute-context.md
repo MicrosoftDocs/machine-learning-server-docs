@@ -28,7 +28,7 @@ ms.prod: "mlserver"
 
 In Machine Learning Server, every session that loads a function library has a [compute context](concept-what-is-compute-context.md). The default is **local**, available on all platforms. No action is required to use a local compute context.
 
-This article explains how to shift script execution to a **remote** Hadoop or Spark cluster, for the purpose of bring calculations to the data itself and eliminating data transfer over your network. For SQL Server compute contexts, see [Define and use a compute context](https://docs.microsoft.com/sql/advanced-analytics/tutorials/deepdive-define-and-use-compute-contexts) in the SQL Server documentation.
+This article explains how to shift script execution to a **remote** Hadoop or Spark cluster, for the purpose of bring calculations to the data itself and eliminating data transfer over your network. For SQL Server compute contexts, see [Define and use a compute context](/sql/advanced-analytics/tutorials/deepdive-define-and-use-compute-contexts) in the SQL Server documentation.
 
 You can create multiple compute context objects: just use them one at a time. Often, functions operate identically in local and remote context. If script execution is successful locally, you can generally expect the same results on the remote server, subject to these [limitations](#limits-on-context-shift). 
 
@@ -43,7 +43,7 @@ The following table is a recap of platform and data source requirements for each
 | RevoScaleR | Spark 2.0-2.1 over HDFS, Hadoop MapReduce: Hive, Orc, Parquet, Text, XDF, ODBC <br/><br/>SQL Server: tables, views, local text and .xdf files <sup>(1)</sup>, ODBC data sources |
 | revoscalepy | Spark 2.0-2.1 over HDFS: Hive, Orc, Parquet, Text, XDF, ODBC <br/><br/>SQL Server 2017 Machine Learning with Python: tables, views, local text and .xdf files <sup>(1)</sup>, ODBC data sources |
 
-<sup>(1)</sup> You can load text or .xdf files locally, but be aware that code and data runs on SQL Server, which results in [implicit data type conversions](https://docs.microsoft.com/sql/advanced-analytics/r/r-libraries-and-data-types#r-and-sql-data-types).
+<sup>(1)</sup> You can load text or .xdf files locally, but be aware that code and data runs on SQL Server, which results in [implicit data type conversions](/sql/advanced-analytics/r/r-libraries-and-data-types#r-and-sql-data-types).
 
 > [!NOTE]
 > RevoScaleR is available in both Machine Learning Server and R Client. You can develop script in R Client for execution on the server. However, because R Client is limited to two threads for processing and in-memory datasets, scripts might require deeper customizations if datasets are large and come with dependencies on data chunking. Chunking is not supported in R Client. In R Client, the `blocksPerRead` argument is ignored and all data is read into memory. Large datasets that exceed memory must be pushed to a compute context of a Machine Learning Server instance that provides data chunking.
@@ -88,7 +88,7 @@ The compute context used to distribute computations on a Hadoop MapReduce cluste
 
 The `RxInSqlServer` compute context is a special case in that it runs computations in-database, but it runs on only a single database node, so the computation is parallel, but not distributed. 
 
-For setting up a remote compute context to SQL Server, we provide an example below, but point you to [Define and use a compute context](https://docs.microsoft.com/sql/advanced-analytics/tutorials/deepdive-define-and-use-compute-contexts) in the SQL Server documentation for additional instructions.
+For setting up a remote compute context to SQL Server, we provide an example below, but point you to [Define and use a compute context](/sql/advanced-analytics/tutorials/deepdive-define-and-use-compute-contexts) in the SQL Server documentation for additional instructions.
 
 ```R
 # Requires RevoScaleR and SQL Server on same machine
@@ -221,4 +221,4 @@ Because the initial specification of a compute context can be somewhat tedious, 
 + [Introduction to Machine Learning Server](../what-is-machine-learning-server.md) 
 + [Distributed computing](how-to-revoscaler-distributed-computing.md)
 + [Compute context](concept-what-is-compute-context.md)
-+ [Define and use a compute context in SQL Server](https://docs.microsoft.com/sql/advanced-analytics/tutorials/deepdive-define-and-use-compute-contexts)
++ [Define and use a compute context in SQL Server](/sql/advanced-analytics/tutorials/deepdive-define-and-use-compute-contexts)

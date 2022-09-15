@@ -75,8 +75,8 @@ A defining feature of the **RevoScaleR** package is that most of its functions s
 If you run R code within T-SQL code, the server is always used as the compute context. In this scenario, your code will call the R libraries installed on the SQL Server instance, and use secure connections to get data from the database. You can also save models in a database table, load models from a table to use for scoring, and save your results ot a databse table, all without leaving the context of SQL Server.
 
 For more information, see SQL Server 2016 Books Online:
- + [Data Exploration and Predictive Modeling with R](https://msdn.microsoft.com/library/mt590947.aspx) 
- + [R Interoperability in SQL Server R Services](https://docs.microsoft.com/sql/advanced-analytics/r/r-interoperability-in-sql-server)
+ + [Data Exploration and Predictive Modeling with R](/sql/machine-learning/tutorials/r-tutorials) 
+ + [R Interoperability in SQL Server R Services](/sql/advanced-analytics/r/r-interoperability-in-sql-server)
 
 ### Deploying, Managing, and Optimizing Solutions
 
