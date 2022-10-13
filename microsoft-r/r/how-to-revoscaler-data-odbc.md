@@ -44,7 +44,7 @@ In Microsoft R, an ODBC and **RxOdbcData** dependency exists for data imported f
 
 Although ODBC drivers exist for text data, Microsoft R does not use ODBC for sources accessed as file-based reads. To be specific, it's not used for accessing text files, SPSS database files, or SAS database files.
 
-For SQL Server, you can use **RxSqlServerData** or **RxOdbcData** interchangeably, unless you are accessing [R objects stored in a SQL Server table](https://docs.microsoft.com/sql/advanced-analytics/r/save-and-load-r-objects-from-sql-server-using-odbc), in which case **RxOdbcData** is required. For examples and instructions on using SQL Server data in Microsoft R, see [Import SQL data from Azure SQL Database and SQL Server](how-to-revoscaler-data-sql.md).
+For SQL Server, you can use **RxSqlServerData** or **RxOdbcData** interchangeably, unless you are accessing [R objects stored in a SQL Server table](/sql/advanced-analytics/r/save-and-load-r-objects-from-sql-server-using-odbc), in which case **RxOdbcData** is required. For examples and instructions on using SQL Server data in Microsoft R, see [Import SQL data from Azure SQL Database and SQL Server](how-to-revoscaler-data-sql.md).
 
 ## How to configure ODBC for relational data access
 
@@ -68,7 +68,7 @@ If unixODBC is not installed, issue the following commands to add it:
 + On Ubuntu: `sudo apt-get install unixodbc-devel unixodbc-bin unixodbc`
 + On SLES: `sudo zypper install unixODBC`
 
-For more information, SQL Server documentation provides in-depth instructions for [installing unixODBC](https://docs.microsoft.com/sql/connect/odbc/linux/installing-the-driver-manager) on a variety of Linux operating systems. Alternatively, you can go to the [unixODBC web site](http://www.unixodbc.org/), download the software, and follow instructions on the site.
+For more information, SQL Server documentation provides in-depth instructions for [installing unixODBC](/sql/connect/odbc/linux/installing-the-driver-manager) on a variety of Linux operating systems. Alternatively, you can go to the [unixODBC web site](http://www.unixodbc.org/), download the software, and follow instructions on the site.
 
 ### 2 - Install drivers
 
@@ -94,7 +94,7 @@ Drivers for commonly used databases might be pre-installed with the operating sy
 
 Data platform | Driver download pages and instructions|
 -------------|---------------------------------|
-SQL Server on Linux | [Installing the Microsoft ODBC Driver for SQL Server on Linux](https://docs.microsoft.com/sql/connect/odbc/linux/installing-the-microsoft-odbc-driver-for-sql-server-on-linux) |
+SQL Server on Linux | [Installing the Microsoft ODBC Driver for SQL Server on Linux](/sql/connect/odbc/linux/installing-the-microsoft-odbc-driver-for-sql-server-on-linux) |
 Oracle Instant Client | [Oracle Instant Client Downloads](http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html) |
 MySQL | [Download Connector/ODBC](https://dev.mysql.com/downloads/connector/odbc) |
 PostgreSQL | [psqlODBC](https://odbc.postgressql.org) |
@@ -216,4 +216,3 @@ Continue on to the following data import articles to learn more about XDF, data 
  [RevoScaleR Functions](~/r-reference/revoscaler/revoscaler.md)   
  [Tutorial: data import and exploration](tutorial-revoscaler-data-import-transform.md)
  [Tutorial: data manipulation and statistical analysis](tutorial-revoscaler-data-model-analysis.md) 
- 
