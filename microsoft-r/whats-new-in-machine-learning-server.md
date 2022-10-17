@@ -9,7 +9,7 @@ ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 07/15/2019
 ms.topic: "overview"
-ms.prod: "mlserver"
+ms.prod: "sql-non-specified"
 
 # optional metadata
 #ROBOTS: ""
@@ -20,6 +20,7 @@ ms.prod: "mlserver"
 #ms.tgt_pltfrm: ""
 #ms.technology: ""
 #ms.custom: ""
+ms.technology: machine-learning-server
 ---
 
 # Machine Learning Server 9.4 Release Notes

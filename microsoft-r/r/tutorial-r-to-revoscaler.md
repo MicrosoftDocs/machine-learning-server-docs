@@ -9,7 +9,7 @@ ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: "01/03/2018"
 ms.topic: "tutorial"
-ms.prod: "mlserver"
+ms.prod: "sql-non-specified"
 
 # optional metadata
 #ROBOTS: ""
@@ -18,7 +18,7 @@ ms.prod: "mlserver"
 #ms.reviewer: ""
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
-ms.technology:
+ms.technology: "machine-learning-server"
   
 
 #ms.custom: ""

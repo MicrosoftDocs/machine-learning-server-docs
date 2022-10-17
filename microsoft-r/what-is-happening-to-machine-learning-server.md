@@ -7,7 +7,8 @@ ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 06/30/2021
 ms.topic: "overview"
-ms.prod: "mlserver"
+ms.prod: "sql-non-specified"
+ms.technology: machine-learning-server
 
 ---
 
