@@ -9,7 +9,7 @@ ms.author: "charlhe"
 manager: "cgronlun" 
 ms.date: 07/15/2019 
 ms.topic: "reference" 
-ms.prod: "mlserver" 
+ms.prod: "sql-non-specified"
 ms.service: "" 
 ms.assetid: "" 
  
@@ -22,6 +22,7 @@ ms.suite: ""
 ms.tgt_pltfrm: "" 
 #ms.technology: "" 
 ms.custom: "" 
+ms.technology: machine-learning-server
  
 --- 
  
