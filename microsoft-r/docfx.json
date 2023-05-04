@@ -34,6 +34,7 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
+      "feedback_system": "Standard",
       "ms.author": "charlhe",
       "breadcrumb_path": "breadcrumb/toc.yml",
       "contributors_to_exclude": [
