@@ -7,7 +7,8 @@ ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 06/30/2021
 ms.topic: "overview"
-ms.prod: "mlserver"
+ms.prod: "sql-non-specified"
+ms.technology: machine-learning-server
 
 ---
 
@@ -86,9 +87,9 @@ Use Azure Machine Learning as a replacement for Machine Learning Server when you
 - Reinforcement learning with Ray RLlib.
 - MLflow to track metrics and deploy models or Kubeflow to build end-to-end workflow pipelines. 
 
-The architecture of a Azure Machine Learning deployment is as follows: 
+The architecture of an Azure Machine Learning deployment is as follows:
 
-![Azure Machine Learning architecture](media/what-is-happening-to-machine-learning-server/azureml-architecture.svg) 
+![Azure Machine Learning architecture](media/what-is-happening-to-machine-learning-server/azureml-architecture.svg)
 
 For more information, see [What is Azure Machine Learning?](/azure/machine-learning/overview-what-is-azure-ml)
 
@@ -98,11 +99,11 @@ Other options include [Azure HDInsight](/azure/hdinsight/), [Azure Databricks](/
 
 ### Azure HDInsight
 
-[Azure HDInsight](/azure/hdinsight/) is a cloud distribution of Hadoop components. Azure HDInsight is a managed, full-spectrum, open-source analytics service in the cloud for enterprises. HDInsight allows you to use open-source frameworks such as Hadoop, Apache Spark, Apache Hive, LLAP, Apache Kafka, Apache Storm, R, and more. 
+[Azure HDInsight](/azure/hdinsight/) is a cloud distribution of Hadoop components. Azure HDInsight is a managed, full-spectrum, open-source analytics service in the cloud for enterprises. HDInsight allows you to use open-source frameworks such as Hadoop, Apache Spark, Apache Hive, LLAP, Apache Kafka, Apache Storm, R, and more.
 
 HDInsight includes specific cluster types and cluster customization capabilities, such as the capability to add components, utilities, and languages. For more information, see [Cluster types in HDInsight](/azure/hdinsight/hdinsight-overview#cluster-types-in-hdinsight).
 
-The architecture of a Azure HDInsight deployment is as follows:
+The architecture of an Azure HDInsight deployment is as follows:
 
 ![HDInsight architecture](media/what-is-happening-to-machine-learning-server/hdinsight-architecture-data-warehouse.png)
 
@@ -128,11 +129,11 @@ For more information, see [What is Azure Databricks?](/azure/databricks/scenario
 
 As a fully managed service, Azure Cosmos DB handles database administration with automatic management, updates and patching. It also handles capacity management with serverless and automatic scaling options that respond to application needs to match capacity with demand.  
 
-The architecture of a Microsoft Azure CosmosDB deployment is as follows: 
+The architecture of an Azure Cosmos DB deployment is as follows:
 
-![Azure Cosmos DB and Azure Synapse Analytics architecture](media/what-is-happening-to-machine-learning-server/synapse-analytics-cosmos-db-architecture.png) 
+![Azure Cosmos DB and Azure Synapse Analytics architecture](media/what-is-happening-to-machine-learning-server/synapse-analytics-cosmos-db-architecture.png)
 
-For more information on using Notebooks with Python or C# in CosmosDB Deployments, see [Built-in Jupyter Notebooks support in Azure Cosmos DB](/azure/cosmos-db/cosmosdb-jupyter-notebooks).
+For more information on using Notebooks with Python or C# in Azure Cosmos DB Deployments, see [Built-in Jupyter Notebooks support in Azure Cosmos DB](/azure/cosmos-db/cosmosdb-jupyter-notebooks).
 
 For more information, see the [Azure Cosmos DB documentation](/azure/cosmos-db/introduction).
 
