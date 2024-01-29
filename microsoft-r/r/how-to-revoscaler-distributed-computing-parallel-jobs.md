@@ -9,7 +9,7 @@ ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 01/16/2018
 ms.topic: "how-to"
-ms.prod: "mlserver"
+ms.prod: "sql-non-specified"
 
 # optional metadata
 #ROBOTS: ""
@@ -20,6 +20,7 @@ ms.prod: "mlserver"
 #ms.tgt_pltfrm: ""
 #ms.technology: ""
 #ms.custom: ""
+ms.technology: machine-learning-server
 ---
 
 # Running jobs in parallel using rxExec

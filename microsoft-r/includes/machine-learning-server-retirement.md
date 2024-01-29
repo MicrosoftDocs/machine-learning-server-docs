@@ -1,9 +1,10 @@
 ---
 author: garyericson
 ms.author: garye
-ms.prod: mlserver
+ms.prod: sql-non-specified
 ms.topic: include
 ms.date: 06/30/2021
+ms.technology: machine-learning-server
 ---
 
 > [!IMPORTANT]

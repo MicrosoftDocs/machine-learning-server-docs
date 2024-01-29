@@ -9,7 +9,7 @@ ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 2/16/2018
 ms.topic: "how-to"
-ms.prod: "mlserver"
+ms.prod: "sql-non-specified"
 
 # optional metadata
 #ROBOTS: ""
@@ -19,6 +19,7 @@ ms.prod: "mlserver"
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
 #ms.custom: ""
+ms.technology: machine-learning-server
 ---
 
 # How to create and manage session pools for fast web service connections in Python
