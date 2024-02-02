@@ -9,7 +9,7 @@ ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 11/10/2017
 ms.topic: "how-to"
-ms.prod: "sql-non-specified"
+ms.service: mlserver
 
 # optional metadata
 #ROBOTS: ""
@@ -20,7 +20,6 @@ ms.prod: "sql-non-specified"
 #ms.tgt_pltfrm: ""
 #ms.technology: ""
 #ms.custom: ""
-ms.technology: machine-learning-server
 ---
 
 # Converting RevoScaleR Model Objects for Use in PMML
