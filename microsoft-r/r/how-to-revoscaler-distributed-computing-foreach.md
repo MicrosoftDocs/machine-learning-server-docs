@@ -9,7 +9,7 @@ ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 01/03/2018
 ms.topic: "how-to"
-ms.prod: "sql-non-specified"
+ms.service: mlserver
 
 # optional metadata
 #ROBOTS: ""
@@ -20,7 +20,6 @@ ms.prod: "sql-non-specified"
 #ms.tgt_pltfrm: ""
 #ms.technology: ""
 #ms.custom: ""
-ms.technology: machine-learning-server
 ---
 
 # Using foreach and iterators for manual parallel execution
