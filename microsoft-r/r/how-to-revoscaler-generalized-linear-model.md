@@ -9,7 +9,7 @@ ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 03/17/2016
 ms.topic: "how-to"
-ms.prod: "sql-non-specified"
+ms.service: mlserver
 
 # optional metadata
 #ROBOTS: ""
@@ -20,7 +20,6 @@ ms.prod: "sql-non-specified"
 #ms.tgt_pltfrm: ""
 #ms.technology: ""
 #ms.custom: ""
-ms.technology: machine-learning-server
 ---
 
 # Generalized Linear Models using RevoScaleR

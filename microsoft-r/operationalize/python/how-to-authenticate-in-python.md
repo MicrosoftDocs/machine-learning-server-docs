@@ -9,7 +9,7 @@ ms.author: "charlhe"
 manager: "cgronlun"
 ms.date: 2/16/2018
 ms.topic: "how-to"
-ms.prod: "sql-non-specified"
+ms.service: mlserver
 
 # optional metadata
 #ROBOTS: ""
@@ -19,7 +19,6 @@ ms.prod: "sql-non-specified"
 #ms.suite: ""
 #ms.tgt_pltfrm: ""
 #ms.custom: ""
-ms.technology: machine-learning-server
 ---
 
 # Authenticate with Machine Learning Server in Python with azureml-model-management-sdk
